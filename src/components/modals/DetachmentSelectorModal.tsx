@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   ComposedModal,
   ModalHeader,
@@ -24,8 +24,6 @@ export default function DetachmentSelectorModal({
   onConfirm,
   onClose,
 }: DetachmentSelectorModalProps) {
-  const [selected, setSelected] = useState<DetachmentDef | null>(null);
-
   const options = getDetachmentsForFaction(
     trigger === 'highCommand' ? 'apex' : 'auxiliary',
     faction
@@ -41,7 +39,7 @@ export default function DetachmentSelectorModal({
       <ModalBody hasForm>
         <div
           style={{
-            maxHeight: 400,
+            maxHeight: 440,
             overflowY: 'auto',
             display: 'flex',
             flexDirection: 'column',
@@ -50,7 +48,6 @@ export default function DetachmentSelectorModal({
         >
           {options.map((def) => {
             const displayName = getDetachmentDisplayName(def.name);
-            const isSelected = selected?.name === def.name;
             const slotSummary = def.slots
               .map((s) => `${s.max}× ${s.role.replace('Prime ', '★ ')}`)
               .join('  ·  ');
@@ -58,37 +55,28 @@ export default function DetachmentSelectorModal({
             return (
               <button
                 key={def.name}
-                onClick={() => setSelected(def)}
+                onClick={() => onConfirm(def)}
                 style={{
                   display: 'block',
                   width: '100%',
                   textAlign: 'left',
-                  padding: '10px 12px',
+                  padding: '12px 14px',
                   borderRadius: 2,
-                  border: `1px solid ${isSelected ? 'var(--cds-interactive)' : 'transparent'}`,
-                  background: isSelected
-                    ? 'var(--cds-layer-selected-01)'
-                    : 'var(--cds-layer-02)',
+                  border: '1px solid transparent',
+                  background: 'var(--cds-layer-02)',
                   cursor: 'pointer',
                 }}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.background = 'var(--cds-layer-hover-02)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLButtonElement).style.background = 'var(--cds-layer-02)';
+                }}
               >
-                <div
-                  style={{
-                    color: 'var(--cds-text-primary)',
-                    fontWeight: 500,
-                    fontSize: 14,
-                    marginBottom: 4,
-                  }}
-                >
+                <div style={{ color: 'var(--cds-text-primary)', fontWeight: 500, fontSize: 14, marginBottom: 4 }}>
                   {displayName}
                 </div>
-                <div
-                  style={{
-                    color: 'var(--cds-text-secondary)',
-                    fontSize: 11,
-                    lineHeight: 1.4,
-                  }}
-                >
+                <div style={{ color: 'var(--cds-text-secondary)', fontSize: 11, lineHeight: 1.4 }}>
                   {slotSummary}
                 </div>
               </button>
@@ -99,13 +87,6 @@ export default function DetachmentSelectorModal({
       <ModalFooter>
         <Button kind="secondary" onClick={onClose}>
           Cancel
-        </Button>
-        <Button
-          kind="primary"
-          disabled={!selected}
-          onClick={() => selected && onConfirm(selected)}
-        >
-          Add to Canvas
         </Button>
       </ModalFooter>
     </ComposedModal>

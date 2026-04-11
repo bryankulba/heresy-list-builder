@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   ComposedModal,
   ModalHeader,
@@ -15,8 +15,6 @@ interface PrimeBenefitModalProps {
 }
 
 export default function PrimeBenefitModal({ onConfirm, onClose }: PrimeBenefitModalProps) {
-  const [selected, setSelected] = useState<PrimeBenefit | null>(null);
-
   return (
     <ComposedModal open onClose={onClose} size="sm">
       <ModalHeader title="Select Prime Benefit" />
@@ -25,52 +23,40 @@ export default function PrimeBenefitModal({ onConfirm, onClose }: PrimeBenefitMo
           This is a prime slot. Choose a benefit for the unit filling it.
         </p>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
-          {PRIME_BENEFITS.map((benefit) => {
-            const isSelected = selected?.id === benefit.id;
-            return (
-              <button
-                key={benefit.id}
-                onClick={() => setSelected(benefit)}
-                style={{
-                  display: 'block',
-                  width: '100%',
-                  textAlign: 'left',
-                  padding: '10px 12px',
-                  borderRadius: 2,
-                  border: `1px solid ${isSelected ? 'var(--cds-support-warning)' : 'var(--cds-border-subtle-01)'}`,
-                  background: isSelected ? 'var(--cds-layer-selected-01)' : 'var(--cds-layer-02)',
-                  cursor: 'pointer',
-                  boxShadow: isSelected ? `0 0 0 1px var(--cds-support-warning)` : undefined,
-                }}
-              >
-                <div
-                  style={{
-                    color: isSelected ? 'var(--cds-support-warning)' : 'var(--cds-text-primary)',
-                    fontWeight: 600,
-                    fontSize: 14,
-                    marginBottom: 4,
-                  }}
-                >
-                  {benefit.name}
-                </div>
-                <div style={{ color: 'var(--cds-text-secondary)', fontSize: 12, lineHeight: 1.5 }}>
-                  {benefit.description}
-                </div>
-              </button>
-            );
-          })}
+          {PRIME_BENEFITS.map((benefit) => (
+            <button
+              key={benefit.id}
+              onClick={() => onConfirm(benefit)}
+              style={{
+                display: 'block',
+                width: '100%',
+                textAlign: 'left',
+                padding: '12px 14px',
+                borderRadius: 2,
+                border: '1px solid var(--cds-border-subtle-01)',
+                background: 'var(--cds-layer-02)',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background = 'var(--cds-layer-hover-02)';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background = 'var(--cds-layer-02)';
+              }}
+            >
+              <div style={{ color: 'var(--cds-text-primary)', fontWeight: 600, fontSize: 14, marginBottom: 4 }}>
+                {benefit.name}
+              </div>
+              <div style={{ color: 'var(--cds-text-secondary)', fontSize: 12, lineHeight: 1.5 }}>
+                {benefit.description}
+              </div>
+            </button>
+          ))}
         </div>
       </ModalBody>
       <ModalFooter>
         <Button kind="secondary" onClick={onClose}>
           Cancel
-        </Button>
-        <Button
-          kind="primary"
-          disabled={!selected}
-          onClick={() => selected && onConfirm(selected)}
-        >
-          Next: Choose Unit
         </Button>
       </ModalFooter>
     </ComposedModal>

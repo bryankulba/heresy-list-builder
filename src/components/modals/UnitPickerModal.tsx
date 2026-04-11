@@ -25,7 +25,6 @@ export default function UnitPickerModal({
   onClose,
 }: UnitPickerModalProps) {
   const [search, setSearch] = useState('');
-  const [selected, setSelected] = useState<UnitEntry | null>(null);
 
   const units = useMemo(() => getUnitsForRole(faction, role), [faction, role]);
 
@@ -57,82 +56,76 @@ export default function UnitPickerModal({
 
         <div
           style={{
-            maxHeight: 360,
+            maxHeight: 400,
             overflowY: 'auto',
             display: 'flex',
             flexDirection: 'column',
             gap: 2,
           }}
         >
-          {filtered.map((unit) => {
-            const isSelected = selected?.name === unit.name;
-            return (
-              <button
-                key={unit.name}
-                onClick={() => setSelected(unit)}
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  padding: '10px 12px',
-                  borderRadius: 2,
-                  border: `1px solid ${isSelected ? 'var(--cds-interactive)' : 'transparent'}`,
-                  background: isSelected
-                    ? 'var(--cds-layer-selected-01)'
-                    : 'var(--cds-layer-02)',
-                  cursor: 'pointer',
-                  width: '100%',
-                  textAlign: 'left',
-                }}
-              >
-                <div style={{ flex: 1, minWidth: 0 }}>
-                  <div
-                    style={{
-                      color: 'var(--cds-text-primary)',
-                      fontSize: 14,
-                      fontWeight: 500,
-                      overflow: 'hidden',
-                      textOverflow: 'ellipsis',
-                      whiteSpace: 'nowrap',
-                    }}
-                  >
-                    {unit.name}
-                  </div>
-                  <div style={{ color: 'var(--cds-text-secondary)', fontSize: 12, marginTop: 2 }}>
-                    {unit.role}
-                    {unit.source !== 'legiones-astartes' && (
-                      <Tag type="purple" size="sm" style={{ marginLeft: 6 }}>
-                        Legion
-                      </Tag>
-                    )}
-                  </div>
-                </div>
+          {filtered.map((unit) => (
+            <button
+              key={unit.name}
+              onClick={() => onConfirm(unit)}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                padding: '12px 14px',
+                borderRadius: 2,
+                border: '1px solid transparent',
+                background: 'var(--cds-layer-02)',
+                cursor: 'pointer',
+                width: '100%',
+                textAlign: 'left',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background = 'var(--cds-layer-hover-02)';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background = 'var(--cds-layer-02)';
+              }}
+            >
+              <div style={{ flex: 1, minWidth: 0 }}>
                 <div
                   style={{
                     color: 'var(--cds-text-primary)',
-                    fontSize: 13,
-                    fontWeight: 600,
-                    marginLeft: 12,
+                    fontSize: 14,
+                    fontWeight: 500,
+                    overflow: 'hidden',
+                    textOverflow: 'ellipsis',
                     whiteSpace: 'nowrap',
                   }}
                 >
-                  {unit.points > 0 ? `${unit.points}pts` : 'Free'}
+                  {unit.name}
                 </div>
-              </button>
-            );
-          })}
+                <div style={{ color: 'var(--cds-text-secondary)', fontSize: 12, marginTop: 2 }}>
+                  {unit.role}
+                  {unit.source !== 'legiones-astartes' && (
+                    <Tag type="purple" size="sm" style={{ marginLeft: 6 }}>
+                      Legion
+                    </Tag>
+                  )}
+                </div>
+              </div>
+              <div
+                style={{
+                  color: 'var(--cds-text-primary)',
+                  fontSize: 13,
+                  fontWeight: 600,
+                  marginLeft: 12,
+                  whiteSpace: 'nowrap',
+                }}
+              >
+                {unit.points > 0 ? `${unit.points}pts` : 'Free'}
+              </div>
+            </button>
+          ))}
         </div>
       </ModalBody>
       <ModalFooter>
         <Button kind="secondary" onClick={onClose}>
           Cancel
-        </Button>
-        <Button
-          kind="primary"
-          disabled={!selected}
-          onClick={() => selected && onConfirm(selected)}
-        >
-          Select
         </Button>
       </ModalFooter>
     </ComposedModal>

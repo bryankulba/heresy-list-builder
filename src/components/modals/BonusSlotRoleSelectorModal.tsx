@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { ComposedModal, ModalHeader, ModalBody, ModalFooter, Button } from '@carbon/react';
 
 const VALID_ROLES = [
@@ -24,8 +24,6 @@ export default function BonusSlotRoleSelectorModal({
   onConfirm,
   onClose,
 }: BonusSlotRoleSelectorModalProps) {
-  const [selected, setSelected] = useState<string | null>(null);
-
   return (
     <ComposedModal open onClose={onClose} size="sm">
       <ModalHeader title="Logistical Benefit" />
@@ -34,16 +32,22 @@ export default function BonusSlotRoleSelectorModal({
           {VALID_ROLES.map((role) => (
             <button
               key={role}
-              onClick={() => setSelected(role)}
+              onClick={() => onConfirm(role)}
               style={{
                 textAlign: 'left',
-                padding: '10px 14px',
-                background: selected === role ? 'var(--cds-layer-accent-01)' : 'var(--cds-layer-02)',
-                border: `1px solid ${selected === role ? 'var(--cds-interactive)' : 'var(--cds-border-subtle-01)'}`,
+                padding: '12px 14px',
+                background: 'var(--cds-layer-02)',
+                border: '1px solid var(--cds-border-subtle-01)',
                 borderRadius: 4,
                 color: 'var(--cds-text-primary)',
                 fontSize: 13,
                 cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background = 'var(--cds-layer-hover-02)';
+              }}
+              onMouseLeave={(e) => {
+                (e.currentTarget as HTMLButtonElement).style.background = 'var(--cds-layer-02)';
               }}
             >
               {role}
@@ -54,9 +58,6 @@ export default function BonusSlotRoleSelectorModal({
       <ModalFooter>
         <Button kind="secondary" onClick={onClose}>
           Cancel
-        </Button>
-        <Button kind="primary" disabled={!selected} onClick={() => selected && onConfirm(selected)}>
-          Add Slot
         </Button>
       </ModalFooter>
     </ComposedModal>
