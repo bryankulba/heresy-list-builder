@@ -33,6 +33,8 @@ export interface DetachmentSlot {
   min: number;
   max: number;
   prime: boolean;
+  /** targetId of the categoryLink — used as the category entryId in .ros exports */
+  categoryId: string;
 }
 
 export interface Detachment {
@@ -115,17 +117,25 @@ function extractRootAttrs(xml: string): { id: string; name: string; revision: nu
 //
 // Returns Map<unitId, roleName>.
 
-function buildRoleMap(catalogueXml: string): Map<string, string> {
+interface RoleMaps {
+  /** Maps sharedSelectionEntry id → battlefield role name */
+  roleMap: Map<string, string>;
+  /** Maps sharedSelectionEntry id → entryLink id (needed for .ros export) */
+  linkIdMap: Map<string, string>;
+}
+
+function buildRoleMap(catalogueXml: string): RoleMaps {
   const roleMap = new Map<string, string>();
+  const linkIdMap = new Map<string, string>();
 
   // Find the root-level <entryLinks> by its 2-space indentation signature
   const rootMarker = '\n  <entryLinks>';
   const markerIdx = catalogueXml.indexOf(rootMarker);
-  if (markerIdx === -1) return roleMap;
+  if (markerIdx === -1) return { roleMap, linkIdMap };
 
   const elStart = markerIdx + 1; // skip the leading newline
   const elEnd = catalogueXml.indexOf('\n  </entryLinks>', elStart);
-  if (elEnd === -1) return roleMap;
+  if (elEnd === -1) return { roleMap, linkIdMap };
 
   const elSection = catalogueXml.slice(elStart, elEnd + '\n  </entryLinks>'.length);
 
@@ -142,6 +152,10 @@ function buildRoleMap(catalogueXml: string): Map<string, string> {
     if (!targetMatch) continue;
     const targetId = targetMatch[1];
 
+    // The entryLink's own id is what the .ros file needs as the selection's entryId
+    const linkIdMatch = attrs.match(/\bid="([^"]+)"/);
+    if (linkIdMatch) linkIdMap.set(targetId, linkIdMatch[1]);
+
     // Find primary="true" categoryLink — attribute order varies
     const primaryMatch =
       body.match(/primary="true"[^/]*name="([^"]+)"/) ||
@@ -151,7 +165,7 @@ function buildRoleMap(catalogueXml: string): Map<string, string> {
     }
   }
 
-  return roleMap;
+  return { roleMap, linkIdMap };
 }
 
 // ---------------------------------------------------------------------------
@@ -328,6 +342,7 @@ function normalizeRole(role: string): string {
 function extractUnitsFromCatalogue(
   xml: string,
   roleMap: Map<string, string>,
+  linkIdMap: Map<string, string>,
   source: string,
   warnings: string[]
 ): UnitEntry[] {
@@ -384,7 +399,7 @@ function extractUnitsFromCatalogue(
 
     units.push({
       name,
-      entryId: id,
+      entryId: linkIdMap.get(id) ?? id,
       role: normalizeRole(role),
       points: breakdown?.points ?? 0,
       baseCost: breakdown?.baseCost ?? 0,
@@ -422,6 +437,9 @@ function extractSlots(forceEntryBody: string): DetachmentSlot[] {
     if (!nameMatch) continue;
     const roleName = nameMatch[1];
 
+    const targetIdMatch = linkAttrs.match(/\btargetId="([^"]+)"/);
+    const categoryId = targetIdMatch?.[1] ?? '';
+
     const minMatch = body.match(/type="min"[^/]*value="(\d+)"/);
     const maxMatch = body.match(/type="max"[^/]*value="(\d+)"/);
 
@@ -433,6 +451,7 @@ function extractSlots(forceEntryBody: string): DetachmentSlot[] {
       min: minMatch ? parseInt(minMatch[1], 10) : 0,
       max: maxVal,
       prime: roleName.toLowerCase().startsWith('prime'),
+      categoryId,
     });
   }
 
@@ -586,13 +605,13 @@ export function parseAll(
 ): ParseResult {
   const warnings: string[] = [];
 
-  const laRoleMap = buildRoleMap(laXml);
-  const laUnits = extractUnitsFromCatalogue(laXml, laRoleMap, 'legiones-astartes', warnings);
+  const { roleMap: laRoleMap, linkIdMap: laLinkIdMap } = buildRoleMap(laXml);
+  const laUnits = extractUnitsFromCatalogue(laXml, laRoleMap, laLinkIdMap, 'legiones-astartes', warnings);
 
   const units: Record<string, UnitEntry[]> = { 'legiones-astartes': laUnits };
   for (const [factionKey, xml] of Object.entries(factionCats)) {
-    const roleMap = buildRoleMap(xml);
-    units[factionKey] = extractUnitsFromCatalogue(xml, roleMap, factionKey, warnings);
+    const { roleMap, linkIdMap } = buildRoleMap(xml);
+    units[factionKey] = extractUnitsFromCatalogue(xml, roleMap, linkIdMap, factionKey, warnings);
   }
 
   const { detachments, forceOrgEntryId } = parseDetachments(gstXml);

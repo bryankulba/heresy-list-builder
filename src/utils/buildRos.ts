@@ -92,7 +92,7 @@ export function buildRosXml(
 
     // Regular slots
     const expanded = expandSlots(det.def);
-    for (const { key } of expanded) {
+    for (const { key, slotDef } of expanded) {
       const filled = det.slots[key];
       if (!filled) continue;
       const { unit } = filled;
@@ -104,6 +104,13 @@ export function buildRosXml(
         ` number="1"` +
         ` type="unit">`
       );
+      if (slotDef.categoryId) {
+        lines.push('              <categories>');
+        lines.push(
+          `                <category id="${uuid()}" name="${escapeXml(slotDef.role)}" primary="true" entryId="${escapeXml(slotDef.categoryId)}"/>`
+        );
+        lines.push('              </categories>');
+      }
       lines.push('              <costs>');
       lines.push(
         `                <cost name="pts" value="${unit.points}" costTypeId="${POINTS_TYPE_ID}"/>`
@@ -115,6 +122,8 @@ export function buildRosXml(
     // Bonus slots (Logistical Benefit)
     for (const bs of det.bonusSlots ?? []) {
       if (!bs.unit) continue;
+      // Find categoryId from detachment slots matching the bonus slot's role
+      const bonusSlotDef = det.def.slots.find(s => s.role === bs.role);
       lines.push(
         `            <selection` +
         ` id="${uuid()}"` +
@@ -123,6 +132,13 @@ export function buildRosXml(
         ` number="1"` +
         ` type="unit">`
       );
+      if (bonusSlotDef?.categoryId) {
+        lines.push('              <categories>');
+        lines.push(
+          `                <category id="${uuid()}" name="${escapeXml(bs.role)}" primary="true" entryId="${escapeXml(bonusSlotDef.categoryId)}"/>`
+        );
+        lines.push('              </categories>');
+      }
       lines.push('              <costs>');
       lines.push(
         `                <cost name="pts" value="${bs.unit.points}" costTypeId="${POINTS_TYPE_ID}"/>`

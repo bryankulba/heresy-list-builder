@@ -24,6 +24,7 @@ export interface SlotDef {
   min: number;
   max: number;
   prime: boolean;
+  categoryId?: string;
 }
 
 export interface DetachmentDef {
