@@ -1,0 +1,2583 @@
+{
+  "core": [
+    {
+      "name": "Crusade Primary Detachment",
+      "type": "core",
+      "slots": [
+        {
+          "role": "High Command",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Command",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        },
+        {
+          "role": "Prime Command",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 4,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Transport",
+          "min": 0,
+          "max": 4,
+          "prime": false
+        },
+        {
+          "role": "Command - Centurions Only",
+          "min": 0,
+          "max": 7,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "mechanicum",
+        "militia",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sisters-of-silence",
+        "skitarii",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Warlord Detachment",
+      "type": "core",
+      "slots": [
+        {
+          "role": "Warlord",
+          "min": 1,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Retinue",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Heavy Transport",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "mechanicum",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sisters-of-silence",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "talons-of-the-emperor",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    }
+  ],
+  "auxiliary": [
+    {
+      "name": "Auxiliary - Armoured Fist",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Transport",
+          "min": 0,
+          "max": 4,
+          "prime": false
+        },
+        {
+          "role": "Heavy Transport",
+          "min": 0,
+          "max": 4,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "mechanicum",
+        "militia",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sisters-of-silence",
+        "skitarii",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "talons-of-the-emperor",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Tactical Support",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Support",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Paragon of Malevolence",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "mechanicum",
+        "militia",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sisters-of-silence",
+        "skitarii",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "talons-of-the-emperor",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Armoured Support",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Armour",
+          "min": 0,
+          "max": 4,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "mechanicum",
+        "militia",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sisters-of-silence",
+        "skitarii",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "talons-of-the-emperor",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Heavy Support",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "War-engine",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "mechanicum",
+        "militia",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sisters-of-silence",
+        "skitarii",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "talons-of-the-emperor",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Combat Pioneer",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Recon",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "mechanicum",
+        "militia",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sisters-of-silence",
+        "skitarii",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "talons-of-the-emperor",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Shock Assault",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Heavy Assault",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "mechanicum",
+        "militia",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sisters-of-silence",
+        "skitarii",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "talons-of-the-emperor",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - First Strike",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Fast Attack",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "mechanicum",
+        "militia",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sisters-of-silence",
+        "skitarii",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "talons-of-the-emperor",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Primacy Wing",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Retinue",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Elites",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Fast Attack",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "emperors-children"
+      ]
+    },
+    {
+      "name": "Auxiliary - Taghmata Cohort",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Support",
+          "min": 0,
+          "max": 4,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "mechanicum"
+      ]
+    },
+    {
+      "name": "Auxiliary - Apprentice Cadre",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 4,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "mechanicum"
+      ]
+    },
+    {
+      "name": "Auxiliary - The Ironfire Cohort",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Armour - Arquitor Bombard Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Support",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Armour",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "iron-warriors"
+      ]
+    },
+    {
+      "name": "Auxiliary - Reaping Host",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Support",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Heavy Assault",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "death-guard"
+      ]
+    },
+    {
+      "name": "Auxiliary - Primus Demi-Company",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Command - Optae Only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Support",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Fast Attack",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Prime Command",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "ultramarines"
+      ]
+    },
+    {
+      "name": "Auxiliary - Veletaris Tercio",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Elites - Veletaris Storm or Veletaris Vanguard units only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Support - Hermes Veletaris units only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Prime Elites",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Heavy Transport",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Armour Tercio",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Armour - Leman Russ Strike, Leman Russ Assault or Malcador Heavy tank units only",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Artillery Tercio",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Support - Rapier Section, Basilisk Artillery Tank or Medusa Artillery tank units only",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Infantry Tercio",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Troops - Lasrifle Section Units only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Recon - Hermes Light Sentinel Squadron units only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Prime Elites",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Heavy Transport",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Scout Tercio",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Recon - Hermes Light Sentinel Squadron units only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "War-engine - Aethon Heavy Sentinel Squadron units only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Chogorian Warband",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Fast Attack - Scimitar Jetbike Squadrons only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Fast Attack",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Recon - Outrider Squads Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "white-scars"
+      ]
+    },
+    {
+      "name": "Auxiliary - Terror Assault",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Troops - Terror Squads Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Fast Attack",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Berserker Cadre",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Heavy Assault - Rampager Squads Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Elites",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Bloodied Claw",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Troops - Grey Slayer Packs Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Heavy Assault",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Revelation Host",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Troops - Assault Squads Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Elites - Dawnbreaker Cohorts or Veteran Assault Squads Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "blood-angels"
+      ]
+    },
+    {
+      "name": "Auxiliary - Sons of Bodt",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Support - Apothecary Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        },
+        {
+          "role": "Prime Support",
+          "min": 0,
+          "max": 2,
+          "prime": true
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Spearhead Phalanx",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Heavy Transport - Land Raider Carrier or Spartan Only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Armour",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Heavy Assault",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Supremecy Cadre",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Elites",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 2,
+          "prime": true
+        },
+        {
+          "role": "Heavy Assault",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Stormwing Muster",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 2,
+          "prime": true
+        },
+        {
+          "role": "Transport",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "dark-angels"
+      ]
+    },
+    {
+      "name": "Auxiliary - Deathwing Conclave",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Retinue",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Prime Retinue",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Elites",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Heavy Assault",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "dark-angels"
+      ]
+    },
+    {
+      "name": "Auxiliary - Ravenwing Lance",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Recon - Outrider Squads Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Fast Attack",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Fast Attack",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "dark-angels"
+      ]
+    },
+    {
+      "name": "Auxiliary - Firewing Echelon",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Elites - Seeker Squads Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Recon",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Recon",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "dark-angels"
+      ]
+    },
+    {
+      "name": "Auxiliary - Ironwing Gauntlet",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Heavy Transport",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Armour",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "dark-angels"
+      ]
+    },
+    {
+      "name": "Auxiliary - Dreadwing Cadre",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Support - Dreadwing or Rapier Only",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        },
+        {
+          "role": "Prime Support",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "dark-angels"
+      ]
+    },
+    {
+      "name": "Auxiliary - Siege Gauntlet",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Troops - Breacher Squads Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Support",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Heavy Assault",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "imperial-fists"
+      ]
+    },
+    {
+      "name": "Auxiliary - Immolation Covenant",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Armour - Predator or Vindicator Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Support",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Support",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "salamanders"
+      ]
+    },
+    {
+      "name": "Auxiliary - Decapitation Cadre",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Recon - Reconnaissance Squad Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Elites - Veteran Assault Squads or Dark Fury Squads Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "raven-guard"
+      ]
+    },
+    {
+      "name": "Auxiliary - Prosperine Convocation",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Elites",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Heavy Transport",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Fast Attack",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "thousand-sons"
+      ]
+    },
+    {
+      "name": "Auxiliary - Headhunter Leviathal",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Elites - Seeker Squads or Headhunter Kill Teams Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Recon",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Recon",
+          "min": 0,
+          "max": 2,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "alpha-legion"
+      ]
+    },
+    {
+      "name": "Auxiliary - Daemonic Manifestation",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Heavy Assault - Ruinstorm Daemon Brutes Only",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Veteran Cadre",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Retinue",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Elites",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Heavy Transport",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Apothecarion Delegation",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Support - Apothecary Only",
+          "min": 0,
+          "max": 6,
+          "prime": false
+        },
+        {
+          "role": "Prime Support",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Techmarine Covenant",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Support - Techmarine Only",
+          "min": 0,
+          "max": 6,
+          "prime": false
+        },
+        {
+          "role": "Prime Support",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Storm Battery",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Support - Rapier Battery Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Armour - Arquitor or Vindicator Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Recon Demi-Company",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Recon - Reconnaissance Squad Only",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        },
+        {
+          "role": "Prime Recon",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Fast Attack",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Iron Tercio",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Troops - Tech-Priest unit only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Support - Castellax Battle Maniple or Thallax Cohort Unit only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Heavy Assault - Castellax Destructor Maniple only ",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Planetfall Speartip",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Prime Elites",
+          "min": 0,
+          "max": 2,
+          "prime": true
+        },
+        {
+          "role": "Elites - Veteran Assault Squads Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Retinue - Praetorian Command Squad with Jump Packs Only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Dreadnought Talon",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "War Engine - Contemptor Dreadnoughts Only",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Oversight Delegation",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Support - Militia Medicae Only",
+          "min": 0,
+          "max": 4,
+          "prime": false
+        },
+        {
+          "role": "Command",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "militia"
+      ]
+    },
+    {
+      "name": "Auxiliary - Storm Cadre",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Elites",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "militia"
+      ]
+    },
+    {
+      "name": "Auxiliary - Daemonic Manifestation",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Heavy Assault - Daemon Brute Units Only",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "militia"
+      ]
+    },
+    {
+      "name": "Auxiliary - Maelstrom Sentry Battery",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Support - Araknae Quad Accelerator Platform Units Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Recon - Tarantula Battery Units Only",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Hykanatoi Convocation",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Heavy Transport",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Tharanatoi Convocation",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Heavy Assault",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Heavy Assault",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Ephoroi Convocation",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Recon",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Recon",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Auxiliary - Kataphractoi Convocation",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Heavy Transport",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Armour",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Fast Attack",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Prime Fast Attack",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": []
+    }
+  ],
+  "apex": [
+    {
+      "name": "Apex - Combat Retinue",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Retinue",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        },
+        {
+          "role": "Prime Retinue",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "mechanicum",
+        "militia",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sisters-of-silence",
+        "skitarii",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "talons-of-the-emperor",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Apex - Officer Cadre",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Command",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Command",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "mechanicum",
+        "militia",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sisters-of-silence",
+        "skitarii",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "talons-of-the-emperor",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Apex - Army Vanguard",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Elites",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        },
+        {
+          "role": "Prime Elites",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "mechanicum",
+        "militia",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sisters-of-silence",
+        "skitarii",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "talons-of-the-emperor",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Apex - The Heart of Power",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Retinue",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        },
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 3,
+          "prime": true
+        },
+        {
+          "role": "Prime Retinue",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "mechanicum"
+      ]
+    },
+    {
+      "name": "Apex - Command Maniple",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Prime Elites",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Prime Support",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Prime War-engine",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Elites - Automata Only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Support - Automata Only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "War-Engine - Automata Only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "mechanicum"
+      ]
+    },
+    {
+      "name": "Apex - The Panoply of Cruelty",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Prime Heavy Assault",
+          "min": 0,
+          "max": 3,
+          "prime": true
+        },
+        {
+          "role": "Heavy Assault - Ursurax Cohorts Only",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "mechanicum"
+      ]
+    },
+    {
+      "name": "Apex - The Host of Destruction",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Prime Elites",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Elites - Myrmidax Only",
+          "min": 0,
+          "max": 4,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "mechanicum"
+      ]
+    },
+    {
+      "name": "Apex - Crux of Judgement",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Command - Arcuitor Magesterium Only",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "mechanicum"
+      ]
+    },
+    {
+      "name": "Apex - Iron Phalanx",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Armour",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        },
+        {
+          "role": "Heavy Transport",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        },
+        {
+          "role": "Prime Armour",
+          "min": 0,
+          "max": 3,
+          "prime": true
+        },
+        {
+          "role": "Prime Heavy Transport",
+          "min": 0,
+          "max": 3,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "mechanicum"
+      ]
+    },
+    {
+      "name": "Apex - Thallax Command Cohort",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Prime Support",
+          "min": 0,
+          "max": 3,
+          "prime": true
+        },
+        {
+          "role": "Support - Thallax Cohort Only",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "mechanicum"
+      ]
+    },
+    {
+      "name": "Apex - The Hammer of Olympia",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Heavy Assault",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Heavy Assault",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Heavy Transport",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "iron-warriors"
+      ]
+    },
+    {
+      "name": "Apex - Medusan Vanguard",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Command - Praevian Only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Prime Command",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "War-engine",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Support",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Heavy Assault",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Apex - Atramentar Hunt ",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Retinue - Cataphractii or Tartaros Command Squads Only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "Heavy Assault - Cataphractii or Tartaros Only",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Retinue",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Prime Heavy Assault",
+          "min": 0,
+          "max": 2,
+          "prime": true
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Apex - Exalted Conclave",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 2,
+          "prime": true
+        },
+        {
+          "role": "Elites",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "word-bearers"
+      ]
+    },
+    {
+      "name": "Apex - Grenadier Muster",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Elites",
+          "min": 0,
+          "max": 8,
+          "prime": false
+        },
+        {
+          "role": "Prime Elites",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "militia"
+      ]
+    },
+    {
+      "name": "Apex - Ogryn Auxilia",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Prime Heavy Assault",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Heavy Assault - Ogryn Brute Troop Units Only",
+          "min": 0,
+          "max": 8,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "militia"
+      ]
+    },
+    {
+      "name": "Apex - Infantry Cohort",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Troops",
+          "min": 0,
+          "max": 8,
+          "prime": false
+        },
+        {
+          "role": "Prime Troops",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "militia"
+      ]
+    },
+    {
+      "name": "Apex - Artillery Division",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Prime Support",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Support",
+          "min": 0,
+          "max": 8,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "militia"
+      ]
+    },
+    {
+      "name": "Apex - Cavalry Wing",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Prime Recon",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Recon - Cavalry Only",
+          "min": 0,
+          "max": 8,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "militia"
+      ]
+    },
+    {
+      "name": "Apex - Armoured Phalanx",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Armour",
+          "min": 0,
+          "max": 7,
+          "prime": false
+        },
+        {
+          "role": "Lord of War",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "militia"
+      ]
+    },
+    {
+      "name": "Apex - Linebreaker Echelon (Saturnine)",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Prime Heavy Assault",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Clade Operative",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Retinue - Saturnine Only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "War-engine",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Apex - Linebreaker Echelon (Cataphractii)",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Prime Heavy Assault",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Clade Operative",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Retinue - Cataphractii Only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "War-engine",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Apex - Linebreaker Echelon (Tartaros)",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Prime Heavy Assault",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        },
+        {
+          "role": "Clade Operative",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Retinue - Tartaros Only",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        },
+        {
+          "role": "War-engine",
+          "min": 0,
+          "max": 1,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Apex - Moritoi Convocation",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "War-engine",
+          "min": 0,
+          "max": 2,
+          "prime": false
+        },
+        {
+          "role": "Prime War-engine",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": []
+    },
+    {
+      "name": "Apex - Leviathan Armoured Fist",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Lord of War",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Apex - Leviathan Bastion of Fire",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Support",
+          "min": 0,
+          "max": 3,
+          "prime": false
+        },
+        {
+          "role": "Prime Support",
+          "min": 0,
+          "max": 1,
+          "prime": true
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    }
+  ],
+  "legion": {}
+}

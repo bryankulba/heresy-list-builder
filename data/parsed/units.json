@@ -1,0 +1,7001 @@
+{
+  "legiones-astartes": [
+    {
+      "name": "Rapier Battery",
+      "role": "Support",
+      "points": 40,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Rapier Crew",
+          "cost": 40,
+          "min": 1,
+          "max": 4
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Saturnine Terminator Squad",
+      "role": "Heavy Assault",
+      "points": 200,
+      "baseCost": 80,
+      "models": [
+        {
+          "name": "Saturnine Terminator",
+          "cost": 60,
+          "min": 2,
+          "max": 5
+        },
+        {
+          "name": "Saturnine Terminator Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Centurion",
+      "role": "Command",
+      "points": 80,
+      "baseCost": 80,
+      "models": [
+        {
+          "name": "Centurion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Praetor in Saturnine Terminator Armour",
+      "role": "High Command",
+      "points": 200,
+      "baseCost": 200,
+      "models": [
+        {
+          "name": "Saturnine Praetor",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Assault Squad",
+      "role": "Troops",
+      "points": 140,
+      "baseCost": 32,
+      "models": [
+        {
+          "name": "Legionary",
+          "cost": 12,
+          "min": 9,
+          "max": 19
+        },
+        {
+          "name": "Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Breacher Squad",
+      "role": "Troops",
+      "points": 140,
+      "baseCost": 32,
+      "models": [
+        {
+          "name": "Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Legionary",
+          "cost": 12,
+          "min": 9,
+          "max": 19
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Araknae Quad Accelerator Platform",
+      "role": "Support",
+      "points": 125,
+      "baseCost": 125,
+      "models": [
+        {
+          "name": "Araknae Quad Accelerator Platform",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Saturnine Dreadnought",
+      "role": "War-engine",
+      "points": 340,
+      "baseCost": 340,
+      "models": [
+        {
+          "name": "Saturnine Dreadnought",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Fellblade Super-Heavy Battle Tank",
+      "role": "Lord of War",
+      "points": 660,
+      "baseCost": 650,
+      "models": [
+        {
+          "name": "Fellblade Super-Heavy Tank",
+          "cost": 10,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Praetorian Command Squad",
+      "role": "Retinue",
+      "points": 130,
+      "baseCost": 50,
+      "models": [
+        {
+          "name": "Chosen Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Chosen",
+          "cost": 20,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Rhino",
+      "role": "Transport",
+      "points": 60,
+      "baseCost": 60,
+      "models": [
+        {
+          "name": "Rhino",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Spartan Assault Tank",
+      "role": "Heavy Transport",
+      "points": 400,
+      "baseCost": 400,
+      "models": [
+        {
+          "name": "Spartan",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Veteran Tactical Squad",
+      "role": "Elites",
+      "points": 85,
+      "baseCost": 25,
+      "models": [
+        {
+          "name": "Veteran Legionary",
+          "cost": 15,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Veteran Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Veteran Assault Squad",
+      "role": "Elites",
+      "points": 120,
+      "baseCost": 32,
+      "models": [
+        {
+          "name": "Veteran Legionary",
+          "cost": 22,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Veteran Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Tactical Squad",
+      "role": "Troops",
+      "points": 100,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Legionary",
+          "cost": 10,
+          "min": 9,
+          "max": 19
+        },
+        {
+          "name": "Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Deredeo Dreadnought",
+      "role": "War-engine",
+      "points": 190,
+      "baseCost": 190,
+      "models": [
+        {
+          "name": "Deredeo Dreadnought",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Leviathan Dreadnought",
+      "role": "War-engine",
+      "points": 220,
+      "baseCost": 220,
+      "models": [
+        {
+          "name": "Leviathan Dreadnought",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Praetor",
+      "role": "High Command",
+      "points": 120,
+      "baseCost": 120,
+      "models": [
+        {
+          "name": "Praetor",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Praetor in Terminator Armour",
+      "role": "High Command",
+      "points": 145,
+      "baseCost": 145,
+      "models": [
+        {
+          "name": "Cataphractii Praetor",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Optae",
+      "role": "Command",
+      "points": 50,
+      "baseCost": 50,
+      "models": [
+        {
+          "name": "Optae",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Centurion in Terminator Armour",
+      "role": "Command",
+      "points": 100,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Cataphractii Centurion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Damocles Command Rhino",
+      "role": "Command",
+      "points": 120,
+      "baseCost": 120,
+      "models": [
+        {
+          "name": "Damocles Command Rhino",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Librarian",
+      "role": "Command",
+      "points": 85,
+      "baseCost": 85,
+      "models": [
+        {
+          "name": "Librarian",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Legion Champion",
+      "role": "Command",
+      "points": 105,
+      "baseCost": 105,
+      "models": [
+        {
+          "name": "Legion Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Vigilator",
+      "role": "Command",
+      "points": 95,
+      "baseCost": 95,
+      "models": [
+        {
+          "name": "Vigilator",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Esoterist",
+      "role": "Command",
+      "points": 95,
+      "baseCost": 95,
+      "models": [
+        {
+          "name": "Esoterist",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Master of Signals",
+      "role": "Command",
+      "points": 115,
+      "baseCost": 115,
+      "models": [
+        {
+          "name": "Master of Signals",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Praevian",
+      "role": "Command",
+      "points": 95,
+      "baseCost": 95,
+      "models": [
+        {
+          "name": "Praevian",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Moritat",
+      "role": "Command",
+      "points": 95,
+      "baseCost": 95,
+      "models": [
+        {
+          "name": "Moritat",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Siege Breaker",
+      "role": "Command",
+      "points": 115,
+      "baseCost": 115,
+      "models": [
+        {
+          "name": "Siege Breaker",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Herald",
+      "role": "Command",
+      "points": 100,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Herald",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Chaplain",
+      "role": "Command",
+      "points": 80,
+      "baseCost": 80,
+      "models": [
+        {
+          "name": "Chaplain",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Praetorian Command Squad with Jump Packs",
+      "role": "Retinue",
+      "points": 160,
+      "baseCost": 60,
+      "models": [
+        {
+          "name": "Chosen Champion w/Jump Pack",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Chosen w/Jump Pack",
+          "cost": 25,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Centurion Command Squad",
+      "role": "Retinue",
+      "points": 85,
+      "baseCost": 25,
+      "models": [
+        {
+          "name": "Veteran Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Veteran",
+          "cost": 15,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Tartaros Terminator Command Squad",
+      "role": "Retinue",
+      "points": 140,
+      "baseCost": 60,
+      "models": [
+        {
+          "name": "Tartaros Chosen",
+          "cost": 40,
+          "min": 2,
+          "max": 9
+        },
+        {
+          "name": "Tartaros Chosen Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Cataphractii Terminator Squad",
+      "role": "Heavy Assault",
+      "points": 150,
+      "baseCost": 30,
+      "models": [
+        {
+          "name": "Cataphractii Terminator",
+          "cost": 30,
+          "min": 4,
+          "max": 11
+        },
+        {
+          "name": "Cataphractii Terminator Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Seeker Squad",
+      "role": "Elites",
+      "points": 105,
+      "baseCost": 33,
+      "models": [
+        {
+          "name": "Seeker",
+          "cost": 18,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Seeker Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Tartaros Terminator Squad",
+      "role": "Heavy Assault",
+      "points": 150,
+      "baseCost": 30,
+      "models": [
+        {
+          "name": "Tartaros Terminator",
+          "cost": 30,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Tartaros Terminator Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Cataphractii Terminator Command Squad",
+      "role": "Retinue",
+      "points": 140,
+      "baseCost": 60,
+      "models": [
+        {
+          "name": "Cataphractii Chosen",
+          "cost": 40,
+          "min": 2,
+          "max": 11
+        },
+        {
+          "name": "Cataphractii Chosen Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Despoiler Squad",
+      "role": "Troops",
+      "points": 100,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Legionary",
+          "cost": 10,
+          "min": 9,
+          "max": 19
+        },
+        {
+          "name": "Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Tactical Support Squad",
+      "role": "Support",
+      "points": 40,
+      "baseCost": 8,
+      "models": [
+        {
+          "name": "Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Legionary",
+          "cost": 8,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Heavy Support Squad",
+      "role": "Support",
+      "points": 50,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Legionary",
+          "cost": 10,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Apothecary",
+      "role": "Support",
+      "points": 30,
+      "baseCost": 30,
+      "models": [
+        {
+          "name": "Apothecary",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Techmarine",
+      "role": "Support",
+      "points": 50,
+      "baseCost": 50,
+      "models": [
+        {
+          "name": "Techmarine",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Deathstorm Drop Pod",
+      "role": "Support",
+      "points": 90,
+      "baseCost": 90,
+      "models": [
+        {
+          "name": "Deathstorm Drop Pod",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Contemptor Dreadnought",
+      "role": "War-engine",
+      "points": 150,
+      "baseCost": 150,
+      "models": [
+        {
+          "name": "Contemptor Dreadnought",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Termite",
+      "role": "Transport",
+      "points": 80,
+      "baseCost": 80,
+      "models": [
+        {
+          "name": "Termite",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Drop Pod",
+      "role": "Transport",
+      "points": 50,
+      "baseCost": 50,
+      "models": [
+        {
+          "name": "Drop Pod",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Land Raider Carrier",
+      "role": "Heavy Transport",
+      "points": 265,
+      "baseCost": 265,
+      "models": [
+        {
+          "name": "Land Raider Carrier",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Dreadnought Drop Pod",
+      "role": "Heavy Transport",
+      "points": 100,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Dreadnought Drop Pod",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Kharybdis Assault Claw",
+      "role": "Heavy Transport",
+      "points": 235,
+      "baseCost": 235,
+      "models": [
+        {
+          "name": "Kharybdis Assault Claw",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Dreadclaw Drop Pod",
+      "role": "Heavy Transport",
+      "points": 115,
+      "baseCost": 115,
+      "models": [
+        {
+          "name": "Dreadclaw Drop Pod",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Outrider Squadron",
+      "role": "Recon",
+      "points": 85,
+      "baseCost": 45,
+      "models": [
+        {
+          "name": "Outrider Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Outrider",
+          "cost": 20,
+          "min": 2,
+          "max": 9
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Reconnaissance Squad",
+      "role": "Recon",
+      "points": 110,
+      "baseCost": 42,
+      "models": [
+        {
+          "name": "Recon Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Recon Legionary",
+          "cost": 17,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Sabre",
+      "role": "Recon",
+      "points": 80,
+      "baseCost": 80,
+      "models": [
+        {
+          "name": "Sabre",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Land Raider Explorator",
+      "role": "Recon",
+      "points": 220,
+      "baseCost": 220,
+      "models": [
+        {
+          "name": "Land Raider Explorator",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Tarantula Battery",
+      "role": "Recon",
+      "points": 45,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Tarantula Sentry Gun",
+          "cost": 22.5,
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Scimitar Jetbike Squadron",
+      "role": "Fast Attack",
+      "points": 95,
+      "baseCost": 35,
+      "models": [
+        {
+          "name": "Scimitar Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Scimitar Hunter",
+          "cost": 30,
+          "min": 2,
+          "max": 9
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Xiphon Interceptor",
+      "role": "Fast Attack",
+      "points": 120,
+      "baseCost": 120,
+      "models": [
+        {
+          "name": "Xiphon Interceptor",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Storm Eagle",
+      "role": "Fast Attack",
+      "points": 200,
+      "baseCost": 200,
+      "models": [
+        {
+          "name": "Storm Eagle",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Fire Raptor",
+      "role": "Fast Attack",
+      "points": 220,
+      "baseCost": 220,
+      "models": [
+        {
+          "name": "Fire Raptor",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Javelin Speeder Squadron",
+      "role": "Fast Attack",
+      "points": 75,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Javelin Speeder",
+          "cost": 75,
+          "min": 1,
+          "max": 3
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Predator",
+      "role": "Armour",
+      "points": 100,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Predator",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Land Speeder Squadron",
+      "role": "Fast Attack",
+      "points": 50,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Land Speeder",
+          "cost": 50,
+          "min": 1,
+          "max": 5
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Sicaran",
+      "role": "Armour",
+      "points": 160,
+      "baseCost": 160,
+      "models": [
+        {
+          "name": "Sicaran",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Sicaran Venator",
+      "role": "Armour",
+      "points": 170,
+      "baseCost": 170,
+      "models": [
+        {
+          "name": "Sicaran Venator",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Kratos Assault Tank",
+      "role": "Armour",
+      "points": 280,
+      "baseCost": 280,
+      "models": [
+        {
+          "name": "Kratos Assault Tank",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Vindicator Siege Tank",
+      "role": "Armour",
+      "points": 140,
+      "baseCost": 140,
+      "models": [
+        {
+          "name": "Vindicator Siege Tank",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Scorpius Missile Tank",
+      "role": "Armour",
+      "points": 120,
+      "baseCost": 120,
+      "models": [
+        {
+          "name": "Scorpius Missile Tank",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Arquitor Bombard",
+      "role": "Armour",
+      "points": 150,
+      "baseCost": 150,
+      "models": [
+        {
+          "name": "Arquitor Bombard",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Cerberus Heavy Tank Destroyer",
+      "role": "Lord of War",
+      "points": 400,
+      "baseCost": 400,
+      "models": [
+        {
+          "name": "Cerberus Heavy Tank Destroyer",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Typhon Heavy Siege Tank",
+      "role": "Lord of War",
+      "points": 400,
+      "baseCost": 400,
+      "models": [
+        {
+          "name": "Typhon Heavy Siege Tank",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Glaive Super-Heavy Special Weapons Tank",
+      "role": "Lord of War",
+      "points": 650,
+      "baseCost": 650,
+      "models": [
+        {
+          "name": "Glaive Super-Heavy Special Weapons Tank",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Falchion Super-Heavy Tank Destroyer",
+      "role": "Lord of War",
+      "points": 650,
+      "baseCost": 650,
+      "models": [
+        {
+          "name": "Falchion Super-Heavy Tank Destroyer",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Thunderhawk Gunship",
+      "role": "Lord of War",
+      "points": 685,
+      "baseCost": 685,
+      "models": [
+        {
+          "name": "Thunderhawk Gunship",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mastodon Super-Heavy Assault Transport",
+      "role": "Lord of War",
+      "points": 610,
+      "baseCost": 600,
+      "models": [
+        {
+          "name": "Mastodon Super-Heavy Assault Transport",
+          "cost": 10,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Sokar Stormbird",
+      "role": "Lord of War",
+      "points": 850,
+      "baseCost": 850,
+      "models": [
+        {
+          "name": "Sokar Stormbird",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Master of Descent",
+      "role": "Command",
+      "points": 115,
+      "baseCost": 115,
+      "models": [
+        {
+          "name": "Master of Descent",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Overseer",
+      "role": "Command",
+      "points": 85,
+      "baseCost": 85,
+      "models": [
+        {
+          "name": "Overseer",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Augur Command and Control Squad",
+      "role": "Retinue",
+      "points": 80,
+      "baseCost": 80,
+      "models": [
+        {
+          "name": "Command and Control Legionary",
+          "cost": 0,
+          "min": 4,
+          "max": 4
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Hyperios Missile Tank",
+      "role": "Armour",
+      "points": 120,
+      "baseCost": 120,
+      "models": [
+        {
+          "name": "Hyperios Missile Tank",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mounted Praetor",
+      "role": "High Command",
+      "points": 160,
+      "baseCost": 160,
+      "models": [
+        {
+          "name": "Outrider Praetor",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mounted Centurion",
+      "role": "Command",
+      "points": 110,
+      "baseCost": 110,
+      "models": [
+        {
+          "name": "Outrider Centurion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Librarian With Jump Pack",
+      "role": "Command",
+      "points": 115,
+      "baseCost": 115,
+      "models": [
+        {
+          "name": "Librarian with Jump Pack",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mounted Librarian",
+      "role": "Command",
+      "points": 125,
+      "baseCost": 125,
+      "models": [
+        {
+          "name": "Outrider Librarian",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Librarian In Terminator Armour",
+      "role": "Command",
+      "points": 115,
+      "baseCost": 115,
+      "models": [
+        {
+          "name": "Cataphractii Librarian",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Esoterist With Jump Pack",
+      "role": "Command",
+      "points": 125,
+      "baseCost": 125,
+      "models": [
+        {
+          "name": "Esoterist with Jump Pack",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mounted Esoterist",
+      "role": "Command",
+      "points": 135,
+      "baseCost": 135,
+      "models": [
+        {
+          "name": "Outrider Esoterist",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Esoterist In Terminator Armour",
+      "role": "Command",
+      "points": 125,
+      "baseCost": 125,
+      "models": [
+        {
+          "name": "Cataphractii Esoterist",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Legion Champion With Jump Pack",
+      "role": "Command",
+      "points": 135,
+      "baseCost": 135,
+      "models": [
+        {
+          "name": "Legion Champion with Jump Pack",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mounted Legion Champion",
+      "role": "Command",
+      "points": 145,
+      "baseCost": 145,
+      "models": [
+        {
+          "name": "Outrider Legion Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Legion Champion In Terminator Armour",
+      "role": "Command",
+      "points": 135,
+      "baseCost": 135,
+      "models": [
+        {
+          "name": "Cataphractii Legion Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Chaplain With Jump Pack",
+      "role": "Command",
+      "points": 100,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Chaplain with Jump Pack",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mounted Chaplain",
+      "role": "Command",
+      "points": 110,
+      "baseCost": 110,
+      "models": [
+        {
+          "name": "Outrider Chaplain",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Chaplain In Terminator Armour",
+      "role": "Command",
+      "points": 110,
+      "baseCost": 110,
+      "models": [
+        {
+          "name": "Cataphractii Chaplain",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Herald With Jump Pack",
+      "role": "Command",
+      "points": 130,
+      "baseCost": 130,
+      "models": [
+        {
+          "name": "Herald with Jump Pack",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mounted Herald",
+      "role": "Command",
+      "points": 140,
+      "baseCost": 140,
+      "models": [
+        {
+          "name": "Outrider Herald",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Herald In Terminator Armour",
+      "role": "Command",
+      "points": 130,
+      "baseCost": 130,
+      "models": [
+        {
+          "name": "Cataphractii Herald",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Siege Breaker With Jump Pack",
+      "role": "Command",
+      "points": 135,
+      "baseCost": 135,
+      "models": [
+        {
+          "name": "Siege Breaker with Jump Pack",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mounted Siege Breaker",
+      "role": "Command",
+      "points": 145,
+      "baseCost": 145,
+      "models": [
+        {
+          "name": "Outrider Siege Breaker",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Siege Breaker In Terminator Armour",
+      "role": "Command",
+      "points": 130,
+      "baseCost": 130,
+      "models": [
+        {
+          "name": "Cataphractii Siege Breaker",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Master Of Signals With Jump Pack",
+      "role": "Command",
+      "points": 135,
+      "baseCost": 135,
+      "models": [
+        {
+          "name": "Master of Signals with Jump Pack",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mounted Master Of Signals",
+      "role": "Command",
+      "points": 145,
+      "baseCost": 145,
+      "models": [
+        {
+          "name": "Outrider Master of Signals",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Moritat Mortalis",
+      "role": "Command",
+      "points": 85,
+      "baseCost": 85,
+      "models": [
+        {
+          "name": "Moritat Mortalis",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Forge Lord",
+      "role": "Command",
+      "points": 110,
+      "baseCost": 110,
+      "models": [
+        {
+          "name": "Forge Lord",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mounted Forge Lord",
+      "role": "Command",
+      "points": 140,
+      "baseCost": 140,
+      "models": [
+        {
+          "name": "Outrider Forge Lord",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Forge Lord In Terminator Armour",
+      "role": "Command",
+      "points": 130,
+      "baseCost": 130,
+      "models": [
+        {
+          "name": "Cataphractii Forge Lord",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Primus Medicae",
+      "role": "Command",
+      "points": 100,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Primus Medicae",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mounted Primus Medicae",
+      "role": "Command",
+      "points": 130,
+      "baseCost": 130,
+      "models": [
+        {
+          "name": "Outrider Primus Medicae",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Primus Medicae In Terminator Armour",
+      "role": "Command",
+      "points": 120,
+      "baseCost": 120,
+      "models": [
+        {
+          "name": "Cataphractii Primus Medicae",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Delegatus",
+      "role": "Command",
+      "points": 100,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Delegatus",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mounted Delegatus",
+      "role": "Command",
+      "points": 130,
+      "baseCost": 130,
+      "models": [
+        {
+          "name": "Outrider Delegatus",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Delegatus In Terminator Armour",
+      "role": "Command",
+      "points": 120,
+      "baseCost": 120,
+      "models": [
+        {
+          "name": "Cataphractii Delegatus",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mortificator",
+      "role": "Command",
+      "points": 100,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Mortificator",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mortificator In Terminator Armour",
+      "role": "Command",
+      "points": 120,
+      "baseCost": 120,
+      "models": [
+        {
+          "name": "Cataphractii Mortificator",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Warmonger",
+      "role": "Command",
+      "points": 130,
+      "baseCost": 130,
+      "models": [
+        {
+          "name": "Warmonger",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Warmonger In Terminator Armour",
+      "role": "Command",
+      "points": 150,
+      "baseCost": 150,
+      "models": [
+        {
+          "name": "Cataphractii Warmonger",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Pathfinder",
+      "role": "Command",
+      "points": 60,
+      "baseCost": 60,
+      "models": [
+        {
+          "name": "Pathfinder",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Armistos",
+      "role": "Command",
+      "points": 70,
+      "baseCost": 70,
+      "models": [
+        {
+          "name": "Armistos",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Praetorian Command Squad On Scimitar Jetbikes",
+      "role": "Retinue",
+      "points": 170,
+      "baseCost": 80,
+      "models": [
+        {
+          "name": "Scimitar Chosen",
+          "cost": 45,
+          "min": 2,
+          "max": 9
+        },
+        {
+          "name": "Scimitar Chosen Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Outrider Praetorian Command Squad",
+      "role": "Retinue",
+      "points": 150,
+      "baseCost": 70,
+      "models": [
+        {
+          "name": "Outrider Chosen",
+          "cost": 40,
+          "min": 2,
+          "max": 9
+        },
+        {
+          "name": "Outrider Chosen Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Veteran Breacher Squad",
+      "role": "Elites",
+      "points": 115,
+      "baseCost": 35,
+      "models": [
+        {
+          "name": "Breacher Veteran",
+          "cost": 20,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Veteran Breacher Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Veteran Heavy Support Squad",
+      "role": "Elites",
+      "points": 115,
+      "baseCost": 35,
+      "models": [
+        {
+          "name": "Support Veteran",
+          "cost": 20,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Veteran Support Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Tartaros Terminator Siege Squad",
+      "role": "Heavy Assault",
+      "points": 150,
+      "baseCost": 30,
+      "models": [
+        {
+          "name": "Tartaros Terminator",
+          "cost": 30,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Tartaros Terminator Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Indomitus Terminator Squad",
+      "role": "Heavy Assault",
+      "points": 180,
+      "baseCost": 40,
+      "models": [
+        {
+          "name": "Indomitus Terminator",
+          "cost": 35,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Indomitus Terminator Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Mortalis Destroyer Squad",
+      "role": "Heavy Assault",
+      "points": 85,
+      "baseCost": 25,
+      "models": [
+        {
+          "name": "Mortalis Destroyer",
+          "cost": 15,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Mortalis Destroyer Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Destroyer Assault Squad",
+      "role": "Heavy Assault",
+      "points": 100,
+      "baseCost": 28,
+      "models": [
+        {
+          "name": "Assault Destroyer",
+          "cost": 18,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Assault Destroyer Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Castra Ferrum Dreadnought",
+      "role": "War-engine",
+      "points": 115,
+      "baseCost": 115,
+      "models": [
+        {
+          "name": "Castra Ferrum Dreadnought",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Land Raider Achilles",
+      "role": "Heavy Transport",
+      "points": 280,
+      "baseCost": 280,
+      "models": [
+        {
+          "name": "Land Raider Achilles",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Caestus Assault Ram",
+      "role": "Heavy Transport",
+      "points": 290,
+      "baseCost": 290,
+      "models": [
+        {
+          "name": "Caestus Assault Ram",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Attack Bike Squadron",
+      "role": "Recon",
+      "points": 45,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Attack Bike",
+          "cost": 45,
+          "min": 1,
+          "max": 5
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Scout Squad",
+      "role": "Recon",
+      "points": 70,
+      "baseCost": 22,
+      "models": [
+        {
+          "name": "Scout",
+          "cost": 12,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Scout Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Legion Basilisk",
+      "role": "Armour",
+      "points": 140,
+      "baseCost": 140,
+      "models": [
+        {
+          "name": "Legion Basilisk",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Legion Medusa",
+      "role": "Armour",
+      "points": 150,
+      "baseCost": 150,
+      "models": [
+        {
+          "name": "Legion Medusa",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Thunderhawk Transporter",
+      "role": "Lord of War",
+      "points": 500,
+      "baseCost": 500,
+      "models": [
+        {
+          "name": "Thunderhawk Transporter",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Centurion in Saturnine Terminator Armour",
+      "role": "Command",
+      "points": 150,
+      "baseCost": 150,
+      "models": [
+        {
+          "name": "Saturnine Centurion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Saturnine Terminator Command Squad",
+      "role": "Retinue",
+      "points": 160,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Saturnine Chosen",
+          "cost": 60,
+          "min": 1,
+          "max": 5
+        },
+        {
+          "name": "Saturnine Chosen Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    },
+    {
+      "name": "Whirlwind Missile Tank",
+      "role": "Armour",
+      "points": 100,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Whirlwind",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "legiones-astartes"
+    }
+  ],
+  "alpha-legion": [
+    {
+      "name": "Armillus Dynat",
+      "role": "High Command",
+      "points": 185,
+      "baseCost": 185,
+      "models": [
+        {
+          "name": "Armillus Dynat",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "alpha-legion"
+    },
+    {
+      "name": "Saboteur",
+      "role": "Command",
+      "points": 95,
+      "baseCost": 95,
+      "models": [
+        {
+          "name": "Saboteur",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "alpha-legion"
+    },
+    {
+      "name": "Headhunter Kill Team",
+      "role": "Elites",
+      "points": 125,
+      "baseCost": 45,
+      "models": [
+        {
+          "name": "Headhunter Prime",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Headhunter",
+          "cost": 20,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "alpha-legion"
+    },
+    {
+      "name": "Exodus",
+      "role": "Elites",
+      "points": 165,
+      "baseCost": 165,
+      "models": [
+        {
+          "name": "Exodus",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "alpha-legion"
+    },
+    {
+      "name": "Lernaean Terminator Squad",
+      "role": "Elites",
+      "points": 250,
+      "baseCost": 70,
+      "models": [
+        {
+          "name": "Harrower",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Lernaean",
+          "cost": 45,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "alpha-legion"
+    },
+    {
+      "name": "Alpharius",
+      "role": "Warlord",
+      "points": 465,
+      "baseCost": 465,
+      "models": [
+        {
+          "name": "Alpharius",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "alpha-legion"
+    },
+    {
+      "name": "Autilon Skorr",
+      "role": "Command",
+      "points": 135,
+      "baseCost": 135,
+      "models": [
+        {
+          "name": "Autilon Skorr",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "alpha-legion"
+    },
+    {
+      "name": "Effrit Disruption Cadre",
+      "role": "Recon",
+      "points": 145,
+      "baseCost": 45,
+      "models": [
+        {
+          "name": "Principal",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Disruptors",
+          "cost": 25,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "alpha-legion"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 90,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "alpha-legion"
+    }
+  ],
+  "blood-angels": [
+    {
+      "name": "Sanguinius",
+      "role": "Warlord",
+      "points": 970,
+      "baseCost": 485,
+      "models": [
+        {
+          "name": "Sanguinius",
+          "cost": 485,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "blood-angels"
+    },
+    {
+      "name": "Chapter Master Raldoron",
+      "role": "High Command",
+      "points": 360,
+      "baseCost": 180,
+      "models": [
+        {
+          "name": "Raldoron",
+          "cost": 180,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "blood-angels"
+    },
+    {
+      "name": "Dominion Zephon",
+      "role": "Command",
+      "points": 370,
+      "baseCost": 185,
+      "models": [
+        {
+          "name": "Dominion Zephon",
+          "cost": 185,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "blood-angels"
+    },
+    {
+      "name": "Aster Chrone",
+      "role": "Command",
+      "points": 310,
+      "baseCost": 155,
+      "models": [
+        {
+          "name": "Aster Chrone",
+          "cost": 155,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "blood-angels"
+    },
+    {
+      "name": "Contemptor-Incaendius Dreadnought",
+      "role": "War-engine",
+      "points": 400,
+      "baseCost": 200,
+      "models": [
+        {
+          "name": "Contemptor-Incaendius Dreadnought",
+          "cost": 200,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "blood-angels"
+    },
+    {
+      "name": "Crimson Paladins",
+      "role": "Elites",
+      "points": 230,
+      "baseCost": 65,
+      "models": [
+        {
+          "name": "Crimson Exemplar",
+          "cost": 5,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Crimson Paladin",
+          "cost": 40,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "blood-angels"
+    },
+    {
+      "name": "Dawnbreaker Cohort",
+      "role": "Elites",
+      "points": 150,
+      "baseCost": 50,
+      "models": [
+        {
+          "name": "Dawnbreaker Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Dawnbreaker",
+          "cost": 25,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "blood-angels"
+    },
+    {
+      "name": "The Angel&apos;s Tears",
+      "role": "Heavy Assault",
+      "points": 150,
+      "baseCost": 70,
+      "models": [
+        {
+          "name": "Erelim",
+          "cost": 20,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Arch-Erelim",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "blood-angels"
+    },
+    {
+      "name": "Sanguinary Guard",
+      "role": "Retinue",
+      "points": 205,
+      "baseCost": 5,
+      "models": [
+        {
+          "name": "Sanguinary Guard",
+          "cost": 40,
+          "min": 5,
+          "max": 10
+        }
+      ],
+      "source": "blood-angels"
+    },
+    {
+      "name": "Ofanim Court",
+      "role": "Retinue",
+      "points": 130,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Ofanim",
+          "cost": 40,
+          "min": 3,
+          "max": 5
+        }
+      ],
+      "source": "blood-angels"
+    },
+    {
+      "name": "Ofanim Court With Jump Packs",
+      "role": "Retinue",
+      "points": 160,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Ofanim with Jump Pack",
+          "cost": 50,
+          "min": 3,
+          "max": 5
+        }
+      ],
+      "source": "blood-angels"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 100,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "blood-angels"
+    }
+  ],
+  "dark-angels": [
+    {
+      "name": "Corswain",
+      "role": "High Command",
+      "points": 220,
+      "baseCost": 220,
+      "models": [
+        {
+          "name": "Corswain",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "dark-angels"
+    },
+    {
+      "name": "Deathwing Companion Detachment",
+      "role": "Retinue",
+      "points": 185,
+      "baseCost": 55,
+      "models": [
+        {
+          "name": "Deathwing Companion",
+          "cost": 30,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Deathwing Oathbearer",
+          "cost": 10,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "dark-angels"
+    },
+    {
+      "name": "Dreadwing Interemptor Squad",
+      "role": "Support",
+      "points": 135,
+      "baseCost": 45,
+      "models": [
+        {
+          "name": "Interemptor Praefectus",
+          "cost": 10,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Interemptors",
+          "cost": 20,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "dark-angels"
+    },
+    {
+      "name": "Inner Circle Knights Cenobium",
+      "role": "Elites",
+      "points": 285,
+      "baseCost": 75,
+      "models": [
+        {
+          "name": "Order Cenobite",
+          "cost": 50,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Order Preceptor",
+          "cost": 10,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "dark-angels"
+    },
+    {
+      "name": "Lion El&apos;Johnson",
+      "role": "Warlord",
+      "points": 460,
+      "baseCost": 460,
+      "models": [
+        {
+          "name": "Lion El&apos;Johnson",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "dark-angels"
+    },
+    {
+      "name": "Marduk Sedras",
+      "role": "High Command",
+      "points": 225,
+      "baseCost": 225,
+      "models": [
+        {
+          "name": "Marduk Sedras",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "dark-angels"
+    },
+    {
+      "name": "Cataphractii Terminator Deathwing Companions",
+      "role": "Retinue",
+      "points": 265,
+      "baseCost": 240,
+      "models": [
+        {
+          "name": "Cataphractii Companion",
+          "cost": 5,
+          "min": 4,
+          "max": 4
+        },
+        {
+          "name": "Cataphractii Oathbearer",
+          "cost": 5,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "dark-angels"
+    },
+    {
+      "name": "Tartaros Terminator Deathwing Companions",
+      "role": "Retinue",
+      "points": 265,
+      "baseCost": 240,
+      "models": [
+        {
+          "name": "Tartaros Companion",
+          "cost": 5,
+          "min": 4,
+          "max": 4
+        },
+        {
+          "name": "Tartaros Oathbearer",
+          "cost": 5,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "dark-angels"
+    },
+    {
+      "name": "Inner Circle Knights Cenobium – Order of the Broken Claws",
+      "role": "Elites",
+      "points": 295,
+      "baseCost": 65,
+      "models": [
+        {
+          "name": "Order Cenobite",
+          "cost": 55,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Order Preceptor",
+          "cost": 10,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "dark-angels"
+    },
+    {
+      "name": "Excindio Battle-automata",
+      "role": "War-engine",
+      "points": 185,
+      "baseCost": 180,
+      "models": [
+        {
+          "name": "Excindio Battle-automata",
+          "cost": 5,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "dark-angels"
+    },
+    {
+      "name": "Firewing Enigmatus Cabal",
+      "role": "Elites",
+      "points": 135,
+      "baseCost": 90,
+      "models": [
+        {
+          "name": "Firewing Enigmatii",
+          "cost": 15,
+          "min": 3,
+          "max": 3
+        }
+      ],
+      "source": "dark-angels"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 90,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "dark-angels"
+    }
+  ],
+  "death-guard": [
+    {
+      "name": "Mortarion",
+      "role": "Warlord",
+      "points": 425,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Mortarion",
+          "cost": 425,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "death-guard"
+    },
+    {
+      "name": "Calas Typhon",
+      "role": "High Command",
+      "points": 200,
+      "baseCost": 200,
+      "models": [
+        {
+          "name": "Calas Typhon",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "death-guard"
+    },
+    {
+      "name": "Deathshroud Terminator Squad",
+      "role": "Retinue",
+      "points": 100,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Deathshroud",
+          "cost": 45,
+          "min": 2,
+          "max": 10
+        }
+      ],
+      "source": "death-guard"
+    },
+    {
+      "name": "Grave Warden Terminator Squad",
+      "role": "Heavy Assault",
+      "points": 225,
+      "baseCost": 65,
+      "models": [
+        {
+          "name": "Chem-master",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Grave Warden",
+          "cost": 40,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "death-guard"
+    },
+    {
+      "name": "Mortus Poisoner Squad",
+      "role": "Elites",
+      "points": 70,
+      "baseCost": 22,
+      "models": [
+        {
+          "name": "Mortus Poisoner",
+          "cost": 12,
+          "min": 4,
+          "max": 14
+        },
+        {
+          "name": "Poison-master",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "death-guard"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 90,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "death-guard"
+    }
+  ],
+  "emperors-children": [
+    {
+      "name": "Fulgrim",
+      "role": "Warlord",
+      "points": 850,
+      "baseCost": 425,
+      "models": [
+        {
+          "name": "Fulgrim",
+          "cost": 425,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "emperors-children"
+    },
+    {
+      "name": "Fulgrim Transfigured",
+      "role": "Warlord",
+      "points": 600,
+      "baseCost": 600,
+      "models": [
+        {
+          "name": "Fulgrim Transfigured",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "emperors-children"
+    },
+    {
+      "name": "Lord Commander Eidolon",
+      "role": "High Command",
+      "points": 215,
+      "baseCost": 215,
+      "models": [
+        {
+          "name": "Lord Commander Eidolon",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "emperors-children"
+    },
+    {
+      "name": "Captain Lucius",
+      "role": "Command",
+      "points": 215,
+      "baseCost": 215,
+      "models": [
+        {
+          "name": "Captain Lucius",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "emperors-children"
+    },
+    {
+      "name": "Saul Tarvitz",
+      "role": "Command",
+      "points": 215,
+      "baseCost": 215,
+      "models": [
+        {
+          "name": "Saul Tarvitz",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "emperors-children"
+    },
+    {
+      "name": "Phoenix Terminator Squad",
+      "role": "Retinue",
+      "points": 205,
+      "baseCost": 60,
+      "models": [
+        {
+          "name": "Phoenix Champion",
+          "cost": 5,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Phoenix Terminator",
+          "cost": 35,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "emperors-children"
+    },
+    {
+      "name": "Palatine Blade Squad",
+      "role": "Elites",
+      "points": 165,
+      "baseCost": 53,
+      "models": [
+        {
+          "name": "Palatine Prefector",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Palatine Warrior",
+          "cost": 28,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "emperors-children"
+    },
+    {
+      "name": "Kakophoni Squad",
+      "role": "Support",
+      "points": 150,
+      "baseCost": 50,
+      "models": [
+        {
+          "name": "Orchestrator",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Chora",
+          "cost": 25,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "emperors-children"
+    },
+    {
+      "name": "Palatine Blade Aquilae Squad",
+      "role": "Elites",
+      "points": 195,
+      "baseCost": 63,
+      "models": [
+        {
+          "name": "Palatine Warrior with Jump Pack",
+          "cost": 33,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Palatine Prefector with Jump Pack",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "emperors-children"
+    },
+    {
+      "name": "Rylanor The Unyielding",
+      "role": "War-engine",
+      "points": 180,
+      "baseCost": 180,
+      "models": [
+        {
+          "name": "Rylanor",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "emperors-children"
+    },
+    {
+      "name": "Sun Killer Squad",
+      "role": "Elites",
+      "points": 65,
+      "baseCost": 25,
+      "models": [
+        {
+          "name": "Sun Killer",
+          "cost": 10,
+          "min": 4,
+          "max": 19
+        },
+        {
+          "name": "Novaetor",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "emperors-children"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 100,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "emperors-children"
+    }
+  ],
+  "imperial-fists": [
+    {
+      "name": "Sigismund",
+      "role": "High Command",
+      "points": 250,
+      "baseCost": 250,
+      "models": [
+        {
+          "name": "Sigismund",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "imperial-fists"
+    },
+    {
+      "name": "Rogal Dorn",
+      "role": "Warlord",
+      "points": 415,
+      "baseCost": 415,
+      "models": [
+        {
+          "name": "Rogal Dorn",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "imperial-fists"
+    },
+    {
+      "name": "Evander Garrius",
+      "role": "High Command",
+      "points": 215,
+      "baseCost": 215,
+      "models": [
+        {
+          "name": "Evander Garrius ",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "imperial-fists"
+    },
+    {
+      "name": "Phalanx Warder-Squad",
+      "role": "Heavy Assault",
+      "points": 200,
+      "baseCost": 38,
+      "models": [
+        {
+          "name": "Warder Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Phalanx Warder ",
+          "cost": 18,
+          "min": 9,
+          "max": 19
+        }
+      ],
+      "source": "imperial-fists"
+    },
+    {
+      "name": "Camba Diaz",
+      "role": "Command",
+      "points": 120,
+      "baseCost": 120,
+      "models": [
+        {
+          "name": "Camba Diaz",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "imperial-fists"
+    },
+    {
+      "name": "Alexis Polux",
+      "role": "Command",
+      "points": 185,
+      "baseCost": 185,
+      "models": [
+        {
+          "name": "Alexis Polux",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "imperial-fists"
+    },
+    {
+      "name": "Templar Brethren",
+      "role": "Elites",
+      "points": 160,
+      "baseCost": 52,
+      "models": [
+        {
+          "name": "Templar Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Templar Brethren",
+          "cost": 27,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "imperial-fists"
+    },
+    {
+      "name": "Fafnir Rann",
+      "role": "High Command",
+      "points": 175,
+      "baseCost": 175,
+      "models": [
+        {
+          "name": "Fafnir Rann ",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "imperial-fists"
+    },
+    {
+      "name": "Huscarl Terminator Retinue",
+      "role": "Retinue",
+      "points": 275,
+      "baseCost": 75,
+      "models": [
+        {
+          "name": "Huscarl Terminator",
+          "cost": 50,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Huscarl Terminator Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "imperial-fists"
+    },
+    {
+      "name": "Ætos Dios",
+      "role": "Lord of War",
+      "points": 700,
+      "baseCost": 700,
+      "models": [
+        {
+          "name": "Ætos Dios",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "imperial-fists"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 90,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "imperial-fists"
+    }
+  ],
+  "iron-hands": [
+    {
+      "name": "Ferrus Manus",
+      "role": "Warlord",
+      "points": 465,
+      "baseCost": 465,
+      "models": [
+        {
+          "name": "Ferrus Manus",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "iron-hands"
+    },
+    {
+      "name": "Iron Father",
+      "role": "High Command",
+      "points": 205,
+      "baseCost": 175,
+      "models": [
+        {
+          "name": "Iron Father",
+          "cost": 30,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "iron-hands"
+    },
+    {
+      "name": "Medusan Immortals Squad",
+      "role": "Troops",
+      "points": 95,
+      "baseCost": 35,
+      "models": [
+        {
+          "name": "Immortal Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Immortal",
+          "cost": 15,
+          "min": 4,
+          "max": 19
+        }
+      ],
+      "source": "iron-hands"
+    },
+    {
+      "name": "Shadrak Meduson",
+      "role": "High Command",
+      "points": 175,
+      "baseCost": 175,
+      "models": [
+        {
+          "name": "Shadrak Meduson",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "iron-hands"
+    },
+    {
+      "name": "Gorgon Terminator Squad",
+      "role": "Heavy Assault",
+      "points": 200,
+      "baseCost": 60,
+      "models": [
+        {
+          "name": "Gorgon Hammerbearer",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Gorgon Terminator",
+          "cost": 35,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "iron-hands"
+    },
+    {
+      "name": "Iron Father In Artificer Armour",
+      "role": "High Command",
+      "points": 150,
+      "baseCost": 150,
+      "models": [
+        {
+          "name": "Iron Father in Artificer Armour",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "iron-hands"
+    },
+    {
+      "name": "Morlock Terminator Squad",
+      "role": "Retinue",
+      "points": 165,
+      "baseCost": 65,
+      "models": [
+        {
+          "name": "Morlock",
+          "cost": 50,
+          "min": 2,
+          "max": 4
+        },
+        {
+          "name": "Augmentor",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "iron-hands"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 90,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "iron-hands"
+    }
+  ],
+  "iron-warriors": [
+    {
+      "name": "Perturabo",
+      "role": "Warlord",
+      "points": 460,
+      "baseCost": 425,
+      "models": [
+        {
+          "name": "Perturabo",
+          "cost": 35,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "iron-warriors"
+    },
+    {
+      "name": "Warsmith",
+      "role": "High Command",
+      "points": 175,
+      "baseCost": 165,
+      "models": [
+        {
+          "name": "Warsmith",
+          "cost": 10,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "iron-warriors"
+    },
+    {
+      "name": "Tyrant Siege Terminator Squad",
+      "role": "Heavy Assault",
+      "points": 300,
+      "baseCost": 80,
+      "models": [
+        {
+          "name": "Siege Master",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Tyrant",
+          "cost": 55,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "iron-warriors"
+    },
+    {
+      "name": "Iron Circle Maniple",
+      "role": "Retinue",
+      "points": 150,
+      "baseCost": 15,
+      "models": [
+        {
+          "name": "Domitar-ferrum",
+          "cost": 135,
+          "min": 1,
+          "max": 6
+        }
+      ],
+      "source": "iron-warriors"
+    },
+    {
+      "name": "Warsmith In Artificer Armour",
+      "role": "High Command",
+      "points": 140,
+      "baseCost": 140,
+      "models": [
+        {
+          "name": "Warsmith in Artificer Armour",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "iron-warriors"
+    },
+    {
+      "name": "Nârik Dreygur",
+      "role": "Command",
+      "points": 115,
+      "baseCost": 115,
+      "models": [
+        {
+          "name": "Nârik Dreygur",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "iron-warriors"
+    },
+    {
+      "name": "Dominator Cohort",
+      "role": "Retinue",
+      "points": 255,
+      "baseCost": 30,
+      "models": [
+        {
+          "name": "Dominator",
+          "cost": 45,
+          "min": 5,
+          "max": 10
+        }
+      ],
+      "source": "iron-warriors"
+    },
+    {
+      "name": "Iron Havocs",
+      "role": "Support",
+      "points": 135,
+      "baseCost": 35,
+      "models": [
+        {
+          "name": "Iron Havoc",
+          "cost": 25,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Iron Havoc Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "iron-warriors"
+    },
+    {
+      "name": "The Tormentor",
+      "role": "Lord of War",
+      "points": 700,
+      "baseCost": 700,
+      "models": [
+        {
+          "name": "The Tormentor",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "iron-warriors"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 90,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "iron-warriors"
+    }
+  ],
+  "night-lords": [
+    {
+      "name": "Konrad Curze",
+      "role": "Warlord",
+      "points": 450,
+      "baseCost": 450,
+      "models": [
+        {
+          "name": "Konrad Curze",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "night-lords"
+    },
+    {
+      "name": "Contekar Terminator Squad",
+      "role": "Elites",
+      "points": 225,
+      "baseCost": 65,
+      "models": [
+        {
+          "name": "Dissident",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Contekar",
+          "cost": 40,
+          "min": 4,
+          "max": 14
+        }
+      ],
+      "source": "night-lords"
+    },
+    {
+      "name": "Night Raptor Squad",
+      "role": "Fast Attack",
+      "points": 150,
+      "baseCost": 50,
+      "models": [
+        {
+          "name": "Huntmaster",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Night Raptor",
+          "cost": 25,
+          "min": 4,
+          "max": 14
+        }
+      ],
+      "source": "night-lords"
+    },
+    {
+      "name": "Terror Squad",
+      "role": "Troops",
+      "points": 120,
+      "baseCost": 43,
+      "models": [
+        {
+          "name": "Headsman",
+          "cost": 5,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Executioner",
+          "cost": 18,
+          "min": 4,
+          "max": 19
+        }
+      ],
+      "source": "night-lords"
+    },
+    {
+      "name": "Sevatar",
+      "role": "High Command",
+      "points": 220,
+      "baseCost": 220,
+      "models": [
+        {
+          "name": "Sevatar",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "night-lords"
+    },
+    {
+      "name": "Atramentar Flay-clade",
+      "role": "Heavy Assault",
+      "points": 170,
+      "baseCost": 30,
+      "models": [
+        {
+          "name": "Atramentar Trucidor",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Atramentar",
+          "cost": 35,
+          "min": 4,
+          "max": 19
+        }
+      ],
+      "source": "night-lords"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 100,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "night-lords"
+    }
+  ],
+  "raven-guard": [
+    {
+      "name": "Corvus Corax",
+      "role": "Warlord",
+      "points": 440,
+      "baseCost": 440,
+      "models": [
+        {
+          "name": "Corvus Corax",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "raven-guard"
+    },
+    {
+      "name": "Kaedes Nex",
+      "role": "Command",
+      "points": 165,
+      "baseCost": 165,
+      "models": [
+        {
+          "name": "Kaedes Nex",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "raven-guard"
+    },
+    {
+      "name": "Mor Deythan Squad",
+      "role": "Elites",
+      "points": 175,
+      "baseCost": 55,
+      "models": [
+        {
+          "name": "Mor Deythan",
+          "cost": 30,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Mor Deythan Shade",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "raven-guard"
+    },
+    {
+      "name": "Dark Fury Squad",
+      "role": "Elites",
+      "points": 175,
+      "baseCost": 20,
+      "models": [
+        {
+          "name": "Dark Fury",
+          "cost": 30,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Chooser of the Slain",
+          "cost": 35,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "raven-guard"
+    },
+    {
+      "name": "Deliverers Squad",
+      "role": "Elites",
+      "points": 215,
+      "baseCost": 55,
+      "models": [
+        {
+          "name": "Deliverer",
+          "cost": 40,
+          "min": 4,
+          "max": 14
+        },
+        {
+          "name": "Deliverer Chieftain",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "raven-guard"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 90,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "raven-guard"
+    }
+  ],
+  "salamanders": [
+    {
+      "name": "Firedrake Terminator Squad",
+      "role": "Elites",
+      "points": 250,
+      "baseCost": 70,
+      "models": [
+        {
+          "name": "Firedrake",
+          "cost": 45,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Firedrake Master",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "salamanders"
+    },
+    {
+      "name": "Vulkan",
+      "role": "Warlord",
+      "points": 465,
+      "baseCost": 465,
+      "models": [
+        {
+          "name": "Vulkan",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "salamanders"
+    },
+    {
+      "name": "Pyroclast Squad",
+      "role": "Heavy Assault",
+      "points": 175,
+      "baseCost": 55,
+      "models": [
+        {
+          "name": "Pyroclast",
+          "cost": 30,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Pyroclast Warden",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "salamanders"
+    },
+    {
+      "name": "Cassian Dracos Reborn",
+      "role": "High Command",
+      "points": 220,
+      "baseCost": 220,
+      "models": [
+        {
+          "name": "Cassian Dracos Reborn",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "salamanders"
+    },
+    {
+      "name": "Adherents Squad",
+      "role": "Troops",
+      "points": 85,
+      "baseCost": 25,
+      "models": [
+        {
+          "name": "Advocate",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Adherent",
+          "cost": 15,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "salamanders"
+    },
+    {
+      "name": "Sanctifier Squad",
+      "role": "Support",
+      "points": 90,
+      "baseCost": 26,
+      "models": [
+        {
+          "name": "Consecrator",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Sanctifier",
+          "cost": 16,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "salamanders"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 124,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        },
+        {
+          "name": "Inductii Master",
+          "cost": 24,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "salamanders"
+    }
+  ],
+  "sons-of-horus": [
+    {
+      "name": "Horus Lupercal",
+      "role": "Warlord",
+      "points": 530,
+      "baseCost": 530,
+      "models": [
+        {
+          "name": "Horus Lupercal",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "Ezekyle Abbadon",
+      "role": "High Command",
+      "points": 250,
+      "baseCost": 250,
+      "models": [
+        {
+          "name": "Ezekyle Abbadon",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "Dark Emmissary",
+      "role": "Command",
+      "points": 90,
+      "baseCost": 90,
+      "models": [
+        {
+          "name": "Dark Emmissary",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "Vheren Ashurhaddon",
+      "role": "High Command",
+      "points": 205,
+      "baseCost": 205,
+      "models": [
+        {
+          "name": "Vheren Ashurhaddon",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "Horus Ascended",
+      "role": "Warlord",
+      "points": 850,
+      "baseCost": 850,
+      "models": [
+        {
+          "name": "Horus Ascended",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "Justaerin Terminator Squad",
+      "role": "Elites",
+      "points": 275,
+      "baseCost": 25,
+      "models": [
+        {
+          "name": "Justaerin",
+          "cost": 50,
+          "min": 5,
+          "max": 10
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "&apos;Little&apos; Horus Aximand ",
+      "role": "High Command",
+      "points": 170,
+      "baseCost": 170,
+      "models": [
+        {
+          "name": "Horus Aximand ",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "Garviel Loken",
+      "role": "High Command",
+      "points": 175,
+      "baseCost": 175,
+      "models": [
+        {
+          "name": "Garviel Loken",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "Tybalt Marr",
+      "role": "High Command",
+      "points": 160,
+      "baseCost": 160,
+      "models": [
+        {
+          "name": "Tybalt Marr",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "Reaver Attack Squad",
+      "role": "Heavy Assault",
+      "points": 135,
+      "baseCost": 47,
+      "models": [
+        {
+          "name": "Reaver Chieftain",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Reaver",
+          "cost": 22,
+          "min": 4,
+          "max": 19
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "Maloghurst the Twisted",
+      "role": "Command",
+      "points": 140,
+      "baseCost": 140,
+      "models": [
+        {
+          "name": "Maloghurst the Twisted",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "Reaver Aggressor Squad",
+      "role": "Heavy Assault",
+      "points": 165,
+      "baseCost": 57,
+      "models": [
+        {
+          "name": "Reaver with Jump Pack",
+          "cost": 27,
+          "min": 4,
+          "max": 19
+        },
+        {
+          "name": "Reaver Chieftain with Jump Pack",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "Dark Emissary In Terminator Armour",
+      "role": "Command",
+      "points": 120,
+      "baseCost": 120,
+      "models": [
+        {
+          "name": "Dark Emissary in Terminator Armour",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "Chieftain Squad",
+      "role": "Retinue",
+      "points": 155,
+      "baseCost": 30,
+      "models": [
+        {
+          "name": "Chieftain",
+          "cost": 25,
+          "min": 5,
+          "max": 10
+        }
+      ],
+      "source": "sons-of-horus"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 100,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "sons-of-horus"
+    }
+  ],
+  "space-wolves": [
+    {
+      "name": "Leman Russ",
+      "role": "Warlord",
+      "points": 450,
+      "baseCost": 450,
+      "models": [
+        {
+          "name": "Leman Russ",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Deathsworn Pack",
+      "role": "Heavy Assault",
+      "points": 175,
+      "baseCost": 25,
+      "models": [
+        {
+          "name": "Deathsworn",
+          "cost": 30,
+          "min": 5,
+          "max": 10
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Geigor Fell-Hand",
+      "role": "Command",
+      "points": 105,
+      "baseCost": 105,
+      "models": [
+        {
+          "name": "Geigor Fell-Hand",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Grey Slayer Pack",
+      "role": "Troops",
+      "points": 145,
+      "baseCost": 37,
+      "models": [
+        {
+          "name": "Huscarl",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Grey Slayer",
+          "cost": 12,
+          "min": 9,
+          "max": 19
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Hvarl Red-Blade",
+      "role": "High Command",
+      "points": 210,
+      "baseCost": 210,
+      "models": [
+        {
+          "name": "Hvarl Red-Blade",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Varagyr Wolf Guard Terminators",
+      "role": "Elites",
+      "points": 250,
+      "baseCost": 70,
+      "models": [
+        {
+          "name": "Thegn",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Varagyr",
+          "cost": 45,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Wolf-kin of Russ",
+      "role": "Retinue",
+      "points": 100,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Freki",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Geri",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Caster of Runes",
+      "role": "Command",
+      "points": 110,
+      "baseCost": 110,
+      "models": [
+        {
+          "name": "Caster of Runes",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Caster Of Runes In Terminator Armour",
+      "role": "Command",
+      "points": 130,
+      "baseCost": 130,
+      "models": [
+        {
+          "name": "Caster of Runes in Terminator Armour",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Caster Of Runes With Jump Pack",
+      "role": "Command",
+      "points": 140,
+      "baseCost": 140,
+      "models": [
+        {
+          "name": "Caster of Runes with Jump Pack",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Jorlund Hunter Pack",
+      "role": "Support",
+      "points": 95,
+      "baseCost": 27,
+      "models": [
+        {
+          "name": "Hunter",
+          "cost": 17,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Hunt-master",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Mounted Caster Of Runes",
+      "role": "Command",
+      "points": 150,
+      "baseCost": 150,
+      "models": [
+        {
+          "name": "Outrider Caster of Runes",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Fenrisian Wolf Pack",
+      "role": "Retinue",
+      "points": 10,
+      "baseCost": 1,
+      "models": [
+        {
+          "name": "Fenrisian Wolf",
+          "cost": 9,
+          "min": 1,
+          "max": 5
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Speaker Of The Dead",
+      "role": "Command",
+      "points": 100,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Speaker of the Dead",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Speaker Of The Dead In Terminator Armour",
+      "role": "Command",
+      "points": 120,
+      "baseCost": 120,
+      "models": [
+        {
+          "name": "Speaker Of The Dead In Terminator Armour",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Mounted Speaker Of The Dead",
+      "role": "Command",
+      "points": 130,
+      "baseCost": 130,
+      "models": [
+        {
+          "name": "Outrider Speaker of the Dead",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "space-wolves"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 100,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "space-wolves"
+    }
+  ],
+  "thousand-sons": [
+    {
+      "name": "Magnus the Red",
+      "role": "Warlord",
+      "points": 470,
+      "baseCost": 470,
+      "models": [
+        {
+          "name": "Magnus the Red",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "thousand-sons"
+    },
+    {
+      "name": "Ahzek Ahriman",
+      "role": "High Command",
+      "points": 185,
+      "baseCost": 185,
+      "models": [
+        {
+          "name": "Ahzek Ahriman",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "thousand-sons"
+    },
+    {
+      "name": "Magistus Amon",
+      "role": "High Command",
+      "points": 185,
+      "baseCost": 185,
+      "models": [
+        {
+          "name": "Magistus Amon",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "thousand-sons"
+    },
+    {
+      "name": "Prosperine Sorcerer",
+      "role": "Command",
+      "points": 105,
+      "baseCost": 105,
+      "models": [
+        {
+          "name": "Prosperine Sorcerer",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "thousand-sons"
+    },
+    {
+      "name": "Sekhmet Terminator Cabal",
+      "role": "Elites",
+      "points": 250,
+      "baseCost": 70,
+      "models": [
+        {
+          "name": "Sekhmet Inceptor",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Sekhmet",
+          "cost": 45,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "thousand-sons"
+    },
+    {
+      "name": "Khenetai Occult Cabal",
+      "role": "Elites",
+      "points": 145,
+      "baseCost": 49,
+      "models": [
+        {
+          "name": "Khenetai Blademaster",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Khenetai Blade",
+          "cost": 24,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "thousand-sons"
+    },
+    {
+      "name": "Contemptor-Osiron Dreadnought",
+      "role": "War-engine",
+      "points": 200,
+      "baseCost": 200,
+      "models": [
+        {
+          "name": "Contemptor-Osiron Dreadnought",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "thousand-sons"
+    },
+    {
+      "name": "Castellax-Achea Automata",
+      "role": "Support",
+      "points": 80,
+      "baseCost": 80,
+      "models": [
+        {
+          "name": "Castellax-Achea",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "thousand-sons"
+    },
+    {
+      "name": "Numerologist Cabal",
+      "role": "Elites",
+      "points": 130,
+      "baseCost": 70,
+      "models": [
+        {
+          "name": "Life Ward",
+          "cost": 15,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Numerologist",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "thousand-sons"
+    },
+    {
+      "name": "Ammitara Occult Intercession Cabal",
+      "role": "Recon",
+      "points": 145,
+      "baseCost": 37,
+      "models": [
+        {
+          "name": "Intercessor",
+          "cost": 27,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Ammitara Fate",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "thousand-sons"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 90,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "thousand-sons"
+    }
+  ],
+  "ultramarines": [
+    {
+      "name": "Roboute Guilliman",
+      "role": "Warlord",
+      "points": 465,
+      "baseCost": 465,
+      "models": [
+        {
+          "name": "Roboute Guilliman",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "ultramarines"
+    },
+    {
+      "name": "Remus Ventanus",
+      "role": "Command",
+      "points": 175,
+      "baseCost": 175,
+      "models": [
+        {
+          "name": "Remus Ventanus",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "ultramarines"
+    },
+    {
+      "name": "Invictus Suzerain Squad",
+      "role": "Elites",
+      "points": 175,
+      "baseCost": 25,
+      "models": [
+        {
+          "name": "Suzerain",
+          "cost": 30,
+          "min": 5,
+          "max": 10
+        }
+      ],
+      "source": "ultramarines"
+    },
+    {
+      "name": "Praetorian Breacher Squad",
+      "role": "Heavy Assault",
+      "points": 115,
+      "baseCost": 43,
+      "models": [
+        {
+          "name": "Praetorian Primus",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Praetorian",
+          "cost": 18,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "ultramarines"
+    },
+    {
+      "name": "Locutarus Storm Squad",
+      "role": "Elites",
+      "points": 200,
+      "baseCost": 48,
+      "models": [
+        {
+          "name": "Locutarus",
+          "cost": 38,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Locutarus Strike Leader",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "ultramarines"
+    },
+    {
+      "name": "Fulmentarus Terminator Squad",
+      "role": "Heavy Assault",
+      "points": 290,
+      "baseCost": 70,
+      "models": [
+        {
+          "name": "Fulmentarus Terminator",
+          "cost": 55,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Fulmentarus Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "ultramarines"
+    },
+    {
+      "name": "Nemesis Destroyer Squad",
+      "role": "Heavy Assault",
+      "points": 165,
+      "baseCost": 30,
+      "models": [
+        {
+          "name": "Nemesis Destroyer",
+          "cost": 15,
+          "min": 9,
+          "max": 19
+        },
+        {
+          "name": "Nemesis Destroyer Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "ultramarines"
+    },
+    {
+      "name": "Honoured Telemechrus",
+      "role": "War-engine",
+      "points": 170,
+      "baseCost": 170,
+      "models": [
+        {
+          "name": "Honoured Telemechrus",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "ultramarines"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 114,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 10
+        },
+        {
+          "name": "Evocatus Intendant",
+          "cost": 24,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "ultramarines"
+    }
+  ],
+  "white-scars": [
+    {
+      "name": "Jaghatai Khan",
+      "role": "Warlord",
+      "points": 440,
+      "baseCost": 440,
+      "models": [
+        {
+          "name": "Jaghatai Khan",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "white-scars"
+    },
+    {
+      "name": "Qin Xa",
+      "role": "High Command",
+      "points": 220,
+      "baseCost": 220,
+      "models": [
+        {
+          "name": "Qin Xa",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "white-scars"
+    },
+    {
+      "name": "Stormseer",
+      "role": "Command",
+      "points": 95,
+      "baseCost": 95,
+      "models": [
+        {
+          "name": "Stormseer",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "white-scars"
+    },
+    {
+      "name": "Hibou Khan",
+      "role": "Command",
+      "points": 165,
+      "baseCost": 165,
+      "models": [
+        {
+          "name": "Hibou Khan",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "white-scars"
+    },
+    {
+      "name": "Golden Keshig",
+      "role": "Elites",
+      "points": 140,
+      "baseCost": 60,
+      "models": [
+        {
+          "name": "Keshig Rider",
+          "cost": 40,
+          "min": 2,
+          "max": 5
+        },
+        {
+          "name": "Keshig Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "white-scars"
+    },
+    {
+      "name": "Ebon Keshig",
+      "role": "Heavy Assault",
+      "points": 200,
+      "baseCost": 25,
+      "models": [
+        {
+          "name": "Kharash",
+          "cost": 35,
+          "min": 5,
+          "max": 10
+        }
+      ],
+      "source": "white-scars"
+    },
+    {
+      "name": "Kyzagan Assault Speeder",
+      "role": "Support",
+      "points": 105,
+      "baseCost": 105,
+      "models": [
+        {
+          "name": "Kyzagan Assault Speeder",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "white-scars"
+    },
+    {
+      "name": "Falcon&apos;s Claws",
+      "role": "Recon",
+      "points": 110,
+      "baseCost": 38,
+      "models": [
+        {
+          "name": "Falcon&apos;s Claw Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Falcon&apos;s Claw",
+          "cost": 18,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "white-scars"
+    },
+    {
+      "name": "Stormseer with Jump Pack",
+      "role": "Command",
+      "points": 115,
+      "baseCost": 115,
+      "models": [
+        {
+          "name": "Stormseer with Jump Pack",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "white-scars"
+    },
+    {
+      "name": "Mounted Stormseer",
+      "role": "Command",
+      "points": 125,
+      "baseCost": 125,
+      "models": [
+        {
+          "name": "Outrider Stormseer",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "white-scars"
+    },
+    {
+      "name": "Stormseer in Terminator Armour",
+      "role": "Command",
+      "points": 115,
+      "baseCost": 115,
+      "models": [
+        {
+          "name": "Stormseer in Terminator Armour",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "white-scars"
+    },
+    {
+      "name": "Dark Sons of Death",
+      "role": "Heavy Assault",
+      "points": 125,
+      "baseCost": 45,
+      "models": [
+        {
+          "name": "Dark Son",
+          "cost": 20,
+          "min": 4,
+          "max": 14
+        },
+        {
+          "name": "Death&apos;s Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "white-scars"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 100,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "white-scars"
+    }
+  ],
+  "word-bearers": [
+    {
+      "name": "Lorgar Aurelian",
+      "role": "Warlord",
+      "points": 445,
+      "baseCost": 445,
+      "models": [
+        {
+          "name": "Lorgar Aurelian",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Kor Phaeron ",
+      "role": "High Command",
+      "points": 125,
+      "baseCost": 125,
+      "models": [
+        {
+          "name": "Kor Phaeron",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Erebus",
+      "role": "High Command",
+      "points": 165,
+      "baseCost": 165,
+      "models": [
+        {
+          "name": "Erebus",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Argel Tal",
+      "role": "High Command",
+      "points": 240,
+      "baseCost": 240,
+      "models": [
+        {
+          "name": "Argel Tal",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Zardu Layak",
+      "role": "Command",
+      "points": 180,
+      "baseCost": 180,
+      "models": [
+        {
+          "name": "Zardu Layak",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Anakatis Kul",
+          "cost": 60,
+          "min": 0,
+          "max": 2
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Gal Vorbak",
+      "role": "Elites",
+      "points": 250,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Dark Brethren",
+          "cost": 50,
+          "min": 5,
+          "max": 10
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Mhara Gal Dreadnought",
+      "role": "War-engine",
+      "points": 210,
+      "baseCost": 210,
+      "models": [
+        {
+          "name": "Mhara Gal Dreadnought",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Ashen Circle",
+      "role": "Fast Attack",
+      "points": 125,
+      "baseCost": 45,
+      "models": [
+        {
+          "name": "Incendiary",
+          "cost": 20,
+          "min": 4,
+          "max": 9
+        },
+        {
+          "name": "Iconoclast",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Diabolist",
+      "role": "Command",
+      "points": 105,
+      "baseCost": 105,
+      "models": [
+        {
+          "name": "Diabolist",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Diabolist In Terminator Armour",
+      "role": "Command",
+      "points": 135,
+      "baseCost": 135,
+      "models": [
+        {
+          "name": "Cataphractii Diabolist",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Mounted Diabolist",
+      "role": "Command",
+      "points": 145,
+      "baseCost": 145,
+      "models": [
+        {
+          "name": "Outrider Diabolist",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Procurators",
+      "role": "Elites",
+      "points": 60,
+      "baseCost": 25,
+      "models": [
+        {
+          "name": "Procurant",
+          "cost": 15,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Procurator",
+          "cost": 20,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Procurators with Jump Packs",
+      "role": "Elites",
+      "points": 70,
+      "baseCost": 30,
+      "models": [
+        {
+          "name": "Procurant with Jump Pack",
+          "cost": 20,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Procurator with Jump Pack",
+          "cost": 20,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 100,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "word-bearers"
+    },
+    {
+      "name": "Phraetus Anointed Conclave",
+      "role": "Elites",
+      "points": 240,
+      "baseCost": 110,
+      "models": [
+        {
+          "name": "Phraetus Anointed",
+          "cost": 65,
+          "min": 2,
+          "max": 5
+        },
+        {
+          "name": "Phraetus Disciple",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "word-bearers"
+    }
+  ],
+  "world-eaters": [
+    {
+      "name": "Angron",
+      "role": "Warlord",
+      "points": 450,
+      "baseCost": 450,
+      "models": [
+        {
+          "name": "Angron",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "world-eaters"
+    },
+    {
+      "name": "Rampager Squad",
+      "role": "Heavy Assault",
+      "points": 135,
+      "baseCost": 47,
+      "models": [
+        {
+          "name": "Rampager Champion",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Rampager",
+          "cost": 22,
+          "min": 4,
+          "max": 14
+        }
+      ],
+      "source": "world-eaters"
+    },
+    {
+      "name": "Red Butchers",
+      "role": "Elites",
+      "points": 250,
+      "baseCost": 70,
+      "models": [
+        {
+          "name": "Devoured",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Red Butcher",
+          "cost": 45,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "world-eaters"
+    },
+    {
+      "name": "Lotara Sarrin",
+      "role": "Command",
+      "points": 85,
+      "baseCost": 85,
+      "models": [
+        {
+          "name": "Lotara Sarrin",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "world-eaters"
+    },
+    {
+      "name": "Angron Transfigured",
+      "role": "Warlord",
+      "points": 600,
+      "baseCost": 600,
+      "models": [
+        {
+          "name": "Angron Transfigured",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "world-eaters"
+    },
+    {
+      "name": "Kharn the Bloody",
+      "role": "High Command",
+      "points": 175,
+      "baseCost": 175,
+      "models": [
+        {
+          "name": "Kharn the Bloody",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "world-eaters"
+    },
+    {
+      "name": "Red Hand Destroyer Mortalis Squad",
+      "role": "Elites",
+      "points": 85,
+      "baseCost": 25,
+      "models": [
+        {
+          "name": "Ravager",
+          "cost": 15,
+          "min": 4,
+          "max": 14
+        },
+        {
+          "name": "Blood Bonded",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "world-eaters"
+    },
+    {
+      "name": "Red Hand Destroyer Assault Squad",
+      "role": "Elites",
+      "points": 110,
+      "baseCost": 30,
+      "models": [
+        {
+          "name": "Ravager with Jump Pack",
+          "cost": 20,
+          "min": 4,
+          "max": 14
+        },
+        {
+          "name": "Blood Bonded with Jump Pack",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "world-eaters"
+    },
+    {
+      "name": "Inductii Squad",
+      "role": "Troops",
+      "points": 100,
+      "baseCost": 10,
+      "models": [
+        {
+          "name": "Inductii",
+          "cost": 9,
+          "min": 10,
+          "max": 20
+        }
+      ],
+      "source": "world-eaters"
+    }
+  ],
+  "mechanicum": [
+    {
+      "name": "Anacharis Scoria",
+      "role": "High Command",
+      "points": 410,
+      "baseCost": 410,
+      "models": [
+        {
+          "name": "Anacharis Scoria",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Archmagos",
+      "role": "High Command",
+      "points": 120,
+      "baseCost": 120,
+      "models": [
+        {
+          "name": "Archmagos",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Archmagos on Abeyant",
+      "role": "High Command",
+      "points": 160,
+      "baseCost": 150,
+      "models": [
+        {
+          "name": "Archmagos on Abeyant",
+          "cost": 10,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Magos",
+      "role": "Command",
+      "points": 100,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Magos",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Scyllax Guardian Maniple",
+      "role": "Retinue",
+      "points": 100,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Scyllax (Paragon of Metal)",
+          "cost": 25,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Scyllax",
+          "cost": 25,
+          "min": 4,
+          "max": 16
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Arcuitor Magisterium",
+      "role": "Command",
+      "points": 115,
+      "baseCost": 115,
+      "models": [
+        {
+          "name": "Arcuitor",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Echidnax Servo Maniple",
+      "role": "Retinue",
+      "points": 40,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Echidnax (Paragon of Metal)",
+          "cost": 10,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Echidnax",
+          "cost": 10,
+          "min": 4,
+          "max": 12
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Domitar Battle Maniple",
+      "role": "Elites",
+      "points": 100,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Domitar",
+          "cost": 100,
+          "min": 1,
+          "max": 4
+        },
+        {
+          "name": "Domitar (Paragon of Metal)",
+          "cost": 100,
+          "min": 0,
+          "max": 0
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Magos on Abeyant",
+      "role": "Command",
+      "points": 130,
+      "baseCost": 130,
+      "models": [
+        {
+          "name": "Magos on Abeyant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Myrmidon Secutor Host",
+      "role": "Elites",
+      "points": 150,
+      "baseCost": 60,
+      "models": [
+        {
+          "name": "Secutor",
+          "cost": 45,
+          "min": 2,
+          "max": 9
+        },
+        {
+          "name": "Secutor Lord",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Myrmidon Destructor Host",
+      "role": "Elites",
+      "points": 150,
+      "baseCost": 60,
+      "models": [
+        {
+          "name": "Destructor",
+          "cost": 45,
+          "min": 2,
+          "max": 9
+        },
+        {
+          "name": "Destructor Lord",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Tech-Thrall Covenant",
+      "role": "Support",
+      "points": 100,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Tech-Thrall",
+          "cost": 10,
+          "min": 10,
+          "max": 40
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Castellax Destructor Maniple",
+      "role": "Heavy Assault",
+      "points": 100,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Castellax",
+          "cost": 50,
+          "min": 2,
+          "max": 6
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Ursarax Cohort",
+      "role": "Heavy Assault",
+      "points": 160,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Ursarax",
+          "cost": 25,
+          "min": 6,
+          "max": 9
+        },
+        {
+          "name": "Ursarax Alpha",
+          "cost": 10,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Tech-Priest",
+      "role": "Troops",
+      "points": 30,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Tech-Priest",
+          "cost": 30,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Thallax Cohort",
+      "role": "Support",
+      "points": 120,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Thallax Praetorian",
+          "cost": 10,
+          "min": 0,
+          "max": 1
+        },
+        {
+          "name": "Thallax",
+          "cost": 20,
+          "min": 6,
+          "max": 9
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Armiger Moirax",
+      "role": "War-engine",
+      "points": 185,
+      "baseCost": 165,
+      "models": [
+        {
+          "name": "Armiger Moirax",
+          "cost": 20,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Thanatar Siege Maniple",
+      "role": "War-engine",
+      "points": 225,
+      "baseCost": 225,
+      "models": [
+        {
+          "name": "Thanatar",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Triaros Armoured Conveyor",
+      "role": "Heavy Transport",
+      "points": 205,
+      "baseCost": 200,
+      "models": [
+        {
+          "name": "Triaros",
+          "cost": 5,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Castellax Battle Maniple",
+      "role": "Support",
+      "points": 100,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Castellax (Paragon of Metal)",
+          "cost": 50,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Castellax",
+          "cost": 50,
+          "min": 2,
+          "max": 10
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Vorax Attack Maniple",
+      "role": "Recon",
+      "points": 90,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Vorax",
+          "cost": 45,
+          "min": 2,
+          "max": 8
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Vultarax Stratos Squadron",
+      "role": "Fast Attack",
+      "points": 200,
+      "baseCost": 100,
+      "models": [
+        {
+          "name": "Vultarax",
+          "cost": 100,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Blood Slaughterer",
+      "role": "Heavy Assault",
+      "points": 100,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Blood Slaughterer",
+          "cost": 50,
+          "min": 2,
+          "max": 4
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Karacnos Assault Tank",
+      "role": "Armour",
+      "points": 240,
+      "baseCost": 235,
+      "models": [
+        {
+          "name": "Karacnos ",
+          "cost": 5,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Krios Battle Tank",
+      "role": "Armour",
+      "points": 140,
+      "baseCost": 135,
+      "models": [
+        {
+          "name": "Krios",
+          "cost": 5,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Decimator",
+      "role": "Elites",
+      "points": 250,
+      "baseCost": 125,
+      "models": [
+        {
+          "name": "Decimator ",
+          "cost": 125,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Krios Venator",
+      "role": "Armour",
+      "points": 175,
+      "baseCost": 160,
+      "models": [
+        {
+          "name": "Krios",
+          "cost": 15,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Brass Scorpion",
+      "role": "Lord of War",
+      "points": 1200,
+      "baseCost": 600,
+      "models": [
+        {
+          "name": "Brass Scorpion",
+          "cost": 600,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Archmagos Draykavac",
+      "role": "High Command",
+      "points": 220,
+      "baseCost": 200,
+      "models": [
+        {
+          "name": "Archmagos Draykavac",
+          "cost": 20,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Kytan Daemon Engine",
+      "role": "Lord of War",
+      "points": 900,
+      "baseCost": 450,
+      "models": [
+        {
+          "name": "Kytan",
+          "cost": 450,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Tech Thrall Defence Covenant",
+      "role": "Support",
+      "points": 100,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Tech-Thrall",
+          "cost": 10,
+          "min": 10,
+          "max": 40
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Arlatax Battle Maniple",
+      "role": "Elites",
+      "points": 120,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Arlatax (Paragon of Metal)",
+          "cost": 120,
+          "min": 0,
+          "max": 0
+        },
+        {
+          "name": "Arlatax",
+          "cost": 120,
+          "min": 1,
+          "max": 4
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Mechanicum Termite",
+      "role": "Transport",
+      "points": 80,
+      "baseCost": 80,
+      "models": [
+        {
+          "name": "Mechanicum Termite",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Mechanicum Tarantula Battery",
+      "role": "Recon",
+      "points": 45,
+      "baseCost": 45,
+      "models": [
+        {
+          "name": "Mechanicum Tarantula Sentry Gun",
+          "cost": 0,
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Mechanicum Macrocarid Explorator",
+      "role": "Heavy Transport",
+      "points": 200,
+      "baseCost": 200,
+      "models": [
+        {
+          "name": "Macrocarid Explorator",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Mechanicum Ordinatus Ulator",
+      "role": "Lord of War",
+      "points": 750,
+      "baseCost": 750,
+      "models": [
+        {
+          "name": "Ordinatus Ulator",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Mechanicum Ordinatus Sagittar",
+      "role": "Lord of War",
+      "points": 800,
+      "baseCost": 800,
+      "models": [
+        {
+          "name": "Ordinatus Sagittar",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    },
+    {
+      "name": "Mechanicum Ordinatus Aktaeus",
+      "role": "Lord of War",
+      "points": 900,
+      "baseCost": 900,
+      "models": [
+        {
+          "name": "Ordinatus Aktaeus",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "mechanicum"
+    }
+  ],
+  "solar-auxilia": [
+    {
+      "name": "Legatine Command Section",
+      "role": "High Command",
+      "points": 125,
+      "baseCost": 69,
+      "models": [
+        {
+          "name": "Legate Marshall",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Lifeward",
+          "cost": 14,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Tactical Command Section",
+      "role": "Command",
+      "points": 100,
+      "baseCost": 52,
+      "models": [
+        {
+          "name": "Auxilia Captain",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Companion",
+          "cost": 12,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Line Command Section",
+      "role": "Command",
+      "points": 65,
+      "baseCost": 37,
+      "models": [
+        {
+          "name": "Troop Master",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Veteran",
+          "cost": 7,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Veletaris Command Section",
+      "role": "Command",
+      "points": 75,
+      "baseCost": 43,
+      "models": [
+        {
+          "name": "First Prime",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Veletarii",
+          "cost": 8,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Hermes Command Section",
+      "role": "Command",
+      "points": 75,
+      "baseCost": 57,
+      "models": [
+        {
+          "name": "Hermes Lead",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Hermes Pathfinder",
+          "cost": 18,
+          "min": 1,
+          "max": 5
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Artillery Command Section",
+      "role": "Command",
+      "points": 65,
+      "baseCost": 37,
+      "models": [
+        {
+          "name": "Ordnance Master",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Veteran",
+          "cost": 7,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Armoured Command Section",
+      "role": "Command",
+      "points": 150,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Command Tank",
+          "cost": 150,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Veletaris Storm Section",
+      "role": "Elites",
+      "points": 90,
+      "baseCost": 18,
+      "models": [
+        {
+          "name": "Veletarii Prime",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Veletarii",
+          "cost": 8,
+          "min": 9,
+          "max": 19
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Veletaris Vanguard Section",
+      "role": "Elites",
+      "points": 100,
+      "baseCost": 19,
+      "models": [
+        {
+          "name": "Veletarii Prime",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Veletarii",
+          "cost": 9,
+          "min": 9,
+          "max": 19
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Charonite Ogryn Section",
+      "role": "Heavy Assault",
+      "points": 120,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Charonite ogryn",
+          "cost": 40,
+          "min": 3,
+          "max": 9
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Lasrifle Section",
+      "role": "Troops",
+      "points": 50,
+      "baseCost": 14,
+      "models": [
+        {
+          "name": "Auxilia Sergeant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Auxiliary",
+          "cost": 4,
+          "min": 9,
+          "max": 19
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Basilisk Artillery Tank",
+      "role": "Support",
+      "points": 120,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Basilisk",
+          "cost": 120,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Medusa Artillery Tank",
+      "role": "Support",
+      "points": 140,
+      "baseCost": 140,
+      "models": [
+        {
+          "name": "Medusa",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Rapier Section",
+      "role": "Support",
+      "points": 30,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Rapier Crew",
+          "cost": 30,
+          "min": 1,
+          "max": 4
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Hermes Veletaris Squadron",
+      "role": "Support",
+      "points": 40,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Hermes Veletaris Sentinel",
+          "cost": 20,
+          "min": 2,
+          "max": 6
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Aethon Heavy Sentinel Squadron",
+      "role": "War-engine",
+      "points": 60,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Aethon Heavy Sentinel",
+          "cost": 60,
+          "min": 1,
+          "max": 3
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Arvus Lighter",
+      "role": "Transport",
+      "points": 75,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Arvus Lighter",
+          "cost": 75,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Dracosan Armoured Transport",
+      "role": "Heavy Transport",
+      "points": 140,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Dracosan",
+          "cost": 140,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Hermes Light Sentinel Squadron",
+      "role": "Recon",
+      "points": 32,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Hermes Light Sentinel",
+          "cost": 16,
+          "min": 2,
+          "max": 6
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Primaris-Lightning Strike Fighter",
+      "role": "Fast Attack",
+      "points": 160,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Primaris-Lightning",
+          "cost": 160,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Thunderbolt Heavy Fighter",
+      "role": "Fast Attack",
+      "points": 120,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Thunderbolt",
+          "cost": 120,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Malcador Infernus Special Weapon Tank",
+      "role": "Armour",
+      "points": 205,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Malcador Infernus",
+          "cost": 205,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Leman Russ Assault Tank",
+      "role": "Armour",
+      "points": 140,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Leman Russ Assault Tank",
+          "cost": 140,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Leman Russ Strike Tank",
+      "role": "Armour",
+      "points": 140,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Leman Russ Strike Tank",
+          "cost": 140,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Malcador Heavy Tank",
+      "role": "Armour",
+      "points": 180,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Malcador",
+          "cost": 180,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Valdor Tank Destroyer",
+      "role": "Armour",
+      "points": 190,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Valdor Tank Destroyer",
+          "cost": 190,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Stormhammer Super-Heavy Assault Tank",
+      "role": "Lord of War",
+      "points": 500,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Stormhammer",
+          "cost": 500,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Aurox Transport",
+      "role": "Transport",
+      "points": 50,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Aurox Transport",
+          "cost": 50,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Avenger Strike Fighter",
+      "role": "Fast Attack",
+      "points": 100,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Avenger Strike Fighter",
+          "cost": 100,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Baneblade Super-heavy Battle Tank",
+      "role": "Lord of War",
+      "points": 525,
+      "baseCost": 5,
+      "models": [
+        {
+          "name": "Baneblade Super-heavy Battle Tank",
+          "cost": 520,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Banehammer Super-heavy Assault Tank",
+      "role": "Lord of War",
+      "points": 450,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Banehammer",
+          "cost": 450,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Carnodon Strike Tank",
+      "role": "Fast Attack",
+      "points": 80,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Carnodon Strike Tank",
+          "cost": 80,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Companion Section",
+      "role": "Retinue",
+      "points": 80,
+      "baseCost": 32,
+      "models": [
+        {
+          "name": "Auxilia Adjutant",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Companion",
+          "cost": 12,
+          "min": 4,
+          "max": 9
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Crassus Armoured Assault Transport",
+      "role": "Lord of War",
+      "points": 350,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Crassus ",
+          "cost": 350,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Cyclops Demolition Vehicle",
+      "role": "Support",
+      "points": 50,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Cyclops",
+          "cost": 50,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Davinite Lodge Priest",
+      "role": "Command",
+      "points": 60,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Davinite Lodge Priest",
+          "cost": 60,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Destroyer Tank Hunter",
+      "role": "Armour",
+      "points": 130,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Destroyer Tank Hunter",
+          "cost": 130,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Expeditionary Navigator",
+      "role": "Command",
+      "points": 65,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Expeditionary Navigator",
+          "cost": 65,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Hellhammer Super-heavy Battle Tank",
+      "role": "Lord of War",
+      "points": 520,
+      "baseCost": 520,
+      "models": [
+        {
+          "name": "Hellhammer ",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Macharius Heavy Tank",
+      "role": "Lord of War",
+      "points": 300,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Macharius Heavy Tank",
+          "cost": 300,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Marauder Bomber",
+      "role": "Lord of War",
+      "points": 225,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Marauder Bomber",
+          "cost": 225,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Marauder Destroyer",
+      "role": "Lord of War",
+      "points": 245,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Marauder Destroyer",
+          "cost": 245,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Medicae Section",
+      "role": "Support",
+      "points": 15,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Medicae Auxiliary",
+          "cost": 15,
+          "min": 1,
+          "max": 6
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Minotaur Artillery Tank",
+      "role": "Armour",
+      "points": 205,
+      "baseCost": 205,
+      "models": [
+        {
+          "name": "Minotaur Artillery Tank",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Praetor Armoured Assault Launcher",
+      "role": "Lord of War",
+      "points": 300,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Praetor",
+          "cost": 300,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Shadowsword Super-heavy Tank Destroyer",
+      "role": "Lord of War",
+      "points": 475,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Shadowsword",
+          "cost": 475,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Stormblade Super-heavy Tank",
+      "role": "Lord of War",
+      "points": 500,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Stormblade",
+          "cost": 500,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Stormlord Super-heavy Assault Tank",
+      "role": "Lord of War",
+      "points": 500,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Stormlord ",
+          "cost": 500,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Stormsword Super-heavy Siege Tank",
+      "role": "Lord of War",
+      "points": 475,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Stormsword",
+          "cost": 475,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Surgeon-Primus Aevos Jovan",
+      "role": "Command",
+      "points": 60,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Medicae Orderly",
+          "cost": 10,
+          "min": 1,
+          "max": 2
+        },
+        {
+          "name": "Auto-gurney",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        },
+        {
+          "name": "Aevos Jovan",
+          "cost": 50,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Tarantula Section",
+      "role": "Recon",
+      "points": 35,
+      "baseCost": 0,
+      "models": [
+        {
+          "name": "Tarantula Sentry Gun",
+          "cost": 17.5,
+          "min": 2,
+          "max": 2
+        }
+      ],
+      "source": "solar-auxilia"
+    },
+    {
+      "name": "Thunderer Siege Tank",
+      "role": "Armour",
+      "points": 155,
+      "baseCost": 155,
+      "models": [
+        {
+          "name": "Thunderer Siege Tank",
+          "cost": 0,
+          "min": 1,
+          "max": 1
+        }
+      ],
+      "source": "solar-auxilia"
+    }
+  ]
+}
