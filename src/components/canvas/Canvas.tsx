@@ -354,7 +354,7 @@ export default function Canvas() {
 
   function handleBonusSlotRoleSelected(bonusRole: string) {
     if (modal.type !== 'bonusSlotRoleSelector') return;
-    const { detachmentId, slotKey } = modal;
+    const { detachmentId, slotKey, role, unit } = modal;
     addBonusSlot(detachmentId, slotKey, bonusRole);
 
     if (isEditingSlot.current) {
@@ -368,7 +368,19 @@ export default function Canvas() {
         setModal({ type: 'none' });
       }
     } else {
-      setModal({ type: 'none' });
+      // Fresh fill: trigger the detachment unlock if this is a Command/HC slot
+      const unlockedBy = `${detachmentId}::${slotKey}`;
+      let trigger: 'highCommand' | 'command' | null = null;
+      if (role === 'High Command') trigger = 'highCommand';
+      else if (role === 'Command') trigger = 'command';
+
+      if (trigger) {
+        const isDouble = OFFICER_OF_THE_LINE_UNITS.has(unit.name);
+        if (isDouble) pendingDoubleUnlock.current = unlockedBy;
+        setModal({ type: 'detachmentSelector', trigger, unlockedBy });
+      } else {
+        setModal({ type: 'none' });
+      }
     }
   }
 
@@ -556,8 +568,8 @@ export default function Canvas() {
               // Clear any existing bonus slots for this slot (avoids duplicates on change)
               clearBonusSlotsForSlot(detachmentId, slotKey);
               fillSlot(detachmentId, slotKey, unit, benefit);
-              // bonusSlotRoleSelector will return to slotEdit if isEditingSlot is set
-              setModal({ type: 'bonusSlotRoleSelector', detachmentId, slotKey });
+              // bonusSlotRoleSelector will return to slotEdit (edit mode) or trigger unlock (fresh fill)
+              setModal({ type: 'bonusSlotRoleSelector', detachmentId, slotKey, role, unit });
             } else {
               if (isEditingSlot.current) {
                 // Changing benefit only — clear any old bonus slots, fill, return to slotEdit

@@ -70,7 +70,7 @@ export type ModalState =
   | { type: 'slotEdit'; detachmentId: string; slotKey: string; slotDef: SlotDef; filled: FilledSlot }
   | { type: 'unitPicker'; detachmentId: string; slotKey: string; role: string; isPrime?: boolean }
   | { type: 'primeBenefit'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry }
-  | { type: 'bonusSlotRoleSelector'; detachmentId: string; slotKey: string }
+  | { type: 'bonusSlotRoleSelector'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry }
   | { type: 'bonusUnitPicker'; detachmentId: string; bonusSlotId: string; role: string }
   | { type: 'detachmentSelector'; trigger: 'highCommand' | 'command'; unlockedBy: string }
   | { type: 'lordOfWarSelector' }
