@@ -90,7 +90,7 @@ async function main(): Promise<void> {
   }
 
   console.log('\n=== Parsing ===');
-  const { units, detachments, warnings } = parseAll(
+  const { units, detachments, system, catalogues, warnings } = parseAll(
     xmlMap['gst'],
     xmlMap['la'],
     factionCats
@@ -98,12 +98,18 @@ async function main(): Promise<void> {
 
   const unitsPath = path.join(PARSED_DIR, 'units.json');
   const detachmentsPath = path.join(PARSED_DIR, 'detachments.json');
+  const systemPath = path.join(PARSED_DIR, 'system.json');
+  const cataloguesPath = path.join(PARSED_DIR, 'catalogues.json');
 
   fs.writeFileSync(unitsPath, JSON.stringify(units, null, 2), 'utf-8');
   fs.writeFileSync(detachmentsPath, JSON.stringify(detachments, null, 2), 'utf-8');
+  fs.writeFileSync(systemPath, JSON.stringify(system, null, 2), 'utf-8');
+  fs.writeFileSync(cataloguesPath, JSON.stringify(catalogues, null, 2), 'utf-8');
 
   console.log(`  Wrote ${unitsPath}`);
   console.log(`  Wrote ${detachmentsPath}`);
+  console.log(`  Wrote ${systemPath}`);
+  console.log(`  Wrote ${cataloguesPath}`);
 
   // Summary
   const coreCount = detachments.core.length;
@@ -124,6 +130,13 @@ async function main(): Promise<void> {
   console.log(`  Apex:      ${apexCount}`);
   console.log(`  Legion:    ${legionCount}`);
   console.log(`  Total:     ${totalDetachments}`);
+
+  console.log('\n=== BSData IDs ===');
+  console.log(`  gameSystemId:  ${system.gameSystemId}  (${system.gameSystemName} rev ${system.revision})`);
+  console.log('  catalogues:');
+  for (const [key, cat] of Object.entries(catalogues)) {
+    console.log(`    ${key.padEnd(24)}  ${cat.catalogueId}  (${cat.catalogueName} rev ${cat.revision})`);
+  }
 
   if (warnings.length > 0) {
     console.warn(`\nWarnings (${warnings.length}) — units needing manual review:`);

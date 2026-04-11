@@ -1,9 +1,27 @@
 import unitsJson from '../../data/parsed/units.json';
 import detachmentsJson from '../../data/parsed/detachments.json';
+import systemJson from '../../data/parsed/system.json';
+import cataloguesJson from '../../data/parsed/catalogues.json';
 import type { UnitEntry, DetachmentDef } from '../types';
 import { SM_LEGION_KEYS } from './factions';
 
 export const unitsData = unitsJson as Record<string, UnitEntry[]>;
+
+export interface SystemInfo {
+  gameSystemId: string;
+  gameSystemName: string;
+  revision: number;
+  forceOrgEntryId: string;
+}
+
+export interface CatalogueInfo {
+  catalogueId: string;
+  catalogueName: string;
+  revision: number;
+}
+
+export const systemData = systemJson as SystemInfo;
+export const cataloguesData = cataloguesJson as Record<string, CatalogueInfo>;
 
 export const detachmentsData = detachmentsJson as {
   core: DetachmentDef[];

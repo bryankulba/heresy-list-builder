@@ -8,7 +8,7 @@ export default function StartScreen() {
   const startBuild = useRosterStore((s) => s.startBuild);
 
   const [faction, setFaction] = useState(FACTIONS[0].id);
-  const [allegiance, setAllegiance] = useState<Allegiance>('Traitor');
+  const [allegiance, setAllegiance] = useState<Allegiance>('Loyalist');
   const [pointsLimit, setPointsLimit] = useState(3000);
 
   function handleStart() {

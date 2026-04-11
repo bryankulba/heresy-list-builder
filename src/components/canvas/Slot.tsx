@@ -89,21 +89,6 @@ export default function Slot({ slotDef, filled, onClick, onClear, slotRef, isDas
         />
       </div>
 
-      {/* Role label */}
-      <span
-        className="text-center leading-tight mt-1"
-        style={{
-          fontSize: isFilled ? 9 : 8,
-          color: 'var(--cds-text-secondary)',
-          maxWidth: '100%',
-          overflow: 'hidden',
-          textOverflow: 'ellipsis',
-          whiteSpace: 'nowrap',
-        }}
-      >
-        {displayRole}
-      </span>
-
       {/* Unit name (filled only) */}
       {isFilled && filled && (
         <span

@@ -30,8 +30,8 @@ const CARD_W = 360;
 const CARD_GAP = 24;
 const CANVAS_ORIGIN_Y = 80;
 
-// Primary card anchored left; everything else to its right
-const PRIMARY_X = 400;
+// Primary card anchored top-left; everything else to its right
+const PRIMARY_X = 24;
 const RIGHT_X = PRIMARY_X + CARD_W + CARD_GAP * 2;   // start of the right section
 const RIGHT_COL_STRIDE = CARD_W + CARD_GAP;           // 384 — distance between column starts
 const RIGHT_COLS = 2;
@@ -175,11 +175,7 @@ export default function Canvas() {
   }
 
   // ── Pan state ──
-  // Put the primary card in the left quarter of the viewport so the right section is visible
-  const [pan, setPan] = useState({
-    x: Math.round(window.innerWidth / 4 - PRIMARY_X),
-    y: -20,
-  });
+  const [pan, setPan] = useState({ x: 16, y: 16 });
   const isPanning = useRef(false);
   const panStart = useRef({ mouseX: 0, mouseY: 0, panX: 0, panY: 0 });
 
@@ -349,8 +345,8 @@ export default function Canvas() {
     }
 
     if (isPrime) {
-      // Unit chosen — now pick the prime benefit
-      setModal({ type: 'primeBenefit', detachmentId, slotKey, unit });
+      // Unit chosen — now pick the prime benefit (pass role through so handler can chain unlock)
+      setModal({ type: 'primeBenefit', detachmentId, slotKey, role, unit });
     } else {
       fillAndUnlock(detachmentId, slotKey, role, unit);
     }
@@ -529,7 +525,7 @@ export default function Canvas() {
             }}
             onChangeBenefit={() => {
               isEditingSlot.current = { detachmentId, slotKey };
-              setModal({ type: 'primeBenefit', detachmentId, slotKey, unit: filled.unit });
+              setModal({ type: 'primeBenefit', detachmentId, slotKey, role, unit: filled.unit });
             }}
             onChangeDetachment={isCommandSlot ? () => {
               isEditingSlot.current = { detachmentId, slotKey };
@@ -554,11 +550,7 @@ export default function Canvas() {
         <PrimeBenefitModal
           onConfirm={(benefit) => {
             if (modal.type !== 'primeBenefit') return;
-            const { detachmentId, slotKey, unit } = modal;
-            const slotDef = detachments
-              .find((d) => d.id === detachmentId)
-              ?.def.slots.find((s) => slotKey.startsWith(`${s.role}-`));
-            const role = getBaseRole(stripPrimePrefix(slotDef?.role ?? slotKey));
+            const { detachmentId, slotKey, role, unit } = modal;
 
             if (benefit.id === 'logistical-benefit') {
               // Clear any existing bonus slots for this slot (avoids duplicates on change)

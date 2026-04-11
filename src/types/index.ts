@@ -11,6 +11,7 @@ export interface ModelEntry {
 
 export interface UnitEntry {
   name: string;
+  entryId?: string;
   role: string;
   points: number;
   baseCost: number;
@@ -27,6 +28,7 @@ export interface SlotDef {
 
 export interface DetachmentDef {
   name: string;
+  entryId?: string;
   type: string;
   slots: SlotDef[];
   /** Faction keys that can field this detachment (empty = available to all / unknown) */
@@ -66,7 +68,7 @@ export type ModalState =
   | { type: 'none' }
   | { type: 'slotEdit'; detachmentId: string; slotKey: string; slotDef: SlotDef; filled: FilledSlot }
   | { type: 'unitPicker'; detachmentId: string; slotKey: string; role: string; isPrime?: boolean }
-  | { type: 'primeBenefit'; detachmentId: string; slotKey: string; unit: UnitEntry }
+  | { type: 'primeBenefit'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry }
   | { type: 'bonusSlotRoleSelector'; detachmentId: string; slotKey: string }
   | { type: 'bonusUnitPicker'; detachmentId: string; bonusSlotId: string; role: string }
   | { type: 'detachmentSelector'; trigger: 'highCommand' | 'command'; unlockedBy: string }

@@ -2,6 +2,7 @@
   "legiones-astartes": [
     {
       "name": "Rapier Battery",
+      "entryId": "5e1a-86ac-b637-daf2",
       "role": "Support",
       "points": 40,
       "baseCost": 0,
@@ -17,6 +18,7 @@
     },
     {
       "name": "Saturnine Terminator Squad",
+      "entryId": "8b89-b309-c9bd-9c8a",
       "role": "Heavy Assault",
       "points": 200,
       "baseCost": 80,
@@ -38,6 +40,7 @@
     },
     {
       "name": "Centurion",
+      "entryId": "3392-e93d-79bc-d648",
       "role": "Command",
       "points": 80,
       "baseCost": 80,
@@ -53,6 +56,7 @@
     },
     {
       "name": "Praetor in Saturnine Terminator Armour",
+      "entryId": "2a5a-8ab8-be4d-6fa7",
       "role": "High Command",
       "points": 200,
       "baseCost": 200,
@@ -68,6 +72,7 @@
     },
     {
       "name": "Assault Squad",
+      "entryId": "470d-5d41-cc59-b85b",
       "role": "Troops",
       "points": 140,
       "baseCost": 32,
@@ -89,6 +94,7 @@
     },
     {
       "name": "Breacher Squad",
+      "entryId": "b564-8809-1bcf-d8b3",
       "role": "Troops",
       "points": 140,
       "baseCost": 32,
@@ -110,6 +116,7 @@
     },
     {
       "name": "Araknae Quad Accelerator Platform",
+      "entryId": "acef-2a3d-3434-7583",
       "role": "Support",
       "points": 125,
       "baseCost": 125,
@@ -125,6 +132,7 @@
     },
     {
       "name": "Saturnine Dreadnought",
+      "entryId": "b26e-1244-2dbc-2b6d",
       "role": "War-engine",
       "points": 340,
       "baseCost": 340,
@@ -140,6 +148,7 @@
     },
     {
       "name": "Fellblade Super-Heavy Battle Tank",
+      "entryId": "ca07-1c1d-3788-c9e5",
       "role": "Lord of War",
       "points": 660,
       "baseCost": 650,
@@ -155,6 +164,7 @@
     },
     {
       "name": "Praetorian Command Squad",
+      "entryId": "0056-047c-b1f4-2555",
       "role": "Retinue",
       "points": 130,
       "baseCost": 50,
@@ -176,6 +186,7 @@
     },
     {
       "name": "Rhino",
+      "entryId": "1b41-8597-7168-c326",
       "role": "Transport",
       "points": 60,
       "baseCost": 60,
@@ -191,6 +202,7 @@
     },
     {
       "name": "Spartan Assault Tank",
+      "entryId": "0f37-da12-bb6f-1a2e",
       "role": "Heavy Transport",
       "points": 400,
       "baseCost": 400,
@@ -206,6 +218,7 @@
     },
     {
       "name": "Veteran Tactical Squad",
+      "entryId": "07f6-349f-046d-bf5e",
       "role": "Elites",
       "points": 85,
       "baseCost": 25,
@@ -227,6 +240,7 @@
     },
     {
       "name": "Veteran Assault Squad",
+      "entryId": "a119-c2a7-ff1a-399c",
       "role": "Elites",
       "points": 120,
       "baseCost": 32,
@@ -248,6 +262,7 @@
     },
     {
       "name": "Tactical Squad",
+      "entryId": "7b69-a372-a803-9c6f",
       "role": "Troops",
       "points": 100,
       "baseCost": 10,
@@ -269,6 +284,7 @@
     },
     {
       "name": "Deredeo Dreadnought",
+      "entryId": "10ad-8abc-c6ef-97ad",
       "role": "War-engine",
       "points": 190,
       "baseCost": 190,
@@ -284,6 +300,7 @@
     },
     {
       "name": "Leviathan Dreadnought",
+      "entryId": "9d6f-298d-743c-da5d",
       "role": "War-engine",
       "points": 220,
       "baseCost": 220,
@@ -299,6 +316,7 @@
     },
     {
       "name": "Praetor",
+      "entryId": "9ae1-34b8-0b83-f1c5",
       "role": "High Command",
       "points": 120,
       "baseCost": 120,
@@ -314,6 +332,7 @@
     },
     {
       "name": "Praetor in Terminator Armour",
+      "entryId": "23ee-bc64-aea6-5272",
       "role": "High Command",
       "points": 145,
       "baseCost": 145,
@@ -329,6 +348,7 @@
     },
     {
       "name": "Optae",
+      "entryId": "1653-8dfd-2881-8cec",
       "role": "Command",
       "points": 50,
       "baseCost": 50,
@@ -344,6 +364,7 @@
     },
     {
       "name": "Centurion in Terminator Armour",
+      "entryId": "976b-2d8a-7e70-e6a7",
       "role": "Command",
       "points": 100,
       "baseCost": 100,
@@ -359,6 +380,7 @@
     },
     {
       "name": "Damocles Command Rhino",
+      "entryId": "f214-aeb9-0dd6-9071",
       "role": "Command",
       "points": 120,
       "baseCost": 120,
@@ -374,6 +396,7 @@
     },
     {
       "name": "Librarian",
+      "entryId": "f06f-4418-b230-9ee7",
       "role": "Command",
       "points": 85,
       "baseCost": 85,
@@ -389,6 +412,7 @@
     },
     {
       "name": "Legion Champion",
+      "entryId": "8ab7-6f30-ce10-65df",
       "role": "Command",
       "points": 105,
       "baseCost": 105,
@@ -404,6 +428,7 @@
     },
     {
       "name": "Vigilator",
+      "entryId": "22fd-89ea-04c6-3f3d",
       "role": "Command",
       "points": 95,
       "baseCost": 95,
@@ -419,6 +444,7 @@
     },
     {
       "name": "Esoterist",
+      "entryId": "868f-f32d-d5ef-8021",
       "role": "Command",
       "points": 95,
       "baseCost": 95,
@@ -434,6 +460,7 @@
     },
     {
       "name": "Master of Signals",
+      "entryId": "0c1d-e55e-1d4e-ab94",
       "role": "Command",
       "points": 115,
       "baseCost": 115,
@@ -449,6 +476,7 @@
     },
     {
       "name": "Praevian",
+      "entryId": "7bb3-1bf7-ab4b-c34b",
       "role": "Command",
       "points": 95,
       "baseCost": 95,
@@ -464,6 +492,7 @@
     },
     {
       "name": "Moritat",
+      "entryId": "0c28-19c0-71b2-424e",
       "role": "Command",
       "points": 95,
       "baseCost": 95,
@@ -479,6 +508,7 @@
     },
     {
       "name": "Siege Breaker",
+      "entryId": "8128-2ba6-b677-eb81",
       "role": "Command",
       "points": 115,
       "baseCost": 115,
@@ -494,6 +524,7 @@
     },
     {
       "name": "Herald",
+      "entryId": "388f-1220-df0b-fcc6",
       "role": "Command",
       "points": 100,
       "baseCost": 100,
@@ -509,6 +540,7 @@
     },
     {
       "name": "Chaplain",
+      "entryId": "a6c4-31c4-9e9d-ab03",
       "role": "Command",
       "points": 80,
       "baseCost": 80,
@@ -524,6 +556,7 @@
     },
     {
       "name": "Praetorian Command Squad with Jump Packs",
+      "entryId": "bcbf-35a6-91e8-b0b1",
       "role": "Retinue",
       "points": 160,
       "baseCost": 60,
@@ -545,6 +578,7 @@
     },
     {
       "name": "Centurion Command Squad",
+      "entryId": "4985-94a1-4448-a9ff",
       "role": "Retinue",
       "points": 85,
       "baseCost": 25,
@@ -566,6 +600,7 @@
     },
     {
       "name": "Tartaros Terminator Command Squad",
+      "entryId": "50fb-f90a-70ec-7649",
       "role": "Retinue",
       "points": 140,
       "baseCost": 60,
@@ -587,6 +622,7 @@
     },
     {
       "name": "Cataphractii Terminator Squad",
+      "entryId": "e9a1-490f-8679-fc4e",
       "role": "Heavy Assault",
       "points": 150,
       "baseCost": 30,
@@ -608,6 +644,7 @@
     },
     {
       "name": "Seeker Squad",
+      "entryId": "f1c4-6d65-d660-f16f",
       "role": "Elites",
       "points": 105,
       "baseCost": 33,
@@ -629,6 +666,7 @@
     },
     {
       "name": "Tartaros Terminator Squad",
+      "entryId": "3139-1aa9-4b77-da26",
       "role": "Heavy Assault",
       "points": 150,
       "baseCost": 30,
@@ -650,6 +688,7 @@
     },
     {
       "name": "Cataphractii Terminator Command Squad",
+      "entryId": "b703-f7ab-dac5-0ae4",
       "role": "Retinue",
       "points": 140,
       "baseCost": 60,
@@ -671,6 +710,7 @@
     },
     {
       "name": "Despoiler Squad",
+      "entryId": "44bd-10de-2055-40f6",
       "role": "Troops",
       "points": 100,
       "baseCost": 10,
@@ -692,6 +732,7 @@
     },
     {
       "name": "Tactical Support Squad",
+      "entryId": "2f96-9d5c-5c94-58db",
       "role": "Support",
       "points": 40,
       "baseCost": 8,
@@ -713,6 +754,7 @@
     },
     {
       "name": "Heavy Support Squad",
+      "entryId": "1734-8863-96bf-f052",
       "role": "Support",
       "points": 50,
       "baseCost": 10,
@@ -734,6 +776,7 @@
     },
     {
       "name": "Apothecary",
+      "entryId": "b7fe-ba65-00d2-57f0",
       "role": "Support",
       "points": 30,
       "baseCost": 30,
@@ -749,6 +792,7 @@
     },
     {
       "name": "Techmarine",
+      "entryId": "6cac-d5d2-dda7-ea8f",
       "role": "Support",
       "points": 50,
       "baseCost": 50,
@@ -764,6 +808,7 @@
     },
     {
       "name": "Deathstorm Drop Pod",
+      "entryId": "84cd-c790-5886-8814",
       "role": "Support",
       "points": 90,
       "baseCost": 90,
@@ -779,6 +824,7 @@
     },
     {
       "name": "Contemptor Dreadnought",
+      "entryId": "3337-0b90-6ead-cba1",
       "role": "War-engine",
       "points": 150,
       "baseCost": 150,
@@ -794,6 +840,7 @@
     },
     {
       "name": "Termite",
+      "entryId": "29c3-0b90-216c-b071",
       "role": "Transport",
       "points": 80,
       "baseCost": 80,
@@ -809,6 +856,7 @@
     },
     {
       "name": "Drop Pod",
+      "entryId": "2eb3-783d-8dde-733b",
       "role": "Transport",
       "points": 50,
       "baseCost": 50,
@@ -824,6 +872,7 @@
     },
     {
       "name": "Land Raider Carrier",
+      "entryId": "e0b3-3d67-1299-1eb7",
       "role": "Heavy Transport",
       "points": 265,
       "baseCost": 265,
@@ -839,6 +888,7 @@
     },
     {
       "name": "Dreadnought Drop Pod",
+      "entryId": "e004-bc89-4e2f-c59d",
       "role": "Heavy Transport",
       "points": 100,
       "baseCost": 100,
@@ -854,6 +904,7 @@
     },
     {
       "name": "Kharybdis Assault Claw",
+      "entryId": "ed0b-f07b-ed2f-b510",
       "role": "Heavy Transport",
       "points": 235,
       "baseCost": 235,
@@ -869,6 +920,7 @@
     },
     {
       "name": "Dreadclaw Drop Pod",
+      "entryId": "2438-805f-7a19-3295",
       "role": "Heavy Transport",
       "points": 115,
       "baseCost": 115,
@@ -884,6 +936,7 @@
     },
     {
       "name": "Outrider Squadron",
+      "entryId": "512e-6a63-1bd3-8a22",
       "role": "Recon",
       "points": 85,
       "baseCost": 45,
@@ -905,6 +958,7 @@
     },
     {
       "name": "Reconnaissance Squad",
+      "entryId": "c89b-1138-0523-4a9f",
       "role": "Recon",
       "points": 110,
       "baseCost": 42,
@@ -926,6 +980,7 @@
     },
     {
       "name": "Sabre",
+      "entryId": "e62b-3d98-8678-1f97",
       "role": "Recon",
       "points": 80,
       "baseCost": 80,
@@ -941,6 +996,7 @@
     },
     {
       "name": "Land Raider Explorator",
+      "entryId": "5794-faa2-b2c8-ef0a",
       "role": "Recon",
       "points": 220,
       "baseCost": 220,
@@ -956,6 +1012,7 @@
     },
     {
       "name": "Tarantula Battery",
+      "entryId": "4ee0-7aae-5319-599f",
       "role": "Recon",
       "points": 45,
       "baseCost": 0,
@@ -971,6 +1028,7 @@
     },
     {
       "name": "Scimitar Jetbike Squadron",
+      "entryId": "aa3c-45cc-2dfb-a98e",
       "role": "Fast Attack",
       "points": 95,
       "baseCost": 35,
@@ -992,6 +1050,7 @@
     },
     {
       "name": "Xiphon Interceptor",
+      "entryId": "06a4-3ae8-c5d2-aa1d",
       "role": "Fast Attack",
       "points": 120,
       "baseCost": 120,
@@ -1007,6 +1066,7 @@
     },
     {
       "name": "Storm Eagle",
+      "entryId": "0816-621f-d49d-558c",
       "role": "Fast Attack",
       "points": 200,
       "baseCost": 200,
@@ -1022,6 +1082,7 @@
     },
     {
       "name": "Fire Raptor",
+      "entryId": "3b08-d24a-c741-8daa",
       "role": "Fast Attack",
       "points": 220,
       "baseCost": 220,
@@ -1037,6 +1098,7 @@
     },
     {
       "name": "Javelin Speeder Squadron",
+      "entryId": "50f3-fca2-49ab-6de4",
       "role": "Fast Attack",
       "points": 75,
       "baseCost": 0,
@@ -1052,6 +1114,7 @@
     },
     {
       "name": "Predator",
+      "entryId": "b0ba-83cb-f3bf-bf2e",
       "role": "Armour",
       "points": 100,
       "baseCost": 100,
@@ -1067,6 +1130,7 @@
     },
     {
       "name": "Land Speeder Squadron",
+      "entryId": "7ebb-cdb2-017e-7c51",
       "role": "Fast Attack",
       "points": 50,
       "baseCost": 0,
@@ -1082,6 +1146,7 @@
     },
     {
       "name": "Sicaran",
+      "entryId": "4d65-cef9-42c6-dd2c",
       "role": "Armour",
       "points": 160,
       "baseCost": 160,
@@ -1097,6 +1162,7 @@
     },
     {
       "name": "Sicaran Venator",
+      "entryId": "1c8f-840b-c42f-338b",
       "role": "Armour",
       "points": 170,
       "baseCost": 170,
@@ -1112,6 +1178,7 @@
     },
     {
       "name": "Kratos Assault Tank",
+      "entryId": "e3f2-ff0d-f190-ecfd",
       "role": "Armour",
       "points": 280,
       "baseCost": 280,
@@ -1127,6 +1194,7 @@
     },
     {
       "name": "Vindicator Siege Tank",
+      "entryId": "5cb0-777c-bc90-f31a",
       "role": "Armour",
       "points": 140,
       "baseCost": 140,
@@ -1142,6 +1210,7 @@
     },
     {
       "name": "Scorpius Missile Tank",
+      "entryId": "4e75-6c81-f3ac-33f1",
       "role": "Armour",
       "points": 120,
       "baseCost": 120,
@@ -1157,6 +1226,7 @@
     },
     {
       "name": "Arquitor Bombard",
+      "entryId": "e6e4-964a-5852-9c07",
       "role": "Armour",
       "points": 150,
       "baseCost": 150,
@@ -1172,6 +1242,7 @@
     },
     {
       "name": "Cerberus Heavy Tank Destroyer",
+      "entryId": "a7a8-9dd5-69b2-a598",
       "role": "Lord of War",
       "points": 400,
       "baseCost": 400,
@@ -1187,6 +1258,7 @@
     },
     {
       "name": "Typhon Heavy Siege Tank",
+      "entryId": "b3e6-be98-5b83-87b4",
       "role": "Lord of War",
       "points": 400,
       "baseCost": 400,
@@ -1202,6 +1274,7 @@
     },
     {
       "name": "Glaive Super-Heavy Special Weapons Tank",
+      "entryId": "7d7b-1430-d550-9fe6",
       "role": "Lord of War",
       "points": 650,
       "baseCost": 650,
@@ -1217,6 +1290,7 @@
     },
     {
       "name": "Falchion Super-Heavy Tank Destroyer",
+      "entryId": "af99-c4c6-cde2-2ee1",
       "role": "Lord of War",
       "points": 650,
       "baseCost": 650,
@@ -1232,6 +1306,7 @@
     },
     {
       "name": "Thunderhawk Gunship",
+      "entryId": "d1dc-6a65-136b-7d33",
       "role": "Lord of War",
       "points": 685,
       "baseCost": 685,
@@ -1247,6 +1322,7 @@
     },
     {
       "name": "Mastodon Super-Heavy Assault Transport",
+      "entryId": "d29b-64ce-e91e-75fa",
       "role": "Lord of War",
       "points": 610,
       "baseCost": 600,
@@ -1262,6 +1338,7 @@
     },
     {
       "name": "Sokar Stormbird",
+      "entryId": "c2de-41c2-f4fa-996c",
       "role": "Lord of War",
       "points": 850,
       "baseCost": 850,
@@ -1277,6 +1354,7 @@
     },
     {
       "name": "Master of Descent",
+      "entryId": "4b59-1e3b-022d-c253",
       "role": "Command",
       "points": 115,
       "baseCost": 115,
@@ -1292,6 +1370,7 @@
     },
     {
       "name": "Overseer",
+      "entryId": "d43d-be97-943b-2081",
       "role": "Command",
       "points": 85,
       "baseCost": 85,
@@ -1307,6 +1386,7 @@
     },
     {
       "name": "Augur Command and Control Squad",
+      "entryId": "f44b-9e27-98f0-3578",
       "role": "Retinue",
       "points": 80,
       "baseCost": 80,
@@ -1322,6 +1402,7 @@
     },
     {
       "name": "Hyperios Missile Tank",
+      "entryId": "5999-0699-9293-04b8",
       "role": "Armour",
       "points": 120,
       "baseCost": 120,
@@ -1337,6 +1418,7 @@
     },
     {
       "name": "Mounted Praetor",
+      "entryId": "26d7-23ba-4059-8079",
       "role": "High Command",
       "points": 160,
       "baseCost": 160,
@@ -1352,6 +1434,7 @@
     },
     {
       "name": "Mounted Centurion",
+      "entryId": "2fb4-53c3-4e84-b9ec",
       "role": "Command",
       "points": 110,
       "baseCost": 110,
@@ -1367,6 +1450,7 @@
     },
     {
       "name": "Librarian With Jump Pack",
+      "entryId": "bd23-f9fd-4dff-9202",
       "role": "Command",
       "points": 115,
       "baseCost": 115,
@@ -1382,6 +1466,7 @@
     },
     {
       "name": "Mounted Librarian",
+      "entryId": "e9e2-0c90-42f6-8853",
       "role": "Command",
       "points": 125,
       "baseCost": 125,
@@ -1397,6 +1482,7 @@
     },
     {
       "name": "Librarian In Terminator Armour",
+      "entryId": "a427-a107-4dd3-9897",
       "role": "Command",
       "points": 115,
       "baseCost": 115,
@@ -1412,6 +1498,7 @@
     },
     {
       "name": "Esoterist With Jump Pack",
+      "entryId": "3ad9-c7af-4c97-b080",
       "role": "Command",
       "points": 125,
       "baseCost": 125,
@@ -1427,6 +1514,7 @@
     },
     {
       "name": "Mounted Esoterist",
+      "entryId": "7ab5-b907-4fa0-9caa",
       "role": "Command",
       "points": 135,
       "baseCost": 135,
@@ -1442,6 +1530,7 @@
     },
     {
       "name": "Esoterist In Terminator Armour",
+      "entryId": "f232-220d-4c9d-87f4",
       "role": "Command",
       "points": 125,
       "baseCost": 125,
@@ -1457,6 +1546,7 @@
     },
     {
       "name": "Legion Champion With Jump Pack",
+      "entryId": "98fc-9124-4534-a3a3",
       "role": "Command",
       "points": 135,
       "baseCost": 135,
@@ -1472,6 +1562,7 @@
     },
     {
       "name": "Mounted Legion Champion",
+      "entryId": "81ff-36e6-4de3-a46b",
       "role": "Command",
       "points": 145,
       "baseCost": 145,
@@ -1487,6 +1578,7 @@
     },
     {
       "name": "Legion Champion In Terminator Armour",
+      "entryId": "ba85-4d00-429e-bf29",
       "role": "Command",
       "points": 135,
       "baseCost": 135,
@@ -1502,6 +1594,7 @@
     },
     {
       "name": "Chaplain With Jump Pack",
+      "entryId": "9bda-87be-40f6-8f53",
       "role": "Command",
       "points": 100,
       "baseCost": 100,
@@ -1517,6 +1610,7 @@
     },
     {
       "name": "Mounted Chaplain",
+      "entryId": "6924-162b-45e1-ac5a",
       "role": "Command",
       "points": 110,
       "baseCost": 110,
@@ -1532,6 +1626,7 @@
     },
     {
       "name": "Chaplain In Terminator Armour",
+      "entryId": "d17a-1e84-4207-b627",
       "role": "Command",
       "points": 110,
       "baseCost": 110,
@@ -1547,6 +1642,7 @@
     },
     {
       "name": "Herald With Jump Pack",
+      "entryId": "7c0e-025f-41b5-b7d0",
       "role": "Command",
       "points": 130,
       "baseCost": 130,
@@ -1562,6 +1658,7 @@
     },
     {
       "name": "Mounted Herald",
+      "entryId": "eb91-e184-4e8a-a0e0",
       "role": "Command",
       "points": 140,
       "baseCost": 140,
@@ -1577,6 +1674,7 @@
     },
     {
       "name": "Herald In Terminator Armour",
+      "entryId": "f0ed-1a89-45ad-8530",
       "role": "Command",
       "points": 130,
       "baseCost": 130,
@@ -1592,6 +1690,7 @@
     },
     {
       "name": "Siege Breaker With Jump Pack",
+      "entryId": "5be6-e4e6-4649-9a27",
       "role": "Command",
       "points": 135,
       "baseCost": 135,
@@ -1607,6 +1706,7 @@
     },
     {
       "name": "Mounted Siege Breaker",
+      "entryId": "36ee-6609-4807-b87b",
       "role": "Command",
       "points": 145,
       "baseCost": 145,
@@ -1622,6 +1722,7 @@
     },
     {
       "name": "Siege Breaker In Terminator Armour",
+      "entryId": "00f7-04e9-4cb3-9092",
       "role": "Command",
       "points": 130,
       "baseCost": 130,
@@ -1637,6 +1738,7 @@
     },
     {
       "name": "Master Of Signals With Jump Pack",
+      "entryId": "c956-a8ce-452d-99ca",
       "role": "Command",
       "points": 135,
       "baseCost": 135,
@@ -1652,6 +1754,7 @@
     },
     {
       "name": "Mounted Master Of Signals",
+      "entryId": "5a4f-828b-4fec-bf2e",
       "role": "Command",
       "points": 145,
       "baseCost": 145,
@@ -1667,6 +1770,7 @@
     },
     {
       "name": "Moritat Mortalis",
+      "entryId": "f244-2933-4c15-a199",
       "role": "Command",
       "points": 85,
       "baseCost": 85,
@@ -1682,6 +1786,7 @@
     },
     {
       "name": "Forge Lord",
+      "entryId": "eb2a-b29a-4a7c-b01b",
       "role": "Command",
       "points": 110,
       "baseCost": 110,
@@ -1697,6 +1802,7 @@
     },
     {
       "name": "Mounted Forge Lord",
+      "entryId": "aa14-570e-4a4d-b0ed",
       "role": "Command",
       "points": 140,
       "baseCost": 140,
@@ -1712,6 +1818,7 @@
     },
     {
       "name": "Forge Lord In Terminator Armour",
+      "entryId": "b0e4-3685-4787-a9f9",
       "role": "Command",
       "points": 130,
       "baseCost": 130,
@@ -1727,6 +1834,7 @@
     },
     {
       "name": "Primus Medicae",
+      "entryId": "a9d2-eb7c-4e86-8e78",
       "role": "Command",
       "points": 100,
       "baseCost": 100,
@@ -1742,6 +1850,7 @@
     },
     {
       "name": "Mounted Primus Medicae",
+      "entryId": "5f81-c793-41fb-91dd",
       "role": "Command",
       "points": 130,
       "baseCost": 130,
@@ -1757,6 +1866,7 @@
     },
     {
       "name": "Primus Medicae In Terminator Armour",
+      "entryId": "25fa-16d8-4770-9f89",
       "role": "Command",
       "points": 120,
       "baseCost": 120,
@@ -1772,6 +1882,7 @@
     },
     {
       "name": "Delegatus",
+      "entryId": "d45d-6c54-4dfc-92af",
       "role": "Command",
       "points": 100,
       "baseCost": 100,
@@ -1787,6 +1898,7 @@
     },
     {
       "name": "Mounted Delegatus",
+      "entryId": "69bd-718d-4166-aecb",
       "role": "Command",
       "points": 130,
       "baseCost": 130,
@@ -1802,6 +1914,7 @@
     },
     {
       "name": "Delegatus In Terminator Armour",
+      "entryId": "60f6-7316-4e0a-874b",
       "role": "Command",
       "points": 120,
       "baseCost": 120,
@@ -1817,6 +1930,7 @@
     },
     {
       "name": "Mortificator",
+      "entryId": "f48f-ed83-4285-b41c",
       "role": "Command",
       "points": 100,
       "baseCost": 100,
@@ -1832,6 +1946,7 @@
     },
     {
       "name": "Mortificator In Terminator Armour",
+      "entryId": "93b0-98f1-4d08-8746",
       "role": "Command",
       "points": 120,
       "baseCost": 120,
@@ -1847,6 +1962,7 @@
     },
     {
       "name": "Warmonger",
+      "entryId": "91b5-a2f3-4067-b498",
       "role": "Command",
       "points": 130,
       "baseCost": 130,
@@ -1862,6 +1978,7 @@
     },
     {
       "name": "Warmonger In Terminator Armour",
+      "entryId": "f849-279f-4f2b-abca",
       "role": "Command",
       "points": 150,
       "baseCost": 150,
@@ -1877,6 +1994,7 @@
     },
     {
       "name": "Pathfinder",
+      "entryId": "5cc3-18f7-4c45-92b0",
       "role": "Command",
       "points": 60,
       "baseCost": 60,
@@ -1892,6 +2010,7 @@
     },
     {
       "name": "Armistos",
+      "entryId": "5d97-c745-4b49-b2f2",
       "role": "Command",
       "points": 70,
       "baseCost": 70,
@@ -1907,6 +2026,7 @@
     },
     {
       "name": "Praetorian Command Squad On Scimitar Jetbikes",
+      "entryId": "f28c-5af9-4645-b438",
       "role": "Retinue",
       "points": 170,
       "baseCost": 80,
@@ -1928,6 +2048,7 @@
     },
     {
       "name": "Outrider Praetorian Command Squad",
+      "entryId": "86dd-250d-494a-b8e4",
       "role": "Retinue",
       "points": 150,
       "baseCost": 70,
@@ -1949,6 +2070,7 @@
     },
     {
       "name": "Veteran Breacher Squad",
+      "entryId": "886c-5f0a-404b-8bfc",
       "role": "Elites",
       "points": 115,
       "baseCost": 35,
@@ -1970,6 +2092,7 @@
     },
     {
       "name": "Veteran Heavy Support Squad",
+      "entryId": "1900-f550-46e0-bc78",
       "role": "Elites",
       "points": 115,
       "baseCost": 35,
@@ -1991,6 +2114,7 @@
     },
     {
       "name": "Tartaros Terminator Siege Squad",
+      "entryId": "dace-6eff-4491-b991",
       "role": "Heavy Assault",
       "points": 150,
       "baseCost": 30,
@@ -2012,6 +2136,7 @@
     },
     {
       "name": "Indomitus Terminator Squad",
+      "entryId": "cca5-a33d-466a-a3f4",
       "role": "Heavy Assault",
       "points": 180,
       "baseCost": 40,
@@ -2033,6 +2158,7 @@
     },
     {
       "name": "Mortalis Destroyer Squad",
+      "entryId": "7711-26d2-4b83-b2c8",
       "role": "Heavy Assault",
       "points": 85,
       "baseCost": 25,
@@ -2054,6 +2180,7 @@
     },
     {
       "name": "Destroyer Assault Squad",
+      "entryId": "95e2-f176-4750-914e",
       "role": "Heavy Assault",
       "points": 100,
       "baseCost": 28,
@@ -2075,6 +2202,7 @@
     },
     {
       "name": "Castra Ferrum Dreadnought",
+      "entryId": "fb5b-af3b-4483-811f",
       "role": "War-engine",
       "points": 115,
       "baseCost": 115,
@@ -2090,6 +2218,7 @@
     },
     {
       "name": "Land Raider Achilles",
+      "entryId": "e937-c704-4177-ac8d",
       "role": "Heavy Transport",
       "points": 280,
       "baseCost": 280,
@@ -2105,6 +2234,7 @@
     },
     {
       "name": "Caestus Assault Ram",
+      "entryId": "969d-a75a-4363-ae09",
       "role": "Heavy Transport",
       "points": 290,
       "baseCost": 290,
@@ -2120,6 +2250,7 @@
     },
     {
       "name": "Attack Bike Squadron",
+      "entryId": "b17c-db9a-43b0-82f0",
       "role": "Recon",
       "points": 45,
       "baseCost": 0,
@@ -2135,6 +2266,7 @@
     },
     {
       "name": "Scout Squad",
+      "entryId": "e787-5b99-4fc2-9b4f",
       "role": "Recon",
       "points": 70,
       "baseCost": 22,
@@ -2156,6 +2288,7 @@
     },
     {
       "name": "Legion Basilisk",
+      "entryId": "9423-c3bb-4ae8-b374",
       "role": "Armour",
       "points": 140,
       "baseCost": 140,
@@ -2171,6 +2304,7 @@
     },
     {
       "name": "Legion Medusa",
+      "entryId": "3771-340e-4771-ae10",
       "role": "Armour",
       "points": 150,
       "baseCost": 150,
@@ -2186,6 +2320,7 @@
     },
     {
       "name": "Thunderhawk Transporter",
+      "entryId": "fb1c-580c-4b36-8fb7",
       "role": "Lord of War",
       "points": 500,
       "baseCost": 500,
@@ -2201,6 +2336,7 @@
     },
     {
       "name": "Centurion in Saturnine Terminator Armour",
+      "entryId": "aa81-d88f-48fa-e91b",
       "role": "Command",
       "points": 150,
       "baseCost": 150,
@@ -2216,6 +2352,7 @@
     },
     {
       "name": "Saturnine Terminator Command Squad",
+      "entryId": "5729-6425-d3bf-ad4f",
       "role": "Retinue",
       "points": 160,
       "baseCost": 100,
@@ -2237,6 +2374,7 @@
     },
     {
       "name": "Whirlwind Missile Tank",
+      "entryId": "0114-3c09-5bcf-ea80",
       "role": "Armour",
       "points": 100,
       "baseCost": 100,
@@ -2254,6 +2392,7 @@
   "alpha-legion": [
     {
       "name": "Armillus Dynat",
+      "entryId": "df2e-ee83-e5e5-c333",
       "role": "High Command",
       "points": 185,
       "baseCost": 185,
@@ -2269,6 +2408,7 @@
     },
     {
       "name": "Saboteur",
+      "entryId": "66a2-0979-688a-b47e",
       "role": "Command",
       "points": 95,
       "baseCost": 95,
@@ -2284,6 +2424,7 @@
     },
     {
       "name": "Headhunter Kill Team",
+      "entryId": "db52-3de0-a5cf-d943",
       "role": "Elites",
       "points": 125,
       "baseCost": 45,
@@ -2305,6 +2446,7 @@
     },
     {
       "name": "Exodus",
+      "entryId": "9258-8867-220d-429f",
       "role": "Elites",
       "points": 165,
       "baseCost": 165,
@@ -2320,6 +2462,7 @@
     },
     {
       "name": "Lernaean Terminator Squad",
+      "entryId": "e730-6b3b-7f60-fea0",
       "role": "Elites",
       "points": 250,
       "baseCost": 70,
@@ -2341,6 +2484,7 @@
     },
     {
       "name": "Alpharius",
+      "entryId": "7b1d-a83b-ffc8-aad4",
       "role": "Warlord",
       "points": 465,
       "baseCost": 465,
@@ -2356,6 +2500,7 @@
     },
     {
       "name": "Autilon Skorr",
+      "entryId": "9825-c621-2099-bea6",
       "role": "Command",
       "points": 135,
       "baseCost": 135,
@@ -2371,6 +2516,7 @@
     },
     {
       "name": "Effrit Disruption Cadre",
+      "entryId": "ce42-aa07-7613-a86d",
       "role": "Recon",
       "points": 145,
       "baseCost": 45,
@@ -2392,6 +2538,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "ff2e-e3bf-43d7-b046",
       "role": "Troops",
       "points": 90,
       "baseCost": 0,
@@ -2409,6 +2556,7 @@
   "blood-angels": [
     {
       "name": "Sanguinius",
+      "entryId": "0fb0-cab6-34dc-b9b0",
       "role": "Warlord",
       "points": 970,
       "baseCost": 485,
@@ -2424,6 +2572,7 @@
     },
     {
       "name": "Chapter Master Raldoron",
+      "entryId": "fef2-a389-74d3-47c8",
       "role": "High Command",
       "points": 360,
       "baseCost": 180,
@@ -2439,6 +2588,7 @@
     },
     {
       "name": "Dominion Zephon",
+      "entryId": "07c2-3eb9-2ffe-e900",
       "role": "Command",
       "points": 370,
       "baseCost": 185,
@@ -2454,6 +2604,7 @@
     },
     {
       "name": "Aster Chrone",
+      "entryId": "93c6-02e1-f5e2-5b76",
       "role": "Command",
       "points": 310,
       "baseCost": 155,
@@ -2469,6 +2620,7 @@
     },
     {
       "name": "Contemptor-Incaendius Dreadnought",
+      "entryId": "83ae-08c8-bdf1-ccaa",
       "role": "War-engine",
       "points": 400,
       "baseCost": 200,
@@ -2484,6 +2636,7 @@
     },
     {
       "name": "Crimson Paladins",
+      "entryId": "80bb-caf1-d1fc-0e26",
       "role": "Elites",
       "points": 230,
       "baseCost": 65,
@@ -2505,6 +2658,7 @@
     },
     {
       "name": "Dawnbreaker Cohort",
+      "entryId": "410b-50c3-4f12-1c67",
       "role": "Elites",
       "points": 150,
       "baseCost": 50,
@@ -2526,6 +2680,7 @@
     },
     {
       "name": "The Angel&apos;s Tears",
+      "entryId": "06d5-d1b3-de1f-7564",
       "role": "Heavy Assault",
       "points": 150,
       "baseCost": 70,
@@ -2547,6 +2702,7 @@
     },
     {
       "name": "Sanguinary Guard",
+      "entryId": "b862-722c-4275-8f78",
       "role": "Retinue",
       "points": 205,
       "baseCost": 5,
@@ -2562,6 +2718,7 @@
     },
     {
       "name": "Ofanim Court",
+      "entryId": "cd4b-8935-4b71-aecd",
       "role": "Retinue",
       "points": 130,
       "baseCost": 10,
@@ -2577,6 +2734,7 @@
     },
     {
       "name": "Ofanim Court With Jump Packs",
+      "entryId": "0e97-f032-4f2a-91ac",
       "role": "Retinue",
       "points": 160,
       "baseCost": 10,
@@ -2592,6 +2750,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "d534-5849-4506-b269",
       "role": "Troops",
       "points": 100,
       "baseCost": 10,
@@ -2609,6 +2768,7 @@
   "dark-angels": [
     {
       "name": "Corswain",
+      "entryId": "1d4a-09de-2638-e9e0",
       "role": "High Command",
       "points": 220,
       "baseCost": 220,
@@ -2624,6 +2784,7 @@
     },
     {
       "name": "Deathwing Companion Detachment",
+      "entryId": "1e9c-6b93-a335-43c4",
       "role": "Retinue",
       "points": 185,
       "baseCost": 55,
@@ -2645,6 +2806,7 @@
     },
     {
       "name": "Dreadwing Interemptor Squad",
+      "entryId": "d788-b46c-c9f2-0aa9",
       "role": "Support",
       "points": 135,
       "baseCost": 45,
@@ -2666,6 +2828,7 @@
     },
     {
       "name": "Inner Circle Knights Cenobium",
+      "entryId": "e033-118d-4b07-5cd1",
       "role": "Elites",
       "points": 285,
       "baseCost": 75,
@@ -2687,6 +2850,7 @@
     },
     {
       "name": "Lion El&apos;Johnson",
+      "entryId": "2516-2347-2ca5-af1d",
       "role": "Warlord",
       "points": 460,
       "baseCost": 460,
@@ -2702,6 +2866,7 @@
     },
     {
       "name": "Marduk Sedras",
+      "entryId": "34d0-7b32-5875-8d5a",
       "role": "High Command",
       "points": 225,
       "baseCost": 225,
@@ -2717,6 +2882,7 @@
     },
     {
       "name": "Cataphractii Terminator Deathwing Companions",
+      "entryId": "cb0f-4537-6a7e-4ed7",
       "role": "Retinue",
       "points": 265,
       "baseCost": 240,
@@ -2738,6 +2904,7 @@
     },
     {
       "name": "Tartaros Terminator Deathwing Companions",
+      "entryId": "3f9d-5f2f-a47a-bd1f",
       "role": "Retinue",
       "points": 265,
       "baseCost": 240,
@@ -2759,6 +2926,7 @@
     },
     {
       "name": "Inner Circle Knights Cenobium – Order of the Broken Claws",
+      "entryId": "2346-1124-5bc5-7254",
       "role": "Elites",
       "points": 295,
       "baseCost": 65,
@@ -2780,6 +2948,7 @@
     },
     {
       "name": "Excindio Battle-automata",
+      "entryId": "f369-7a8f-853b-fdc5",
       "role": "War-engine",
       "points": 185,
       "baseCost": 180,
@@ -2795,6 +2964,7 @@
     },
     {
       "name": "Firewing Enigmatus Cabal",
+      "entryId": "84d3-129c-126d-5036",
       "role": "Elites",
       "points": 135,
       "baseCost": 90,
@@ -2810,6 +2980,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "d6b5-9428-48a9-952f",
       "role": "Troops",
       "points": 90,
       "baseCost": 0,
@@ -2827,6 +2998,7 @@
   "death-guard": [
     {
       "name": "Mortarion",
+      "entryId": "1e3b-2a3b-c76d-6f98",
       "role": "Warlord",
       "points": 425,
       "baseCost": 0,
@@ -2842,6 +3014,7 @@
     },
     {
       "name": "Calas Typhon",
+      "entryId": "f182-d709-298f-5154",
       "role": "High Command",
       "points": 200,
       "baseCost": 200,
@@ -2857,6 +3030,7 @@
     },
     {
       "name": "Deathshroud Terminator Squad",
+      "entryId": "11a2-0875-ae7a-3da2",
       "role": "Retinue",
       "points": 100,
       "baseCost": 10,
@@ -2872,6 +3046,7 @@
     },
     {
       "name": "Grave Warden Terminator Squad",
+      "entryId": "adff-529b-2bd1-c87f",
       "role": "Heavy Assault",
       "points": 225,
       "baseCost": 65,
@@ -2893,6 +3068,7 @@
     },
     {
       "name": "Mortus Poisoner Squad",
+      "entryId": "a977-8fbb-462e-9872",
       "role": "Elites",
       "points": 70,
       "baseCost": 22,
@@ -2914,6 +3090,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "8236-95aa-4580-926a",
       "role": "Troops",
       "points": 90,
       "baseCost": 0,
@@ -2931,6 +3108,7 @@
   "emperors-children": [
     {
       "name": "Fulgrim",
+      "entryId": "9ba1-40c2-edd5-8bd7",
       "role": "Warlord",
       "points": 850,
       "baseCost": 425,
@@ -2946,6 +3124,7 @@
     },
     {
       "name": "Fulgrim Transfigured",
+      "entryId": "7db2-c826-ebc5-1918",
       "role": "Warlord",
       "points": 600,
       "baseCost": 600,
@@ -2961,6 +3140,7 @@
     },
     {
       "name": "Lord Commander Eidolon",
+      "entryId": "fee3-dc10-99d3-37aa",
       "role": "High Command",
       "points": 215,
       "baseCost": 215,
@@ -2976,6 +3156,7 @@
     },
     {
       "name": "Captain Lucius",
+      "entryId": "2621-860f-a513-e11e",
       "role": "Command",
       "points": 215,
       "baseCost": 215,
@@ -2991,6 +3172,7 @@
     },
     {
       "name": "Saul Tarvitz",
+      "entryId": "fb9a-2484-6aee-fa59",
       "role": "Command",
       "points": 215,
       "baseCost": 215,
@@ -3006,6 +3188,7 @@
     },
     {
       "name": "Phoenix Terminator Squad",
+      "entryId": "e547-ac83-3328-4d31",
       "role": "Retinue",
       "points": 205,
       "baseCost": 60,
@@ -3027,6 +3210,7 @@
     },
     {
       "name": "Palatine Blade Squad",
+      "entryId": "8f1b-e5a5-5607-612c",
       "role": "Elites",
       "points": 165,
       "baseCost": 53,
@@ -3048,6 +3232,7 @@
     },
     {
       "name": "Kakophoni Squad",
+      "entryId": "4ac4-b32a-6840-a91e",
       "role": "Support",
       "points": 150,
       "baseCost": 50,
@@ -3069,6 +3254,7 @@
     },
     {
       "name": "Palatine Blade Aquilae Squad",
+      "entryId": "83e2-188d-4319-a3e4",
       "role": "Elites",
       "points": 195,
       "baseCost": 63,
@@ -3090,6 +3276,7 @@
     },
     {
       "name": "Rylanor The Unyielding",
+      "entryId": "8899-5b90-49f3-b137",
       "role": "War-engine",
       "points": 180,
       "baseCost": 180,
@@ -3105,6 +3292,7 @@
     },
     {
       "name": "Sun Killer Squad",
+      "entryId": "91fb-d8a8-411d-8296",
       "role": "Elites",
       "points": 65,
       "baseCost": 25,
@@ -3126,6 +3314,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "54b6-dc9c-4cd4-884b",
       "role": "Troops",
       "points": 100,
       "baseCost": 10,
@@ -3143,6 +3332,7 @@
   "imperial-fists": [
     {
       "name": "Sigismund",
+      "entryId": "4870-010f-27b4-20db",
       "role": "High Command",
       "points": 250,
       "baseCost": 250,
@@ -3158,6 +3348,7 @@
     },
     {
       "name": "Rogal Dorn",
+      "entryId": "7067-3938-a4ea-112c",
       "role": "Warlord",
       "points": 415,
       "baseCost": 415,
@@ -3173,6 +3364,7 @@
     },
     {
       "name": "Evander Garrius",
+      "entryId": "6819-8014-fe49-2e96",
       "role": "High Command",
       "points": 215,
       "baseCost": 215,
@@ -3188,6 +3380,7 @@
     },
     {
       "name": "Phalanx Warder-Squad",
+      "entryId": "7ee4-7278-0ad7-4c29",
       "role": "Heavy Assault",
       "points": 200,
       "baseCost": 38,
@@ -3209,6 +3402,7 @@
     },
     {
       "name": "Camba Diaz",
+      "entryId": "0511-25f6-aaef-e1dd",
       "role": "Command",
       "points": 120,
       "baseCost": 120,
@@ -3224,6 +3418,7 @@
     },
     {
       "name": "Alexis Polux",
+      "entryId": "bb94-88c3-c9b8-c117",
       "role": "Command",
       "points": 185,
       "baseCost": 185,
@@ -3239,6 +3434,7 @@
     },
     {
       "name": "Templar Brethren",
+      "entryId": "0096-62da-55d8-3912",
       "role": "Elites",
       "points": 160,
       "baseCost": 52,
@@ -3260,6 +3456,7 @@
     },
     {
       "name": "Fafnir Rann",
+      "entryId": "21f3-6129-c7dd-8749",
       "role": "High Command",
       "points": 175,
       "baseCost": 175,
@@ -3275,6 +3472,7 @@
     },
     {
       "name": "Huscarl Terminator Retinue",
+      "entryId": "03d6-e650-4864-9a0e",
       "role": "Retinue",
       "points": 275,
       "baseCost": 75,
@@ -3296,6 +3494,7 @@
     },
     {
       "name": "Ætos Dios",
+      "entryId": "008c-deb9-43c3-a475",
       "role": "Lord of War",
       "points": 700,
       "baseCost": 700,
@@ -3311,6 +3510,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "ca87-d173-4967-add6",
       "role": "Troops",
       "points": 90,
       "baseCost": 0,
@@ -3328,6 +3528,7 @@
   "iron-hands": [
     {
       "name": "Ferrus Manus",
+      "entryId": "667d-97c2-e1ea-8fa6",
       "role": "Warlord",
       "points": 465,
       "baseCost": 465,
@@ -3343,6 +3544,7 @@
     },
     {
       "name": "Iron Father",
+      "entryId": "34fa-844e-fbfb-3737",
       "role": "High Command",
       "points": 205,
       "baseCost": 175,
@@ -3358,6 +3560,7 @@
     },
     {
       "name": "Medusan Immortals Squad",
+      "entryId": "c54a-6c98-0f74-d45c",
       "role": "Troops",
       "points": 95,
       "baseCost": 35,
@@ -3379,6 +3582,7 @@
     },
     {
       "name": "Shadrak Meduson",
+      "entryId": "218f-d70c-501e-0572",
       "role": "High Command",
       "points": 175,
       "baseCost": 175,
@@ -3394,6 +3598,7 @@
     },
     {
       "name": "Gorgon Terminator Squad",
+      "entryId": "6545-a621-619e-4757",
       "role": "Heavy Assault",
       "points": 200,
       "baseCost": 60,
@@ -3415,6 +3620,7 @@
     },
     {
       "name": "Iron Father In Artificer Armour",
+      "entryId": "6c8c-9770-46e5-81b6",
       "role": "High Command",
       "points": 150,
       "baseCost": 150,
@@ -3430,6 +3636,7 @@
     },
     {
       "name": "Morlock Terminator Squad",
+      "entryId": "1c5d-f399-408b-9a24",
       "role": "Retinue",
       "points": 165,
       "baseCost": 65,
@@ -3451,6 +3658,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "ee40-8340-4718-90ef",
       "role": "Troops",
       "points": 90,
       "baseCost": 0,
@@ -3468,6 +3676,7 @@
   "iron-warriors": [
     {
       "name": "Perturabo",
+      "entryId": "2ff4-482b-a2b2-f853",
       "role": "Warlord",
       "points": 460,
       "baseCost": 425,
@@ -3483,6 +3692,7 @@
     },
     {
       "name": "Warsmith",
+      "entryId": "5e76-088c-91c5-2d4d",
       "role": "High Command",
       "points": 175,
       "baseCost": 165,
@@ -3498,6 +3708,7 @@
     },
     {
       "name": "Tyrant Siege Terminator Squad",
+      "entryId": "83b4-239a-806b-33e5",
       "role": "Heavy Assault",
       "points": 300,
       "baseCost": 80,
@@ -3519,6 +3730,7 @@
     },
     {
       "name": "Iron Circle Maniple",
+      "entryId": "a0e7-1d1c-2d3e-d46d",
       "role": "Retinue",
       "points": 150,
       "baseCost": 15,
@@ -3534,6 +3746,7 @@
     },
     {
       "name": "Warsmith In Artificer Armour",
+      "entryId": "269e-a6c3-41a0-8cc3",
       "role": "High Command",
       "points": 140,
       "baseCost": 140,
@@ -3549,6 +3762,7 @@
     },
     {
       "name": "Nârik Dreygur",
+      "entryId": "42ce-6dde-4967-b87a",
       "role": "Command",
       "points": 115,
       "baseCost": 115,
@@ -3564,6 +3778,7 @@
     },
     {
       "name": "Dominator Cohort",
+      "entryId": "d1fa-8392-4117-990d",
       "role": "Retinue",
       "points": 255,
       "baseCost": 30,
@@ -3579,6 +3794,7 @@
     },
     {
       "name": "Iron Havocs",
+      "entryId": "ed0b-1070-4e20-b597",
       "role": "Support",
       "points": 135,
       "baseCost": 35,
@@ -3600,6 +3816,7 @@
     },
     {
       "name": "The Tormentor",
+      "entryId": "6781-8672-4e6e-a47a",
       "role": "Lord of War",
       "points": 700,
       "baseCost": 700,
@@ -3615,6 +3832,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "bdb6-1c8f-4c24-a156",
       "role": "Troops",
       "points": 90,
       "baseCost": 0,
@@ -3632,6 +3850,7 @@
   "night-lords": [
     {
       "name": "Konrad Curze",
+      "entryId": "f5fd-f425-c610-4a94",
       "role": "Warlord",
       "points": 450,
       "baseCost": 450,
@@ -3647,6 +3866,7 @@
     },
     {
       "name": "Contekar Terminator Squad",
+      "entryId": "baca-aa73-5db0-17fa",
       "role": "Elites",
       "points": 225,
       "baseCost": 65,
@@ -3668,6 +3888,7 @@
     },
     {
       "name": "Night Raptor Squad",
+      "entryId": "2090-3883-5cff-e344",
       "role": "Fast Attack",
       "points": 150,
       "baseCost": 50,
@@ -3689,6 +3910,7 @@
     },
     {
       "name": "Terror Squad",
+      "entryId": "d1bc-17f7-b3d7-ca84",
       "role": "Troops",
       "points": 120,
       "baseCost": 43,
@@ -3710,6 +3932,7 @@
     },
     {
       "name": "Sevatar",
+      "entryId": "b970-48ad-c8ff-86ca",
       "role": "High Command",
       "points": 220,
       "baseCost": 220,
@@ -3725,6 +3948,7 @@
     },
     {
       "name": "Atramentar Flay-clade",
+      "entryId": "ff9f-4970-7f72-e517",
       "role": "Heavy Assault",
       "points": 170,
       "baseCost": 30,
@@ -3746,6 +3970,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "a38d-19ab-470a-8e53",
       "role": "Troops",
       "points": 100,
       "baseCost": 10,
@@ -3763,6 +3988,7 @@
   "raven-guard": [
     {
       "name": "Corvus Corax",
+      "entryId": "e0a6-5800-3e64-4163",
       "role": "Warlord",
       "points": 440,
       "baseCost": 440,
@@ -3778,6 +4004,7 @@
     },
     {
       "name": "Kaedes Nex",
+      "entryId": "7447-6e18-ef24-afb0",
       "role": "Command",
       "points": 165,
       "baseCost": 165,
@@ -3793,6 +4020,7 @@
     },
     {
       "name": "Mor Deythan Squad",
+      "entryId": "4bb8-d53e-23a8-64da",
       "role": "Elites",
       "points": 175,
       "baseCost": 55,
@@ -3814,6 +4042,7 @@
     },
     {
       "name": "Dark Fury Squad",
+      "entryId": "8487-ac3b-d0ec-6d08",
       "role": "Elites",
       "points": 175,
       "baseCost": 20,
@@ -3835,6 +4064,7 @@
     },
     {
       "name": "Deliverers Squad",
+      "entryId": "eef8-a49d-4568-a714",
       "role": "Elites",
       "points": 215,
       "baseCost": 55,
@@ -3856,6 +4086,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "a997-c8f0-4906-bf63",
       "role": "Troops",
       "points": 90,
       "baseCost": 0,
@@ -3873,6 +4104,7 @@
   "salamanders": [
     {
       "name": "Firedrake Terminator Squad",
+      "entryId": "09a9-6c68-9b0b-f24f",
       "role": "Elites",
       "points": 250,
       "baseCost": 70,
@@ -3894,6 +4126,7 @@
     },
     {
       "name": "Vulkan",
+      "entryId": "29d9-3ea2-0c2b-5c36",
       "role": "Warlord",
       "points": 465,
       "baseCost": 465,
@@ -3909,6 +4142,7 @@
     },
     {
       "name": "Pyroclast Squad",
+      "entryId": "fbbe-aa8c-d645-7970",
       "role": "Heavy Assault",
       "points": 175,
       "baseCost": 55,
@@ -3930,6 +4164,7 @@
     },
     {
       "name": "Cassian Dracos Reborn",
+      "entryId": "84e1-2bda-1d5b-2b23",
       "role": "High Command",
       "points": 220,
       "baseCost": 220,
@@ -3945,6 +4180,7 @@
     },
     {
       "name": "Adherents Squad",
+      "entryId": "fecf-8e98-157d-e5ae",
       "role": "Troops",
       "points": 85,
       "baseCost": 25,
@@ -3966,6 +4202,7 @@
     },
     {
       "name": "Sanctifier Squad",
+      "entryId": "b278-6137-8f37-35f8",
       "role": "Support",
       "points": 90,
       "baseCost": 26,
@@ -3987,6 +4224,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "1c7f-663a-4039-9d81",
       "role": "Troops",
       "points": 124,
       "baseCost": 10,
@@ -4010,6 +4248,7 @@
   "sons-of-horus": [
     {
       "name": "Horus Lupercal",
+      "entryId": "c0a2-76a5-6a6f-82bc",
       "role": "Warlord",
       "points": 530,
       "baseCost": 530,
@@ -4025,6 +4264,7 @@
     },
     {
       "name": "Ezekyle Abbadon",
+      "entryId": "aa7d-73fa-eaac-d951",
       "role": "High Command",
       "points": 250,
       "baseCost": 250,
@@ -4040,6 +4280,7 @@
     },
     {
       "name": "Dark Emmissary",
+      "entryId": "ac51-dccb-d5ff-3d20",
       "role": "Command",
       "points": 90,
       "baseCost": 90,
@@ -4055,6 +4296,7 @@
     },
     {
       "name": "Vheren Ashurhaddon",
+      "entryId": "6b99-8ee6-accb-c1e3",
       "role": "High Command",
       "points": 205,
       "baseCost": 205,
@@ -4070,6 +4312,7 @@
     },
     {
       "name": "Horus Ascended",
+      "entryId": "79f3-7312-bae4-da6c",
       "role": "Warlord",
       "points": 850,
       "baseCost": 850,
@@ -4085,6 +4328,7 @@
     },
     {
       "name": "Justaerin Terminator Squad",
+      "entryId": "3866-f18c-3b7c-3a7e",
       "role": "Elites",
       "points": 275,
       "baseCost": 25,
@@ -4100,6 +4344,7 @@
     },
     {
       "name": "&apos;Little&apos; Horus Aximand ",
+      "entryId": "f9ac-f2fc-fbb3-cc37",
       "role": "High Command",
       "points": 170,
       "baseCost": 170,
@@ -4115,6 +4360,7 @@
     },
     {
       "name": "Garviel Loken",
+      "entryId": "ed21-80f8-e842-c972",
       "role": "High Command",
       "points": 175,
       "baseCost": 175,
@@ -4130,6 +4376,7 @@
     },
     {
       "name": "Tybalt Marr",
+      "entryId": "df11-d2e3-cfd8-a189",
       "role": "High Command",
       "points": 160,
       "baseCost": 160,
@@ -4145,6 +4392,7 @@
     },
     {
       "name": "Reaver Attack Squad",
+      "entryId": "8010-21cf-b606-b491",
       "role": "Heavy Assault",
       "points": 135,
       "baseCost": 47,
@@ -4166,6 +4414,7 @@
     },
     {
       "name": "Maloghurst the Twisted",
+      "entryId": "cdbb-e9d2-1c14-4a15",
       "role": "Command",
       "points": 140,
       "baseCost": 140,
@@ -4181,6 +4430,7 @@
     },
     {
       "name": "Reaver Aggressor Squad",
+      "entryId": "8357-2e10-4d5c-b134",
       "role": "Heavy Assault",
       "points": 165,
       "baseCost": 57,
@@ -4202,6 +4452,7 @@
     },
     {
       "name": "Dark Emissary In Terminator Armour",
+      "entryId": "10ac-ef98-4ee1-b49d",
       "role": "Command",
       "points": 120,
       "baseCost": 120,
@@ -4217,6 +4468,7 @@
     },
     {
       "name": "Chieftain Squad",
+      "entryId": "5664-ef98-46b9-85a1",
       "role": "Retinue",
       "points": 155,
       "baseCost": 30,
@@ -4232,6 +4484,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "e8b7-bff3-4c22-b342",
       "role": "Troops",
       "points": 100,
       "baseCost": 10,
@@ -4249,6 +4502,7 @@
   "space-wolves": [
     {
       "name": "Leman Russ",
+      "entryId": "e308-c9ee-3be5-0f71",
       "role": "Warlord",
       "points": 450,
       "baseCost": 450,
@@ -4264,6 +4518,7 @@
     },
     {
       "name": "Deathsworn Pack",
+      "entryId": "cb82-a73f-b30f-c30f",
       "role": "Heavy Assault",
       "points": 175,
       "baseCost": 25,
@@ -4279,6 +4534,7 @@
     },
     {
       "name": "Geigor Fell-Hand",
+      "entryId": "8280-b241-c837-f3ca",
       "role": "Command",
       "points": 105,
       "baseCost": 105,
@@ -4294,6 +4550,7 @@
     },
     {
       "name": "Grey Slayer Pack",
+      "entryId": "9a43-13b5-bd92-d8be",
       "role": "Troops",
       "points": 145,
       "baseCost": 37,
@@ -4315,6 +4572,7 @@
     },
     {
       "name": "Hvarl Red-Blade",
+      "entryId": "a681-0e72-a7fa-7bdd",
       "role": "High Command",
       "points": 210,
       "baseCost": 210,
@@ -4330,6 +4588,7 @@
     },
     {
       "name": "Varagyr Wolf Guard Terminators",
+      "entryId": "efd1-c611-841f-0cbb",
       "role": "Elites",
       "points": 250,
       "baseCost": 70,
@@ -4351,6 +4610,7 @@
     },
     {
       "name": "Wolf-kin of Russ",
+      "entryId": "ce16-cc72-704a-bd2d",
       "role": "Retinue",
       "points": 100,
       "baseCost": 100,
@@ -4372,6 +4632,7 @@
     },
     {
       "name": "Caster of Runes",
+      "entryId": "0fe3-fde9-4086-e3ab",
       "role": "Command",
       "points": 110,
       "baseCost": 110,
@@ -4387,6 +4648,7 @@
     },
     {
       "name": "Caster Of Runes In Terminator Armour",
+      "entryId": "2870-87cf-429b-841a",
       "role": "Command",
       "points": 130,
       "baseCost": 130,
@@ -4402,6 +4664,7 @@
     },
     {
       "name": "Caster Of Runes With Jump Pack",
+      "entryId": "cbdd-c447-4b61-8778",
       "role": "Command",
       "points": 140,
       "baseCost": 140,
@@ -4417,6 +4680,7 @@
     },
     {
       "name": "Jorlund Hunter Pack",
+      "entryId": "083c-9430-4a33-8233",
       "role": "Support",
       "points": 95,
       "baseCost": 27,
@@ -4438,6 +4702,7 @@
     },
     {
       "name": "Mounted Caster Of Runes",
+      "entryId": "f592-7632-4c97-b1a7",
       "role": "Command",
       "points": 150,
       "baseCost": 150,
@@ -4453,6 +4718,7 @@
     },
     {
       "name": "Fenrisian Wolf Pack",
+      "entryId": "3179-ad73-4373-bc5c",
       "role": "Retinue",
       "points": 10,
       "baseCost": 1,
@@ -4468,6 +4734,7 @@
     },
     {
       "name": "Speaker Of The Dead",
+      "entryId": "9db5-7da3-4df4-b9c0",
       "role": "Command",
       "points": 100,
       "baseCost": 100,
@@ -4483,6 +4750,7 @@
     },
     {
       "name": "Speaker Of The Dead In Terminator Armour",
+      "entryId": "c1ed-59b1-4d25-8cac",
       "role": "Command",
       "points": 120,
       "baseCost": 120,
@@ -4498,6 +4766,7 @@
     },
     {
       "name": "Mounted Speaker Of The Dead",
+      "entryId": "a4af-75ac-42a8-a904",
       "role": "Command",
       "points": 130,
       "baseCost": 130,
@@ -4513,6 +4782,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "3ade-f63f-41e2-9a99",
       "role": "Troops",
       "points": 100,
       "baseCost": 10,
@@ -4530,6 +4800,7 @@
   "thousand-sons": [
     {
       "name": "Magnus the Red",
+      "entryId": "cf2e-fa27-23ce-7502",
       "role": "Warlord",
       "points": 470,
       "baseCost": 470,
@@ -4545,6 +4816,7 @@
     },
     {
       "name": "Ahzek Ahriman",
+      "entryId": "1b93-d5ce-f6d7-8ad2",
       "role": "High Command",
       "points": 185,
       "baseCost": 185,
@@ -4560,6 +4832,7 @@
     },
     {
       "name": "Magistus Amon",
+      "entryId": "b0a0-fbcd-0605-47df",
       "role": "High Command",
       "points": 185,
       "baseCost": 185,
@@ -4575,6 +4848,7 @@
     },
     {
       "name": "Prosperine Sorcerer",
+      "entryId": "62bf-2931-3aab-3937",
       "role": "Command",
       "points": 105,
       "baseCost": 105,
@@ -4590,6 +4864,7 @@
     },
     {
       "name": "Sekhmet Terminator Cabal",
+      "entryId": "c5a4-8dfe-5b4c-eef2",
       "role": "Elites",
       "points": 250,
       "baseCost": 70,
@@ -4611,6 +4886,7 @@
     },
     {
       "name": "Khenetai Occult Cabal",
+      "entryId": "3f0f-9a7b-bd90-8fd3",
       "role": "Elites",
       "points": 145,
       "baseCost": 49,
@@ -4632,6 +4908,7 @@
     },
     {
       "name": "Contemptor-Osiron Dreadnought",
+      "entryId": "6580-3281-36a9-564a",
       "role": "War-engine",
       "points": 200,
       "baseCost": 200,
@@ -4647,6 +4924,7 @@
     },
     {
       "name": "Castellax-Achea Automata",
+      "entryId": "8372-11b0-af24-4996",
       "role": "Support",
       "points": 80,
       "baseCost": 80,
@@ -4662,6 +4940,7 @@
     },
     {
       "name": "Numerologist Cabal",
+      "entryId": "ccfe-0bd6-4e88-ba89",
       "role": "Elites",
       "points": 130,
       "baseCost": 70,
@@ -4683,6 +4962,7 @@
     },
     {
       "name": "Ammitara Occult Intercession Cabal",
+      "entryId": "d661-5aa7-4e05-a6e5",
       "role": "Recon",
       "points": 145,
       "baseCost": 37,
@@ -4704,6 +4984,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "8dfd-8240-4e8d-8e0e",
       "role": "Troops",
       "points": 90,
       "baseCost": 0,
@@ -4721,6 +5002,7 @@
   "ultramarines": [
     {
       "name": "Roboute Guilliman",
+      "entryId": "8b5a-f212-1993-60bb",
       "role": "Warlord",
       "points": 465,
       "baseCost": 465,
@@ -4736,6 +5018,7 @@
     },
     {
       "name": "Remus Ventanus",
+      "entryId": "997b-95c4-dc66-a5f8",
       "role": "Command",
       "points": 175,
       "baseCost": 175,
@@ -4751,6 +5034,7 @@
     },
     {
       "name": "Invictus Suzerain Squad",
+      "entryId": "3a11-d72b-2f04-cc62",
       "role": "Elites",
       "points": 175,
       "baseCost": 25,
@@ -4766,6 +5050,7 @@
     },
     {
       "name": "Praetorian Breacher Squad",
+      "entryId": "f115-4466-aa86-b446",
       "role": "Heavy Assault",
       "points": 115,
       "baseCost": 43,
@@ -4787,6 +5072,7 @@
     },
     {
       "name": "Locutarus Storm Squad",
+      "entryId": "1d7c-9f14-440c-b457",
       "role": "Elites",
       "points": 200,
       "baseCost": 48,
@@ -4808,6 +5094,7 @@
     },
     {
       "name": "Fulmentarus Terminator Squad",
+      "entryId": "a02e-5bce-45bd-a1b5",
       "role": "Heavy Assault",
       "points": 290,
       "baseCost": 70,
@@ -4829,6 +5116,7 @@
     },
     {
       "name": "Nemesis Destroyer Squad",
+      "entryId": "99b9-94e2-4ef2-9cd6",
       "role": "Heavy Assault",
       "points": 165,
       "baseCost": 30,
@@ -4850,6 +5138,7 @@
     },
     {
       "name": "Honoured Telemechrus",
+      "entryId": "1631-0dce-4bfb-9782",
       "role": "War-engine",
       "points": 170,
       "baseCost": 170,
@@ -4865,6 +5154,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "455f-d06a-45b1-a332",
       "role": "Troops",
       "points": 114,
       "baseCost": 0,
@@ -4888,6 +5178,7 @@
   "white-scars": [
     {
       "name": "Jaghatai Khan",
+      "entryId": "8192-47ac-99f9-73e9",
       "role": "Warlord",
       "points": 440,
       "baseCost": 440,
@@ -4903,6 +5194,7 @@
     },
     {
       "name": "Qin Xa",
+      "entryId": "0935-9158-92d0-5528",
       "role": "High Command",
       "points": 220,
       "baseCost": 220,
@@ -4918,6 +5210,7 @@
     },
     {
       "name": "Stormseer",
+      "entryId": "5123-b5ea-c6dc-7bb9",
       "role": "Command",
       "points": 95,
       "baseCost": 95,
@@ -4933,6 +5226,7 @@
     },
     {
       "name": "Hibou Khan",
+      "entryId": "fd81-80fc-3d80-5f8b",
       "role": "Command",
       "points": 165,
       "baseCost": 165,
@@ -4948,6 +5242,7 @@
     },
     {
       "name": "Golden Keshig",
+      "entryId": "fa6f-2652-34c9-2ea2",
       "role": "Elites",
       "points": 140,
       "baseCost": 60,
@@ -4969,6 +5264,7 @@
     },
     {
       "name": "Ebon Keshig",
+      "entryId": "9f57-6829-5ec9-4d69",
       "role": "Heavy Assault",
       "points": 200,
       "baseCost": 25,
@@ -4984,6 +5280,7 @@
     },
     {
       "name": "Kyzagan Assault Speeder",
+      "entryId": "6efd-34c7-2212-1474",
       "role": "Support",
       "points": 105,
       "baseCost": 105,
@@ -4999,6 +5296,7 @@
     },
     {
       "name": "Falcon&apos;s Claws",
+      "entryId": "50ec-3549-586e-6bdd",
       "role": "Recon",
       "points": 110,
       "baseCost": 38,
@@ -5020,6 +5318,7 @@
     },
     {
       "name": "Stormseer with Jump Pack",
+      "entryId": "ebf6-f8fc-a45b-2799",
       "role": "Command",
       "points": 115,
       "baseCost": 115,
@@ -5035,6 +5334,7 @@
     },
     {
       "name": "Mounted Stormseer",
+      "entryId": "d929-8371-72d9-8cb4",
       "role": "Command",
       "points": 125,
       "baseCost": 125,
@@ -5050,6 +5350,7 @@
     },
     {
       "name": "Stormseer in Terminator Armour",
+      "entryId": "f4d1-2dac-0a5b-c516",
       "role": "Command",
       "points": 115,
       "baseCost": 115,
@@ -5065,6 +5366,7 @@
     },
     {
       "name": "Dark Sons of Death",
+      "entryId": "d002-d1d6-c784-1f15",
       "role": "Heavy Assault",
       "points": 125,
       "baseCost": 45,
@@ -5086,6 +5388,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "5729-fd79-4bf5-a53b",
       "role": "Troops",
       "points": 100,
       "baseCost": 10,
@@ -5103,6 +5406,7 @@
   "word-bearers": [
     {
       "name": "Lorgar Aurelian",
+      "entryId": "a763-c205-9fe6-46c1",
       "role": "Warlord",
       "points": 445,
       "baseCost": 445,
@@ -5118,6 +5422,7 @@
     },
     {
       "name": "Kor Phaeron ",
+      "entryId": "81d5-3d0d-6447-d52b",
       "role": "High Command",
       "points": 125,
       "baseCost": 125,
@@ -5133,6 +5438,7 @@
     },
     {
       "name": "Erebus",
+      "entryId": "f075-69f8-c356-a63a",
       "role": "High Command",
       "points": 165,
       "baseCost": 165,
@@ -5148,6 +5454,7 @@
     },
     {
       "name": "Argel Tal",
+      "entryId": "185b-76ba-116a-7ad7",
       "role": "High Command",
       "points": 240,
       "baseCost": 240,
@@ -5163,6 +5470,7 @@
     },
     {
       "name": "Zardu Layak",
+      "entryId": "dab8-484b-f682-a29d",
       "role": "Command",
       "points": 180,
       "baseCost": 180,
@@ -5184,6 +5492,7 @@
     },
     {
       "name": "Gal Vorbak",
+      "entryId": "bb3e-f926-23ec-c561",
       "role": "Elites",
       "points": 250,
       "baseCost": 0,
@@ -5199,6 +5508,7 @@
     },
     {
       "name": "Mhara Gal Dreadnought",
+      "entryId": "87ac-c2df-6bd9-33e3",
       "role": "War-engine",
       "points": 210,
       "baseCost": 210,
@@ -5214,6 +5524,7 @@
     },
     {
       "name": "Ashen Circle",
+      "entryId": "9290-f8f4-ff78-b09c",
       "role": "Fast Attack",
       "points": 125,
       "baseCost": 45,
@@ -5235,6 +5546,7 @@
     },
     {
       "name": "Diabolist",
+      "entryId": "1c2d-33b0-4ec7-8802",
       "role": "Command",
       "points": 105,
       "baseCost": 105,
@@ -5250,6 +5562,7 @@
     },
     {
       "name": "Diabolist In Terminator Armour",
+      "entryId": "065d-8cb2-40d6-b905",
       "role": "Command",
       "points": 135,
       "baseCost": 135,
@@ -5265,6 +5578,7 @@
     },
     {
       "name": "Mounted Diabolist",
+      "entryId": "ce41-394c-4797-be31",
       "role": "Command",
       "points": 145,
       "baseCost": 145,
@@ -5280,6 +5594,7 @@
     },
     {
       "name": "Procurators",
+      "entryId": "bb9d-a1b4-48d5-ac58",
       "role": "Elites",
       "points": 60,
       "baseCost": 25,
@@ -5301,6 +5616,7 @@
     },
     {
       "name": "Procurators with Jump Packs",
+      "entryId": "fd26-9fa0-4360-ae66",
       "role": "Elites",
       "points": 70,
       "baseCost": 30,
@@ -5322,6 +5638,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "4755-69ce-4a81-894c",
       "role": "Troops",
       "points": 100,
       "baseCost": 10,
@@ -5337,6 +5654,7 @@
     },
     {
       "name": "Phraetus Anointed Conclave",
+      "entryId": "56a7-a810-598c-7309",
       "role": "Elites",
       "points": 240,
       "baseCost": 110,
@@ -5360,6 +5678,7 @@
   "world-eaters": [
     {
       "name": "Angron",
+      "entryId": "af62-d4a0-c800-712e",
       "role": "Warlord",
       "points": 450,
       "baseCost": 450,
@@ -5375,6 +5694,7 @@
     },
     {
       "name": "Rampager Squad",
+      "entryId": "c660-c7ad-70b0-5318",
       "role": "Heavy Assault",
       "points": 135,
       "baseCost": 47,
@@ -5396,6 +5716,7 @@
     },
     {
       "name": "Red Butchers",
+      "entryId": "e149-7a3c-d62c-e941",
       "role": "Elites",
       "points": 250,
       "baseCost": 70,
@@ -5417,6 +5738,7 @@
     },
     {
       "name": "Lotara Sarrin",
+      "entryId": "e628-409b-5f93-170a",
       "role": "Command",
       "points": 85,
       "baseCost": 85,
@@ -5432,6 +5754,7 @@
     },
     {
       "name": "Angron Transfigured",
+      "entryId": "eb31-de9c-e5ef-a9ac",
       "role": "Warlord",
       "points": 600,
       "baseCost": 600,
@@ -5447,6 +5770,7 @@
     },
     {
       "name": "Kharn the Bloody",
+      "entryId": "19c9-b57d-a308-b655",
       "role": "High Command",
       "points": 175,
       "baseCost": 175,
@@ -5462,6 +5786,7 @@
     },
     {
       "name": "Red Hand Destroyer Mortalis Squad",
+      "entryId": "a2c1-6aaf-434a-acc3",
       "role": "Elites",
       "points": 85,
       "baseCost": 25,
@@ -5483,6 +5808,7 @@
     },
     {
       "name": "Red Hand Destroyer Assault Squad",
+      "entryId": "95af-8507-44dc-bcc3",
       "role": "Elites",
       "points": 110,
       "baseCost": 30,
@@ -5504,6 +5830,7 @@
     },
     {
       "name": "Inductii Squad",
+      "entryId": "b725-0c21-4adf-a683",
       "role": "Troops",
       "points": 100,
       "baseCost": 10,
@@ -5521,6 +5848,7 @@
   "mechanicum": [
     {
       "name": "Anacharis Scoria",
+      "entryId": "10f5-dae8-f081-d82f",
       "role": "High Command",
       "points": 410,
       "baseCost": 410,
@@ -5536,6 +5864,7 @@
     },
     {
       "name": "Archmagos",
+      "entryId": "b16b-29ee-1239-60c3",
       "role": "High Command",
       "points": 120,
       "baseCost": 120,
@@ -5551,6 +5880,7 @@
     },
     {
       "name": "Archmagos on Abeyant",
+      "entryId": "6512-b1e9-975b-184b",
       "role": "High Command",
       "points": 160,
       "baseCost": 150,
@@ -5566,6 +5896,7 @@
     },
     {
       "name": "Magos",
+      "entryId": "0ccf-5e81-b051-6db9",
       "role": "Command",
       "points": 100,
       "baseCost": 100,
@@ -5581,6 +5912,7 @@
     },
     {
       "name": "Scyllax Guardian Maniple",
+      "entryId": "deed-12c8-f6e8-d95c",
       "role": "Retinue",
       "points": 100,
       "baseCost": 0,
@@ -5602,6 +5934,7 @@
     },
     {
       "name": "Arcuitor Magisterium",
+      "entryId": "d704-b125-8dc3-7ba2",
       "role": "Command",
       "points": 115,
       "baseCost": 115,
@@ -5617,6 +5950,7 @@
     },
     {
       "name": "Echidnax Servo Maniple",
+      "entryId": "466e-0da4-2961-6263",
       "role": "Retinue",
       "points": 40,
       "baseCost": 0,
@@ -5638,6 +5972,7 @@
     },
     {
       "name": "Domitar Battle Maniple",
+      "entryId": "cefd-9aca-871d-3263",
       "role": "Elites",
       "points": 100,
       "baseCost": 0,
@@ -5659,6 +5994,7 @@
     },
     {
       "name": "Magos on Abeyant",
+      "entryId": "0836-d574-9d22-307f",
       "role": "Command",
       "points": 130,
       "baseCost": 130,
@@ -5674,6 +6010,7 @@
     },
     {
       "name": "Myrmidon Secutor Host",
+      "entryId": "6947-89b1-0c02-fd17",
       "role": "Elites",
       "points": 150,
       "baseCost": 60,
@@ -5695,6 +6032,7 @@
     },
     {
       "name": "Myrmidon Destructor Host",
+      "entryId": "229c-7b38-1dac-de3e",
       "role": "Elites",
       "points": 150,
       "baseCost": 60,
@@ -5716,6 +6054,7 @@
     },
     {
       "name": "Tech-Thrall Covenant",
+      "entryId": "6369-b3b1-0ce1-64f8",
       "role": "Support",
       "points": 100,
       "baseCost": 0,
@@ -5731,6 +6070,7 @@
     },
     {
       "name": "Castellax Destructor Maniple",
+      "entryId": "112f-1168-d07c-7f8f",
       "role": "Heavy Assault",
       "points": 100,
       "baseCost": 0,
@@ -5746,6 +6086,7 @@
     },
     {
       "name": "Ursarax Cohort",
+      "entryId": "4d8f-5e38-5902-0947",
       "role": "Heavy Assault",
       "points": 160,
       "baseCost": 0,
@@ -5767,6 +6108,7 @@
     },
     {
       "name": "Tech-Priest",
+      "entryId": "bc86-4606-7fce-1866",
       "role": "Troops",
       "points": 30,
       "baseCost": 0,
@@ -5782,6 +6124,7 @@
     },
     {
       "name": "Thallax Cohort",
+      "entryId": "a4ad-1b49-0303-59b3",
       "role": "Support",
       "points": 120,
       "baseCost": 0,
@@ -5803,6 +6146,7 @@
     },
     {
       "name": "Armiger Moirax",
+      "entryId": "1777-db1a-0cd5-6a89",
       "role": "War-engine",
       "points": 185,
       "baseCost": 165,
@@ -5818,6 +6162,7 @@
     },
     {
       "name": "Thanatar Siege Maniple",
+      "entryId": "3833-2f09-7ec7-b5f5",
       "role": "War-engine",
       "points": 225,
       "baseCost": 225,
@@ -5833,6 +6178,7 @@
     },
     {
       "name": "Triaros Armoured Conveyor",
+      "entryId": "0896-07f4-8844-9542",
       "role": "Heavy Transport",
       "points": 205,
       "baseCost": 200,
@@ -5848,6 +6194,7 @@
     },
     {
       "name": "Castellax Battle Maniple",
+      "entryId": "e8d6-2ba5-d10d-d617",
       "role": "Support",
       "points": 100,
       "baseCost": 0,
@@ -5869,6 +6216,7 @@
     },
     {
       "name": "Vorax Attack Maniple",
+      "entryId": "de2e-f9b5-abe6-b8b5",
       "role": "Recon",
       "points": 90,
       "baseCost": 0,
@@ -5884,6 +6232,7 @@
     },
     {
       "name": "Vultarax Stratos Squadron",
+      "entryId": "710e-f1ea-0061-d3cb",
       "role": "Fast Attack",
       "points": 200,
       "baseCost": 100,
@@ -5899,6 +6248,7 @@
     },
     {
       "name": "Blood Slaughterer",
+      "entryId": "a6c8-1404-1b6f-ced9",
       "role": "Heavy Assault",
       "points": 100,
       "baseCost": 0,
@@ -5914,6 +6264,7 @@
     },
     {
       "name": "Karacnos Assault Tank",
+      "entryId": "ce4c-753d-aaf1-b4ab",
       "role": "Armour",
       "points": 240,
       "baseCost": 235,
@@ -5929,6 +6280,7 @@
     },
     {
       "name": "Krios Battle Tank",
+      "entryId": "135f-153c-308a-7a1c",
       "role": "Armour",
       "points": 140,
       "baseCost": 135,
@@ -5944,6 +6296,7 @@
     },
     {
       "name": "Decimator",
+      "entryId": "e60b-8b82-11e8-e59c",
       "role": "Elites",
       "points": 250,
       "baseCost": 125,
@@ -5959,6 +6312,7 @@
     },
     {
       "name": "Krios Venator",
+      "entryId": "b444-b85f-85f8-e6f3",
       "role": "Armour",
       "points": 175,
       "baseCost": 160,
@@ -5974,6 +6328,7 @@
     },
     {
       "name": "Brass Scorpion",
+      "entryId": "0264-23b6-0e95-8dfa",
       "role": "Lord of War",
       "points": 1200,
       "baseCost": 600,
@@ -5989,6 +6344,7 @@
     },
     {
       "name": "Archmagos Draykavac",
+      "entryId": "3563-badf-5bdb-cdfe",
       "role": "High Command",
       "points": 220,
       "baseCost": 200,
@@ -6004,6 +6360,7 @@
     },
     {
       "name": "Kytan Daemon Engine",
+      "entryId": "b332-1007-5b23-7467",
       "role": "Lord of War",
       "points": 900,
       "baseCost": 450,
@@ -6019,6 +6376,7 @@
     },
     {
       "name": "Tech Thrall Defence Covenant",
+      "entryId": "e8d5-df1b-30f8-8887",
       "role": "Support",
       "points": 100,
       "baseCost": 0,
@@ -6034,6 +6392,7 @@
     },
     {
       "name": "Arlatax Battle Maniple",
+      "entryId": "88e3-4c5f-d4b7-b300",
       "role": "Elites",
       "points": 120,
       "baseCost": 0,
@@ -6055,6 +6414,7 @@
     },
     {
       "name": "Mechanicum Termite",
+      "entryId": "2943-f3ad-5b26-1377",
       "role": "Transport",
       "points": 80,
       "baseCost": 80,
@@ -6070,6 +6430,7 @@
     },
     {
       "name": "Mechanicum Tarantula Battery",
+      "entryId": "02c3-37ea-5d20-8291",
       "role": "Recon",
       "points": 45,
       "baseCost": 45,
@@ -6085,6 +6446,7 @@
     },
     {
       "name": "Mechanicum Macrocarid Explorator",
+      "entryId": "360a-d28e-99bb-fae5",
       "role": "Heavy Transport",
       "points": 200,
       "baseCost": 200,
@@ -6100,6 +6462,7 @@
     },
     {
       "name": "Mechanicum Ordinatus Ulator",
+      "entryId": "0eec-dfde-0a0f-4440",
       "role": "Lord of War",
       "points": 750,
       "baseCost": 750,
@@ -6115,6 +6478,7 @@
     },
     {
       "name": "Mechanicum Ordinatus Sagittar",
+      "entryId": "85ac-f5f9-5099-e423",
       "role": "Lord of War",
       "points": 800,
       "baseCost": 800,
@@ -6130,6 +6494,7 @@
     },
     {
       "name": "Mechanicum Ordinatus Aktaeus",
+      "entryId": "9111-1de6-ec9d-526a",
       "role": "Lord of War",
       "points": 900,
       "baseCost": 900,
@@ -6147,6 +6512,7 @@
   "solar-auxilia": [
     {
       "name": "Legatine Command Section",
+      "entryId": "8641-1dd0-7e76-de7d",
       "role": "High Command",
       "points": 125,
       "baseCost": 69,
@@ -6168,6 +6534,7 @@
     },
     {
       "name": "Tactical Command Section",
+      "entryId": "d20e-4cb8-54be-015d",
       "role": "Command",
       "points": 100,
       "baseCost": 52,
@@ -6189,6 +6556,7 @@
     },
     {
       "name": "Line Command Section",
+      "entryId": "6c3c-1e9a-6f16-8554",
       "role": "Command",
       "points": 65,
       "baseCost": 37,
@@ -6210,6 +6578,7 @@
     },
     {
       "name": "Veletaris Command Section",
+      "entryId": "d9f6-af42-40a5-2636",
       "role": "Command",
       "points": 75,
       "baseCost": 43,
@@ -6231,6 +6600,7 @@
     },
     {
       "name": "Hermes Command Section",
+      "entryId": "95e2-9c56-ae1c-923b",
       "role": "Command",
       "points": 75,
       "baseCost": 57,
@@ -6252,6 +6622,7 @@
     },
     {
       "name": "Artillery Command Section",
+      "entryId": "4986-b408-cbfe-2d2f",
       "role": "Command",
       "points": 65,
       "baseCost": 37,
@@ -6273,6 +6644,7 @@
     },
     {
       "name": "Armoured Command Section",
+      "entryId": "bd97-ae69-81d3-cdb5",
       "role": "Command",
       "points": 150,
       "baseCost": 0,
@@ -6288,6 +6660,7 @@
     },
     {
       "name": "Veletaris Storm Section",
+      "entryId": "cca4-95f8-db53-7b36",
       "role": "Elites",
       "points": 90,
       "baseCost": 18,
@@ -6309,6 +6682,7 @@
     },
     {
       "name": "Veletaris Vanguard Section",
+      "entryId": "595b-fbac-e14c-3156",
       "role": "Elites",
       "points": 100,
       "baseCost": 19,
@@ -6330,6 +6704,7 @@
     },
     {
       "name": "Charonite Ogryn Section",
+      "entryId": "bc99-f75e-c0b6-6c0f",
       "role": "Heavy Assault",
       "points": 120,
       "baseCost": 0,
@@ -6345,6 +6720,7 @@
     },
     {
       "name": "Lasrifle Section",
+      "entryId": "b9dd-46b6-89e3-68ed",
       "role": "Troops",
       "points": 50,
       "baseCost": 14,
@@ -6366,6 +6742,7 @@
     },
     {
       "name": "Basilisk Artillery Tank",
+      "entryId": "9757-288f-c3cd-bd7f",
       "role": "Support",
       "points": 120,
       "baseCost": 0,
@@ -6381,6 +6758,7 @@
     },
     {
       "name": "Medusa Artillery Tank",
+      "entryId": "f15b-8333-252f-b85b",
       "role": "Support",
       "points": 140,
       "baseCost": 140,
@@ -6396,6 +6774,7 @@
     },
     {
       "name": "Rapier Section",
+      "entryId": "1af7-7d6c-9c0d-1204",
       "role": "Support",
       "points": 30,
       "baseCost": 0,
@@ -6411,6 +6790,7 @@
     },
     {
       "name": "Hermes Veletaris Squadron",
+      "entryId": "473a-0dcd-6dd3-746d",
       "role": "Support",
       "points": 40,
       "baseCost": 0,
@@ -6426,6 +6806,7 @@
     },
     {
       "name": "Aethon Heavy Sentinel Squadron",
+      "entryId": "ab2e-5984-a5b1-5253",
       "role": "War-engine",
       "points": 60,
       "baseCost": 0,
@@ -6441,6 +6822,7 @@
     },
     {
       "name": "Arvus Lighter",
+      "entryId": "b42c-4380-99ba-1a9e",
       "role": "Transport",
       "points": 75,
       "baseCost": 0,
@@ -6456,6 +6838,7 @@
     },
     {
       "name": "Dracosan Armoured Transport",
+      "entryId": "4c67-eea6-b446-a908",
       "role": "Heavy Transport",
       "points": 140,
       "baseCost": 0,
@@ -6471,6 +6854,7 @@
     },
     {
       "name": "Hermes Light Sentinel Squadron",
+      "entryId": "5139-b21c-fb38-c365",
       "role": "Recon",
       "points": 32,
       "baseCost": 0,
@@ -6486,6 +6870,7 @@
     },
     {
       "name": "Primaris-Lightning Strike Fighter",
+      "entryId": "578c-f52b-7f8d-0499",
       "role": "Fast Attack",
       "points": 160,
       "baseCost": 0,
@@ -6501,6 +6886,7 @@
     },
     {
       "name": "Thunderbolt Heavy Fighter",
+      "entryId": "ce19-e401-0408-a06a",
       "role": "Fast Attack",
       "points": 120,
       "baseCost": 0,
@@ -6516,6 +6902,7 @@
     },
     {
       "name": "Malcador Infernus Special Weapon Tank",
+      "entryId": "2cfd-fcf4-ce27-87f3",
       "role": "Armour",
       "points": 205,
       "baseCost": 0,
@@ -6531,6 +6918,7 @@
     },
     {
       "name": "Leman Russ Assault Tank",
+      "entryId": "cd74-812f-c0a2-5d41",
       "role": "Armour",
       "points": 140,
       "baseCost": 0,
@@ -6546,6 +6934,7 @@
     },
     {
       "name": "Leman Russ Strike Tank",
+      "entryId": "3d63-4299-d15f-b3ba",
       "role": "Armour",
       "points": 140,
       "baseCost": 0,
@@ -6561,6 +6950,7 @@
     },
     {
       "name": "Malcador Heavy Tank",
+      "entryId": "376e-d119-2489-580d",
       "role": "Armour",
       "points": 180,
       "baseCost": 0,
@@ -6576,6 +6966,7 @@
     },
     {
       "name": "Valdor Tank Destroyer",
+      "entryId": "9a3c-f812-1489-825f",
       "role": "Armour",
       "points": 190,
       "baseCost": 0,
@@ -6591,6 +6982,7 @@
     },
     {
       "name": "Stormhammer Super-Heavy Assault Tank",
+      "entryId": "6c9f-9379-6ce7-5a2d",
       "role": "Lord of War",
       "points": 500,
       "baseCost": 0,
@@ -6606,6 +6998,7 @@
     },
     {
       "name": "Aurox Transport",
+      "entryId": "92ca-fc8c-db1a-a5e1",
       "role": "Transport",
       "points": 50,
       "baseCost": 0,
@@ -6621,6 +7014,7 @@
     },
     {
       "name": "Avenger Strike Fighter",
+      "entryId": "c689-74d5-92eb-c86e",
       "role": "Fast Attack",
       "points": 100,
       "baseCost": 0,
@@ -6636,6 +7030,7 @@
     },
     {
       "name": "Baneblade Super-heavy Battle Tank",
+      "entryId": "3218-07a3-3637-431c",
       "role": "Lord of War",
       "points": 525,
       "baseCost": 5,
@@ -6651,6 +7046,7 @@
     },
     {
       "name": "Banehammer Super-heavy Assault Tank",
+      "entryId": "6a98-2165-d892-a3e5",
       "role": "Lord of War",
       "points": 450,
       "baseCost": 0,
@@ -6666,6 +7062,7 @@
     },
     {
       "name": "Carnodon Strike Tank",
+      "entryId": "c1da-0e87-541c-e51e",
       "role": "Fast Attack",
       "points": 80,
       "baseCost": 0,
@@ -6681,6 +7078,7 @@
     },
     {
       "name": "Companion Section",
+      "entryId": "607a-4979-f72d-35db",
       "role": "Retinue",
       "points": 80,
       "baseCost": 32,
@@ -6702,6 +7100,7 @@
     },
     {
       "name": "Crassus Armoured Assault Transport",
+      "entryId": "a1cb-9cb7-c05a-cc60",
       "role": "Lord of War",
       "points": 350,
       "baseCost": 0,
@@ -6717,6 +7116,7 @@
     },
     {
       "name": "Cyclops Demolition Vehicle",
+      "entryId": "1825-ab2a-2a6f-08c2",
       "role": "Support",
       "points": 50,
       "baseCost": 0,
@@ -6732,6 +7132,7 @@
     },
     {
       "name": "Davinite Lodge Priest",
+      "entryId": "3f66-368a-d385-a1de",
       "role": "Command",
       "points": 60,
       "baseCost": 0,
@@ -6747,6 +7148,7 @@
     },
     {
       "name": "Destroyer Tank Hunter",
+      "entryId": "61f6-d8c1-36ea-909e",
       "role": "Armour",
       "points": 130,
       "baseCost": 0,
@@ -6762,6 +7164,7 @@
     },
     {
       "name": "Expeditionary Navigator",
+      "entryId": "0ed7-ac1b-5603-f5d0",
       "role": "Command",
       "points": 65,
       "baseCost": 0,
@@ -6777,6 +7180,7 @@
     },
     {
       "name": "Hellhammer Super-heavy Battle Tank",
+      "entryId": "97a6-4e92-7575-e5b0",
       "role": "Lord of War",
       "points": 520,
       "baseCost": 520,
@@ -6792,6 +7196,7 @@
     },
     {
       "name": "Macharius Heavy Tank",
+      "entryId": "d387-5a08-a8e4-96b2",
       "role": "Lord of War",
       "points": 300,
       "baseCost": 0,
@@ -6807,6 +7212,7 @@
     },
     {
       "name": "Marauder Bomber",
+      "entryId": "3b1f-d887-49db-bfb0",
       "role": "Lord of War",
       "points": 225,
       "baseCost": 0,
@@ -6822,6 +7228,7 @@
     },
     {
       "name": "Marauder Destroyer",
+      "entryId": "a4df-4786-ce35-c5e4",
       "role": "Lord of War",
       "points": 245,
       "baseCost": 0,
@@ -6837,6 +7244,7 @@
     },
     {
       "name": "Medicae Section",
+      "entryId": "b31c-f7ad-49a7-0f31",
       "role": "Support",
       "points": 15,
       "baseCost": 0,
@@ -6852,6 +7260,7 @@
     },
     {
       "name": "Minotaur Artillery Tank",
+      "entryId": "5a51-152a-5508-e2db",
       "role": "Armour",
       "points": 205,
       "baseCost": 205,
@@ -6867,6 +7276,7 @@
     },
     {
       "name": "Praetor Armoured Assault Launcher",
+      "entryId": "857d-cc46-96d9-4b88",
       "role": "Lord of War",
       "points": 300,
       "baseCost": 0,
@@ -6882,6 +7292,7 @@
     },
     {
       "name": "Shadowsword Super-heavy Tank Destroyer",
+      "entryId": "e7d9-8c82-8cb0-055b",
       "role": "Lord of War",
       "points": 475,
       "baseCost": 0,
@@ -6897,6 +7308,7 @@
     },
     {
       "name": "Stormblade Super-heavy Tank",
+      "entryId": "5748-1ede-dead-c0e7",
       "role": "Lord of War",
       "points": 500,
       "baseCost": 0,
@@ -6912,6 +7324,7 @@
     },
     {
       "name": "Stormlord Super-heavy Assault Tank",
+      "entryId": "f42e-3ca8-5500-7184",
       "role": "Lord of War",
       "points": 500,
       "baseCost": 0,
@@ -6927,6 +7340,7 @@
     },
     {
       "name": "Stormsword Super-heavy Siege Tank",
+      "entryId": "5a4f-f6c0-e700-8142",
       "role": "Lord of War",
       "points": 475,
       "baseCost": 0,
@@ -6942,6 +7356,7 @@
     },
     {
       "name": "Surgeon-Primus Aevos Jovan",
+      "entryId": "0d9d-d7fb-0222-3846",
       "role": "Command",
       "points": 60,
       "baseCost": 0,
@@ -6969,6 +7384,7 @@
     },
     {
       "name": "Tarantula Section",
+      "entryId": "5c1a-1910-9a09-75cd",
       "role": "Recon",
       "points": 35,
       "baseCost": 0,
@@ -6984,6 +7400,7 @@
     },
     {
       "name": "Thunderer Siege Tank",
+      "entryId": "5f1d-fcf5-c23f-dd55",
       "role": "Armour",
       "points": 155,
       "baseCost": 155,

@@ -2,6 +2,7 @@
   "core": [
     {
       "name": "Crusade Primary Detachment",
+      "entryId": "8f12-c30a-6c20-6296",
       "type": "core",
       "slots": [
         {
@@ -77,6 +78,7 @@
     },
     {
       "name": "Warlord Detachment",
+      "entryId": "50c3-ba24-7471-3d32",
       "type": "core",
       "slots": [
         {
@@ -128,6 +130,7 @@
   "auxiliary": [
     {
       "name": "Auxiliary - Armoured Fist",
+      "entryId": "cc51-fdce-8a34-dbcf",
       "type": "auxiliary",
       "slots": [
         {
@@ -174,6 +177,7 @@
     },
     {
       "name": "Auxiliary - Tactical Support",
+      "entryId": "2965-5682-3cbc-8b47",
       "type": "auxiliary",
       "slots": [
         {
@@ -226,6 +230,7 @@
     },
     {
       "name": "Auxiliary - Armoured Support",
+      "entryId": "4a2f-ac9e-195e-77cf",
       "type": "auxiliary",
       "slots": [
         {
@@ -266,6 +271,7 @@
     },
     {
       "name": "Auxiliary - Heavy Support",
+      "entryId": "bd1f-82a0-abd4-cd56",
       "type": "auxiliary",
       "slots": [
         {
@@ -306,6 +312,7 @@
     },
     {
       "name": "Auxiliary - Combat Pioneer",
+      "entryId": "edf5-6891-81d8-6309",
       "type": "auxiliary",
       "slots": [
         {
@@ -346,6 +353,7 @@
     },
     {
       "name": "Auxiliary - Shock Assault",
+      "entryId": "c9a5-3069-920b-32f1",
       "type": "auxiliary",
       "slots": [
         {
@@ -386,6 +394,7 @@
     },
     {
       "name": "Auxiliary - First Strike",
+      "entryId": "c444-8242-d3fc-b5b0",
       "type": "auxiliary",
       "slots": [
         {
@@ -426,6 +435,7 @@
     },
     {
       "name": "Auxiliary - Primacy Wing",
+      "entryId": "b86b-981d-9aab-5675",
       "type": "auxiliary",
       "slots": [
         {
@@ -453,6 +463,7 @@
     },
     {
       "name": "Auxiliary - Taghmata Cohort",
+      "entryId": "59b8-2183-4bab-b91c",
       "type": "auxiliary",
       "slots": [
         {
@@ -468,6 +479,7 @@
     },
     {
       "name": "Auxiliary - Apprentice Cadre",
+      "entryId": "6e73-e03d-9ae7-fd33",
       "type": "auxiliary",
       "slots": [
         {
@@ -489,6 +501,7 @@
     },
     {
       "name": "Auxiliary - The Ironfire Cohort",
+      "entryId": "5bc5-5224-c751-d437",
       "type": "auxiliary",
       "slots": [
         {
@@ -516,6 +529,7 @@
     },
     {
       "name": "Auxiliary - Reaping Host",
+      "entryId": "3b60-24c1-dccc-23db",
       "type": "auxiliary",
       "slots": [
         {
@@ -549,6 +563,7 @@
     },
     {
       "name": "Auxiliary - Primus Demi-Company",
+      "entryId": "1da1-f220-0bad-5f78",
       "type": "auxiliary",
       "slots": [
         {
@@ -588,6 +603,7 @@
     },
     {
       "name": "Auxiliary - Veletaris Tercio",
+      "entryId": "e1a1-2699-4681-47ab",
       "type": "auxiliary",
       "slots": [
         {
@@ -619,6 +635,7 @@
     },
     {
       "name": "Auxiliary - Armour Tercio",
+      "entryId": "6aff-b91d-02bb-7461",
       "type": "auxiliary",
       "slots": [
         {
@@ -632,6 +649,7 @@
     },
     {
       "name": "Auxiliary - Artillery Tercio",
+      "entryId": "371d-e9ef-7bf9-47de",
       "type": "auxiliary",
       "slots": [
         {
@@ -645,6 +663,7 @@
     },
     {
       "name": "Auxiliary - Infantry Tercio",
+      "entryId": "243b-4ffd-9808-11d8",
       "type": "auxiliary",
       "slots": [
         {
@@ -682,6 +701,7 @@
     },
     {
       "name": "Auxiliary - Scout Tercio",
+      "entryId": "551a-23a1-7758-2688",
       "type": "auxiliary",
       "slots": [
         {
@@ -701,6 +721,7 @@
     },
     {
       "name": "Auxiliary - Chogorian Warband",
+      "entryId": "0f6e-3db8-8b6f-74e1",
       "type": "auxiliary",
       "slots": [
         {
@@ -728,6 +749,7 @@
     },
     {
       "name": "Auxiliary - Terror Assault",
+      "entryId": "8fe1-7b62-49cf-479b",
       "type": "auxiliary",
       "slots": [
         {
@@ -753,6 +775,7 @@
     },
     {
       "name": "Auxiliary - Berserker Cadre",
+      "entryId": "bda6-c5d3-eafc-4eb5",
       "type": "auxiliary",
       "slots": [
         {
@@ -784,6 +807,7 @@
     },
     {
       "name": "Auxiliary - Bloodied Claw",
+      "entryId": "06b3-c35d-da74-de37",
       "type": "auxiliary",
       "slots": [
         {
@@ -809,6 +833,7 @@
     },
     {
       "name": "Auxiliary - Revelation Host",
+      "entryId": "edb0-a5d8-84f1-4eee",
       "type": "auxiliary",
       "slots": [
         {
@@ -836,6 +861,7 @@
     },
     {
       "name": "Auxiliary - Sons of Bodt",
+      "entryId": "9bfb-c160-31df-9108",
       "type": "auxiliary",
       "slots": [
         {
@@ -861,6 +887,7 @@
     },
     {
       "name": "Auxiliary - Spearhead Phalanx",
+      "entryId": "4737-e73a-394e-433f",
       "type": "auxiliary",
       "slots": [
         {
@@ -886,6 +913,7 @@
     },
     {
       "name": "Auxiliary - Supremecy Cadre",
+      "entryId": "2436-a714-22cc-fd31",
       "type": "auxiliary",
       "slots": [
         {
@@ -917,6 +945,7 @@
     },
     {
       "name": "Auxiliary - Stormwing Muster",
+      "entryId": "bdf9-3781-2927-bc55",
       "type": "auxiliary",
       "slots": [
         {
@@ -944,6 +973,7 @@
     },
     {
       "name": "Auxiliary - Deathwing Conclave",
+      "entryId": "9b6c-2a18-7b8a-1aab",
       "type": "auxiliary",
       "slots": [
         {
@@ -977,6 +1007,7 @@
     },
     {
       "name": "Auxiliary - Ravenwing Lance",
+      "entryId": "466d-8e42-0890-721a",
       "type": "auxiliary",
       "slots": [
         {
@@ -1004,6 +1035,7 @@
     },
     {
       "name": "Auxiliary - Firewing Echelon",
+      "entryId": "3e2f-4f99-d366-7a95",
       "type": "auxiliary",
       "slots": [
         {
@@ -1031,6 +1063,7 @@
     },
     {
       "name": "Auxiliary - Ironwing Gauntlet",
+      "entryId": "cb64-b547-1144-fd70",
       "type": "auxiliary",
       "slots": [
         {
@@ -1052,6 +1085,7 @@
     },
     {
       "name": "Auxiliary - Dreadwing Cadre",
+      "entryId": "4df8-3a15-6b77-1b80",
       "type": "auxiliary",
       "slots": [
         {
@@ -1073,6 +1107,7 @@
     },
     {
       "name": "Auxiliary - Siege Gauntlet",
+      "entryId": "1581-346d-51c6-4739",
       "type": "auxiliary",
       "slots": [
         {
@@ -1106,6 +1141,7 @@
     },
     {
       "name": "Auxiliary - Immolation Covenant",
+      "entryId": "04d2-0a69-061e-75fe",
       "type": "auxiliary",
       "slots": [
         {
@@ -1133,6 +1169,7 @@
     },
     {
       "name": "Auxiliary - Decapitation Cadre",
+      "entryId": "27bf-3e6b-587c-74bb",
       "type": "auxiliary",
       "slots": [
         {
@@ -1154,6 +1191,7 @@
     },
     {
       "name": "Auxiliary - Prosperine Convocation",
+      "entryId": "450b-0ca8-0beb-ff89",
       "type": "auxiliary",
       "slots": [
         {
@@ -1193,6 +1231,7 @@
     },
     {
       "name": "Auxiliary - Headhunter Leviathal",
+      "entryId": "74f4-a9d0-a2be-b4bd",
       "type": "auxiliary",
       "slots": [
         {
@@ -1220,6 +1259,7 @@
     },
     {
       "name": "Auxiliary - Daemonic Manifestation",
+      "entryId": "0078-217d-19d4-a354",
       "type": "auxiliary",
       "slots": [
         {
@@ -1253,6 +1293,7 @@
     },
     {
       "name": "Auxiliary - Veteran Cadre",
+      "entryId": "1834-a10c-a732-d989",
       "type": "auxiliary",
       "slots": [
         {
@@ -1298,6 +1339,7 @@
     },
     {
       "name": "Auxiliary - Apothecarion Delegation",
+      "entryId": "41f6-7dfc-4eb9-f6ef",
       "type": "auxiliary",
       "slots": [
         {
@@ -1337,6 +1379,7 @@
     },
     {
       "name": "Auxiliary - Techmarine Covenant",
+      "entryId": "7993-0219-c614-f612",
       "type": "auxiliary",
       "slots": [
         {
@@ -1376,6 +1419,7 @@
     },
     {
       "name": "Auxiliary - Storm Battery",
+      "entryId": "d089-8cc7-96a7-903f",
       "type": "auxiliary",
       "slots": [
         {
@@ -1415,6 +1459,7 @@
     },
     {
       "name": "Auxiliary - Recon Demi-Company",
+      "entryId": "38f7-2240-f8ee-6cce",
       "type": "auxiliary",
       "slots": [
         {
@@ -1460,6 +1505,7 @@
     },
     {
       "name": "Auxiliary - Iron Tercio",
+      "entryId": "9a10-a2d9-5a87-a5a9",
       "type": "auxiliary",
       "slots": [
         {
@@ -1485,6 +1531,7 @@
     },
     {
       "name": "Auxiliary - Planetfall Speartip",
+      "entryId": "2e50-319d-ae62-a50c",
       "type": "auxiliary",
       "slots": [
         {
@@ -1530,6 +1577,7 @@
     },
     {
       "name": "Auxiliary - Dreadnought Talon",
+      "entryId": "9ffc-1414-bcb2-ca4b",
       "type": "auxiliary",
       "slots": [
         {
@@ -1563,6 +1611,7 @@
     },
     {
       "name": "Auxiliary - Oversight Delegation",
+      "entryId": "2291-5e67-64bd-5edc",
       "type": "auxiliary",
       "slots": [
         {
@@ -1584,6 +1633,7 @@
     },
     {
       "name": "Auxiliary - Storm Cadre",
+      "entryId": "36f3-796e-8f6d-3cb8",
       "type": "auxiliary",
       "slots": [
         {
@@ -1599,6 +1649,7 @@
     },
     {
       "name": "Auxiliary - Daemonic Manifestation",
+      "entryId": "2733-cda6-ff04-1d79",
       "type": "auxiliary",
       "slots": [
         {
@@ -1614,6 +1665,7 @@
     },
     {
       "name": "Auxiliary - Maelstrom Sentry Battery",
+      "entryId": "07f0-6f5f-59f4-f95f",
       "type": "auxiliary",
       "slots": [
         {
@@ -1653,6 +1705,7 @@
     },
     {
       "name": "Auxiliary - Hykanatoi Convocation",
+      "entryId": "7fdf-9f23-ceee-41cc",
       "type": "auxiliary",
       "slots": [
         {
@@ -1678,6 +1731,7 @@
     },
     {
       "name": "Auxiliary - Tharanatoi Convocation",
+      "entryId": "6da2-db78-0174-d0b1",
       "type": "auxiliary",
       "slots": [
         {
@@ -1697,6 +1751,7 @@
     },
     {
       "name": "Auxiliary - Ephoroi Convocation",
+      "entryId": "f226-fdc7-a249-e980",
       "type": "auxiliary",
       "slots": [
         {
@@ -1716,6 +1771,7 @@
     },
     {
       "name": "Auxiliary - Kataphractoi Convocation",
+      "entryId": "750e-bcb0-0a41-3731",
       "type": "auxiliary",
       "slots": [
         {
@@ -1749,6 +1805,7 @@
   "apex": [
     {
       "name": "Apex - Combat Retinue",
+      "entryId": "7203-426e-7a82-0b01",
       "type": "apex",
       "slots": [
         {
@@ -1795,6 +1852,7 @@
     },
     {
       "name": "Apex - Officer Cadre",
+      "entryId": "90b7-c0fa-a9e1-6765",
       "type": "apex",
       "slots": [
         {
@@ -1841,6 +1899,7 @@
     },
     {
       "name": "Apex - Army Vanguard",
+      "entryId": "0690-c05e-c301-f595",
       "type": "apex",
       "slots": [
         {
@@ -1887,6 +1946,7 @@
     },
     {
       "name": "Apex - The Heart of Power",
+      "entryId": "0594-4b9b-675b-f633",
       "type": "apex",
       "slots": [
         {
@@ -1920,6 +1980,7 @@
     },
     {
       "name": "Apex - Command Maniple",
+      "entryId": "dbe3-9946-d4de-dc73",
       "type": "apex",
       "slots": [
         {
@@ -1965,6 +2026,7 @@
     },
     {
       "name": "Apex - The Panoply of Cruelty",
+      "entryId": "d5e2-3162-f591-6a81",
       "type": "apex",
       "slots": [
         {
@@ -1986,6 +2048,7 @@
     },
     {
       "name": "Apex - The Host of Destruction",
+      "entryId": "1db9-6dc0-7da5-e517",
       "type": "apex",
       "slots": [
         {
@@ -2007,6 +2070,7 @@
     },
     {
       "name": "Apex - Crux of Judgement",
+      "entryId": "4f19-3023-0077-1049",
       "type": "apex",
       "slots": [
         {
@@ -2022,6 +2086,7 @@
     },
     {
       "name": "Apex - Iron Phalanx",
+      "entryId": "a782-7985-325b-1840",
       "type": "apex",
       "slots": [
         {
@@ -2055,6 +2120,7 @@
     },
     {
       "name": "Apex - Thallax Command Cohort",
+      "entryId": "7f03-c1a3-d883-8a98",
       "type": "apex",
       "slots": [
         {
@@ -2076,6 +2142,7 @@
     },
     {
       "name": "Apex - The Hammer of Olympia",
+      "entryId": "1d3d-a6b8-94d8-443b",
       "type": "apex",
       "slots": [
         {
@@ -2115,6 +2182,7 @@
     },
     {
       "name": "Apex - Medusan Vanguard",
+      "entryId": "7ff8-9e2c-e68a-573f",
       "type": "apex",
       "slots": [
         {
@@ -2152,6 +2220,7 @@
     },
     {
       "name": "Apex - Atramentar Hunt ",
+      "entryId": "dbbe-886f-3ce1-13c0",
       "type": "apex",
       "slots": [
         {
@@ -2183,6 +2252,7 @@
     },
     {
       "name": "Apex - Exalted Conclave",
+      "entryId": "c961-7007-0142-5d07",
       "type": "apex",
       "slots": [
         {
@@ -2210,6 +2280,7 @@
     },
     {
       "name": "Apex - Grenadier Muster",
+      "entryId": "614d-275b-8366-4fff",
       "type": "apex",
       "slots": [
         {
@@ -2231,6 +2302,7 @@
     },
     {
       "name": "Apex - Ogryn Auxilia",
+      "entryId": "50b1-d374-4295-96cf",
       "type": "apex",
       "slots": [
         {
@@ -2252,6 +2324,7 @@
     },
     {
       "name": "Apex - Infantry Cohort",
+      "entryId": "d109-bc0b-dd89-99a6",
       "type": "apex",
       "slots": [
         {
@@ -2273,6 +2346,7 @@
     },
     {
       "name": "Apex - Artillery Division",
+      "entryId": "860c-8228-4165-d760",
       "type": "apex",
       "slots": [
         {
@@ -2294,6 +2368,7 @@
     },
     {
       "name": "Apex - Cavalry Wing",
+      "entryId": "a611-ff21-3714-48e6",
       "type": "apex",
       "slots": [
         {
@@ -2315,6 +2390,7 @@
     },
     {
       "name": "Apex - Armoured Phalanx",
+      "entryId": "388d-f480-70ab-8bed",
       "type": "apex",
       "slots": [
         {
@@ -2336,6 +2412,7 @@
     },
     {
       "name": "Apex - Linebreaker Echelon (Saturnine)",
+      "entryId": "aafc-1a40-350a-5434",
       "type": "apex",
       "slots": [
         {
@@ -2387,6 +2464,7 @@
     },
     {
       "name": "Apex - Linebreaker Echelon (Cataphractii)",
+      "entryId": "d7b3-5d00-8524-73fa",
       "type": "apex",
       "slots": [
         {
@@ -2438,6 +2516,7 @@
     },
     {
       "name": "Apex - Linebreaker Echelon (Tartaros)",
+      "entryId": "dd35-dc84-98ac-237d",
       "type": "apex",
       "slots": [
         {
@@ -2489,6 +2568,7 @@
     },
     {
       "name": "Apex - Moritoi Convocation",
+      "entryId": "0b43-afde-9f1b-307e",
       "type": "apex",
       "slots": [
         {
@@ -2508,6 +2588,7 @@
     },
     {
       "name": "Apex - Leviathan Armoured Fist",
+      "entryId": "d70e-7c57-6788-4adc",
       "type": "apex",
       "slots": [
         {
@@ -2541,6 +2622,7 @@
     },
     {
       "name": "Apex - Leviathan Bastion of Fire",
+      "entryId": "f55b-750d-fc70-6618",
       "type": "apex",
       "slots": [
         {

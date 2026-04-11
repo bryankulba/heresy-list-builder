@@ -19,6 +19,7 @@ export interface ModelEntry {
 
 export interface UnitEntry {
   name: string;
+  entryId: string;
   role: string;
   points: number;
   baseCost: number;
@@ -36,10 +37,25 @@ export interface DetachmentSlot {
 
 export interface Detachment {
   name: string;
+  entryId: string;
   type: 'core' | 'auxiliary' | 'apex' | 'other';
   slots: DetachmentSlot[];
   /** Faction keys that can field this detachment, e.g. ['death-guard', 'legiones-astartes'] */
   sources: string[];
+}
+
+export interface SystemInfo {
+  gameSystemId: string;
+  gameSystemName: string;
+  revision: number;
+  /** entryId of the top-level "Crusade Force Organization Chart" forceEntry in the .gst */
+  forceOrgEntryId: string;
+}
+
+export interface CatalogueInfo {
+  catalogueId: string;
+  catalogueName: string;
+  revision: number;
 }
 
 export interface ParseResult {
@@ -50,6 +66,8 @@ export interface ParseResult {
     apex: Detachment[];
     legion: Record<string, Detachment[]>;
   };
+  system: SystemInfo;
+  catalogues: Record<string, CatalogueInfo>;
   warnings: string[];
 }
 
@@ -59,6 +77,28 @@ export interface ParseResult {
 
 // typeId for "Point(s)" cost in every BSData Heresy file
 const POINTS_TYPE_ID = '9893-c379-920b-8982';
+
+// ---------------------------------------------------------------------------
+// extractRootAttrs
+// ---------------------------------------------------------------------------
+// Extracts the id, name, and revision from the root <catalogue> or <gameSystem>
+// element. Used to capture BSData IDs needed for .ros export.
+
+// Strips leading whitespace and optional roman numeral prefix from catalogue names.
+// e.g. "                        XIV - Death Guard" → "Death Guard"
+function normalizeCatalogueName(raw: string): string {
+  return raw.trim().replace(/^[IVXLCDM]+\s*[-–]\s*/i, '');
+}
+
+function extractRootAttrs(xml: string): { id: string; name: string; revision: number } {
+  const m = xml.match(/<(?:catalogue|gameSystem)\b([^>]*?)>/);
+  if (!m) return { id: '', name: '', revision: 0 };
+  const attrs = m[1];
+  const id = attrs.match(/\bid="([^"]+)"/)?.[1] ?? '';
+  const rawName = attrs.match(/\bname="([^"]+)"/)?.[1] ?? '';
+  const rev = attrs.match(/\brevision="([^"]+)"/)?.[1];
+  return { id, name: normalizeCatalogueName(rawName), revision: rev ? parseInt(rev, 10) : 0 };
+}
 
 // ---------------------------------------------------------------------------
 // buildRoleMap
@@ -344,6 +384,7 @@ function extractUnitsFromCatalogue(
 
     units.push({
       name,
+      entryId: id,
       role: normalizeRole(role),
       points: breakdown?.points ?? 0,
       baseCost: breakdown?.baseCost ?? 0,
@@ -477,36 +518,39 @@ function extractFactionSources(body: string): string[] {
 // ---------------------------------------------------------------------------
 // Extracts detachment definitions from the .gst forceEntries section.
 
-function parseDetachments(gstXml: string): ParseResult['detachments'] {
-  const result: ParseResult['detachments'] = {
+function parseDetachments(gstXml: string): { detachments: ParseResult['detachments']; forceOrgEntryId: string } {
+  const detachments: ParseResult['detachments'] = {
     core: [],
     auxiliary: [],
     apex: [],
     legion: {},
   };
+  let forceOrgEntryId = '';
 
   const feStart = gstXml.indexOf('<forceEntries>');
-  if (feStart === -1) return result;
+  if (feStart === -1) return { detachments, forceOrgEntryId };
 
   const feEnd = gstXml.indexOf('</forceEntries>', feStart);
   const feSection = gstXml.slice(feStart, feEnd + '</forceEntries>'.length);
 
   // Find all forceEntry open tags and their positions
   const forcePattern = /<forceEntry\b([^>]*)>/g;
-  const entries: Array<{ start: number; name: string }> = [];
+  const entries: Array<{ start: number; name: string; id: string }> = [];
   let m: RegExpExecArray | null;
 
   while ((m = forcePattern.exec(feSection)) !== null) {
     const nameMatch = m[1].match(/\bname="([^"]+)"/);
     if (!nameMatch) continue;
-    entries.push({ start: m.index, name: nameMatch[1] });
+    const idMatch = m[1].match(/\bid="([^"]+)"/);
+    entries.push({ start: m.index, name: nameMatch[1], id: idMatch?.[1] ?? '' });
   }
 
   for (let i = 0; i < entries.length; i++) {
-    const { start, name } = entries[i];
+    const { start, name, id } = entries[i];
 
-    // Skip root wrappers
-    if (name === 'Crusade Force Organization Chart' || name === 'Crusade Forces') continue;
+    // Capture the top-level org chart entry ID, then skip root wrappers
+    if (name === 'Crusade Force Organization Chart') { forceOrgEntryId = id; continue; }
+    if (name === 'Crusade Forces') continue;
 
     const end = i + 1 < entries.length ? entries[i + 1].start : feSection.length;
     const body = feSection.slice(start, end);
@@ -524,11 +568,11 @@ function parseDetachments(gstXml: string): ParseResult['detachments'] {
     }
 
     const sources = extractFactionSources(body);
-    const detachment: Detachment = { name, type, slots, sources };
-    result[type === 'other' ? 'auxiliary' : type].push(detachment);
+    const detachment: Detachment = { name, entryId: id, type, slots, sources };
+    detachments[type === 'other' ? 'auxiliary' : type].push(detachment);
   }
 
-  return result;
+  return { detachments, forceOrgEntryId };
 }
 
 // ---------------------------------------------------------------------------
@@ -551,7 +595,28 @@ export function parseAll(
     units[factionKey] = extractUnitsFromCatalogue(xml, roleMap, factionKey, warnings);
   }
 
-  const detachments = parseDetachments(gstXml);
+  const { detachments, forceOrgEntryId } = parseDetachments(gstXml);
 
-  return { units, detachments, warnings };
+  const gstAttrs = extractRootAttrs(gstXml);
+  const system: SystemInfo = {
+    gameSystemId: gstAttrs.id,
+    gameSystemName: gstAttrs.name,
+    revision: gstAttrs.revision,
+    forceOrgEntryId,
+  };
+
+  const laAttrs = extractRootAttrs(laXml);
+  const catalogues: Record<string, CatalogueInfo> = {
+    'legiones-astartes': {
+      catalogueId: laAttrs.id,
+      catalogueName: laAttrs.name,
+      revision: laAttrs.revision,
+    },
+  };
+  for (const [factionKey, xml] of Object.entries(factionCats)) {
+    const a = extractRootAttrs(xml);
+    catalogues[factionKey] = { catalogueId: a.id, catalogueName: a.name, revision: a.revision };
+  }
+
+  return { units, detachments, system, catalogues, warnings };
 }

@@ -55,7 +55,7 @@ export default function AppHeader({ onExport, hasWarlord, onAddWarlord, onAddLor
             Add Warlord
           </Button>
         )}
-        <Button kind="ghost" size="sm" renderIcon={Add} onClick={onAddLordOfWar}>
+        <Button kind="ghost" size="sm" renderIcon={Add} disabled>
           Add Lord of War
         </Button>
       </div>

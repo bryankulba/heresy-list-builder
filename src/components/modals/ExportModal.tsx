@@ -4,6 +4,7 @@ import type { Allegiance, PlacedDetachment } from '../../types';
 import { getDetachmentDisplayName } from '../../data/loader';
 import { expandSlots } from '../canvas/DetachmentCard';
 import { FACTION_LABEL_MAP } from '../../data/factions';
+import { buildRosXml } from '../../utils/buildRos';
 
 interface ExportModalProps {
   detachments: PlacedDetachment[];
@@ -55,6 +56,17 @@ function buildExportText(
   return lines.join('\n');
 }
 
+function downloadRos(xml: string, faction: string): void {
+  const filename = `${faction}.ros`;
+  const blob = new Blob([xml], { type: 'text/xml;charset=utf-8' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}
+
 export default function ExportModal({
   detachments,
   faction,
@@ -70,6 +82,11 @@ export default function ExportModal({
 
   function copyToClipboard() {
     navigator.clipboard.writeText(text).catch(() => {});
+  }
+
+  function handleDownloadRos() {
+    const xml = buildRosXml(detachments, faction, pointsLimit, totalPoints);
+    downloadRos(xml, faction);
   }
 
   return (
@@ -93,16 +110,16 @@ export default function ExportModal({
         >
           {text}
         </pre>
-        <p style={{ color: 'var(--cds-text-secondary)', fontSize: 12, marginTop: 12 }}>
-          BattleScribe .ros export coming soon.
-        </p>
       </ModalBody>
       <ModalFooter>
         <Button kind="secondary" onClick={onClose}>
           Close
         </Button>
-        <Button kind="primary" onClick={copyToClipboard}>
+        <Button kind="secondary" onClick={copyToClipboard}>
           Copy to Clipboard
+        </Button>
+        <Button kind="primary" onClick={handleDownloadRos}>
+          Download .ros
         </Button>
       </ModalFooter>
     </ComposedModal>

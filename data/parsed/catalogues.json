@@ -1,0 +1,107 @@
+{
+  "legiones-astartes": {
+    "catalogueId": "9b32-f350-6aa9-9c09",
+    "catalogueName": "Legiones Astartes",
+    "revision": 57
+  },
+  "alpha-legion": {
+    "catalogueId": "8813-5298-c368-ee16",
+    "catalogueName": "Alpha Legion",
+    "revision": 17
+  },
+  "blood-angels": {
+    "catalogueId": "9cff-ac34-56ca-260f",
+    "catalogueName": "Blood Angels",
+    "revision": 11
+  },
+  "dark-angels": {
+    "catalogueId": "0a35-fce3-188c-b3aa",
+    "catalogueName": "Dark Angels",
+    "revision": 13
+  },
+  "death-guard": {
+    "catalogueId": "be98-aa9d-64ef-f62c",
+    "catalogueName": "Death Guard",
+    "revision": 8
+  },
+  "emperors-children": {
+    "catalogueId": "9a22-d01f-ab5c-ec07",
+    "catalogueName": "Emperor&apos;s Children",
+    "revision": 16
+  },
+  "imperial-fists": {
+    "catalogueId": "d186-cffc-0950-f632",
+    "catalogueName": "Imperial Fists",
+    "revision": 15
+  },
+  "iron-hands": {
+    "catalogueId": "736e-3967-e72b-e3ac",
+    "catalogueName": "Iron Hands",
+    "revision": 15
+  },
+  "iron-warriors": {
+    "catalogueId": "21c0-18db-03dd-ae07",
+    "catalogueName": "Iron Warriors",
+    "revision": 8
+  },
+  "night-lords": {
+    "catalogueId": "486f-b32a-ac87-73dd",
+    "catalogueName": "Night Lords",
+    "revision": 18
+  },
+  "raven-guard": {
+    "catalogueId": "340c-1d4f-1f31-fb70",
+    "catalogueName": "Raven Guard",
+    "revision": 7
+  },
+  "salamanders": {
+    "catalogueId": "f148-a6e4-5a8c-3aeb",
+    "catalogueName": "Salamanders",
+    "revision": 12
+  },
+  "sons-of-horus": {
+    "catalogueId": "ac06-fcec-b634-5bd9",
+    "catalogueName": "Sons of Horus",
+    "revision": 11
+  },
+  "space-wolves": {
+    "catalogueId": "d995-cb33-be41-ecf8",
+    "catalogueName": "Space Wolves",
+    "revision": 17
+  },
+  "thousand-sons": {
+    "catalogueId": "2496-21e2-1870-e9b8",
+    "catalogueName": "Thousand Sons",
+    "revision": 14
+  },
+  "ultramarines": {
+    "catalogueId": "656a-07b6-d4fd-57af",
+    "catalogueName": "Ultramarines",
+    "revision": 14
+  },
+  "white-scars": {
+    "catalogueId": "f7b4-2531-0962-1379",
+    "catalogueName": "White Scars",
+    "revision": 11
+  },
+  "word-bearers": {
+    "catalogueId": "4935-1832-63f7-91aa",
+    "catalogueName": "Word Bearers",
+    "revision": 16
+  },
+  "world-eaters": {
+    "catalogueId": "a956-190d-3b47-6258",
+    "catalogueName": "World Eaters",
+    "revision": 17
+  },
+  "mechanicum": {
+    "catalogueId": "2f57-6e9d-8a7b-5c2e",
+    "catalogueName": "Mechanicum",
+    "revision": 25
+  },
+  "solar-auxilia": {
+    "catalogueId": "7851-69ac-f701-034e",
+    "catalogueName": "Solar Auxilia",
+    "revision": 32
+  }
+}
