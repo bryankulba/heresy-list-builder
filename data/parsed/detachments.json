@@ -76,6 +76,7 @@
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
+        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",
@@ -673,7 +674,9 @@
           "categoryId": "52d0-8b78-439e-18e5"
         }
       ],
-      "sources": []
+      "sources": [
+        "solar-auxilia"
+      ]
     },
     {
       "name": "Auxiliary - Armour Tercio",
@@ -688,7 +691,9 @@
           "categoryId": "5725-7f8c-f02e-4df6"
         }
       ],
-      "sources": []
+      "sources": [
+        "solar-auxilia"
+      ]
     },
     {
       "name": "Auxiliary - Artillery Tercio",
@@ -703,7 +708,9 @@
           "categoryId": "ada1-aac4-9802-9c3d"
         }
       ],
-      "sources": []
+      "sources": [
+        "solar-auxilia"
+      ]
     },
     {
       "name": "Auxiliary - Infantry Tercio",
@@ -746,7 +753,9 @@
           "categoryId": "52d0-8b78-439e-18e5"
         }
       ],
-      "sources": []
+      "sources": [
+        "solar-auxilia"
+      ]
     },
     {
       "name": "Auxiliary - Scout Tercio",
@@ -768,7 +777,9 @@
           "categoryId": "5ee3-236d-c224-67aa"
         }
       ],
-      "sources": []
+      "sources": [
+        "solar-auxilia"
+      ]
     },
     {
       "name": "Auxiliary - Chogorian Warband",
@@ -828,7 +839,9 @@
           "categoryId": "cf96-8891-3f9a-8921"
         }
       ],
-      "sources": []
+      "sources": [
+        "night-lords"
+      ]
     },
     {
       "name": "Auxiliary - Berserker Cadre",
@@ -864,7 +877,9 @@
           "categoryId": "c3f9-a7f3-984b-3fda"
         }
       ],
-      "sources": []
+      "sources": [
+        "world-eaters"
+      ]
     },
     {
       "name": "Auxiliary - Bloodied Claw",
@@ -893,7 +908,9 @@
           "categoryId": "3235-bd79-e9b1-60fa"
         }
       ],
-      "sources": []
+      "sources": [
+        "space-wolves"
+      ]
     },
     {
       "name": "Auxiliary - Revelation Host",
@@ -953,7 +970,9 @@
           "categoryId": "1c79-ecdf-9a64-84c9"
         }
       ],
-      "sources": []
+      "sources": [
+        "world-eaters"
+      ]
     },
     {
       "name": "Auxiliary - Spearhead Phalanx",
@@ -982,7 +1001,9 @@
           "categoryId": "3235-bd79-e9b1-60fa"
         }
       ],
-      "sources": []
+      "sources": [
+        "iron-hands"
+      ]
     },
     {
       "name": "Auxiliary - Supremecy Cadre",
@@ -1018,7 +1039,9 @@
           "categoryId": "3235-bd79-e9b1-60fa"
         }
       ],
-      "sources": []
+      "sources": [
+        "sons-of-horus"
+      ]
     },
     {
       "name": "Auxiliary - Stormwing Muster",
@@ -1654,7 +1677,9 @@
           "categoryId": "d49e-048b-a8e2-ba52"
         }
       ],
-      "sources": []
+      "sources": [
+        "solar-auxilia"
+      ]
     },
     {
       "name": "Auxiliary - Planetfall Speartip",
@@ -1867,7 +1892,9 @@
           "categoryId": "52d0-8b78-439e-18e5"
         }
       ],
-      "sources": []
+      "sources": [
+        "talons-of-the-emperor"
+      ]
     },
     {
       "name": "Auxiliary - Tharanatoi Convocation",
@@ -1889,7 +1916,9 @@
           "categoryId": "1e95-35f0-1353-ffa1"
         }
       ],
-      "sources": []
+      "sources": [
+        "talons-of-the-emperor"
+      ]
     },
     {
       "name": "Auxiliary - Ephoroi Convocation",
@@ -1911,7 +1940,9 @@
           "categoryId": "6348-ecd0-714d-042a"
         }
       ],
-      "sources": []
+      "sources": [
+        "talons-of-the-emperor"
+      ]
     },
     {
       "name": "Auxiliary - Kataphractoi Convocation",
@@ -1947,7 +1978,9 @@
           "categoryId": "c291-144b-3da6-37ed"
         }
       ],
-      "sources": []
+      "sources": [
+        "talons-of-the-emperor"
+      ]
     }
   ],
   "apex": [
@@ -2401,7 +2434,9 @@
           "categoryId": "3235-bd79-e9b1-60fa"
         }
       ],
-      "sources": []
+      "sources": [
+        "iron-hands"
+      ]
     },
     {
       "name": "Apex - Atramentar Hunt ",
@@ -2437,7 +2472,9 @@
           "categoryId": "1e95-35f0-1353-ffa1"
         }
       ],
-      "sources": []
+      "sources": [
+        "night-lords"
+      ]
     },
     {
       "name": "Apex - Exalted Conclave",
@@ -2802,7 +2839,9 @@
           "categoryId": "9699-67c9-2c0b-e64b"
         }
       ],
-      "sources": []
+      "sources": [
+        "talons-of-the-emperor"
+      ]
     },
     {
       "name": "Apex - Leviathan Armoured Fist",

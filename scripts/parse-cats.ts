@@ -12,6 +12,7 @@
 
 export interface ModelEntry {
   name: string;
+  entryId: string;
   cost: number;
   min: number;
   max: number;
@@ -232,8 +233,11 @@ function extractPointsBreakdown(entryText: string): PointsBreakdown | null {
         : entryText.length;
       const modelText = entryText.slice(mStart, mEnd);
 
-      const nameMatch = modelText.match(/name="([^"]+)"/);
+      const openTag = modelText.slice(0, modelText.indexOf('>') + 1);
+      const nameMatch = openTag.match(/\bname="([^"]+)"/);
       const mName = nameMatch ? nameMatch[1] : 'Unknown';
+      const modelIdMatch = openTag.match(/\bid="([^"]+)"/);
+      const modelId = modelIdMatch?.[1] ?? '';
 
       // Model cost at 10-space <costs>
       const modelCostMatch = modelText.match(
@@ -252,7 +256,7 @@ function extractPointsBreakdown(entryText: string): PointsBreakdown | null {
       const max = maxMatch ? parseInt(maxMatch[1], 10) : min;
 
       rawTotal += cost * min;
-      models.push({ name: mName, cost, min, max });
+      models.push({ name: mName, entryId: modelId, cost, min, max });
     }
 
     const points = Math.round(baseCost + rawTotal);
@@ -280,8 +284,11 @@ function extractPointsBreakdown(entryText: string): PointsBreakdown | null {
         : entryText.length;
       const subText = entryText.slice(sStart, sEnd);
 
-      const nameMatch = subText.match(/name="([^"]+)"/);
+      const subOpenTag = subText.slice(0, subText.indexOf('>') + 1);
+      const nameMatch = subOpenTag.match(/\bname="([^"]+)"/);
       const sName = nameMatch ? nameMatch[1] : 'Unknown';
+      const subIdMatch = subOpenTag.match(/\bid="([^"]+)"/);
+      const subId = subIdMatch?.[1] ?? '';
 
       // Sub-unit cost at 10-space <costs>
       const subCostMatch = subText.match(
@@ -303,7 +310,7 @@ function extractPointsBreakdown(entryText: string): PointsBreakdown | null {
       if (min === 0) continue;
 
       rawTotal += cost * min;
-      models.push({ name: sName, cost, min, max });
+      models.push({ name: sName, entryId: subId, cost, min, max });
     }
 
     const points = Math.round(baseCost + rawTotal);
@@ -487,6 +494,15 @@ const FACTION_COMMENT_MAP: Record<string, string> = {
   'RG': 'raven-guard',
   'AL': 'alpha-legion',
   'Auxilia': 'solar-auxilia',
+  'Solar Auxilia': 'solar-auxilia',
+  'SA Only': 'solar-auxilia',
+  'Night Lords': 'night-lords',
+  'World Eaters': 'world-eaters',
+  'Space Wolves': 'space-wolves',
+  'Iron Hands': 'iron-hands',
+  'SoH': 'sons-of-horus',
+  'Custodes': 'talons-of-the-emperor',
+  'Custodes only': 'talons-of-the-emperor',
   'Mechanicum': 'mechanicum',
   'Talons': 'talons-of-the-emperor',
   'Sisters': 'sisters-of-silence',

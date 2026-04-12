@@ -4,6 +4,7 @@ export type DetachmentType = 'core' | 'auxiliary' | 'apex' | 'other';
 
 export interface ModelEntry {
   name: string;
+  entryId?: string;
   cost: number;
   min: number;
   max: number;

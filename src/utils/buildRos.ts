@@ -5,7 +5,7 @@
  * one <selection> per filled slot (including bonus slots).
  */
 
-import type { PlacedDetachment } from '../types';
+import type { PlacedDetachment, UnitEntry } from '../types';
 import { systemData, cataloguesData } from '../data/loader';
 import { expandSlots } from '../components/canvas/DetachmentCard';
 import { FACTION_LABEL_MAP } from '../data/factions';
@@ -24,6 +24,63 @@ function escapeXml(s: string): string {
 
 function uuid(): string {
   return crypto.randomUUID();
+}
+
+/**
+ * Emits lines for a single unit <selection>, including nested model child
+ * selections and the slot category. Callers provide the indent prefix.
+ */
+function emitUnitSelection(
+  lines: string[],
+  unit: UnitEntry,
+  categoryId: string | undefined,
+  categoryRole: string,
+  indent: string
+): void {
+  const i = indent;
+  lines.push(
+    `${i}<selection` +
+    ` id="${uuid()}"` +
+    ` name="${escapeXml(unit.name)}"` +
+    ` entryId="${escapeXml(unit.entryId ?? '')}"` +
+    ` number="1"` +
+    ` type="unit">`
+  );
+
+  // Child model selections — only if models are present
+  if (unit.models && unit.models.length > 0) {
+    lines.push(`${i}  <selections>`);
+    for (const model of unit.models) {
+      const modelCost = Math.round(model.cost * model.min);
+      lines.push(
+        `${i}    <selection` +
+        ` id="${uuid()}"` +
+        ` name="${escapeXml(model.name)}"` +
+        ` entryId="${escapeXml(model.entryId ?? '')}"` +
+        ` number="${model.min}"` +
+        ` type="model">`
+      );
+      lines.push(`${i}      <costs>`);
+      lines.push(`${i}        <cost name="pts" value="${modelCost}" costTypeId="${POINTS_TYPE_ID}"/>`);
+      lines.push(`${i}      </costs>`);
+      lines.push(`${i}    </selection>`);
+    }
+    lines.push(`${i}  </selections>`);
+  }
+
+  // Slot category (tells NR which detachment slot this unit occupies)
+  if (categoryId) {
+    lines.push(`${i}  <categories>`);
+    lines.push(
+      `${i}    <category id="${uuid()}" name="${escapeXml(categoryRole)}" primary="true" entryId="${escapeXml(categoryId)}"/>`
+    );
+    lines.push(`${i}  </categories>`);
+  }
+
+  lines.push(`${i}  <costs>`);
+  lines.push(`${i}    <cost name="pts" value="${unit.points}" costTypeId="${POINTS_TYPE_ID}"/>`);
+  lines.push(`${i}  </costs>`);
+  lines.push(`${i}</selection>`);
 }
 
 export function buildRosXml(
@@ -54,11 +111,8 @@ export function buildRosXml(
     ` pointsLimit="${pointsLimit}">`
   );
 
-  // Roster-level costs
   lines.push('  <costs>');
-  lines.push(
-    `    <cost name="pts" value="${totalPoints}" costTypeId="${POINTS_TYPE_ID}"/>`
-  );
+  lines.push(`    <cost name="pts" value="${totalPoints}" costTypeId="${POINTS_TYPE_ID}"/>`);
   lines.push('  </costs>');
 
   // All detachment forces are nested inside the "Crusade Force Organization Chart"
@@ -95,56 +149,14 @@ export function buildRosXml(
     for (const { key, slotDef } of expanded) {
       const filled = det.slots[key];
       if (!filled) continue;
-      const { unit } = filled;
-      lines.push(
-        `            <selection` +
-        ` id="${uuid()}"` +
-        ` name="${escapeXml(unit.name)}"` +
-        ` entryId="${escapeXml(unit.entryId ?? '')}"` +
-        ` number="1"` +
-        ` type="unit">`
-      );
-      if (slotDef.categoryId) {
-        lines.push('              <categories>');
-        lines.push(
-          `                <category id="${uuid()}" name="${escapeXml(slotDef.role)}" primary="true" entryId="${escapeXml(slotDef.categoryId)}"/>`
-        );
-        lines.push('              </categories>');
-      }
-      lines.push('              <costs>');
-      lines.push(
-        `                <cost name="pts" value="${unit.points}" costTypeId="${POINTS_TYPE_ID}"/>`
-      );
-      lines.push('              </costs>');
-      lines.push('            </selection>');
+      emitUnitSelection(lines, filled.unit, slotDef.categoryId, slotDef.role, '            ');
     }
 
     // Bonus slots (Logistical Benefit)
     for (const bs of det.bonusSlots ?? []) {
       if (!bs.unit) continue;
-      // Find categoryId from detachment slots matching the bonus slot's role
       const bonusSlotDef = det.def.slots.find(s => s.role === bs.role);
-      lines.push(
-        `            <selection` +
-        ` id="${uuid()}"` +
-        ` name="${escapeXml(bs.unit.name)}"` +
-        ` entryId="${escapeXml(bs.unit.entryId ?? '')}"` +
-        ` number="1"` +
-        ` type="unit">`
-      );
-      if (bonusSlotDef?.categoryId) {
-        lines.push('              <categories>');
-        lines.push(
-          `                <category id="${uuid()}" name="${escapeXml(bs.role)}" primary="true" entryId="${escapeXml(bonusSlotDef.categoryId)}"/>`
-        );
-        lines.push('              </categories>');
-      }
-      lines.push('              <costs>');
-      lines.push(
-        `                <cost name="pts" value="${bs.unit.points}" costTypeId="${POINTS_TYPE_ID}"/>`
-      );
-      lines.push('              </costs>');
-      lines.push('            </selection>');
+      emitUnitSelection(lines, bs.unit, bonusSlotDef?.categoryId, bs.role, '            ');
     }
 
     lines.push('          </selections>');
