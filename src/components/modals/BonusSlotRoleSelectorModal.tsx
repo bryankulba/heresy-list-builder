@@ -9,7 +9,7 @@ const VALID_ROLES = [
   'Fast Attack',
   'Support',
   'Armour',
-  'War Engine',
+  'War-engine',
   'Retinue',
   'Commander',
   'Heavy Transport',
