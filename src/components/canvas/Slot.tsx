@@ -33,6 +33,7 @@ export default function Slot({ slotDef, filled, onClick, onClear, slotRef, isDas
   return (
     <div
       ref={slotRef}
+      data-interactive
       onClick={handleClick}
       className="relative flex flex-col items-center transition-all duration-150"
       style={{

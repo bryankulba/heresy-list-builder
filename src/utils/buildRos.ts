@@ -69,7 +69,7 @@ function emitUnitSelection(
             ` id="${uuid()}"` +
             ` name="${escapeXml(wg.name)}"` +
             ` entryId="${escapeXml(wg.entryId)}"` +
-            ` number="1"` +
+            ` number="${model.min}"` +
             ` type="upgrade">`
           );
           lines.push(`${i}          <costs>`);

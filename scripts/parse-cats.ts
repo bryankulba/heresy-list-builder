@@ -33,6 +33,8 @@ export interface UnitEntry {
   /** All child model (or sub-unit) entries with their costs and counts */
   models: ModelEntry[];
   source: string;
+  /** Number of auxiliary detachments this unit unlocks when placed in a Command slot (default 1). Derived from BSData "Officer of the Line (N)" category. */
+  officerOfTheLine?: number;
 }
 
 export interface DetachmentSlot {
@@ -380,6 +382,31 @@ function normalizeRole(role: string): string {
 }
 
 // ---------------------------------------------------------------------------
+// buildOfficerOfLineMap
+// ---------------------------------------------------------------------------
+// Scans the .gst XML for categoryEntry elements named "Officer of the Line (N)"
+// and returns a map of category ID → unlock count.
+
+function buildOfficerOfLineMap(gstXml: string): Map<string, number> {
+  const map = new Map<string, number>();
+  // Match either attribute order: name=... id=... or id=... name=...
+  const patterns = [
+    /categoryEntry[^>]*\bname="Officer of the Line \((\d+)\)"[^>]*\bid="([^"]+)"/g,
+    /categoryEntry[^>]*\bid="([^"]+)"[^>]*\bname="Officer of the Line \((\d+)\)"/g,
+  ];
+  for (const pat of patterns) {
+    let m: RegExpExecArray | null;
+    while ((m = pat.exec(gstXml)) !== null) {
+      // Group indices differ by pattern: first pattern (count, id), second (id, count)
+      const count = parseInt(pat === patterns[0] ? m[1] : m[2], 10);
+      const id = pat === patterns[0] ? m[2] : m[1];
+      map.set(id, count);
+    }
+  }
+  return map;
+}
+
+// ---------------------------------------------------------------------------
 // extractUnitsFromCatalogue
 // ---------------------------------------------------------------------------
 // Pulls all top-level sharedSelectionEntry elements of type="unit".
@@ -391,7 +418,8 @@ function extractUnitsFromCatalogue(
   roleMap: Map<string, string>,
   linkIdMap: Map<string, string>,
   source: string,
-  warnings: string[]
+  warnings: string[],
+  ootlMap: Map<string, number>
 ): UnitEntry[] {
   const sharedStart = xml.indexOf('<sharedSelectionEntries>');
   const sharedEnd = xml.indexOf('</sharedSelectionEntries>');
@@ -444,6 +472,14 @@ function extractUnitsFromCatalogue(
       warnings.push(`${source}: No points found for "${name}" (id=${id})`);
     }
 
+    let officerOfTheLine: number | undefined;
+    for (const [catId, count] of ootlMap) {
+      if (entryText.includes(`targetId="${catId}"`)) {
+        officerOfTheLine = count;
+        break;
+      }
+    }
+
     units.push({
       name,
       entryId: linkIdMap.get(id) ?? id,
@@ -452,6 +488,7 @@ function extractUnitsFromCatalogue(
       baseCost: breakdown?.baseCost ?? 0,
       models: breakdown?.models ?? [],
       source,
+      ...(officerOfTheLine !== undefined ? { officerOfTheLine } : {}),
     });
   }
 
@@ -661,13 +698,15 @@ export function parseAll(
 ): ParseResult {
   const warnings: string[] = [];
 
+  const ootlMap = buildOfficerOfLineMap(gstXml);
+
   const { roleMap: laRoleMap, linkIdMap: laLinkIdMap } = buildRoleMap(laXml);
-  const laUnits = extractUnitsFromCatalogue(laXml, laRoleMap, laLinkIdMap, 'legiones-astartes', warnings);
+  const laUnits = extractUnitsFromCatalogue(laXml, laRoleMap, laLinkIdMap, 'legiones-astartes', warnings, ootlMap);
 
   const units: Record<string, UnitEntry[]> = { 'legiones-astartes': laUnits };
   for (const [factionKey, xml] of Object.entries(factionCats)) {
     const { roleMap, linkIdMap } = buildRoleMap(xml);
-    units[factionKey] = extractUnitsFromCatalogue(xml, roleMap, linkIdMap, factionKey, warnings);
+    units[factionKey] = extractUnitsFromCatalogue(xml, roleMap, linkIdMap, factionKey, warnings, ootlMap);
   }
 
   const { detachments, forceOrgEntryId } = parseDetachments(gstXml);

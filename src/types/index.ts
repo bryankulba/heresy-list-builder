@@ -24,6 +24,8 @@ export interface UnitEntry {
   baseCost: number;
   models: ModelEntry[];
   source: string;
+  /** Number of auxiliary detachments this unit unlocks in a Command slot (default 1). Derived from BSData "Officer of the Line (N)" category. */
+  officerOfTheLine?: number;
 }
 
 export interface SlotDef {
@@ -52,6 +54,8 @@ export interface PrimeBenefit {
 export interface FilledSlot {
   unit: UnitEntry;
   primeBenefit?: PrimeBenefit;
+  notes?: string;
+  extraPoints?: number;
 }
 
 /** A bonus slot added to a detachment card by the Logistical Benefit prime benefit. */
@@ -60,6 +64,8 @@ export interface BonusSlot {
   sourceSlotKey: string;  // the prime slot key that created this bonus slot
   role: string;           // role chosen by the user
   unit: UnitEntry | null;
+  notes?: string;
+  extraPoints?: number;
 }
 
 export interface PlacedDetachment {
@@ -79,7 +85,7 @@ export type ModalState =
   | { type: 'primeBenefit'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry }
   | { type: 'bonusSlotRoleSelector'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry }
   | { type: 'bonusUnitPicker'; detachmentId: string; bonusSlotId: string; role: string }
-  | { type: 'detachmentSelector'; trigger: 'highCommand' | 'command'; unlockedBy: string }
+  | { type: 'detachmentSelector'; trigger: 'highCommand' | 'command'; unlockedBy: string; title?: string }
   | { type: 'lordOfWarSelector' }
   | { type: 'confirmClear'; detachmentId: string; slotKey: string; affectedIds: string[] }
   | { type: 'export' };

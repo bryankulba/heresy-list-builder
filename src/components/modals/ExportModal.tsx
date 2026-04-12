@@ -41,11 +41,15 @@ function buildExportText(
       if (!filled) continue;
       const benefitStr = filled.primeBenefit ? `  [Prime: ${filled.primeBenefit.name}]` : '';
       const role = slotDef.role.replace('Prime ', '★ ');
-      lines.push(`  ${role}: ${filled.unit.name} (${filled.unit.points}pts)${benefitStr}`);
+      const effectivePts = filled.unit.points + (filled.extraPoints ?? 0);
+      const notesStr = filled.notes ? `  — ${filled.notes}` : '';
+      lines.push(`  ${role}: ${filled.unit.name} (${effectivePts}pts)${benefitStr}${notesStr}`);
     }
     for (const bs of det.bonusSlots ?? []) {
       if (!bs.unit) continue;
-      lines.push(`  ${bs.role} [Logistical Benefit]: ${bs.unit.name} (${bs.unit.points}pts)`);
+      const bsEffectivePts = bs.unit.points + (bs.extraPoints ?? 0);
+      const bsNotesStr = bs.notes ? `  — ${bs.notes}` : '';
+      lines.push(`  ${bs.role} [Logistical Benefit]: ${bs.unit.name} (${bsEffectivePts}pts)${bsNotesStr}`);
     }
 
     lines.push('');

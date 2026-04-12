@@ -29,3 +29,8 @@ body {
   font-family: 'IBM Plex Sans', 'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
 }
+
+// Hide the tooltip that appears on the modal close button
+.cds--modal .cds--popover-content {
+  display: none;
+}

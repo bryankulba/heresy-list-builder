@@ -38,11 +38,3 @@ export const PRIME_BENEFITS: PrimeBenefit[] = [
       "The prime unit gains a special rule specific to its legion, as detailed in the legion's army list entry.",
   },
 ];
-
-/**
- * Unit names that unlock 2 auxiliary detachments when placed in a Command slot
- * instead of the usual 1.
- */
-export const OFFICER_OF_THE_LINE_UNITS = new Set<string>([
-  'Officer of the Line',
-]);

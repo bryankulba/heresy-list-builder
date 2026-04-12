@@ -8,7 +8,6 @@ import React, {
 import type { FilledSlot, ModalState, PlacedDetachment, SlotDef } from '../../types';
 import { useRosterStore, computeTotalPoints } from '../../store/rosterStore';
 import { detachmentsData, getBaseRole, stripPrimePrefix } from '../../data/loader';
-import { OFFICER_OF_THE_LINE_UNITS } from '../../constants/primeBenefits';
 import DetachmentCard, { expandSlots } from './DetachmentCard';
 import ConnectorLine from './ConnectorLine';
 import SlotEditModal from '../modals/SlotEditModal';
@@ -146,6 +145,7 @@ export default function Canvas() {
   const clearBonusSlot = useRosterStore((s) => s.clearBonusSlot);
   const removeDetachment = useRosterStore((s) => s.removeDetachment);
   const clearBonusSlotsForSlot = useRosterStore((s) => s.clearBonusSlotsForSlot);
+  const updateSlotAnnotations = useRosterStore((s) => s.updateSlotAnnotations);
 
   const totalPoints = computeTotalPoints(detachments);
 
@@ -412,7 +412,7 @@ export default function Canvas() {
       const existing = detachments.filter((d) => d.unlockedBy === unlockedBy);
       for (const det of existing) removeDetachment(det.id);
 
-      const isDouble = OFFICER_OF_THE_LINE_UNITS.has(unit.name);
+      const isDouble = (unit.officerOfTheLine ?? 1) > 1;
       if (isDouble) pendingDoubleUnlock.current = unlockedBy;
       setModal({ type: 'detachmentSelector', trigger, unlockedBy });
     } else {
@@ -463,7 +463,7 @@ export default function Canvas() {
       else if (role === 'Command') trigger = 'command';
 
       if (trigger) {
-        const isDouble = OFFICER_OF_THE_LINE_UNITS.has(unit.name);
+        const isDouble = (unit.officerOfTheLine ?? 1) > 1;
         if (isDouble) pendingDoubleUnlock.current = unlockedBy;
         setModal({ type: 'detachmentSelector', trigger, unlockedBy });
       } else {
@@ -480,7 +480,7 @@ export default function Canvas() {
     // If Officer of the Line: open a second selector
     if (pendingDoubleUnlock.current === unlockedBy) {
       pendingDoubleUnlock.current = null;
-      setModal({ type: 'detachmentSelector', trigger: 'command', unlockedBy });
+      setModal({ type: 'detachmentSelector', trigger: 'command', unlockedBy, title: 'Choose Second Auxiliary Detachment (Officer of the Line)' });
       return;
     }
 
@@ -648,14 +648,30 @@ export default function Canvas() {
         const role = getBaseRole(stripPrimePrefix(slotDef.role));
         const isCommandSlot = role === 'High Command' || role === 'Command';
         const unlockedBy = `${detachmentId}::${slotKey}`;
-        const unlockedDet = detachments.find((d) => d.unlockedBy === unlockedBy);
+        const unlockedDets = detachments.filter((d) => d.unlockedBy === unlockedBy);
         const trigger = role === 'High Command' ? 'highCommand' : 'command';
+
+        const linkedDetachments = isCommandSlot
+          ? unlockedDets.length > 0
+            ? unlockedDets.map((det) => ({
+                name: det.def.name,
+                onChange: () => {
+                  isEditingSlot.current = { detachmentId, slotKey };
+                  removeDetachment(det.id);
+                  setModal({ type: 'detachmentSelector', trigger, unlockedBy });
+                },
+              }))
+            : [{ name: '', onChange: () => {
+                isEditingSlot.current = { detachmentId, slotKey };
+                setModal({ type: 'detachmentSelector', trigger, unlockedBy });
+              }}]
+          : undefined;
 
         return (
           <SlotEditModal
             slotDef={slotDef}
             filled={filled}
-            unlockedDetachmentName={isCommandSlot ? (unlockedDet?.def.name ?? '') : undefined}
+            linkedDetachments={linkedDetachments}
             onChangeUnit={() => {
               isEditingSlot.current = { detachmentId, slotKey };
               setModal({ type: 'unitPicker', detachmentId, slotKey, role, isPrime: slotDef.prime });
@@ -664,11 +680,9 @@ export default function Canvas() {
               isEditingSlot.current = { detachmentId, slotKey };
               setModal({ type: 'primeBenefit', detachmentId, slotKey, role, unit: filled.unit });
             }}
-            onChangeDetachment={isCommandSlot ? () => {
-              isEditingSlot.current = { detachmentId, slotKey };
-              if (unlockedDet) removeDetachment(unlockedDet.id);
-              setModal({ type: 'detachmentSelector', trigger, unlockedBy });
-            } : undefined}
+            onAnnotationsChange={(notes, extraPoints) =>
+              updateSlotAnnotations(detachmentId, slotKey, notes, extraPoints)
+            }
             onClose={() => setModal({ type: 'none' })}
           />
         );
@@ -733,6 +747,7 @@ export default function Canvas() {
       {modal.type === 'detachmentSelector' && (
         <DetachmentSelectorModal
           trigger={modal.trigger}
+          title={modal.title}
           faction={faction}
           onConfirm={handleDetachmentSelected}
           onClose={() => setModal({ type: 'none' })}

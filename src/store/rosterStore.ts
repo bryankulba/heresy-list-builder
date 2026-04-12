@@ -10,10 +10,10 @@ import { detachmentsData } from '../data/loader';
 export function computeTotalPoints(detachments: PlacedDetachment[]): number {
   return detachments.reduce((total, det) => {
     const slotPts = Object.values(det.slots).reduce((sum, fs) => {
-      return sum + (fs ? fs.unit.points : 0);
+      return sum + (fs ? fs.unit.points + (fs.extraPoints ?? 0) : 0);
     }, 0);
     const bonusPts = (det.bonusSlots ?? []).reduce((sum, bs) => {
-      return sum + (bs.unit?.points ?? 0);
+      return sum + (bs.unit ? bs.unit.points + (bs.extraPoints ?? 0) : 0);
     }, 0);
     return total + slotPts + bonusPts;
   }, 0);
@@ -37,6 +37,7 @@ interface RosterStore {
   startBuild: (faction: string, allegiance: Allegiance, pointsLimit: number) => void;
   addDetachment: (def: DetachmentDef, unlockedBy?: string) => void;
   fillSlot: (detachmentId: string, slotKey: string, unit: UnitEntry, primeBenefit?: PrimeBenefit) => void;
+  updateSlotAnnotations: (detachmentId: string, slotKey: string, notes: string, extraPoints: number) => void;
   clearSlot: (detachmentId: string, slotKey: string) => void;
   addBonusSlot: (detachmentId: string, sourceSlotKey: string, role: string) => void;
   fillBonusSlot: (detachmentId: string, bonusSlotId: string, unit: UnitEntry) => void;
@@ -82,8 +83,25 @@ export const useRosterStore = create<RosterStore>((set, get) => ({
     set((s) => ({
       detachments: s.detachments.map((det) => {
         if (det.id !== detachmentId) return det;
-        const filled: FilledSlot = { unit, primeBenefit };
+        const existing = det.slots[slotKey];
+        const filled: FilledSlot = {
+          unit,
+          primeBenefit,
+          notes: existing?.notes,
+          extraPoints: existing?.extraPoints,
+        };
         return { ...det, slots: { ...det.slots, [slotKey]: filled } };
+      }),
+    }));
+  },
+
+  updateSlotAnnotations(detachmentId, slotKey, notes, extraPoints) {
+    set((s) => ({
+      detachments: s.detachments.map((det) => {
+        if (det.id !== detachmentId) return det;
+        const existing = det.slots[slotKey];
+        if (!existing) return det;
+        return { ...det, slots: { ...det.slots, [slotKey]: { ...existing, notes, extraPoints } } };
       }),
     }));
   },

@@ -60,7 +60,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "officerOfTheLine": 2
     },
     {
       "name": "Praetor in Saturnine Terminator Armour",
@@ -480,7 +481,8 @@
           ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "officerOfTheLine": 2
     },
     {
       "name": "Damocles Command Rhino",
@@ -1770,7 +1772,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "officerOfTheLine": 2
     },
     {
       "name": "Librarian With Jump Pack",
@@ -2899,7 +2902,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "officerOfTheLine": 2
     },
     {
       "name": "Saturnine Terminator Command Squad",
@@ -3192,7 +3196,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "blood-angels"
+      "source": "blood-angels",
+      "officerOfTheLine": 2
     },
     {
       "name": "Aster Chrone",
@@ -3210,7 +3215,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "blood-angels"
+      "source": "blood-angels",
+      "officerOfTheLine": 2
     },
     {
       "name": "Contemptor-Incaendius Dreadnought",
@@ -3876,7 +3882,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "emperors-children"
+      "source": "emperors-children",
+      "officerOfTheLine": 2
     },
     {
       "name": "Phoenix Terminator Squad",
@@ -4142,7 +4149,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "imperial-fists"
+      "source": "imperial-fists",
+      "officerOfTheLine": 2
     },
     {
       "name": "Alexis Polux",
@@ -4160,7 +4168,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "imperial-fists"
+      "source": "imperial-fists",
+      "officerOfTheLine": 2
     },
     {
       "name": "Templar Brethren",
@@ -5520,7 +5529,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "space-wolves"
+      "source": "space-wolves",
+      "officerOfTheLine": 2
     },
     {
       "name": "Grey Slayer Pack",
@@ -6074,7 +6084,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "ultramarines"
+      "source": "ultramarines",
+      "officerOfTheLine": 2
     },
     {
       "name": "Invictus Suzerain Squad",
@@ -6314,7 +6325,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "white-scars"
+      "source": "white-scars",
+      "officerOfTheLine": 2
     },
     {
       "name": "Golden Keshig",
@@ -7107,7 +7119,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "officerOfTheLine": 2
     },
     {
       "name": "Scyllax Guardian Maniple",
@@ -7221,7 +7234,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "officerOfTheLine": 2
     },
     {
       "name": "Myrmidon Secutor Host",
@@ -7875,7 +7889,8 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "officerOfTheLine": 2
     },
     {
       "name": "Line Command Section",
