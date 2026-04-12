@@ -18,9 +18,8 @@ import BonusSlotRoleSelectorModal from '../modals/BonusSlotRoleSelectorModal';
 import DetachmentSelectorModal from '../modals/DetachmentSelectorModal';
 import ConfirmModal from '../modals/ConfirmModal';
 import ExportModal from '../modals/ExportModal';
-import AppHeader, { type AppView } from '../ui/AppHeader';
+import AppHeader from '../ui/AppHeader';
 import PointsCard from '../ui/PointsCard';
-import ListView from '../list/ListView';
 
 // ---------------------------------------------------------------------------
 // Layout constants
@@ -150,9 +149,6 @@ export default function Canvas() {
 
   const totalPoints = computeTotalPoints(detachments);
 
-  // ── View toggle ──
-  const [view, setView] = useState<AppView>('canvas');
-
   // ── Modal state ──
   const [modal, setModal] = useState<ModalState>({ type: 'none' });
   // Tracks if we need a second detachment selector (Officer of the Line)
@@ -178,8 +174,9 @@ export default function Canvas() {
     }
   }
 
-  // ── Pan state ──
+  // ── Pan + zoom state ──
   const [pan, setPan] = useState({ x: 16, y: 16 });
+  const [zoom, setZoom] = useState(1);
   const isPanning = useRef(false);
   const panStart = useRef({ mouseX: 0, mouseY: 0, panX: 0, panY: 0 });
 
@@ -190,6 +187,31 @@ export default function Canvas() {
   }
 
   function onMouseMove(e: React.MouseEvent<HTMLDivElement>) {
+    // Card drag takes priority
+    if (dragState.current?.active) {
+      const ds = dragState.current;
+      const dx = (e.clientX - ds.startMouseX) / zoom;
+      const dy = (e.clientY - ds.startMouseY) / zoom;
+      setPositionOverrides((prev) => ({
+        ...prev,
+        [ds.detId]: { x: ds.startCardX + dx, y: ds.startCardY + dy },
+      }));
+      return;
+    }
+
+    // Cancel long-press if mouse moves too much before timer fires
+    if (longPressTimer.current && dragState.current) {
+      const ds = dragState.current;
+      if (
+        Math.abs(e.clientX - ds.startMouseX) > 5 ||
+        Math.abs(e.clientY - ds.startMouseY) > 5
+      ) {
+        clearTimeout(longPressTimer.current);
+        longPressTimer.current = null;
+        dragState.current = null;
+      }
+    }
+
     if (!isPanning.current) return;
     const dx = e.clientX - panStart.current.mouseX;
     const dy = e.clientY - panStart.current.mouseY;
@@ -197,12 +219,73 @@ export default function Canvas() {
   }
 
   function onMouseUp() {
+    if (longPressTimer.current) {
+      clearTimeout(longPressTimer.current);
+      longPressTimer.current = null;
+    }
+    dragState.current = null;
+    setDraggingId(null);
     isPanning.current = false;
   }
 
   function onWheel(e: React.WheelEvent<HTMLDivElement>) {
     e.preventDefault();
-    setPan((p) => ({ x: p.x - e.deltaX, y: p.y - e.deltaY }));
+    if (e.ctrlKey) {
+      // Pinch gesture (trackpad) or ctrl+scroll → zoom centered on cursor
+      const factor = e.deltaY > 0 ? 0.95 : 1.05;
+      const newZoom = Math.max(0.2, Math.min(3, zoom * factor));
+      const rect = outerRef.current!.getBoundingClientRect();
+      const mouseX = e.clientX - rect.left;
+      const mouseY = e.clientY - rect.top;
+      // Keep the canvas point under cursor fixed: newPan = mouse - (mouse - pan) / zoom * newZoom
+      setPan({
+        x: mouseX - ((mouseX - pan.x) / zoom) * newZoom,
+        y: mouseY - ((mouseY - pan.y) / zoom) * newZoom,
+      });
+      setZoom(newZoom);
+    } else {
+      // Two-finger scroll or regular scroll → pan
+      setPan((p) => ({ x: p.x - e.deltaX, y: p.y - e.deltaY }));
+    }
+  }
+
+  function onDoubleClick(e: React.MouseEvent<HTMLDivElement>) {
+    if ((e.target as HTMLElement).closest('[data-no-pan]')) return;
+    // Reset zoom and pan to default
+    setZoom(1);
+    setPan({ x: 16, y: 16 });
+  }
+
+  // ── Card drag state ──
+  const [positionOverrides, setPositionOverrides] = useState<Record<string, CardPosition>>({});
+  const [draggingId, setDraggingId] = useState<string | null>(null);
+  const dragState = useRef<{
+    detId: string;
+    startMouseX: number;
+    startMouseY: number;
+    startCardX: number;
+    startCardY: number;
+    active: boolean;
+  } | null>(null);
+  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  function handleCardMouseDown(e: React.MouseEvent, detId: string, pos: CardPosition) {
+    // Don't initiate drag from interactive elements
+    if ((e.target as HTMLElement).closest('button, input, select, [data-interactive]')) return;
+    dragState.current = {
+      detId,
+      startMouseX: e.clientX,
+      startMouseY: e.clientY,
+      startCardX: pos.x,
+      startCardY: pos.y,
+      active: false,
+    };
+    longPressTimer.current = setTimeout(() => {
+      if (dragState.current) {
+        dragState.current.active = true;
+        setDraggingId(detId);
+      }
+    }, 350);
   }
 
   // ── Refs for connector lines ──
@@ -245,20 +328,21 @@ export default function Canvas() {
       const cardRect = cardEl.getBoundingClientRect();
       const slotRect = slotEl.getBoundingClientRect();
 
+      // getBoundingClientRect gives screen-space coords; divide by zoom to get canvas-local coords
       newConns.push({
         id: det.id,
         from: {
-          x: slotRect.left - innerRect.left + slotRect.width / 2,
-          y: slotRect.bottom - innerRect.top,
+          x: (slotRect.left - innerRect.left + slotRect.width / 2) / zoom,
+          y: (slotRect.bottom - innerRect.top) / zoom,
         },
         to: {
-          x: cardRect.left - innerRect.left + cardRect.width / 2,
-          y: cardRect.top - innerRect.top,
+          x: (cardRect.left - innerRect.left + cardRect.width / 2) / zoom,
+          y: (cardRect.top - innerRect.top) / zoom,
         },
       });
     }
     setConnections(newConns);
-  }, [detachments, pan]);
+  }, [detachments, pan, zoom, positionOverrides]);
 
   // ── Slot interaction ──
   function handleSlotClick(detachmentId: string, slotKey: string, slotDef: SlotDef) {
@@ -430,6 +514,11 @@ export default function Canvas() {
   const cardPositions = computeCardPositions(detachments);
   const instanceNumbers = computeInstanceNumbers(detachments);
 
+  // Resolve effective position (user override takes precedence over computed)
+  function getCardPos(detId: string): CardPosition {
+    return positionOverrides[detId] ?? cardPositions.get(detId) ?? { x: 0, y: 0 };
+  }
+
   return (
     <div className="flex flex-col" style={{ height: '100vh', overflow: 'hidden' }}>
       <AppHeader
@@ -437,46 +526,34 @@ export default function Canvas() {
         hasWarlord={hasWarlord}
         onAddWarlord={handleAddWarlord}
         onAddLordOfWar={handleAddLordOfWar}
-        view={view}
-        onViewChange={setView}
       />
 
-      {/* List View */}
-      {view === 'list' && (
-        <ListView
-          detachments={detachments}
-          onSlotClick={handleSlotClick}
-          onSlotClear={handleSlotClear}
-          onBonusSlotClick={handleBonusSlotClick}
-          onBonusSlotClear={handleBonusSlotClear}
-        />
-      )}
-
       {/* Canvas area */}
-      {view === 'canvas' && (
       <div
         ref={outerRef}
         style={{
           flex: 1,
           overflow: 'hidden',
           position: 'relative',
-          cursor: isPanning.current ? 'grabbing' : 'grab',
+          cursor: draggingId ? 'grabbing' : 'grab',
           background: 'var(--cds-background)',
+          userSelect: draggingId ? 'none' : undefined,
         }}
         onMouseDown={onMouseDown}
         onMouseMove={onMouseMove}
         onMouseUp={onMouseUp}
         onMouseLeave={onMouseUp}
         onWheel={onWheel}
+        onDoubleClick={onDoubleClick}
       >
-        {/* Pannable inner canvas */}
+        {/* Pannable + zoomable inner canvas */}
         <div
           ref={innerRef}
           style={{
             position: 'relative',
             width: CANVAS_W,
             height: CANVAS_H,
-            transform: `translate(${pan.x}px, ${pan.y}px)`,
+            transform: `translate(${pan.x}px, ${pan.y}px) scale(${zoom})`,
             transformOrigin: '0 0',
           }}
         >
@@ -498,8 +575,8 @@ export default function Canvas() {
 
           {/* Detachment cards */}
           {detachments.map((det) => {
-            const pos = cardPositions.get(det.id);
-            if (!pos) return null;
+            const pos = getCardPos(det.id);
+            const isDragging = draggingId === det.id;
             return (
               <div
                 key={det.id}
@@ -509,7 +586,14 @@ export default function Canvas() {
                   left: pos.x,
                   top: pos.y,
                   width: CARD_W,
+                  cursor: isDragging ? 'grabbing' : 'grab',
+                  outline: isDragging ? '2px solid var(--cds-focus)' : undefined,
+                  outlineOffset: isDragging ? 2 : undefined,
+                  boxShadow: isDragging ? '0 8px 32px rgba(0,0,0,0.5)' : undefined,
+                  zIndex: isDragging ? 10 : undefined,
+                  transition: isDragging ? undefined : 'box-shadow 0.15s, outline 0.15s',
                 }}
+                onMouseDown={(e) => handleCardMouseDown(e, det.id, pos)}
               >
                 <DetachmentCard
                   detachment={det}
@@ -530,8 +614,30 @@ export default function Canvas() {
           })}
 
         </div>
+
+        {/* Zoom indicator — click to reset */}
+        <button
+          data-no-pan
+          onClick={() => { setZoom(1); setPan({ x: 16, y: 16 }); }}
+          title="Reset zoom (or double-click canvas)"
+          style={{
+            position: 'absolute',
+            bottom: 12,
+            right: 12,
+            padding: '4px 10px',
+            fontSize: 11,
+            fontWeight: 500,
+            background: 'var(--cds-layer-01)',
+            border: '1px solid var(--cds-border-strong-01)',
+            color: 'var(--cds-text-secondary)',
+            borderRadius: 4,
+            cursor: 'pointer',
+            opacity: zoom === 1 ? 0.5 : 1,
+          }}
+        >
+          {Math.round(zoom * 100)}%
+        </button>
       </div>
-      )}
 
       {/* Points card */}
       <PointsCard current={totalPoints} limit={pointsLimit} />
