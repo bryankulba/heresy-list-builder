@@ -7,7 +7,7 @@
 
 import type { PlacedDetachment, UnitEntry } from '../types';
 import { systemData, cataloguesData } from '../data/loader';
-import { expandSlots } from '../components/canvas/DetachmentCard';
+
 import { FACTION_LABEL_MAP } from '../data/factions';
 
 // Points cost typeId — consistent across all HH3 BSData files
@@ -60,6 +60,25 @@ function emitUnitSelection(
         ` number="${model.min}"` +
         ` type="model">`
       );
+      // Default wargear as nested upgrade selections
+      if (model.defaultWargear && model.defaultWargear.length > 0) {
+        lines.push(`${i}      <selections>`);
+        for (const wg of model.defaultWargear) {
+          lines.push(
+            `${i}        <selection` +
+            ` id="${uuid()}"` +
+            ` name="${escapeXml(wg.name)}"` +
+            ` entryId="${escapeXml(wg.entryId)}"` +
+            ` number="1"` +
+            ` type="upgrade">`
+          );
+          lines.push(`${i}          <costs>`);
+          lines.push(`${i}            <cost name="pts" value="0" costTypeId="${POINTS_TYPE_ID}"/>`);
+          lines.push(`${i}          </costs>`);
+          lines.push(`${i}        </selection>`);
+        }
+        lines.push(`${i}      </selections>`);
+      }
       lines.push(`${i}      <costs>`);
       lines.push(`${i}        <cost name="pts" value="${modelCost}" costTypeId="${POINTS_TYPE_ID}"/>`);
       lines.push(`${i}      </costs>`);
@@ -144,12 +163,12 @@ export function buildRosXml(
     );
     lines.push('          <selections>');
 
-    // Regular slots
-    const expanded = expandSlots(det.def);
-    for (const { key, slotDef } of expanded) {
-      const filled = det.slots[key];
+    // All regular + prime slots — iterate directly to capture Apex prime-only slots
+    for (const [key, filled] of Object.entries(det.slots)) {
       if (!filled) continue;
-      emitUnitSelection(lines, filled.unit, slotDef.categoryId, slotDef.role, '            ');
+      const role = key.slice(0, key.lastIndexOf('-'));
+      const slotDef = det.def.slots.find(s => s.role === role);
+      emitUnitSelection(lines, filled.unit, slotDef?.categoryId, role, '            ');
     }
 
     // Bonus slots (Logistical Benefit)

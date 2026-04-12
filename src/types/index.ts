@@ -2,12 +2,18 @@ export type Allegiance = 'Loyalist' | 'Traitor';
 export type AppPhase = 'start' | 'canvas';
 export type DetachmentType = 'core' | 'auxiliary' | 'apex' | 'other';
 
+export interface WargearEntry {
+  name: string;
+  entryId: string;
+}
+
 export interface ModelEntry {
   name: string;
   entryId?: string;
   cost: number;
   min: number;
   max: number;
+  defaultWargear?: WargearEntry[];
 }
 
 export interface UnitEntry {

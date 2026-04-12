@@ -18,8 +18,9 @@ import BonusSlotRoleSelectorModal from '../modals/BonusSlotRoleSelectorModal';
 import DetachmentSelectorModal from '../modals/DetachmentSelectorModal';
 import ConfirmModal from '../modals/ConfirmModal';
 import ExportModal from '../modals/ExportModal';
-import AppHeader from '../ui/AppHeader';
+import AppHeader, { type AppView } from '../ui/AppHeader';
 import PointsCard from '../ui/PointsCard';
+import ListView from '../list/ListView';
 
 // ---------------------------------------------------------------------------
 // Layout constants
@@ -148,6 +149,9 @@ export default function Canvas() {
   const clearBonusSlotsForSlot = useRosterStore((s) => s.clearBonusSlotsForSlot);
 
   const totalPoints = computeTotalPoints(detachments);
+
+  // ── View toggle ──
+  const [view, setView] = useState<AppView>('canvas');
 
   // ── Modal state ──
   const [modal, setModal] = useState<ModalState>({ type: 'none' });
@@ -433,9 +437,23 @@ export default function Canvas() {
         hasWarlord={hasWarlord}
         onAddWarlord={handleAddWarlord}
         onAddLordOfWar={handleAddLordOfWar}
+        view={view}
+        onViewChange={setView}
       />
 
+      {/* List View */}
+      {view === 'list' && (
+        <ListView
+          detachments={detachments}
+          onSlotClick={handleSlotClick}
+          onSlotClear={handleSlotClear}
+          onBonusSlotClick={handleBonusSlotClick}
+          onBonusSlotClear={handleBonusSlotClear}
+        />
+      )}
+
       {/* Canvas area */}
+      {view === 'canvas' && (
       <div
         ref={outerRef}
         style={{
@@ -513,6 +531,7 @@ export default function Canvas() {
 
         </div>
       </div>
+      )}
 
       {/* Points card */}
       <PointsCard current={totalPoints} limit={pointsLimit} />

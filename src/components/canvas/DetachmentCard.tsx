@@ -62,7 +62,7 @@ interface SlotGroup {
   slots: ExpandedSlot[];
 }
 
-function groupByRole(expanded: ExpandedSlot[]): SlotGroup[] {
+export function groupByRole(expanded: ExpandedSlot[]): SlotGroup[] {
   const groups: SlotGroup[] = [];
   const seen = new Map<string, SlotGroup>();
   for (const es of expanded) {
