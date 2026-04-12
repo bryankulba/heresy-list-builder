@@ -12,7 +12,8 @@
           "entryId": "e089-b99c-4813-20b4",
           "cost": 40,
           "min": 1,
-          "max": 4
+          "max": 4,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -29,14 +30,16 @@
           "entryId": "32ae-3f83-5e58-a809",
           "cost": 60,
           "min": 2,
-          "max": 5
+          "max": 5,
+          "defaultWargear": []
         },
         {
           "name": "Saturnine Terminator Sergeant",
           "entryId": "22a1-684b-ceef-3582",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -53,7 +56,8 @@
           "entryId": "6a17-9220-006e-1cab",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -70,7 +74,8 @@
           "entryId": "0b24-87fb-26e8-13d2",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -87,14 +92,16 @@
           "entryId": "cdf1-272d-d4f4-eba2",
           "cost": 12,
           "min": 9,
-          "max": 19
+          "max": 19,
+          "defaultWargear": []
         },
         {
           "name": "Sergeant",
           "entryId": "956c-75a7-824e-0d9a",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -111,14 +118,21 @@
           "entryId": "5809-c342-b9e6-740a",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Legionary",
           "entryId": "4aab-6f78-9ab5-3c0b",
           "cost": 12,
           "min": 9,
-          "max": 19
+          "max": 19,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "6d6d-84c3-5d97-a44f"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -135,7 +149,8 @@
           "entryId": "9a6a-2e41-13a1-c9b3",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -152,7 +167,8 @@
           "entryId": "5893-7ec0-df11-7329",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -169,7 +185,8 @@
           "entryId": "820a-a1e2-5ec8-7d0e",
           "cost": 10,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -186,14 +203,16 @@
           "entryId": "f4f8-92e3-3042-a2c9",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Chosen",
           "entryId": "21fc-71c6-05d9-80ca",
           "cost": 20,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -210,7 +229,13 @@
           "entryId": "0dc5-a99d-8e65-9ab8",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Pintle Weapons",
+              "entryId": "d3be-7f0e-10f8-58cf"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -227,7 +252,8 @@
           "entryId": "ff8e-1dd5-3ec8-86d9",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -244,14 +270,21 @@
           "entryId": "a37a-7ead-2f6e-3f55",
           "cost": 15,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "9caa-d8a5-6f63-b26c"
+            }
+          ]
         },
         {
           "name": "Veteran Sergeant",
           "entryId": "ea09-6455-6424-8328",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -268,14 +301,26 @@
           "entryId": "2a78-6851-6efb-8a71",
           "cost": 22,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "860a-ce9b-140f-fc14"
+            }
+          ]
         },
         {
           "name": "Veteran Sergeant",
           "entryId": "d026-be22-fbc5-ee36",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Sergeant Melee Weapons (no chainsword)",
+              "entryId": "0164-c146-98ff-8f27"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -292,14 +337,25 @@
           "entryId": "7ea7-4722-7936-df4a",
           "cost": 10,
           "min": 9,
-          "max": 19
+          "max": 19,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "4b28-2db5-aa67-e1fa"
+            },
+            {
+              "name": "Bolter",
+              "entryId": "a8b1-2d8a-04b4-6351"
+            }
+          ]
         },
         {
           "name": "Sergeant",
           "entryId": "ceed-0f03-41ba-081a",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -316,7 +372,8 @@
           "entryId": "2a07-73f2-b745-9848",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -333,7 +390,8 @@
           "entryId": "c478-8775-3aa8-1c4b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -350,7 +408,8 @@
           "entryId": "eebd-52dd-594a-86fb",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -367,7 +426,13 @@
           "entryId": "925e-21ea-5ece-c5ce",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Combi-weapons",
+              "entryId": "3ee9-ca75-21de-7d56"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -384,7 +449,8 @@
           "entryId": "6f56-499d-5e99-ac34",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -401,7 +467,17 @@
           "entryId": "f94b-2b62-48ed-4679",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Terminator Melee Weapons",
+              "entryId": "e493-cec5-db91-30a6"
+            },
+            {
+              "name": "Volkite charger",
+              "entryId": "374a-8fe9-c894-73aa"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -418,7 +494,13 @@
           "entryId": "d64c-4fc2-8c74-9658",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Pintle Weapons",
+              "entryId": "0391-e330-1b9a-b27b"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -435,7 +517,8 @@
           "entryId": "c0e4-eabd-4f0a-23ca",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -452,7 +535,8 @@
           "entryId": "8f7e-1207-14a5-a8aa",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -469,7 +553,13 @@
           "entryId": "5c42-de29-fbf8-7ff1",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Specific Upgrade",
+              "entryId": "8efe-861a-d1fd-23ca"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -486,7 +576,8 @@
           "entryId": "189b-d2c3-a824-1b7d",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -503,7 +594,8 @@
           "entryId": "f985-ac79-b28b-f341",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -520,7 +612,8 @@
           "entryId": "0dc7-7704-cfa0-c443",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -537,7 +630,8 @@
           "entryId": "8d59-917b-07c0-6166",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -554,7 +648,8 @@
           "entryId": "6997-2688-bee2-f24b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -571,7 +666,13 @@
           "entryId": "5a0a-4cf9-07bb-cf1c",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Specific Upgrade",
+              "entryId": "67b0-b445-8457-b5ec"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -588,7 +689,8 @@
           "entryId": "8616-c46c-fdf2-1751",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -605,14 +707,16 @@
           "entryId": "a039-b100-5612-39c8",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Chosen w/Jump Pack",
           "entryId": "7a9f-f090-6da8-fc8a",
           "cost": 25,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -629,14 +733,16 @@
           "entryId": "3dc3-9ea3-a9de-6f25",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Veteran",
           "entryId": "d6b9-4937-3679-0529",
           "cost": 15,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -653,14 +759,16 @@
           "entryId": "a224-6817-4f91-8ecb",
           "cost": 40,
           "min": 2,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Tartaros Chosen Champion",
           "entryId": "2133-b5ca-8f0f-3ebf",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -677,14 +785,16 @@
           "entryId": "f106-8e40-a38f-427c",
           "cost": 30,
           "min": 4,
-          "max": 11
+          "max": 11,
+          "defaultWargear": []
         },
         {
           "name": "Cataphractii Terminator Sergeant",
           "entryId": "cf56-d50e-63b3-37cd",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -701,14 +811,21 @@
           "entryId": "f9c6-e107-4e90-5504",
           "cost": 18,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "dc40-53c1-a8b2-74e3"
+            }
+          ]
         },
         {
           "name": "Seeker Sergeant",
           "entryId": "1180-8bba-01b0-a3e0",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -725,14 +842,16 @@
           "entryId": "66c8-c209-2f95-c4e8",
           "cost": 30,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Tartaros Terminator Sergeant",
           "entryId": "2f90-d9da-491d-485b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -749,14 +868,16 @@
           "entryId": "c9b7-8b3e-ccbb-35d8",
           "cost": 40,
           "min": 2,
-          "max": 11
+          "max": 11,
+          "defaultWargear": []
         },
         {
           "name": "Cataphractii Chosen Champion",
           "entryId": "1d44-751a-89a8-b979",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -773,14 +894,26 @@
           "entryId": "9de3-15fa-986b-500a",
           "cost": 10,
           "min": 9,
-          "max": 19
+          "max": 19,
+          "defaultWargear": [
+            {
+              "name": "Power Weapon",
+              "entryId": "452a-27d2-a72f-0726"
+            }
+          ]
         },
         {
           "name": "Sergeant",
           "entryId": "0356-4939-6734-352b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Sergeant Melee Weapons (no chainsword)",
+              "entryId": "130f-2f89-0813-d995"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -797,14 +930,26 @@
           "entryId": "f7a4-50e4-7c7c-56da",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "7a10-bdad-ef8c-f47b"
+            }
+          ]
         },
         {
           "name": "Legionary",
           "entryId": "1208-1781-18dd-a3a0",
           "cost": 8,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "6498-2b47-aee8-073c"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -821,14 +966,26 @@
           "entryId": "c9b0-480d-312d-a2b2",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "44d5-f2ea-3ca0-550f"
+            }
+          ]
         },
         {
           "name": "Legionary",
           "entryId": "f3f7-54e9-44d3-af78",
           "cost": 10,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "be77-320c-85a5-48cd"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -845,7 +1002,8 @@
           "entryId": "5f5a-93ee-0bb6-aab5",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -862,7 +1020,8 @@
           "entryId": "2334-e1a9-5fcc-2349",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -879,7 +1038,8 @@
           "entryId": "3fa0-4271-8af0-0e03",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -896,7 +1056,8 @@
           "entryId": "04a5-f9bb-437c-5edf",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -913,7 +1074,8 @@
           "entryId": "6a97-d360-ee79-1091",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -930,7 +1092,8 @@
           "entryId": "c2da-f5af-1955-4c42",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -947,7 +1110,8 @@
           "entryId": "40c2-cc19-3faf-6129",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -964,7 +1128,8 @@
           "entryId": "9c53-7d3d-6786-8d1a",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -981,7 +1146,8 @@
           "entryId": "2a79-56e7-eb3f-85de",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -998,7 +1164,8 @@
           "entryId": "eb28-a342-ded6-61fa",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1015,14 +1182,16 @@
           "entryId": "01c7-6624-9476-cf7b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Outrider",
           "entryId": "4a6d-b7c3-e5f6-97e9",
           "cost": 20,
           "min": 2,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1039,14 +1208,21 @@
           "entryId": "5edb-60b4-02ed-5d08",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Recon Legionary",
           "entryId": "d975-ae05-e0ce-af48",
           "cost": 17,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "7f37-3fee-cde4-3022"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1063,7 +1239,8 @@
           "entryId": "fae6-3443-9ca3-1cb4",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1080,7 +1257,8 @@
           "entryId": "131c-d297-7115-48f4",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1097,7 +1275,8 @@
           "entryId": "dc5b-c4ce-262a-0818",
           "cost": 22.5,
           "min": 2,
-          "max": 2
+          "max": 2,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1114,14 +1293,16 @@
           "entryId": "9011-92da-37e3-f605",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Scimitar Hunter",
           "entryId": "df2a-765e-ebf1-6d6b",
           "cost": 30,
           "min": 2,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1138,7 +1319,8 @@
           "entryId": "00da-5140-4397-68ed",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1155,7 +1337,8 @@
           "entryId": "9c5f-24f9-2ae7-20ab",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1172,7 +1355,8 @@
           "entryId": "13c3-cdf0-e858-c728",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1189,7 +1373,8 @@
           "entryId": "bcab-d669-63bc-66fd",
           "cost": 75,
           "min": 1,
-          "max": 3
+          "max": 3,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1206,7 +1391,8 @@
           "entryId": "99bb-2f78-0840-c5ba",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1223,7 +1409,8 @@
           "entryId": "1f3c-e351-b888-61ef",
           "cost": 50,
           "min": 1,
-          "max": 5
+          "max": 5,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1240,7 +1427,8 @@
           "entryId": "ece3-baad-8a65-1cf7",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1257,7 +1445,8 @@
           "entryId": "2160-13fe-8b81-b06a",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1274,7 +1463,8 @@
           "entryId": "5274-fb35-9b76-fa63",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1291,7 +1481,8 @@
           "entryId": "bdb7-f9bf-ad88-7bc8",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1308,7 +1499,13 @@
           "entryId": "7d53-68e0-4a8c-4cda",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Pintle Weapons",
+              "entryId": "f129-0760-4473-0fd6"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1325,7 +1522,8 @@
           "entryId": "b39e-881a-ad40-c1b3",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1342,7 +1540,8 @@
           "entryId": "7d81-bf88-f3eb-3f87",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1359,7 +1558,8 @@
           "entryId": "8556-9d68-bfe0-da8c",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1376,7 +1576,8 @@
           "entryId": "8e91-c8f9-6cc1-4b3f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1393,7 +1594,8 @@
           "entryId": "4340-eef5-4169-c22a",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1410,7 +1612,8 @@
           "entryId": "4e82-77b7-0e74-9b30",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1427,7 +1630,8 @@
           "entryId": "73a0-8059-8a7c-67f9",
           "cost": 10,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1444,7 +1648,8 @@
           "entryId": "9e64-8126-c0c7-9af9",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1461,7 +1666,8 @@
           "entryId": "90ef-262a-8617-be85",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1478,7 +1684,8 @@
           "entryId": "288b-6209-b7b2-2f04",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1495,7 +1702,13 @@
           "entryId": "f1b1-c53d-92ba-8d6c",
           "cost": 0,
           "min": 4,
-          "max": 4
+          "max": 4,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "60cc-b8e2-c33b-f262"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1512,7 +1725,13 @@
           "entryId": "45fc-9326-91a9-9c27",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Pintle Weapons",
+              "entryId": "0d3a-f420-76f2-6e5d"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1529,7 +1748,8 @@
           "entryId": "bdc1-a188-442c-8e8c",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1546,7 +1766,8 @@
           "entryId": "0c61-a9fb-4a7a-a480",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1563,7 +1784,13 @@
           "entryId": "483c-387b-4fcb-ac11",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Force Weapon",
+              "entryId": "78d1-8c89-58f2-0057"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1580,7 +1807,13 @@
           "entryId": "7849-575f-4367-ab0e",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Mount",
+              "entryId": "772c-5f9a-6f77-e2fa"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1597,7 +1830,13 @@
           "entryId": "deaa-d493-4b77-b9d0",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Terminator Armour",
+              "entryId": "92e1-edc3-6bea-0b6e"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1614,7 +1853,13 @@
           "entryId": "3108-ee1f-4717-88a8",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Force Weapon",
+              "entryId": "2a22-0a8e-c5d2-93ab"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1631,7 +1876,13 @@
           "entryId": "ac3e-a3f5-4a70-a65b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Mount",
+              "entryId": "e4a4-9264-bd3c-5543"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1648,7 +1899,13 @@
           "entryId": "bc03-384c-4fa0-86f5",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Prosperine Arcana",
+              "entryId": "c778-1f4a-09cc-3021"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1665,7 +1922,8 @@
           "entryId": "1abd-5a0a-4055-bbac",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1682,7 +1940,8 @@
           "entryId": "dbc9-900a-40db-9369",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1699,7 +1958,8 @@
           "entryId": "f9f0-e594-4d02-ba3b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1716,7 +1976,8 @@
           "entryId": "4953-b510-472b-99fd",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1733,7 +1994,8 @@
           "entryId": "e266-49dc-4768-9f63",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1750,7 +2012,8 @@
           "entryId": "8a82-fbba-4c4a-8b09",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1767,7 +2030,13 @@
           "entryId": "e773-8378-4a4a-9956",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Prosperine Arcana",
+              "entryId": "eb04-42ef-94a7-7be0"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1784,7 +2053,13 @@
           "entryId": "7ff7-5daf-4ef8-8bb6",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Mount",
+              "entryId": "f19e-cb30-57d9-358e"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1801,7 +2076,8 @@
           "entryId": "7a99-e467-4c2b-955f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1818,7 +2094,8 @@
           "entryId": "e08d-9900-4d76-b5d4",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1835,7 +2112,8 @@
           "entryId": "661d-0e81-46c5-8482",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1852,7 +2130,8 @@
           "entryId": "04d1-1572-4b4f-94e1",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1869,7 +2148,8 @@
           "entryId": "5f83-591c-46b5-a45f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1886,7 +2166,8 @@
           "entryId": "1b33-a3d2-411a-97f0",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1903,7 +2184,8 @@
           "entryId": "37fe-bdf0-4f5d-9bc4",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1920,7 +2202,8 @@
           "entryId": "01bc-d408-4812-8ca7",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1937,7 +2220,8 @@
           "entryId": "0595-ad05-42bb-88ae",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1954,7 +2238,8 @@
           "entryId": "49e1-1d97-40f6-b345",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1971,7 +2256,8 @@
           "entryId": "5a3f-b238-4c53-a339",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -1988,7 +2274,13 @@
           "entryId": "9521-cd8c-4aed-aa7d",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Officer Wargear",
+              "entryId": "3f1a-fa12-441a-bd20"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2005,7 +2297,8 @@
           "entryId": "47e0-ff1e-40f0-ad7c",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2022,7 +2315,8 @@
           "entryId": "9567-c08b-4c55-ba39",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2039,7 +2333,8 @@
           "entryId": "15e7-afdf-4986-8e20",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2056,7 +2351,17 @@
           "entryId": "5248-df21-4aaf-b2a5",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Combi-weapons",
+              "entryId": "dbe1-3ec7-8894-3ce9"
+            },
+            {
+              "name": "Power Weapon",
+              "entryId": "5f23-a7df-21bf-ae0e"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2073,7 +2378,8 @@
           "entryId": "4f9b-5b2f-4594-8890",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2090,7 +2396,8 @@
           "entryId": "79cb-29be-482a-9a58",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2107,7 +2414,8 @@
           "entryId": "4b9e-e669-4130-b8b2",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2124,7 +2432,13 @@
           "entryId": "6002-8b6a-4a88-96f0",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Combi-weapons",
+              "entryId": "9fd7-0bf3-4bec-9eb6"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2141,7 +2455,8 @@
           "entryId": "11a3-2395-46fb-8bee",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2158,7 +2473,13 @@
           "entryId": "2bb9-6794-4b64-897b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Prosperine Arcana",
+              "entryId": "bdfd-1662-74e3-98ed"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2175,14 +2496,16 @@
           "entryId": "fd3b-18b0-43c0-9a0d",
           "cost": 45,
           "min": 2,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Scimitar Chosen Champion",
           "entryId": "7775-9f85-4474-ad0e",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2199,14 +2522,16 @@
           "entryId": "1822-1348-4534-8f13",
           "cost": 40,
           "min": 2,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Outrider Chosen Champion",
           "entryId": "f854-ce3e-4c4c-9c38",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2223,14 +2548,21 @@
           "entryId": "0964-948c-44bd-9704",
           "cost": 20,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "0f9c-adb9-4003-a513"
+            }
+          ]
         },
         {
           "name": "Veteran Breacher Sergeant",
           "entryId": "0889-5dba-4153-af9b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2247,14 +2579,26 @@
           "entryId": "9723-c5f2-4244-943d",
           "cost": 20,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "b260-2d6f-33fc-6c3a"
+            }
+          ]
         },
         {
           "name": "Veteran Support Sergeant",
           "entryId": "da8e-8b85-4b60-9a21",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "1ec6-476b-30b9-ad0e"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2271,14 +2615,16 @@
           "entryId": "2798-e074-40c9-9310",
           "cost": 30,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Tartaros Terminator Sergeant",
           "entryId": "f4ec-7e4f-4faa-bc16",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2295,14 +2641,16 @@
           "entryId": "135d-352a-4d89-8f95",
           "cost": 35,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Indomitus Terminator Sergeant",
           "entryId": "257d-9880-497c-a17f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2319,14 +2667,21 @@
           "entryId": "ae2d-4749-41fd-be3e",
           "cost": 15,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "0b4c-ae8d-bcbb-2965"
+            }
+          ]
         },
         {
           "name": "Mortalis Destroyer Sergeant",
           "entryId": "8676-1761-4bfa-a177",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2343,14 +2698,21 @@
           "entryId": "2325-d6d0-4a44-b00f",
           "cost": 18,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "f5f9-0cdb-b270-6338"
+            }
+          ]
         },
         {
           "name": "Assault Destroyer Sergeant",
           "entryId": "9007-dd86-4c66-a845",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2367,7 +2729,8 @@
           "entryId": "a01d-d337-445f-a39b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2384,7 +2747,8 @@
           "entryId": "6a35-2c9f-4f71-b9ad",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2401,7 +2765,8 @@
           "entryId": "eba4-b428-4478-962f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2418,7 +2783,17 @@
           "entryId": "ae47-7a4e-45f5-a55b",
           "cost": 45,
           "min": 1,
-          "max": 5
+          "max": 5,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "d54c-e543-aa41-c59b"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "a2b9-205d-45aa-beb6"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2435,14 +2810,21 @@
           "entryId": "05ea-a8a1-4abf-907a",
           "cost": 12,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "9331-d09d-03a1-7712"
+            }
+          ]
         },
         {
           "name": "Scout Sergeant",
           "entryId": "3651-0b83-44fd-ba37",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2459,7 +2841,8 @@
           "entryId": "eae8-276f-450a-bccb",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2476,7 +2859,8 @@
           "entryId": "70a4-00dd-4376-8db9",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2493,7 +2877,8 @@
           "entryId": "aff5-975b-4d95-9cdf",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2510,7 +2895,8 @@
           "entryId": "595f-07cc-7270-cfb1",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2527,14 +2913,16 @@
           "entryId": "88d5-615e-e32d-e6e1",
           "cost": 60,
           "min": 1,
-          "max": 5
+          "max": 5,
+          "defaultWargear": []
         },
         {
           "name": "Saturnine Chosen Champion",
           "entryId": "86a0-824d-53a3-2bed",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "legiones-astartes"
@@ -2551,7 +2939,13 @@
           "entryId": "317d-fc15-bb1f-4b42",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Pintle Weapons",
+              "entryId": "7af6-e703-993e-fd90"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2570,7 +2964,8 @@
           "entryId": "f131-87ed-fa99-d2b1",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "alpha-legion"
@@ -2587,7 +2982,8 @@
           "entryId": "daf2-9a13-29a2-124d",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "alpha-legion"
@@ -2604,14 +3000,16 @@
           "entryId": "09f8-4393-c543-3db6",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Headhunter",
           "entryId": "b8ac-3017-94f9-d523",
           "cost": 20,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "alpha-legion"
@@ -2628,7 +3026,8 @@
           "entryId": "98ce-4529-24a2-5bbd",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "alpha-legion"
@@ -2645,14 +3044,16 @@
           "entryId": "9e0c-5953-9137-584a",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Lernaean",
           "entryId": "e0a5-80d9-a178-cb69",
           "cost": 45,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "alpha-legion"
@@ -2669,7 +3070,8 @@
           "entryId": "43cc-e9d9-da97-5ef1",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "alpha-legion"
@@ -2686,7 +3088,8 @@
           "entryId": "8c9e-0517-cc72-08cb",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "alpha-legion"
@@ -2703,14 +3106,16 @@
           "entryId": "35ad-af27-e890-7192",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Disruptors",
           "entryId": "ebb3-9829-881f-d117",
           "cost": 25,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "alpha-legion"
@@ -2727,7 +3132,8 @@
           "entryId": "3484-6055-4d70-bdc3",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "alpha-legion"
@@ -2746,7 +3152,8 @@
           "entryId": "3926-e45e-0b5c-aea0",
           "cost": 485,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "blood-angels"
@@ -2763,7 +3170,8 @@
           "entryId": "5c44-031f-330c-0e73",
           "cost": 180,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "blood-angels"
@@ -2780,7 +3188,8 @@
           "entryId": "9734-f181-ce8c-9b1f",
           "cost": 185,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "blood-angels"
@@ -2797,7 +3206,8 @@
           "entryId": "d9ec-69fe-a232-391e",
           "cost": 155,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "blood-angels"
@@ -2814,7 +3224,8 @@
           "entryId": "f642-bc6e-f026-a8e4",
           "cost": 200,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "blood-angels"
@@ -2831,14 +3242,16 @@
           "entryId": "278d-bf9a-e0f6-bf00",
           "cost": 5,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Crimson Paladin",
           "entryId": "9512-6456-9d41-221f",
           "cost": 40,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "blood-angels"
@@ -2855,14 +3268,16 @@
           "entryId": "ea92-6cc8-da41-db4c",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Dawnbreaker",
           "entryId": "19b6-5ae5-10d3-46ec",
           "cost": 25,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "blood-angels"
@@ -2879,14 +3294,16 @@
           "entryId": "bbd1-0a10-5470-9b43",
           "cost": 20,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Arch-Erelim",
           "entryId": "ed0b-6ee1-6d21-4d1e",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "blood-angels"
@@ -2903,7 +3320,17 @@
           "entryId": "7eed-be8c-4d5f-9c7f",
           "cost": 40,
           "min": 5,
-          "max": 10
+          "max": 10,
+          "defaultWargear": [
+            {
+              "name": "Perdition Weapons",
+              "entryId": "04f7-ba09-e4e7-78bf"
+            },
+            {
+              "name": "Legion Pistols",
+              "entryId": "6d90-63b0-f2ca-59e6"
+            }
+          ]
         }
       ],
       "source": "blood-angels"
@@ -2920,7 +3347,8 @@
           "entryId": "dad2-655b-4500-a0fb",
           "cost": 40,
           "min": 3,
-          "max": 5
+          "max": 5,
+          "defaultWargear": []
         }
       ],
       "source": "blood-angels"
@@ -2937,7 +3365,8 @@
           "entryId": "7fbb-f90e-465c-a259",
           "cost": 50,
           "min": 3,
-          "max": 5
+          "max": 5,
+          "defaultWargear": []
         }
       ],
       "source": "blood-angels"
@@ -2954,7 +3383,8 @@
           "entryId": "c4d3-da36-491a-b9dc",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "blood-angels"
@@ -2973,7 +3403,8 @@
           "entryId": "8f86-aa12-6bd3-6872",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "dark-angels"
@@ -2990,14 +3421,16 @@
           "entryId": "4808-791f-8ebd-4027",
           "cost": 30,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Deathwing Oathbearer",
           "entryId": "b884-959e-af04-0596",
           "cost": 10,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "dark-angels"
@@ -3014,14 +3447,16 @@
           "entryId": "b9cc-f676-273f-a094",
           "cost": 10,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Interemptors",
           "entryId": "e956-50db-74c7-d893",
           "cost": 20,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "dark-angels"
@@ -3038,14 +3473,16 @@
           "entryId": "8a6b-255c-5771-b471",
           "cost": 50,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Order Preceptor",
           "entryId": "020f-37dd-726f-1888",
           "cost": 10,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "dark-angels"
@@ -3062,7 +3499,8 @@
           "entryId": "e121-089a-eb12-8687",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "dark-angels"
@@ -3079,7 +3517,8 @@
           "entryId": "8e82-13e7-cba4-a6a9",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "dark-angels"
@@ -3096,14 +3535,16 @@
           "entryId": "052b-35d4-ecc9-ac9c",
           "cost": 5,
           "min": 4,
-          "max": 4
+          "max": 4,
+          "defaultWargear": []
         },
         {
           "name": "Cataphractii Oathbearer",
           "entryId": "0955-0337-89e4-c40b",
           "cost": 5,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "dark-angels"
@@ -3120,14 +3561,16 @@
           "entryId": "278d-7dfb-e2f4-c4a5",
           "cost": 5,
           "min": 4,
-          "max": 4
+          "max": 4,
+          "defaultWargear": []
         },
         {
           "name": "Tartaros Oathbearer",
           "entryId": "76de-0b19-e59a-0abc",
           "cost": 5,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "dark-angels"
@@ -3144,14 +3587,16 @@
           "entryId": "a38c-3b44-9eb6-0227",
           "cost": 55,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Order Preceptor",
           "entryId": "0178-e586-4e81-017c",
           "cost": 10,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "dark-angels"
@@ -3168,7 +3613,8 @@
           "entryId": "9021-4604-5292-46a6",
           "cost": 5,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "dark-angels"
@@ -3185,7 +3631,8 @@
           "entryId": "3215-b0f9-b220-6e82",
           "cost": 15,
           "min": 3,
-          "max": 3
+          "max": 3,
+          "defaultWargear": []
         }
       ],
       "source": "dark-angels"
@@ -3202,7 +3649,8 @@
           "entryId": "192e-33c3-4a63-8669",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "dark-angels"
@@ -3221,7 +3669,8 @@
           "entryId": "9a2c-89c5-df39-c07b",
           "cost": 425,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "death-guard"
@@ -3238,7 +3687,13 @@
           "entryId": "a409-fada-2112-279f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Biomancy",
+              "entryId": "79b0-74cf-de8f-5f63"
+            }
+          ]
         }
       ],
       "source": "death-guard"
@@ -3255,7 +3710,8 @@
           "entryId": "ea74-4c52-9bcd-b0ca",
           "cost": 45,
           "min": 2,
-          "max": 10
+          "max": 10,
+          "defaultWargear": []
         }
       ],
       "source": "death-guard"
@@ -3272,14 +3728,16 @@
           "entryId": "dc93-a59a-caaa-789d",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Grave Warden",
           "entryId": "3e2a-b8c7-5ffe-0f9d",
           "cost": 40,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "death-guard"
@@ -3296,14 +3754,16 @@
           "entryId": "1384-ef2f-4598-8b92",
           "cost": 12,
           "min": 4,
-          "max": 14
+          "max": 14,
+          "defaultWargear": []
         },
         {
           "name": "Poison-master",
           "entryId": "49a3-f772-4d4f-9d59",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "death-guard"
@@ -3320,7 +3780,8 @@
           "entryId": "f6ed-2840-40d2-95b4",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "death-guard"
@@ -3339,7 +3800,8 @@
           "entryId": "fa55-d42f-2879-39c0",
           "cost": 425,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "emperors-children"
@@ -3356,7 +3818,8 @@
           "entryId": "ae04-00e7-ac08-94ce",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "emperors-children"
@@ -3373,7 +3836,8 @@
           "entryId": "cfbb-2dde-952d-50a5",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "emperors-children"
@@ -3390,7 +3854,8 @@
           "entryId": "f10e-f832-12c9-f9fe",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "emperors-children"
@@ -3407,7 +3872,8 @@
           "entryId": "81fc-3acd-af65-763a",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "emperors-children"
@@ -3424,14 +3890,16 @@
           "entryId": "7048-88a4-1773-bf6a",
           "cost": 5,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Phoenix Terminator",
           "entryId": "98e4-4290-bc76-63b1",
           "cost": 35,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "emperors-children"
@@ -3448,14 +3916,16 @@
           "entryId": "bacc-a740-b0ed-2d55",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Palatine Warrior",
           "entryId": "34df-3bf1-75f0-8ee0",
           "cost": 28,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "emperors-children"
@@ -3472,14 +3942,16 @@
           "entryId": "7a3f-6183-5b33-2a91",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Chora",
           "entryId": "d66a-a50b-2dc9-756a",
           "cost": 25,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "emperors-children"
@@ -3496,14 +3968,16 @@
           "entryId": "c124-bde9-47c8-a099",
           "cost": 33,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Palatine Prefector with Jump Pack",
           "entryId": "e198-0b06-46a2-8209",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "emperors-children"
@@ -3520,7 +3994,8 @@
           "entryId": "197b-624f-4d17-a1d0",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "emperors-children"
@@ -3537,14 +4012,16 @@
           "entryId": "72d6-862b-43b4-8292",
           "cost": 10,
           "min": 4,
-          "max": 19
+          "max": 19,
+          "defaultWargear": []
         },
         {
           "name": "Novaetor",
           "entryId": "1206-a084-40f2-9976",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "emperors-children"
@@ -3561,7 +4038,8 @@
           "entryId": "69c5-56f8-49c9-aca4",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "emperors-children"
@@ -3580,7 +4058,8 @@
           "entryId": "e752-cd49-fc81-35a2",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "imperial-fists"
@@ -3597,7 +4076,8 @@
           "entryId": "f4df-5ddd-3c9d-2dd8",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "imperial-fists"
@@ -3614,7 +4094,8 @@
           "entryId": "6efb-ae05-8ed9-50a7",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "imperial-fists"
@@ -3631,14 +4112,16 @@
           "entryId": "d99f-8c4b-e50d-698d",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Phalanx Warder ",
           "entryId": "cb0b-fe46-94f9-947c",
           "cost": 18,
           "min": 9,
-          "max": 19
+          "max": 19,
+          "defaultWargear": []
         }
       ],
       "source": "imperial-fists"
@@ -3655,7 +4138,8 @@
           "entryId": "4734-25d1-74ab-574b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "imperial-fists"
@@ -3672,7 +4156,8 @@
           "entryId": "f107-bb3a-61fd-12de",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "imperial-fists"
@@ -3689,14 +4174,16 @@
           "entryId": "3dea-ebed-aa39-0389",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Templar Brethren",
           "entryId": "78de-a30b-05a4-1c6a",
           "cost": 27,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "imperial-fists"
@@ -3713,7 +4200,8 @@
           "entryId": "03ba-d84b-babd-2bda",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "imperial-fists"
@@ -3730,14 +4218,16 @@
           "entryId": "1386-88cc-46d9-8a89",
           "cost": 50,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Huscarl Terminator Sergeant",
           "entryId": "d887-30f7-4307-934a",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "imperial-fists"
@@ -3754,7 +4244,8 @@
           "entryId": "5fea-ba82-41d4-a81d",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "imperial-fists"
@@ -3771,7 +4262,8 @@
           "entryId": "3192-6742-4af0-a7c0",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "imperial-fists"
@@ -3790,7 +4282,8 @@
           "entryId": "8b48-c746-3287-3f80",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "iron-hands"
@@ -3807,7 +4300,8 @@
           "entryId": "8e49-77dc-b7b2-6ec3",
           "cost": 30,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "iron-hands"
@@ -3824,14 +4318,16 @@
           "entryId": "e61b-4383-c5b7-602a",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Immortal",
           "entryId": "de2c-ac8f-4ed3-47d2",
           "cost": 15,
           "min": 4,
-          "max": 19
+          "max": 19,
+          "defaultWargear": []
         }
       ],
       "source": "iron-hands"
@@ -3848,7 +4344,8 @@
           "entryId": "6df8-a890-f067-fdfb",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "iron-hands"
@@ -3865,14 +4362,16 @@
           "entryId": "d950-7b5d-c9a4-39f4",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Gorgon Terminator",
           "entryId": "e227-99b9-e7a8-99f7",
           "cost": 35,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "iron-hands"
@@ -3889,7 +4388,8 @@
           "entryId": "ba60-ee8d-4eb4-b75d",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "iron-hands"
@@ -3906,14 +4406,16 @@
           "entryId": "649a-4f1e-4a9b-8c21",
           "cost": 50,
           "min": 2,
-          "max": 4
+          "max": 4,
+          "defaultWargear": []
         },
         {
           "name": "Augmentor",
           "entryId": "baaf-6454-49e9-a93b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "iron-hands"
@@ -3930,7 +4432,8 @@
           "entryId": "53d0-f282-4742-acc3",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "iron-hands"
@@ -3949,7 +4452,8 @@
           "entryId": "39e4-15b8-4ca4-fb4a",
           "cost": 35,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "iron-warriors"
@@ -3966,7 +4470,8 @@
           "entryId": "f9bf-b505-a6d5-4b28",
           "cost": 10,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "iron-warriors"
@@ -3983,14 +4488,34 @@
           "entryId": "9a64-3ee4-8884-8a23",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Combi-weapons",
+              "entryId": "5f7c-fa7e-dbd0-9d08"
+            },
+            {
+              "name": "Chainfist",
+              "entryId": "76f6-e4b6-24bb-6337"
+            }
+          ]
         },
         {
           "name": "Tyrant",
           "entryId": "812a-7fab-15fa-f41a",
           "cost": 55,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": [
+            {
+              "name": "Legion Combi-weapons",
+              "entryId": "577b-933d-ec74-3c06"
+            },
+            {
+              "name": "Chainfist",
+              "entryId": "21d1-1c2a-b276-7f4c"
+            }
+          ]
         }
       ],
       "source": "iron-warriors"
@@ -4007,7 +4532,8 @@
           "entryId": "8077-0252-d6ae-6338",
           "cost": 135,
           "min": 1,
-          "max": 6
+          "max": 6,
+          "defaultWargear": []
         }
       ],
       "source": "iron-warriors"
@@ -4024,7 +4550,8 @@
           "entryId": "3eeb-2e5d-4e06-be27",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "iron-warriors"
@@ -4041,7 +4568,8 @@
           "entryId": "79e9-1649-455c-b748",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "iron-warriors"
@@ -4058,7 +4586,13 @@
           "entryId": "8857-434b-468b-a94e",
           "cost": 45,
           "min": 5,
-          "max": 10
+          "max": 10,
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "ac78-9a43-bb1f-fd9b"
+            }
+          ]
         }
       ],
       "source": "iron-warriors"
@@ -4075,14 +4609,16 @@
           "entryId": "5739-ff73-43a3-aaa9",
           "cost": 25,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Iron Havoc Sergeant",
           "entryId": "cafa-bfb0-44fe-9c01",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "iron-warriors"
@@ -4099,7 +4635,8 @@
           "entryId": "d222-4469-4871-b193",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "iron-warriors"
@@ -4116,7 +4653,8 @@
           "entryId": "bd91-459d-4815-957e",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "iron-warriors"
@@ -4135,7 +4673,8 @@
           "entryId": "e47b-d8f0-a85c-71a9",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "night-lords"
@@ -4152,14 +4691,16 @@
           "entryId": "923b-7664-eddc-1ede",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Contekar",
           "entryId": "8694-d026-1301-a0df",
           "cost": 40,
           "min": 4,
-          "max": 14
+          "max": 14,
+          "defaultWargear": []
         }
       ],
       "source": "night-lords"
@@ -4176,14 +4717,26 @@
           "entryId": "d5ac-1bc7-f60e-19d4",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "342e-8ef5-60a1-775f"
+            }
+          ]
         },
         {
           "name": "Night Raptor",
           "entryId": "2cf7-d782-bfc5-d3cf",
           "cost": 25,
           "min": 4,
-          "max": 14
+          "max": 14,
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "018c-4e6d-9eb7-710a"
+            }
+          ]
         }
       ],
       "source": "night-lords"
@@ -4200,14 +4753,16 @@
           "entryId": "7a9d-b03d-d9f9-dfb6",
           "cost": 5,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Executioner",
           "entryId": "2fc1-8f08-e3ee-fb5b",
           "cost": 18,
           "min": 4,
-          "max": 19
+          "max": 19,
+          "defaultWargear": []
         }
       ],
       "source": "night-lords"
@@ -4224,7 +4779,8 @@
           "entryId": "f48b-5cfc-c02d-0b3c",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "night-lords"
@@ -4241,14 +4797,26 @@
           "entryId": "8903-7461-dbb1-20eb",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "4cbd-6f1f-d45c-c11f"
+            }
+          ]
         },
         {
           "name": "Atramentar",
           "entryId": "6c97-58d8-096d-89ae",
           "cost": 35,
           "min": 4,
-          "max": 19
+          "max": 19,
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "379e-73cb-c909-2b96"
+            }
+          ]
         }
       ],
       "source": "night-lords"
@@ -4265,7 +4833,8 @@
           "entryId": "d5ee-6b05-4330-8e67",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "night-lords"
@@ -4284,7 +4853,8 @@
           "entryId": "42e4-b43c-0bec-f91b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "raven-guard"
@@ -4301,7 +4871,8 @@
           "entryId": "f40a-d97b-1c49-98f1",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "raven-guard"
@@ -4318,14 +4889,16 @@
           "entryId": "418c-5306-3994-2698",
           "cost": 30,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Mor Deythan Shade",
           "entryId": "82dc-edb6-6534-0f6f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "raven-guard"
@@ -4342,14 +4915,16 @@
           "entryId": "c88e-ddfb-6f84-acd8",
           "cost": 30,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Chooser of the Slain",
           "entryId": "9b5f-3411-f1b0-f87d",
           "cost": 35,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "raven-guard"
@@ -4366,14 +4941,16 @@
           "entryId": "377e-9bef-41e2-b597",
           "cost": 40,
           "min": 4,
-          "max": 14
+          "max": 14,
+          "defaultWargear": []
         },
         {
           "name": "Deliverer Chieftain",
           "entryId": "4773-8470-43ef-846b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "raven-guard"
@@ -4390,7 +4967,8 @@
           "entryId": "59e9-6f10-48a5-9dd4",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "raven-guard"
@@ -4409,14 +4987,16 @@
           "entryId": "1f0a-53e1-910a-a3b1",
           "cost": 45,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Firedrake Master",
           "entryId": "6f99-6a87-8ad6-8467",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "salamanders"
@@ -4433,7 +5013,8 @@
           "entryId": "baa7-1eeb-e1bf-d76a",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "salamanders"
@@ -4450,14 +5031,16 @@
           "entryId": "bad9-4086-bbcb-0941",
           "cost": 30,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Pyroclast Warden",
           "entryId": "3d2e-0b99-086d-027f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "salamanders"
@@ -4474,7 +5057,8 @@
           "entryId": "dc90-e1e3-4524-9c73",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "salamanders"
@@ -4491,14 +5075,16 @@
           "entryId": "91a8-6553-1938-aae3",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Adherent",
           "entryId": "8a28-2d25-a523-c78e",
           "cost": 15,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "salamanders"
@@ -4515,14 +5101,16 @@
           "entryId": "546b-c16b-710b-5eef",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Sanctifier",
           "entryId": "76c7-1092-4bdd-e2c3",
           "cost": 16,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "salamanders"
@@ -4539,14 +5127,21 @@
           "entryId": "0654-0ff3-41ea-bacb",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         },
         {
           "name": "Inductii Master",
           "entryId": "a700-9542-4cd1-92fe",
           "cost": 24,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Sergeant Melee Weapons",
+              "entryId": "1996-05cb-48d7-998f"
+            }
+          ]
         }
       ],
       "source": "salamanders"
@@ -4565,7 +5160,8 @@
           "entryId": "d989-aa0c-2706-c586",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "sons-of-horus"
@@ -4582,7 +5178,8 @@
           "entryId": "20a3-8f5f-b252-8991",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "sons-of-horus"
@@ -4599,7 +5196,8 @@
           "entryId": "f0cd-2432-330b-9652",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "sons-of-horus"
@@ -4616,7 +5214,8 @@
           "entryId": "d245-a974-f175-5581",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "sons-of-horus"
@@ -4633,7 +5232,8 @@
           "entryId": "b6a8-4a03-a8b5-87de",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "sons-of-horus"
@@ -4650,7 +5250,8 @@
           "entryId": "79ba-f89e-d130-48a5",
           "cost": 50,
           "min": 5,
-          "max": 10
+          "max": 10,
+          "defaultWargear": []
         }
       ],
       "source": "sons-of-horus"
@@ -4667,7 +5268,8 @@
           "entryId": "ec1c-34cc-46a1-f0ea",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "sons-of-horus"
@@ -4684,7 +5286,8 @@
           "entryId": "d5a5-4f8b-3589-247b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "sons-of-horus"
@@ -4701,7 +5304,8 @@
           "entryId": "a1c6-ebab-02ac-8cf4",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "sons-of-horus"
@@ -4718,14 +5322,30 @@
           "entryId": "a7c6-6507-5322-173f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Chainaxe",
+              "entryId": "e3af-081b-ea29-d8d6"
+            }
+          ]
         },
         {
           "name": "Reaver",
           "entryId": "0d9d-8a8f-b0f0-abeb",
           "cost": 22,
           "min": 4,
-          "max": 19
+          "max": 19,
+          "defaultWargear": [
+            {
+              "name": "Chainaxe",
+              "entryId": "dfc2-90bc-b0fc-b6e2"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "27d0-ba17-7f9c-4e8b"
+            }
+          ]
         }
       ],
       "source": "sons-of-horus"
@@ -4742,7 +5362,8 @@
           "entryId": "ac63-2820-c12d-0e66",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "sons-of-horus"
@@ -4759,14 +5380,34 @@
           "entryId": "e42e-4036-4be7-b4d9",
           "cost": 27,
           "min": 4,
-          "max": 19
+          "max": 19,
+          "defaultWargear": [
+            {
+              "name": "Chainaxe",
+              "entryId": "a323-6c6e-3fb8-2491"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "f269-1a59-b8fb-05ef"
+            }
+          ]
         },
         {
           "name": "Reaver Chieftain with Jump Pack",
           "entryId": "11eb-847d-4522-9999",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Chainaxe",
+              "entryId": "f3ec-e5b7-38b9-7f1b"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "8fad-f9c7-f685-22af"
+            }
+          ]
         }
       ],
       "source": "sons-of-horus"
@@ -4783,7 +5424,8 @@
           "entryId": "4340-cec9-4c26-8272",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "sons-of-horus"
@@ -4800,7 +5442,8 @@
           "entryId": "bf87-e130-4199-ae3b",
           "cost": 25,
           "min": 5,
-          "max": 10
+          "max": 10,
+          "defaultWargear": []
         }
       ],
       "source": "sons-of-horus"
@@ -4817,7 +5460,8 @@
           "entryId": "0d07-f5a5-4b27-ae2b",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "sons-of-horus"
@@ -4836,7 +5480,8 @@
           "entryId": "228b-6ba2-b03f-cdc8",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -4853,7 +5498,8 @@
           "entryId": "bafe-015a-1132-6505",
           "cost": 30,
           "min": 5,
-          "max": 10
+          "max": 10,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -4870,7 +5516,8 @@
           "entryId": "bf8e-a6ed-a23f-8a2d",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -4887,14 +5534,16 @@
           "entryId": "6117-7e9b-4647-18d7",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Grey Slayer",
           "entryId": "22a4-4fe2-f256-c5bf",
           "cost": 12,
           "min": 9,
-          "max": 19
+          "max": 19,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -4911,7 +5560,8 @@
           "entryId": "2f42-b626-976d-121c",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -4928,14 +5578,16 @@
           "entryId": "e34d-2033-1311-7500",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Varagyr",
           "entryId": "59b5-a46c-5bff-2071",
           "cost": 45,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -4952,14 +5604,16 @@
           "entryId": "dabd-53c3-171f-335b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Geri",
           "entryId": "dae7-eb0b-c4d8-04e1",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -4976,7 +5630,8 @@
           "entryId": "0ed7-1ca3-1052-c852",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -4993,7 +5648,8 @@
           "entryId": "1bc0-b025-4aeb-a7b7",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -5010,7 +5666,8 @@
           "entryId": "12b7-c8dc-4beb-9500",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -5027,14 +5684,16 @@
           "entryId": "6058-1643-456c-b94e",
           "cost": 17,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Hunt-master",
           "entryId": "b8c2-7a1c-47a8-818d",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -5051,7 +5710,8 @@
           "entryId": "e8c0-82fa-4d4c-9573",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -5068,7 +5728,8 @@
           "entryId": "b585-20b3-40b6-af46",
           "cost": 9,
           "min": 1,
-          "max": 5
+          "max": 5,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -5085,7 +5746,8 @@
           "entryId": "ccd7-9485-4759-aa84",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -5102,7 +5764,8 @@
           "entryId": "470b-934a-48c2-8b27",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -5119,7 +5782,8 @@
           "entryId": "9266-0c4a-4f48-81d6",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -5136,7 +5800,8 @@
           "entryId": "e023-9b60-4a25-8933",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "space-wolves"
@@ -5155,7 +5820,8 @@
           "entryId": "17fa-b67d-fc71-157a",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "thousand-sons"
@@ -5172,7 +5838,8 @@
           "entryId": "2a1d-62b7-0db6-cc7d",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "thousand-sons"
@@ -5189,7 +5856,8 @@
           "entryId": "7db9-24e0-8610-8b70",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "thousand-sons"
@@ -5206,7 +5874,8 @@
           "entryId": "f946-8223-508d-d1c5",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "thousand-sons"
@@ -5223,14 +5892,16 @@
           "entryId": "6b06-8e9d-f110-8058",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Sekhmet",
           "entryId": "cc44-6a6f-b9c7-c772",
           "cost": 45,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "thousand-sons"
@@ -5247,14 +5918,16 @@
           "entryId": "b811-45c5-f560-eea7",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Khenetai Blade",
           "entryId": "5ffc-2d00-d1b9-73e8",
           "cost": 24,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "thousand-sons"
@@ -5271,7 +5944,8 @@
           "entryId": "681d-5a87-a24d-040c",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "thousand-sons"
@@ -5288,7 +5962,8 @@
           "entryId": "9127-1209-f34d-c991",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "thousand-sons"
@@ -5305,14 +5980,16 @@
           "entryId": "ddaa-5e34-46cc-b4a1",
           "cost": 15,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Numerologist",
           "entryId": "ff53-083b-489b-b9c6",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "thousand-sons"
@@ -5329,14 +6006,16 @@
           "entryId": "2507-0dbb-49af-9357",
           "cost": 27,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Ammitara Fate",
           "entryId": "5bd7-0847-420e-b1f4",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "thousand-sons"
@@ -5353,7 +6032,8 @@
           "entryId": "ce3a-5a2a-42ae-ab34",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "thousand-sons"
@@ -5372,7 +6052,8 @@
           "entryId": "8566-b4ed-c381-cbd8",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "ultramarines"
@@ -5389,7 +6070,8 @@
           "entryId": "fc80-c47b-edb8-7a30",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "ultramarines"
@@ -5406,7 +6088,8 @@
           "entryId": "0530-7b19-9a92-6a6e",
           "cost": 30,
           "min": 5,
-          "max": 10
+          "max": 10,
+          "defaultWargear": []
         }
       ],
       "source": "ultramarines"
@@ -5423,14 +6106,16 @@
           "entryId": "d8da-2e7b-77ac-dc40",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Praetorian",
           "entryId": "ee11-4138-eeda-58f7",
           "cost": 18,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "ultramarines"
@@ -5447,14 +6132,16 @@
           "entryId": "8679-05f0-4f87-ad4b",
           "cost": 38,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Locutarus Strike Leader",
           "entryId": "1149-f536-4302-a6de",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "ultramarines"
@@ -5471,14 +6158,16 @@
           "entryId": "d4df-e5a7-4479-bab0",
           "cost": 55,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Fulmentarus Sergeant",
           "entryId": "fe63-8394-47cc-b63f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "ultramarines"
@@ -5495,14 +6184,16 @@
           "entryId": "0c90-e569-4600-8ac0",
           "cost": 15,
           "min": 9,
-          "max": 19
+          "max": 19,
+          "defaultWargear": []
         },
         {
           "name": "Nemesis Destroyer Sergeant",
           "entryId": "8353-e023-4b30-91e6",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "ultramarines"
@@ -5519,7 +6210,8 @@
           "entryId": "dcd6-4cb5-407a-a06f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "ultramarines"
@@ -5536,14 +6228,16 @@
           "entryId": "4b2c-8f0b-4c70-8a00",
           "cost": 9,
           "min": 10,
-          "max": 10
+          "max": 10,
+          "defaultWargear": []
         },
         {
           "name": "Evocatus Intendant",
           "entryId": "0a85-f359-41bc-b251",
           "cost": 24,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "ultramarines"
@@ -5562,7 +6256,8 @@
           "entryId": "33f0-649c-8325-7804",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "white-scars"
@@ -5579,7 +6274,8 @@
           "entryId": "3612-7539-b8a1-ac02",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "white-scars"
@@ -5596,7 +6292,8 @@
           "entryId": "c45b-d7b8-0dfd-3dbe",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "white-scars"
@@ -5613,7 +6310,8 @@
           "entryId": "ea88-3b4e-ddd8-57fa",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "white-scars"
@@ -5630,14 +6328,16 @@
           "entryId": "3c80-c6ab-8fbb-79f1",
           "cost": 40,
           "min": 2,
-          "max": 5
+          "max": 5,
+          "defaultWargear": []
         },
         {
           "name": "Keshig Champion",
           "entryId": "6b0c-85a5-88ab-dc44",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "white-scars"
@@ -5654,7 +6354,8 @@
           "entryId": "e752-362c-0701-bda7",
           "cost": 35,
           "min": 5,
-          "max": 10
+          "max": 10,
+          "defaultWargear": []
         }
       ],
       "source": "white-scars"
@@ -5671,7 +6372,8 @@
           "entryId": "0244-89d5-df79-9850",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "white-scars"
@@ -5688,14 +6390,16 @@
           "entryId": "6660-8360-a743-680f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Falcon&apos;s Claw",
           "entryId": "662c-33cb-13d1-483c",
           "cost": 18,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "white-scars"
@@ -5712,7 +6416,8 @@
           "entryId": "861a-9f46-d3ed-b1b1",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "white-scars"
@@ -5729,7 +6434,8 @@
           "entryId": "8ce5-7901-f912-277a",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "white-scars"
@@ -5746,7 +6452,8 @@
           "entryId": "1c43-00e6-ca68-344f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "white-scars"
@@ -5763,14 +6470,16 @@
           "entryId": "1dc7-fc84-c17c-85d0",
           "cost": 20,
           "min": 4,
-          "max": 14
+          "max": 14,
+          "defaultWargear": []
         },
         {
           "name": "Death&apos;s Champion",
           "entryId": "15fd-61b6-f9ad-9b46",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "white-scars"
@@ -5787,7 +6496,8 @@
           "entryId": "9ef3-d988-4772-af59",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "white-scars"
@@ -5806,7 +6516,8 @@
           "entryId": "37a9-c71c-fed2-1062",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "word-bearers"
@@ -5823,7 +6534,8 @@
           "entryId": "40f7-d15f-35db-9a03",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "word-bearers"
@@ -5840,7 +6552,8 @@
           "entryId": "ff4b-26d3-f350-d063",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "word-bearers"
@@ -5857,7 +6570,8 @@
           "entryId": "f5a8-4c94-c8f3-cfb2",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "word-bearers"
@@ -5874,14 +6588,16 @@
           "entryId": "f84e-e28d-8fee-8344",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Anakatis Kul",
           "entryId": "af65-170e-74d9-8e53",
           "cost": 60,
           "min": 0,
-          "max": 2
+          "max": 2,
+          "defaultWargear": []
         }
       ],
       "source": "word-bearers"
@@ -5898,7 +6614,8 @@
           "entryId": "4895-ef9f-062c-0e7c",
           "cost": 50,
           "min": 5,
-          "max": 10
+          "max": 10,
+          "defaultWargear": []
         }
       ],
       "source": "word-bearers"
@@ -5915,7 +6632,8 @@
           "entryId": "145f-a707-eb27-8a65",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "word-bearers"
@@ -5932,14 +6650,16 @@
           "entryId": "9e26-66a6-9381-04cd",
           "cost": 20,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Iconoclast",
           "entryId": "4844-0ce8-3681-2bfa",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "word-bearers"
@@ -5956,7 +6676,13 @@
           "entryId": "3bfc-98bc-4458-82b9",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Force Weapon",
+              "entryId": "a775-526d-294a-4f8a"
+            }
+          ]
         }
       ],
       "source": "word-bearers"
@@ -5973,7 +6699,13 @@
           "entryId": "3b3c-42db-4812-b856",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Combi-weapons",
+              "entryId": "999c-6b73-ece2-8a11"
+            }
+          ]
         }
       ],
       "source": "word-bearers"
@@ -5990,7 +6722,13 @@
           "entryId": "e211-ab54-42b2-a22d",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Mount",
+              "entryId": "6f2f-1f32-b7f4-c0f4"
+            }
+          ]
         }
       ],
       "source": "word-bearers"
@@ -6007,14 +6745,16 @@
           "entryId": "7b76-a23f-4c83-a267",
           "cost": 15,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Procurator",
           "entryId": "e1df-5b20-4bbf-9ee2",
           "cost": 20,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "word-bearers"
@@ -6031,14 +6771,16 @@
           "entryId": "552a-e6e2-3b64-738b",
           "cost": 20,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Procurator with Jump Pack",
           "entryId": "4c00-6da4-8a83-e5ba",
           "cost": 20,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "word-bearers"
@@ -6055,7 +6797,8 @@
           "entryId": "6d64-01f7-44e5-bcdb",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "word-bearers"
@@ -6072,14 +6815,16 @@
           "entryId": "19e6-bfec-fb21-70b2",
           "cost": 65,
           "min": 2,
-          "max": 5
+          "max": 5,
+          "defaultWargear": []
         },
         {
           "name": "Phraetus Disciple",
           "entryId": "3b02-c677-ca13-ef8d",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "word-bearers"
@@ -6098,7 +6843,8 @@
           "entryId": "ff66-f09a-4b15-bfcf",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "world-eaters"
@@ -6115,14 +6861,21 @@
           "entryId": "0003-9a3a-fba8-92aa",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Caedere Weapons",
+              "entryId": "2bc2-d4d8-3c17-1546"
+            }
+          ]
         },
         {
           "name": "Rampager",
           "entryId": "821a-4497-0743-9777",
           "cost": 22,
           "min": 4,
-          "max": 14
+          "max": 14,
+          "defaultWargear": []
         }
       ],
       "source": "world-eaters"
@@ -6139,14 +6892,21 @@
           "entryId": "09d6-294d-4dc8-7f31",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Legion Combi-weapons",
+              "entryId": "5e56-a4a9-f051-d6ad"
+            }
+          ]
         },
         {
           "name": "Red Butcher",
           "entryId": "08a3-46d5-a3ce-0b30",
           "cost": 45,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "world-eaters"
@@ -6163,7 +6923,8 @@
           "entryId": "ca3d-b793-3889-2beb",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "world-eaters"
@@ -6180,7 +6941,8 @@
           "entryId": "7c0c-252b-3808-12ed",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "world-eaters"
@@ -6197,7 +6959,8 @@
           "entryId": "c9ff-4904-656c-c6e3",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "world-eaters"
@@ -6214,14 +6977,16 @@
           "entryId": "5c18-97c2-498c-bcc9",
           "cost": 15,
           "min": 4,
-          "max": 14
+          "max": 14,
+          "defaultWargear": []
         },
         {
           "name": "Blood Bonded",
           "entryId": "6a93-e0c6-49e9-967b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "world-eaters"
@@ -6238,14 +7003,16 @@
           "entryId": "175d-5084-4a94-a562",
           "cost": 20,
           "min": 4,
-          "max": 14
+          "max": 14,
+          "defaultWargear": []
         },
         {
           "name": "Blood Bonded with Jump Pack",
           "entryId": "1af9-fee8-4304-921b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "world-eaters"
@@ -6262,7 +7029,8 @@
           "entryId": "9610-3989-47b8-91f7",
           "cost": 9,
           "min": 10,
-          "max": 20
+          "max": 20,
+          "defaultWargear": []
         }
       ],
       "source": "world-eaters"
@@ -6281,7 +7049,8 @@
           "entryId": "9744-bec4-0f25-5a92",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6298,7 +7067,8 @@
           "entryId": "b996-334f-9f55-f896",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6315,7 +7085,8 @@
           "entryId": "b71a-f6da-e0f6-b570",
           "cost": 10,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6332,7 +7103,8 @@
           "entryId": "5778-8418-15ae-f9e9",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6349,14 +7121,16 @@
           "entryId": "3178-fa28-726a-a41d",
           "cost": 25,
           "min": 0,
-          "max": 0
+          "max": 0,
+          "defaultWargear": []
         },
         {
           "name": "Scyllax",
           "entryId": "a6dd-7eec-58ab-0bcd",
           "cost": 25,
           "min": 4,
-          "max": 16
+          "max": 16,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6373,7 +7147,8 @@
           "entryId": "6441-1541-3a3f-0d94",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6390,14 +7165,16 @@
           "entryId": "3500-158d-3ef0-ac7a",
           "cost": 10,
           "min": 0,
-          "max": 0
+          "max": 0,
+          "defaultWargear": []
         },
         {
           "name": "Echidnax",
           "entryId": "30b6-7817-41dc-17de",
           "cost": 10,
           "min": 4,
-          "max": 12
+          "max": 12,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6414,14 +7191,16 @@
           "entryId": "e8f4-acac-c459-7d6b",
           "cost": 100,
           "min": 1,
-          "max": 4
+          "max": 4,
+          "defaultWargear": []
         },
         {
           "name": "Domitar (Paragon of Metal)",
           "entryId": "0a4a-9eac-49c1-569e",
           "cost": 100,
           "min": 0,
-          "max": 0
+          "max": 0,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6438,7 +7217,8 @@
           "entryId": "c181-555b-ac73-6303",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6455,14 +7235,16 @@
           "entryId": "6f53-a341-72bf-aed8",
           "cost": 45,
           "min": 2,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Secutor Lord",
           "entryId": "0e91-f44e-a433-13e2",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6479,14 +7261,16 @@
           "entryId": "afbb-38ce-5512-4539",
           "cost": 45,
           "min": 2,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Destructor Lord",
           "entryId": "39ad-181f-ba5a-c0a6",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6503,7 +7287,8 @@
           "entryId": "c369-c69d-b029-850b",
           "cost": 10,
           "min": 10,
-          "max": 40
+          "max": 40,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6520,7 +7305,13 @@
           "entryId": "66b7-9883-86f7-a90f",
           "cost": 50,
           "min": 2,
-          "max": 6
+          "max": 6,
+          "defaultWargear": [
+            {
+              "name": "Cybernetica",
+              "entryId": "a92a-c17d-f444-9e5b"
+            }
+          ]
         }
       ],
       "source": "mechanicum"
@@ -6537,14 +7328,16 @@
           "entryId": "79a6-6bb0-56e1-daef",
           "cost": 25,
           "min": 6,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         },
         {
           "name": "Ursarax Alpha",
           "entryId": "1d1b-d499-4941-b0ac",
           "cost": 10,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6561,7 +7354,8 @@
           "entryId": "070f-3f50-6fe0-19e6",
           "cost": 30,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6578,14 +7372,16 @@
           "entryId": "d694-ed04-e9da-c5a7",
           "cost": 10,
           "min": 0,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Thallax",
           "entryId": "3ae4-8e05-ae1e-3934",
           "cost": 20,
           "min": 6,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6602,7 +7398,8 @@
           "entryId": "3d84-fd67-3560-2968",
           "cost": 20,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6619,7 +7416,8 @@
           "entryId": "f4d8-5c0c-290e-c9f8",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6636,7 +7434,8 @@
           "entryId": "aa34-80c1-e81c-f512",
           "cost": 5,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6653,14 +7452,21 @@
           "entryId": "61ae-2955-4177-a4df",
           "cost": 50,
           "min": 0,
-          "max": 0
+          "max": 0,
+          "defaultWargear": []
         },
         {
           "name": "Castellax",
           "entryId": "6d1b-0e66-a950-f0ea",
           "cost": 50,
           "min": 2,
-          "max": 10
+          "max": 10,
+          "defaultWargear": [
+            {
+              "name": "Cybernetica",
+              "entryId": "2b49-5e7b-9f4b-2f4f"
+            }
+          ]
         }
       ],
       "source": "mechanicum"
@@ -6677,7 +7483,8 @@
           "entryId": "3fe5-3f4e-c7cb-7ba8",
           "cost": 45,
           "min": 2,
-          "max": 8
+          "max": 8,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6694,7 +7501,13 @@
           "entryId": "3583-7243-9323-073e",
           "cost": 100,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Cybernetica",
+              "entryId": "2406-9718-d72d-0348"
+            }
+          ]
         }
       ],
       "source": "mechanicum"
@@ -6711,7 +7524,8 @@
           "entryId": "f9cb-9ddf-083b-2a74",
           "cost": 50,
           "min": 2,
-          "max": 4
+          "max": 4,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6728,7 +7542,13 @@
           "entryId": "bd29-af9c-378e-28dd",
           "cost": 5,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Macrotek",
+              "entryId": "cf5a-1858-e445-6426"
+            }
+          ]
         }
       ],
       "source": "mechanicum"
@@ -6745,7 +7565,13 @@
           "entryId": "3044-7727-3906-2385",
           "cost": 5,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Macrotek",
+              "entryId": "ec64-ac7e-84e0-56d4"
+            }
+          ]
         }
       ],
       "source": "mechanicum"
@@ -6762,7 +7588,8 @@
           "entryId": "5d38-5ed9-f018-126b",
           "cost": 125,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6779,7 +7606,13 @@
           "entryId": "4684-1eb3-81a9-48ba",
           "cost": 15,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Macrotek",
+              "entryId": "93d0-6bd8-0cff-7ead"
+            }
+          ]
         }
       ],
       "source": "mechanicum"
@@ -6796,7 +7629,8 @@
           "entryId": "675a-e8fa-d577-5f59",
           "cost": 600,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6813,7 +7647,8 @@
           "entryId": "0a50-5745-5db4-64af",
           "cost": 20,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6830,7 +7665,8 @@
           "entryId": "31e1-e321-9549-de41",
           "cost": 450,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6847,7 +7683,8 @@
           "entryId": "f3c7-322f-6b46-5960",
           "cost": 10,
           "min": 10,
-          "max": 40
+          "max": 40,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6864,14 +7701,16 @@
           "entryId": "8c96-ac34-ecde-d02e",
           "cost": 120,
           "min": 0,
-          "max": 0
+          "max": 0,
+          "defaultWargear": []
         },
         {
           "name": "Arlatax",
           "entryId": "f202-2ad1-7237-0bae",
           "cost": 120,
           "min": 1,
-          "max": 4
+          "max": 4,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6888,7 +7727,8 @@
           "entryId": "8034-007e-f146-979c",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6905,7 +7745,8 @@
           "entryId": "eb78-9d86-2120-9137",
           "cost": 0,
           "min": 2,
-          "max": 2
+          "max": 2,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6922,7 +7763,8 @@
           "entryId": "fa83-8f31-56c8-f35d",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6939,7 +7781,8 @@
           "entryId": "4b98-9da0-bc0e-74ae",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6956,7 +7799,8 @@
           "entryId": "c66d-b286-67a6-96d5",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6973,7 +7817,8 @@
           "entryId": "3901-c2dd-012a-9072",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "mechanicum"
@@ -6992,14 +7837,16 @@
           "entryId": "dd8d-6786-6362-ca87",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Lifeward",
           "entryId": "a77a-561c-ad71-d586",
           "cost": 14,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7016,14 +7863,16 @@
           "entryId": "9423-3848-d1ac-09f9",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Companion",
           "entryId": "db89-66b5-a0dd-5e0b",
           "cost": 12,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7040,14 +7889,16 @@
           "entryId": "3b35-940c-5f39-b55b",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Veteran",
           "entryId": "17ff-ed9b-2351-cddb",
           "cost": 7,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7064,14 +7915,16 @@
           "entryId": "41f2-b11e-6a6e-a1c7",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Veletarii",
           "entryId": "e317-c9e2-a0ef-2940",
           "cost": 8,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7088,14 +7941,16 @@
           "entryId": "ffde-524f-3179-76a8",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Hermes Pathfinder",
           "entryId": "4896-b45e-2ba3-8dc5",
           "cost": 18,
           "min": 1,
-          "max": 5
+          "max": 5,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7112,14 +7967,16 @@
           "entryId": "7b90-c809-7792-10b5",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Veteran",
           "entryId": "18b2-4858-5c21-bd0c",
           "cost": 7,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7136,7 +7993,8 @@
           "entryId": "362e-c51e-f4dd-8276",
           "cost": 150,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7153,14 +8011,16 @@
           "entryId": "7290-30eb-95c1-a3d6",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Veletarii",
           "entryId": "0c47-2db4-b26c-3058",
           "cost": 8,
           "min": 9,
-          "max": 19
+          "max": 19,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7177,14 +8037,16 @@
           "entryId": "d6f5-a240-3898-a3f7",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Veletarii",
           "entryId": "4fa8-c9aa-dc5c-b189",
           "cost": 9,
           "min": 9,
-          "max": 19
+          "max": 19,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7201,7 +8063,8 @@
           "entryId": "a81b-cc98-1357-5266",
           "cost": 40,
           "min": 3,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7218,14 +8081,16 @@
           "entryId": "0d08-b4f3-0721-f37c",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Auxiliary",
           "entryId": "0f7c-bc28-b2b6-0657",
           "cost": 4,
           "min": 9,
-          "max": 19
+          "max": 19,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7242,7 +8107,8 @@
           "entryId": "ea81-7d7d-4f6f-d3fb",
           "cost": 120,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7259,7 +8125,8 @@
           "entryId": "4c6c-88b8-6a37-01d9",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7276,7 +8143,8 @@
           "entryId": "b61d-cda1-3891-2dae",
           "cost": 30,
           "min": 1,
-          "max": 4
+          "max": 4,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7293,7 +8161,8 @@
           "entryId": "d555-b73a-8ade-c23c",
           "cost": 20,
           "min": 2,
-          "max": 6
+          "max": 6,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7310,7 +8179,8 @@
           "entryId": "5c2a-5948-7dea-b5b9",
           "cost": 60,
           "min": 1,
-          "max": 3
+          "max": 3,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7327,7 +8197,8 @@
           "entryId": "2abb-a00b-e2a0-12c1",
           "cost": 75,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7344,7 +8215,8 @@
           "entryId": "a0b0-f222-52d3-2179",
           "cost": 140,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7361,7 +8233,8 @@
           "entryId": "8073-04b2-71a4-1d0f",
           "cost": 16,
           "min": 2,
-          "max": 6
+          "max": 6,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7378,7 +8251,8 @@
           "entryId": "a291-3a07-235d-0197",
           "cost": 160,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7395,7 +8269,8 @@
           "entryId": "70ae-9489-17cb-0e47",
           "cost": 120,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7412,7 +8287,8 @@
           "entryId": "9d6a-5df6-81f1-5df1",
           "cost": 205,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7429,7 +8305,8 @@
           "entryId": "fc21-d9cb-8c42-63f5",
           "cost": 140,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7446,7 +8323,8 @@
           "entryId": "340b-ef1b-20fa-490a",
           "cost": 140,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7463,7 +8341,8 @@
           "entryId": "e1c2-cf38-9d49-e849",
           "cost": 180,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7480,7 +8359,8 @@
           "entryId": "402e-1311-f8a6-f604",
           "cost": 190,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7497,7 +8377,8 @@
           "entryId": "a06f-947b-c990-2758",
           "cost": 500,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7514,7 +8395,8 @@
           "entryId": "2ecb-d303-0be9-d846",
           "cost": 50,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7531,7 +8413,8 @@
           "entryId": "fc90-66b3-5fb6-87ee",
           "cost": 100,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7548,7 +8431,8 @@
           "entryId": "6895-2203-d122-7b0d",
           "cost": 520,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7565,7 +8449,8 @@
           "entryId": "11b0-f872-21c1-abc9",
           "cost": 450,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7582,7 +8467,8 @@
           "entryId": "3160-0a4a-d3ad-a535",
           "cost": 80,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7599,14 +8485,16 @@
           "entryId": "d3f6-584d-1cf9-b7a0",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Companion",
           "entryId": "a842-bbb8-f840-15e2",
           "cost": 12,
           "min": 4,
-          "max": 9
+          "max": 9,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7623,7 +8511,8 @@
           "entryId": "937f-fc07-4d01-21b3",
           "cost": 350,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7640,7 +8529,8 @@
           "entryId": "577c-5011-9791-03ac",
           "cost": 50,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7657,7 +8547,8 @@
           "entryId": "e530-5541-e8d4-3ab6",
           "cost": 60,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7674,7 +8565,8 @@
           "entryId": "baff-ab9e-1093-fe97",
           "cost": 130,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7691,7 +8583,8 @@
           "entryId": "6557-9665-b11f-0896",
           "cost": 65,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7708,7 +8601,8 @@
           "entryId": "ba5a-ea25-95e9-86e5",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7725,7 +8619,8 @@
           "entryId": "da70-0b99-edc5-9dad",
           "cost": 300,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7742,7 +8637,8 @@
           "entryId": "8f30-e678-a55c-18a6",
           "cost": 225,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7759,7 +8655,8 @@
           "entryId": "f423-a7ac-843f-9583",
           "cost": 245,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7776,7 +8673,8 @@
           "entryId": "5369-68be-48d7-646e",
           "cost": 15,
           "min": 1,
-          "max": 6
+          "max": 6,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7793,7 +8691,8 @@
           "entryId": "e754-bec1-6623-dedd",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7810,7 +8709,8 @@
           "entryId": "dadc-8b25-abc1-91ef",
           "cost": 300,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7827,7 +8727,8 @@
           "entryId": "e82d-21cf-f4d4-5d2c",
           "cost": 475,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7844,7 +8745,8 @@
           "entryId": "a7d9-2585-9d05-d079",
           "cost": 500,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7861,7 +8763,8 @@
           "entryId": "a6bd-7409-6f70-101a",
           "cost": 500,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7878,7 +8781,8 @@
           "entryId": "f58e-226d-f06a-539b",
           "cost": 475,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7895,21 +8799,24 @@
           "entryId": "b1d8-7703-9e61-5521",
           "cost": 10,
           "min": 1,
-          "max": 2
+          "max": 2,
+          "defaultWargear": []
         },
         {
           "name": "Auto-gurney",
           "entryId": "9bff-5cce-ee7f-ce8f",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         },
         {
           "name": "Aevos Jovan",
           "entryId": "a8d2-dc67-295d-2e26",
           "cost": 50,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7926,7 +8833,8 @@
           "entryId": "1464-db05-6246-ecbb",
           "cost": 17.5,
           "min": 2,
-          "max": 2
+          "max": 2,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"
@@ -7943,7 +8851,8 @@
           "entryId": "2aac-90db-4cdf-aa9e",
           "cost": 0,
           "min": 1,
-          "max": 1
+          "max": 1,
+          "defaultWargear": []
         }
       ],
       "source": "solar-auxilia"

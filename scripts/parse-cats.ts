@@ -10,12 +10,18 @@
 // Types
 // ---------------------------------------------------------------------------
 
+export interface WargearEntry {
+  name: string;
+  entryId: string; // entryLink id, used as selection entryId in .ros
+}
+
 export interface ModelEntry {
   name: string;
   entryId: string;
   cost: number;
   min: number;
   max: number;
+  defaultWargear: WargearEntry[];
 }
 
 export interface UnitEntry {
@@ -194,6 +200,39 @@ function buildRoleMap(catalogueXml: string): RoleMaps {
 // Some single-model units put <costs> before <selectionEntries>.
 // Equipment costs inside <entryLinks> appear at 14+ spaces — ignored.
 
+// ---------------------------------------------------------------------------
+// extractDefaultWargear
+// ---------------------------------------------------------------------------
+// Within a model selectionEntry's text, finds entryLinks that have an
+// automatic="true" min constraint with value >= 1. These represent wargear
+// that is always pre-selected (e.g. bolt pistol, bolter, chainsword).
+
+function extractDefaultWargear(modelText: string): WargearEntry[] {
+  const wargear: WargearEntry[] = [];
+  const linkPattern = /<entryLink\b([^>]*)>([\s\S]*?)<\/entryLink>/g;
+  let m: RegExpExecArray | null;
+
+  while ((m = linkPattern.exec(modelText)) !== null) {
+    const attrs = m[1];
+    const body = m[2];
+
+    // Look for a min constraint with value >= 1 and automatic="true" (attribute order varies)
+    const autoMinMatch =
+      body.match(/<constraint[^>]*type="min"[^>\/]*value="([1-9][^"]*)"[^>\/]*automatic="true"/) ||
+      body.match(/<constraint[^>]*automatic="true"[^>\/]*type="min"[^>\/]*value="([1-9][^"]*)"/) ||
+      body.match(/<constraint[^>]*value="([1-9][^"]*)"[^>\/]*type="min"[^>\/]*automatic="true"/);
+    if (!autoMinMatch) continue;
+
+    const nameMatch = attrs.match(/\bname="([^"]+)"/);
+    const idMatch = attrs.match(/\bid="([^"]+)"/);
+    if (!nameMatch || !idMatch) continue;
+
+    wargear.push({ name: nameMatch[1], entryId: idMatch[1] });
+  }
+
+  return wargear;
+}
+
 const COST_PATTERN = new RegExp(
   `typeId="${POINTS_TYPE_ID}"[^/]*value="(\\d+(?:\\.\\d+)?)"` +
   `|value="(\\d+(?:\\.\\d+)?)"[^/]*typeId="${POINTS_TYPE_ID}"`
@@ -255,8 +294,9 @@ function extractPointsBreakdown(entryText: string): PointsBreakdown | null {
       const min = minMatch ? parseInt(minMatch[1], 10) : 1;
       const max = maxMatch ? parseInt(maxMatch[1], 10) : min;
 
+      const defaultWargear = extractDefaultWargear(modelText);
       rawTotal += cost * min;
-      models.push({ name: mName, entryId: modelId, cost, min, max });
+      models.push({ name: mName, entryId: modelId, cost, min, max, defaultWargear });
     }
 
     const points = Math.round(baseCost + rawTotal);
@@ -310,7 +350,7 @@ function extractPointsBreakdown(entryText: string): PointsBreakdown | null {
       if (min === 0) continue;
 
       rawTotal += cost * min;
-      models.push({ name: sName, entryId: subId, cost, min, max });
+      models.push({ name: sName, entryId: subId, cost, min, max, defaultWargear: [] });
     }
 
     const points = Math.round(baseCost + rawTotal);
