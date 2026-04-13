@@ -10,8 +10,15 @@ interface ExpandedSlot {
 }
 
 export function expandSlots(def: PlacedDetachment['def']): ExpandedSlot[] {
-  // Drop qualifier slots (e.g. "Command - Centurions Only")
-  const relevant = def.slots.filter(s => !s.role.includes(' - '));
+  // Drop qualifier slots (e.g. "Command - Centurions Only") only when a parent
+  // slot with the base role exists in the same detachment. Qualifier slots that
+  // ARE the primary slot (e.g. Solar Auxilia "Troops - Lasrifle Section Units only")
+  // are kept because no parent "Troops" slot exists alongside them.
+  const relevant = def.slots.filter(s => {
+    if (!s.role.includes(' - ')) return true;
+    const baseRole = s.role.split(' - ')[0];
+    return !def.slots.some(other => other.role === baseRole);
+  });
 
   const primeSlots = relevant.filter(s => s.prime);
   const regularSlots = relevant.filter(s => !s.prime);
@@ -21,7 +28,10 @@ export function expandSlots(def: PlacedDetachment['def']): ExpandedSlot[] {
   // Iterate regular slots in BSData order to preserve role group ordering.
   // Within each role: prime slot(s) first, then remaining regular slots.
   for (const regular of regularSlots) {
-    const prime = primeSlots.find(p => p.role.replace(/^Prime /, '') === regular.role);
+    // For qualifier slots (e.g. "Troops - Lasrifle Section Units only"), match
+    // prime slots against the base role ("Troops") so "Prime Troops" pairs correctly.
+    const regularBase = regular.role.includes(' - ') ? regular.role.split(' - ')[0] : regular.role;
+    const prime = primeSlots.find(p => p.role.replace(/^Prime /, '') === regularBase);
     const primeCount = prime?.max ?? 0;
 
     if (prime) {
