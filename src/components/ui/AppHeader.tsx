@@ -9,6 +9,7 @@ import {
 import { Export, Reset, Add } from '@carbon/icons-react';
 import { useRosterStore } from '../../store/rosterStore';
 import { FACTION_LABEL_MAP } from '../../data/factions';
+import { COHORT_DOCTRINE_BY_ID } from '../../constants/cohortDoctrines';
 
 interface AppHeaderProps {
   onExport: () => void;
@@ -20,9 +21,11 @@ interface AppHeaderProps {
 export default function AppHeader({ onExport, hasWarlord, onAddWarlord, onAddLordOfWar }: AppHeaderProps) {
   const faction = useRosterStore((s) => s.faction);
   const allegiance = useRosterStore((s) => s.allegiance);
+  const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
   const reset = useRosterStore((s) => s.reset);
 
   const factionLabel = FACTION_LABEL_MAP[faction] ?? faction;
+  const doctrineLabel = cohortDoctrine ? COHORT_DOCTRINE_BY_ID[cohortDoctrine]?.name : null;
 
   return (
     <Header aria-label="Heresy List Builder">
@@ -46,6 +49,12 @@ export default function AppHeader({ onExport, hasWarlord, onAddWarlord, onAddLor
         <span>{factionLabel}</span>
         <span style={{ color: 'var(--cds-border-strong-01)' }}>·</span>
         <span>{allegiance}</span>
+        {doctrineLabel && (
+          <>
+            <span style={{ color: 'var(--cds-border-strong-01)' }}>·</span>
+            <span>{doctrineLabel}</span>
+          </>
+        )}
       </div>
 
       {/* Add buttons */}

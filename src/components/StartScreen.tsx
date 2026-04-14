@@ -3,6 +3,7 @@ import { Button, NumberInput, Select, SelectItem } from '@carbon/react';
 import type { Allegiance } from '../types';
 import { useRosterStore } from '../store/rosterStore';
 import { FACTIONS, FACTION_LABEL_MAP } from '../data/factions';
+import { COHORT_DOCTRINES } from '../constants/cohortDoctrines';
 
 export default function StartScreen() {
   const startBuild = useRosterStore((s) => s.startBuild);
@@ -10,9 +11,16 @@ export default function StartScreen() {
   const [faction, setFaction] = useState(FACTIONS[0].id);
   const [allegiance, setAllegiance] = useState<Allegiance>('Loyalist');
   const [pointsLimit, setPointsLimit] = useState(3000);
+  const [cohortDoctrine, setCohortDoctrine] = useState('');
+
+  function handleFactionChange(e: React.ChangeEvent<HTMLSelectElement>) {
+    const next = e.target.value;
+    setFaction(next);
+    if (next !== 'solar-auxilia') setCohortDoctrine('');
+  }
 
   function handleStart() {
-    startBuild(faction, allegiance, pointsLimit);
+    startBuild(faction, allegiance, pointsLimit, cohortDoctrine);
   }
 
   return (
@@ -43,7 +51,7 @@ export default function StartScreen() {
             id="faction-select"
             labelText="Legion"
             value={faction}
-            onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setFaction(e.target.value)}
+            onChange={handleFactionChange}
           >
             {FACTIONS.map((f) => (
               <SelectItem key={f.id} value={f.id} text={f.label} />
@@ -80,6 +88,23 @@ export default function StartScreen() {
             ))}
           </div>
         </div>
+
+        {/* Cohort Doctrine (Solar Auxilia only) */}
+        {faction === 'solar-auxilia' && (
+          <div className="mb-6">
+            <Select
+              id="cohort-doctrine-select"
+              labelText="Cohort Doctrine"
+              value={cohortDoctrine}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setCohortDoctrine(e.target.value)}
+            >
+              <SelectItem value="" text="— Select Cohort Doctrine —" />
+              {COHORT_DOCTRINES.map((d) => (
+                <SelectItem key={d.id} value={d.id} text={d.name} />
+              ))}
+            </Select>
+          </div>
+        )}
 
         {/* Points Limit */}
         <div className="mb-8">

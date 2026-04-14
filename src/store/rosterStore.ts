@@ -32,9 +32,10 @@ interface RosterStore {
   faction: string;
   allegiance: Allegiance;
   pointsLimit: number;
+  cohortDoctrine: string;
   detachments: PlacedDetachment[];
 
-  startBuild: (faction: string, allegiance: Allegiance, pointsLimit: number) => void;
+  startBuild: (faction: string, allegiance: Allegiance, pointsLimit: number, cohortDoctrine?: string) => void;
   addDetachment: (def: DetachmentDef, unlockedBy?: string) => void;
   fillSlot: (detachmentId: string, slotKey: string, unit: UnitEntry, primeBenefit?: PrimeBenefit) => void;
   updateSlotAnnotations: (detachmentId: string, slotKey: string, notes: string, extraPoints: number) => void;
@@ -52,13 +53,14 @@ const INITIAL_STATE = {
   faction: 'death-guard',
   allegiance: 'Traitor' as Allegiance,
   pointsLimit: 3000,
+  cohortDoctrine: '',
   detachments: [] as PlacedDetachment[],
 };
 
 export const useRosterStore = create<RosterStore>((set, get) => ({
   ...INITIAL_STATE,
 
-  startBuild(faction, allegiance, pointsLimit) {
+  startBuild(faction, allegiance, pointsLimit, cohortDoctrine = '') {
     const primaryDef = detachmentsData.core.find(
       (d) => d.name === 'Crusade Primary Detachment'
     );
@@ -69,6 +71,7 @@ export const useRosterStore = create<RosterStore>((set, get) => ({
       faction,
       allegiance,
       pointsLimit,
+      cohortDoctrine,
       detachments: [makeEmptyPlacedDetachment(primaryDef)],
     });
   },
