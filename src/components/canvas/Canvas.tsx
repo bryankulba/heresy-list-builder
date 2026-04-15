@@ -17,6 +17,7 @@ import BonusSlotRoleSelectorModal from '../modals/BonusSlotRoleSelectorModal';
 import DetachmentSelectorModal from '../modals/DetachmentSelectorModal';
 import ConfirmModal from '../modals/ConfirmModal';
 import ExportModal from '../modals/ExportModal';
+import SavedListsModal from '../modals/SavedListsModal';
 import AppHeader from '../ui/AppHeader';
 import PointsCard from '../ui/PointsCard';
 
@@ -146,6 +147,7 @@ export default function Canvas() {
   const removeDetachment = useRosterStore((s) => s.removeDetachment);
   const clearBonusSlotsForSlot = useRosterStore((s) => s.clearBonusSlotsForSlot);
   const updateSlotAnnotations = useRosterStore((s) => s.updateSlotAnnotations);
+  const reset = useRosterStore((s) => s.reset);
 
   const totalPoints = computeTotalPoints(detachments);
 
@@ -523,6 +525,8 @@ export default function Canvas() {
     <div className="flex flex-col" style={{ height: '100vh', overflow: 'hidden' }}>
       <AppHeader
         onExport={() => setModal({ type: 'export' })}
+        onSaveLoad={() => setModal({ type: 'saveLoad' })}
+        onNewList={() => setModal({ type: 'confirmReset' })}
         hasWarlord={hasWarlord}
         onAddWarlord={handleAddWarlord}
         onAddLordOfWar={handleAddLordOfWar}
@@ -785,6 +789,19 @@ export default function Canvas() {
           allegiance={allegiance}
           pointsLimit={pointsLimit}
           totalPoints={totalPoints}
+          onClose={() => setModal({ type: 'none' })}
+        />
+      )}
+
+      {modal.type === 'saveLoad' && (
+        <SavedListsModal onClose={() => setModal({ type: 'none' })} />
+      )}
+
+      {modal.type === 'confirmReset' && (
+        <ConfirmModal
+          message="Start a new list? Your current list will be lost unless you save it first."
+          primaryButtonText="New List"
+          onConfirm={() => { reset(); setModal({ type: 'none' }); }}
           onClose={() => setModal({ type: 'none' })}
         />
       )}

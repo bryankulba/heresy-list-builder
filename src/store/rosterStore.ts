@@ -1,6 +1,7 @@
 import { create } from 'zustand';
+import { persist, createJSONStorage } from 'zustand/middleware';
 import { v4 as uuidv4 } from 'uuid';
-import type { Allegiance, AppPhase, BonusSlot, DetachmentDef, FilledSlot, PlacedDetachment, PrimeBenefit, UnitEntry } from '../types';
+import type { Allegiance, AppPhase, BonusSlot, DetachmentDef, FilledSlot, PlacedDetachment, PrimeBenefit, SavedList, UnitEntry } from '../types';
 import { detachmentsData } from '../data/loader';
 
 // ---------------------------------------------------------------------------
@@ -36,6 +37,7 @@ interface RosterStore {
   detachments: PlacedDetachment[];
 
   startBuild: (faction: string, allegiance: Allegiance, pointsLimit: number, cohortDoctrine?: string) => void;
+  loadSave: (saved: Pick<SavedList, 'faction' | 'allegiance' | 'pointsLimit' | 'cohortDoctrine' | 'detachments'>) => void;
   addDetachment: (def: DetachmentDef, unlockedBy?: string) => void;
   fillSlot: (detachmentId: string, slotKey: string, unit: UnitEntry, primeBenefit?: PrimeBenefit) => void;
   updateSlotAnnotations: (detachmentId: string, slotKey: string, notes: string, extraPoints: number) => void;
@@ -57,143 +59,170 @@ const INITIAL_STATE = {
   detachments: [] as PlacedDetachment[],
 };
 
-export const useRosterStore = create<RosterStore>((set, get) => ({
-  ...INITIAL_STATE,
+export const useRosterStore = create<RosterStore>()(
+  persist(
+    (set, get) => ({
+      ...INITIAL_STATE,
 
-  startBuild(faction, allegiance, pointsLimit, cohortDoctrine = '') {
-    const primaryDef = detachmentsData.core.find(
-      (d) => d.name === 'Crusade Primary Detachment'
-    );
-    if (!primaryDef) throw new Error('Crusade Primary Detachment not found in data');
+      startBuild(faction, allegiance, pointsLimit, cohortDoctrine = '') {
+        const primaryDef = detachmentsData.core.find(
+          (d) => d.name === 'Crusade Primary Detachment'
+        );
+        if (!primaryDef) throw new Error('Crusade Primary Detachment not found in data');
 
-    set({
-      phase: 'canvas',
-      faction,
-      allegiance,
-      pointsLimit,
-      cohortDoctrine,
-      detachments: [makeEmptyPlacedDetachment(primaryDef)],
-    });
-  },
+        set({
+          phase: 'canvas',
+          faction,
+          allegiance,
+          pointsLimit,
+          cohortDoctrine,
+          detachments: [makeEmptyPlacedDetachment(primaryDef)],
+        });
+      },
 
-  addDetachment(def, unlockedBy) {
-    set((s) => ({
-      detachments: [...s.detachments, makeEmptyPlacedDetachment(def, unlockedBy)],
-    }));
-  },
+      loadSave(saved) {
+        set({
+          phase: 'canvas',
+          faction: saved.faction,
+          allegiance: saved.allegiance,
+          pointsLimit: saved.pointsLimit,
+          cohortDoctrine: saved.cohortDoctrine,
+          detachments: saved.detachments,
+        });
+      },
 
-  fillSlot(detachmentId, slotKey, unit, primeBenefit) {
-    set((s) => ({
-      detachments: s.detachments.map((det) => {
-        if (det.id !== detachmentId) return det;
-        const existing = det.slots[slotKey];
-        const filled: FilledSlot = {
-          unit,
-          primeBenefit,
-          notes: existing?.notes,
-          extraPoints: existing?.extraPoints,
-        };
-        return { ...det, slots: { ...det.slots, [slotKey]: filled } };
-      }),
-    }));
-  },
+      addDetachment(def, unlockedBy) {
+        set((s) => ({
+          detachments: [...s.detachments, makeEmptyPlacedDetachment(def, unlockedBy)],
+        }));
+      },
 
-  updateSlotAnnotations(detachmentId, slotKey, notes, extraPoints) {
-    set((s) => ({
-      detachments: s.detachments.map((det) => {
-        if (det.id !== detachmentId) return det;
-        const existing = det.slots[slotKey];
-        if (!existing) return det;
-        return { ...det, slots: { ...det.slots, [slotKey]: { ...existing, notes, extraPoints } } };
-      }),
-    }));
-  },
+      fillSlot(detachmentId, slotKey, unit, primeBenefit) {
+        set((s) => ({
+          detachments: s.detachments.map((det) => {
+            if (det.id !== detachmentId) return det;
+            const existing = det.slots[slotKey];
+            const filled: FilledSlot = {
+              unit,
+              primeBenefit,
+              notes: existing?.notes,
+              extraPoints: existing?.extraPoints,
+            };
+            return { ...det, slots: { ...det.slots, [slotKey]: filled } };
+          }),
+        }));
+      },
 
-  clearSlot(detachmentId, slotKey) {
-    set((s) => ({
-      detachments: s.detachments.map((det) => {
-        if (det.id !== detachmentId) return det;
-        return {
-          ...det,
-          slots: { ...det.slots, [slotKey]: null },
-          // cascade-remove any bonus slots that were created by this prime slot
-          bonusSlots: (det.bonusSlots ?? []).filter((b) => b.sourceSlotKey !== slotKey),
-        };
-      }),
-    }));
-  },
+      updateSlotAnnotations(detachmentId, slotKey, notes, extraPoints) {
+        set((s) => ({
+          detachments: s.detachments.map((det) => {
+            if (det.id !== detachmentId) return det;
+            const existing = det.slots[slotKey];
+            if (!existing) return det;
+            return { ...det, slots: { ...det.slots, [slotKey]: { ...existing, notes, extraPoints } } };
+          }),
+        }));
+      },
 
-  addBonusSlot(detachmentId, sourceSlotKey, role) {
-    const newSlot: BonusSlot = { id: uuidv4(), sourceSlotKey, role, unit: null };
-    set((s) => ({
-      detachments: s.detachments.map((det) => {
-        if (det.id !== detachmentId) return det;
-        return { ...det, bonusSlots: [...(det.bonusSlots ?? []), newSlot] };
-      }),
-    }));
-  },
+      clearSlot(detachmentId, slotKey) {
+        set((s) => ({
+          detachments: s.detachments.map((det) => {
+            if (det.id !== detachmentId) return det;
+            return {
+              ...det,
+              slots: { ...det.slots, [slotKey]: null },
+              // cascade-remove any bonus slots that were created by this prime slot
+              bonusSlots: (det.bonusSlots ?? []).filter((b) => b.sourceSlotKey !== slotKey),
+            };
+          }),
+        }));
+      },
 
-  fillBonusSlot(detachmentId, bonusSlotId, unit) {
-    set((s) => ({
-      detachments: s.detachments.map((det) => {
-        if (det.id !== detachmentId) return det;
-        return {
-          ...det,
-          bonusSlots: (det.bonusSlots ?? []).map((b) =>
-            b.id === bonusSlotId ? { ...b, unit } : b
-          ),
-        };
-      }),
-    }));
-  },
+      addBonusSlot(detachmentId, sourceSlotKey, role) {
+        const newSlot: BonusSlot = { id: uuidv4(), sourceSlotKey, role, unit: null };
+        set((s) => ({
+          detachments: s.detachments.map((det) => {
+            if (det.id !== detachmentId) return det;
+            return { ...det, bonusSlots: [...(det.bonusSlots ?? []), newSlot] };
+          }),
+        }));
+      },
 
-  clearBonusSlot(detachmentId, bonusSlotId) {
-    set((s) => ({
-      detachments: s.detachments.map((det) => {
-        if (det.id !== detachmentId) return det;
-        return {
-          ...det,
-          bonusSlots: (det.bonusSlots ?? []).map((b) =>
-            b.id === bonusSlotId ? { ...b, unit: null } : b
-          ),
-        };
-      }),
-    }));
-  },
+      fillBonusSlot(detachmentId, bonusSlotId, unit) {
+        set((s) => ({
+          detachments: s.detachments.map((det) => {
+            if (det.id !== detachmentId) return det;
+            return {
+              ...det,
+              bonusSlots: (det.bonusSlots ?? []).map((b) =>
+                b.id === bonusSlotId ? { ...b, unit } : b
+              ),
+            };
+          }),
+        }));
+      },
 
-  clearBonusSlotsForSlot(detachmentId, slotKey) {
-    set((s) => ({
-      detachments: s.detachments.map((det) => {
-        if (det.id !== detachmentId) return det;
-        return {
-          ...det,
-          bonusSlots: (det.bonusSlots ?? []).filter((b) => b.sourceSlotKey !== slotKey),
-        };
-      }),
-    }));
-  },
+      clearBonusSlot(detachmentId, bonusSlotId) {
+        set((s) => ({
+          detachments: s.detachments.map((det) => {
+            if (det.id !== detachmentId) return det;
+            return {
+              ...det,
+              bonusSlots: (det.bonusSlots ?? []).map((b) =>
+                b.id === bonusSlotId ? { ...b, unit: null } : b
+              ),
+            };
+          }),
+        }));
+      },
 
-  removeDetachment(id) {
-    // Cascade: also remove any detachment unlocked by a slot on the removed detachment
-    const allDets = get().detachments;
-    const idsToRemove = new Set<string>();
+      clearBonusSlotsForSlot(detachmentId, slotKey) {
+        set((s) => ({
+          detachments: s.detachments.map((det) => {
+            if (det.id !== detachmentId) return det;
+            return {
+              ...det,
+              bonusSlots: (det.bonusSlots ?? []).filter((b) => b.sourceSlotKey !== slotKey),
+            };
+          }),
+        }));
+      },
 
-    function collectCascade(removedId: string) {
-      idsToRemove.add(removedId);
-      for (const det of allDets) {
-        if (det.unlockedBy?.startsWith(`${removedId}::`) && !idsToRemove.has(det.id)) {
-          collectCascade(det.id);
+      removeDetachment(id) {
+        // Cascade: also remove any detachment unlocked by a slot on the removed detachment
+        const allDets = get().detachments;
+        const idsToRemove = new Set<string>();
+
+        function collectCascade(removedId: string) {
+          idsToRemove.add(removedId);
+          for (const det of allDets) {
+            if (det.unlockedBy?.startsWith(`${removedId}::`) && !idsToRemove.has(det.id)) {
+              collectCascade(det.id);
+            }
+          }
         }
-      }
+
+        collectCascade(id);
+        set((s) => ({
+          detachments: s.detachments.filter((d) => !idsToRemove.has(d.id)),
+        }));
+      },
+
+      reset() {
+        set(INITIAL_STATE);
+      },
+    }),
+    {
+      name: 'heresy-builder:session',
+      storage: createJSONStorage(() => localStorage),
+      partialize: (state) => ({
+        phase: state.phase,
+        faction: state.faction,
+        allegiance: state.allegiance,
+        pointsLimit: state.pointsLimit,
+        cohortDoctrine: state.cohortDoctrine,
+        detachments: state.detachments,
+      }),
     }
-
-    collectCascade(id);
-    set((s) => ({
-      detachments: s.detachments.filter((d) => !idsToRemove.has(d.id)),
-    }));
-  },
-
-  reset() {
-    set(INITIAL_STATE);
-  },
-}));
+  )
+);

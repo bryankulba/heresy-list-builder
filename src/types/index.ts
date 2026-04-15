@@ -78,6 +78,18 @@ export interface PlacedDetachment {
   bonusSlots?: BonusSlot[];
 }
 
+export interface SavedList {
+  id: string;
+  name: string;
+  savedAt: number;          // Date.now()
+  schemaVersion: number;
+  faction: string;
+  allegiance: Allegiance;
+  pointsLimit: number;
+  cohortDoctrine: string;
+  detachments: PlacedDetachment[];
+}
+
 export type ModalState =
   | { type: 'none' }
   | { type: 'slotEdit'; detachmentId: string; slotKey: string; slotDef: SlotDef; filled: FilledSlot }
@@ -88,4 +100,6 @@ export type ModalState =
   | { type: 'detachmentSelector'; trigger: 'highCommand' | 'command'; unlockedBy: string; title?: string }
   | { type: 'lordOfWarSelector' }
   | { type: 'confirmClear'; detachmentId: string; slotKey: string; affectedIds: string[] }
-  | { type: 'export' };
+  | { type: 'export' }
+  | { type: 'saveLoad' }
+  | { type: 'confirmReset' };

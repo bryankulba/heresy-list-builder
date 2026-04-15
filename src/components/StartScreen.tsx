@@ -4,6 +4,8 @@ import type { Allegiance } from '../types';
 import { useRosterStore } from '../store/rosterStore';
 import { FACTIONS, FACTION_LABEL_MAP } from '../data/factions';
 import { COHORT_DOCTRINES } from '../constants/cohortDoctrines';
+import { getAllSaves } from '../utils/savedLists';
+import SavedListsModal from './modals/SavedListsModal';
 
 export default function StartScreen() {
   const startBuild = useRosterStore((s) => s.startBuild);
@@ -12,6 +14,8 @@ export default function StartScreen() {
   const [allegiance, setAllegiance] = useState<Allegiance>('Loyalist');
   const [pointsLimit, setPointsLimit] = useState(3000);
   const [cohortDoctrine, setCohortDoctrine] = useState('');
+  const [showSavedLists, setShowSavedLists] = useState(false);
+  const [hasSaves] = useState(() => getAllSaves().length > 0);
 
   function handleFactionChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const next = e.target.value;
@@ -134,6 +138,18 @@ export default function StartScreen() {
           Build Army
         </Button>
 
+        {/* Load saved list */}
+        {hasSaves && (
+          <Button
+            kind="ghost"
+            size="md"
+            onClick={() => setShowSavedLists(true)}
+            style={{ width: '100%', marginTop: 12 }}
+          >
+            Load a Saved List...
+          </Button>
+        )}
+
         {/* Footer */}
         <p
           className="text-center text-xs mt-6"
@@ -144,6 +160,10 @@ export default function StartScreen() {
             : 'Select a legion to continue'}
         </p>
       </div>
+
+      {showSavedLists && (
+        <SavedListsModal onClose={() => setShowSavedLists(false)} />
+      )}
     </div>
   );
 }

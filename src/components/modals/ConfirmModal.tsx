@@ -5,15 +5,16 @@ interface ConfirmModalProps {
   message: string;
   onConfirm: () => void;
   onClose: () => void;
+  primaryButtonText?: string;
 }
 
-export default function ConfirmModal({ message, onConfirm, onClose }: ConfirmModalProps) {
+export default function ConfirmModal({ message, onConfirm, onClose, primaryButtonText = 'Remove' }: ConfirmModalProps) {
   return (
     <Modal
       open
       danger
       modalHeading="Confirm"
-      primaryButtonText="Remove"
+      primaryButtonText={primaryButtonText}
       secondaryButtonText="Cancel"
       onRequestSubmit={onConfirm}
       onRequestClose={onClose}

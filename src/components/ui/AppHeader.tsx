@@ -6,23 +6,24 @@ import {
   HeaderGlobalAction,
   Button,
 } from '@carbon/react';
-import { Export, Reset, Add } from '@carbon/icons-react';
+import { Export, Reset, Add, Save } from '@carbon/icons-react';
 import { useRosterStore } from '../../store/rosterStore';
 import { FACTION_LABEL_MAP } from '../../data/factions';
 import { COHORT_DOCTRINE_BY_ID } from '../../constants/cohortDoctrines';
 
 interface AppHeaderProps {
   onExport: () => void;
+  onSaveLoad: () => void;
+  onNewList: () => void;
   hasWarlord: boolean;
   onAddWarlord: () => void;
   onAddLordOfWar: () => void;
 }
 
-export default function AppHeader({ onExport, hasWarlord, onAddWarlord, onAddLordOfWar }: AppHeaderProps) {
+export default function AppHeader({ onExport, onSaveLoad, onNewList, hasWarlord, onAddWarlord, onAddLordOfWar }: AppHeaderProps) {
   const faction = useRosterStore((s) => s.faction);
   const allegiance = useRosterStore((s) => s.allegiance);
   const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
-  const reset = useRosterStore((s) => s.reset);
 
   const factionLabel = FACTION_LABEL_MAP[faction] ?? faction;
   const doctrineLabel = cohortDoctrine ? COHORT_DOCTRINE_BY_ID[cohortDoctrine]?.name : null;
@@ -71,6 +72,13 @@ export default function AppHeader({ onExport, hasWarlord, onAddWarlord, onAddLor
 
       <HeaderGlobalBar>
         <HeaderGlobalAction
+          aria-label="Save / load lists"
+          tooltipAlignment="end"
+          onClick={onSaveLoad}
+        >
+          <Save size={20} />
+        </HeaderGlobalAction>
+        <HeaderGlobalAction
           aria-label="Export list"
           tooltipAlignment="end"
           onClick={onExport}
@@ -80,7 +88,7 @@ export default function AppHeader({ onExport, hasWarlord, onAddWarlord, onAddLor
         <HeaderGlobalAction
           aria-label="New list"
           tooltipAlignment="end"
-          onClick={reset}
+          onClick={onNewList}
         >
           <Reset size={20} />
         </HeaderGlobalAction>
