@@ -2919,6 +2919,55 @@
         "word-bearers",
         "world-eaters"
       ]
+    },
+    {
+      "name": "Apex - Armoured Command Squadron Detachment",
+      "entryId": "3be1-161a-ee6d-24e0",
+      "type": "apex",
+      "slots": [
+        {
+          "role": "Armour",
+          "min": 0,
+          "max": 3,
+          "prime": false,
+          "categoryId": "643a-1012-bd51-6537"
+        },
+        {
+          "role": "Prime Armour",
+          "min": 0,
+          "max": 3,
+          "prime": true,
+          "categoryId": "4460-7bc1-4d80-aecb"
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "blackshields",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "iron-hands",
+        "iron-warriors",
+        "mechanicum",
+        "militia",
+        "night-lords",
+        "raven-guard",
+        "shattered-legions",
+        "sisters-of-silence",
+        "skitarii",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "talons-of-the-emperor",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
     }
   ],
   "legion": {}

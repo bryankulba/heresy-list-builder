@@ -47,10 +47,12 @@ function emitUnitSelection(
     ` type="unit">`
   );
 
-  // Child model selections — only if models are present
-  if (unit.models && unit.models.length > 0) {
+  // Child model selections and unit-level wargear
+  const hasModels = unit.models && unit.models.length > 0;
+  const hasUnitWargear = unit.unitWargear && unit.unitWargear.length > 0;
+  if (hasModels || hasUnitWargear) {
     lines.push(`${i}  <selections>`);
-    for (const model of unit.models) {
+    for (const model of (unit.models ?? [])) {
       const modelCost = Math.round(model.cost * model.min);
       lines.push(
         `${i}    <selection` +
@@ -81,6 +83,21 @@ function emitUnitSelection(
       }
       lines.push(`${i}      <costs>`);
       lines.push(`${i}        <cost name="pts" value="${modelCost}" costTypeId="${POINTS_TYPE_ID}"/>`);
+      lines.push(`${i}      </costs>`);
+      lines.push(`${i}    </selection>`);
+    }
+    // Unit-level mandatory wargear (grenades, boarding shields, etc.)
+    for (const uw of (unit.unitWargear ?? [])) {
+      lines.push(
+        `${i}    <selection` +
+        ` id="${uuid()}"` +
+        ` name="${escapeXml(uw.name)}"` +
+        ` entryId="${escapeXml(uw.entryId)}"` +
+        ` number="1"` +
+        ` type="upgrade">`
+      );
+      lines.push(`${i}      <costs>`);
+      lines.push(`${i}        <cost name="pts" value="0" costTypeId="${POINTS_TYPE_ID}"/>`);
       lines.push(`${i}      </costs>`);
       lines.push(`${i}    </selection>`);
     }

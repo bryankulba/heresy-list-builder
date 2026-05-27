@@ -31,7 +31,16 @@
           "cost": 60,
           "min": 2,
           "max": 5,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Saturnine disruption fist",
+              "entryId": "8eb8-e8b8-8a69-08c5"
+            },
+            {
+              "name": "Plasma bombard",
+              "entryId": "e68f-859d-4903-caf3"
+            }
+          ]
         },
         {
           "name": "Saturnine Terminator Sergeant",
@@ -39,10 +48,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Saturnine disruption fist",
+              "entryId": "f22d-59d3-bd0e-6b0e"
+            },
+            {
+              "name": "Plasma bombard",
+              "entryId": "0eb9-6e0e-9657-5f87"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Occulix targeting auspex",
+          "entryId": "e0f1-6d9b-796e-6424"
+        },
+        {
+          "name": "Thermal Diffraction Field",
+          "entryId": "5178-58f4-5984-91ca"
+        }
+      ]
     },
     {
       "name": "Centurion",
@@ -57,7 +85,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "9421-9be0-5276-f3d7"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "e97c-8d09-5fd4-3cd0"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes",
@@ -94,7 +131,16 @@
           "cost": 12,
           "min": 9,
           "max": 19,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "89ae-0ba9-a9f6-6faf"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "ddae-79a7-d440-8316"
+            }
+          ]
         },
         {
           "name": "Sergeant",
@@ -102,10 +148,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "29a9-66f3-d0b9-2cfa"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "b947-17f7-71ee-f1f8"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "65c7-ecdc-611c-06c6"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "8039-d4e5-535e-b398"
+        }
+      ]
     },
     {
       "name": "Breacher Squad",
@@ -120,7 +185,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "7847-3bb4-11fe-a697"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "cee1-204c-3eaf-cf3f"
+            }
+          ]
         },
         {
           "name": "Legionary",
@@ -132,11 +206,29 @@
             {
               "name": "Bolt pistol",
               "entryId": "6d6d-84c3-5d97-a44f"
+            },
+            {
+              "name": "Bolter",
+              "entryId": "a2ad-0aa8-428b-6c45"
             }
           ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Boarding shield",
+          "entryId": "09bc-9991-897b-b6f5"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "06d0-09a8-652d-f497"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "1c84-3521-dfbb-c296"
+        }
+      ]
     },
     {
       "name": "Araknae Quad Accelerator Platform",
@@ -154,7 +246,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Quad accelerator autocannon",
+          "entryId": "e239-524c-c83c-ed06"
+        },
+        {
+          "name": "Atomantic Pavise",
+          "entryId": "1a2b-64c8-cdd8-dc3e"
+        }
+      ]
     },
     {
       "name": "Saturnine Dreadnought",
@@ -169,10 +271,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Heavy plasma bombard",
+              "entryId": "81cc-d504-fec1-c1c6"
+            },
+            {
+              "name": "Disintegrator cannon",
+              "entryId": "d00f-bab9-ece5-bfbc"
+            },
+            {
+              "name": "Photonic incinerator",
+              "entryId": "2d32-b642-f57d-024b"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Thermal Diffraction Field",
+          "entryId": "bc5c-71ac-19d0-1187"
+        }
+      ]
     },
     {
       "name": "Fellblade Super-Heavy Battle Tank",
@@ -205,7 +326,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "b63f-f577-a8a1-194d"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "e806-a426-80d4-5f45"
+            }
+          ]
         },
         {
           "name": "Chosen",
@@ -213,10 +343,29 @@
           "cost": 20,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "bb30-ab3e-9549-968b"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "8d7d-df47-4d85-2654"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "9252-6091-83ba-bb81"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "5ddf-0764-8463-f5e0"
+        }
+      ]
     },
     {
       "name": "Rhino",
@@ -254,7 +403,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Twin heavy bolter",
+              "entryId": "39a0-7e80-aabf-b8e3"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -276,6 +430,10 @@
             {
               "name": "Bolt pistol",
               "entryId": "9caa-d8a5-6f63-b26c"
+            },
+            {
+              "name": "Bolter",
+              "entryId": "da83-e154-a03d-52be"
             }
           ]
         },
@@ -285,10 +443,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "98a5-9129-893d-29db"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "a2ba-eeca-c8a4-67b6"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "ad5a-68a5-ee4c-2b58"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "d579-d71e-0382-e117"
+        }
+      ]
     },
     {
       "name": "Veteran Assault Squad",
@@ -307,6 +484,10 @@
             {
               "name": "Chainsword",
               "entryId": "860a-ce9b-140f-fc14"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "38ad-3258-60c4-072e"
             }
           ]
         },
@@ -320,11 +501,29 @@
             {
               "name": "Legion Sergeant Melee Weapons (no chainsword)",
               "entryId": "0164-c146-98ff-8f27"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "a023-d29e-c71e-6d10"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "0d3b-8435-6c8b-9b2b"
             }
           ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Krak grenades",
+          "entryId": "c47a-8d0a-ae3e-332f"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "70fe-81ce-6318-a5e1"
+        }
+      ]
     },
     {
       "name": "Tactical Squad",
@@ -356,10 +555,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "7955-eaf8-6193-7d93"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "d6ef-e031-d18f-df93"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Krak grenades",
+          "entryId": "3afd-76fd-252b-a8e0"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "6ed9-6e42-b794-d419"
+        }
+      ]
     },
     {
       "name": "Deredeo Dreadnought",
@@ -374,7 +592,20 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Anvillus autocannon battery",
+              "entryId": "5f77-6850-58d7-65c2"
+            },
+            {
+              "name": "Twin heavy bolter",
+              "entryId": "e531-6f2b-7e6a-533e"
+            },
+            {
+              "name": "Aiolos missile launcher",
+              "entryId": "d344-da8e-a63b-f5e0"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -392,7 +623,20 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Iliastus Assault Cannon",
+              "entryId": "c4a8-73d7-1541-afd3"
+            },
+            {
+              "name": "Paired Leviathan siege claws and two meltaguns",
+              "entryId": "d949-5b9f-f2dd-a0e4"
+            },
+            {
+              "name": "Heavy flamer",
+              "entryId": "ca31-9576-d967-e694"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -410,7 +654,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "6c81-0bfe-8e5b-d222"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "43d6-a430-ef8f-774d"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -432,6 +685,10 @@
             {
               "name": "Legion Combi-weapons",
               "entryId": "3ee9-ca75-21de-7d56"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "9268-f724-d807-d41f"
             }
           ]
         }
@@ -451,7 +708,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "ba7a-5f18-8283-d35c"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -538,7 +800,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite serpenta",
+              "entryId": "a001-5f92-a5b8-e061"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -633,7 +900,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Overcharged volkite serpenta",
+              "entryId": "4db9-5306-45be-8065"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -651,7 +923,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "20b3-3f38-2825-efa7"
+            },
+            {
+              "name": "Thunder hammer",
+              "entryId": "0d92-b5f0-b320-24d6"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -692,7 +973,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "8248-cdf8-bd84-eeb3"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -721,7 +1007,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "25de-b305-ba8b-4379"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "c21e-c39f-ff0b-4f90"
+        }
+      ]
     },
     {
       "name": "Centurion Command Squad",
@@ -747,7 +1043,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "525b-ca44-66e6-f345"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "cd66-6394-4194-671b"
+        }
+      ]
     },
     {
       "name": "Tartaros Terminator Command Squad",
@@ -762,7 +1068,12 @@
           "cost": 40,
           "min": 2,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "f838-a63a-5a8b-43ee"
+            }
+          ]
         },
         {
           "name": "Tartaros Chosen Champion",
@@ -770,7 +1081,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "83a2-a5a8-22e7-fd1d"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -788,7 +1104,12 @@
           "cost": 30,
           "min": 4,
           "max": 11,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite charger",
+              "entryId": "c86a-0146-f187-75bf"
+            }
+          ]
         },
         {
           "name": "Cataphractii Terminator Sergeant",
@@ -796,7 +1117,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite charger",
+              "entryId": "2751-1e6a-5a56-94ae"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -818,6 +1144,10 @@
             {
               "name": "Bolt pistol",
               "entryId": "dc40-53c1-a8b2-74e3"
+            },
+            {
+              "name": "Kraken bolter",
+              "entryId": "7b92-0472-493f-4a78"
             }
           ]
         },
@@ -827,10 +1157,25 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "9973-3d5a-205f-70ff"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "f8ba-8b27-3975-773b"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "bca5-6c81-b401-c0b9"
+        }
+      ]
     },
     {
       "name": "Tartaros Terminator Squad",
@@ -845,7 +1190,12 @@
           "cost": 30,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "e6c9-e05e-9b8e-13a4"
+            }
+          ]
         },
         {
           "name": "Tartaros Terminator Sergeant",
@@ -853,7 +1203,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "38ba-1d55-b554-da57"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -871,7 +1226,12 @@
           "cost": 40,
           "min": 2,
           "max": 11,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite charger",
+              "entryId": "9c2b-c6e5-6039-5f4f"
+            }
+          ]
         },
         {
           "name": "Cataphractii Chosen Champion",
@@ -879,7 +1239,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite charger",
+              "entryId": "0f56-368f-972c-bd81"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -901,6 +1266,10 @@
             {
               "name": "Power Weapon",
               "entryId": "452a-27d2-a72f-0726"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "ef81-c148-dc73-51e1"
             }
           ]
         },
@@ -914,11 +1283,29 @@
             {
               "name": "Legion Sergeant Melee Weapons (no chainsword)",
               "entryId": "130f-2f89-0813-d995"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "980d-77c5-4ea9-4661"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "d7aa-e0f1-63af-3b1a"
             }
           ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "90f9-14c4-26c5-5e1d"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "c167-23fd-a0c9-eec6"
+        }
+      ]
     },
     {
       "name": "Tactical Support Squad",
@@ -950,11 +1337,25 @@
             {
               "name": "Bolt pistol",
               "entryId": "6498-2b47-aee8-073c"
+            },
+            {
+              "name": "Flamer",
+              "entryId": "47a9-466f-aec3-5d36"
             }
           ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "47fd-a08b-8ef0-a832"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "35a4-b7c8-86e9-8483"
+        }
+      ]
     },
     {
       "name": "Heavy Support Squad",
@@ -986,11 +1387,25 @@
             {
               "name": "Bolt pistol",
               "entryId": "be77-320c-85a5-48cd"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "cf76-c4c7-8a9a-0beb"
             }
           ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "e606-6922-4e65-eee7"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "7b39-7af0-989d-782d"
+        }
+      ]
     },
     {
       "name": "Apothecary",
@@ -1005,10 +1420,33 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "0427-b7ae-007d-79a2"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "848d-458a-3e8b-7adf"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "53ec-af9f-ff30-b70f"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "b729-5a6d-ce71-5874"
+        },
+        {
+          "name": "Narthecium",
+          "entryId": "b2c8-f1e3-89ad-73cb"
+        }
+      ]
     },
     {
       "name": "Techmarine",
@@ -1023,7 +1461,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power axe",
+              "entryId": "c05b-5222-95c1-79c5"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1044,7 +1487,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Deathstorm missile launcher",
+          "entryId": "dc06-2cf1-61e7-7f8f"
+        }
+      ]
     },
     {
       "name": "Contemptor Dreadnought",
@@ -1059,7 +1508,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "11b4-2870-bf2d-1398"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1077,10 +1531,21 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "504d-f53b-2f7f-49c4"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Melta cutters",
+          "entryId": "05d5-4441-e785-bda0"
+        }
+      ]
     },
     {
       "name": "Drop Pod",
@@ -1098,7 +1563,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Combi-bolter",
+          "entryId": "b26a-8580-ed44-e2e7"
+        }
+      ]
     },
     {
       "name": "Land Raider Carrier",
@@ -1152,7 +1623,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Kharybdis missile launcher",
+          "entryId": "2023-49ca-0e60-7a69"
+        }
+      ]
     },
     {
       "name": "Dreadclaw Drop Pod",
@@ -1185,7 +1662,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "41da-66bd-dd5f-1de3"
+            }
+          ]
         },
         {
           "name": "Outrider",
@@ -1193,10 +1675,33 @@
           "cost": 20,
           "min": 2,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "27e6-b7b9-b268-da37"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "08fd-696d-e140-43fd"
+            },
+            {
+              "name": "Twin bolter",
+              "entryId": "3f5c-0f24-a1f2-45b4"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "22dc-8c8b-e3b5-3984"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "7069-f10f-a04c-99b2"
+        }
+      ]
     },
     {
       "name": "Reconnaissance Squad",
@@ -1211,7 +1716,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Astartes shotgun",
+              "entryId": "f299-7d4d-88db-74e2"
+            }
+          ]
         },
         {
           "name": "Recon Legionary",
@@ -1223,11 +1733,25 @@
             {
               "name": "Bolt pistol",
               "entryId": "7f37-3fee-cde4-3022"
+            },
+            {
+              "name": "Astartes shotgun",
+              "entryId": "28e9-78ae-c4bb-55bd"
             }
           ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "9630-09af-5d0b-add6"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "1247-10bd-0832-053d"
+        }
+      ]
     },
     {
       "name": "Sabre",
@@ -1278,7 +1802,12 @@
           "cost": 22.5,
           "min": 2,
           "max": 2,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Twin heavy bolter",
+              "entryId": "6902-6ed0-1a78-d0f5"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1296,7 +1825,20 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Heavy bolter",
+              "entryId": "8cab-eb7d-7845-c092"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "e0f1-69d2-30d8-414c"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "a5bd-0e05-833f-06a9"
+            }
+          ]
         },
         {
           "name": "Scimitar Hunter",
@@ -1304,10 +1846,29 @@
           "cost": 30,
           "min": 2,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Heavy bolter",
+              "entryId": "d372-6558-6f0c-83c9"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "0b13-dd23-cb8f-546b"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "44d7-d2f2-a84d-7c06"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "7e33-63e1-1273-3532"
+        }
+      ]
     },
     {
       "name": "Xiphon Interceptor",
@@ -1325,7 +1886,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Rotary missile launcher",
+          "entryId": "a725-6046-98fa-8f09"
+        },
+        {
+          "name": "Twin lascannon",
+          "entryId": "9517-d70d-197b-2e59"
+        }
+      ]
     },
     {
       "name": "Storm Eagle",
@@ -1340,10 +1911,25 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Twin heavy bolter",
+              "entryId": "9a7b-c9aa-1447-5f5f"
+            },
+            {
+              "name": "Tempest rocket",
+              "entryId": "61da-4bea-477e-dc0d"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Vengeance launcher",
+          "entryId": "f01c-40d8-5123-c2bf"
+        }
+      ]
     },
     {
       "name": "Fire Raptor",
@@ -1358,10 +1944,25 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Gravis heavy bolter battery",
+              "entryId": "785e-d41a-2b0b-e9dd"
+            },
+            {
+              "name": "Tempest rocket",
+              "entryId": "64a4-6569-559e-eea2"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Twin avenger bolt cannon",
+          "entryId": "7f93-9997-96af-e2ce"
+        }
+      ]
     },
     {
       "name": "Javelin Speeder Squadron",
@@ -1376,7 +1977,12 @@
           "cost": 75,
           "min": 1,
           "max": 3,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Cyclone missile launcher",
+              "entryId": "e703-3d7c-d27c-84be"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1412,7 +2018,16 @@
           "cost": 50,
           "min": 1,
           "max": 5,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Heavy bolter",
+              "entryId": "7b28-c20f-774b-26a3"
+            },
+            {
+              "name": "Augury scanner",
+              "entryId": "c8d8-b2a5-154a-1e65"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1466,7 +2081,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Kratos battle cannon",
+              "entryId": "2559-bb09-0ab4-b9b6"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "1c38-e1f5-4125-0aa8"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1579,7 +2203,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Twin heavy bolter",
+              "entryId": "13a6-b358-d1a9-9c1e"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1618,7 +2247,29 @@
           "defaultWargear": []
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Hellstrike missile",
+          "entryId": "7668-9d2e-534f-965c"
+        },
+        {
+          "name": "Lascannon",
+          "entryId": "3121-440e-c262-699b"
+        },
+        {
+          "name": "Turbo-laser destructor",
+          "entryId": "65bd-4e36-a19c-00e3"
+        },
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "0ba9-0f3d-4c30-2c66"
+        },
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "fd33-1215-a70f-8a09"
+        }
+      ]
     },
     {
       "name": "Mastodon Super-Heavy Assault Transport",
@@ -1654,7 +2305,21 @@
           "defaultWargear": []
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Hellstrike missile",
+          "entryId": "3074-4e39-05c0-ce6d"
+        },
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "47d7-5bea-e799-18e1"
+        },
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "e5a7-8160-90d7-a488"
+        }
+      ]
     },
     {
       "name": "Master of Descent",
@@ -1687,7 +2352,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power lash",
+              "entryId": "cea8-d31e-b534-c092"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1709,6 +2379,10 @@
             {
               "name": "Bolt pistol",
               "entryId": "60cc-b8e2-c33b-f262"
+            },
+            {
+              "name": "Bolter",
+              "entryId": "7c91-46ba-941f-4c23"
             }
           ]
         }
@@ -1751,7 +2425,20 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "63e4-504b-4c99-9068"
+            },
+            {
+              "name": "Twin plasma gun",
+              "entryId": "5b12-c7bb-4d35-b92c"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "b332-4a60-fb6e-b17b"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -1792,6 +2479,10 @@
             {
               "name": "Force Weapon",
               "entryId": "78d1-8c89-58f2-0057"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "efaa-670b-4abf-8adb"
             }
           ]
         }
@@ -1962,7 +2653,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "cba4-2a51-418f-a95d"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2116,7 +2812,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Twin bolter",
+              "entryId": "6c6a-3c13-4cd1-a078"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2134,7 +2835,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "3d55-66c3-43e6-826c"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2206,7 +2912,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Legion Officer Wargear",
+              "entryId": "9320-a1ed-6c08-1aaf"
+            },
+            {
+              "name": "Power axe",
+              "entryId": "7c42-ebc6-4d80-bbc1"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2224,7 +2939,24 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "7089-ffb2-c322-a3af"
+            },
+            {
+              "name": "Power axe",
+              "entryId": "3820-2697-4eb1-bd26"
+            },
+            {
+              "name": "Twin bolter",
+              "entryId": "6220-1e67-e18f-453c"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "e884-11fc-6414-c5b0"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2242,7 +2974,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "be51-7b38-4c83-8835"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2260,7 +2997,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "4cfe-f08f-4c3d-819e"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "c8a7-01ce-d1ae-cc41"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2319,7 +3065,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "2458-89c4-4174-8dea"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2400,7 +3151,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "7526-9d28-4f83-afef"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2440,6 +3196,10 @@
             {
               "name": "Legion Combi-weapons",
               "entryId": "9fd7-0bf3-4bec-9eb6"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "0c4f-6d86-4470-80c7"
             }
           ]
         }
@@ -2500,7 +3260,12 @@
           "cost": 45,
           "min": 2,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Heavy bolter",
+              "entryId": "2dba-2273-4436-9cd8"
+            }
+          ]
         },
         {
           "name": "Scimitar Chosen Champion",
@@ -2508,10 +3273,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "da05-296d-4afe-b458"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "1e60-bfc1-4461-892a"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "fe8f-9cb7-4ab6-87dd"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "b94c-3b2a-4978-a853"
+        }
+      ]
     },
     {
       "name": "Outrider Praetorian Command Squad",
@@ -2526,7 +3310,20 @@
           "cost": 40,
           "min": 2,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "f564-655e-4c06-a5b5"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "8aee-d7b5-44bf-a165"
+            },
+            {
+              "name": "Twin bolter",
+              "entryId": "e5a2-7b0f-4436-8776"
+            }
+          ]
         },
         {
           "name": "Outrider Chosen Champion",
@@ -2534,10 +3331,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "56c8-e9a6-4245-94c7"
+            },
+            {
+              "name": "Twin bolter",
+              "entryId": "e5a3-8246-4178-a97a"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "dc50-03f3-45b1-9345"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "a3d0-2c9b-4a85-be62"
+        }
+      ]
     },
     {
       "name": "Veteran Breacher Squad",
@@ -2565,10 +3381,25 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "4bbc-9515-190e-a8ed"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "f0d2-bb95-4719-ab78"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "f607-dbdc-4f75-9c91"
+        }
+      ]
     },
     {
       "name": "Veteran Heavy Support Squad",
@@ -2604,7 +3435,17 @@
           ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "4026-9e05-47bd-b049"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "b5f8-decf-4ce1-8015"
+        }
+      ]
     },
     {
       "name": "Tartaros Terminator Siege Squad",
@@ -2619,7 +3460,12 @@
           "cost": 30,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "642f-9063-4be5-bf9f"
+            }
+          ]
         },
         {
           "name": "Tartaros Terminator Sergeant",
@@ -2645,7 +3491,12 @@
           "cost": 35,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power fist",
+              "entryId": "593d-8020-a527-e22e"
+            }
+          ]
         },
         {
           "name": "Indomitus Terminator Sergeant",
@@ -2653,7 +3504,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "433b-4029-4c05-bdc4"
+            },
+            {
+              "name": "Power fist",
+              "entryId": "2661-6cc7-79eb-0b70"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2675,6 +3535,10 @@
             {
               "name": "Chainsword",
               "entryId": "0b4c-ae8d-bcbb-2965"
+            },
+            {
+              "name": "Two Bolt Pistols",
+              "entryId": "3452-3d79-4519-0228"
             }
           ]
         },
@@ -2684,10 +3548,33 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "a0e8-447a-4d85-93d1"
+            },
+            {
+              "name": "Two Bolt Pistols",
+              "entryId": "53e3-05a7-fe17-2022"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "e2bb-cde5-4156-845d"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "e45b-0de1-4639-9f14"
+        },
+        {
+          "name": "Rad grenades",
+          "entryId": "7196-c6c9-4f87-8954"
+        }
+      ]
     },
     {
       "name": "Destroyer Assault Squad",
@@ -2706,6 +3593,14 @@
             {
               "name": "Chainsword",
               "entryId": "f5f9-0cdb-b270-6338"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "ead4-430d-4330-9656"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "16d6-99fc-77ce-a7c6"
             }
           ]
         },
@@ -2715,10 +3610,33 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "9906-b6c5-4bbb-b314"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "c165-f9e8-4e21-ad71"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "0b00-c5d8-44f9-8ff1"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "1fb1-5843-4e4e-a254"
+        },
+        {
+          "name": "Rad grenades",
+          "entryId": "e1dd-401b-4cdd-9e51"
+        }
+      ]
     },
     {
       "name": "Castra Ferrum Dreadnought",
@@ -2733,7 +3651,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "bbb9-5268-8336-61cf"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2751,7 +3674,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Twin multi-melta",
+              "entryId": "5cf6-e097-46d8-add0"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2795,6 +3723,10 @@
             {
               "name": "Chainsword",
               "entryId": "a2b9-205d-45aa-beb6"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "fa8a-1b9c-4d21-a277"
             }
           ]
         }
@@ -2818,6 +3750,10 @@
             {
               "name": "Bolt pistol",
               "entryId": "9331-d09d-03a1-7712"
+            },
+            {
+              "name": "Bolter",
+              "entryId": "b9ba-2954-3dad-9d31"
             }
           ]
         },
@@ -2827,10 +3763,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "ace8-c87a-4627-adae"
+            },
+            {
+              "name": "Bolter",
+              "entryId": "480a-d811-c066-3c3d"
+            }
+          ]
         }
       ],
-      "source": "legiones-astartes"
+      "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "61b3-a6ce-4645-bbaa"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "ed43-7315-46f9-80d2"
+        }
+      ]
     },
     {
       "name": "Legion Basilisk",
@@ -2899,7 +3854,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Plasma bombard",
+              "entryId": "377e-2ef4-2b94-2836"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes",
@@ -2918,7 +3878,12 @@
           "cost": 60,
           "min": 1,
           "max": 5,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Paired Saturnine Disruption Fists",
+              "entryId": "c56d-2694-5a23-67fe"
+            }
+          ]
         },
         {
           "name": "Saturnine Chosen Champion",
@@ -2926,7 +3891,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Paired Saturnine Disruption Fists",
+              "entryId": "974f-c444-1eb2-47d1"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes"
@@ -2953,6 +3923,24 @@
         }
       ],
       "source": "legiones-astartes"
+    },
+    {
+      "name": "Spartan Prometheus Command Tank",
+      "entryId": "08d9-bd44-87bd-671e",
+      "role": "High Command",
+      "points": 420,
+      "baseCost": 420,
+      "models": [
+        {
+          "name": "Prometheus Command Tank",
+          "entryId": "9d25-3fd5-35a7-111c",
+          "cost": 0,
+          "min": 1,
+          "max": 1,
+          "defaultWargear": []
+        }
+      ],
+      "source": "legiones-astartes"
     }
   ],
   "alpha-legion": [
@@ -2972,7 +3960,29 @@
           "defaultWargear": []
         }
       ],
-      "source": "alpha-legion"
+      "source": "alpha-legion",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "9bf4-3678-a8ec-c0ba"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "fe28-4cb4-e800-f4a9"
+        },
+        {
+          "name": "Venom Sphere",
+          "entryId": "cf5c-26e5-2096-0d31"
+        },
+        {
+          "name": "Phosphex bombs",
+          "entryId": "c8b4-80f3-3f4a-f121"
+        },
+        {
+          "name": "Bolt pistol",
+          "entryId": "6f6d-5197-8a2a-db23"
+        }
+      ]
     },
     {
       "name": "Saboteur",
@@ -2987,10 +3997,41 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "9585-d652-cb93-9528"
+            }
+          ]
         }
       ],
-      "source": "alpha-legion"
+      "source": "alpha-legion",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "0530-1887-77c5-aeb2"
+        },
+        {
+          "name": "Power dagger",
+          "entryId": "de10-eeb9-6a14-0149"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "b438-560c-df0a-95b9"
+        },
+        {
+          "name": "Melta bombs",
+          "entryId": "90e5-4a56-3ea5-e2dd"
+        },
+        {
+          "name": "Venom Sphere",
+          "entryId": "c079-d627-bfb7-02d3"
+        },
+        {
+          "name": "Banestrike shotgun",
+          "entryId": "f23d-b39c-10c6-72fe"
+        }
+      ]
     },
     {
       "name": "Headhunter Kill Team",
@@ -3005,7 +4046,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power dagger",
+              "entryId": "50c8-5b2b-67c0-c92e"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "28d3-a2d6-4a96-a347"
+            }
+          ]
         },
         {
           "name": "Headhunter",
@@ -3016,7 +4066,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "alpha-legion"
+      "source": "alpha-legion",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "a4bf-bc01-f381-3c02"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "1905-7166-259b-d6ba"
+        }
+      ]
     },
     {
       "name": "Exodus",
@@ -3034,7 +4094,29 @@
           "defaultWargear": []
         }
       ],
-      "source": "alpha-legion"
+      "source": "alpha-legion",
+      "unitWargear": [
+        {
+          "name": "Bolt pistol",
+          "entryId": "c080-c287-3d43-6e15"
+        },
+        {
+          "name": "Power dagger",
+          "entryId": "57fa-8bad-613b-2373"
+        },
+        {
+          "name": "Venom Sphere",
+          "entryId": "8db4-03b9-389b-ae41"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "8ccc-3e0d-39a0-79b5"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "b6dc-94a2-635a-ca69"
+        }
+      ]
     },
     {
       "name": "Lernaean Terminator Squad",
@@ -3049,7 +4131,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power axe",
+              "entryId": "d7a4-8e70-127b-9a32"
+            },
+            {
+              "name": "Volkite charger",
+              "entryId": "5e2f-ea0e-8868-c51b"
+            }
+          ]
         },
         {
           "name": "Lernaean",
@@ -3057,7 +4148,16 @@
           "cost": 45,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power axe",
+              "entryId": "247b-993b-35b8-ae0f"
+            },
+            {
+              "name": "Volkite charger",
+              "entryId": "b88d-7384-f50f-65e9"
+            }
+          ]
         }
       ],
       "source": "alpha-legion"
@@ -3078,7 +4178,21 @@
           "defaultWargear": []
         }
       ],
-      "source": "alpha-legion"
+      "source": "alpha-legion",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "8076-741b-e538-dcc8"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "3050-c471-fc2f-89bc"
+        },
+        {
+          "name": "Venom Sphere",
+          "entryId": "e7a6-f52d-f700-dde9"
+        }
+      ]
     },
     {
       "name": "Autilon Skorr",
@@ -3096,7 +4210,21 @@
           "defaultWargear": []
         }
       ],
-      "source": "alpha-legion"
+      "source": "alpha-legion",
+      "unitWargear": [
+        {
+          "name": "Bolt pistol",
+          "entryId": "84ff-2c3d-3ee5-f7dc"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "de18-2faa-555b-8074"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "9701-6d57-ca77-81e4"
+        }
+      ]
     },
     {
       "name": "Effrit Disruption Cadre",
@@ -3122,7 +4250,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "alpha-legion"
+      "source": "alpha-legion",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "f7e5-b1a7-952a-5139"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "e05f-bf6b-3cc3-81f2"
+        }
+      ]
     },
     {
       "name": "Inductii Squad",
@@ -3157,7 +4295,12 @@
           "cost": 485,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "The Blade Encarmine",
+              "entryId": "7ea1-4f9b-6ce1-9371"
+            }
+          ]
         }
       ],
       "source": "blood-angels"
@@ -3231,7 +4374,12 @@
           "cost": 200,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Two Heavy Flamers",
+              "entryId": "278c-b3ac-377f-7a6e"
+            }
+          ]
         }
       ],
       "source": "blood-angels"
@@ -3249,7 +4397,12 @@
           "cost": 5,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power Sword &amp; Coriolis Pattern Power Shield",
+              "entryId": "6417-2fa9-6c91-a466"
+            }
+          ]
         },
         {
           "name": "Crimson Paladin",
@@ -3275,7 +4428,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Falling-star Power Spear",
+              "entryId": "1b27-055a-6a66-9a64"
+            }
+          ]
         },
         {
           "name": "Dawnbreaker",
@@ -3283,7 +4441,12 @@
           "cost": 25,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Falling-star Power Spear",
+              "entryId": "0139-5bbd-8581-10c9"
+            }
+          ]
         }
       ],
       "source": "blood-angels"
@@ -3301,7 +4464,12 @@
           "cost": 20,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite serpenta",
+              "entryId": "dc57-bf10-bfc4-3f09"
+            }
+          ]
         },
         {
           "name": "Arch-Erelim",
@@ -3309,10 +4477,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite serpenta",
+              "entryId": "f365-68e2-511a-c93e"
+            }
+          ]
         }
       ],
-      "source": "blood-angels"
+      "source": "blood-angels",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "efc4-9eb8-d1ff-7291"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "5fdd-a03f-34e3-909d"
+        },
+        {
+          "name": "Rad grenades",
+          "entryId": "626c-6cdc-e97d-39aa"
+        }
+      ]
     },
     {
       "name": "Sanguinary Guard",
@@ -3339,7 +4526,17 @@
           ]
         }
       ],
-      "source": "blood-angels"
+      "source": "blood-angels",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "eca3-9b8d-4637-9d7c"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "e446-f693-4ccd-bef1"
+        }
+      ]
     },
     {
       "name": "Ofanim Court",
@@ -3390,7 +4587,16 @@
           "cost": 9,
           "min": 10,
           "max": 20,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "a2a4-a4b6-903f-0520"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "52fa-b40b-18d5-2e06"
+            }
+          ]
         }
       ],
       "source": "blood-angels"
@@ -3413,7 +4619,25 @@
           "defaultWargear": []
         }
       ],
-      "source": "dark-angels"
+      "source": "dark-angels",
+      "unitWargear": [
+        {
+          "name": "Bolter",
+          "entryId": "7797-4238-4aae-543c"
+        },
+        {
+          "name": "Bolt pistol",
+          "entryId": "f5d8-0940-5388-101c"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "d547-a448-103f-85d8"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "e9d9-0a33-3a8a-2843"
+        }
+      ]
     },
     {
       "name": "Deathwing Companion Detachment",
@@ -3428,7 +4652,16 @@
           "cost": 30,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "ef63-f433-6837-1c92"
+            },
+            {
+              "name": "Calibanite Warblade",
+              "entryId": "0924-0a8e-3238-1e77"
+            }
+          ]
         },
         {
           "name": "Deathwing Oathbearer",
@@ -3436,10 +4669,29 @@
           "cost": 10,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Calibanite Warblade",
+              "entryId": "1ea2-77a4-69e3-a645"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "59a8-5580-149e-ddb5"
+            }
+          ]
         }
       ],
-      "source": "dark-angels"
+      "source": "dark-angels",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "19d6-8b72-a7a2-aeed"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "8e0f-fb73-9e8b-8e31"
+        }
+      ]
     },
     {
       "name": "Dreadwing Interemptor Squad",
@@ -3462,10 +4714,33 @@
           "cost": 20,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Plasma burner",
+              "entryId": "f33e-391d-8370-7bae"
+            }
+          ]
         }
       ],
-      "source": "dark-angels"
+      "source": "dark-angels",
+      "unitWargear": [
+        {
+          "name": "Bolt pistol",
+          "entryId": "9450-39e7-dbee-41d1"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "2907-a7ad-0f2c-cc89"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "b8fd-577f-dd18-6bd5"
+        },
+        {
+          "name": "Rad grenades",
+          "entryId": "9a77-6537-f547-b642"
+        }
+      ]
     },
     {
       "name": "Inner Circle Knights Cenobium",
@@ -3506,10 +4781,25 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "The Lion Sword",
+              "entryId": "1e6b-0409-5021-5000"
+            }
+          ]
         }
       ],
-      "source": "dark-angels"
+      "source": "dark-angels",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "0663-009e-3b74-7d3a"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "c951-cf19-6b8c-913a"
+        }
+      ]
     },
     {
       "name": "Marduk Sedras",
@@ -3527,7 +4817,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "dark-angels"
+      "source": "dark-angels",
+      "unitWargear": [
+        {
+          "name": "Phosphex bombs",
+          "entryId": "00b1-d389-28be-b163"
+        },
+        {
+          "name": "Plasma burner",
+          "entryId": "5884-db2a-3d84-c50a"
+        }
+      ]
     },
     {
       "name": "Cataphractii Terminator Deathwing Companions",
@@ -3641,7 +4941,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "dark-angels"
+      "source": "dark-angels",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "bb5b-b147-2134-dc14"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "74f6-fc86-a1b4-215a"
+        }
+      ]
     },
     {
       "name": "Inductii Squad",
@@ -3679,7 +4989,21 @@
           "defaultWargear": []
         }
       ],
-      "source": "death-guard"
+      "source": "death-guard",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "9aa9-622b-facd-14b8"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "1ac0-e332-bdc9-e5e3"
+        },
+        {
+          "name": "Phosphex bombs",
+          "entryId": "27b2-52a0-e045-1f31"
+        }
+      ]
     },
     {
       "name": "Calas Typhon",
@@ -3735,7 +5059,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Assault grenade launcher",
+              "entryId": "fa74-989c-1dfd-b717"
+            },
+            {
+              "name": "Power fist",
+              "entryId": "0ff7-c3b6-a57a-07b0"
+            }
+          ]
         },
         {
           "name": "Grave Warden",
@@ -3743,7 +5076,16 @@
           "cost": 40,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Assault grenade launcher",
+              "entryId": "7e5b-d26f-82ef-775f"
+            },
+            {
+              "name": "Power fist",
+              "entryId": "4903-6218-39e2-023c"
+            }
+          ]
         }
       ],
       "source": "death-guard"
@@ -3769,10 +5111,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "555a-4a1f-4bfa-ae64"
+            }
+          ]
         }
       ],
-      "source": "death-guard"
+      "source": "death-guard",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "b3f3-19ef-4208-acd4"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "ac54-6432-48bb-97f3"
+        },
+        {
+          "name": "Rad grenades",
+          "entryId": "12b9-9d71-47d4-a19c"
+        }
+      ]
     },
     {
       "name": "Inductii Squad",
@@ -3787,7 +5148,12 @@
           "cost": 9,
           "min": 10,
           "max": 20,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "8dc8-7f7e-455f-b219"
+            }
+          ]
         }
       ],
       "source": "death-guard"
@@ -3924,7 +5290,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Palatine blade",
+              "entryId": "057d-bd04-c594-4c0f"
+            }
+          ]
         },
         {
           "name": "Palatine Warrior",
@@ -3932,10 +5303,25 @@
           "cost": 28,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Palatine blade",
+              "entryId": "6b8d-6df2-b0fa-8350"
+            }
+          ]
         }
       ],
-      "source": "emperors-children"
+      "source": "emperors-children",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "e3e3-5e8d-0e09-c000"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "56d6-1d86-c89f-7773"
+        }
+      ]
     },
     {
       "name": "Kakophoni Squad",
@@ -3961,7 +5347,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "emperors-children"
+      "source": "emperors-children",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "32f5-ab38-b1c9-b135"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "508a-0194-19e8-5106"
+        }
+      ]
     },
     {
       "name": "Palatine Blade Aquilae Squad",
@@ -3976,7 +5372,12 @@
           "cost": 33,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Palatine blade",
+              "entryId": "c8a9-27e4-e2f8-a03b"
+            }
+          ]
         },
         {
           "name": "Palatine Prefector with Jump Pack",
@@ -3984,10 +5385,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Palatine blade",
+              "entryId": "fae2-aa37-f91c-6f67"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "20f0-b37b-45a4-85e6"
+            }
+          ]
         }
       ],
-      "source": "emperors-children"
+      "source": "emperors-children",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "e51f-dd2d-4c04-8700"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "acc5-d7cb-47d7-b2fb"
+        }
+      ]
     },
     {
       "name": "Rylanor The Unyielding",
@@ -4031,7 +5451,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "emperors-children"
+      "source": "emperors-children",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "3247-cc41-4ad3-8296"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "4978-b231-45e6-a2ba"
+        }
+      ]
     },
     {
       "name": "Inductii Squad",
@@ -4046,7 +5476,16 @@
           "cost": 9,
           "min": 10,
           "max": 20,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "248f-f32e-4de6-8e6f"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "57dc-98d5-4c98-8ea8"
+            }
+          ]
         }
       ],
       "source": "emperors-children"
@@ -4075,8 +5514,8 @@
       "name": "Rogal Dorn",
       "entryId": "2306-2636-3ed8-db90",
       "role": "Warlord",
-      "points": 415,
-      "baseCost": 415,
+      "points": 435,
+      "baseCost": 435,
       "models": [
         {
           "name": "Rogal Dorn",
@@ -4120,7 +5559,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power axe",
+              "entryId": "7e32-6cec-e103-8d52"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "6267-2df1-06f6-27f5"
+            }
+          ]
         },
         {
           "name": "Phalanx Warder ",
@@ -4131,7 +5579,21 @@
           "defaultWargear": []
         }
       ],
-      "source": "imperial-fists"
+      "source": "imperial-fists",
+      "unitWargear": [
+        {
+          "name": "Krak grenades",
+          "entryId": "e32b-a5a6-983e-3d53"
+        },
+        {
+          "name": "Boarding shield",
+          "entryId": "0de7-328e-9433-2393"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "1c8b-8e97-4aba-e14b"
+        }
+      ]
     },
     {
       "name": "Camba Diaz",
@@ -4195,7 +5657,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "imperial-fists"
+      "source": "imperial-fists",
+      "unitWargear": [
+        {
+          "name": "Krak grenades",
+          "entryId": "95b6-40a9-3808-5c64"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "90c8-3d2e-cddc-bbf4"
+        }
+      ]
     },
     {
       "name": "Fafnir Rann",
@@ -4272,7 +5744,12 @@
           "cost": 9,
           "min": 10,
           "max": 20,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "1340-231d-4509-81bc"
+            }
+          ]
         }
       ],
       "source": "imperial-fists"
@@ -4310,10 +5787,37 @@
           "cost": 30,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite charger",
+              "entryId": "1e07-6855-1edf-0b78"
+            },
+            {
+              "name": "Artificer Power Axe",
+              "entryId": "45c7-f237-6dc1-ec15"
+            }
+          ]
         }
       ],
-      "source": "iron-hands"
+      "source": "iron-hands",
+      "unitWargear": [
+        {
+          "name": "Lord of Automata",
+          "entryId": "0510-31ec-43df-2947"
+        },
+        {
+          "name": "Servo-arm",
+          "entryId": "f107-3422-b5b3-382a"
+        },
+        {
+          "name": "Augury scanner",
+          "entryId": "2dd4-cd87-6f9d-22eb"
+        },
+        {
+          "name": "Cortex controller",
+          "entryId": "a09a-1486-d8fb-7c7f"
+        }
+      ]
     },
     {
       "name": "Medusan Immortals Squad",
@@ -4328,7 +5832,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "1e85-deea-50fe-22a4"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "bde9-6804-aa2b-edc7"
+            }
+          ]
         },
         {
           "name": "Immortal",
@@ -4336,10 +5849,21 @@
           "cost": 15,
           "min": 4,
           "max": 19,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "dce1-5479-53fe-6f5e"
+            }
+          ]
         }
       ],
-      "source": "iron-hands"
+      "source": "iron-hands",
+      "unitWargear": [
+        {
+          "name": "Boarding shield",
+          "entryId": "1612-6d39-de01-fec0"
+        }
+      ]
     },
     {
       "name": "Shadrak Meduson",
@@ -4357,7 +5881,21 @@
           "defaultWargear": []
         }
       ],
-      "source": "iron-hands"
+      "source": "iron-hands",
+      "unitWargear": [
+        {
+          "name": "Servo-arm",
+          "entryId": "3d3d-8c07-41e6-8002"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "d22d-9c67-1203-127f"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "74b7-fafd-fb8a-3fea"
+        }
+      ]
     },
     {
       "name": "Gorgon Terminator Squad",
@@ -4372,7 +5910,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "7881-face-4b30-63df"
+            }
+          ]
         },
         {
           "name": "Gorgon Terminator",
@@ -4380,7 +5923,16 @@
           "cost": 35,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Artificer Power Axe",
+              "entryId": "0ca5-5726-fe15-2ba8"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "1273-7e9e-b70b-534f"
+            }
+          ]
         }
       ],
       "source": "iron-hands"
@@ -4398,7 +5950,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "b525-121a-4f92-bb84"
+            },
+            {
+              "name": "Bolter",
+              "entryId": "5ccb-cf82-f684-86db"
+            }
+          ]
         }
       ],
       "source": "iron-hands"
@@ -4416,7 +5977,12 @@
           "cost": 50,
           "min": 2,
           "max": 4,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "9b76-d98c-c220-7e34"
+            }
+          ]
         },
         {
           "name": "Augmentor",
@@ -4424,7 +5990,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "d460-2382-41b0-8b04"
+            }
+          ]
         }
       ],
       "source": "iron-hands"
@@ -4465,7 +6036,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "iron-warriors"
+      "source": "iron-warriors",
+      "unitWargear": [
+        {
+          "name": "Cognis-signum",
+          "entryId": "5a30-22aa-d1c3-25d5"
+        },
+        {
+          "name": "Cortex controller",
+          "entryId": "ed9e-30d6-6e79-9d12"
+        }
+      ]
     },
     {
       "name": "Warsmith",
@@ -4483,7 +6064,29 @@
           "defaultWargear": []
         }
       ],
-      "source": "iron-warriors"
+      "source": "iron-warriors",
+      "unitWargear": [
+        {
+          "name": "Servo-arm",
+          "entryId": "b687-786d-fa58-c462"
+        },
+        {
+          "name": "Graviton crusher",
+          "entryId": "9e44-f7ce-20bd-eefd"
+        },
+        {
+          "name": "Cortex controller",
+          "entryId": "3b5e-982e-2ffd-66a6"
+        },
+        {
+          "name": "Combi-grav",
+          "entryId": "0136-d272-660b-62d7"
+        },
+        {
+          "name": "Cognis-signum",
+          "entryId": "a170-ffee-a8f1-0ff7"
+        }
+      ]
     },
     {
       "name": "Tyrant Siege Terminator Squad",
@@ -4506,6 +6109,14 @@
             {
               "name": "Chainfist",
               "entryId": "76f6-e4b6-24bb-6337"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "500e-e2d7-b1e0-4860"
+            },
+            {
+              "name": "Power fist",
+              "entryId": "c889-5170-3794-afc8"
             }
           ]
         },
@@ -4545,7 +6156,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "iron-warriors"
+      "source": "iron-warriors",
+      "unitWargear": [
+        {
+          "name": "Graviton crusher",
+          "entryId": "c6e6-6c10-b763-26d8"
+        }
+      ]
     },
     {
       "name": "Warsmith In Artificer Armour",
@@ -4560,7 +6177,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "abf9-2cfd-4f69-a26d"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "38b9-077f-58a6-12f1"
+            }
+          ]
         }
       ],
       "source": "iron-warriors"
@@ -4600,6 +6226,10 @@
             {
               "name": "Combi-bolter",
               "entryId": "ac78-9a43-bb1f-fd9b"
+            },
+            {
+              "name": "Thunder hammer",
+              "entryId": "e093-4187-4fee-8794"
             }
           ]
         }
@@ -4627,10 +6257,25 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Shrapnel cannon",
+              "entryId": "edee-c547-4d58-b851"
+            }
+          ]
         }
       ],
-      "source": "iron-warriors"
+      "source": "iron-warriors",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "ead0-c211-47b0-80ec"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "1fdd-0794-4b6c-b3ee"
+        }
+      ]
     },
     {
       "name": "The Tormentor",
@@ -4663,7 +6308,16 @@
           "cost": 9,
           "min": 10,
           "max": 20,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "74d3-fd21-4cd5-86d4"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "581a-d188-4918-80ae"
+            }
+          ]
         }
       ],
       "source": "iron-warriors"
@@ -4701,7 +6355,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainblade",
+              "entryId": "a6e7-cc66-4096-3e2b"
+            }
+          ]
         },
         {
           "name": "Contekar",
@@ -4709,7 +6368,12 @@
           "cost": 40,
           "min": 4,
           "max": 14,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite cavitor",
+              "entryId": "1eaa-8926-77c2-a4d3"
+            }
+          ]
         }
       ],
       "source": "night-lords"
@@ -4744,11 +6408,25 @@
             {
               "name": "Bolt pistol",
               "entryId": "018c-4e6d-9eb7-710a"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "5b46-66e9-fa3a-61a0"
             }
           ]
         }
       ],
-      "source": "night-lords"
+      "source": "night-lords",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "c233-47bd-46b3-5754"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "8c10-923b-361d-f30b"
+        }
+      ]
     },
     {
       "name": "Terror Squad",
@@ -4763,7 +6441,12 @@
           "cost": 5,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "e845-4039-97b6-5357"
+            }
+          ]
         },
         {
           "name": "Executioner",
@@ -4771,10 +6454,29 @@
           "cost": 18,
           "min": 4,
           "max": 19,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "2603-56d0-6187-0b52"
+            }
+          ]
         }
       ],
-      "source": "night-lords"
+      "source": "night-lords",
+      "unitWargear": [
+        {
+          "name": "Bolt pistol",
+          "entryId": "ef89-9725-5f50-63b7"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "2c3f-f75d-cee5-5542"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "f92d-9221-c22c-2509"
+        }
+      ]
     },
     {
       "name": "Sevatar",
@@ -4792,7 +6494,21 @@
           "defaultWargear": []
         }
       ],
-      "source": "night-lords"
+      "source": "night-lords",
+      "unitWargear": [
+        {
+          "name": "Bolt pistol",
+          "entryId": "a6ce-dc34-64c1-13cb"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "b150-be76-801d-7d0e"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "f028-c5cf-053b-9d75"
+        }
+      ]
     },
     {
       "name": "Atramentar Flay-clade",
@@ -4899,7 +6615,12 @@
           "cost": 30,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Nemesis bolter",
+              "entryId": "657c-9bb7-89b4-ff29"
+            }
+          ]
         },
         {
           "name": "Mor Deythan Shade",
@@ -4910,7 +6631,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "raven-guard"
+      "source": "raven-guard",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "a954-5e65-ae26-f19d"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "496d-9735-8d96-f796"
+        }
+      ]
     },
     {
       "name": "Dark Fury Squad",
@@ -4951,7 +6682,12 @@
           "cost": 40,
           "min": 4,
           "max": 14,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "1332-d41c-44cf-b702"
+            }
+          ]
         },
         {
           "name": "Deliverer Chieftain",
@@ -4959,7 +6695,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "c38a-8234-4c29-9ef6"
+            }
+          ]
         }
       ],
       "source": "raven-guard"
@@ -5052,7 +6793,33 @@
           "defaultWargear": []
         }
       ],
-      "source": "salamanders"
+      "source": "salamanders",
+      "unitWargear": [
+        {
+          "name": "Pyroclast flame projector",
+          "entryId": "7e53-6eea-955a-37a6"
+        },
+        {
+          "name": "Drakenscale",
+          "entryId": "1be1-523d-020a-57f9"
+        },
+        {
+          "name": "Bolt pistol",
+          "entryId": "4c03-80cf-14f2-aec5"
+        },
+        {
+          "name": "Melta bombs",
+          "entryId": "4c80-8ded-f3d3-cf60"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "7677-6d82-4c40-1c59"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "0568-da89-2030-992e"
+        }
+      ]
     },
     {
       "name": "Cassian Dracos Reborn",
@@ -5085,7 +6852,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "2738-5ed6-b0df-3406"
+            }
+          ]
         },
         {
           "name": "Adherent",
@@ -5096,7 +6868,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "salamanders"
+      "source": "salamanders",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "1250-23ea-5dc7-7f62"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "cddf-1e23-8431-68ef"
+        }
+      ]
     },
     {
       "name": "Sanctifier Squad",
@@ -5122,7 +6904,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "salamanders"
+      "source": "salamanders",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "6865-b209-5da4-d35d"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "d868-1af7-c437-8693"
+        }
+      ]
     },
     {
       "name": "Inductii Squad",
@@ -5149,6 +6941,14 @@
             {
               "name": "Legion Sergeant Melee Weapons",
               "entryId": "1996-05cb-48d7-998f"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "0326-8c79-48c6-bdde"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "12b4-3f04-420e-810f"
             }
           ]
         }
@@ -5206,10 +7006,25 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "2e26-9713-401a-f820"
+            }
+          ]
         }
       ],
-      "source": "sons-of-horus"
+      "source": "sons-of-horus",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "33c8-56e5-70bc-b502"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "1455-3f3d-ecba-a0b1"
+        }
+      ]
     },
     {
       "name": "Vheren Ashurhaddon",
@@ -5227,7 +7042,21 @@
           "defaultWargear": []
         }
       ],
-      "source": "sons-of-horus"
+      "source": "sons-of-horus",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "ec12-df4e-8edb-64af"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "64c6-3e31-eeed-0146"
+        },
+        {
+          "name": "Vexilla",
+          "entryId": "9314-6542-beae-1926"
+        }
+      ]
     },
     {
       "name": "Horus Ascended",
@@ -5260,7 +7089,16 @@
           "cost": 50,
           "min": 5,
           "max": 10,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Banestrike combi-bolter",
+              "entryId": "964e-79f0-50be-8682"
+            },
+            {
+              "name": "Power sword",
+              "entryId": "5a34-a05f-e737-58ec"
+            }
+          ]
         }
       ],
       "source": "sons-of-horus"
@@ -5281,7 +7119,25 @@
           "defaultWargear": []
         }
       ],
-      "source": "sons-of-horus"
+      "source": "sons-of-horus",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "a4b9-8239-91cc-97d1"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "e962-5fcf-fa6e-0b49"
+        },
+        {
+          "name": "Banestrike bolter",
+          "entryId": "bc42-7b8f-d7dd-6186"
+        },
+        {
+          "name": "Bolt pistol",
+          "entryId": "92ac-3b53-a93d-8335"
+        }
+      ]
     },
     {
       "name": "Garviel Loken",
@@ -5299,7 +7155,25 @@
           "defaultWargear": []
         }
       ],
-      "source": "sons-of-horus"
+      "source": "sons-of-horus",
+      "unitWargear": [
+        {
+          "name": "Bolt pistol",
+          "entryId": "7540-a159-265a-7d42"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "c8b5-3dc1-1f16-939a"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "06f2-4fc8-c23b-5b69"
+        },
+        {
+          "name": "Paragon blade",
+          "entryId": "f786-c724-f73e-7fb7"
+        }
+      ]
     },
     {
       "name": "Tybalt Marr",
@@ -5317,7 +7191,25 @@
           "defaultWargear": []
         }
       ],
-      "source": "sons-of-horus"
+      "source": "sons-of-horus",
+      "unitWargear": [
+        {
+          "name": "Banestrike bolter",
+          "entryId": "2135-86af-8945-6bc7"
+        },
+        {
+          "name": "Bolt pistol",
+          "entryId": "b8b0-ba31-4f42-009e"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "945d-b382-43a4-7ff3"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "461e-7185-7f2d-60da"
+        }
+      ]
     },
     {
       "name": "Reaver Attack Squad",
@@ -5336,6 +7228,10 @@
             {
               "name": "Chainaxe",
               "entryId": "e3af-081b-ea29-d8d6"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "b917-74fd-840f-e708"
             }
           ]
         },
@@ -5357,7 +7253,17 @@
           ]
         }
       ],
-      "source": "sons-of-horus"
+      "source": "sons-of-horus",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "23ff-780d-d0a0-6542"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "6343-9370-5db1-2c73"
+        }
+      ]
     },
     {
       "name": "Maloghurst the Twisted",
@@ -5375,7 +7281,29 @@
           "defaultWargear": []
         }
       ],
-      "source": "sons-of-horus"
+      "source": "sons-of-horus",
+      "unitWargear": [
+        {
+          "name": "Banestrike bolter",
+          "entryId": "847a-b45a-6019-b584"
+        },
+        {
+          "name": "Bolt pistol",
+          "entryId": "328d-984a-9f85-10ac"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "7835-7286-daaf-e867"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "92ec-5874-00c8-32e3"
+        },
+        {
+          "name": "Power sword",
+          "entryId": "b8c2-3610-0484-f750"
+        }
+      ]
     },
     {
       "name": "Reaver Aggressor Squad",
@@ -5452,7 +7380,12 @@
           "cost": 25,
           "min": 5,
           "max": 10,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "3eeb-8494-3959-8f25"
+            }
+          ]
         }
       ],
       "source": "sons-of-horus"
@@ -5470,7 +7403,16 @@
           "cost": 9,
           "min": 10,
           "max": 20,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "23a7-fe08-4e8e-8b2e"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "3f26-3c8a-465d-9464"
+            }
+          ]
         }
       ],
       "source": "sons-of-horus"
@@ -5508,10 +7450,29 @@
           "cost": 30,
           "min": 5,
           "max": 10,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power axe",
+              "entryId": "8ffe-0ed3-44a1-1bf4"
+            }
+          ]
         }
       ],
-      "source": "space-wolves"
+      "source": "space-wolves",
+      "unitWargear": [
+        {
+          "name": "Bolt pistol",
+          "entryId": "195a-174b-6ed2-de71"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "7b2a-ff06-9eb7-6e96"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "bafc-0571-7dba-5725"
+        }
+      ]
     },
     {
       "name": "Geigor Fell-Hand",
@@ -5530,6 +7491,24 @@
         }
       ],
       "source": "space-wolves",
+      "unitWargear": [
+        {
+          "name": "Bolt pistol",
+          "entryId": "3535-2d2b-68e6-ce4a"
+        },
+        {
+          "name": "Bolter",
+          "entryId": "407a-88e1-248a-4228"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "6bf5-de0f-7997-b084"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "052f-86da-15d0-e6c1"
+        }
+      ],
       "officerOfTheLine": 2
     },
     {
@@ -5545,7 +7524,20 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Fenrisian axe",
+              "entryId": "921d-b843-886f-41e8"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "0e26-8941-40d3-a1b0"
+            },
+            {
+              "name": "Combat shield",
+              "entryId": "8019-e3c1-29f1-477b"
+            }
+          ]
         },
         {
           "name": "Grey Slayer",
@@ -5553,10 +7545,33 @@
           "cost": 12,
           "min": 9,
           "max": 19,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combat shield",
+              "entryId": "b494-4b3b-fc7a-422f"
+            },
+            {
+              "name": "Fenrisian axe",
+              "entryId": "8938-d1f8-9c71-5ae5"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "cef5-7c6d-507e-a0ed"
+            }
+          ]
         }
       ],
-      "source": "space-wolves"
+      "source": "space-wolves",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "f9c0-5047-e29e-ca4b"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "269d-19eb-653b-7fba"
+        }
+      ]
     },
     {
       "name": "Hvarl Red-Blade",
@@ -5574,7 +7589,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "space-wolves"
+      "source": "space-wolves",
+      "unitWargear": [
+        {
+          "name": "Heavy bolter",
+          "entryId": "2a84-9208-ec4e-cf3c"
+        }
+      ]
     },
     {
       "name": "Varagyr Wolf Guard Terminators",
@@ -5589,7 +7610,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Frost axe",
+              "entryId": "47cf-57fa-bcf1-f52d"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "7d28-5a04-f005-2faa"
+            }
+          ]
         },
         {
           "name": "Varagyr",
@@ -5597,7 +7627,16 @@
           "cost": 45,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Frost axe",
+              "entryId": "5e96-2d69-2f39-ad7b"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "fa99-c310-dad9-13cb"
+            }
+          ]
         }
       ],
       "source": "space-wolves"
@@ -5641,10 +7680,33 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "9a70-4511-6e8e-4dab"
+            }
+          ]
         }
       ],
-      "source": "space-wolves"
+      "source": "space-wolves",
+      "unitWargear": [
+        {
+          "name": "Force staff",
+          "entryId": "1452-9cd2-598e-4702"
+        },
+        {
+          "name": "Frost axe",
+          "entryId": "6472-821b-ffa7-7b90"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "d61a-5ced-1e04-1ff3"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "84ec-a2cd-48cc-e000"
+        }
+      ]
     },
     {
       "name": "Caster Of Runes In Terminator Armour",
@@ -5695,7 +7757,12 @@
           "cost": 17,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Hand flamer",
+              "entryId": "7733-752c-9219-58e7"
+            }
+          ]
         },
         {
           "name": "Hunt-master",
@@ -5703,7 +7770,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Hand flamer",
+              "entryId": "681f-fb3b-408c-a7bb"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "5683-548e-4b4c-b4f4"
+            }
+          ]
         }
       ],
       "source": "space-wolves"
@@ -5757,7 +7833,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Jump Pack",
+              "entryId": "1535-8135-b64f-f516"
+            }
+          ]
         }
       ],
       "source": "space-wolves"
@@ -5811,7 +7892,12 @@
           "cost": 9,
           "min": 10,
           "max": 20,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "3f5b-1c02-429b-9280"
+            }
+          ]
         }
       ],
       "source": "space-wolves"
@@ -5903,7 +7989,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "4171-e7f2-dab4-13c8"
+            },
+            {
+              "name": "Achea pattern force sword",
+              "entryId": "0eaa-4381-ddb0-1cac"
+            }
+          ]
         },
         {
           "name": "Sekhmet",
@@ -5911,7 +8006,16 @@
           "cost": 45,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "3b30-6663-dcc5-a413"
+            },
+            {
+              "name": "Achea pattern force sword",
+              "entryId": "2151-1c9f-a4d2-3f00"
+            }
+          ]
         }
       ],
       "source": "thousand-sons"
@@ -5937,10 +8041,25 @@
           "cost": 24,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "497d-8cba-0a70-a080"
+            }
+          ]
         }
       ],
-      "source": "thousand-sons"
+      "source": "thousand-sons",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "10da-3443-fb32-03d9"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "36fa-8880-42b8-5c62"
+        }
+      ]
     },
     {
       "name": "Contemptor-Osiron Dreadnought",
@@ -5999,10 +8118,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "ce06-5c71-44ef-8e3d"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "2fc9-960e-4281-a4fb"
+            }
+          ]
         }
       ],
-      "source": "thousand-sons"
+      "source": "thousand-sons",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "f9fc-ea32-45cc-a070"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "3f92-b861-4e0a-a078"
+        }
+      ]
     },
     {
       "name": "Ammitara Occult Intercession Cabal",
@@ -6028,7 +8166,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "thousand-sons"
+      "source": "thousand-sons",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "2d47-8713-4e9f-8889"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "4872-b627-4ee7-b41d"
+        }
+      ]
     },
     {
       "name": "Inductii Squad",
@@ -6043,7 +8191,12 @@
           "cost": 9,
           "min": 10,
           "max": 20,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "68e4-6a8a-4faa-b7b5"
+            }
+          ]
         }
       ],
       "source": "thousand-sons"
@@ -6066,7 +8219,29 @@
           "defaultWargear": []
         }
       ],
-      "source": "ultramarines"
+      "source": "ultramarines",
+      "unitWargear": [
+        {
+          "name": "The Arbitrator",
+          "entryId": "3972-799f-b51a-2582"
+        },
+        {
+          "name": "The Gladius Incandor",
+          "entryId": "e807-49f3-d56d-e310"
+        },
+        {
+          "name": "The Hand of Dominion",
+          "entryId": "4e25-d791-996a-54e0"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "c563-df53-09ae-297a"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "a7fe-0ab7-3cec-1af6"
+        }
+      ]
     },
     {
       "name": "Remus Ventanus",
@@ -6085,6 +8260,36 @@
         }
       ],
       "source": "ultramarines",
+      "unitWargear": [
+        {
+          "name": "Phaeton",
+          "entryId": "30ad-ea45-5ce5-ffaf"
+        },
+        {
+          "name": "Icon of Calth",
+          "entryId": "5734-1abf-c514-9bbc"
+        },
+        {
+          "name": "Vox-interlink",
+          "entryId": "e9c7-b2e0-7f39-7c51"
+        },
+        {
+          "name": "Bolt pistol",
+          "entryId": "3d70-f1eb-ffd4-4f9d"
+        },
+        {
+          "name": "Melta bombs",
+          "entryId": "408d-bc63-cd76-1115"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "790e-cc4a-260b-481b"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "42dd-1b01-e6c8-41ef"
+        }
+      ],
       "officerOfTheLine": 2
     },
     {
@@ -6100,7 +8305,16 @@
           "cost": 30,
           "min": 5,
           "max": 10,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "8ee1-9e0f-7848-f9f9"
+            },
+            {
+              "name": "Legatine axe",
+              "entryId": "8f43-ed4d-7898-1a79"
+            }
+          ]
         }
       ],
       "source": "ultramarines"
@@ -6118,7 +8332,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power sword",
+              "entryId": "59a0-004d-96e5-7473"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "845c-0643-12ab-ac32"
+            }
+          ]
         },
         {
           "name": "Praetorian",
@@ -6129,7 +8352,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "ultramarines"
+      "source": "ultramarines",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "84fb-a48d-91c6-9adc"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "dd81-1147-64f5-a208"
+        }
+      ]
     },
     {
       "name": "Locutarus Storm Squad",
@@ -6152,10 +8385,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Argean power sword",
+              "entryId": "80ac-522b-d373-6250"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "8c3c-dde3-4816-9065"
+            }
+          ]
         }
       ],
-      "source": "ultramarines"
+      "source": "ultramarines",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "43fc-94fa-4bdf-a921"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "2a65-8f10-498d-a74f"
+        }
+      ]
     },
     {
       "name": "Fulmentarus Terminator Squad",
@@ -6170,7 +8422,12 @@
           "cost": 55,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Peritarch Targeter",
+              "entryId": "5bed-e020-4fc0-7ada"
+            }
+          ]
         },
         {
           "name": "Fulmentarus Sergeant",
@@ -6178,7 +8435,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Peritarch Targeter",
+              "entryId": "7c89-20ab-464b-0b31"
+            }
+          ]
         }
       ],
       "source": "ultramarines"
@@ -6204,10 +8466,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "7dc8-2e87-4de5-a85a"
+            }
+          ]
         }
       ],
-      "source": "ultramarines"
+      "source": "ultramarines",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "b59d-4055-4bed-b1bd"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "1a59-63eb-46fa-936e"
+        },
+        {
+          "name": "Rad grenades",
+          "entryId": "04df-825f-4f40-bb82"
+        }
+      ]
     },
     {
       "name": "Honoured Telemechrus",
@@ -6248,7 +8529,16 @@
           "cost": 24,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolter",
+              "entryId": "a619-8bbd-4246-bffc"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "5b84-2eae-a2c8-c9e4"
+            }
+          ]
         }
       ],
       "source": "ultramarines"
@@ -6304,7 +8594,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "787f-d535-2b74-0515"
+            }
+          ]
         }
       ],
       "source": "white-scars"
@@ -6349,7 +8644,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power sword",
+              "entryId": "44df-7add-7e5c-4f65"
+            }
+          ]
         }
       ],
       "source": "white-scars"
@@ -6367,7 +8667,16 @@
           "cost": 35,
           "min": 5,
           "max": 10,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power Glaive",
+              "entryId": "debb-4bd2-55be-1b74"
+            },
+            {
+              "name": "Power sword",
+              "entryId": "178e-e2ae-d22e-7a37"
+            }
+          ]
         }
       ],
       "source": "white-scars"
@@ -6403,7 +8712,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Pair of lightning claws",
+              "entryId": "79ed-138f-bcd8-5319"
+            },
+            {
+              "name": "Volkite serpenta",
+              "entryId": "babd-6002-cbdd-6d3c"
+            }
+          ]
         },
         {
           "name": "Falcon&apos;s Claw",
@@ -6429,7 +8747,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "5200-ce7c-ba95-342c"
+            }
+          ]
         }
       ],
       "source": "white-scars"
@@ -6447,7 +8770,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Twin bolter",
+              "entryId": "8908-e888-d8c5-7825"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "1391-9fa3-5042-dafc"
+            }
+          ]
         }
       ],
       "source": "white-scars"
@@ -6465,7 +8797,16 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "7392-ed28-0cbf-0cc0"
+            },
+            {
+              "name": "Cataphractii",
+              "entryId": "891a-1a2e-ef17-f98e"
+            }
+          ]
         }
       ],
       "source": "white-scars"
@@ -6483,7 +8824,16 @@
           "cost": 20,
           "min": 4,
           "max": 14,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "98d7-7a1a-984e-8355"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "3196-aa0a-9b83-132e"
+            }
+          ]
         },
         {
           "name": "Death&apos;s Champion",
@@ -6491,10 +8841,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "e8b0-1a7d-a350-12fb"
+            }
+          ]
         }
       ],
-      "source": "white-scars"
+      "source": "white-scars",
+      "unitWargear": [
+        {
+          "name": "Krak grenades",
+          "entryId": "dd0e-aece-a5e7-1324"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "1295-b3d1-8a64-5469"
+        },
+        {
+          "name": "Rad grenades",
+          "entryId": "64d8-d7ad-920d-5180"
+        }
+      ]
     },
     {
       "name": "Inductii Squad",
@@ -6509,7 +8878,16 @@
           "cost": 9,
           "min": 10,
           "max": 20,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "9cd6-94e3-478d-a7ed"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "2e79-0db1-4845-a7d8"
+            }
+          ]
         }
       ],
       "source": "white-scars"
@@ -6645,7 +9023,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Warpfire Cannon",
+              "entryId": "c0b1-473e-cb46-3079"
+            }
+          ]
         }
       ],
       "source": "word-bearers"
@@ -6674,7 +9057,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "word-bearers"
+      "source": "word-bearers",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "a3cf-8a19-e1b9-c76b"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "4116-9490-e468-4d33"
+        }
+      ]
     },
     {
       "name": "Diabolist",
@@ -6693,6 +9086,10 @@
             {
               "name": "Force Weapon",
               "entryId": "a775-526d-294a-4f8a"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "6853-58e8-40da-916d"
             }
           ]
         }
@@ -6739,6 +9136,18 @@
             {
               "name": "Mount",
               "entryId": "6f2f-1f32-b7f4-c0f4"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "0604-04bd-4fee-ba74"
+            },
+            {
+              "name": "Twin bolter",
+              "entryId": "7cfa-8e38-23a4-645a"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "a055-8193-f628-316d"
             }
           ]
         }
@@ -6766,10 +9175,25 @@
           "cost": 20,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "b418-6516-425e-8472"
+            }
+          ]
         }
       ],
-      "source": "word-bearers"
+      "source": "word-bearers",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "62c7-01c2-46f5-80bc"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "b439-78e0-4c85-a68e"
+        }
+      ]
     },
     {
       "name": "Procurators with Jump Packs",
@@ -6795,7 +9219,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "word-bearers"
+      "source": "word-bearers",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "8097-bee1-ff7f-7c90"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "54dd-060e-7df1-364e"
+        }
+      ]
     },
     {
       "name": "Inductii Squad",
@@ -6810,7 +9244,16 @@
           "cost": 9,
           "min": 10,
           "max": 20,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Bolt pistol",
+              "entryId": "46ff-8068-4aee-bb9e"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "e76d-68ab-4a84-a493"
+            }
+          ]
         }
       ],
       "source": "word-bearers"
@@ -6890,7 +9333,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "world-eaters"
+      "source": "world-eaters",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "49c6-84b3-056f-b941"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "4142-f424-6178-884c"
+        }
+      ]
     },
     {
       "name": "Red Butchers",
@@ -6909,6 +9362,10 @@
             {
               "name": "Legion Combi-weapons",
               "entryId": "5e56-a4a9-f051-d6ad"
+            },
+            {
+              "name": "Butcher power axes",
+              "entryId": "fbc3-c82c-1582-7b9e"
             }
           ]
         },
@@ -6918,7 +9375,12 @@
           "cost": 45,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Butcher power axes",
+              "entryId": "b952-3be6-d55d-092d"
+            }
+          ]
         }
       ],
       "source": "world-eaters"
@@ -6972,10 +9434,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "The Cutter",
+              "entryId": "7b2e-a185-35c1-6af3"
+            }
+          ]
         }
       ],
-      "source": "world-eaters"
+      "source": "world-eaters",
+      "unitWargear": [
+        {
+          "name": "Plasma pistol",
+          "entryId": "83eb-961a-a893-5257"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "3459-d4d4-e994-1b00"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "7633-63d7-2325-dce7"
+        }
+      ]
     },
     {
       "name": "Red Hand Destroyer Mortalis Squad",
@@ -6990,7 +9471,12 @@
           "cost": 15,
           "min": 4,
           "max": 14,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "a8de-80b6-4988-82f6"
+            }
+          ]
         },
         {
           "name": "Blood Bonded",
@@ -6998,10 +9484,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "9507-587e-4aeb-8f09"
+            }
+          ]
         }
       ],
-      "source": "world-eaters"
+      "source": "world-eaters",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "8475-4222-4f45-bf65"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "dc35-4ebb-4e8a-9c33"
+        },
+        {
+          "name": "Rad grenades",
+          "entryId": "c17d-b585-4f47-a9ef"
+        }
+      ]
     },
     {
       "name": "Red Hand Destroyer Assault Squad",
@@ -7016,7 +9521,12 @@
           "cost": 20,
           "min": 4,
           "max": 14,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "a1a5-919d-4128-91bc"
+            }
+          ]
         },
         {
           "name": "Blood Bonded with Jump Pack",
@@ -7024,10 +9534,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Chainsword",
+              "entryId": "e7b4-8442-44ac-b59d"
+            }
+          ]
         }
       ],
-      "source": "world-eaters"
+      "source": "world-eaters",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "bbe0-d0f8-43c2-8051"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "7a41-ffa9-4cbe-861a"
+        },
+        {
+          "name": "Rad grenades",
+          "entryId": "15d8-b3d8-4ce1-8af1"
+        }
+      ]
     },
     {
       "name": "Inductii Squad",
@@ -7065,7 +9594,25 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Twin archaeotech pistols",
+          "entryId": "c62f-96ab-d5e6-f81a"
+        },
+        {
+          "name": "Photon thruster",
+          "entryId": "b40c-ed79-8a4a-7184"
+        },
+        {
+          "name": "Theurgika Maximus",
+          "entryId": "4740-f75c-8704-5f02"
+        },
+        {
+          "name": "Archimandrite",
+          "entryId": "2bd2-6b4f-9936-6416"
+        }
+      ]
     },
     {
       "name": "Archmagos",
@@ -7083,7 +9630,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "5649-a889-af77-ae35"
+        }
+      ]
     },
     {
       "name": "Archmagos on Abeyant",
@@ -7101,7 +9654,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "3562-ecc3-6acf-5346"
+        }
+      ]
     },
     {
       "name": "Magos",
@@ -7120,6 +9679,12 @@
         }
       ],
       "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "6d15-44db-201f-f6b2"
+        }
+      ],
       "officerOfTheLine": 2
     },
     {
@@ -7146,7 +9711,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Rad furnace",
+          "entryId": "695e-1dd4-98e1-ad3e"
+        }
+      ]
     },
     {
       "name": "Arcuitor Magisterium",
@@ -7164,7 +9735,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "1541-4af4-3753-3ef4"
+        },
+        {
+          "name": "Malagra",
+          "entryId": "eff0-d7db-316b-4f78"
+        }
+      ]
     },
     {
       "name": "Echidnax Servo Maniple",
@@ -7190,7 +9771,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Servo-harness",
+          "entryId": "f2a3-6675-fa16-47c7"
+        }
+      ]
     },
     {
       "name": "Domitar Battle Maniple",
@@ -7213,10 +9800,29 @@
           "cost": 100,
           "min": 0,
           "max": 0,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Cybernetica",
+              "entryId": "c4a3-8ded-261d-6c7d"
+            }
+          ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Cyclone missile launcher",
+          "entryId": "c037-028a-8ad1-ecf1"
+        },
+        {
+          "name": "Graviton hammers",
+          "entryId": "998d-5c50-fafa-b052"
+        },
+        {
+          "name": "Cybernetica",
+          "entryId": "c4a3-8ded-261d-6c7d"
+        }
+      ]
     },
     {
       "name": "Magos on Abeyant",
@@ -7235,6 +9841,12 @@
         }
       ],
       "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "a99f-f713-a766-617b"
+        }
+      ],
       "officerOfTheLine": 2
     },
     {
@@ -7250,7 +9862,12 @@
           "cost": 45,
           "min": 2,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Twin maxima bolters",
+              "entryId": "1960-3c57-658d-d119"
+            }
+          ]
         },
         {
           "name": "Secutor Lord",
@@ -7258,10 +9875,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Twin maxima bolters",
+              "entryId": "761b-f485-2180-1f35"
+            }
+          ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "1905-7e32-0655-8033"
+        },
+        {
+          "name": "Power axe",
+          "entryId": "2a2b-0ea4-ee3f-8697"
+        },
+        {
+          "name": "Myrmidax",
+          "entryId": "a7e9-245d-e331-0d06"
+        }
+      ]
     },
     {
       "name": "Myrmidon Destructor Host",
@@ -7276,7 +9912,12 @@
           "cost": 45,
           "min": 2,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite culverin",
+              "entryId": "8b59-39c2-fb16-2b06"
+            }
+          ]
         },
         {
           "name": "Destructor Lord",
@@ -7284,10 +9925,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite culverin",
+              "entryId": "9e28-75b9-e486-7214"
+            }
+          ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "dfe0-d517-4349-32f6"
+        },
+        {
+          "name": "Shock chargers",
+          "entryId": "08aa-3dfb-2a75-a5d4"
+        },
+        {
+          "name": "Myrmidax",
+          "entryId": "e37c-8229-812e-11a1"
+        }
+      ]
     },
     {
       "name": "Tech-Thrall Covenant",
@@ -7305,7 +9965,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Las-lock",
+          "entryId": "6197-382e-114e-cdda"
+        },
+        {
+          "name": "Lacrymaerta",
+          "entryId": "a5e0-bc33-638c-a87f"
+        }
+      ]
     },
     {
       "name": "Castellax Destructor Maniple",
@@ -7324,11 +9994,29 @@
             {
               "name": "Cybernetica",
               "entryId": "a92a-c17d-f444-9e5b"
+            },
+            {
+              "name": "Shock chargers",
+              "entryId": "407b-457c-8bc4-f296"
+            },
+            {
+              "name": "Bolter",
+              "entryId": "c050-620e-c956-df2c"
+            },
+            {
+              "name": "Mauler bolt cannon",
+              "entryId": "d7ec-04c6-4688-c02e"
             }
           ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Cybernetica",
+          "entryId": "a92a-c17d-f444-9e5b"
+        }
+      ]
     },
     {
       "name": "Ursarax Cohort",
@@ -7354,7 +10042,21 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "aa81-b6a2-668c-3f32"
+        },
+        {
+          "name": "Volkite incinerator",
+          "entryId": "8cb6-6e04-1bb7-1207"
+        },
+        {
+          "name": "Lacrymaerta",
+          "entryId": "7249-e40e-0ec8-d804"
+        }
+      ]
     },
     {
       "name": "Tech-Priest",
@@ -7372,7 +10074,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "ad5e-8491-4b85-de75"
+        }
+      ]
     },
     {
       "name": "Thallax Cohort",
@@ -7395,10 +10103,29 @@
           "cost": 20,
           "min": 6,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Reductor",
+              "entryId": "b231-2cf3-d356-d6f1"
+            },
+            {
+              "name": "Lightning gun",
+              "entryId": "5978-3111-da61-963a"
+            }
+          ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "efc4-34fd-aad1-acf4"
+        },
+        {
+          "name": "Reductor",
+          "entryId": "b231-2cf3-d356-d6f1"
+        }
+      ]
     },
     {
       "name": "Armiger Moirax",
@@ -7431,10 +10158,33 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Cybernetica",
+              "entryId": "60d6-3379-8896-86d8"
+            },
+            {
+              "name": "Cavas Configuration",
+              "entryId": "b0c4-16a4-19e9-d90f"
+            }
+          ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Shock chargers",
+          "entryId": "c940-cbc1-1ebf-ada3"
+        },
+        {
+          "name": "Twin mauler bolt cannon",
+          "entryId": "aba3-6a80-765a-2dfe"
+        },
+        {
+          "name": "Cybernetica",
+          "entryId": "60d6-3379-8896-86d8"
+        }
+      ]
     },
     {
       "name": "Triaros Armoured Conveyor",
@@ -7452,7 +10202,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Flare Shield",
+          "entryId": "ca2e-618e-faf9-754d"
+        },
+        {
+          "name": "Searchlight",
+          "entryId": "9e53-e96f-601f-172e"
+        }
+      ]
     },
     {
       "name": "Castellax Battle Maniple",
@@ -7467,7 +10227,16 @@
           "cost": 50,
           "min": 0,
           "max": 0,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Shock chargers",
+              "entryId": "d737-d2d2-d671-78ed"
+            },
+            {
+              "name": "Bolter",
+              "entryId": "8606-def5-7473-defb"
+            }
+          ]
         },
         {
           "name": "Castellax",
@@ -7483,7 +10252,13 @@
           ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Cybernetica",
+          "entryId": "2b49-5e7b-9f4b-2f4f"
+        }
+      ]
     },
     {
       "name": "Vorax Attack Maniple",
@@ -7498,10 +10273,33 @@
           "cost": 45,
           "min": 2,
           "max": 8,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Cybernetica",
+              "entryId": "9a26-ef5e-552f-8248"
+            },
+            {
+              "name": "Lightning gun",
+              "entryId": "da09-78fe-fc7b-086a"
+            }
+          ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Pair of power blades",
+          "entryId": "28ff-37d7-48a8-ae88"
+        },
+        {
+          "name": "Twin rotor cannon",
+          "entryId": "61f2-d958-8936-310e"
+        },
+        {
+          "name": "Cybernetica",
+          "entryId": "9a26-ef5e-552f-8248"
+        }
+      ]
     },
     {
       "name": "Vultarax Stratos Squadron",
@@ -7524,7 +10322,21 @@
           ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Arc blaster",
+          "entryId": "5c61-5177-9588-c7cb"
+        },
+        {
+          "name": "Dendrite talons",
+          "entryId": "6907-7db4-81c8-2581"
+        },
+        {
+          "name": "Cybernetica",
+          "entryId": "2406-9718-d72d-0348"
+        }
+      ]
     },
     {
       "name": "Blood Slaughterer",
@@ -7542,7 +10354,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Slaughterer blades",
+          "entryId": "fc42-a690-b96d-2d8b"
+        },
+        {
+          "name": "Cybernetica",
+          "entryId": "a6a9-a8b8-8e91-7f91"
+        }
+      ]
     },
     {
       "name": "Karacnos Assault Tank",
@@ -7565,7 +10387,21 @@
           ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Flare Shield",
+          "entryId": "5ea4-28d0-5af9-5d3b"
+        },
+        {
+          "name": "Searchlight",
+          "entryId": "0359-2d91-5f70-eaf2"
+        },
+        {
+          "name": "Macrotek",
+          "entryId": "cf5a-1858-e445-6426"
+        }
+      ]
     },
     {
       "name": "Krios Battle Tank",
@@ -7584,11 +10420,21 @@
             {
               "name": "Macrotek",
               "entryId": "ec64-ac7e-84e0-56d4"
+            },
+            {
+              "name": "Lightning cannon",
+              "entryId": "9e35-1648-18af-6a7c"
             }
           ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Macrotek",
+          "entryId": "ec64-ac7e-84e0-56d4"
+        }
+      ]
     },
     {
       "name": "Decimator",
@@ -7603,10 +10449,21 @@
           "cost": 125,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Decimator claw w/ Heavy Flamer",
+              "entryId": "1d2f-c9ff-ecbd-b1b8"
+            }
+          ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Cybernetica",
+          "entryId": "a028-e8bf-3866-b4b8"
+        }
+      ]
     },
     {
       "name": "Krios Venator",
@@ -7629,7 +10486,17 @@
           ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Pulsar-fusil",
+          "entryId": "d3c5-910d-7de4-44b9"
+        },
+        {
+          "name": "Macrotek",
+          "entryId": "93d0-6bd8-0cff-7ead"
+        }
+      ]
     },
     {
       "name": "Brass Scorpion",
@@ -7647,7 +10514,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Archimandrite",
+          "entryId": "b073-4d6e-ff01-6e49"
+        }
+      ]
     },
     {
       "name": "Archmagos Draykavac",
@@ -7665,7 +10538,37 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "86a2-1446-ace6-439e"
+        },
+        {
+          "name": "Paragon blade",
+          "entryId": "782b-be72-5074-78b8"
+        },
+        {
+          "name": "Graviton gun",
+          "entryId": "8aec-25cd-4de8-b4e7"
+        },
+        {
+          "name": "Cortex controller",
+          "entryId": "bcb1-aa18-507b-6eae"
+        },
+        {
+          "name": "Machinator array",
+          "entryId": "6659-0e1d-8088-ffcc"
+        },
+        {
+          "name": "Theurgika Maximus",
+          "entryId": "3a48-35d3-ec6c-4ba0"
+        },
+        {
+          "name": "Archimandrite",
+          "entryId": "1c11-617c-2dd3-baa7"
+        }
+      ]
     },
     {
       "name": "Kytan Daemon Engine",
@@ -7683,7 +10586,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Archimandrite",
+          "entryId": "8051-819e-e4d1-23c3"
+        }
+      ]
     },
     {
       "name": "Tech Thrall Defence Covenant",
@@ -7701,7 +10610,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Lacrymaerta",
+          "entryId": "0ce5-6d9e-81ed-5f54"
+        }
+      ]
     },
     {
       "name": "Arlatax Battle Maniple",
@@ -7716,7 +10631,12 @@
           "cost": 120,
           "min": 0,
           "max": 0,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Pair of Power blades and Paired light autocannons ",
+              "entryId": "a840-d54c-cf25-25fc"
+            }
+          ]
         },
         {
           "name": "Arlatax",
@@ -7742,7 +10662,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Combi-bolter",
+              "entryId": "a5e2-23a1-5340-d2c2"
+            }
+          ]
         }
       ],
       "source": "mechanicum"
@@ -7760,7 +10685,12 @@
           "cost": 0,
           "min": 2,
           "max": 2,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Twin heavy bolter",
+              "entryId": "897c-f088-301b-5d87"
+            }
+          ]
         }
       ],
       "source": "mechanicum"
@@ -7778,10 +10708,21 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Mauler bolt cannon",
+              "entryId": "555c-1275-87d9-70c4"
+            }
+          ]
         }
       ],
-      "source": "mechanicum"
+      "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Macrotek",
+          "entryId": "6acb-c466-36da-9499"
+        }
+      ]
     },
     {
       "name": "Mechanicum Ordinatus Ulator",
@@ -7852,7 +10793,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Charnabal sabre",
+              "entryId": "5ebb-1679-1be6-01cd"
+            }
+          ]
         },
         {
           "name": "Lifeward",
@@ -7860,10 +10806,33 @@
           "cost": 14,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Lasrifle",
+              "entryId": "a3c7-4575-dbb9-3bd5"
+            },
+            {
+              "name": "Charnabal sabre",
+              "entryId": "e956-c79f-7cf8-5d6c"
+            },
+            {
+              "name": "Laspistol",
+              "entryId": "8ab7-17c8-9e82-1a94"
+            }
+          ]
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "6fc6-cf10-f36c-a9c0"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "e4ca-62f9-166a-e004"
+        }
+      ]
     },
     {
       "name": "Tactical Command Section",
@@ -7886,10 +10855,25 @@
           "cost": 12,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Lasrifle",
+              "entryId": "a4fe-b84e-dab9-8c6b"
+            }
+          ]
         }
       ],
       "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "1e75-5eaf-1071-713f"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "2baf-eae1-79c8-3a71"
+        }
+      ],
       "officerOfTheLine": 2
     },
     {
@@ -7905,7 +10889,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Lasrifle",
+              "entryId": "c58f-3003-115a-6632"
+            }
+          ]
         },
         {
           "name": "Veteran",
@@ -7916,7 +10905,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "35a3-64e0-0602-8014"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "e4b9-00a6-54bf-ae8f"
+        }
+      ]
     },
     {
       "name": "Veletaris Command Section",
@@ -7931,7 +10930,20 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite charger",
+              "entryId": "165f-aaf9-a0b7-33a1"
+            },
+            {
+              "name": "Charnabal tabar",
+              "entryId": "2bcc-b059-565d-efe1"
+            },
+            {
+              "name": "Laspistol",
+              "entryId": "108e-c4dc-d79a-3dd3"
+            }
+          ]
         },
         {
           "name": "Veletarii",
@@ -7939,10 +10951,25 @@
           "cost": 8,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite charger",
+              "entryId": "128d-aa34-3963-f72e"
+            }
+          ]
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "ee66-7a71-d300-f686"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "2eba-e6fd-73c1-0bb0"
+        }
+      ]
     },
     {
       "name": "Hermes Command Section",
@@ -7957,7 +10984,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Multi-laser",
+              "entryId": "498e-7a6d-886a-6dce"
+            }
+          ]
         },
         {
           "name": "Hermes Pathfinder",
@@ -7965,10 +10997,25 @@
           "cost": 18,
           "min": 1,
           "max": 5,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Multi-laser",
+              "entryId": "ea60-8a65-6625-5bff"
+            }
+          ]
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "be63-d574-2776-fa41"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "eec0-4eb2-1316-e836"
+        }
+      ]
     },
     {
       "name": "Artillery Command Section",
@@ -7991,10 +11038,25 @@
           "cost": 7,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Lasrifle",
+              "entryId": "d6b1-396b-2358-523a"
+            }
+          ]
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "df02-1df5-6d65-dcc8"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "8a96-c3a2-d4a0-0c26"
+        }
+      ]
     },
     {
       "name": "Armoured Command Section",
@@ -8009,7 +11071,12 @@
           "cost": 150,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Battlecannon",
+              "entryId": "c510-cc26-bbcc-2191"
+            }
+          ]
         }
       ],
       "source": "solar-auxilia"
@@ -8027,7 +11094,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite charger",
+              "entryId": "9c2c-1547-33d2-c219"
+            }
+          ]
         },
         {
           "name": "Veletarii",
@@ -8035,10 +11107,25 @@
           "cost": 8,
           "min": 9,
           "max": 19,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite charger",
+              "entryId": "805f-e9d0-bfb0-3d5f"
+            }
+          ]
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "0aa9-07b8-b8ca-6ef9"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "4d2b-f0c2-7ed0-0475"
+        }
+      ]
     },
     {
       "name": "Veletaris Vanguard Section",
@@ -8053,7 +11140,20 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Heavy flamer",
+              "entryId": "bcfa-49d0-2b88-dc87"
+            },
+            {
+              "name": "Charnabal tabar",
+              "entryId": "4ed0-2894-d95c-5ca4"
+            },
+            {
+              "name": "Laspistol",
+              "entryId": "258b-8ee0-7a81-2857"
+            }
+          ]
         },
         {
           "name": "Veletarii",
@@ -8064,7 +11164,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "6f55-3317-f689-7fc4"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "4230-bc71-cdb6-a795"
+        }
+      ]
     },
     {
       "name": "Charonite Ogryn Section",
@@ -8079,7 +11189,12 @@
           "cost": 40,
           "min": 3,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Charonite claws",
+              "entryId": "f10b-da8b-abd2-b9e2"
+            }
+          ]
         }
       ],
       "source": "solar-auxilia"
@@ -8097,7 +11212,12 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Lasrifle",
+              "entryId": "a814-9585-d180-fcf1"
+            }
+          ]
         },
         {
           "name": "Auxiliary",
@@ -8105,10 +11225,25 @@
           "cost": 4,
           "min": 9,
           "max": 19,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Lasrifle",
+              "entryId": "a960-3bfd-6982-386f"
+            }
+          ]
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Krak grenades",
+          "entryId": "c42d-e1bc-38e1-868d"
+        },
+        {
+          "name": "Frag grenades",
+          "entryId": "2a74-dc79-3884-fae7"
+        }
+      ]
     },
     {
       "name": "Basilisk Artillery Tank",
@@ -8144,7 +11279,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Medusa mortar",
+          "entryId": "27e0-90ec-78a7-653c"
+        }
+      ]
     },
     {
       "name": "Rapier Section",
@@ -8177,10 +11318,25 @@
           "cost": 20,
           "min": 2,
           "max": 6,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite caliver",
+              "entryId": "5806-a8ee-06ea-6423"
+            }
+          ]
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "8489-658d-06df-ff93"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "7cda-65b4-0ebe-09c7"
+        }
+      ]
     },
     {
       "name": "Aethon Heavy Sentinel Squadron",
@@ -8195,7 +11351,16 @@
           "cost": 60,
           "min": 1,
           "max": 3,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Multi-laser",
+              "entryId": "0270-5929-3727-0307"
+            },
+            {
+              "name": "Aethon missile battery",
+              "entryId": "d0ed-39d3-e4e7-87bb"
+            }
+          ]
         }
       ],
       "source": "solar-auxilia"
@@ -8216,7 +11381,13 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Searchlight",
+          "entryId": "eb0f-b1a0-7924-ed8e"
+        }
+      ]
     },
     {
       "name": "Dracosan Armoured Transport",
@@ -8231,7 +11402,12 @@
           "cost": 140,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Twin lascannon",
+              "entryId": "bd79-fee6-c36d-1399"
+            }
+          ]
         }
       ],
       "source": "solar-auxilia"
@@ -8249,10 +11425,25 @@
           "cost": 16,
           "min": 2,
           "max": 6,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Multi-laser",
+              "entryId": "2a60-3910-3bd1-ba02"
+            }
+          ]
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "ea54-c4d2-ba21-36d8"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "7c9d-9ae8-34eb-20cb"
+        }
+      ]
     },
     {
       "name": "Primaris-Lightning Strike Fighter",
@@ -8270,7 +11461,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Twin lascannon",
+          "entryId": "0f35-ba8d-0ae4-4bb2"
+        },
+        {
+          "name": "Hellstrike missile",
+          "entryId": "190c-e74e-6701-05da"
+        }
+      ]
     },
     {
       "name": "Thunderbolt Heavy Fighter",
@@ -8288,7 +11489,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Twin lascannon",
+          "entryId": "0dbc-ed3e-1732-4ac5"
+        },
+        {
+          "name": "Gravis autocannon",
+          "entryId": "e2d2-4b0c-567a-ecf4"
+        }
+      ]
     },
     {
       "name": "Malcador Infernus Special Weapon Tank",
@@ -8321,7 +11532,12 @@
           "cost": 140,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite macro saker",
+              "entryId": "5b2b-748b-1d34-b09a"
+            }
+          ]
         }
       ],
       "source": "solar-auxilia"
@@ -8339,7 +11555,12 @@
           "cost": 140,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Battlecannon",
+              "entryId": "d7e7-b3a5-922c-c346"
+            }
+          ]
         }
       ],
       "source": "solar-auxilia"
@@ -8375,7 +11596,12 @@
           "cost": 190,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Multi-laser",
+              "entryId": "ab14-8758-b895-7795"
+            }
+          ]
         }
       ],
       "source": "solar-auxilia"
@@ -8393,10 +11619,29 @@
           "cost": 500,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Multi-laser",
+              "entryId": "aed7-0580-06a4-6f56"
+            },
+            {
+              "name": "Multi-laser",
+              "entryId": "250d-a5c4-1b25-998f"
+            }
+          ]
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Stormhammer cannon",
+          "entryId": "2086-5f02-0ac1-2e5e"
+        },
+        {
+          "name": "Twin Battlecannon",
+          "entryId": "8823-0ff9-ce7b-f038"
+        }
+      ]
     },
     {
       "name": "Aurox Transport",
@@ -8432,7 +11677,21 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Twin lascannon",
+          "entryId": "d266-954c-3758-65d3"
+        },
+        {
+          "name": "Avenger Bolt Cannon",
+          "entryId": "a3ba-bcaf-7752-25fd"
+        },
+        {
+          "name": "Heavy Stubber",
+          "entryId": "7121-e822-b6f4-67cb"
+        }
+      ]
     },
     {
       "name": "Baneblade Super-heavy Battle Tank",
@@ -8450,7 +11709,25 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "e769-5772-e3e9-d3db"
+        },
+        {
+          "name": "Autocannon",
+          "entryId": "211e-3614-67d6-b4ef"
+        },
+        {
+          "name": "Demolisher cannon",
+          "entryId": "d6ac-f6bf-96e3-b618"
+        },
+        {
+          "name": "Baneblade Cannon",
+          "entryId": "9002-1e27-6e28-3a19"
+        }
+      ]
     },
     {
       "name": "Banehammer Super-heavy Assault Tank",
@@ -8468,7 +11745,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "5fc7-8834-ae14-c567"
+        },
+        {
+          "name": "Tremor cannon",
+          "entryId": "2b8c-823c-542f-a79a"
+        }
+      ]
     },
     {
       "name": "Carnodon Strike Tank",
@@ -8483,10 +11770,25 @@
           "cost": 80,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Volkite caliver",
+              "entryId": "0ad7-9de2-5a43-320d"
+            },
+            {
+              "name": "Volkite culverin",
+              "entryId": "554e-a7bb-6faa-9423"
+            }
+          ]
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Searchlight",
+          "entryId": "eb05-dc94-e7b6-5f16"
+        }
+      ]
     },
     {
       "name": "Companion Section",
@@ -8512,7 +11814,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "d975-dd31-db5e-00e5"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "3f63-792f-4c3c-3d51"
+        }
+      ]
     },
     {
       "name": "Crassus Armoured Assault Transport",
@@ -8620,7 +11932,25 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "d33f-2c15-4ab7-bbcf"
+        },
+        {
+          "name": "Autocannon",
+          "entryId": "09d1-ffc3-595d-8058"
+        },
+        {
+          "name": "Demolisher cannon",
+          "entryId": "14df-a58f-affd-467d"
+        },
+        {
+          "name": "Hellhammer Cannon",
+          "entryId": "91c2-e61c-ba4e-d8b0"
+        }
+      ]
     },
     {
       "name": "Macharius Heavy Tank",
@@ -8635,10 +11965,25 @@
           "cost": 300,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Twin Battlecannon",
+              "entryId": "ee53-5099-d6ac-2c01"
+            },
+            {
+              "name": "Heavy Stubber",
+              "entryId": "0118-0d87-48a8-3776"
+            }
+          ]
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Twin heavy stubber",
+          "entryId": "fbf5-da9d-d698-3c6a"
+        }
+      ]
     },
     {
       "name": "Marauder Bomber",
@@ -8656,7 +12001,25 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "bd36-19e5-57e1-7cdd"
+        },
+        {
+          "name": "Twin lascannon",
+          "entryId": "c783-bc8c-8ee8-6c2c"
+        },
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "3ad8-7cda-c9f4-2ebd"
+        },
+        {
+          "name": "Macro-bomb cluster",
+          "entryId": "3799-627d-3dde-9a1c"
+        }
+      ]
     },
     {
       "name": "Marauder Destroyer",
@@ -8674,7 +12037,21 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "7dd8-9ba8-1669-f690"
+        },
+        {
+          "name": "Gravis autocannon array",
+          "entryId": "5b1b-ae2f-03ca-35f8"
+        },
+        {
+          "name": "Twin rotary defence cannon",
+          "entryId": "ec98-7776-24b4-4d8d"
+        }
+      ]
     },
     {
       "name": "Medicae Section",
@@ -8692,7 +12069,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "c7e0-4f63-4455-d793"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "6205-9e96-cf40-1ced"
+        }
+      ]
     },
     {
       "name": "Minotaur Artillery Tank",
@@ -8728,7 +12115,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Heavy bolter",
+          "entryId": "ea6c-6f81-a26f-5999"
+        },
+        {
+          "name": "Praetor Launcher",
+          "entryId": "7bcc-84e7-a9bd-f832"
+        }
+      ]
     },
     {
       "name": "Shadowsword Super-heavy Tank Destroyer",
@@ -8746,7 +12143,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "a8f8-f259-85b1-9c07"
+        },
+        {
+          "name": "Volcano Cannon",
+          "entryId": "3d46-5a05-f988-09f3"
+        }
+      ]
     },
     {
       "name": "Stormblade Super-heavy Tank",
@@ -8764,7 +12171,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "8f05-520b-b7c7-aa49"
+        },
+        {
+          "name": "Plasma blastgun",
+          "entryId": "de5f-15ab-f675-cdb6"
+        }
+      ]
     },
     {
       "name": "Stormlord Super-heavy Assault Tank",
@@ -8782,7 +12199,25 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "c4c0-4a74-4dd1-4770"
+        },
+        {
+          "name": "Vulcan mega-bolter",
+          "entryId": "2766-4f94-65a8-30a6"
+        },
+        {
+          "name": "Heavy stubber",
+          "entryId": "45fb-10da-1cfa-2447"
+        },
+        {
+          "name": "Heavy stubber",
+          "entryId": "9e06-c59d-4897-b48b"
+        }
+      ]
     },
     {
       "name": "Stormsword Super-heavy Siege Tank",
@@ -8800,7 +12235,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Twin heavy bolter",
+          "entryId": "0800-04e9-f277-d46d"
+        },
+        {
+          "name": "Stormsword siege cannon",
+          "entryId": "6181-9eb5-7932-367a"
+        }
+      ]
     },
     {
       "name": "Surgeon-Primus Aevos Jovan",
@@ -8834,7 +12279,17 @@
           "defaultWargear": []
         }
       ],
-      "source": "solar-auxilia"
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Frag grenades",
+          "entryId": "c32d-53b5-9fe0-41ee"
+        },
+        {
+          "name": "Krak grenades",
+          "entryId": "3979-9c2d-dfc1-9b13"
+        }
+      ]
     },
     {
       "name": "Tarantula Section",
@@ -8868,6 +12323,35 @@
           "min": 1,
           "max": 1,
           "defaultWargear": []
+        }
+      ],
+      "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Demolisher cannon",
+          "entryId": "2d65-7d56-8e9d-b966"
+        }
+      ]
+    },
+    {
+      "name": "Dracosan Command Tank",
+      "entryId": "43d4-03f5-1028-0c3e",
+      "role": "High Command",
+      "points": 200,
+      "baseCost": 200,
+      "models": [
+        {
+          "name": "Command Dracosan",
+          "entryId": "9e9b-39c4-7ed1-78ec",
+          "cost": 0,
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Twin lascannon",
+              "entryId": "1e49-2f38-fc6a-b60b"
+            }
+          ]
         }
       ],
       "source": "solar-auxilia"

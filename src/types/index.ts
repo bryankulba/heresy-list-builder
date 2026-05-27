@@ -24,6 +24,8 @@ export interface UnitEntry {
   baseCost: number;
   models: ModelEntry[];
   source: string;
+  /** Mandatory unit-level wargear (grenades, boarding shields, etc.) to emit in the .ros export */
+  unitWargear?: WargearEntry[];
   /** Number of auxiliary detachments this unit unlocks in a Command slot (default 1). Derived from BSData "Officer of the Line (N)" category. */
   officerOfTheLine?: number;
 }

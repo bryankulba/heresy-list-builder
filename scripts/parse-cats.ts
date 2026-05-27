@@ -33,6 +33,8 @@ export interface UnitEntry {
   /** All child model (or sub-unit) entries with their costs and counts */
   models: ModelEntry[];
   source: string;
+  /** Mandatory unit-level wargear (grenades, boarding shields, etc.) */
+  unitWargear?: WargearEntry[];
   /** Number of auxiliary detachments this unit unlocks when placed in a Command slot (default 1). Derived from BSData "Officer of the Line (N)" category. */
   officerOfTheLine?: number;
 }
@@ -211,6 +213,9 @@ function buildRoleMap(catalogueXml: string): RoleMaps {
 
 function extractDefaultWargear(modelText: string): WargearEntry[] {
   const wargear: WargearEntry[] = [];
+  const seenIds = new Set<string>();
+
+  // Pass 1: direct entryLinks with automatic min≥1 constraint (e.g. Breacher bolt pistol)
   const linkPattern = /<entryLink\b([^>]*)>([\s\S]*?)<\/entryLink>/g;
   let m: RegExpExecArray | null;
 
@@ -218,12 +223,105 @@ function extractDefaultWargear(modelText: string): WargearEntry[] {
     const attrs = m[1];
     const body = m[2];
 
-    // Look for a min constraint with value >= 1 and automatic="true" (attribute order varies)
     const autoMinMatch =
       body.match(/<constraint[^>]*type="min"[^>\/]*value="([1-9][^"]*)"[^>\/]*automatic="true"/) ||
       body.match(/<constraint[^>]*automatic="true"[^>\/]*type="min"[^>\/]*value="([1-9][^"]*)"/) ||
       body.match(/<constraint[^>]*value="([1-9][^"]*)"[^>\/]*type="min"[^>\/]*automatic="true"/);
     if (!autoMinMatch) continue;
+
+    const nameMatch = attrs.match(/\bname="([^"]+)"/);
+    const idMatch = attrs.match(/\bid="([^"]+)"/);
+    if (!nameMatch || !idMatch) continue;
+
+    if (!seenIds.has(idMatch[1])) {
+      seenIds.add(idMatch[1]);
+      wargear.push({ name: nameMatch[1], entryId: idMatch[1] });
+    }
+  }
+
+  // Pass 2: non-hidden selectionEntryGroups with defaultSelectionEntryId
+  // These are required weapon-choice groups (Melee, Pistol, Bolter, etc.)
+  const groupTagPattern = /<selectionEntryGroup\b([^>]*)>/g;
+  let gm: RegExpExecArray | null;
+
+  while ((gm = groupTagPattern.exec(modelText)) !== null) {
+    const attrs = gm[1];
+    if (/\bhidden="true"/.test(attrs)) continue;
+
+    const defMatch = attrs.match(/\bdefaultSelectionEntryId="([^"]+)"/);
+    if (!defMatch) continue;
+
+    const defaultId = defMatch[1];
+    if (seenIds.has(defaultId)) continue;
+
+    // Look for the entry with this id in the model text to get its name
+    const nameByIdPattern = new RegExp(
+      `\\bid="${defaultId}"[^>]*\\bname="([^"]+)"|\\bname="([^"]+)"[^>]*\\bid="${defaultId}"`
+    );
+    const nameMatch = modelText.match(nameByIdPattern);
+
+    if (nameMatch) {
+      const weaponName = nameMatch[1] ?? nameMatch[2];
+      seenIds.add(defaultId);
+      wargear.push({ name: weaponName, entryId: defaultId });
+    } else {
+      // Fallback: defaultId not found directly — find the first flatten="true"
+      // selectionEntryGroup after this tag, then take the first non-hidden entryLink
+      // from a short window after its opening tag (avoids needing the full group body).
+      const afterTag = modelText.slice(gm.index + gm[0].length, gm.index + gm[0].length + 8000);
+      const flatTagMatch = afterTag.match(/<selectionEntryGroup\b[^>]*\bflatten="true"[^>]*>/);
+      if (flatTagMatch) {
+        const afterFlat = afterTag.slice(
+          flatTagMatch.index! + flatTagMatch[0].length,
+          flatTagMatch.index! + flatTagMatch[0].length + 1500
+        );
+        const firstLink = afterFlat.match(/<entryLink\b(?![^>]*\bhidden="true")[^>]*\bname="([^"]+)"[^>]*\bid="([^"]+)"/);
+        if (firstLink && !seenIds.has(firstLink[2])) {
+          seenIds.add(firstLink[2]);
+          wargear.push({ name: firstLink[1], entryId: firstLink[2] });
+        }
+      }
+    }
+  }
+
+  return wargear;
+}
+
+// ---------------------------------------------------------------------------
+// extractUnitLevelWargear
+// ---------------------------------------------------------------------------
+// Finds unit-level entryLinks (grenades, boarding shields, etc.) that have a
+// min≥1 constraint — these must always be exported as part of the unit.
+// Only looks inside the 6-space <entryLinks> block (unit's direct child),
+// which is distinct from deeper model-level entryLinks at 10+ spaces.
+
+function extractUnitLevelWargear(unitText: string): WargearEntry[] {
+  const wargear: WargearEntry[] = [];
+
+  // Find the unit-level <entryLinks> block at 6-space indentation
+  const blockStart = unitText.search(/\n {6}<entryLinks>/);
+  if (blockStart === -1) return wargear;
+  const blockEnd = unitText.indexOf('\n      </entryLinks>', blockStart);
+  if (blockEnd === -1) return wargear;
+
+  const block = unitText.slice(blockStart, blockEnd);
+
+  const linkPattern = /<entryLink\b([^>]*)>([\s\S]*?)<\/entryLink>/g;
+  let m: RegExpExecArray | null;
+
+  while ((m = linkPattern.exec(block)) !== null) {
+    const attrs = m[1];
+    const body = m[2];
+
+    // Skip group-type links and hidden links
+    if (/\btype="selectionEntryGroup"/.test(attrs)) continue;
+    if (/\bhidden="true"/.test(attrs)) continue;
+
+    // Require min≥1 constraint (scope parent or unit, with or without automatic)
+    const hasMin =
+      body.match(/<constraint[^>]*type="min"[^>]*value="([1-9][^"]*)"/) ??
+      body.match(/<constraint[^>]*value="([1-9][^"]*)"[^>]*type="min"/);
+    if (!hasMin) continue;
 
     const nameMatch = attrs.match(/\bname="([^"]+)"/);
     const idMatch = attrs.match(/\bid="([^"]+)"/);
@@ -480,6 +578,8 @@ function extractUnitsFromCatalogue(
       }
     }
 
+    const unitWargear = extractUnitLevelWargear(entryText);
+
     units.push({
       name,
       entryId: linkIdMap.get(id) ?? id,
@@ -488,6 +588,7 @@ function extractUnitsFromCatalogue(
       baseCost: breakdown?.baseCost ?? 0,
       models: breakdown?.models ?? [],
       source,
+      ...(unitWargear.length > 0 ? { unitWargear } : {}),
       ...(officerOfTheLine !== undefined ? { officerOfTheLine } : {}),
     });
   }
