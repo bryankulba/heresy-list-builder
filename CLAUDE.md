@@ -9,6 +9,9 @@ npm run dev          # Start Vite dev server
 npm run build        # TypeScript check + Vite bundle (uses tsconfig.app.json)
 npm run preview      # Preview built output
 npm run sync-data    # Fetch latest BSData XML and regenerate data/parsed/*.json
+npm test             # Run tests in watch mode
+npm test -- --run    # Run tests once (CI mode)
+npm test:ui          # Open Vitest UI dashboard
 ```
 
 `sync-data` downloads 24 `.cat`/`.gst` files from the BSData GitHub repo into `data/raw/` (gitignored), then parses them into `data/parsed/`. Run this when BSData upstream changes or when editing `scripts/parse-cats.ts`.

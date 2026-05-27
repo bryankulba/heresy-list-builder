@@ -58,6 +58,29 @@ npm run build
 
 Output goes to `dist/`.
 
+### Testing
+
+Tests are written with [Vitest](https://vitest.dev/) and validate export XML structure and correctness.
+
+```bash
+npm test              # Watch mode (re-run on file changes)
+npm test -- --run     # One-time run (CI mode)
+npm test:ui           # Open Vitest UI dashboard
+```
+
+Current test coverage:
+- `src/utils/buildRos.test.ts` — export XML validation (7 tests)
+  - XML structure and validity
+  - Required attributes (game system, points, roster name)
+  - Points calculations
+  - XML escaping for special characters
+
+As export enhancements are implemented (required wargear, model profiles, rules), additional tests validate:
+- Required items are auto-added based on BSData constraints
+- Model profiles include all characteristics
+- Weapon/wargear profiles are complete
+- Rules and reactions are properly attached
+
 ## Data Pipeline
 
 ```
