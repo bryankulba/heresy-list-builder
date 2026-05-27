@@ -13,6 +13,21 @@ import { FACTION_LABEL_MAP } from '../data/factions';
 // Points cost typeId — consistent across all HH3 BSData files
 const POINTS_TYPE_ID = '9893-c379-920b-8982';
 
+// BSData IDs for "LB - [Role]" upgrade selections inside "Common Prime Benefits"
+const LB_ROLE_IDS: Record<string, string> = {
+  'Armour':         'd5b0-22dc-909e-415e',
+  'Retinue':        'e788-1cee-dabe-1e19',
+  'Elites':         'd81c-494b-0302-5844',
+  'Support':        '18ed-afc2-ec5d-9f8c',
+  'Recon':          'a166-27df-d75c-bdb0',
+  'Transport':      '861f-723a-938e-bc2c',
+  'Troops':         '9e8c-63b6-a15a-cd4f',
+  'War-engine':     'fac3-0af2-8be3-20dc',
+  'Heavy Transport':'ad55-0e60-66fe-a7a9',
+  'Fast Attack':    'cf0d-0aff-8242-f25a',
+  'Heavy Assault':  '5da8-2289-4e20-649f',
+};
+
 // Global role→categoryId fallback for bonus slots whose role may not exist in the
 // detachment's own slot list (e.g. "Support" bonus from Logistical Benefit in CPD).
 const ROLE_CATEGORY_MAP: Record<string, string> = (() => {
@@ -55,7 +70,8 @@ function emitUnitSelection(
   unit: UnitEntry,
   categoryId: string | undefined,
   categoryRole: string,
-  indent: string
+  indent: string,
+  extraSelections?: Array<{ name: string; entryId: string }>
 ): void {
   const i = indent;
   lines.push(
@@ -67,10 +83,11 @@ function emitUnitSelection(
     ` type="unit">`
   );
 
-  // Child model selections and unit-level wargear
+  // Child model selections, unit-level wargear, and prime benefit upgrade(s)
   const hasModels = unit.models && unit.models.length > 0;
   const hasUnitWargear = unit.unitWargear && unit.unitWargear.length > 0;
-  if (hasModels || hasUnitWargear) {
+  const hasExtras = extraSelections && extraSelections.length > 0;
+  if (hasModels || hasUnitWargear || hasExtras) {
     lines.push(`${i}  <selections>`);
     for (const model of (unit.models ?? [])) {
       const modelCost = Math.round(model.cost * model.min);
@@ -113,6 +130,20 @@ function emitUnitSelection(
         ` id="${uuid()}"` +
         ` name="${escapeXml(uw.name)}"` +
         ` entryId="${escapeXml(uw.entryId)}"` +
+        ` number="1"` +
+        ` type="upgrade">`
+      );
+      lines.push(`${i}      <costs>`);
+      lines.push(`${i}        <cost name="pts" value="0" costTypeId="${POINTS_TYPE_ID}"/>`);
+      lines.push(`${i}      </costs>`);
+      lines.push(`${i}    </selection>`);
+    }
+    for (const extra of (extraSelections ?? [])) {
+      lines.push(
+        `${i}    <selection` +
+        ` id="${uuid()}"` +
+        ` name="${escapeXml(extra.name)}"` +
+        ` entryId="${escapeXml(extra.entryId)}"` +
         ` number="1"` +
         ` type="upgrade">`
       );
@@ -205,7 +236,28 @@ export function buildRosXml(
       if (!filled) continue;
       const role = key.slice(0, key.lastIndexOf('-'));
       const slotDef = det.def.slots.find(s => s.role === role);
-      emitUnitSelection(lines, filled.unit, slotDef?.categoryId, role, '            ');
+
+      const extras: Array<{ name: string; entryId: string }> = [];
+
+      // Logistical Benefit: emit LB - [Role] upgrade so BSData conditions fire
+      const bonusSlot = det.bonusSlots?.find(bs => bs.sourceSlotKey === key);
+      if (bonusSlot) {
+        const lbId = LB_ROLE_IDS[bonusSlot.role];
+        if (lbId) extras.push({ name: `LB - ${bonusSlot.role}`, entryId: lbId });
+      }
+
+      // High Command / Command prime: emit One Apex/Auxiliary Detachment upgrade
+      // for each detachment this slot unlocked (Officer of the Line can unlock two)
+      const unlockedDets = detachments.filter(d => d.unlockedBy === `${det.id}::${key}`);
+      for (const ud of unlockedDets) {
+        const isApex = detachmentsData.apex.some(a => a.entryId === ud.def.entryId);
+        extras.push({
+          name: isApex ? 'One Apex Detachment' : 'One Auxiliary Detachment',
+          entryId: isApex ? '0889-888b-e3fe-1d5b' : '4ad5-105a-9b10-57dd',
+        });
+      }
+
+      emitUnitSelection(lines, filled.unit, slotDef?.categoryId, role, '            ', extras.length ? extras : undefined);
     }
 
     // Bonus slots (Logistical Benefit)

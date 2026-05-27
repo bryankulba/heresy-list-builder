@@ -4,7 +4,10 @@
       "Bash(awk -F: 'NR==1{first=$1} {print NR\": line \"$1} END{print \"first flatten line:\", first}')",
       "Bash(awk 'NR==5361{p=NR} /flatten=\"true\"/{if\\(p && NR>p && !found\\){print \"Pistol group line:\", p; print \"First flatten line:\", NR; print \"Distance:\", NR-p, \"lines\"; found=1}}' \"/Users/bryankulba/Library/CloudStorage/Dropbox/bryan personal/code/heresy-list-builder/data/raw/legiones-astartes.cat\")",
       "Bash(node -e ' *)",
-      "Bash(git commit -m ' *)"
+      "Bash(git commit -m ' *)",
+      "Bash(grep -o 'Heavy Support Squad.\\\\{0,300\\\\}' \"/Users/bryankulba/Library/CloudStorage/Dropbox/bryan personal/code/heresy-list-builder/death-guard-3-post.ros\")",
+      "Bash(grep -o 'Centurion.\\\\{0,500\\\\}' \"/Users/bryankulba/Library/CloudStorage/Dropbox/bryan personal/code/heresy-list-builder/death-guard-3-post.ros\")",
+      "Bash(awk -F: '$2+0 >= 30300 && $2+0 <= 30510')"
     ]
   }
 }
