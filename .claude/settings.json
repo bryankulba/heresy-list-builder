@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(awk -F: 'NR==1{first=$1} {print NR\": line \"$1} END{print \"first flatten line:\", first}')",
+      "Bash(awk 'NR==5361{p=NR} /flatten=\"true\"/{if\\(p && NR>p && !found\\){print \"Pistol group line:\", p; print \"First flatten line:\", NR; print \"Distance:\", NR-p, \"lines\"; found=1}}' \"/Users/bryankulba/Library/CloudStorage/Dropbox/bryan personal/code/heresy-list-builder/data/raw/legiones-astartes.cat\")",
+      "Bash(node -e ' *)",
+      "Bash(git commit -m ' *)"
+    ]
+  }
+}
