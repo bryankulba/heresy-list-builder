@@ -6,12 +6,32 @@
  */
 
 import type { PlacedDetachment, UnitEntry } from '../types';
-import { systemData, cataloguesData } from '../data/loader';
+import { systemData, cataloguesData, detachmentsData } from '../data/loader';
 
 import { FACTION_LABEL_MAP } from '../data/factions';
 
 // Points cost typeId — consistent across all HH3 BSData files
 const POINTS_TYPE_ID = '9893-c379-920b-8982';
+
+// Global role→categoryId fallback for bonus slots whose role may not exist in the
+// detachment's own slot list (e.g. "Support" bonus from Logistical Benefit in CPD).
+const ROLE_CATEGORY_MAP: Record<string, string> = (() => {
+  const map: Record<string, string> = {};
+  const allDets = [
+    ...detachmentsData.core,
+    ...detachmentsData.auxiliary,
+    ...detachmentsData.apex,
+    ...Object.values(detachmentsData.legion ?? {}).flat(),
+  ];
+  for (const det of allDets) {
+    for (const slot of det.slots) {
+      if (slot.categoryId && !(slot.role in map)) {
+        map[slot.role] = slot.categoryId;
+      }
+    }
+  }
+  return map;
+})();
 
 function escapeXml(s: string): string {
   return s
@@ -192,7 +212,8 @@ export function buildRosXml(
     for (const bs of det.bonusSlots ?? []) {
       if (!bs.unit) continue;
       const bonusSlotDef = det.def.slots.find(s => s.role === bs.role);
-      emitUnitSelection(lines, bs.unit, bonusSlotDef?.categoryId, bs.role, '            ');
+      const bonusCategoryId = bonusSlotDef?.categoryId ?? ROLE_CATEGORY_MAP[bs.role];
+      emitUnitSelection(lines, bs.unit, bonusCategoryId, bs.role, '            ');
     }
 
     lines.push('          </selections>');
