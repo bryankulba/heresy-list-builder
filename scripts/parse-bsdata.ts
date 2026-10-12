@@ -170,10 +170,23 @@ export interface DetachmentSlot {
 export interface Detachment {
   name: string;
   entryId: string;
-  type: 'core' | 'auxiliary' | 'apex' | 'other';
+  type: 'core' | 'auxiliary' | 'apex' | 'allied' | 'additional' | 'other';
   slots: DetachmentSlot[];
   /** Faction keys whose primary catalogue can field this detachment (empty = all) */
   sources: string[];
+}
+
+/**
+ * A root force entry ("force org chart") and the detachments (child forces) it
+ * can contain. In a .ros roster each army is one root <force> with one child
+ * <force> per detachment.
+ */
+export interface ForceChart {
+  id: string;
+  name: string;
+  /** Faction key of the catalogue that defines the chart; null for game-system charts */
+  catalogue: string | null;
+  detachments: Detachment[];
 }
 
 export interface SystemInfo {
@@ -197,6 +210,8 @@ export interface ParseResult {
     auxiliary: Detachment[];
     apex: Detachment[];
     legion: Record<string, Detachment[]>;
+    /** Every supported force org chart (Crusade, Allied Detachment, Knight Households…) */
+    charts: ForceChart[];
   };
   system: SystemInfo;
   catalogues: Record<string, CatalogueInfo>;
@@ -599,28 +614,57 @@ function extractFactionSources(fe: BsForceEntry, catalogueKeyById: Map<string, s
 }
 
 function detachmentType(name: string): Detachment['type'] {
-  if (name === 'Crusade Primary Detachment' || name === 'Warlord Detachment') return 'core';
+  if (/Primary Detachment$/.test(name) || name === 'Warlord Detachment') return 'core';
   if (/^Auxiliary [-–] /.test(name)) return 'auxiliary';
   if (/^Apex [-–] /.test(name)) return 'apex';
+  if (/^Additional [-–] /.test(name)) return 'additional';
+  if (name === 'Allied Detachment') return 'allied';
   return 'other';
 }
 
+function parseDetachment(fe: BsForceEntry, catalogueKeyById: Map<string, string>): Detachment | null {
+  const slots = extractSlots(fe);
+  if (slots.length === 0) return null;
+  return {
+    name: fe.name,
+    entryId: fe.id,
+    type: detachmentType(fe.name),
+    slots,
+    sources: extractFactionSources(fe, catalogueKeyById),
+  };
+}
+
+/** Game-system charts the app supports, by root force entry name. */
+const GAME_SYSTEM_CHARTS = [CRUSADE_FORCE_ORG_NAME, 'Allied Detachment and its Auxiliary'];
+
+function parseCharts(
+  gst: BsRoot,
+  catalogues: Array<{ key: string; root: BsRoot }>,
+  catalogueKeyById: Map<string, string>
+): ForceChart[] {
+  const toChart = (fe: BsForceEntry, catalogue: string | null): ForceChart => ({
+    id: fe.id,
+    name: fe.name,
+    catalogue,
+    detachments: (fe.forceEntries ?? [])
+      .map((child) => parseDetachment(child, catalogueKeyById))
+      .filter((d): d is Detachment => d !== null),
+  });
+  return [
+    ...(gst.forceEntries ?? []).filter((fe) => GAME_SYSTEM_CHARTS.includes(fe.name)).map((fe) => toChart(fe, null)),
+    ...catalogues.flatMap(({ key, root }) => (root.forceEntries ?? []).map((fe) => toChart(fe, key))),
+  ].filter((chart) => chart.detachments.length > 0);
+}
+
 function parseDetachments(gst: BsRoot, catalogueKeyById: Map<string, string>): ParseResult['detachments'] {
-  const detachments: ParseResult['detachments'] = { core: [], auxiliary: [], apex: [], legion: {} };
+  const detachments: ParseResult['detachments'] = { core: [], auxiliary: [], apex: [], legion: {}, charts: [] };
   const crusade = gst.forceEntries?.find((fe) => fe.name === CRUSADE_FORCE_ORG_NAME);
 
   for (const fe of crusade?.forceEntries ?? []) {
-    const slots = extractSlots(fe);
-    if (slots.length === 0) continue;
-    const type = detachmentType(fe.name);
-    const detachment: Detachment = {
-      name: fe.name,
-      entryId: fe.id,
-      type,
-      slots,
-      sources: extractFactionSources(fe, catalogueKeyById),
-    };
-    detachments[type === 'other' ? 'auxiliary' : type].push(detachment);
+    const detachment = parseDetachment(fe, catalogueKeyById);
+    if (!detachment) continue;
+    const bucket = detachment.type === 'core' || detachment.type === 'apex' ? detachment.type : 'auxiliary';
+    detachments[bucket].push(detachment);
   }
   return detachments;
 }
@@ -656,6 +700,14 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
     for (const ce of root.categoryEntries ?? []) categoryNames.set(ce.id, ce.name);
   }
   const detachments = parseDetachments(gst, catalogueKeyById);
+  detachments.charts = parseCharts(
+    gst,
+    unitFactions.flatMap((key) => {
+      const root = catalogueByKey.get(key);
+      return root ? [{ key, root }] : [];
+    }),
+    catalogueKeyById
+  );
   const slotRoles = new Set(
     [...detachments.core, ...detachments.auxiliary, ...detachments.apex]
       .flatMap((d) => d.slots.map((s) => s.role.replace(/^Prime /, '')))

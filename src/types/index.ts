@@ -1,6 +1,6 @@
 export type Allegiance = 'Loyalist' | 'Traitor';
 export type AppPhase = 'start' | 'canvas';
-export type DetachmentType = 'core' | 'auxiliary' | 'apex' | 'other';
+export type DetachmentType = 'core' | 'auxiliary' | 'apex' | 'allied' | 'additional' | 'other';
 
 export interface WargearEntry {
   name: string;
@@ -82,11 +82,39 @@ export interface PlacedDetachment {
   bonusSlots?: BonusSlot[];
 }
 
-export interface SavedList {
+export type ForceKind = 'primary' | 'allied';
+
+/**
+ * One army within the roster — mirrors a root <force> in a .ros file: a
+ * catalogue (faction), the force org chart it's built on, and its detachments
+ * (the chart's child forces).
+ */
+export interface Force {
+  id: string; // uuid
+  faction: string;
+  kind: ForceKind;
+  /** Root force entry (chart) name, e.g. "Crusade Force Organization Chart" */
+  chart: string;
+  detachments: PlacedDetachment[];
+}
+
+/** Everything needed to restore a roster. */
+export interface RosterSnapshot {
+  allegiance: Allegiance;
+  pointsLimit: number;
+  cohortDoctrine: string;
+  forces: Force[];
+}
+
+export interface SavedList extends RosterSnapshot {
   id: string;
   name: string;
   savedAt: number;          // Date.now()
   schemaVersion: number;
+}
+
+/** Saved roster shape before forces/allies (schemaVersion 1). */
+export interface RosterSnapshotV1 {
   faction: string;
   allegiance: Allegiance;
   pointsLimit: number;
@@ -97,12 +125,14 @@ export interface SavedList {
 export type ModalState =
   | { type: 'none' }
   | { type: 'slotEdit'; detachmentId: string; slotKey: string; slotDef: SlotDef; filled: FilledSlot }
-  | { type: 'unitPicker'; detachmentId: string; slotKey: string; role: string; isPrime?: boolean }
+  | { type: 'unitPicker'; detachmentId: string; slotKey: string; role: string; slotRole: string; isPrime?: boolean }
   | { type: 'primeBenefit'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry }
   | { type: 'bonusSlotRoleSelector'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry }
   | { type: 'bonusUnitPicker'; detachmentId: string; bonusSlotId: string; role: string }
   | { type: 'detachmentSelector'; trigger: 'highCommand' | 'command'; unlockedBy: string; title?: string }
-  | { type: 'lordOfWarSelector' }
+  | { type: 'allySelector' }
+  | { type: 'additionalDetachmentSelector' }
+  | { type: 'confirmRemoveForce'; forceId: string }
   | { type: 'confirmClear'; detachmentId: string; slotKey: string; affectedIds: string[] }
   | { type: 'export' }
   | { type: 'saveLoad' }

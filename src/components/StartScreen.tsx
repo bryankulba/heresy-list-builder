@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
-import { Button, NumberInput, Select, SelectItem } from '@carbon/react';
+import { Button, NumberInput, Select, SelectItem, SelectItemGroup } from '@carbon/react';
 import type { Allegiance } from '../types';
 import { useRosterStore } from '../store/rosterStore';
-import { FACTIONS, FACTION_LABEL_MAP } from '../data/factions';
+import { FACTIONS, FACTION_GROUPS, factionLabel } from '../data/factions';
 import { COHORT_DOCTRINES } from '../constants/cohortDoctrines';
 import { getAllSaves } from '../utils/savedLists';
 import SavedListsModal from './modals/SavedListsModal';
@@ -53,12 +53,16 @@ export default function StartScreen() {
         <div className="mb-6">
           <Select
             id="faction-select"
-            labelText="Legion"
+            labelText="Army"
             value={faction}
             onChange={handleFactionChange}
           >
-            {FACTIONS.map((f) => (
-              <SelectItem key={f.id} value={f.id} text={f.label} />
+            {FACTION_GROUPS.map((group) => (
+              <SelectItemGroup key={group} label={group}>
+                {FACTIONS.filter((f) => f.group === group).map((f) => (
+                  <SelectItem key={f.id} value={f.id} text={f.label} />
+                ))}
+              </SelectItemGroup>
             ))}
           </Select>
         </div>
@@ -156,8 +160,8 @@ export default function StartScreen() {
           style={{ color: 'var(--cds-text-placeholder)' }}
         >
           {faction && allegiance
-            ? `${FACTION_LABEL_MAP[faction] ?? faction} · ${allegiance} · ${pointsLimit}pts`
-            : 'Select a legion to continue'}
+            ? `${factionLabel(faction)} · ${allegiance} · ${pointsLimit}pts`
+            : 'Select an army to continue'}
         </p>
       </div>
 

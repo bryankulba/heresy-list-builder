@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tag } from '@carbon/react';
+import { Close } from '@carbon/icons-react';
 import type { BonusSlot, FilledSlot, PlacedDetachment, SlotDef } from '../../types';
 import { getDetachmentDisplayName, getBaseRole, stripPrimePrefix } from '../../data/loader';
 import Slot from './Slot';
@@ -49,11 +50,29 @@ export function expandSlots(def: PlacedDetachment['def']): ExpandedSlot[] {
   return result;
 }
 
+// Card geometry used to estimate rendered height for canvas layout (calibrated
+// against the rendered card; errs slightly large so cards never overlap).
+const CARD_CHROME_H = 64;     // padding + header
+const ROLE_HEADING_H = 30;    // role label + gap
+const SLOT_ROW_H = 74;        // one row of slots incl. gap
+const SLOTS_PER_ROW = 6;
+
+/** Estimated rendered height of a detachment card, from its slots. */
+export function estimateCardHeight(detachment: PlacedDetachment): number {
+  const groups = groupByRole(expandSlots(detachment.def));
+  const bonus = detachment.bonusSlots?.length ?? 0;
+  const groupHeights = groups.map((g) => ROLE_HEADING_H + Math.ceil(g.slots.length / SLOTS_PER_ROW) * SLOT_ROW_H);
+  if (bonus > 0) groupHeights.push(ROLE_HEADING_H + Math.ceil(bonus / SLOTS_PER_ROW) * SLOT_ROW_H);
+  return CARD_CHROME_H + groupHeights.reduce((a, b) => a + b, 0);
+}
+
 function detachmentTagType(type: string): string {
   switch (type) {
     case 'core': return 'blue';
     case 'auxiliary': return 'teal';
     case 'apex': return 'purple';
+    case 'allied': return 'cyan';
+    case 'additional': return 'teal';
     default: return 'gray';
   }
 }
@@ -63,6 +82,8 @@ function detachmentTypeLabel(type: string): string {
     case 'core': return 'Core';
     case 'auxiliary': return 'Auxiliary';
     case 'apex': return 'Apex';
+    case 'allied': return 'Allied';
+    case 'additional': return 'Additional';
     default: return type;
   }
 }
@@ -90,6 +111,10 @@ export function groupByRole(expanded: ExpandedSlot[]): SlotGroup[] {
 interface DetachmentCardProps {
   detachment: PlacedDetachment;
   instanceNumber?: number; // set when >1 of the same name exists
+  /** Label of the allied faction, when this card belongs to an allied army */
+  allyFaction?: string;
+  /** When set, the card shows a remove button */
+  onRemove?: () => void;
   onSlotClick: (slotKey: string, slotDef: SlotDef) => void;
   onSlotClear: (slotKey: string) => void;
   onBonusSlotClick: (bonusSlotId: string, role: string) => void;
@@ -101,6 +126,8 @@ interface DetachmentCardProps {
 export default function DetachmentCard({
   detachment,
   instanceNumber,
+  allyFaction,
+  onRemove,
   onSlotClick,
   onSlotClear,
   onBonusSlotClick,
@@ -116,6 +143,7 @@ export default function DetachmentCard({
     | 'blue'
     | 'teal'
     | 'purple'
+    | 'cyan'
     | 'gray';
 
   // Points on this card
@@ -151,15 +179,37 @@ export default function DetachmentCard({
           <Tag type={tagType} size="sm">
             {detachmentTypeLabel(detachment.def.type)}
           </Tag>
+          {allyFaction && detachment.def.type !== 'allied' && (
+            <Tag type="cyan" size="sm">
+              {allyFaction}
+            </Tag>
+          )}
         </div>
-        {cardPoints > 0 && (
-          <span
-            className="text-xs shrink-0"
-            style={{ color: 'var(--cds-text-secondary)' }}
-          >
-            {cardPoints}pts
-          </span>
-        )}
+        <div className="flex items-center gap-2 shrink-0">
+          {cardPoints > 0 && (
+            <span className="text-xs" style={{ color: 'var(--cds-text-secondary)' }}>
+              {cardPoints}pts
+            </span>
+          )}
+          {onRemove && (
+            <button
+              data-interactive
+              onClick={onRemove}
+              aria-label={`Remove ${title}`}
+              title="Remove detachment"
+              style={{
+                background: 'none',
+                border: 'none',
+                padding: 2,
+                cursor: 'pointer',
+                color: 'var(--cds-icon-secondary)',
+                display: 'flex',
+              }}
+            >
+              <Close size={16} />
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Slot rows grouped by role */}

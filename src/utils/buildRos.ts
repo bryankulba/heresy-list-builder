@@ -1,14 +1,14 @@
 /**
  * buildRos.ts
  * Generates a BattleScribe/New Recruit compatible .ros XML string from the
- * current roster state. Produces one <force> per placed detachment, with
- * one <selection> per filled slot (including bonus slots).
+ * current roster state. Produces one root <force> per army (primary and
+ * allied), one child <force> per placed detachment, and one <selection> per
+ * filled slot (including bonus slots).
  */
 
-import type { PlacedDetachment, UnitEntry } from '../types';
-import { systemData, cataloguesData, detachmentsData } from '../data/loader';
-
-import { FACTION_LABEL_MAP } from '../data/factions';
+import type { Force, UnitEntry } from '../types';
+import { systemData, cataloguesData, detachmentsData, getChart } from '../data/loader';
+import { factionLabel } from '../data/factions';
 
 // Points cost typeId — consistent across all HH3 BSData files
 const POINTS_TYPE_ID = '9893-c379-920b-8982';
@@ -170,18 +170,11 @@ function emitUnitSelection(
   lines.push(`${i}</selection>`);
 }
 
-export function buildRosXml(
-  detachments: PlacedDetachment[],
-  faction: string,
-  pointsLimit: number,
-  totalPoints: number
-): string {
-  const { gameSystemId, gameSystemName, revision: gameSystemRevision, forceOrgEntryId } = systemData;
-  const cat = cataloguesData[faction];
-  const catalogueId = cat?.catalogueId ?? '';
-  const catalogueName = cat?.catalogueName ?? (FACTION_LABEL_MAP[faction] ?? faction);
-  const catalogueRevision = cat?.revision ?? 0;
-  const rosterName = escapeXml(FACTION_LABEL_MAP[faction] ?? catalogueName);
+export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: number): string {
+  const { gameSystemId, gameSystemName, revision: gameSystemRevision } = systemData;
+  const primary = forces.find((f) => f.kind === 'primary') ?? forces[0];
+  const rosterName = escapeXml(primary ? factionLabel(primary.faction) : gameSystemName);
+  const detachments = forces.flatMap((f) => f.detachments);
 
   const lines: string[] = [];
 
@@ -197,83 +190,76 @@ export function buildRosXml(
     ` points="${totalPoints}"` +
     ` pointsLimit="${pointsLimit}">`
   );
-
   lines.push('  <costs>');
   lines.push(`    <cost name="pts" value="${totalPoints}" costTypeId="${POINTS_TYPE_ID}"/>`);
   lines.push('  </costs>');
 
-  // All detachment forces are nested inside the "Crusade Force Organization Chart"
-  // parent force, which is the top-level forceEntry in the game system.
+  // Each army is a root force for its force org chart (Crusade, Allied
+  // Detachment, Knight Households…), with one child force per detachment.
   lines.push('  <forces>');
-  lines.push(
-    `    <force` +
-    ` id="${uuid()}"` +
-    ` name="Crusade Force Organization Chart"` +
-    ` entryId="${escapeXml(forceOrgEntryId)}"` +
-    ` catalogueId="${escapeXml(catalogueId)}"` +
-    ` catalogueName="${escapeXml(catalogueName)}"` +
-    ` catalogueRevision="${catalogueRevision}">`
-  );
-  lines.push('      <forces>');
-
-  for (const det of detachments) {
-    const forceEntryId = det.def.entryId ?? '';
-    const detName = escapeXml(det.def.name);
+  for (const force of forces) {
+    const chart = getChart(force.chart);
+    const cat = cataloguesData[force.faction];
+    const catalogueAttrs =
+      ` catalogueId="${escapeXml(cat?.catalogueId ?? '')}"` +
+      ` catalogueName="${escapeXml(cat?.catalogueName ?? factionLabel(force.faction))}"` +
+      ` catalogueRevision="${cat?.revision ?? 0}"`;
 
     lines.push(
-      `        <force` +
-      ` id="${uuid()}"` +
-      ` name="${detName}"` +
-      ` entryId="${escapeXml(forceEntryId)}"` +
-      ` catalogueId="${escapeXml(catalogueId)}"` +
-      ` catalogueName="${escapeXml(catalogueName)}"` +
-      ` catalogueRevision="${catalogueRevision}">`
+      `    <force id="${uuid()}" name="${escapeXml(chart.name)}" entryId="${escapeXml(chart.id)}"${catalogueAttrs}>`
     );
-    lines.push('          <selections>');
+    lines.push('      <forces>');
 
-    // All regular + prime slots — iterate directly to capture Apex prime-only slots
-    for (const [key, filled] of Object.entries(det.slots)) {
-      if (!filled) continue;
-      const role = key.slice(0, key.lastIndexOf('-'));
-      const slotDef = det.def.slots.find(s => s.role === role);
+    for (const det of force.detachments) {
+      lines.push(
+        `        <force id="${uuid()}" name="${escapeXml(det.def.name)}" entryId="${escapeXml(det.def.entryId ?? '')}"${catalogueAttrs}>`
+      );
+      lines.push('          <selections>');
 
-      const extras: Array<{ name: string; entryId: string }> = [];
+      // All regular + prime slots — iterate directly to capture Apex prime-only slots
+      for (const [key, filled] of Object.entries(det.slots)) {
+        if (!filled) continue;
+        const role = key.slice(0, key.lastIndexOf('-'));
+        const slotDef = det.def.slots.find(s => s.role === role);
 
-      // Logistical Benefit: emit LB - [Role] upgrade so BSData conditions fire
-      const bonusSlot = det.bonusSlots?.find(bs => bs.sourceSlotKey === key);
-      if (bonusSlot) {
-        const lbId = LB_ROLE_IDS[bonusSlot.role];
-        if (lbId) extras.push({ name: `LB - ${bonusSlot.role}`, entryId: lbId });
+        const extras: Array<{ name: string; entryId: string }> = [];
+
+        // Logistical Benefit: emit LB - [Role] upgrade so BSData conditions fire
+        const bonusSlot = det.bonusSlots?.find(bs => bs.sourceSlotKey === key);
+        if (bonusSlot) {
+          const lbId = LB_ROLE_IDS[bonusSlot.role];
+          if (lbId) extras.push({ name: `LB - ${bonusSlot.role}`, entryId: lbId });
+        }
+
+        // High Command / Command prime: emit One Apex/Auxiliary Detachment upgrade
+        // for each detachment this slot unlocked (Officer of the Line can unlock two)
+        const unlockedDets = detachments.filter(d => d.unlockedBy === `${det.id}::${key}`);
+        for (const ud of unlockedDets) {
+          const isApex = detachmentsData.apex.some(a => a.entryId === ud.def.entryId);
+          extras.push({
+            name: isApex ? 'One Apex Detachment' : 'One Auxiliary Detachment',
+            entryId: isApex ? '0889-888b-e3fe-1d5b' : '4ad5-105a-9b10-57dd',
+          });
+        }
+
+        emitUnitSelection(lines, filled.unit, slotDef?.categoryId, role, '            ', extras.length ? extras : undefined);
       }
 
-      // High Command / Command prime: emit One Apex/Auxiliary Detachment upgrade
-      // for each detachment this slot unlocked (Officer of the Line can unlock two)
-      const unlockedDets = detachments.filter(d => d.unlockedBy === `${det.id}::${key}`);
-      for (const ud of unlockedDets) {
-        const isApex = detachmentsData.apex.some(a => a.entryId === ud.def.entryId);
-        extras.push({
-          name: isApex ? 'One Apex Detachment' : 'One Auxiliary Detachment',
-          entryId: isApex ? '0889-888b-e3fe-1d5b' : '4ad5-105a-9b10-57dd',
-        });
+      // Bonus slots (Logistical Benefit)
+      for (const bs of det.bonusSlots ?? []) {
+        if (!bs.unit) continue;
+        const bonusSlotDef = det.def.slots.find(s => s.role === bs.role);
+        const bonusCategoryId = bonusSlotDef?.categoryId ?? ROLE_CATEGORY_MAP[bs.role];
+        emitUnitSelection(lines, bs.unit, bonusCategoryId, bs.role, '            ');
       }
 
-      emitUnitSelection(lines, filled.unit, slotDef?.categoryId, role, '            ', extras.length ? extras : undefined);
+      lines.push('          </selections>');
+      lines.push('        </force>');
     }
 
-    // Bonus slots (Logistical Benefit)
-    for (const bs of det.bonusSlots ?? []) {
-      if (!bs.unit) continue;
-      const bonusSlotDef = det.def.slots.find(s => s.role === bs.role);
-      const bonusCategoryId = bonusSlotDef?.categoryId ?? ROLE_CATEGORY_MAP[bs.role];
-      emitUnitSelection(lines, bs.unit, bonusCategoryId, bs.role, '            ');
-    }
-
-    lines.push('          </selections>');
-    lines.push('        </force>');
+    lines.push('      </forces>');
+    lines.push('    </force>');
   }
-
-  lines.push('      </forces>');
-  lines.push('    </force>');
   lines.push('  </forces>');
   lines.push('</roster>');
 

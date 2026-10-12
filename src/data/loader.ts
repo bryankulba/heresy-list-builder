@@ -3,7 +3,7 @@ import detachmentsJson from '../../data/parsed/detachments.json';
 import systemJson from '../../data/parsed/system.json';
 import cataloguesJson from '../../data/parsed/catalogues.json';
 import type { UnitEntry, DetachmentDef } from '../types';
-import { SM_LEGION_KEYS } from './factions';
+import { ALLIED_CHART, ALLIED_DETACHMENT, FACTIONS, FACTION_BY_ID } from './factions';
 
 export const unitsData = unitsJson as Record<string, UnitEntry[]>;
 
@@ -26,20 +26,55 @@ export interface CatalogueInfo {
 export const systemData = systemJson as SystemInfo;
 export const cataloguesData = cataloguesJson as Record<string, CatalogueInfo>;
 
+/** A root force entry and the detachments it may contain (mirrors a .ros root <force>). */
+export interface ForceChartDef {
+  id: string;
+  name: string;
+  catalogue: string | null;
+  detachments: DetachmentDef[];
+}
+
 export const detachmentsData = detachmentsJson as {
   core: DetachmentDef[];
   auxiliary: DetachmentDef[];
   apex: DetachmentDef[];
   legion: Record<string, DetachmentDef[]>;
+  charts: ForceChartDef[];
 };
 
-/** Returns all units available to a faction: LA base (SM legions only) + faction-specific. */
+export function getChart(name: string): ForceChartDef {
+  const chart = detachmentsData.charts.find((c) => c.name === name);
+  if (!chart) throw new Error(`Force org chart "${name}" not found in data`);
+  return chart;
+}
+
+export function getChartDetachment(chartName: string, detachmentName: string): DetachmentDef {
+  const def = getChart(chartName).detachments.find((d) => d.name === detachmentName);
+  if (!def) throw new Error(`Detachment "${detachmentName}" not found in chart "${chartName}"`);
+  return def;
+}
+
+/** Returns all units available to a faction, merging its unit sources (e.g. Legiones Astartes base + legion). */
 export function getUnitsForFaction(faction: string): UnitEntry[] {
-  const specific = unitsData[faction] ?? [];
-  if (SM_LEGION_KEYS.has(faction)) {
-    return [...(unitsData['legiones-astartes'] ?? []), ...specific];
-  }
-  return specific;
+  const sources = FACTION_BY_ID[faction]?.unitSources ?? [faction];
+  return sources.flatMap((key) => unitsData[key] ?? []);
+}
+
+/** Factions that may join `primaryFaction`'s army as an Allied Detachment. */
+export function getAllyFactions(primaryFaction: string) {
+  if (!FACTION_BY_ID[primaryFaction]?.canTakeAllies) return [];
+  const allied = getChartDetachment(ALLIED_CHART, ALLIED_DETACHMENT);
+  return FACTIONS.filter((f) => f.id !== primaryFaction && allied.sources?.includes(f.id));
+}
+
+/**
+ * Additional detachments a force may add from its own chart without an unlock
+ * (e.g. Knight Households' Armiger Talon). Limits come with the rules evaluator.
+ */
+export function getAdditionalDetachments(chartName: string, faction: string): DetachmentDef[] {
+  return getChart(chartName).detachments.filter(
+    (d) => d.type === 'additional' && (!d.sources?.length || d.sources.includes(faction))
+  );
 }
 
 /** Strips " - qualifier" suffix: "Command - Centurions Only" → "Command" */
@@ -88,13 +123,7 @@ export function getDetachmentsForFaction(
   return all.filter((d) => !d.sources || d.sources.length === 0 || d.sources.includes(faction));
 }
 
-/** Strips the "Auxiliary - " or "Apex - " type prefix for display. */
+/** Strips the "Auxiliary - ", "Apex - " or "Additional - " type prefix for display. */
 export function getDetachmentDisplayName(name: string): string {
-  if (name.startsWith('Auxiliary - ') || name.startsWith('Auxiliary – ')) {
-    return name.slice(name.indexOf(' - ') + 3) || name.slice(name.indexOf(' – ') + 3);
-  }
-  if (name.startsWith('Apex - ') || name.startsWith('Apex – ')) {
-    return name.slice(name.indexOf(' - ') + 3) || name.slice(name.indexOf(' – ') + 3);
-  }
-  return name;
+  return name.replace(/^(Auxiliary|Apex|Additional) [-–] /, '').trim() || name;
 }

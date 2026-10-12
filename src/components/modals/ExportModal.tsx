@@ -1,58 +1,60 @@
 import React, { useMemo } from 'react';
 import { ComposedModal, ModalHeader, ModalBody, ModalFooter, Button } from '@carbon/react';
-import type { Allegiance, PlacedDetachment } from '../../types';
+import type { Allegiance, Force, PlacedDetachment } from '../../types';
 import { getDetachmentDisplayName } from '../../data/loader';
 import { expandSlots } from '../canvas/DetachmentCard';
-import { FACTION_LABEL_MAP } from '../../data/factions';
+import { factionLabel } from '../../data/factions';
 import { buildRosXml } from '../../utils/buildRos';
 
 interface ExportModalProps {
-  detachments: PlacedDetachment[];
-  faction: string;
+  forces: Force[];
   allegiance: Allegiance;
   pointsLimit: number;
   totalPoints: number;
   onClose: () => void;
 }
 
-function factionLabel(faction: string): string {
-  return (FACTION_LABEL_MAP[faction] ?? faction).toUpperCase();
+function detachmentLines(det: PlacedDetachment): string[] {
+  const lines = [getDetachmentDisplayName(det.def.name).toUpperCase()];
+
+  for (const { key, slotDef } of expandSlots(det.def)) {
+    const filled = det.slots[key];
+    if (!filled) continue;
+    const benefitStr = filled.primeBenefit ? `  [Prime: ${filled.primeBenefit.name}]` : '';
+    const role = slotDef.role.replace('Prime ', '★ ');
+    const effectivePts = filled.unit.points + (filled.extraPoints ?? 0);
+    const notesStr = filled.notes ? `  — ${filled.notes}` : '';
+    lines.push(`  ${role}: ${filled.unit.name} (${effectivePts}pts)${benefitStr}${notesStr}`);
+  }
+  for (const bs of det.bonusSlots ?? []) {
+    if (!bs.unit) continue;
+    const bsEffectivePts = bs.unit.points + (bs.extraPoints ?? 0);
+    const bsNotesStr = bs.notes ? `  — ${bs.notes}` : '';
+    lines.push(`  ${bs.role} [Logistical Benefit]: ${bs.unit.name} (${bsEffectivePts}pts)${bsNotesStr}`);
+  }
+  return lines;
 }
 
 function buildExportText(
-  detachments: PlacedDetachment[],
-  faction: string,
+  forces: Force[],
   allegiance: Allegiance,
   pointsLimit: number,
   totalPoints: number
 ): string {
   const lines: string[] = [];
+  const primary = forces.find((f) => f.kind === 'primary') ?? forces[0];
 
-  lines.push(`${factionLabel(faction)} — ${allegiance.toUpperCase()} — ${pointsLimit}pts`);
+  lines.push(`${factionLabel(primary?.faction ?? '').toUpperCase()} — ${allegiance.toUpperCase()} — ${pointsLimit}pts`);
   lines.push('');
 
-  for (const det of detachments) {
-    const displayName = getDetachmentDisplayName(det.def.name).toUpperCase();
-    lines.push(displayName);
-
-    const expanded = expandSlots(det.def);
-    for (const { key, slotDef } of expanded) {
-      const filled = det.slots[key];
-      if (!filled) continue;
-      const benefitStr = filled.primeBenefit ? `  [Prime: ${filled.primeBenefit.name}]` : '';
-      const role = slotDef.role.replace('Prime ', '★ ');
-      const effectivePts = filled.unit.points + (filled.extraPoints ?? 0);
-      const notesStr = filled.notes ? `  — ${filled.notes}` : '';
-      lines.push(`  ${role}: ${filled.unit.name} (${effectivePts}pts)${benefitStr}${notesStr}`);
+  for (const force of forces) {
+    if (force.kind === 'allied') {
+      lines.push(`=== ALLIES: ${factionLabel(force.faction).toUpperCase()} ===`);
+      lines.push('');
     }
-    for (const bs of det.bonusSlots ?? []) {
-      if (!bs.unit) continue;
-      const bsEffectivePts = bs.unit.points + (bs.extraPoints ?? 0);
-      const bsNotesStr = bs.notes ? `  — ${bs.notes}` : '';
-      lines.push(`  ${bs.role} [Logistical Benefit]: ${bs.unit.name} (${bsEffectivePts}pts)${bsNotesStr}`);
+    for (const det of force.detachments) {
+      lines.push(...detachmentLines(det), '');
     }
-
-    lines.push('');
   }
 
   lines.push(`TOTAL: ${totalPoints}pts / ${pointsLimit}pts`);
@@ -72,16 +74,15 @@ function downloadRos(xml: string, faction: string): void {
 }
 
 export default function ExportModal({
-  detachments,
-  faction,
+  forces,
   allegiance,
   pointsLimit,
   totalPoints,
   onClose,
 }: ExportModalProps) {
   const text = useMemo(
-    () => buildExportText(detachments, faction, allegiance, pointsLimit, totalPoints),
-    [detachments, faction, allegiance, pointsLimit, totalPoints]
+    () => buildExportText(forces, allegiance, pointsLimit, totalPoints),
+    [forces, allegiance, pointsLimit, totalPoints]
   );
 
   function copyToClipboard() {
@@ -89,8 +90,8 @@ export default function ExportModal({
   }
 
   function handleDownloadRos() {
-    const xml = buildRosXml(detachments, faction, pointsLimit, totalPoints);
-    downloadRos(xml, faction);
+    const xml = buildRosXml(forces, pointsLimit, totalPoints);
+    downloadRos(xml, forces.find((f) => f.kind === 'primary')?.faction ?? 'roster');
   }
 
   return (

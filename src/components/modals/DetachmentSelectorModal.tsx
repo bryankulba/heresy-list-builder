@@ -15,6 +15,10 @@ interface DetachmentSelectorModalProps {
   trigger: 'highCommand' | 'command';
   faction: string;
   title?: string;
+  /** Explicit options; defaults to the Apex/Auxiliary detachments for the trigger */
+  options?: DetachmentDef[];
+  /** Highlight the cohort doctrine's boosted Tercio (primary army only) */
+  showDoctrine?: boolean;
   onConfirm: (def: DetachmentDef) => void;
   onClose: () => void;
 }
@@ -23,16 +27,17 @@ export default function DetachmentSelectorModal({
   trigger,
   faction,
   title: titleProp,
+  options: optionsProp,
+  showDoctrine = true,
   onConfirm,
   onClose,
 }: DetachmentSelectorModalProps) {
   const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
-  const boostedTercio = cohortDoctrine ? COHORT_DOCTRINE_BY_ID[cohortDoctrine]?.boostedTercio : null;
+  const boostedTercio =
+    showDoctrine && cohortDoctrine ? COHORT_DOCTRINE_BY_ID[cohortDoctrine]?.boostedTercio ?? null : null;
 
-  const options = getDetachmentsForFaction(
-    trigger === 'highCommand' ? 'apex' : 'auxiliary',
-    faction
-  );
+  const options =
+    optionsProp ?? getDetachmentsForFaction(trigger === 'highCommand' ? 'apex' : 'auxiliary', faction);
 
   const title =
     titleProp ??
