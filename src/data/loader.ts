@@ -5,7 +5,7 @@ import cataloguesJson from '../../data/parsed/catalogues.json';
 import rulesJson from '../../data/parsed/rules.json';
 import type { UnitEntry, DetachmentDef } from '../types';
 import type { PrimeNode } from '../rules/primeBenefits';
-import { ALLIED_CHART, ALLIED_DETACHMENT, FACTIONS, FACTION_BY_ID } from './factions';
+import { ALLIED_CHART, ALLIED_DETACHMENT, CRUSADE_CHART, FACTIONS, FACTION_BY_ID } from './factions';
 
 export const unitsData = unitsJson as unknown as Record<string, UnitEntry[]>;
 
@@ -28,7 +28,10 @@ export interface CatalogueInfo {
 export const systemData = systemJson as SystemInfo;
 
 /** Rules trees (Prime benefits) with BSData conditions — see src/rules/ */
-export const rulesData = rulesJson as unknown as { primeGroups: Record<string, PrimeNode> };
+export const rulesData = rulesJson as unknown as {
+  primeGroups: Record<string, PrimeNode>;
+  detachmentChoice: { apex?: { id: string; name: string }; auxiliary?: { id: string; name: string } };
+};
 export const cataloguesData = cataloguesJson as Record<string, CatalogueInfo>;
 
 /** A root force entry and the detachments it may contain (mirrors a .ros root <force>). */
@@ -39,12 +42,15 @@ export interface ForceChartDef {
   detachments: DetachmentDef[];
 }
 
-export const detachmentsData = detachmentsJson as {
-  core: DetachmentDef[];
-  auxiliary: DetachmentDef[];
-  apex: DetachmentDef[];
-  legion: Record<string, DetachmentDef[]>;
-  charts: ForceChartDef[];
+const charts = (detachmentsJson as unknown as { charts: ForceChartDef[] }).charts;
+const crusadeDetachments = charts.find((c) => c.name === CRUSADE_CHART)?.detachments ?? [];
+
+/** Force org charts, plus the Crusade chart's detachments bucketed by type. */
+export const detachmentsData = {
+  charts,
+  core: crusadeDetachments.filter((d) => d.type === 'core'),
+  apex: crusadeDetachments.filter((d) => d.type === 'apex'),
+  auxiliary: crusadeDetachments.filter((d) => d.type !== 'core' && d.type !== 'apex'),
 };
 
 export function getChart(name: string): ForceChartDef {
@@ -82,6 +88,20 @@ export function getAdditionalDetachments(chartName: string, faction: string): De
   );
 }
 
+/**
+ * The unit as placed via one of its alternate root links (e.g. Centurion as
+ * "Command - Centurions Only"): same unit, that link's id and category.
+ */
+export function unitVariant(unit: UnitEntry, link: { entryId: string; category: string }): UnitEntry {
+  return {
+    ...unit,
+    entryId: link.entryId,
+    primaryCategory: link.category,
+    role: getBaseRole(link.category),
+    primaryCategoryRules: undefined,
+  };
+}
+
 /** Strips " - qualifier" suffix: "Command - Centurions Only" → "Command" */
 export function getBaseRole(qualifiedRole: string): string {
   const idx = qualifiedRole.indexOf(' - ');
@@ -99,21 +119,6 @@ export function stripPrimePrefix(role: string): string {
  */
 export function getMatchableRole(slotRole: string): string {
   return getBaseRole(stripPrimePrefix(slotRole));
-}
-
-/**
- * Returns units valid for a given slot role + faction. A unit whose primary
- * category is qualified (e.g. "Troops - Infantry Troop or Levy Troop only") only
- * fills a slot with exactly that category, never a plain "Troops" slot.
- */
-export function getUnitsForRole(faction: string, slotRole: string): UnitEntry[] {
-  const slotCategory = stripPrimePrefix(slotRole);
-  const matchable = getMatchableRole(slotRole);
-  return getUnitsForFaction(faction).filter((u) => {
-    const category = u.primaryCategory ?? u.role;
-    if (category === slotCategory) return true;
-    return !category.includes(' - ') && u.role === matchable;
-  });
 }
 
 /**

@@ -1,3 +1,5 @@
+import type { RuleModifier } from '../rules/evaluate';
+
 export type Allegiance = 'Loyalist' | 'Traitor';
 export type AppPhase = 'start' | 'canvas';
 export type DetachmentType = 'core' | 'auxiliary' | 'apex' | 'allied' | 'additional' | 'other';
@@ -34,6 +36,10 @@ export interface UnitEntry {
   facts?: Record<string, number>;
   /** The unit's "Prime Unit" link and the Prime benefit group(s) it offers */
   prime?: { linkId: string; groups: string[] };
+  /** Conditional re-filings of the primary category (e.g. "Heavy Assault - Tartaros Only" in a Linebreaker) */
+  primaryCategoryRules?: Array<{ category: string } & Pick<RuleModifier, 'conditions' | 'conditionGroups'>>;
+  /** Other root links to the same unit under different primary categories (see unitVariant) */
+  alternateLinks?: Array<{ entryId: string; category: string }>;
 }
 
 export interface SlotDef {
@@ -42,6 +48,8 @@ export interface SlotDef {
   max: number;
   prime: boolean;
   categoryId?: string;
+  /** BSData modifiers on the slot's max — evaluated by rules/slots.ts effectiveSlots */
+  maxModifiers?: RuleModifier[];
 }
 
 export interface DetachmentDef {
@@ -129,7 +137,7 @@ export interface RosterSnapshotV1 {
 export type ModalState =
   | { type: 'none' }
   | { type: 'slotEdit'; detachmentId: string; slotKey: string; slotDef: SlotDef; filled: FilledSlot }
-  | { type: 'unitPicker'; detachmentId: string; slotKey: string; role: string; slotRole: string; isPrime?: boolean }
+  | { type: 'unitPicker'; detachmentId: string; slotKey: string; role: string; isPrime?: boolean }
   | { type: 'primeBenefit'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry }
   | { type: 'bonusSlotRoleSelector'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry; roles?: string[] }
   | { type: 'bonusUnitPicker'; detachmentId: string; bonusSlotId: string; role: string }

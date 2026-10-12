@@ -6640,5 +6640,15 @@
         }
       ]
     }
+  },
+  "detachmentChoice": {
+    "apex": {
+      "id": "0889-888b-e3fe-1d5b",
+      "name": "One Apex Detachment"
+    },
+    "auxiliary": {
+      "id": "4ad5-105a-9b10-57dd",
+      "name": "One Auxiliary Detachment"
+    }
   }
 }

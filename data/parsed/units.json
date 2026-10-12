@@ -29,7 +29,33 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Rapier Battery Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "d089-8cc7-96a7-903f"
+            }
+          ]
+        },
+        {
+          "category": "Support - Dreadwing or Rapier Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "4df8-3a15-6b77-1b80"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Saturnine Terminator Squad",
@@ -104,7 +130,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Assault - Saturnine Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "aafc-1a40-350a-5434"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Centurion",
@@ -160,7 +200,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "19fd-7251-94f8-5176",
+          "category": "Command - Centurions Only"
+        }
+      ]
     },
     {
       "name": "Praetor in Saturnine Terminator Armour",
@@ -282,7 +328,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Troops - Assault Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "edb0-a5d8-84f1-4eee"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Breacher Squad",
@@ -367,7 +427,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Troops - Breacher Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "1581-346d-51c6-4739"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Araknae Quad Accelerator Platform",
@@ -409,7 +483,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Araknae Quad Accelerator Platform Units Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "07f0-6f5f-59f4-f95f"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Saturnine Dreadnought",
@@ -460,7 +548,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "6a85-018e-2545-3b43",
+          "category": "War-engine - Upgraded by The Iron-clad"
+        }
+      ]
     },
     {
       "name": "Fellblade Super-Heavy Battle Tank",
@@ -632,7 +726,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "9810-0bfe-1ea1-11c4",
+          "category": "Transport - Logisticae"
+        }
+      ]
     },
     {
       "name": "Spartan Assault Tank",
@@ -676,7 +776,27 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Transport - Land Raider Carrier or Spartan Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "4737-e73a-394e-433f"
+            }
+          ]
+        }
+      ],
+      "alternateLinks": [
+        {
+          "entryId": "1a22-9259-2ab4-b7a3",
+          "category": "Heavy Transport - Logisticae"
+        }
+      ]
     },
     {
       "name": "Veteran Tactical Squad",
@@ -830,7 +950,45 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Dawnbreaker Cohorts or Veteran Assault Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "edb0-a5d8-84f1-4eee"
+            }
+          ]
+        },
+        {
+          "category": "Elites - Veteran Assault Squads or Dark Fury Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "27bf-3e6b-587c-74bb"
+            }
+          ]
+        },
+        {
+          "category": "Elites - Veteran Assault Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "2e50-319d-ae62-a50c"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Tactical Squad",
@@ -957,7 +1115,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "94c0-c163-06b7-11be",
+          "category": "War-engine - Upgraded by The Iron-clad"
+        }
+      ]
     },
     {
       "name": "Leviathan Dreadnought",
@@ -1000,7 +1164,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "e81a-462b-1037-010a",
+          "category": "War-engine - Upgraded by The Iron-clad"
+        }
+      ]
     },
     {
       "name": "Praetor",
@@ -1150,7 +1320,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Command - Optae Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "1da1-f220-0bad-5f78"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Centurion in Terminator Armour",
@@ -1188,7 +1372,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "f73b-1c98-abfe-2cd3",
+          "category": "Command - Centurions Only"
+        }
+      ]
     },
     {
       "name": "Damocles Command Rhino",
@@ -1574,7 +1764,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Command - Praevian Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "7ff8-9e2c-e68a-573f"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Moritat",
@@ -1893,7 +2097,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Retinue - Praetorian Command Squad with Jump Packs Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "2e50-319d-ae62-a50c"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Centurion Command Squad",
@@ -2034,7 +2252,33 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Retinue - Cataphractii or Tartaros Command Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "dbbe-886f-3ce1-13c0"
+            }
+          ]
+        },
+        {
+          "category": "Retinue - Tartaros Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "dd35-dc84-98ac-237d"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Cataphractii Terminator Squad",
@@ -2091,7 +2335,33 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Assault - Cataphractii or Tartaros Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "dbbe-886f-3ce1-13c0"
+            }
+          ]
+        },
+        {
+          "category": "Heavy Assault - Cataphractii Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "d7b3-5d00-8524-73fa"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Seeker Squad",
@@ -2171,7 +2441,33 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Seeker Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "3e2f-4f99-d366-7a95"
+            }
+          ]
+        },
+        {
+          "category": "Elites - Seeker Squads or Headhunter Kill Teams Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "74f4-a9d0-a2be-b4bd"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Tartaros Terminator Squad",
@@ -2227,7 +2523,33 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Assault - Cataphractii or Tartaros Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "dbbe-886f-3ce1-13c0"
+            }
+          ]
+        },
+        {
+          "category": "Heavy Assault - Tartaros Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "dd35-dc84-98ac-237d"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Cataphractii Terminator Command Squad",
@@ -2285,7 +2607,33 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Retinue - Cataphractii or Tartaros Command Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "dbbe-886f-3ce1-13c0"
+            }
+          ]
+        },
+        {
+          "category": "Retinue - Cataphractii Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "d7b3-5d00-8524-73fa"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Despoiler Squad",
@@ -2565,7 +2913,33 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Apothecary Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "41f6-7dfc-4eb9-f6ef"
+            }
+          ]
+        },
+        {
+          "category": "Support - Apothecary Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "9bfb-c160-31df-9108"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Techmarine",
@@ -2624,7 +2998,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Techmarine Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "7993-0219-c614-f612"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Deathstorm Drop Pod",
@@ -2700,7 +3088,39 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "War-engine - Upgraded by The Iron-clad",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "parent",
+              "field": "selections",
+              "value": 1,
+              "childId": "d00a-e269-2ed3-8fc4"
+            }
+          ]
+        },
+        {
+          "category": "War Engine - Contemptor Dreadnoughts Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "parent",
+              "field": "selections",
+              "value": 1,
+              "childId": "9ffc-1414-bcb2-ca4b"
+            }
+          ]
+        }
+      ],
+      "alternateLinks": [
+        {
+          "entryId": "a171-22b3-803d-10fa",
+          "category": "War-engine - Upgraded by The Iron-clad"
+        }
+      ]
     },
     {
       "name": "Termite",
@@ -2743,7 +3163,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "361d-a25d-61e2-e0d8",
+          "category": "Transport - Logisticae"
+        }
+      ]
     },
     {
       "name": "Drop Pod",
@@ -2782,7 +3208,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "5f31-154e-0a07-a964",
+          "category": "Transport - Logisticae"
+        }
+      ]
     },
     {
       "name": "Land Raider Carrier",
@@ -2826,7 +3258,27 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Transport - Land Raider Carrier or Spartan Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "4737-e73a-394e-433f"
+            }
+          ]
+        }
+      ],
+      "alternateLinks": [
+        {
+          "entryId": "a370-655f-c48f-318e",
+          "category": "Heavy Transport - Logisticae"
+        }
+      ]
     },
     {
       "name": "Dreadnought Drop Pod",
@@ -2859,7 +3311,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "e7f9-bca8-8aa6-f2dd",
+          "category": "Heavy Transport - Logisticae"
+        }
+      ]
     },
     {
       "name": "Kharybdis Assault Claw",
@@ -2899,7 +3357,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "5589-1cac-0cfd-410b",
+          "category": "Heavy Transport - Logisticae"
+        }
+      ]
     },
     {
       "name": "Dreadclaw Drop Pod",
@@ -2933,7 +3397,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "b501-cf72-ab54-1530",
+          "category": "Heavy Transport - Logisticae"
+        }
+      ]
     },
     {
       "name": "Outrider Squadron",
@@ -3011,7 +3481,33 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Recon - Outrider Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "0f6e-3db8-8b6f-74e1"
+            }
+          ]
+        },
+        {
+          "category": "Recon - Outrider Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "466d-8e42-0890-721a"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Reconnaissance Squad",
@@ -3091,7 +3587,33 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Recon - Reconnaissance Squad Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "38f7-2240-f8ee-6cce"
+            }
+          ]
+        },
+        {
+          "category": "Recon - Reconnaissance Squad Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "27bf-3e6b-587c-74bb"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Sabre",
@@ -3179,7 +3701,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "4a93-1e5b-2cb0-7875",
+          "category": "Recon - Land Raider Explorator Only"
+        }
+      ]
     },
     {
       "name": "Tarantula Battery",
@@ -3217,7 +3745,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Recon - Tarantula Battery Units Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "07f0-6f5f-59f4-f95f"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Scimitar Jetbike Squadron",
@@ -3302,7 +3844,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Fast Attack - Scimitar Jetbike Squadrons only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "0f6e-3db8-8b6f-74e1"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Xiphon Interceptor",
@@ -3525,7 +4081,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Armour - Predator or Vindicator Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "04d2-0a69-061e-75fe"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Land Speeder Squadron",
@@ -3748,7 +4318,33 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Armour - Arquitor or Vindicator Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "d089-8cc7-96a7-903f"
+            }
+          ]
+        },
+        {
+          "category": "Armour - Predator or Vindicator Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "04d2-0a69-061e-75fe"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Scorpius Missile Tank",
@@ -3823,7 +4419,33 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Armour - Arquitor Bombard Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "5bc5-5224-c751-d437"
+            }
+          ]
+        },
+        {
+          "category": "Armour - Arquitor or Vindicator Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "d089-8cc7-96a7-903f"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Cerberus Heavy Tank Destroyer",
@@ -6797,7 +7419,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Assault - Tartaros Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "dd35-dc84-98ac-237d"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Indomitus Terminator Squad",
@@ -7060,7 +7696,27 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "War-engine - Upgraded by The Iron-clad",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "parent",
+              "field": "selections",
+              "value": 1,
+              "childId": "d00a-e269-2ed3-8fc4"
+            }
+          ]
+        }
+      ],
+      "alternateLinks": [
+        {
+          "entryId": "a1fe-2631-a015-5920",
+          "category": "War-engine - Upgraded by The Iron-clad"
+        }
+      ]
     },
     {
       "name": "Land Raider Achilles",
@@ -7104,7 +7760,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "4e75-4843-f1ee-7899",
+          "category": "Heavy Transport - Logisticae"
+        }
+      ]
     },
     {
       "name": "Caestus Assault Ram",
@@ -7149,7 +7811,13 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "519e-34ad-bc9e-9bd2",
+          "category": "Heavy Transport - Logisticae"
+        }
+      ]
     },
     {
       "name": "Attack Bike Squadron",
@@ -7545,7 +8213,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Retinue - Saturnine Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "aafc-1a40-350a-5434"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Whirlwind Missile Tank",
@@ -7788,7 +8470,13 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "fe0c-1a09-c660-c098",
+          "category": "Support - Castellax Battle Maniple Only"
+        }
+      ]
     },
     {
       "name": "Castellax Destructor Maniple",
@@ -7844,7 +8532,13 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "d5b4-da29-c8a4-f18f",
+          "category": "Heavy Assault - Castellax Destructor Maniple only"
+        }
+      ]
     },
     {
       "name": "Thallax Cohort",
@@ -8002,7 +8696,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Domitar Battle Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Thanatar Siege Maniple",
@@ -8055,7 +8768,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "War Engine - Thanatar Siege Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Vorax Attack Maniple",
@@ -8109,7 +8841,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Recon - Vorax Attack Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Vultarax Stratos Squadron",
@@ -8162,7 +8913,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Fast Attack - Vultarax Stratos Squadron Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "alpha-legion": [
@@ -8382,7 +9152,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Seeker Squads or Headhunter Kill Teams Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "74f4-a9d0-a2be-b4bd"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Exodus",
@@ -15171,7 +15955,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Dawnbreaker Cohorts or Veteran Assault Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "edb0-a5d8-84f1-4eee"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "The Angel's Tears",
@@ -15667,7 +16465,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Dreadwing or Rapier Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "4df8-3a15-6b77-1b80"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Inner Circle Knights Cenobium",
@@ -15884,7 +16696,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Retinue - Cataphractii Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "d7b3-5d00-8524-73fa"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Tartaros Terminator Deathwing Companions",
@@ -15938,7 +16764,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Retinue - Tartaros Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "dd35-dc84-98ac-237d"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Inner Circle Knights Cenobium – Order of the Broken Claws",
@@ -19364,7 +20204,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Troops - Terror Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "8fe1-7b62-49cf-479b"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Sevatar",
@@ -19820,7 +20674,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Veteran Assault Squads or Dark Fury Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "27bf-3e6b-587c-74bb"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Deliverers Squad",
@@ -21487,7 +22355,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Troops - Grey Slayer Packs Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "06b3-c35d-da74-de37"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Hvarl Red-Blade",
@@ -25537,7 +26419,21 @@
         "groups": [
           "a396-b846-c263-6767"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Assault - Rampager Squads Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "forces",
+              "value": 1,
+              "childId": "bda6-c5d3-eafc-4eb5"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Red Butchers",
@@ -26059,7 +26955,21 @@
         "groups": [
           "4ae1-f3b2-e1c8-165f"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Command",
+          "conditions": [
+            {
+              "type": "atLeast",
+              "scope": "self",
+              "field": "selections",
+              "value": 1,
+              "childId": "c857-47bd-6a4f-fcf8"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Archmagos on Abeyant",
@@ -26100,7 +27010,21 @@
         "groups": [
           "4ae1-f3b2-e1c8-165f"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Command",
+          "conditions": [
+            {
+              "type": "atLeast",
+              "scope": "self",
+              "field": "selections",
+              "value": 1,
+              "childId": "c857-47bd-6a4f-fcf8"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Magos",
@@ -26235,7 +27159,21 @@
         "groups": [
           "4ae1-f3b2-e1c8-165f"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Command - Arcuitor Magesterium Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "4f19-3023-0077-1049"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Echidnax Servo Maniple",
@@ -26341,7 +27279,38 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Automata Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "primary-catalogue",
+              "field": "selections",
+              "value": 1,
+              "childId": "dbe3-9946-d4de-dc73"
+            }
+          ]
+        },
+        {
+          "category": "Elites - Domitar Battle Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Magos on Abeyant",
@@ -26454,7 +27423,21 @@
         "groups": [
           "4ae1-f3b2-e1c8-165f"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Myrmidax Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "primary-catalogue",
+              "field": "selections",
+              "value": 1,
+              "childId": "1db9-6dc0-7da5-e517"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Myrmidon Destructor Host",
@@ -26524,7 +27507,21 @@
         "groups": [
           "4ae1-f3b2-e1c8-165f"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Myrmidax Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "primary-catalogue",
+              "field": "selections",
+              "value": 1,
+              "childId": "1db9-6dc0-7da5-e517"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Tech-Thrall Covenant",
@@ -26623,7 +27620,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Assault - Castellax Destructor Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Ursarax Cohort",
@@ -26693,7 +27709,21 @@
         "groups": [
           "4ae1-f3b2-e1c8-165f"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Assault - Ursurax Cohorts Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "d5e2-3162-f591-6a81"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Tech-Priest",
@@ -26791,7 +27821,21 @@
         "groups": [
           "4ae1-f3b2-e1c8-165f"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Thallax Cohort Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "primary-catalogue",
+              "field": "selections",
+              "value": 1,
+              "childId": "7f03-c1a3-d883-8a98"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Armiger Moirax",
@@ -26882,7 +27926,38 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "War-Engine - Automata Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "primary-catalogue",
+              "field": "selections",
+              "value": 1,
+              "childId": "dbe3-9946-d4de-dc73"
+            }
+          ]
+        },
+        {
+          "category": "War Engine - Thanatar Siege Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Triaros Armoured Conveyor",
@@ -27005,7 +28080,38 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Automata Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "primary-catalogue",
+              "field": "selections",
+              "value": 1,
+              "childId": "dbe3-9946-d4de-dc73"
+            }
+          ]
+        },
+        {
+          "category": "Support - Castellax Battle Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Vorax Attack Maniple",
@@ -27059,7 +28165,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Recon - Vorax Attack Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Vultarax Stratos Squadron",
@@ -27112,7 +28237,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Fast Attack - Vultarax Stratos Squadron Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Blood Slaughterer",
@@ -27299,7 +28443,21 @@
         "groups": [
           "4ae1-f3b2-e1c8-165f"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Automata Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "primary-catalogue",
+              "field": "selections",
+              "value": 1,
+              "childId": "dbe3-9946-d4de-dc73"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Krios Venator",
@@ -27625,7 +28783,21 @@
         "groups": [
           "4ae1-f3b2-e1c8-165f"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Automata Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "primary-catalogue",
+              "field": "selections",
+              "value": 1,
+              "childId": "dbe3-9946-d4de-dc73"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Mechanicum Termite",
@@ -27960,7 +29132,21 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Automata Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "primary-catalogue",
+              "field": "selections",
+              "value": 1,
+              "childId": "dbe3-9946-d4de-dc73"
+            }
+          ]
+        }
+      ]
     }
   ],
   "solar-auxilia": [
@@ -28556,7 +29742,21 @@
         "groups": [
           "8180-ce7c-accf-f232"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Veletaris units only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "e1a1-2699-4681-47ab"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Veletaris Vanguard Section",
@@ -28630,7 +29830,21 @@
         "groups": [
           "8180-ce7c-accf-f232"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Veletaris units only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "e1a1-2699-4681-47ab"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Charonite Ogryn Section",
@@ -28738,7 +29952,21 @@
         "groups": [
           "8180-ce7c-accf-f232"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Troops - Lasrifle Section Units only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "243b-4ffd-9808-11d8"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Basilisk Artillery Tank",
@@ -28776,7 +30004,21 @@
         "groups": [
           "8180-ce7c-accf-f232"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Rapier Section, Basilisk Artillery Tank or Medusa Artillery tank units only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "371d-e9ef-7bf9-47de"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Medusa Artillery Tank",
@@ -28814,7 +30056,21 @@
         "groups": [
           "8180-ce7c-accf-f232"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Rapier Section, Basilisk Artillery Tank or Medusa Artillery tank units only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "371d-e9ef-7bf9-47de"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Rapier Section",
@@ -28845,7 +30101,21 @@
         "groups": [
           "8180-ce7c-accf-f232"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Rapier Section, Basilisk Artillery Tank or Medusa Artillery tank units only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "371d-e9ef-7bf9-47de"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Hermes Veletaris Squadron",
@@ -28893,7 +30163,21 @@
         "groups": [
           "8180-ce7c-accf-f232"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Hermes Veletaris units only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "e1a1-2699-4681-47ab"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Aethon Heavy Sentinel Squadron",
@@ -28937,7 +30221,21 @@
         "groups": [
           "8180-ce7c-accf-f232"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "War-engine - Aethon Heavy Sentinel Squadron units only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "551a-23a1-7758-2688"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Arvus Lighter",
@@ -29065,7 +30363,33 @@
         "groups": [
           "8180-ce7c-accf-f232"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Recon - Hermes Light Sentinel Squadron units only",
+          "conditionGroups": [
+            {
+              "type": "or",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "ancestor",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "243b-4ffd-9808-11d8"
+                },
+                {
+                  "type": "instanceOf",
+                  "scope": "ancestor",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "551a-23a1-7758-2688"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Primaris-Lightning Strike Fighter",
@@ -29235,7 +30559,33 @@
         "groups": [
           "8180-ce7c-accf-f232"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Armour - Leman Russ Strike, Leman Russ Assault or Malcador Heavy tank units only",
+          "conditionGroups": [
+            {
+              "type": "or",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "ancestor",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "6aff-b91d-02bb-7461"
+                },
+                {
+                  "type": "instanceOf",
+                  "scope": "ancestor",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "aaa3-8a14-38ef-34e6"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Leman Russ Strike Tank",
@@ -29277,7 +30627,33 @@
         "groups": [
           "8180-ce7c-accf-f232"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Armour - Leman Russ Strike, Leman Russ Assault or Malcador Heavy tank units only",
+          "conditionGroups": [
+            {
+              "type": "or",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "ancestor",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "6aff-b91d-02bb-7461"
+                },
+                {
+                  "type": "instanceOf",
+                  "scope": "ancestor",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "aaa3-8a14-38ef-34e6"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Malcador Heavy Tank",
@@ -29323,7 +30699,33 @@
         "groups": [
           "8180-ce7c-accf-f232"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Armour - Leman Russ Strike, Leman Russ Assault or Malcador Heavy tank units only",
+          "conditionGroups": [
+            {
+              "type": "or",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "ancestor",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "6aff-b91d-02bb-7461"
+                },
+                {
+                  "type": "instanceOf",
+                  "scope": "ancestor",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "aaa3-8a14-38ef-34e6"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Valdor Tank Destroyer",
@@ -30727,7 +32129,21 @@
         "groups": [
           "8180-ce7c-accf-f232"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Veletaris units only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "ancestor",
+              "field": "selections",
+              "value": 1,
+              "childId": "e1a1-2699-4681-47ab"
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Tech-Priest",
@@ -30897,7 +32313,43 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Castellax Battle Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Support - Castellax Battle Maniple or Thallax Cohort Unit only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "9a10-a2d9-5a87-a5a9"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Castellax Destructor Maniple",
@@ -30953,7 +32405,43 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Assault - Castellax Destructor Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "category": "Heavy Assault - Castellax Destructor Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "9a10-a2d9-5a87-a5a9"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Domitar Battle Maniple",
@@ -31013,7 +32501,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Domitar Battle Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Thanatar Siege Maniple",
@@ -31066,7 +32573,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "War Engine - Thanatar Siege Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Vorax Attack Maniple",
@@ -31120,7 +32646,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Recon - Vorax Attack Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Vultarax Stratos Squadron",
@@ -31173,7 +32718,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Fast Attack - Vultarax Stratos Squadron Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Discipline Master Cadre",
@@ -31805,7 +33369,13 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "alternateLinks": [
+        {
+          "entryId": "8974-9163-b42c-9015",
+          "category": "Fast Attack - Vultarax Stratos Squadron Only"
+        }
+      ]
     },
     {
       "name": "Triaros Armoured Conveyor",
@@ -32071,7 +33641,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Castellax Battle Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Castellax Destructor Maniple",
@@ -32127,7 +33716,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Assault - Castellax Destructor Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Domitar Battle Maniple",
@@ -32187,7 +33795,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Domitar Battle Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Thanatar Siege Maniple",
@@ -32240,7 +33867,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "War Engine - Thanatar Siege Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Vorax Attack Maniple",
@@ -32294,7 +33940,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Recon - Vorax Attack Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "legio-custodes": [
@@ -33354,7 +35019,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Castellax Battle Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Castellax Destructor Maniple",
@@ -33410,7 +35094,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Assault - Castellax Destructor Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Domitar Battle Maniple",
@@ -33470,7 +35173,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Domitar Battle Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Thanatar Siege Maniple",
@@ -33523,7 +35245,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "War Engine - Thanatar Siege Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Vorax Attack Maniple",
@@ -33577,7 +35318,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Recon - Vorax Attack Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Vultarax Stratos Squadron",
@@ -33630,7 +35390,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Fast Attack - Vultarax Stratos Squadron Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "anathema-psykana": [
@@ -33898,7 +35677,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Castellax Battle Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Castellax Destructor Maniple",
@@ -33954,7 +35752,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Assault - Castellax Destructor Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Domitar Battle Maniple",
@@ -34014,7 +35831,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Domitar Battle Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Thanatar Siege Maniple",
@@ -34067,7 +35903,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "War Engine - Thanatar Siege Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Vorax Attack Maniple",
@@ -34121,7 +35976,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Recon - Vorax Attack Maniple Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Vultarax Stratos Squadron",
@@ -34174,7 +36048,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Fast Attack - Vultarax Stratos Squadron Only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "questoris-familia": [
@@ -34802,7 +36695,27 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Elites - Domitar Battle Maniple Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "1ace-97ad-6d7a-fa81"
+            }
+          ]
+        }
+      ],
+      "alternateLinks": [
+        {
+          "entryId": "3a8d-8afa-4b3e-2ade",
+          "category": "Elites"
+        }
+      ]
     },
     {
       "name": "Castellax Battle Maniple",
@@ -34874,7 +36787,27 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Support - Castellax Battle Maniple Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "1ace-97ad-6d7a-fa81"
+            }
+          ]
+        }
+      ],
+      "alternateLinks": [
+        {
+          "entryId": "6b41-366e-b332-6865",
+          "category": "Support"
+        }
+      ]
     },
     {
       "name": "Vorax Attack Maniple",
@@ -34928,7 +36861,27 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Recon - Vorax Attack Maniple Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "1ace-97ad-6d7a-fa81"
+            }
+          ]
+        }
+      ],
+      "alternateLinks": [
+        {
+          "entryId": "6b50-27ae-5b63-fc55",
+          "category": "Recon"
+        }
+      ]
     },
     {
       "name": "Vultarax Stratos Squadron",
@@ -34981,7 +36934,27 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Fast Attack - Vultarax Stratos Squadron Only",
+          "conditions": [
+            {
+              "type": "instanceOf",
+              "scope": "force",
+              "field": "selections",
+              "value": 1,
+              "childId": "1ace-97ad-6d7a-fa81"
+            }
+          ]
+        }
+      ],
+      "alternateLinks": [
+        {
+          "entryId": "29e9-d2aa-99ca-6fca",
+          "category": "Fast Attack"
+        }
+      ]
     },
     {
       "name": "Veletaris Storm Section",
@@ -35731,7 +37704,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "Heavy Assault - Castellax Destructor Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "name": "Thanatar Siege Maniple",
@@ -35784,7 +37776,26 @@
           "4ae1-f3b2-e1c8-165f",
           "1abc-7dd4-54e7-48e5"
         ]
-      }
+      },
+      "primaryCategoryRules": [
+        {
+          "category": "War Engine - Thanatar Siege Maniple only",
+          "conditionGroups": [
+            {
+              "type": "and",
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "force",
+                  "field": "forces",
+                  "value": 1,
+                  "childId": "2dfc-259d-d11b-dc8b"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ]
 }

@@ -23,12 +23,22 @@ export interface RuleConditionGroup {
   conditionGroups?: RuleConditionGroup[];
 }
 
+export interface RuleRepeat {
+  value: number;
+  repeats: number;
+  field: string;
+  scope: string;
+  childId?: string;
+  roundUp?: boolean;
+}
+
 export interface RuleModifier {
   type: string;
   field: string;
   value: string | number | boolean;
   conditions?: RuleCondition[];
   conditionGroups?: RuleConditionGroup[];
+  repeats?: RuleRepeat[];
 }
 
 /** Where an entry sits, in BattleScribe terms. Counts are keyed by entry or category id. */
@@ -45,6 +55,11 @@ export interface RuleContext {
   roster: Record<string, number>;
   /** Detachments/charts in the roster, by force entry id */
   rosterForces: Record<string, number>;
+  /**
+   * What "self"/"parent" refer to: entries inside a unit (default) or a
+   * detachment's own slots, whose parent is the detachment itself.
+   */
+  level?: 'unit' | 'detachment';
 }
 
 function isInForce(ctx: RuleContext, id: string): boolean {
@@ -58,21 +73,26 @@ function instanceOf(c: RuleCondition, ctx: RuleContext): boolean {
     case 'force':
       return isInForce(ctx, id);
     case 'ancestor':
-      // The unit itself (and its categories), its detachment, chart and catalogue
+    case 'parent':
+      // The unit itself (and its categories), its detachment, chart and catalogue.
+      // "parent" is the unit for entries inside it, but the detachment for the
+      // unit's own link (e.g. "set primary category if parent is a Dreadnought Talon").
       return isInForce(ctx, id) || (ctx.unit[id] ?? 0) > 0;
     case 'unit':
     case 'self':
-    case 'parent':
       return (ctx.unit[id] ?? 0) > 0;
     default:
       return false;
   }
 }
 
-function count(c: RuleCondition, ctx: RuleContext): number {
+function count(c: Pick<RuleCondition, 'field' | 'scope' | 'childId'>, ctx: RuleContext): number {
   const id = c.childId ?? '';
   if (c.field === 'forces') return ctx.rosterForces[id] ?? 0;
   if (c.field !== 'selections') return 0; // cost/limit fields aren't modelled
+  if (ctx.level === 'detachment' && (c.scope === 'self' || c.scope === 'parent' || c.scope === 'unit')) {
+    return ctx.force[id] ?? 0;
+  }
   switch (c.scope) {
     case 'unit':
     case 'self':
@@ -131,6 +151,34 @@ function groupHolds(group: RuleConditionGroup, ctx: RuleContext): boolean {
   ];
   if (results.length === 0) return true;
   return group.type === 'or' ? results.some(Boolean) : results.every(Boolean);
+}
+
+/** How many times a modifier applies: 1, or once per `value` matching selections when it repeats. */
+function repetitions(m: RuleModifier, ctx: RuleContext): number {
+  if (!m.repeats?.length) return 1;
+  return m.repeats.reduce((total, r) => {
+    const n = r.value > 0 ? count(r, ctx) / r.value : 0;
+    return total + (r.roundUp ? Math.ceil(n) : Math.floor(n)) * r.repeats;
+  }, 0);
+}
+
+/** Applies numeric set/increment/decrement modifiers targeting `field` in order. */
+export function applyNumericModifiers(
+  base: number,
+  modifiers: RuleModifier[] | undefined,
+  ctx: RuleContext
+): number {
+  let value = base;
+  for (const m of modifiers ?? []) {
+    if (!conditionsHold(m, ctx)) continue;
+    const amount = Number(m.value);
+    if (Number.isNaN(amount)) continue;
+    const times = repetitions(m, ctx);
+    if (m.type === 'set') value = amount;
+    else if (m.type === 'increment') value += amount * times;
+    else if (m.type === 'decrement') value -= amount * times;
+  }
+  return Math.max(0, value);
 }
 
 /** Applies `set hidden` modifiers in order to a base hidden flag. */

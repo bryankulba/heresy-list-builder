@@ -7,9 +7,11 @@
  */
 
 import type { Force, UnitEntry } from '../types';
-import { systemData, cataloguesData, detachmentsData, getChart } from '../data/loader';
+import { systemData, cataloguesData, detachmentsData, getChart, rulesData } from '../data/loader';
 import { factionLabel } from '../data/factions';
 import { findPrimeNode, logisticalBenefitChoice } from '../rules/primeBenefits';
+import { withEffectiveSlots } from '../rules/slots';
+import { cardSlots } from '../components/canvas/slotLayout';
 
 // Points cost typeId — consistent across all HH3 BSData files
 const POINTS_TYPE_ID = '9893-c379-920b-8982';
@@ -25,12 +27,7 @@ interface ExtraSelection {
 // detachment's own slot list (e.g. "Support" bonus from Logistical Benefit in CPD).
 const ROLE_CATEGORY_MAP: Record<string, string> = (() => {
   const map: Record<string, string> = {};
-  const allDets = [
-    ...detachmentsData.core,
-    ...detachmentsData.auxiliary,
-    ...detachmentsData.apex,
-    ...Object.values(detachmentsData.legion ?? {}).flat(),
-  ];
+  const allDets = detachmentsData.charts.flatMap((c) => c.detachments);
   for (const det of allDets) {
     for (const slot of det.slots) {
       if (slot.categoryId && !(slot.role in map)) {
@@ -191,6 +188,14 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
 
   // Each army is a root force for its force org chart (Crusade, Allied
   // Detachment, Knight Households…), with one child force per detachment.
+  // Slot roles as the canvas shows them (slot counts evaluated from the
+  // detachment's contents), so a unit in a position a rule made Prime exports
+  // as Prime
+  const view = withEffectiveSlots(forces);
+  const slotDefsByDetachment = new Map(
+    view.flatMap((f) => f.detachments).map((det) => [det.id, new Map(cardSlots(det).map((s) => [s.key, s.slotDef]))])
+  );
+
   lines.push('  <forces>');
   for (const force of forces) {
     const chart = getChart(force.chart);
@@ -214,15 +219,16 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
       // All regular + prime slots — iterate directly to capture Apex prime-only slots
       for (const [key, filled] of Object.entries(det.slots)) {
         if (!filled) continue;
-        const role = key.slice(0, key.lastIndexOf('-'));
-        const slotDef = det.def.slots.find(s => s.role === role);
+        const slotDef = slotDefsByDetachment.get(det.id)?.get(key);
+        const role = slotDef?.role ?? key.slice(0, key.lastIndexOf('-'));
+        const categoryId = slotDef?.categoryId ?? ROLE_CATEGORY_MAP[role];
 
         const extras: ExtraSelection[] = [];
 
         // Prime slot: emit the unit's "Prime Unit" upgrade with the chosen benefit
         // inside it (and, for Logistical Benefit, the "LB - <role>" choice) so
         // BSData's prime categories and conditions fire
-        if (role.startsWith('Prime ') && filled.unit.prime) {
+        if ((slotDef?.prime ?? role.startsWith('Prime ')) && filled.unit.prime) {
           const benefit = filled.primeBenefit;
           const benefitNode = benefit ? findPrimeNode(filled.unit, benefit) : undefined;
           const bonusSlot = det.bonusSlots?.find(bs => bs.sourceSlotKey === key);
@@ -244,14 +250,11 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
         // for each detachment this slot unlocked (Officer of the Line can unlock two)
         const unlockedDets = detachments.filter(d => d.unlockedBy === `${det.id}::${key}`);
         for (const ud of unlockedDets) {
-          const isApex = detachmentsData.apex.some(a => a.entryId === ud.def.entryId);
-          extras.push({
-            name: isApex ? 'One Apex Detachment' : 'One Auxiliary Detachment',
-            entryId: isApex ? '0889-888b-e3fe-1d5b' : '4ad5-105a-9b10-57dd',
-          });
+          const choice = ud.def.type === 'apex' ? rulesData.detachmentChoice.apex : rulesData.detachmentChoice.auxiliary;
+          if (choice) extras.push({ name: choice.name, entryId: choice.id });
         }
 
-        emitUnitSelection(lines, filled.unit, slotDef?.categoryId, role, '            ', extras.length ? extras : undefined);
+        emitUnitSelection(lines, filled.unit, categoryId, role, '            ', extras.length ? extras : undefined);
       }
 
       // Bonus slots (Logistical Benefit)

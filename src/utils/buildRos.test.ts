@@ -120,4 +120,28 @@ describe('buildRosXml', () => {
     expect(prime.selections.selection['@_entryId']).toBe(lb.id);
     expect(prime.selections.selection.selections.selection['@_name']).toBe('LB - Armour');
   });
+
+  test('units in positions a rule made Prime export as Prime', () => {
+    const tactical = getUnitsForFaction('death-guard').find((u) => u.name === 'Tactical Squad')!;
+    const mortarion = getUnitsForFaction('death-guard').find((u) => u.name === 'Mortarion')!;
+    const force = createForce('death-guard', 'primary');
+    force.detachments[0].slots = {
+      'Prime Troops-0': { unit: tactical },
+      'Troops-1': { unit: tactical },
+      'Troops-2': { unit: tactical },
+      'Troops-3': { unit: tactical },
+    };
+    const warlord = getChart('Crusade Force Organization Chart').detachments.find((d) => d.name === 'Warlord Detachment')!;
+    const [withWarlord] = addDetachment([force], warlord, { forceId: force.id });
+    withWarlord.detachments[1].slots['Warlord-0'] = { unit: mortarion };
+
+    const roots = xmlParser.parse(buildRosXml([withWarlord], 3000, 0)).roster.forces.force;
+    const cpd = [roots.forces.force].flat()[0];
+    const units = [cpd.selections.selection].flat();
+    expect(units).toHaveLength(4);
+    for (const u of units) {
+      expect(u.categories.category['@_name']).toBe('Prime Troops');
+      expect([u.selections.selection].flat().some((s: Record<string, string>) => s['@_name'] === 'Prime Unit')).toBe(true);
+    }
+  });
 });

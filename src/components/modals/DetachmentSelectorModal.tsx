@@ -59,6 +59,7 @@ export default function DetachmentSelectorModal({
           {options.map((def) => {
             const displayName = getDetachmentDisplayName(def.name);
             const slotSummary = def.slots
+              .filter((s) => s.max > 0)
               .map((s) => `${s.max}× ${s.role.replace('Prime ', '★ ')}`)
               .join('  ·  ');
             const isDoctrineBoost = boostedTercio !== null && displayName === boostedTercio;

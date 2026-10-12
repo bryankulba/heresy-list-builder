@@ -54,6 +54,24 @@ export function rosterCounts(forces: Force[]): RosterCounts {
   return { roster, rosterForces, byDetachment };
 }
 
+/** Context for a detachment's own slots (their max modifiers). */
+export function detachmentContext(
+  forces: Force[],
+  force: Force,
+  detachment: PlacedDetachment,
+  counts: RosterCounts = rosterCounts(forces)
+): RuleContext {
+  return {
+    catalogueId: cataloguesData[force.faction]?.catalogueId ?? '',
+    forceEntryIds: [detachment.def.entryId ?? '', getChart(force.chart).id].filter(Boolean),
+    unit: {},
+    force: counts.byDetachment.get(detachment.id) ?? {},
+    roster: counts.roster,
+    rosterForces: counts.rosterForces,
+    level: 'detachment',
+  };
+}
+
 /**
  * Context for something inside `unit` placed in `detachment` of `force`
  * (e.g. the unit's Prime benefits). `slotCategoryId` is the category of the

@@ -17,7 +17,7 @@ import {
   stripPrimePrefix,
 } from '../../data/loader';
 import { CRUSADE_CHART, factionLabel } from '../../data/factions';
-import DetachmentCard, { estimateCardHeight, expandSlots } from './DetachmentCard';
+import DetachmentCard, { cardSlots, estimateCardHeight } from './DetachmentCard';
 import ConnectorLine from './ConnectorLine';
 import SlotEditModal from '../modals/SlotEditModal';
 import UnitPickerModal from '../modals/UnitPickerModal';
@@ -27,6 +27,7 @@ import DetachmentSelectorModal from '../modals/DetachmentSelectorModal';
 import AllySelectorModal from '../modals/AllySelectorModal';
 import { unitContext } from '../../rules/context';
 import { getPrimeOptions, isLogisticalBenefit, logisticalBenefitRoles } from '../../rules/primeBenefits';
+import { unitsForSlot, withEffectiveSlots } from '../../rules/slots';
 import ConfirmModal from '../modals/ConfirmModal';
 import ExportModal from '../modals/ExportModal';
 import SavedListsModal from '../modals/SavedListsModal';
@@ -162,6 +163,9 @@ export default function Canvas() {
   const forces = useRosterStore((s) => s.forces);
   // Memoized: the connector-line layout effect depends on this array's identity
   const detachments = useMemo(() => allDetachments(forces), [forces]);
+  // What the canvas shows: detachments with slot counts evaluated from their contents
+  const view = useMemo(() => withEffectiveSlots(forces), [forces]);
+  const viewDetachments = useMemo(() => allDetachments(view), [view]);
   const primary = primaryForce(forces);
   const allegiance = useRosterStore((s) => s.allegiance);
   const pointsLimit = useRosterStore((s) => s.pointsLimit);
@@ -192,9 +196,17 @@ export default function Canvas() {
 
   /** Find the SlotDef for a given slot key on a placed detachment. */
   function findSlotDef(detachmentId: string, slotKey: string): SlotDef | undefined {
-    const det = detachments.find((d) => d.id === detachmentId);
+    const det = viewDetachments.find((d) => d.id === detachmentId);
     if (!det) return undefined;
-    return expandSlots(det.def).find((s) => s.key === slotKey)?.slotDef;
+    return cardSlots(det).find((s) => s.key === slotKey)?.slotDef;
+  }
+
+  /** Units that can fill a slot (or a Logistical Benefit bonus slot of `role`). */
+  function slotUnits(detachmentId: string, slot: SlotDef | undefined) {
+    const force = forces.find((f) => f.detachments.some((d) => d.id === detachmentId));
+    const det = force?.detachments.find((d) => d.id === detachmentId);
+    if (!force || !det || !slot) return [];
+    return unitsForSlot(forces, force, det, slot);
   }
 
   /** Prime benefits a unit may take in a given slot, evaluated from BSData. */
@@ -398,7 +410,6 @@ export default function Canvas() {
         detachmentId,
         slotKey,
         role: matchableRole,
-        slotRole: slotDef.role,
         isPrime: slotDef.prime,
       });
     }
@@ -573,7 +584,7 @@ export default function Canvas() {
   }
 
   // ── Card positions ──
-  const { positions: cardPositions, labels: forceLabels } = computeCardPositions(forces);
+  const { positions: cardPositions, labels: forceLabels } = computeCardPositions(view);
   const instanceNumbers = computeInstanceNumbers(detachments);
 
   // Resolve effective position (user override takes precedence over computed)
@@ -660,7 +671,7 @@ export default function Canvas() {
           ))}
 
           {/* Detachment cards */}
-          {forces.flatMap((force) => force.detachments.map((det) => ({ force, det }))).map(({ force, det }) => {
+          {view.flatMap((force) => force.detachments.map((det) => ({ force, det }))).map(({ force, det }) => {
             const pos = getCardPos(det.id);
             const isDragging = draggingId === det.id;
             return (
@@ -762,7 +773,7 @@ export default function Canvas() {
             linkedDetachments={linkedDetachments}
             onChangeUnit={() => {
               isEditingSlot.current = { detachmentId, slotKey };
-              setModal({ type: 'unitPicker', detachmentId, slotKey, role, slotRole: slotDef.role, isPrime: slotDef.prime });
+              setModal({ type: 'unitPicker', detachmentId, slotKey, role, isPrime: slotDef.prime });
             }}
             onChangeBenefit={() => {
               isEditingSlot.current = { detachmentId, slotKey };
@@ -779,7 +790,7 @@ export default function Canvas() {
       {modal.type === 'unitPicker' && (
         <UnitPickerModal
           role={modal.role}
-          slotRole={modal.slotRole}
+          units={slotUnits(modal.detachmentId, findSlotDef(modal.detachmentId, modal.slotKey))}
           faction={factionFor(modal.detachmentId)}
           onConfirm={handleUnitConfirmed}
           onClose={() => setModal({ type: 'none' })}
@@ -833,6 +844,7 @@ export default function Canvas() {
       {modal.type === 'bonusUnitPicker' && (
         <UnitPickerModal
           role={modal.role}
+          units={slotUnits(modal.detachmentId, { role: modal.role, min: 0, max: 1, prime: false })}
           faction={factionFor(modal.detachmentId)}
           onConfirm={(unit) => {
             if (modal.type !== 'bonusUnitPicker') return;

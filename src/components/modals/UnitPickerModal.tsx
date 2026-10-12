@@ -9,14 +9,14 @@ import {
   Tag,
 } from '@carbon/react';
 import type { UnitEntry } from '../../types';
-import { getUnitsForRole } from '../../data/loader';
 import { SM_LEGION_KEYS } from '../../data/factions';
 
 interface UnitPickerModalProps {
   /** Display role, e.g. "Troops" */
   role: string;
-  /** Full slot category to filter by, e.g. "Troops - Infantry Troop or Levy Troop only" (defaults to role) */
-  slotRole?: string;
+  /** Units that can fill the slot (see rules/slots.ts) */
+  units: UnitEntry[];
+  /** The army's faction (for the Legion tag) */
   faction: string;
   onConfirm: (unit: UnitEntry) => void;
   onClose: () => void;
@@ -24,14 +24,13 @@ interface UnitPickerModalProps {
 
 export default function UnitPickerModal({
   role,
-  slotRole,
+  units,
   faction,
   onConfirm,
   onClose,
 }: UnitPickerModalProps) {
   const [search, setSearch] = useState('');
 
-  const units = useMemo(() => getUnitsForRole(faction, slotRole ?? role), [faction, slotRole, role]);
   const isLegion = SM_LEGION_KEYS.has(faction);
 
   const filtered = useMemo(() => {

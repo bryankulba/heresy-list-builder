@@ -38,10 +38,20 @@ export interface BsConditionGroup {
   comment?: string;
 }
 
+export interface BsRepeat {
+  value: number;
+  repeats: number;
+  field: string;
+  scope: string;
+  childId?: string;
+  roundUp?: boolean;
+}
+
 export interface BsModifier {
   type: string;
   field: string;
   value: string | number | boolean;
+  repeats?: BsRepeat[];
   conditions?: BsCondition[];
   conditionGroups?: BsConditionGroup[];
   comment?: string;
@@ -173,6 +183,18 @@ export interface UnitEntry {
   facts: Record<string, number>;
   /** How the unit links its Prime benefits: the "Prime Unit" link and the benefit group(s) inside it */
   prime?: { linkId: string; groups: string[] };
+  /**
+   * Conditional re-filings of the unit's primary category, e.g. Tartaros
+   * Terminators become "Heavy Assault - Tartaros Only" inside a Linebreaker
+   * Echelon (Tartaros). Applied in order when their conditions hold.
+   */
+  primaryCategoryRules?: Array<{ category: string } & Pick<RuleModifier, 'conditions' | 'conditionGroups'>>;
+  /**
+   * Other root links to the same unit under different primary categories (e.g.
+   * Centurion as "Command - Centurions Only"). A unit placed via one of these
+   * exports with that link's id.
+   */
+  alternateLinks?: Array<{ entryId: string; category: string }>;
 }
 
 // ---------------------------------------------------------------------------
@@ -199,6 +221,8 @@ export interface RuleModifier {
   value: string | number | boolean;
   conditions?: RuleCondition[];
   conditionGroups?: RuleConditionGroup[];
+  /** Apply `value` once per `value` selections of `childId` in `scope` (BattleScribe "repeats") */
+  repeats?: Array<{ value: number; repeats: number; field: string; scope: string; childId?: string; roundUp?: boolean }>;
 }
 
 /** A node in a Prime benefit tree: a group of choices or a choosable benefit. */
@@ -217,6 +241,11 @@ export interface PrimeNode {
 export interface RulesData {
   /** Prime benefit trees, keyed by the shared group id units link to */
   primeGroups: Record<string, PrimeNode>;
+  /**
+   * Upgrades a High Command/Command unit carries to record which kind of
+   * detachment it unlocked ("One Apex Detachment" / "One Auxiliary Detachment").
+   */
+  detachmentChoice: { apex?: { id: string; name: string }; auxiliary?: { id: string; name: string } };
 }
 
 export interface DetachmentSlot {
@@ -226,6 +255,12 @@ export interface DetachmentSlot {
   prime: boolean;
   /** targetId of the categoryLink — used as the category entryId in .ros exports */
   categoryId: string;
+  /**
+   * Modifiers on the slot's max (set/increment/decrement, possibly repeated).
+   * The app evaluates these against the detachment's contents — e.g. a legion
+   * rule turning all Troops Prime, or Logisticae adding Transport slots.
+   */
+  maxModifiers?: RuleModifier[];
 }
 
 export interface Detachment {
@@ -267,10 +302,6 @@ export interface CatalogueInfo {
 export interface ParseResult {
   units: Record<string, UnitEntry[]>;
   detachments: {
-    core: Detachment[];
-    auxiliary: Detachment[];
-    apex: Detachment[];
-    legion: Record<string, Detachment[]>;
     /** Every supported force org chart (Crusade, Allied Detachment, Knight Households…) */
     charts: ForceChart[];
   };
@@ -486,7 +517,15 @@ function slimConditions(holder: { conditions?: BsCondition[]; conditionGroups?: 
 }
 
 export function slimModifier(m: BsModifier): RuleModifier {
-  return { type: m.type, field: m.field, value: m.value, ...slimConditions(m) };
+  const repeats = m.repeats?.map((r) => ({
+    value: r.value,
+    repeats: r.repeats,
+    field: r.field,
+    scope: r.scope,
+    ...(r.childId ? { childId: r.childId } : {}),
+    ...(r.roundUp ? { roundUp: true } : {}),
+  }));
+  return { type: m.type, field: m.field, value: m.value, ...slimConditions(m), ...(repeats?.length ? { repeats } : {}) };
 }
 
 /** Entry/category ids a unit contains at default composition, with counts. */
@@ -509,6 +548,19 @@ function unitFacts(unit: BsEntry, rootLink: BsEntry, models: ModelEntry[]): Reco
     for (const w of m.defaultWargear) add(w.entryId, m.min);
   }
   return facts;
+}
+
+/** "One Apex Detachment" / "One Auxiliary Detachment" from the High Command Detachment Choice group. */
+function detachmentChoiceIds(index: SharedIndex): RulesData['detachmentChoice'] {
+  const choices: RulesData['detachmentChoice'] = {};
+  for (const groupId of FORCE_ORG_CHOICE_GROUP_IDS) {
+    const group = index.get(groupId);
+    for (const e of [...(group?.selectionEntries ?? []), ...(group?.entryLinks ?? [])]) {
+      if (/^One Apex Detachment/i.test(e.name)) choices.apex = { id: e.id, name: e.name };
+      if (/^One Auxiliary Detachment/i.test(e.name)) choices.auxiliary = { id: e.id, name: e.name };
+    }
+  }
+  return choices;
 }
 
 /** The game system's shared "Prime Unit" upgrade that every prime-capable unit links. */
@@ -667,6 +719,25 @@ function effectivePrimaryCategory(link: BsEntry, categoryNames: Map<string, stri
   return primary;
 }
 
+/** Conditional set-primary modifiers on a unit's root link and shared entry, with category names. */
+function primaryCategoryRules(
+  link: BsEntry,
+  target: BsEntry,
+  categoryNames: Map<string, string>
+): UnitEntry['primaryCategoryRules'] {
+  const rules = [...allModifiers(link), ...allModifiers(target)]
+    .filter((m) => m.field === 'category' && m.type === 'set-primary' && allConditions(m).length > 0)
+    .map((m) => {
+      const { conditions, conditionGroups } = slimModifier(m);
+      return {
+        category: categoryNames.get(String(m.value)) ?? String(m.value),
+        ...(conditions ? { conditions } : {}),
+        ...(conditionGroups ? { conditionGroups } : {}),
+      };
+    });
+  return rules.length > 0 ? rules : undefined;
+}
+
 /**
  * A catalogue's force-org units are its top-level shared unit entries that the
  * root `entryLinks` expose with a primary category (the battlefield role). The
@@ -687,12 +758,14 @@ function extractUnitsFromCatalogue(
   // "Support - Castellax Battle Maniple Only". Prefer the plain battlefield-role
   // link; otherwise fall back to the first link.
   const rootLinks = new Map<string, { linkId: string; role: string; link: BsEntry }>();
+  const allRootLinks = new Map<string, Array<{ entryId: string; category: string }>>();
   const isPlainSlotRole = (role: string) => slotRoles.has(role);
   for (const link of cat.entryLinks ?? []) {
     if (!link.targetId) continue;
     if (link.hidden && !allModifiers(link).some((m) => m.field === 'hidden')) continue; // never shown
     const role = effectivePrimaryCategory(link, categoryNames);
     if (!role) continue;
+    allRootLinks.set(link.targetId, [...(allRootLinks.get(link.targetId) ?? []), { entryId: link.id, category: role }]);
     const existing = rootLinks.get(link.targetId);
     if (!existing || (!isPlainSlotRole(existing.role) && isPlainSlotRole(role))) {
       rootLinks.set(link.targetId, { linkId: link.id, role, link });
@@ -719,6 +792,8 @@ function extractUnitsFromCatalogue(
 
     const unitWargear = collectMandatoryWargear(entry, index);
     const prime = primeLinkage(entry);
+    const categoryRules = primaryCategoryRules(link.link, entry, categoryNames);
+    const alternateLinks = (allRootLinks.get(entry.id) ?? []).filter((l) => l.entryId !== link.linkId);
     const officerOfTheLine = officerOfTheLineFor(entry, ootlMap);
 
     units.push({
@@ -734,6 +809,8 @@ function extractUnitsFromCatalogue(
       ...(officerOfTheLine !== undefined ? { officerOfTheLine } : {}),
       facts: unitFacts(entry, link.link, breakdown?.models ?? []),
       ...(prime ? { prime } : {}),
+      ...(categoryRules ? { primaryCategoryRules: categoryRules } : {}),
+      ...(alternateLinks.length > 0 ? { alternateLinks } : {}),
     });
     for (const groupId of prime?.groups ?? []) primeGroupIds.add(groupId);
   }
@@ -745,18 +822,29 @@ function extractUnitsFromCatalogue(
 // ---------------------------------------------------------------------------
 
 /** A forceEntry's slots are its categoryLinks with a positive max constraint. */
+/**
+ * A forceEntry's slots are its categoryLinks with a max constraint that is
+ * positive, or zero but raisable by a modifier (e.g. a slot a Logistical
+ * Benefit or a legion rule opens up).
+ */
 function extractSlots(fe: BsForceEntry): DetachmentSlot[] {
   const slots: DetachmentSlot[] = [];
   for (const link of fe.categoryLinks ?? []) {
-    const max = link.constraints?.find((c) => c.type === 'max')?.value ?? 0;
-    if (max === 0) continue; // placeholder / disabled slot
+    const maxConstraint = link.constraints?.find((c) => c.type === 'max');
+    if (!maxConstraint) continue;
+    const maxModifiers = maxConstraint.id
+      ? allModifiers(link).filter((m) => m.field === maxConstraint.id).map(slimModifier)
+      : [];
+    const canRaise = maxModifiers.some((m) => m.type === 'increment' || (m.type === 'set' && Number(m.value) > 0));
+    if (maxConstraint.value === 0 && !canRaise) continue; // placeholder / disabled slot
     const min = link.constraints?.find((c) => c.type === 'min')?.value ?? 0;
     slots.push({
       role: link.name,
       min,
-      max,
+      max: maxConstraint.value,
       prime: link.name.toLowerCase().startsWith('prime'),
       categoryId: link.targetId,
+      ...(maxModifiers.length > 0 ? { maxModifiers } : {}),
     });
   }
   return slots;
@@ -823,18 +911,6 @@ function parseCharts(
   ].filter((chart) => chart.detachments.length > 0);
 }
 
-function parseDetachments(gst: BsRoot, catalogueKeyById: Map<string, string>): ParseResult['detachments'] {
-  const detachments: ParseResult['detachments'] = { core: [], auxiliary: [], apex: [], legion: {}, charts: [] };
-  const crusade = gst.forceEntries?.find((fe) => fe.name === CRUSADE_FORCE_ORG_NAME);
-
-  for (const fe of crusade?.forceEntries ?? []) {
-    const detachment = parseDetachment(fe, catalogueKeyById);
-    if (!detachment) continue;
-    const bucket = detachment.type === 'core' || detachment.type === 'apex' ? detachment.type : 'auxiliary';
-    detachments[bucket].push(detachment);
-  }
-  return detachments;
-}
 
 // ---------------------------------------------------------------------------
 // parseAll — main exported entry point
@@ -866,7 +942,7 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
   for (const root of [gst, ...catalogues.map((c) => c.catalogue)]) {
     for (const ce of root.categoryEntries ?? []) categoryNames.set(ce.id, ce.name);
   }
-  const detachments = parseDetachments(gst, catalogueKeyById);
+  const detachments: ParseResult['detachments'] = { charts: [] };
   detachments.charts = parseCharts(
     gst,
     unitFactions.flatMap((key) => {
@@ -876,7 +952,8 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
     catalogueKeyById
   );
   const slotRoles = new Set(
-    [...detachments.core, ...detachments.auxiliary, ...detachments.apex]
+    detachments.charts
+      .flatMap((c) => c.detachments)
       .flatMap((d) => d.slots.map((s) => s.role.replace(/^Prime /, '')))
       .filter((role) => !role.includes(' - '))
   );
@@ -922,7 +999,7 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
     detachments,
     system,
     catalogues: catalogueInfo,
-    rules: { primeGroups },
+    rules: { primeGroups, detachmentChoice: detachmentChoiceIds(index) },
     warnings,
   };
 }

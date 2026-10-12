@@ -29,15 +29,26 @@ The BSData JSON is the BattleScribe schema as objects (`forceEntries`, `sharedSe
 - Root entry links may be re-filed by unconditional `set-primary` category modifiers
 
 - `data/parsed/units.json` — `Record<factionKey, UnitEntry[]>`; faction keys are slugified catalogue names (`emperors-children`, `skitarii-conclaves`); the extracted factions are listed in `UNIT_FACTIONS` in `scripts/sync-data.ts`
-- `data/parsed/detachments.json` — `{ core, auxiliary, apex, legion, charts }`; `core/auxiliary/apex` are the Crusade chart's detachments, `charts` lists every supported force org chart (Crusade, Allied Detachment, Knight Households…) with its detachments. Each `DetachmentDef` has `sources?: string[]`
+- `data/parsed/detachments.json` — `{ charts }`: every supported force org chart (Crusade, Allied Detachment, Knight Households…) with its detachments. `loader.ts` derives `detachmentsData.core/apex/auxiliary` from the Crusade chart. Each `DetachmentDef` has `sources?: string[]`; each slot may carry `maxModifiers`
+- `data/parsed/rules.json` — Prime benefit trees (`primeGroups`) with their BSData visibility conditions, and the High Command detachment-choice upgrade ids
 - Empty `sources[]` = available to all factions; non-empty = faction-restricted
 - Faction restrictions come from the detachment's `set hidden=false` modifiers conditioned on `instanceOf primary-catalogue <catalogueId>`
+
+### Rules Evaluator (`src/rules/`)
+
+BSData conditions/modifiers are kept (slimmed) in the parsed data and evaluated at runtime — no hardcoded rule tables:
+- `evaluate.ts` — conditions (`instanceOf`, `atLeast`, `equalTo`… over scopes unit/force/roster/primary-catalogue/ancestor), `effectiveHidden`, `applyNumericModifiers` (incl. `repeats`). Anything the roster doesn't contain counts as 0 — accurate here since the app can't create those selections.
+- `context.ts` — builds a `RuleContext` for a unit in a slot (`unitContext`) or a detachment's own slots (`detachmentContext`) from roster counts (unit `facts` + chosen Prime benefit ids).
+- `primeBenefits.ts` — a unit's Prime benefits in its slot (from its catalogue's benefit tree); Logistical Benefit roles; lookups for export.
+- `slots.ts` — `unitsForSlot` (effective primary category in that detachment via `primaryCategoryRules`, plus `alternateLinks` variants like "Command - Centurions Only") and `effectiveSlots`/`withEffectiveSlots` (slot maxes from `maxModifiers`, e.g. a legion rule making all Troops Prime). The canvas renders the effective view; `slotLayout.ts` `cardSlots` treats "Troops-N"/"Prime Troops-N" as the same position so units follow when prime-ness changes.
+
+Known gap: Logistical Benefit still uses the app's own `bonusSlots`; its BSData slot increments aren't evaluated (the chosen "LB - Role" isn't counted) to avoid double slots.
 
 ### Faction Registry & Unit Loading
 
 `src/data/factions.ts` is the faction registry: every army the builder can field (18 Legions, Mechanicum, Skitarii, Solar Auxilia, Legio Custodes, Anathema Psykana, Questoris Familia). Each `FactionDef` names its `unitSources` (units.json keys merged at runtime — legions get `legiones-astartes` + their own), its force org `chart`, the auto-added `primaryDetachment`, and `canTakeAllies`. `getUnitsForFaction(faction)` in `loader.ts` merges the unit sources; `getAllyFactions` reads who may ally from the Allied Detachment's `sources`.
 
-Role matching strips the `Prime ` prefix and qualifiers from the *slot*: `"Prime Command"` → `"Command"`, `"Command - Centurions Only"` → `"Command"`. A *unit* whose `primaryCategory` is itself qualified (e.g. `"Troops - Infantry Troop or Levy Troop only"`) only fills a slot with exactly that category.
+Slot matching follows BattleScribe: a slot takes units whose effective primary category equals it (prime slots take their base role, or a qualified variant that has its own slot in the detachment). See `rules/slots.ts`.
 
 ### State: Zustand Store (`src/store/rosterStore.ts` + `rosterModel.ts`)
 
@@ -60,7 +71,7 @@ Slot interaction chains:
 4. **Edit existing slot**: opens `slotEdit` first; all subsequent handlers check `isEditingSlot.current` ref and return to `slotEdit` instead of chaining unlocks
 5. **Allies**: header "Add Allies" → `allySelector` → `addAlliedForce`; the allied army's Command slots unlock Auxiliary detachments from the ally's own faction (pickers/selectors resolve faction via `factionOfDetachment`)
 
-The unit picker filters by the full slot category (`slotRole`), so qualified slots like `"Troops - Infantry Troop or Levy Troop only"` offer the units filed under exactly that category.
+The unit picker gets its units from `rules/slots.ts` `unitsForSlot`, so qualified slots like `"Troops - Infantry Troop or Levy Troop only"` or `"Heavy Assault - Tartaros Only"` offer exactly the units BSData files there.
 
 Modal state carries data through the chain (e.g., `role: string` and `unit: UnitEntry` on `primeBenefit` and `bonusSlotRoleSelector` states) to avoid re-deriving it at each step.
 
@@ -90,11 +101,12 @@ The canvas is a large `4000×3000px` div inside an `overflow: hidden` viewport c
 | `src/types/index.ts` | All TypeScript types + `ModalState` union |
 | `src/store/rosterStore.ts` | All state + mutations |
 | `src/components/canvas/Canvas.tsx` | Modal orchestration + canvas layout |
-| `src/components/canvas/DetachmentCard.tsx` | `expandSlots`, `groupByRole`, card rendering |
+| `src/components/canvas/DetachmentCard.tsx` | Card rendering |
 | `src/data/loader.ts` | Runtime data filtering helpers |
 | `src/data/factions.ts` | Faction registry (`FactionDef`: unit sources, chart, primary detachment, allies) |
 | `src/store/rosterModel.ts` | Pure roster/force logic, migrations, unit refresh |
-| `src/constants/primeBenefits.ts` | Prime benefits (hardcoded for now — see docs/ROADMAP-1.0.md) |
+| `src/rules/*` | BSData condition evaluator, Prime benefits, slot matching and slot counts |
+| `src/components/canvas/slotLayout.ts` | `expandSlots`, `cardSlots`, `groupByRole`, `estimateCardHeight` |
 | `scripts/parse-bsdata.ts` | BSData JSON → app JSON (tests in `parse-bsdata.test.ts`) |
 | `scripts/sync-data.ts` | Fetches BSData, runs the parser, writes `data/parsed/` |
 

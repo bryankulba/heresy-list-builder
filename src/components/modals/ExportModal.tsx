@@ -2,9 +2,10 @@ import React, { useMemo } from 'react';
 import { ComposedModal, ModalHeader, ModalBody, ModalFooter, Button } from '@carbon/react';
 import type { Allegiance, Force, PlacedDetachment } from '../../types';
 import { getDetachmentDisplayName } from '../../data/loader';
-import { expandSlots } from '../canvas/DetachmentCard';
+import { cardSlots } from '../canvas/DetachmentCard';
 import { factionLabel } from '../../data/factions';
 import { buildRosXml } from '../../utils/buildRos';
+import { withEffectiveSlots } from '../../rules/slots';
 
 interface ExportModalProps {
   forces: Force[];
@@ -17,7 +18,7 @@ interface ExportModalProps {
 function detachmentLines(det: PlacedDetachment): string[] {
   const lines = [getDetachmentDisplayName(det.def.name).toUpperCase()];
 
-  for (const { key, slotDef } of expandSlots(det.def)) {
+  for (const { key, slotDef } of cardSlots(det)) {
     const filled = det.slots[key];
     if (!filled) continue;
     const benefitStr = filled.primeBenefit ? `  [Prime: ${filled.primeBenefit.name}]` : '';
@@ -81,7 +82,7 @@ export default function ExportModal({
   onClose,
 }: ExportModalProps) {
   const text = useMemo(
-    () => buildExportText(forces, allegiance, pointsLimit, totalPoints),
+    () => buildExportText(withEffectiveSlots(forces), allegiance, pointsLimit, totalPoints),
     [forces, allegiance, pointsLimit, totalPoints]
   );
 

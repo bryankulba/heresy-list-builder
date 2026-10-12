@@ -16,7 +16,7 @@ import type {
   UnitEntry,
 } from '../types';
 import { ALLIED_CHART, ALLIED_DETACHMENT, CRUSADE_CHART, FACTION_BY_ID } from '../data/factions';
-import { getChartDetachment, getUnitsForFaction } from '../data/loader';
+import { detachmentsData, getChartDetachment, getUnitsForFaction, unitVariant } from '../data/loader';
 
 // ---------------------------------------------------------------------------
 // Construction
@@ -163,16 +163,29 @@ export function migrateSnapshot(raw: unknown): RosterSnapshot {
   return migrateV1(r as RosterSnapshotV1);
 }
 
+/** The current definition of a stored detachment (by entryId, then name), or the stored one if gone. */
+function freshDetachmentDef(def: DetachmentDef): DetachmentDef {
+  const all = detachmentsData.charts.flatMap((c) => c.detachments);
+  return (
+    (def.entryId ? all.find((d) => d.entryId === def.entryId) : undefined) ??
+    all.find((d) => d.name === def.name) ??
+    def
+  );
+}
+
 /**
- * Replaces stored unit snapshots with the current data for the same unit, so
- * saved lists pick up points/wargear fixes from newer BSData syncs. Matches on
- * entryId, then name + role (entryIds can change when BSData relinks a unit).
- * Units no longer in the data are kept as saved.
+ * Replaces stored unit and detachment snapshots with the current data, so
+ * saved lists pick up points/wargear/slot-rule fixes from newer BSData syncs.
+ * Units match on entryId, then name + role (entryIds can change when BSData
+ * relinks a unit). Anything no longer in the data is kept as saved.
  */
 export function refreshUnits(forces: Force[]): Force[] {
   return forces.map((force) => {
     const current = getUnitsForFaction(force.faction);
     const byId = new Map(current.map((u) => [u.entryId, u]));
+    for (const u of current) {
+      for (const alt of u.alternateLinks ?? []) if (!byId.has(alt.entryId)) byId.set(alt.entryId, unitVariant(u, alt));
+    }
     const fresh = (unit: UnitEntry): UnitEntry =>
       (unit.entryId ? byId.get(unit.entryId) : undefined) ??
       current.find((u) => u.name === unit.name && u.role === unit.role) ??
@@ -182,6 +195,7 @@ export function refreshUnits(forces: Force[]): Force[] {
       ...force,
       detachments: force.detachments.map((det) => ({
         ...det,
+        def: freshDetachmentDef(det.def),
         slots: Object.fromEntries(
           Object.entries(det.slots).map(([key, fs]) => [key, fs ? { ...fs, unit: fresh(fs.unit) } : fs])
         ),

@@ -163,9 +163,9 @@ async function main(): Promise<void> {
     const cat = catalogueInfo[key];
     console.log(`  ${key.padEnd(22)} ${String(list.length).padStart(4)} units   (${cat.catalogueName} rev ${cat.revision})`);
   }
-  console.log(
-    `Detachments: ${detachments.core.length} core, ${detachments.auxiliary.length} auxiliary, ${detachments.apex.length} apex`
-  );
+  for (const chart of detachments.charts) {
+    console.log(`Chart: ${chart.name} — ${chart.detachments.length} detachments`);
+  }
 
   if (warnings.length > 0) {
     console.warn(`\nWarnings (${warnings.length}) — units needing manual review:`);

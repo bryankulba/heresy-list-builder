@@ -71,6 +71,21 @@ const gameSystem: BsGameSystemFile = {
               { id: 'l3', name: 'Command - Centurions Only', targetId: 'cat-cent', constraints: [max(2)] },
               { id: 'l4', name: 'Prime Troops', targetId: 'cat-prime-troops', constraints: [max(1)] },
               { id: 'l5', name: 'Elites', targetId: 'cat-elites', constraints: [max(0)] },
+              // max 0 but raisable by a modifier (e.g. Logistical Benefit) — kept with its modifiers
+              {
+                id: 'l7',
+                name: 'Retinue',
+                targetId: 'cat-retinue',
+                constraints: [{ ...max(0), id: 'c-ret' }],
+                modifiers: [
+                  {
+                    type: 'increment',
+                    field: 'c-ret',
+                    value: 1,
+                    conditions: [{ type: 'equalTo', value: 1, field: 'selections', scope: 'force', childId: 'lb-retinue' }],
+                  },
+                ],
+              },
             ],
           },
           {
@@ -340,20 +355,29 @@ describe('units', () => {
 });
 
 describe('detachments', () => {
-  test('slots only from links with a positive max, without borrowing neighbours', () => {
-    const primary = parse().detachments.core[0];
+  test('slots from links with a positive or raisable max, without borrowing neighbours', () => {
+    const primary = parse().detachments.charts[0].detachments[0];
     expect(primary.slots.map((s) => [s.role, s.min, s.max, s.prime])).toEqual([
       ['Troops', 2, 4, false],
       ['Command - Centurions Only', 0, 2, false],
       ['Prime Troops', 0, 1, true],
+      ['Retinue', 0, 0, false],
+    ]);
+    expect(primary.slots[3].maxModifiers).toEqual([
+      {
+        type: 'increment',
+        field: 'c-ret',
+        value: 1,
+        conditions: [{ type: 'equalTo', scope: 'force', field: 'selections', value: 1, childId: 'lb-retinue' }],
+      },
     ]);
   });
 
   test('faction sources come from instanceOf primary-catalogue conditions', () => {
-    const { core, auxiliary } = parse().detachments;
-    expect(core[0].sources).toEqual(['emperors-test-legion', 'skitarii-conclaves']);
+    const [primary, aux] = parse().detachments.charts[0].detachments;
+    expect(primary.sources).toEqual(['emperors-test-legion', 'skitarii-conclaves']);
     // …including conditions on a modifierGroup
-    expect(auxiliary[0].sources).toEqual(['emperors-test-legion']);
+    expect(aux.sources).toEqual(['emperors-test-legion']);
   });
 
   test('system info', () => {
