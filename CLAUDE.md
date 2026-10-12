@@ -79,7 +79,7 @@ Modal state carries data through the chain (e.g., `role: string` and `unit: Unit
 
 Each `SlotDef` has `max: N` and expands to N individual slot instances with keys `"${role}-${index}"`. These keys are stored in `PlacedDetachment.slots` and referenced by `unlockedBy`.
 
-`expandSlots(def)` in `DetachmentCard.tsx`:
+`expandSlots(def)` in `slotLayout.ts`:
 - Filters out qualifier slots (role contains ` - `) when the detachment also has a plain slot of the same base role
 - Merges prime slots into regular — prime slots replace one regular slot from the pool, rendered first
 - Result: `{ key, slotDef }[]` with consistent key ordering
