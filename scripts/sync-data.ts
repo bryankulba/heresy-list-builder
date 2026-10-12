@@ -1,177 +1,196 @@
 /**
  * sync-data.ts
- * Fetches BattleScribe .cat/.gst files from the BSData GitHub repo,
- * saves raw XML to data/raw/, parses them, and writes JSON to data/parsed/.
+ * Fetches the BSData Horus Heresy 3rd Edition JSON files from GitHub, saves
+ * them to data/raw/, parses them, and writes the app's data to data/parsed/.
  *
- * Run with: npm run sync-data
+ *   npm run sync-data                      # latest BSData main
+ *   BSDATA_REF=<sha|branch|tag> npm run sync-data   # pin a specific upstream version
+ *   npm run sync-data -- --offline         # re-parse data/raw/ without fetching
  */
 
 import * as fs from 'fs';
 import * as path from 'path';
-import { parseAll } from './parse-cats';
+import { parseAll, type BsCatalogueFile, type BsGameSystemFile } from './parse-bsdata';
 
-const BASE_URL =
-  'https://raw.githubusercontent.com/BSData/horus-heresy-3rd-edition/main/';
+const REPO = 'BSData/horus-heresy-3rd-edition';
+const GAME_SYSTEM_FILE = 'Horus Heresy 3rd Edition.json';
 
 const RAW_DIR = path.join(process.cwd(), 'data', 'raw');
 const PARSED_DIR = path.join(process.cwd(), 'data', 'parsed');
+const SOURCE_FILE = path.join(RAW_DIR, 'source.json');
 
-const BASE_FILES = [
-  {
-    url: 'Horus%20Heresy%203rd%20Edition.gst',
-    filename: 'horus-heresy-3rd-edition.gst',
-    key: 'gst' as const,
-  },
-  {
-    url: 'Legiones%20Astartes.cat',
-    filename: 'legiones-astartes.cat',
-    key: 'la' as const,
-  },
+/**
+ * Factions whose units are extracted into units.json. Keys are the slugified
+ * BSData catalogue names (see factionKeyForCatalogue). Legiones Astartes is the
+ * shared base merged into every legion at runtime (src/data/loader.ts).
+ */
+const UNIT_FACTIONS = [
+  'legiones-astartes',
+  'alpha-legion',
+  'blood-angels',
+  'dark-angels',
+  'death-guard',
+  'emperors-children',
+  'imperial-fists',
+  'iron-hands',
+  'iron-warriors',
+  'night-lords',
+  'raven-guard',
+  'salamanders',
+  'sons-of-horus',
+  'space-wolves',
+  'thousand-sons',
+  'ultramarines',
+  'white-scars',
+  'word-bearers',
+  'world-eaters',
+  'mechanicum',
+  'solar-auxilia',
+  // 1.0 additions — data available ahead of the app supporting them
+  'skitarii-conclaves',
+  'legio-custodes',
+  'anathema-psykana',
+  'questoris-familia',
 ];
 
-const LEGION_FILES: Array<{ url: string; filename: string; factionKey: string }> = [
-  { url: 'Alpha%20Legion.cat',           filename: 'alpha-legion.cat',       factionKey: 'alpha-legion' },
-  { url: 'Blood%20Angels.cat',           filename: 'blood-angels.cat',       factionKey: 'blood-angels' },
-  { url: 'Dark%20Angels.cat',            filename: 'dark-angels.cat',        factionKey: 'dark-angels' },
-  { url: 'Death%20Guard.cat',            filename: 'death-guard.cat',        factionKey: 'death-guard' },
-  { url: 'Emperor%27s%20Children.cat',   filename: 'emperors-children.cat',  factionKey: 'emperors-children' },
-  { url: 'Imperial%20Fists.cat',         filename: 'imperial-fists.cat',     factionKey: 'imperial-fists' },
-  { url: 'Iron%20Hands.cat',             filename: 'iron-hands.cat',         factionKey: 'iron-hands' },
-  { url: 'Iron%20Warriors.cat',          filename: 'iron-warriors.cat',      factionKey: 'iron-warriors' },
-  { url: 'Night%20Lords.cat',            filename: 'night-lords.cat',        factionKey: 'night-lords' },
-  { url: 'Raven%20Guard.cat',            filename: 'raven-guard.cat',        factionKey: 'raven-guard' },
-  { url: 'Salamanders.cat',              filename: 'salamanders.cat',        factionKey: 'salamanders' },
-  { url: 'Sons%20of%20Horus.cat',        filename: 'sons-of-horus.cat',      factionKey: 'sons-of-horus' },
-  { url: 'Space%20Wolves.cat',           filename: 'space-wolves.cat',       factionKey: 'space-wolves' },
-  { url: 'Thousand%20Sons.cat',          filename: 'thousand-sons.cat',      factionKey: 'thousand-sons' },
-  { url: 'Ultramarines.cat',             filename: 'ultramarines.cat',       factionKey: 'ultramarines' },
-  { url: 'White%20Scars.cat',            filename: 'white-scars.cat',        factionKey: 'white-scars' },
-  { url: 'Word%20Bearers.cat',           filename: 'word-bearers.cat',       factionKey: 'word-bearers' },
-  { url: 'World%20Eaters.cat',           filename: 'world-eaters.cat',       factionKey: 'world-eaters' },
-  { url: 'Mechanicum.cat',               filename: 'mechanicum.cat',          factionKey: 'mechanicum' },
-  { url: 'Solar%20Auxilia.cat',          filename: 'solar-auxilia.cat',       factionKey: 'solar-auxilia' },
-];
+interface SourceInfo {
+  repo: string;
+  ref: string;
+  commit: string;
+  commitDate: string;
+  fetchedAt: string;
+}
 
-async function fetchFile(url: string): Promise<string> {
-  const fullUrl = BASE_URL + url;
-  console.log(`  Fetching ${fullUrl}`);
-  const response = await fetch(fullUrl);
-  if (!response.ok) {
-    throw new Error(`HTTP ${response.status} ${response.statusText} for ${fullUrl}`);
-  }
+async function getJson<T>(url: string): Promise<T> {
+  const headers: Record<string, string> = { Accept: 'application/vnd.github+json' };
+  if (process.env.GITHUB_TOKEN) headers.Authorization = `Bearer ${process.env.GITHUB_TOKEN}`;
+  const response = await fetch(url, { headers });
+  if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText} for ${url}`);
+  return (await response.json()) as T;
+}
+
+async function getText(url: string): Promise<string> {
+  const response = await fetch(url);
+  if (!response.ok) throw new Error(`HTTP ${response.status} ${response.statusText} for ${url}`);
   return response.text();
 }
 
-async function main(): Promise<void> {
+/** Resolves the ref to a commit and downloads every root-level .json file at that commit. */
+async function fetchRaw(ref: string): Promise<SourceInfo> {
+  console.log(`=== Resolving ${REPO}@${ref} ===`);
+  const commit = await getJson<{ sha: string; commit: { committer: { date: string } } }>(
+    `https://api.github.com/repos/${REPO}/commits/${encodeURIComponent(ref)}`
+  );
+  console.log(`  commit ${commit.sha} (${commit.commit.committer.date})`);
+
+  const tree = await getJson<{ tree: Array<{ path: string; type: string }> }>(
+    `https://api.github.com/repos/${REPO}/git/trees/${commit.sha}`
+  );
+  const files = tree.tree.filter((t) => t.type === 'blob' && t.path.endsWith('.json')).map((t) => t.path);
+  if (!files.includes(GAME_SYSTEM_FILE)) {
+    throw new Error(`${GAME_SYSTEM_FILE} not found at ${commit.sha} — has the upstream format changed again?`);
+  }
+
+  console.log(`\n=== Fetching ${files.length} files ===`);
+  fs.rmSync(RAW_DIR, { recursive: true, force: true });
   fs.mkdirSync(RAW_DIR, { recursive: true });
-  fs.mkdirSync(PARSED_DIR, { recursive: true });
-
-  const xmlMap: Record<string, string> = {};
-
-  console.log('=== Fetching base files ===');
-  for (const file of BASE_FILES) {
-    const xml = await fetchFile(file.url);
-    const filePath = path.join(RAW_DIR, file.filename);
-    fs.writeFileSync(filePath, xml, 'utf-8');
-    const kb = Math.round(xml.length / 1024);
-    console.log(`  Saved ${file.filename} (${kb} KB)`);
-    xmlMap[file.key] = xml;
+  for (const file of files) {
+    const text = await getText(
+      `https://raw.githubusercontent.com/${REPO}/${commit.sha}/${encodeURIComponent(file)}`
+    );
+    fs.writeFileSync(path.join(RAW_DIR, file), text, 'utf-8');
+    console.log(`  ${file} (${Math.round(text.length / 1024)} KB)`);
   }
 
-  console.log('\n=== Fetching legion catalogs ===');
-  const factionCats: Record<string, string> = {};
-  for (const file of LEGION_FILES) {
-    const xml = await fetchFile(file.url);
-    const filePath = path.join(RAW_DIR, file.filename);
-    fs.writeFileSync(filePath, xml, 'utf-8');
-    const kb = Math.round(xml.length / 1024);
-    console.log(`  Saved ${file.filename} (${kb} KB)`);
-    factionCats[file.factionKey] = xml;
+  const source: SourceInfo = {
+    repo: REPO,
+    ref,
+    commit: commit.sha,
+    commitDate: commit.commit.committer.date,
+    fetchedAt: new Date().toISOString(),
+  };
+  fs.writeFileSync(SOURCE_FILE, JSON.stringify(source, null, 2), 'utf-8');
+  return source;
+}
+
+function readRaw(): { gameSystem: BsGameSystemFile; catalogues: BsCatalogueFile[]; source: SourceInfo } {
+  if (!fs.existsSync(SOURCE_FILE)) {
+    throw new Error(`No data in ${RAW_DIR} — run without --offline first.`);
   }
+  const files = fs.readdirSync(RAW_DIR).filter((f) => f.endsWith('.json') && f !== 'source.json');
+  const load = (f: string) => JSON.parse(fs.readFileSync(path.join(RAW_DIR, f), 'utf-8'));
+  return {
+    gameSystem: load(GAME_SYSTEM_FILE),
+    catalogues: files.filter((f) => f !== GAME_SYSTEM_FILE).map(load),
+    source: load('source.json'),
+  };
+}
+
+function writeJson(file: string, data: unknown): void {
+  const full = path.join(PARSED_DIR, file);
+  fs.writeFileSync(full, JSON.stringify(data, null, 2) + '\n', 'utf-8');
+  console.log(`  Wrote ${path.relative(process.cwd(), full)}`);
+}
+
+async function main(): Promise<void> {
+  const offline = process.argv.includes('--offline');
+  if (!offline) await fetchRaw(process.env.BSDATA_REF ?? 'main');
+
+  const { gameSystem, catalogues, source } = readRaw();
 
   console.log('\n=== Parsing ===');
-  const { units, detachments, system, catalogues, warnings } = parseAll(
-    xmlMap['gst'],
-    xmlMap['la'],
-    factionCats
-  );
+  const { units, detachments, system, catalogues: catalogueInfo, warnings } = parseAll({
+    gameSystem,
+    catalogues,
+    unitFactions: UNIT_FACTIONS,
+  });
 
-  const unitsPath = path.join(PARSED_DIR, 'units.json');
-  const detachmentsPath = path.join(PARSED_DIR, 'detachments.json');
-  const systemPath = path.join(PARSED_DIR, 'system.json');
-  const cataloguesPath = path.join(PARSED_DIR, 'catalogues.json');
-
-  fs.writeFileSync(unitsPath, JSON.stringify(units, null, 2), 'utf-8');
-  fs.writeFileSync(detachmentsPath, JSON.stringify(detachments, null, 2), 'utf-8');
-  fs.writeFileSync(systemPath, JSON.stringify(system, null, 2), 'utf-8');
-  fs.writeFileSync(cataloguesPath, JSON.stringify(catalogues, null, 2), 'utf-8');
-
-  console.log(`  Wrote ${unitsPath}`);
-  console.log(`  Wrote ${detachmentsPath}`);
-  console.log(`  Wrote ${systemPath}`);
-  console.log(`  Wrote ${cataloguesPath}`);
-
-  // Summary
-  const coreCount = detachments.core.length;
-  const auxCount = detachments.auxiliary.length;
-  const apexCount = detachments.apex.length;
-  const legionCount = Object.values(detachments.legion).flat().length;
-  const totalDetachments = coreCount + auxCount + apexCount + legionCount;
+  fs.mkdirSync(PARSED_DIR, { recursive: true });
+  writeJson('units.json', units);
+  writeJson('detachments.json', detachments);
+  writeJson('system.json', {
+    ...system,
+    bsdataCommit: source.commit,
+    bsdataCommitDate: source.commitDate,
+  });
+  writeJson('catalogues.json', catalogueInfo);
 
   console.log('\n=== Summary ===');
-  console.log(`Legiones Astartes units:   ${units['legiones-astartes'].length}`);
-  for (const file of LEGION_FILES) {
-    const count = units[file.factionKey]?.length ?? 0;
-    console.log(`  ${file.factionKey}: ${count} faction-specific units`);
+  console.log(`BSData ${source.repo}@${source.commit.slice(0, 7)} (${source.commitDate})`);
+  console.log(`Game system: ${system.gameSystemName} rev ${system.revision}`);
+  for (const [key, list] of Object.entries(units)) {
+    const cat = catalogueInfo[key];
+    console.log(`  ${key.padEnd(22)} ${String(list.length).padStart(4)} units   (${cat.catalogueName} rev ${cat.revision})`);
   }
-  console.log(`\nDetachment types found:     ${[coreCount > 0 && 'core', auxCount > 0 && 'auxiliary', apexCount > 0 && 'apex'].filter(Boolean).join(', ')}`);
-  console.log(`  Core:      ${coreCount}`);
-  console.log(`  Auxiliary: ${auxCount}`);
-  console.log(`  Apex:      ${apexCount}`);
-  console.log(`  Legion:    ${legionCount}`);
-  console.log(`  Total:     ${totalDetachments}`);
-
-  console.log('\n=== BSData IDs ===');
-  console.log(`  gameSystemId:  ${system.gameSystemId}  (${system.gameSystemName} rev ${system.revision})`);
-  console.log('  catalogues:');
-  for (const [key, cat] of Object.entries(catalogues)) {
-    console.log(`    ${key.padEnd(24)}  ${cat.catalogueId}  (${cat.catalogueName} rev ${cat.revision})`);
-  }
+  console.log(
+    `Detachments: ${detachments.core.length} core, ${detachments.auxiliary.length} auxiliary, ${detachments.apex.length} apex`
+  );
 
   if (warnings.length > 0) {
     console.warn(`\nWarnings (${warnings.length}) — units needing manual review:`);
-    for (const w of warnings) {
-      console.warn(`  ! ${w}`);
-    }
+    for (const w of warnings) console.warn(`  ! ${w}`);
   } else {
     console.log('\nNo warnings — all units resolved cleanly.');
   }
 
   // ── Points sanity check ───────────────────────────────────────────────────
   console.log('\n=== Points Validation ===');
-  const allUnits = Object.entries(units).flatMap(([src, arr]) =>
-    arr.map(u => ({ ...u, src }))
-  );
-
   let anomalies = 0;
-  for (const u of allUnits) {
-    if (u.points === 0) {
-      console.log(`  ℹ️  ${u.name} (${u.src}): 0pts — free unit or parse miss`);
-      anomalies++;
-    } else if (u.points < 10) {
-      console.warn(`  ⚠️  ${u.name} (${u.src}): ${u.points}pts — check manually`);
-      anomalies++;
-    } else if (u.points > 1000) {
-      console.log(`  ℹ️  ${u.name} (${u.src}): ${u.points}pts — likely Primarch/LoW, confirm manually`);
+  for (const [src, list] of Object.entries(units)) {
+    for (const u of list) {
+      if (u.points === 0) {
+        console.log(`  ℹ️  ${u.name} (${src}): 0pts — free unit or parse miss`);
+      } else if (u.points < 10) {
+        console.warn(`  ⚠️  ${u.name} (${src}): ${u.points}pts — check manually`);
+      } else if (u.points > 1000) {
+        console.log(`  ℹ️  ${u.name} (${src}): ${u.points}pts — likely Primarch/LoW, confirm manually`);
+      } else {
+        continue;
+      }
       anomalies++;
     }
   }
-
-  if (anomalies === 0) {
-    console.log('  All units passed (10–1000pts range).');
-  } else {
-    console.log(`  ${anomalies} unit(s) flagged above.`);
-  }
+  console.log(anomalies === 0 ? '  All units passed (10–1000pts range).' : `  ${anomalies} unit(s) flagged above.`);
 }
 
 main().catch((err: unknown) => {

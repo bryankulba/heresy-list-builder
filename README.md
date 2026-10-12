@@ -9,7 +9,7 @@ Army data is sourced from the community-maintained [BSData horus-heresy-3rd-edit
 - Select any of the 18 Space Marine Legions, Solar Auxilia, or Mechanicum
 - Build a Crusade force organisation with Primary, Auxiliary, and Apex detachments
 - Points tracking against a configurable limit
-- Export list to plaintext
+- Export to plaintext or a `.ros` roster for BattleScribe / New Recruit
 
 ## Tech Stack
 
@@ -34,13 +34,13 @@ npm install
 
 ### Sync army data
 
-Downloads and parses the latest `.cat`/`.gst` files from BSData into `data/parsed/`. Requires an internet connection.
+Downloads and parses the latest BSData JSON files into `data/parsed/`. Requires an internet connection. Pin an upstream version with `BSDATA_REF=<sha> npm run sync-data`, or re-parse already-downloaded files with `npm run sync-data -- --offline`.
 
 ```bash
 npm run sync-data
 ```
 
-The raw XML files are excluded from the repo (they're large). The parsed JSON files (`data/parsed/`) are committed and up to date, so **you only need to run this if you want to pull the latest data from BSData**.
+The raw BSData files are excluded from the repo (they're large). The parsed JSON files (`data/parsed/`) are committed and up to date, so **you only need to run this if you want to pull the latest data from BSData**.
 
 ### Run locally
 
@@ -74,6 +74,10 @@ Current test coverage:
   - Required attributes (game system, points, roster name)
   - Points calculations
   - XML escaping for special characters
+- `scripts/parse-bsdata.test.ts` — BSData parser (13 tests)
+  - Points (base + model cost × min, no borrowed upgrade costs)
+  - Mandatory/default wargear, including shared groups across catalogues
+  - Cross-catalogue units, role/category resolution, faction restrictions
 
 As export enhancements are implemented (required wargear, model profiles, rules), additional tests validate:
 - Required items are auto-added based on BSData constraints
@@ -84,17 +88,17 @@ As export enhancements are implemented (required wargear, model profiles, rules)
 ## Data Pipeline
 
 ```
-BSData GitHub repo (.gst + .cat files)
+BSData GitHub repo (.json files)
         ↓  npm run sync-data
-  data/raw/          ← raw XML (gitignored)
-        ↓  parse-cats.ts
+  data/raw/          ← raw BSData JSON (gitignored)
+        ↓  parse-bsdata.ts
   data/parsed/       ← units.json + detachments.json (committed)
         ↓  imported at build time
   src/data/loader.ts
 ```
 
-- `scripts/sync-data.ts` — fetches all faction catalogs from BSData
-- `scripts/parse-cats.ts` — regex-based XML parser (no DOM dependency; handles multi-MB files)
+- `scripts/sync-data.ts` — fetches all catalogues from BSData at a given ref
+- `scripts/parse-bsdata.ts` — turns BSData JSON into the app's units/detachments data
 - `src/data/factions.ts` — canonical list of factions and display labels
 - `src/data/loader.ts` — runtime helpers for filtering units and detachments by faction
 

@@ -2,5 +2,7 @@
   "gameSystemId": "sys-9fe4-1dc3-b7c2-73cf",
   "gameSystemName": "Horus Heresy 3rd Edition",
   "revision": 55,
-  "forceOrgEntryId": "8562-592c-8d4b-a1f0"
+  "forceOrgEntryId": "8562-592c-8d4b-a1f0",
+  "bsdataCommit": "47d88d15c714286b2a421cb273247de1d6c01106",
+  "bsdataCommitDate": "2026-10-12T17:22:44Z"
 }

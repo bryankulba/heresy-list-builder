@@ -26,7 +26,7 @@
   },
   "emperors-children": {
     "catalogueId": "9a22-d01f-ab5c-ec07",
-    "catalogueName": "Emperor&apos;s Children",
+    "catalogueName": "Emperor's Children",
     "revision": 17
   },
   "imperial-fists": {
@@ -103,5 +103,25 @@
     "catalogueId": "7851-69ac-f701-034e",
     "catalogueName": "Solar Auxilia",
     "revision": 35
+  },
+  "skitarii-conclaves": {
+    "catalogueId": "079a-11b5-abfa-96da",
+    "catalogueName": "Skitarii Conclaves",
+    "revision": 1
+  },
+  "legio-custodes": {
+    "catalogueId": "acc1-f897-a117-9b4a",
+    "catalogueName": "Legio Custodes",
+    "revision": 22
+  },
+  "anathema-psykana": {
+    "catalogueId": "e7b4-2c1c-7d85-a4e3",
+    "catalogueName": "Anathema Psykana",
+    "revision": 13
+  },
+  "questoris-familia": {
+    "catalogueId": "fd9b-d04e-362d-8e5d",
+    "catalogueName": "Questoris Familia",
+    "revision": 13
   }
 }

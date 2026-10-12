@@ -57,6 +57,7 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
         "daemons",
@@ -64,19 +65,20 @@
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "knights-errant",
+        "legio-custodes",
         "mechanicum",
-        "militia",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
-        "sisters-of-silence",
-        "skitarii",
+        "skitarii-conclaves",
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
-        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",
@@ -113,6 +115,7 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blood-angels",
         "daemons",
         "dark-angels",
@@ -121,15 +124,14 @@
         "imperial-fists",
         "iron-hands",
         "iron-warriors",
+        "legio-custodes",
         "mechanicum",
         "night-lords",
         "raven-guard",
-        "shattered-legions",
-        "sisters-of-silence",
+        "salamanders",
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
-        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",
@@ -161,6 +163,7 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
         "daemons",
@@ -168,19 +171,19 @@
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "legio-custodes",
         "mechanicum",
-        "militia",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
-        "sisters-of-silence",
-        "skitarii",
+        "skitarii-conclaves",
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
-        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",
@@ -208,15 +211,16 @@
           "categoryId": "345f-9ba6-9b02-ed5c"
         },
         {
-          "role": "Paragon of Malevolence",
+          "role": "Command - Centurions Only",
           "min": 0,
           "max": 2,
           "prime": false,
-          "categoryId": "708b-b2ff-1a14-2901"
+          "categoryId": "1429-f03a-e8a5-478c"
         }
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
         "daemons",
@@ -224,19 +228,20 @@
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "legio-custodes",
+        "legio-titanicus",
         "mechanicum",
-        "militia",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
-        "sisters-of-silence",
-        "skitarii",
+        "skitarii-conclaves",
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
-        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",
@@ -259,6 +264,7 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
         "daemons",
@@ -266,19 +272,19 @@
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "legio-custodes",
         "mechanicum",
-        "militia",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
-        "sisters-of-silence",
-        "skitarii",
+        "skitarii-conclaves",
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
-        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",
@@ -301,6 +307,7 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
         "daemons",
@@ -308,19 +315,19 @@
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "legio-custodes",
         "mechanicum",
-        "militia",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
-        "sisters-of-silence",
-        "skitarii",
+        "skitarii-conclaves",
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
-        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",
@@ -343,6 +350,7 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
         "daemons",
@@ -350,19 +358,19 @@
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "legio-custodes",
         "mechanicum",
-        "militia",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
-        "sisters-of-silence",
-        "skitarii",
+        "skitarii-conclaves",
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
-        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",
@@ -385,6 +393,7 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
         "daemons",
@@ -392,19 +401,19 @@
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "legio-custodes",
         "mechanicum",
-        "militia",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
-        "sisters-of-silence",
-        "skitarii",
+        "skitarii-conclaves",
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
-        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",
@@ -427,6 +436,7 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
         "daemons",
@@ -434,19 +444,19 @@
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "legio-custodes",
         "mechanicum",
-        "militia",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
-        "sisters-of-silence",
-        "skitarii",
+        "skitarii-conclaves",
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
-        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",
@@ -646,7 +656,7 @@
       "type": "auxiliary",
       "slots": [
         {
-          "role": "Elites - Veletaris Storm or Veletaris Vanguard units only",
+          "role": "Elites - Veletaris units only",
           "min": 0,
           "max": 2,
           "prime": false,
@@ -1006,7 +1016,7 @@
       ]
     },
     {
-      "name": "Auxiliary - Supremecy Cadre",
+      "name": "Auxiliary - Supremacy Cadre",
       "entryId": "2436-a714-22cc-fd31",
       "type": "auxiliary",
       "slots": [
@@ -1416,6 +1426,7 @@
         "iron-warriors",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
         "sons-of-horus",
         "space-wolves",
@@ -1465,6 +1476,7 @@
         "iron-warriors",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
         "sons-of-horus",
         "space-wolves",
@@ -1507,6 +1519,7 @@
         "iron-warriors",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
         "sons-of-horus",
         "space-wolves",
@@ -1549,6 +1562,7 @@
         "iron-warriors",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
         "sons-of-horus",
         "space-wolves",
@@ -1591,6 +1605,7 @@
         "iron-warriors",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
         "sons-of-horus",
         "space-wolves",
@@ -1640,6 +1655,7 @@
         "iron-warriors",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
         "sons-of-horus",
         "space-wolves",
@@ -1670,7 +1686,7 @@
           "categoryId": "0fd5-6d2d-e2cc-d22a"
         },
         {
-          "role": "Heavy Assault - Castellax Destructor Maniple only ",
+          "role": "Heavy Assault - Castellax Destructor Maniple only",
           "min": 0,
           "max": 1,
           "prime": false,
@@ -1720,6 +1736,7 @@
         "iron-warriors",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
         "sons-of-horus",
         "space-wolves",
@@ -1755,6 +1772,7 @@
         "iron-warriors",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
         "sons-of-horus",
         "space-wolves",
@@ -1786,7 +1804,7 @@
         }
       ],
       "sources": [
-        "militia"
+        "imperialis-militia"
       ]
     },
     {
@@ -1803,7 +1821,7 @@
         }
       ],
       "sources": [
-        "militia"
+        "imperialis-militia"
       ]
     },
     {
@@ -1820,7 +1838,7 @@
         }
       ],
       "sources": [
-        "militia"
+        "imperialis-militia"
       ]
     },
     {
@@ -1855,6 +1873,7 @@
         "iron-warriors",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
         "sons-of-horus",
         "space-wolves",
@@ -1893,7 +1912,7 @@
         }
       ],
       "sources": [
-        "talons-of-the-emperor"
+        "legio-custodes"
       ]
     },
     {
@@ -1917,7 +1936,7 @@
         }
       ],
       "sources": [
-        "talons-of-the-emperor"
+        "legio-custodes"
       ]
     },
     {
@@ -1941,7 +1960,7 @@
         }
       ],
       "sources": [
-        "talons-of-the-emperor"
+        "legio-custodes"
       ]
     },
     {
@@ -1979,7 +1998,174 @@
         }
       ],
       "sources": [
-        "talons-of-the-emperor"
+        "legio-custodes"
+      ]
+    },
+    {
+      "name": "Auxiliary - Tank Commander Armoured Support",
+      "entryId": "3624-6932-6197-19af",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Armour",
+          "min": 0,
+          "max": 4,
+          "prime": false,
+          "categoryId": "643a-1012-bd51-6537"
+        }
+      ],
+      "sources": [
+        "alpha-legion",
+        "anathema-psykana",
+        "blackshields",
+        "blood-angels",
+        "daemons",
+        "dark-angels",
+        "death-guard",
+        "emperors-children",
+        "imperial-fists",
+        "imperialis-militia",
+        "iron-hands",
+        "iron-warriors",
+        "legio-custodes",
+        "mechanicum",
+        "night-lords",
+        "raven-guard",
+        "salamanders",
+        "shattered-legions",
+        "skitarii-conclaves",
+        "solar-auxilia",
+        "sons-of-horus",
+        "space-wolves",
+        "thousand-sons",
+        "ultramarines",
+        "white-scars",
+        "word-bearers",
+        "world-eaters"
+      ]
+    },
+    {
+      "name": "Auxiliary - Tank Commander Armour Tercio",
+      "entryId": "aaa3-8a14-38ef-34e6",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Armour - Leman Russ Strike, Leman Russ Assault or Malcador Heavy tank units only",
+          "min": 0,
+          "max": 3,
+          "prime": false,
+          "categoryId": "5725-7f8c-f02e-4df6"
+        }
+      ],
+      "sources": [
+        "solar-auxilia"
+      ]
+    },
+    {
+      "name": "Auxiliary - Helot Tercio",
+      "entryId": "fd11-7b79-aba3-4e16",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Command - Discipline Master Cadre only",
+          "min": 0,
+          "max": 1,
+          "prime": false,
+          "categoryId": "baa5-803e-1fc8-293d"
+        },
+        {
+          "role": "Troops - Infantry Troop or Levy Troop only",
+          "min": 0,
+          "max": 2,
+          "prime": false,
+          "categoryId": "777c-2a47-2a20-153e"
+        },
+        {
+          "role": "Support - Militia Medicae or Fire Support Troop only",
+          "min": 0,
+          "max": 1,
+          "prime": false,
+          "categoryId": "c6d8-d70d-c56c-d801"
+        }
+      ],
+      "sources": [
+        "solar-auxilia"
+      ]
+    },
+    {
+      "name": "Auxiliary - Ætheric Incursion Detachment",
+      "entryId": "b88e-e21c-c5e2-80be",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Command - Tzeench only",
+          "min": 0,
+          "max": 1,
+          "prime": false,
+          "categoryId": "1cca-b725-743f-e851"
+        },
+        {
+          "role": "Troops - Tzeench only",
+          "min": 0,
+          "max": 2,
+          "prime": false,
+          "categoryId": "5e69-359f-6bc1-6868"
+        },
+        {
+          "role": "Support - Tzeench only",
+          "min": 0,
+          "max": 1,
+          "prime": false,
+          "categoryId": "8e14-b4d2-59c9-e474"
+        },
+        {
+          "role": "Fast Attack - Tzeench only",
+          "min": 0,
+          "max": 1,
+          "prime": false,
+          "categoryId": "6bea-2cb9-c6b9-d183"
+        }
+      ],
+      "sources": [
+        "solar-auxilia"
+      ]
+    },
+    {
+      "name": "Auxiliary - Ætheric Incursion",
+      "entryId": "6018-b4fb-d64a-4b42",
+      "type": "auxiliary",
+      "slots": [
+        {
+          "role": "Command - Tzeench only",
+          "min": 0,
+          "max": 1,
+          "prime": false,
+          "categoryId": "1cca-b725-743f-e851"
+        },
+        {
+          "role": "Troops - Tzeench only",
+          "min": 0,
+          "max": 2,
+          "prime": false,
+          "categoryId": "5e69-359f-6bc1-6868"
+        },
+        {
+          "role": "Support - Tzeench only",
+          "min": 0,
+          "max": 1,
+          "prime": false,
+          "categoryId": "8e14-b4d2-59c9-e474"
+        },
+        {
+          "role": "Fast Attack - Tzeench only",
+          "min": 0,
+          "max": 1,
+          "prime": false,
+          "categoryId": "6bea-2cb9-c6b9-d183"
+        }
+      ],
+      "sources": [
+        "thousand-sons"
       ]
     }
   ],
@@ -2006,6 +2192,7 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
         "daemons",
@@ -2013,19 +2200,19 @@
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "legio-custodes",
         "mechanicum",
-        "militia",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
-        "sisters-of-silence",
-        "skitarii",
+        "skitarii-conclaves",
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
-        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",
@@ -2055,6 +2242,7 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
         "daemons",
@@ -2062,19 +2250,19 @@
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "legio-custodes",
         "mechanicum",
-        "militia",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
-        "sisters-of-silence",
-        "skitarii",
+        "skitarii-conclaves",
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
-        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",
@@ -2104,6 +2292,7 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
         "daemons",
@@ -2111,19 +2300,19 @@
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "legio-custodes",
         "mechanicum",
-        "militia",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
-        "sisters-of-silence",
-        "skitarii",
+        "skitarii-conclaves",
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
-        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",
@@ -2439,7 +2628,7 @@
       ]
     },
     {
-      "name": "Apex - Atramentar Hunt ",
+      "name": "Apex - Atramentar Hunt",
       "entryId": "dbbe-886f-3ce1-13c0",
       "type": "apex",
       "slots": [
@@ -2528,7 +2717,7 @@
         }
       ],
       "sources": [
-        "militia"
+        "imperialis-militia"
       ]
     },
     {
@@ -2552,7 +2741,7 @@
         }
       ],
       "sources": [
-        "militia"
+        "imperialis-militia"
       ]
     },
     {
@@ -2576,7 +2765,7 @@
         }
       ],
       "sources": [
-        "militia"
+        "imperialis-militia"
       ]
     },
     {
@@ -2600,7 +2789,7 @@
         }
       ],
       "sources": [
-        "militia"
+        "imperialis-militia"
       ]
     },
     {
@@ -2624,7 +2813,7 @@
         }
       ],
       "sources": [
-        "militia"
+        "imperialis-militia"
       ]
     },
     {
@@ -2648,7 +2837,7 @@
         }
       ],
       "sources": [
-        "militia"
+        "imperialis-militia"
       ]
     },
     {
@@ -2664,11 +2853,11 @@
           "categoryId": "1e95-35f0-1353-ffa1"
         },
         {
-          "role": "Clade Operative",
+          "role": "Heavy Assault - Saturnine Only",
           "min": 0,
           "max": 2,
           "prime": false,
-          "categoryId": "335a-5a90-3b7c-c034"
+          "categoryId": "7071-45ae-bdfe-9004"
         },
         {
           "role": "Retinue - Saturnine Only",
@@ -2697,6 +2886,7 @@
         "iron-warriors",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
         "sons-of-horus",
         "space-wolves",
@@ -2720,11 +2910,11 @@
           "categoryId": "1e95-35f0-1353-ffa1"
         },
         {
-          "role": "Clade Operative",
+          "role": "Heavy Assault - Cataphractii Only",
           "min": 0,
           "max": 2,
           "prime": false,
-          "categoryId": "335a-5a90-3b7c-c034"
+          "categoryId": "833c-5bc6-bcc3-d147"
         },
         {
           "role": "Retinue - Cataphractii Only",
@@ -2753,6 +2943,7 @@
         "iron-warriors",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
         "sons-of-horus",
         "space-wolves",
@@ -2776,11 +2967,11 @@
           "categoryId": "1e95-35f0-1353-ffa1"
         },
         {
-          "role": "Clade Operative",
+          "role": "Heavy Assault - Tartaros Only",
           "min": 0,
           "max": 2,
           "prime": false,
-          "categoryId": "335a-5a90-3b7c-c034"
+          "categoryId": "a0d8-093f-bcbd-5ddd"
         },
         {
           "role": "Retinue - Tartaros Only",
@@ -2809,6 +3000,7 @@
         "iron-warriors",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
         "sons-of-horus",
         "space-wolves",
@@ -2840,7 +3032,7 @@
         }
       ],
       "sources": [
-        "talons-of-the-emperor"
+        "legio-custodes"
       ]
     },
     {
@@ -2858,17 +3050,25 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
+        "daemons",
         "dark-angels",
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "legio-custodes",
+        "mechanicum",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
+        "skitarii-conclaves",
+        "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
         "thousand-sons",
@@ -2900,17 +3100,25 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
+        "daemons",
         "dark-angels",
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "legio-custodes",
+        "mechanicum",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
+        "skitarii-conclaves",
+        "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
         "thousand-sons",
@@ -2942,6 +3150,7 @@
       ],
       "sources": [
         "alpha-legion",
+        "anathema-psykana",
         "blackshields",
         "blood-angels",
         "daemons",
@@ -2949,19 +3158,20 @@
         "death-guard",
         "emperors-children",
         "imperial-fists",
+        "imperialis-militia",
         "iron-hands",
         "iron-warriors",
+        "knights-errant",
+        "legio-custodes",
         "mechanicum",
-        "militia",
         "night-lords",
         "raven-guard",
+        "salamanders",
         "shattered-legions",
-        "sisters-of-silence",
-        "skitarii",
+        "skitarii-conclaves",
         "solar-auxilia",
         "sons-of-horus",
         "space-wolves",
-        "talons-of-the-emperor",
         "thousand-sons",
         "ultramarines",
         "white-scars",

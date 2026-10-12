@@ -8,30 +8,36 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 npm run dev          # Start Vite dev server
 npm run build        # TypeScript check + Vite bundle (uses tsconfig.app.json)
 npm run preview      # Preview built output
-npm run sync-data    # Fetch latest BSData XML and regenerate data/parsed/*.json
+npm run sync-data    # Fetch latest BSData JSON and regenerate data/parsed/*.json
+npm run sync-data -- --offline   # Re-parse data/raw/ without fetching
 npm test             # Run tests in watch mode
 npm test -- --run    # Run tests once (CI mode)
 npm test:ui          # Open Vitest UI dashboard
 ```
 
-`sync-data` downloads 24 `.cat`/`.gst` files from the BSData GitHub repo into `data/raw/` (gitignored), then parses them into `data/parsed/`. Run this when BSData upstream changes or when editing `scripts/parse-cats.ts`.
+`sync-data` downloads every root-level `.json` file from the BSData GitHub repo (BSData switched from `.cat`/`.gst` XML to JSON on 2026-07-14) into `data/raw/` (gitignored), then parses them into `data/parsed/`. Set `BSDATA_REF=<sha|branch>` to pin an upstream version; the commit used is recorded in `system.json`. Run this when BSData upstream changes or when editing `scripts/parse-bsdata.ts` (use `--offline` to iterate on the parser).
 
 ## Architecture Overview
 
 ### Data Pipeline
 
-BSData XML → `scripts/parse-cats.ts` (regex parser, no DOM) → `data/parsed/*.json` → `src/data/loader.ts` (runtime helpers) → components.
+BSData JSON → `scripts/parse-bsdata.ts` → `data/parsed/*.json` → `src/data/loader.ts` (runtime helpers) → components.
 
-- `data/parsed/units.json` — `Record<factionKey, UnitEntry[]>`
+The BSData JSON is the BattleScribe schema as objects (`forceEntries`, `sharedSelectionEntries`, `entryLinks`, `categoryLinks`, `constraints`, `modifiers`, `modifierGroups`…). Things the parser relies on:
+- Entry links can target shared entries/groups in *other* catalogues (e.g. Skitarii links Mechanicum units) — resolved through a cross-catalogue index
+- `modifierGroups` carry conditions that apply to every modifier inside them
+- Root entry links may be re-filed by unconditional `set-primary` category modifiers
+
+- `data/parsed/units.json` — `Record<factionKey, UnitEntry[]>`; faction keys are slugified catalogue names (`emperors-children`, `skitarii-conclaves`); the extracted factions are listed in `UNIT_FACTIONS` in `scripts/sync-data.ts`
 - `data/parsed/detachments.json` — `{ core, auxiliary, apex, legion }` arrays, each `DetachmentDef` has `sources?: string[]`
 - Empty `sources[]` = available to all factions; non-empty = faction-restricted
-- `FACTION_COMMENT_MAP` in `parse-cats.ts` maps BSData XML comment strings to faction keys — this is the source of faction restrictions on detachments
+- Faction restrictions come from the detachment's `set hidden=false` modifiers conditioned on `instanceOf primary-catalogue <catalogueId>`
 
 ### Faction/Unit Loading
 
 `src/data/factions.ts` defines `SM_LEGION_KEYS` — the set of Space Marine legion faction keys. All SM legions get Legiones Astartes base units merged with their faction-specific units. `getUnitsForFaction(faction)` in `loader.ts` handles this merge.
 
-Role matching strips qualifiers before filtering: `"Prime Command"` → `"Command"`, `"Command - Centurions Only"` → `"Command"`.
+Role matching strips the `Prime ` prefix and qualifiers from the *slot*: `"Prime Command"` → `"Command"`, `"Command - Centurions Only"` → `"Command"`. A *unit* whose `primaryCategory` is itself qualified (e.g. `"Troops - Infantry Troop or Levy Troop only"`) only fills a slot with exactly that category.
 
 ### State: Zustand Store (`src/store/rosterStore.ts`)
 
@@ -55,16 +61,14 @@ Modal state carries data through the chain (e.g., `role: string` and `unit: Unit
 
 Each `SlotDef` has `max: N` and expands to N individual slot instances with keys `"${role}-${index}"`. These keys are stored in `PlacedDetachment.slots` and referenced by `unlockedBy`.
 
-`expandSlots(def)` in `DetachmentCard.tsx` (also exported for list view):
-- Filters out qualifier slots (role contains ` - `)
+`expandSlots(def)` in `DetachmentCard.tsx`:
+- Filters out qualifier slots (role contains ` - `) when the detachment also has a plain slot of the same base role
 - Merges prime slots into regular — prime slots replace one regular slot from the pool, rendered first
 - Result: `{ key, slotDef }[]` with consistent key ordering
 
 `groupByRole(expanded)` clusters expanded slots by display role, preserving BSData ordering.
 
-### Views
-
-`Canvas.tsx` owns view state (`'canvas' | 'list'`). The header toggle and `ListView` are both rendered inside `Canvas.tsx`. `ListView` (`src/components/list/`) reuses `expandSlots`, `groupByRole`, and `Slot` from the canvas components — no logic duplication.
+### Layout notes
 
 Carbon Design System header is `position: fixed` (48px tall). Any scrollable content area directly below it needs `paddingTop: 64` (48px header + 16px gap).
 
@@ -82,8 +86,9 @@ The canvas is a large `4000×3000px` div inside an `overflow: hidden` viewport c
 | `src/components/canvas/DetachmentCard.tsx` | `expandSlots`, `groupByRole`, card rendering |
 | `src/data/loader.ts` | Runtime data filtering helpers |
 | `src/data/factions.ts` | Faction list + `SM_LEGION_KEYS` |
-| `src/constants/primeBenefits.ts` | Prime benefits + `OFFICER_OF_THE_LINE_UNITS` set |
-| `scripts/parse-cats.ts` | BSData XML → JSON (contains `FACTION_COMMENT_MAP`) |
+| `src/constants/primeBenefits.ts` | Prime benefits (hardcoded for now — see docs/ROADMAP-1.0.md) |
+| `scripts/parse-bsdata.ts` | BSData JSON → app JSON (tests in `parse-bsdata.test.ts`) |
+| `scripts/sync-data.ts` | Fetches BSData, runs the parser, writes `data/parsed/` |
 
 ## Important Constraints
 

@@ -12,6 +12,9 @@ export interface SystemInfo {
   gameSystemName: string;
   revision: number;
   forceOrgEntryId: string;
+  /** BSData commit the data was synced from */
+  bsdataCommit?: string;
+  bsdataCommitDate?: string;
 }
 
 export interface CatalogueInfo {
@@ -58,10 +61,19 @@ export function getMatchableRole(slotRole: string): string {
   return getBaseRole(stripPrimePrefix(slotRole));
 }
 
-/** Returns units valid for a given slot role + faction. */
+/**
+ * Returns units valid for a given slot role + faction. A unit whose primary
+ * category is qualified (e.g. "Troops - Infantry Troop or Levy Troop only") only
+ * fills a slot with exactly that category, never a plain "Troops" slot.
+ */
 export function getUnitsForRole(faction: string, slotRole: string): UnitEntry[] {
+  const slotCategory = stripPrimePrefix(slotRole);
   const matchable = getMatchableRole(slotRole);
-  return getUnitsForFaction(faction).filter((u) => u.role === matchable);
+  return getUnitsForFaction(faction).filter((u) => {
+    const category = u.primaryCategory ?? u.role;
+    if (category === slotCategory) return true;
+    return !category.includes(' - ') && u.role === matchable;
+  });
 }
 
 /**
