@@ -139,7 +139,7 @@ async function main(): Promise<void> {
   const { gameSystem, catalogues, source } = readRaw();
 
   console.log('\n=== Parsing ===');
-  const { units, detachments, system, catalogues: catalogueInfo, warnings } = parseAll({
+  const { units, detachments, system, catalogues: catalogueInfo, rules, warnings } = parseAll({
     gameSystem,
     catalogues,
     unitFactions: UNIT_FACTIONS,
@@ -154,6 +154,7 @@ async function main(): Promise<void> {
     bsdataCommitDate: source.commitDate,
   });
   writeJson('catalogues.json', catalogueInfo);
+  writeJson('rules.json', rules);
 
   console.log('\n=== Summary ===');
   console.log(`BSData ${source.repo}@${source.commit.slice(0, 7)} (${source.commitDate})`);

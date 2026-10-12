@@ -86,6 +86,14 @@ export interface BsEntry {
   selectionEntries?: BsEntry[];
   selectionEntryGroups?: BsEntry[];
   entryLinks?: BsEntry[];
+  rules?: BsRule[];
+  infoLinks?: Array<{ id: string; name: string; targetId: string; type: string }>;
+}
+
+export interface BsRule {
+  id: string;
+  name: string;
+  description?: string;
 }
 
 export interface BsForceEntry {
@@ -113,6 +121,7 @@ interface BsRoot {
   entryLinks?: BsEntry[];
   sharedSelectionEntries?: BsEntry[];
   sharedSelectionEntryGroups?: BsEntry[];
+  sharedRules?: BsRule[];
 }
 
 export interface BsGameSystemFile {
@@ -156,6 +165,58 @@ export interface UnitEntry {
   unitWargear?: WargearEntry[];
   /** Number of auxiliary detachments this unit unlocks when placed in a Command slot (default 1). Derived from BSData "Officer of the Line (N)" category. */
   officerOfTheLine?: number;
+  /**
+   * Entry and category ids the unit contains at its default composition, with
+   * counts (models count per model). Lets the app evaluate BSData conditions
+   * such as "atLeast unit Unique Model Sub-Type".
+   */
+  facts: Record<string, number>;
+  /** How the unit links its Prime benefits: the "Prime Unit" link and the benefit group(s) inside it */
+  prime?: { linkId: string; groups: string[] };
+}
+
+// ---------------------------------------------------------------------------
+// Rules data: BSData conditions/modifiers kept (slimmed) for the app's evaluator
+// ---------------------------------------------------------------------------
+
+export interface RuleCondition {
+  type: string;   // instanceOf, notInstanceOf, atLeast, greaterThan, lessThan, atMost, equalTo, notEqualTo
+  scope: string;  // self, parent, unit, ancestor, force, roster, primary-catalogue…
+  field: string;  // selections, forces, or a cost/limit field
+  value: number;
+  childId?: string;
+}
+
+export interface RuleConditionGroup {
+  type: string; // and | or
+  conditions?: RuleCondition[];
+  conditionGroups?: RuleConditionGroup[];
+}
+
+export interface RuleModifier {
+  type: string;  // set, increment, decrement, add, remove, set-primary…
+  field: string; // hidden, category, or a constraint id
+  value: string | number | boolean;
+  conditions?: RuleCondition[];
+  conditionGroups?: RuleConditionGroup[];
+}
+
+/** A node in a Prime benefit tree: a group of choices or a choosable benefit. */
+export interface PrimeNode {
+  /** Id used for the selection's entryId in a .ros (the entry link id where linked) */
+  id: string;
+  name: string;
+  kind: 'group' | 'option';
+  hidden?: boolean;
+  /** Modifiers that can change visibility (field "hidden") */
+  modifiers?: RuleModifier[];
+  description?: string;
+  children?: PrimeNode[];
+}
+
+export interface RulesData {
+  /** Prime benefit trees, keyed by the shared group id units link to */
+  primeGroups: Record<string, PrimeNode>;
 }
 
 export interface DetachmentSlot {
@@ -215,6 +276,7 @@ export interface ParseResult {
   };
   system: SystemInfo;
   catalogues: Record<string, CatalogueInfo>;
+  rules: RulesData;
   warnings: string[];
 }
 
@@ -344,7 +406,7 @@ function resolveGroupLink(link: BsEntry, index: SharedIndex): BsEntry | undefine
     ...target,
     id: link.id,
     name: link.name,
-    hidden: link.hidden ?? target.hidden,
+    hidden: Boolean(link.hidden || target.hidden),
     constraints: link.constraints ?? target.constraints,
     modifiers: [...(link.modifiers ?? []), ...(target.modifiers ?? [])],
     defaultSelectionEntryId: link.defaultSelectionEntryId ?? target.defaultSelectionEntryId,
@@ -400,6 +462,106 @@ function collectMandatoryWargear(node: BsEntry, index: SharedIndex): WargearEntr
 
   visit(node, 0);
   return wargear;
+}
+
+// ---------------------------------------------------------------------------
+// Conditions, unit facts and Prime benefits
+// ---------------------------------------------------------------------------
+
+function slimConditions(holder: { conditions?: BsCondition[]; conditionGroups?: BsConditionGroup[] }) {
+  const out: { conditions?: RuleCondition[]; conditionGroups?: RuleConditionGroup[] } = {};
+  if (holder.conditions?.length) {
+    out.conditions = holder.conditions.map((c) => ({
+      type: c.type,
+      scope: c.scope,
+      field: c.field,
+      value: c.value,
+      ...(c.childId ? { childId: c.childId } : {}),
+    }));
+  }
+  if (holder.conditionGroups?.length) {
+    out.conditionGroups = holder.conditionGroups.map((g) => ({ type: g.type, ...slimConditions(g) }));
+  }
+  return out;
+}
+
+export function slimModifier(m: BsModifier): RuleModifier {
+  return { type: m.type, field: m.field, value: m.value, ...slimConditions(m) };
+}
+
+/** Entry/category ids a unit contains at default composition, with counts. */
+function unitFacts(unit: BsEntry, rootLink: BsEntry, models: ModelEntry[]): Record<string, number> {
+  const facts: Record<string, number> = {};
+  const add = (id: string | undefined, n: number) => {
+    if (id && n > 0) facts[id] = (facts[id] ?? 0) + n;
+  };
+  add(unit.id, 1);
+  add(rootLink.id, 1);
+  for (const c of [...(unit.categoryLinks ?? []), ...(rootLink.categoryLinks ?? [])]) add(c.targetId, 1);
+  const modelDefs = new Map(
+    [...(unit.selectionEntries ?? []), ...(unit.selectionEntryGroups ?? []).flatMap((g) => g.selectionEntries ?? [])].map(
+      (e) => [e.id, e]
+    )
+  );
+  for (const m of models) {
+    add(m.entryId, m.min);
+    for (const c of modelDefs.get(m.entryId)?.categoryLinks ?? []) add(c.targetId, m.min);
+    for (const w of m.defaultWargear) add(w.entryId, m.min);
+  }
+  return facts;
+}
+
+/** The game system's shared "Prime Unit" upgrade that every prime-capable unit links. */
+const PRIME_UNIT_NAME = 'Prime Unit';
+
+function primeLinkage(unit: BsEntry): UnitEntry['prime'] {
+  const link = (unit.entryLinks ?? []).find((l) => l.name === PRIME_UNIT_NAME && l.targetId);
+  if (!link) return undefined;
+  const groups = (link.entryLinks ?? [])
+    .filter((l) => l.type === 'selectionEntryGroup' && l.targetId)
+    .map((l) => l.targetId as string);
+  return groups.length > 0 ? { linkId: link.id, groups } : undefined;
+}
+
+function describe(entry: BsEntry, rules: Map<string, BsRule>): string | undefined {
+  const inline = (entry.rules ?? []).map((r) => r.description?.trim()).filter(Boolean);
+  if (inline.length > 0) return inline.join('\n\n');
+  const linked = (entry.infoLinks ?? [])
+    .filter((l) => l.type === 'rule')
+    .map((l) => {
+      const rule = rules.get(l.targetId);
+      return rule?.description ? `${l.name}: ${rule.description.trim()}` : undefined;
+    })
+    .filter(Boolean);
+  return linked.length > 0 ? linked.join('\n\n') : undefined;
+}
+
+/** Builds a Prime benefit tree node, following entry links into shared entries/groups. */
+function buildPrimeNode(entry: BsEntry, index: SharedIndex, rules: Map<string, BsRule>, depth = 0): PrimeNode {
+  const target = entry.targetId ? index.get(entry.targetId) : undefined;
+  const node: BsEntry = target
+    ? { ...target, id: entry.id, name: entry.name, hidden: Boolean(entry.hidden || target.hidden),
+        modifiers: [...(entry.modifiers ?? []), ...(target.modifiers ?? [])],
+        modifierGroups: [...(entry.modifierGroups ?? []), ...(target.modifierGroups ?? [])] }
+    : entry;
+  const isGroup = entry.type === 'selectionEntryGroup' || (!entry.type && !entry.targetId);
+  const hiddenMods = allModifiers(node).filter((m) => m.field === 'hidden').map(slimModifier);
+  const children =
+    depth < 6
+      ? [...(node.selectionEntries ?? []), ...(node.selectionEntryGroups ?? []), ...(node.entryLinks ?? [])].map((c) =>
+          buildPrimeNode(c, index, rules, depth + 1)
+        )
+      : [];
+  const description = isGroup ? undefined : describe(target ?? entry, rules);
+  return {
+    id: node.id,
+    name: node.name.trim(),
+    kind: isGroup ? 'group' : 'option',
+    ...(node.hidden ? { hidden: true } : {}),
+    ...(hiddenMods.length > 0 ? { modifiers: hiddenMods } : {}),
+    ...(description ? { description } : {}),
+    ...(children.length > 0 ? { children } : {}),
+  };
 }
 
 // ---------------------------------------------------------------------------
@@ -517,13 +679,14 @@ function extractUnitsFromCatalogue(
   ootlMap: Map<string, number>,
   slotRoles: Set<string>,
   index: SharedIndex,
-  categoryNames: Map<string, string>
+  categoryNames: Map<string, string>,
+  primeGroupIds: Set<string>
 ): UnitEntry[] {
   // A unit can be linked several times under different primary categories, e.g.
   // "Transport" and "Transport - Logisticae", or "Master of Automata" and
   // "Support - Castellax Battle Maniple Only". Prefer the plain battlefield-role
   // link; otherwise fall back to the first link.
-  const rootLinks = new Map<string, { linkId: string; role: string }>();
+  const rootLinks = new Map<string, { linkId: string; role: string; link: BsEntry }>();
   const isPlainSlotRole = (role: string) => slotRoles.has(role);
   for (const link of cat.entryLinks ?? []) {
     if (!link.targetId) continue;
@@ -532,7 +695,7 @@ function extractUnitsFromCatalogue(
     if (!role) continue;
     const existing = rootLinks.get(link.targetId);
     if (!existing || (!isPlainSlotRole(existing.role) && isPlainSlotRole(role))) {
-      rootLinks.set(link.targetId, { linkId: link.id, role });
+      rootLinks.set(link.targetId, { linkId: link.id, role, link });
     }
   }
 
@@ -555,6 +718,7 @@ function extractUnitsFromCatalogue(
     if (breakdown === null) warnings.push(`${source}: No points found for "${entry.name}" (id=${entry.id})`);
 
     const unitWargear = collectMandatoryWargear(entry, index);
+    const prime = primeLinkage(entry);
     const officerOfTheLine = officerOfTheLineFor(entry, ootlMap);
 
     units.push({
@@ -568,7 +732,10 @@ function extractUnitsFromCatalogue(
       source,
       ...(unitWargear.length > 0 ? { unitWargear } : {}),
       ...(officerOfTheLine !== undefined ? { officerOfTheLine } : {}),
+      facts: unitFacts(entry, link.link, breakdown?.models ?? []),
+      ...(prime ? { prime } : {}),
     });
+    for (const groupId of prime?.groups ?? []) primeGroupIds.add(groupId);
   }
   return units;
 }
@@ -716,6 +883,7 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
 
   const units: Record<string, UnitEntry[]> = {};
   const catalogueInfo: Record<string, CatalogueInfo> = {};
+  const primeGroupIds = new Set<string>();
 
   for (const key of unitFactions) {
     const cat = catalogueByKey.get(key);
@@ -723,7 +891,7 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
       warnings.push(`No catalogue found for faction "${key}"`);
       continue;
     }
-    units[key] = extractUnitsFromCatalogue(cat, key, warnings, ootlMap, slotRoles, index, categoryNames);
+    units[key] = extractUnitsFromCatalogue(cat, key, warnings, ootlMap, slotRoles, index, categoryNames, primeGroupIds);
     catalogueInfo[key] = {
       catalogueId: cat.id,
       catalogueName: normalizeCatalogueName(cat.name),
@@ -739,11 +907,22 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
     forceOrgEntryId: crusade?.id ?? '',
   };
 
+  const sharedRules = new Map<string, BsRule>();
+  for (const root of [gst, ...catalogues.map((c) => c.catalogue)]) {
+    for (const r of root.sharedRules ?? []) if (!sharedRules.has(r.id)) sharedRules.set(r.id, r);
+  }
+  const primeGroups: Record<string, PrimeNode> = {};
+  for (const groupId of primeGroupIds) {
+    const group = index.get(groupId);
+    if (group) primeGroups[groupId] = buildPrimeNode({ ...group, type: 'selectionEntryGroup' }, index, sharedRules);
+  }
+
   return {
     units,
     detachments,
     system,
     catalogues: catalogueInfo,
+    rules: { primeGroups },
     warnings,
   };
 }

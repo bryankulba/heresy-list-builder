@@ -3,6 +3,8 @@ import { XMLParser } from 'fast-xml-parser';
 import { buildRosXml } from './buildRos';
 import { createForce, addDetachment } from '../store/rosterModel';
 import { getUnitsForFaction, getChart } from '../data/loader';
+import { unitContext } from '../rules/context';
+import { getPrimeOptions, isLogisticalBenefit } from '../rules/primeBenefits';
 
 const xmlParser = new XMLParser({
   ignoreAttributes: false,
@@ -98,5 +100,24 @@ describe('buildRosXml', () => {
     const xml = buildRosXml([force], 3000, unit.points);
     expect(xml).toContain(`entryId="${unit.entryId}"`);
     expect(xml).toContain('name="Troops" primary="true"');
+  });
+
+  test('a Prime unit exports its Prime Unit upgrade with the chosen benefit nested inside', () => {
+    const force = createForce('death-guard', 'primary');
+    const det = force.detachments[0];
+    const unit = getUnitsForFaction('death-guard').find((u) => u.name === 'Tactical Squad')!;
+    const slot = det.def.slots.find((s) => s.role === 'Prime Troops')!;
+    const options = getPrimeOptions(unit, unitContext([force], force, det, unit, slot.categoryId));
+    const lb = options.find(isLogisticalBenefit)!;
+    det.slots['Prime Troops-0'] = { unit, primeBenefit: { id: lb.id, name: lb.name, description: lb.description } };
+    det.bonusSlots = [{ id: 'b1', sourceSlotKey: 'Prime Troops-0', role: 'Armour', unit: null }];
+
+    const parsed = xmlParser.parse(buildRosXml([force], 3000, unit.points));
+    const unitSel = [parsed.roster.forces.force.forces.force.selections.selection].flat()[0];
+    const prime = [unitSel.selections.selection].flat().find((s: Record<string, string>) => s['@_name'] === 'Prime Unit');
+    expect(prime['@_entryId']).toBe(unit.prime!.linkId);
+    expect(prime.selections.selection['@_name']).toBe('Logistical Benefit');
+    expect(prime.selections.selection['@_entryId']).toBe(lb.id);
+    expect(prime.selections.selection.selections.selection['@_name']).toBe('LB - Armour');
   });
 });

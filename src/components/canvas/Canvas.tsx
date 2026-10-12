@@ -25,6 +25,8 @@ import PrimeBenefitModal from '../modals/PrimeBenefitModal';
 import BonusSlotRoleSelectorModal from '../modals/BonusSlotRoleSelectorModal';
 import DetachmentSelectorModal from '../modals/DetachmentSelectorModal';
 import AllySelectorModal from '../modals/AllySelectorModal';
+import { unitContext } from '../../rules/context';
+import { getPrimeOptions, isLogisticalBenefit, logisticalBenefitRoles } from '../../rules/primeBenefits';
 import ConfirmModal from '../modals/ConfirmModal';
 import ExportModal from '../modals/ExportModal';
 import SavedListsModal from '../modals/SavedListsModal';
@@ -193,6 +195,14 @@ export default function Canvas() {
     const det = detachments.find((d) => d.id === detachmentId);
     if (!det) return undefined;
     return expandSlots(det.def).find((s) => s.key === slotKey)?.slotDef;
+  }
+
+  /** Prime benefits a unit may take in a given slot, evaluated from BSData. */
+  function primeOptionsFor(detachmentId: string, slotKey: string, unit: Parameters<typeof fillSlot>[2]) {
+    const force = forces.find((f) => f.detachments.some((d) => d.id === detachmentId));
+    const det = force?.detachments.find((d) => d.id === detachmentId);
+    if (!force || !det) return [];
+    return getPrimeOptions(unit, unitContext(forces, force, det, unit, findSlotDef(detachmentId, slotKey)?.categoryId));
   }
 
   /** After an edit action, return to the slotEdit modal with updated filled data. */
@@ -778,16 +788,25 @@ export default function Canvas() {
 
       {modal.type === 'primeBenefit' && (
         <PrimeBenefitModal
-          onConfirm={(benefit) => {
+          options={primeOptionsFor(modal.detachmentId, modal.slotKey, modal.unit)}
+          onConfirm={(option) => {
             if (modal.type !== 'primeBenefit') return;
             const { detachmentId, slotKey, role, unit } = modal;
+            const benefit = { id: option.id, name: option.name, description: option.description };
 
-            if (benefit.id === 'logistical-benefit') {
+            if (isLogisticalBenefit(benefit)) {
               // Clear any existing bonus slots for this slot (avoids duplicates on change)
               clearBonusSlotsForSlot(detachmentId, slotKey);
               fillSlot(detachmentId, slotKey, unit, benefit);
               // bonusSlotRoleSelector will return to slotEdit (edit mode) or trigger unlock (fresh fill)
-              setModal({ type: 'bonusSlotRoleSelector', detachmentId, slotKey, role, unit });
+              setModal({
+                type: 'bonusSlotRoleSelector',
+                detachmentId,
+                slotKey,
+                role,
+                unit,
+                roles: logisticalBenefitRoles(option),
+              });
             } else {
               if (isEditingSlot.current) {
                 // Changing benefit only — clear any old bonus slots, fill, return to slotEdit
@@ -805,6 +824,7 @@ export default function Canvas() {
 
       {modal.type === 'bonusSlotRoleSelector' && (
         <BonusSlotRoleSelectorModal
+          roles={modal.roles}
           onConfirm={handleBonusSlotRoleSelected}
           onClose={() => setModal({ type: 'none' })}
         />

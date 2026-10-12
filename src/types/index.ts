@@ -30,6 +30,10 @@ export interface UnitEntry {
   unitWargear?: WargearEntry[];
   /** Number of auxiliary detachments this unit unlocks in a Command slot (default 1). Derived from BSData "Officer of the Line (N)" category. */
   officerOfTheLine?: number;
+  /** Entry/category ids the unit contains at default composition, with counts (for rule conditions) */
+  facts?: Record<string, number>;
+  /** The unit's "Prime Unit" link and the Prime benefit group(s) it offers */
+  prime?: { linkId: string; groups: string[] };
 }
 
 export interface SlotDef {
@@ -127,7 +131,7 @@ export type ModalState =
   | { type: 'slotEdit'; detachmentId: string; slotKey: string; slotDef: SlotDef; filled: FilledSlot }
   | { type: 'unitPicker'; detachmentId: string; slotKey: string; role: string; slotRole: string; isPrime?: boolean }
   | { type: 'primeBenefit'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry }
-  | { type: 'bonusSlotRoleSelector'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry }
+  | { type: 'bonusSlotRoleSelector'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry; roles?: string[] }
   | { type: 'bonusUnitPicker'; detachmentId: string; bonusSlotId: string; role: string }
   | { type: 'detachmentSelector'; trigger: 'highCommand' | 'command'; unlockedBy: string; title?: string }
   | { type: 'allySelector' }

@@ -2,10 +2,12 @@ import unitsJson from '../../data/parsed/units.json';
 import detachmentsJson from '../../data/parsed/detachments.json';
 import systemJson from '../../data/parsed/system.json';
 import cataloguesJson from '../../data/parsed/catalogues.json';
+import rulesJson from '../../data/parsed/rules.json';
 import type { UnitEntry, DetachmentDef } from '../types';
+import type { PrimeNode } from '../rules/primeBenefits';
 import { ALLIED_CHART, ALLIED_DETACHMENT, FACTIONS, FACTION_BY_ID } from './factions';
 
-export const unitsData = unitsJson as Record<string, UnitEntry[]>;
+export const unitsData = unitsJson as unknown as Record<string, UnitEntry[]>;
 
 export interface SystemInfo {
   gameSystemId: string;
@@ -24,6 +26,9 @@ export interface CatalogueInfo {
 }
 
 export const systemData = systemJson as SystemInfo;
+
+/** Rules trees (Prime benefits) with BSData conditions — see src/rules/ */
+export const rulesData = rulesJson as unknown as { primeGroups: Record<string, PrimeNode> };
 export const cataloguesData = cataloguesJson as Record<string, CatalogueInfo>;
 
 /** A root force entry and the detachments it may contain (mirrors a .ros root <force>). */
