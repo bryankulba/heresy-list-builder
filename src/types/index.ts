@@ -4,23 +4,35 @@ export type Allegiance = 'Loyalist' | 'Traitor';
 export type AppPhase = 'start' | 'canvas';
 export type DetachmentType = 'core' | 'auxiliary' | 'apex' | 'allied' | 'additional' | 'other';
 
+/** Paths are .ros selection entryIds ("::"-joined, see scripts/parse-bsdata.ts). Absent on units saved before 2026-10. */
 export interface WargearEntry {
   name: string;
   entryId: string;
+  targetId?: string;
+  path?: string;
+  groupPath?: string;
+  children?: WargearEntry[];
 }
 
 export interface ModelEntry {
   name: string;
   entryId?: string;
+  path?: string;
+  /** 'unit' for nested sub-units (e.g. Rapier crews) */
+  kind?: 'model' | 'unit';
+  models?: ModelEntry[];
   cost: number;
   min: number;
   max: number;
-  defaultWargear?: WargearEntry[];
+  defaultWargear: WargearEntry[];
 }
 
 export interface UnitEntry {
   name: string;
+  /** Root link id — the unit's identity */
   entryId?: string;
+  /** .ros selection entryId (root link :: shared entry) */
+  path?: string;
   role: string;
   /** Full primary category incl. any qualifier, e.g. "Support - Castellax Battle Maniple Only". Absent on units saved before 2026-10. */
   primaryCategory?: string;
@@ -34,8 +46,10 @@ export interface UnitEntry {
   officerOfTheLine?: number;
   /** Entry/category ids the unit contains at default composition, with counts (for rule conditions) */
   facts?: Record<string, number>;
-  /** The unit's "Prime Unit" link and the Prime benefit group(s) it offers */
-  prime?: { linkId: string; groups: string[] };
+  /** The unit's "Prime Unit" link (and .ros path), its Prime benefit groups and their path prefixes */
+  prime?: { linkId: string; path?: string; groups: string[]; groupPrefixes?: Record<string, string> };
+  /** High Command detachment-choice paths ("One Apex / One Auxiliary Detachment") */
+  detachmentChoice?: { prefix: string; groupId: string };
   /** Conditional re-filings of the primary category (e.g. "Heavy Assault - Tartaros Only" in a Linebreaker) */
   primaryCategoryRules?: Array<{ category: string } & Pick<RuleModifier, 'conditions' | 'conditionGroups'>>;
   /** Other root links to the same unit under different primary categories (see unitVariant) */
@@ -70,6 +84,14 @@ export interface PrimeBenefit {
 export interface FilledSlot {
   unit: UnitEntry;
   primeBenefit?: PrimeBenefit;
+  /**
+   * Whether the unit is Prime. Unset = Prime exactly when it sits in a Prime
+   * position. Set explicitly by .ros import, where a unit can fill a Prime
+   * position without being Prime, or be Prime without a benefit chosen yet.
+   */
+  isPrime?: boolean;
+  /** Detachment-choice marks carried over from an imported roster ("One Apex / Auxiliary Detachment") */
+  detachmentChoices?: Array<'apex' | 'auxiliary'>;
   notes?: string;
   extraPoints?: number;
 }

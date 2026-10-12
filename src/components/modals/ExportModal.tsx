@@ -6,6 +6,7 @@ import { cardSlots } from '../canvas/DetachmentCard';
 import { factionLabel } from '../../data/factions';
 import { buildRosXml } from '../../utils/buildRos';
 import { withEffectiveSlots } from '../../rules/slots';
+import { useRosterStore } from '../../store/rosterStore';
 
 interface ExportModalProps {
   forces: Force[];
@@ -81,6 +82,7 @@ export default function ExportModal({
   totalPoints,
   onClose,
 }: ExportModalProps) {
+  const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
   const text = useMemo(
     () => buildExportText(withEffectiveSlots(forces), allegiance, pointsLimit, totalPoints),
     [forces, allegiance, pointsLimit, totalPoints]
@@ -91,7 +93,7 @@ export default function ExportModal({
   }
 
   function handleDownloadRos() {
-    const xml = buildRosXml(forces, pointsLimit, totalPoints);
+    const xml = buildRosXml(forces, pointsLimit, totalPoints, { allegiance, cohortDoctrine });
     downloadRos(xml, forces.find((f) => f.kind === 'primary')?.faction ?? 'roster');
   }
 

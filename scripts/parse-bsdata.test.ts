@@ -146,7 +146,7 @@ const legionUnits: BsEntry[] = [
         constraints: [min(4), max(9)],
         entryLinks: [
           // Link to a shared group: default must be resolved through the index
-          { id: 'leg-force', name: 'Force Weapon', type: 'selectionEntryGroup', targetId: 'shared-force-weapons' },
+          { id: 'leg-force', name: 'Force Weapon', type: 'selectionEntryGroup', targetId: 'shared-force-weapons', constraints: [min(1), max(1)] },
           // Group link itself must never be emitted as wargear
           { id: 'leg-arcana', name: 'Prosperine Arcana', type: 'selectionEntryGroup', targetId: 'missing' },
         ],
@@ -319,8 +319,16 @@ describe('units', () => {
     const u = unit('emperors-test-legion', 'Tactical Support Squad');
     expect(u.unitWargear?.map((w) => w.name)).toEqual(['Frag grenades', 'Flamer']);
     expect(u.models[0].defaultWargear.map((w) => w.name)).toEqual(['Bolt pistol']);
-    // Shared group default resolved; group links never emitted
-    expect(u.models[1].defaultWargear).toEqual([{ name: 'Force sword', entryId: 'force-sword' }]);
+    // Shared group default resolved (path enters the group link's target); group links never emitted
+    expect(u.models[1].defaultWargear).toEqual([
+      {
+        name: 'Force sword',
+        entryId: 'force-sword',
+        targetId: 'x',
+        path: 'link-squad::leg-force::force-sword::x',
+        groupPath: 'link-squad::leg-force::shared-force-weapons',
+      },
+    ]);
   });
 
   test('leaves force-org detachment choices to the exporter', () => {

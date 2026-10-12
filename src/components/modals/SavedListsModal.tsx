@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useRef, useState } from 'react';
 import {
   ComposedModal,
   ModalHeader,
@@ -10,6 +10,7 @@ import { useRosterStore, computeTotalPoints } from '../../store/rosterStore';
 import { getAllSaves, saveList, deleteSave, canSaveMore, SAVE_LIMIT } from '../../utils/savedLists';
 import { factionLabel } from '../../data/factions';
 import type { SavedList } from '../../types';
+import { importRos, type ImportResult } from '../../utils/importRos';
 import ConfirmModal from './ConfirmModal';
 
 interface SavedListsModalProps {
@@ -41,6 +42,30 @@ export default function SavedListsModal({ onClose }: SavedListsModalProps) {
   const [listName, setListName] = useState('');
   const [pendingDeleteId, setPendingDeleteId] = useState<string | null>(null);
   const [pendingLoadItem, setPendingLoadItem] = useState<SavedList | null>(null);
+  const [pendingImport, setPendingImport] = useState<{ fileName: string; result: ImportResult } | null>(null);
+  const [importError, setImportError] = useState<string | null>(null);
+  const fileInput = useRef<HTMLInputElement>(null);
+
+  async function handleImportFile(file: File) {
+    setImportError(null);
+    try {
+      const result = importRos(await file.text());
+      if (result.snapshot.forces.length === 0) {
+        setImportError(`Nothing in "${file.name}" could be imported. ${result.warnings.join(' ')}`);
+        return;
+      }
+      setPendingImport({ fileName: file.name, result });
+    } catch (e) {
+      setImportError(`"${file.name}" couldn't be read as a .ros roster (${(e as Error).message}).`);
+    }
+  }
+
+  function handleImportConfirmed() {
+    if (!pendingImport) return;
+    loadSave(pendingImport.result.snapshot);
+    setPendingImport(null);
+    onClose();
+  }
 
   const totalPoints = computeTotalPoints(forces);
   const currentLabel = describeForces(forces.map((f) => f.faction));
@@ -170,8 +195,43 @@ export default function SavedListsModal({ onClose }: SavedListsModalProps) {
               })}
             </div>
           )}
+          {/* Import a roster from New Recruit / BattleScribe */}
+          <hr style={{ border: 'none', borderTop: '1px solid var(--cds-border-subtle-01)', margin: '20px 0 16px' }} />
+          <p style={{ fontSize: 13, color: 'var(--cds-text-secondary)', marginBottom: 8 }}>
+            Open a roster exported from New Recruit or BattleScribe (.ros). Detachments, units and Prime
+            benefits come across; unit wargear choices don't.
+          </p>
+          <input
+            ref={fileInput}
+            type="file"
+            accept=".ros,application/xml,text/xml"
+            style={{ display: 'none' }}
+            onChange={(e) => {
+              const file = e.target.files?.[0];
+              if (file) void handleImportFile(file);
+              e.target.value = '';
+            }}
+          />
+          <Button kind="tertiary" size="md" onClick={() => fileInput.current?.click()}>
+            Import .ros…
+          </Button>
+          {importError && (
+            <p style={{ fontSize: 12, color: 'var(--cds-text-error)', marginTop: 8 }}>{importError}</p>
+          )}
         </ModalBody>
       </ComposedModal>
+
+      {pendingImport && (
+        <ConfirmModal
+          message={[
+            `Load "${pendingImport.fileName}"${phase === 'canvas' ? '? This will replace your current list.' : '?'}`,
+            ...pendingImport.result.warnings.map((w) => `• ${w}`),
+          ].join('\n')}
+          primaryButtonText="Load"
+          onConfirm={handleImportConfirmed}
+          onClose={() => setPendingImport(null)}
+        />
+      )}
 
       {pendingDeleteId && (
         <ConfirmModal

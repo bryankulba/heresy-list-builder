@@ -3,8 +3,9 @@ import detachmentsJson from '../../data/parsed/detachments.json';
 import systemJson from '../../data/parsed/system.json';
 import cataloguesJson from '../../data/parsed/catalogues.json';
 import rulesJson from '../../data/parsed/rules.json';
-import type { UnitEntry, DetachmentDef } from '../types';
+import type { UnitEntry, DetachmentDef, ModelEntry, WargearEntry } from '../types';
 import type { PrimeNode } from '../rules/primeBenefits';
+import type { RuleModifier } from '../rules/evaluate';
 import { ALLIED_CHART, ALLIED_DETACHMENT, CRUSADE_CHART, FACTIONS, FACTION_BY_ID } from './factions';
 
 export const unitsData = unitsJson as unknown as Record<string, UnitEntry[]>;
@@ -28,9 +29,23 @@ export interface CatalogueInfo {
 export const systemData = systemJson as SystemInfo;
 
 /** Rules trees (Prime benefits) with BSData conditions — see src/rules/ */
+/** An army-level selection (Allegiance, Rite of War, Cohort Doctrine…) — see scripts/parse-bsdata.ts */
+export interface ArmyConfigEntry {
+  name: string;
+  category: string;
+  path: string;
+  min: number;
+  hidden?: boolean;
+  modifiers?: RuleModifier[];
+  choices: Array<{ name: string; path: string; groupPath?: string }>;
+  defaults: WargearEntry[];
+}
+
 export const rulesData = rulesJson as unknown as {
   primeGroups: Record<string, PrimeNode>;
   detachmentChoice: { apex?: { id: string; name: string }; auxiliary?: { id: string; name: string } };
+  /** Army configuration entries by catalogue key ('game-system' for the game system's own) */
+  armyConfig: Record<string, ArmyConfigEntry[]>;
 };
 export const cataloguesData = cataloguesJson as Record<string, CatalogueInfo>;
 
@@ -93,9 +108,38 @@ export function getAdditionalDetachments(chartName: string, faction: string): De
  * "Command - Centurions Only"): same unit, that link's id and category.
  */
 export function unitVariant(unit: UnitEntry, link: { entryId: string; category: string }): UnitEntry {
+  // Every .ros path in the unit starts at its root link — re-root them on the alternate link
+  const reroot = (path: string | undefined) =>
+    path && unit.entryId && path.startsWith(`${unit.entryId}::`) ? `${link.entryId}${path.slice(unit.entryId.length)}` : path;
+  const rerootWargear = (w: WargearEntry): WargearEntry => ({
+    ...w,
+    path: reroot(w.path),
+    groupPath: reroot(w.groupPath),
+    children: w.children?.map(rerootWargear),
+  });
+  const rerootModel = (m: ModelEntry): ModelEntry => ({
+    ...m,
+    path: reroot(m.path),
+    models: m.models?.map(rerootModel),
+    defaultWargear: m.defaultWargear.map(rerootWargear),
+  });
   return {
     ...unit,
     entryId: link.entryId,
+    path: reroot(unit.path),
+    models: unit.models.map(rerootModel),
+    unitWargear: unit.unitWargear?.map(rerootWargear),
+    prime: unit.prime && {
+      ...unit.prime,
+      path: reroot(unit.prime.path),
+      groupPrefixes:
+        unit.prime.groupPrefixes &&
+        Object.fromEntries(Object.entries(unit.prime.groupPrefixes).map(([k, v]) => [k, reroot(v) ?? v])),
+    },
+    detachmentChoice: unit.detachmentChoice && {
+      ...unit.detachmentChoice,
+      prefix: reroot(unit.detachmentChoice.prefix) ?? unit.detachmentChoice.prefix,
+    },
     primaryCategory: link.category,
     role: getBaseRole(link.category),
     primaryCategoryRules: undefined,

@@ -44,6 +44,17 @@ BSData conditions/modifiers are kept (slimmed) in the parsed data and evaluated 
 
 Known gap: Logistical Benefit still uses the app's own `bonusSlots`; its BSData slot increments aren't evaluated (the chosen "LB - Role" isn't counted) to avoid double slots.
 
+### .ros Export & Import (`src/utils/buildRos.ts`, `importRos.ts`)
+
+The export writes rosters the way New Recruit does (verified against `reference_armies/*.ros`, which are New Recruit exports):
+- Selection `entryId`s are "::"-joined paths: root link, then each entry link whose *target* was entered, then the final entry (`linkId::targetId` for links). Children attached to a link itself don't add its id (e.g. a Prime Unit's benefit group). `entryGroupId` = prefix + containing group. The parser computes these (`path`/`groupPath` on units, models, wargear, Prime trees, army config).
+- Units carry their base cost; models carry theirs. Cost name `Point(s)`.
+- Each root force carries required army configuration (`rules.json` `armyConfig`): Allegiance (from the roster), Cohort Doctrine (from the start screen), others with BSData defaults.
+- Prime units emit `Prime Unit` with the chosen benefit (and `LB - Role`) nested inside. `FilledSlot.isPrime` makes prime-ness explicit (unset = prime iff in a Prime position).
+- High Command units with a detachment choice emit "One Apex / One Auxiliary Detachment".
+
+`importRos` reads a .ros back into forces (detachments, units in slots, Prime benefits, LB bonus slots, allegiance, doctrine; unlock links are inferred). `referenceRosters.test.ts` round-trips every file in `reference_armies/` (import → export → compare) — add New Recruit exports there to extend coverage. Unsupported root forces (e.g. Lord of War Detachment) are skipped with a warning.
+
 ### Faction Registry & Unit Loading
 
 `src/data/factions.ts` is the faction registry: every army the builder can field (18 Legions, Mechanicum, Skitarii, Solar Auxilia, Legio Custodes, Anathema Psykana, Questoris Familia). Each `FactionDef` names its `unitSources` (units.json keys merged at runtime — legions get `legiones-astartes` + their own), its force org `chart`, the auto-added `primaryDetachment`, and `canTakeAllies`. `getUnitsForFaction(faction)` in `loader.ts` merges the unit sources; `getAllyFactions` reads who may ally from the Allied Detachment's `sources`.

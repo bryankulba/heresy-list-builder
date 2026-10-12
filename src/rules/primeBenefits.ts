@@ -13,6 +13,9 @@ export interface PrimeNode {
   id: string;
   name: string;
   kind: 'group' | 'option';
+  /** Options: .ros path relative to the unit's group prefix (UnitEntry.prime.groupPrefixes) */
+  path?: string;
+  groupPath?: string;
   hidden?: boolean;
   modifiers?: RuleModifier[];
   description?: string;
@@ -52,21 +55,39 @@ export function getPrimeOptions(unit: UnitEntry, ctx: RuleContext): PrimeOption[
     .filter((o) => (seen.has(o.id) ? false : (seen.add(o.id), true)));
 }
 
-/** Finds a benefit node anywhere in the unit's trees, by id (or by name for benefits saved before ids came from data). */
-export function findPrimeNode(unit: UnitEntry, benefit: PrimeBenefit): PrimeNode | undefined {
-  const search = (nodes: PrimeNode[] | undefined, match: (n: PrimeNode) => boolean): PrimeNode | undefined => {
-    for (const n of nodes ?? []) {
-      if (n.kind === 'option' && match(n)) return n;
-      const found = search(n.children, match);
-      if (found) return found;
+function searchOptions(nodes: PrimeNode[] | undefined, match: (n: PrimeNode) => boolean): PrimeNode | undefined {
+  for (const n of nodes ?? []) {
+    if (n.kind === 'option' && match(n)) return n;
+    const found = searchOptions(n.children, match);
+    if (found) return found;
+  }
+  return undefined;
+}
+
+/**
+ * Finds a benefit in the unit's trees, by id (or by name for benefits saved
+ * before ids came from data), with the unit's path prefix for that tree.
+ */
+export function findPrimeNodeInGroups(
+  unit: UnitEntry,
+  benefit: PrimeBenefit
+): { node: PrimeNode; prefix: string } | undefined {
+  const matchers = [
+    (n: PrimeNode) => n.id === benefit.id,
+    (n: PrimeNode) => n.name.toLowerCase() === benefit.name.toLowerCase(),
+  ];
+  for (const match of matchers) {
+    for (const groupId of unit.prime?.groups ?? []) {
+      const node = searchOptions(rulesData.primeGroups[groupId]?.children, match);
+      if (node) return { node, prefix: unit.prime?.groupPrefixes?.[groupId] ?? '' };
     }
-    return undefined;
-  };
-  const groups = (unit.prime?.groups ?? []).map((id) => rulesData.primeGroups[id]).filter(Boolean);
-  return (
-    search(groups, (n) => n.id === benefit.id) ??
-    search(groups, (n) => n.name.toLowerCase() === benefit.name.toLowerCase())
-  );
+  }
+  return undefined;
+}
+
+/** Finds a benefit node anywhere in the unit's trees. */
+export function findPrimeNode(unit: UnitEntry, benefit: PrimeBenefit): PrimeNode | undefined {
+  return findPrimeNodeInGroups(unit, benefit)?.node;
 }
 
 /** Logistical Benefit adds a bonus slot whose role is picked from its sub-choices ("LB - Armour"…). */

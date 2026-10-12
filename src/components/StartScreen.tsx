@@ -4,7 +4,6 @@ import type { Allegiance } from '../types';
 import { useRosterStore } from '../store/rosterStore';
 import { FACTIONS, FACTION_GROUPS, factionLabel } from '../data/factions';
 import { COHORT_DOCTRINES } from '../constants/cohortDoctrines';
-import { getAllSaves } from '../utils/savedLists';
 import SavedListsModal from './modals/SavedListsModal';
 
 export default function StartScreen() {
@@ -15,7 +14,6 @@ export default function StartScreen() {
   const [pointsLimit, setPointsLimit] = useState(3000);
   const [cohortDoctrine, setCohortDoctrine] = useState('');
   const [showSavedLists, setShowSavedLists] = useState(false);
-  const [hasSaves] = useState(() => getAllSaves().length > 0);
 
   function handleFactionChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const next = e.target.value;
@@ -142,17 +140,15 @@ export default function StartScreen() {
           Build Army
         </Button>
 
-        {/* Load saved list */}
-        {hasSaves && (
-          <Button
-            kind="ghost"
-            size="md"
-            onClick={() => setShowSavedLists(true)}
-            style={{ width: '100%', marginTop: 12 }}
-          >
-            Load a Saved List...
-          </Button>
-        )}
+        {/* Load a saved list or import a .ros */}
+        <Button
+          kind="ghost"
+          size="md"
+          onClick={() => setShowSavedLists(true)}
+          style={{ width: '100%', marginTop: 12 }}
+        >
+          Saved Lists &amp; Import…
+        </Button>
 
         {/* Footer */}
         <p

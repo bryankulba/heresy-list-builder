@@ -125,6 +125,7 @@ interface BsRoot {
   id: string;
   name: string;
   revision: number;
+  selectionEntries?: BsEntry[];
   library?: boolean;
   categoryEntries?: BsCategoryEntry[];
   forceEntries?: BsForceEntry[];
@@ -146,14 +147,37 @@ export interface BsCatalogueFile {
 // Output types (consumed by src/data/loader.ts — keep in sync with src/types)
 // ---------------------------------------------------------------------------
 
+/**
+ * Selection paths follow BattleScribe/New Recruit roster conventions: the
+ * entryId of a selection is "::"-joined ids — the root link, then each entry
+ * link whose *target* was entered, then the final entry (a link contributes
+ * "linkId::targetId"). Children attached to a link itself don't add its id.
+ * entryGroupId is the same prefix plus the containing group ("linkId::groupId"
+ * for a linked group, the group id for an inline one).
+ */
 export interface WargearEntry {
   name: string;
-  entryId: string; // entryLink id, used as selection entryId in .ros
+  /** The entry's own id (link or inline entry) */
+  entryId: string;
+  /** Linked shared entry, when entryId is a link */
+  targetId?: string;
+  /** Selection entryId path for .ros export */
+  path: string;
+  /** entryGroupId path, when the entry was chosen from a group */
+  groupPath?: string;
+  /** The entry's own mandatory/default sub-selections (e.g. a combi weapon's parts) */
+  children?: WargearEntry[];
 }
 
 export interface ModelEntry {
   name: string;
   entryId: string;
+  /** Selection entryId path for .ros export (root link :: model) */
+  path: string;
+  /** 'unit' for nested sub-units (e.g. Rapier crews), exported as "unit-group" */
+  kind?: 'model' | 'unit';
+  /** Models inside a sub-unit (kind 'unit') */
+  models?: ModelEntry[];
   cost: number;
   min: number;
   max: number;
@@ -162,7 +186,10 @@ export interface ModelEntry {
 
 export interface UnitEntry {
   name: string;
+  /** The root link id (the unit's identity across the app) */
   entryId: string;
+  /** Selection entryId path for .ros export (root link :: shared entry) */
+  path: string;
   role: string;
   /** Full primary category incl. any qualifier, e.g. "Support - Castellax Battle Maniple Only" */
   primaryCategory: string;
@@ -181,8 +208,12 @@ export interface UnitEntry {
    * such as "atLeast unit Unique Model Sub-Type".
    */
   facts: Record<string, number>;
-  /** How the unit links its Prime benefits: the "Prime Unit" link and the benefit group(s) inside it */
-  prime?: { linkId: string; groups: string[] };
+  /**
+   * How the unit links its Prime benefits: the "Prime Unit" link (and its
+   * selection path), and each benefit group it offers with the path prefix
+   * that the group's relative PrimeNode paths are appended to.
+   */
+  prime?: { linkId: string; path: string; groups: string[]; groupPrefixes: Record<string, string> };
   /**
    * Conditional re-filings of the unit's primary category, e.g. Tartaros
    * Terminators become "Heavy Assault - Tartaros Only" inside a Linebreaker
@@ -195,6 +226,29 @@ export interface UnitEntry {
    * exports with that link's id.
    */
   alternateLinks?: Array<{ entryId: string; category: string }>;
+  /**
+   * High Command units carry a choice of detachment they unlock ("One Apex /
+   * One Auxiliary Detachment"); paths are prefix::choiceId, group prefix::groupId.
+   */
+  detachmentChoice?: { prefix: string; groupId: string };
+}
+
+/**
+ * Army-level selections (Allegiance, Rite of War, Cohort Doctrine…): root
+ * entries filed under the Allegiance or Army Configuration category.
+ */
+export interface ArmyConfigEntry {
+  name: string;
+  category: string;
+  /** Selection entryId path */
+  path: string;
+  min: number;
+  hidden?: boolean;
+  modifiers?: RuleModifier[];
+  /** Choices in its first-level groups (e.g. Loyalist/Traitor, each Cohort Doctrine) */
+  choices: Array<{ name: string; path: string; groupPath?: string }>;
+  /** Mandatory/default sub-selections */
+  defaults: WargearEntry[];
 }
 
 // ---------------------------------------------------------------------------
@@ -227,10 +281,14 @@ export interface RuleModifier {
 
 /** A node in a Prime benefit tree: a group of choices or a choosable benefit. */
 export interface PrimeNode {
-  /** Id used for the selection's entryId in a .ros (the entry link id where linked) */
+  /** The entry's own id (link or inline entry) */
   id: string;
   name: string;
   kind: 'group' | 'option';
+  /** Options: selection path relative to the unit's group prefix (see UnitEntry.prime) */
+  path?: string;
+  /** Options: entryGroupId path relative to the unit's group prefix */
+  groupPath?: string;
   hidden?: boolean;
   /** Modifiers that can change visibility (field "hidden") */
   modifiers?: RuleModifier[];
@@ -246,6 +304,8 @@ export interface RulesData {
    * detachment it unlocked ("One Apex Detachment" / "One Auxiliary Detachment").
    */
   detachmentChoice: { apex?: { id: string; name: string }; auxiliary?: { id: string; name: string } };
+  /** Army configuration entries by catalogue key ('game-system' for the game system's own) */
+  armyConfig: Record<string, ArmyConfigEntry[]>;
 }
 
 export interface DetachmentSlot {
@@ -426,22 +486,109 @@ export function buildSharedIndex(roots: BsRoot[]): SharedIndex {
   return index;
 }
 
-/**
- * Resolves an entryLink to a selectionEntryGroup into the group it targets,
- * with the link's own overrides (id, name, hidden, constraints, default) applied.
- */
-function resolveGroupLink(link: BsEntry, index: SharedIndex): BsEntry | undefined {
+/** An entry as reached from some container, with the path prefix in force there. */
+interface Member {
+  entry: BsEntry;
+  prefix: string[];
+  /** entryGroupId path of the group it sits in, if any */
+  groupPath?: string[];
+}
+
+/** A selection group as seen from a container: inline, or a link merged with its target. */
+interface GroupView {
+  id: string;
+  name: string;
+  /** The group definition itself (the link target for linked groups) */
+  source: BsEntry;
+  hidden: boolean;
+  constraints?: BsConstraint[];
+  modifiers: BsModifier[];
+  defaultId?: string;
+  groupPath: string[];
+  options: Member[];
+  groups: GroupView[];
+}
+
+const join = (path: string[]) => path.join('::');
+
+/** Selection path of a member: its prefix plus "linkId::targetId" or its own id. */
+function memberPath(m: Member): string[] {
+  return m.entry.targetId ? [...m.prefix, m.entry.id, m.entry.targetId] : [...m.prefix, m.entry.id];
+}
+
+/** Options and groups directly inside a container, with path prefixes. */
+function contents(
+  container: BsEntry,
+  prefix: string[],
+  groupPath: string[] | undefined,
+  index: SharedIndex,
+  depth: number
+): { options: Member[]; groups: GroupView[] } {
+  const options: Member[] = [];
+  const groups: GroupView[] = [];
+  if (depth > 8) return { options, groups }; // guard against link cycles
+  for (const e of container.selectionEntries ?? []) options.push({ entry: e, prefix, groupPath });
+  for (const l of container.entryLinks ?? []) {
+    if (l.type === 'selectionEntryGroup') {
+      const g = linkedGroup(l, prefix, index, depth);
+      if (g) groups.push(g);
+    } else {
+      options.push({ entry: l, prefix, groupPath });
+    }
+  }
+  for (const g of container.selectionEntryGroups ?? []) {
+    const gp = [...prefix, g.id];
+    groups.push({
+      id: g.id,
+      name: g.name,
+      source: g,
+      hidden: Boolean(g.hidden),
+      constraints: g.constraints,
+      modifiers: allModifiers(g),
+      defaultId: g.defaultSelectionEntryId,
+      groupPath: gp,
+      ...contents(g, prefix, gp, index, depth + 1),
+    });
+  }
+  return { options, groups };
+}
+
+/** A group reached through an entry link: the target's contents (prefix + link id) plus the link's own children. */
+function linkedGroup(link: BsEntry, prefix: string[], index: SharedIndex, depth: number): GroupView | undefined {
   const target = link.targetId ? index.get(link.targetId) : undefined;
   if (!target) return undefined;
+  const gp = [...prefix, link.id, target.id];
+  const fromTarget = contents(target, [...prefix, link.id], gp, index, depth + 1);
+  const fromLink = contents(link, prefix, gp, index, depth + 1);
   return {
-    ...target,
     id: link.id,
     name: link.name,
+    source: target,
     hidden: Boolean(link.hidden || target.hidden),
     constraints: link.constraints ?? target.constraints,
-    modifiers: [...(link.modifiers ?? []), ...(target.modifiers ?? [])],
-    defaultSelectionEntryId: link.defaultSelectionEntryId ?? target.defaultSelectionEntryId,
+    modifiers: [...allModifiers(link), ...allModifiers(target)],
+    defaultId: link.defaultSelectionEntryId ?? target.defaultSelectionEntryId,
+    groupPath: gp,
+    options: [...fromTarget.options, ...fromLink.options],
+    groups: [...fromTarget.groups, ...fromLink.groups],
   };
+}
+
+/** Contents of an option's own subtree: into its target (prefix + link id) and its link-level children. */
+function optionContents(m: Member, index: SharedIndex, depth: number): { options: Member[]; groups: GroupView[] } {
+  const { entry, prefix } = m;
+  if (!entry.targetId) return contents(entry, prefix, undefined, index, depth + 1);
+  const target = index.get(entry.targetId);
+  const fromTarget = target
+    ? contents(target, [...prefix, entry.id], undefined, index, depth + 1)
+    : { options: [], groups: [] };
+  const fromLink = contents(entry, prefix, undefined, index, depth + 1);
+  return { options: [...fromTarget.options, ...fromLink.options], groups: [...fromTarget.groups, ...fromLink.groups] };
+}
+
+function isGroupDisabled(g: GroupView): boolean {
+  const maxZero = g.constraints?.some((c) => c.type === 'max' && c.field === 'selections' && c.value === 0) ?? false;
+  return maxZero && g.modifiers.length === 0;
 }
 
 /**
@@ -454,44 +601,54 @@ function resolveGroupLink(link: BsEntry, index: SharedIndex): BsEntry | undefine
  *
  * Walks the node's options without crossing into child models or sub-units
  * (those carry their own wargear) and skips hidden or disabled options. Groups
- * themselves are never emitted — only concrete selections.
+ * themselves are never emitted — only concrete selections, with their paths.
  */
-function collectMandatoryWargear(node: BsEntry, index: SharedIndex): WargearEntry[] {
+function collectMandatoryWargear(node: BsEntry, prefix: string[], index: SharedIndex): WargearEntry[] {
+  return mandatoryIn(contents(node, prefix, undefined, index, 0), index, 0);
+}
+
+function mandatoryIn(
+  root: { options: Member[]; groups: GroupView[] },
+  index: SharedIndex,
+  depth: number
+): WargearEntry[] {
   const wargear: WargearEntry[] = [];
-  const add = (e: BsEntry) => {
-    if (!wargear.some((w) => w.entryId === e.id)) wargear.push({ name: e.name, entryId: e.id });
+  const add = (m: Member) => {
+    if (wargear.some((w) => w.entryId === m.entry.id)) return;
+    const children = depth < 4 ? mandatoryIn(optionContents(m, index, depth), index, depth + 1) : [];
+    wargear.push({
+      name: m.entry.name,
+      entryId: m.entry.id,
+      ...(m.entry.targetId ? { targetId: m.entry.targetId } : {}),
+      path: join(memberPath(m)),
+      ...(m.groupPath ? { groupPath: join(m.groupPath) } : {}),
+      ...(children.length > 0 ? { children } : {}),
+    });
   };
-  const isGroupLink = (e: BsEntry) => e.type === 'selectionEntryGroup';
 
-  const visit = (container: BsEntry, depth: number) => {
-    if (depth > 8) return; // guard against link cycles
-
-    const options = [...(container.entryLinks ?? []), ...(container.selectionEntries ?? [])].filter(
-      (e) => !e.hidden && e.type !== 'model' && e.type !== 'unit' && !isGroupLink(e)
-    );
-    for (const option of options) {
-      if (hasMinAtLeastOne(option) && !isDisabled(option)) add(option);
+  const visit = (c: { options: Member[]; groups: GroupView[] }) => {
+    for (const m of c.options) {
+      const e = m.entry;
+      if (e.hidden || e.type === 'model' || e.type === 'unit') continue;
+      if (hasMinAtLeastOne(e) && !isDisabled(e)) add(m);
     }
-
-    const groups = [
-      ...(container.selectionEntryGroups ?? []),
-      ...(container.entryLinks ?? [])
-        .filter((link) => isGroupLink(link) && !FORCE_ORG_CHOICE_GROUP_IDS.has(link.targetId ?? ''))
-        .map((link) => resolveGroupLink(link, index))
-        .filter((g): g is BsEntry => g !== undefined),
-    ];
-    for (const group of groups) {
-      if (group.hidden || isDisabled(group)) continue;
-      const defaultId = group.defaultSelectionEntryId;
-      if (defaultId) {
-        const choice = [...(group.entryLinks ?? []), ...(group.selectionEntries ?? [])].find((e) => e.id === defaultId);
-        if (choice && !isGroupLink(choice)) add(choice);
+    for (const g of c.groups) {
+      if (g.hidden || isGroupDisabled(g) || FORCE_ORG_CHOICE_GROUP_IDS.has(g.source.id)) continue;
+      // A group's default is pre-selected only when the group requires a choice
+      // (min ≥ 1) — matches New Recruit (e.g. no default chainsword on a sergeant)
+      const requiresChoice = g.constraints?.some((c) => c.type === 'min' && c.field === 'selections' && c.value >= 1);
+      if (requiresChoice) {
+        // The default, or — with no usable default — the only visible option
+        // (e.g. a Despoiler's bolt pistol, the sole choice of its Pistol group)
+        const visible = g.options.filter((o) => !o.entry.hidden && !isDisabled(o.entry));
+        const choice = g.options.find((o) => o.entry.id === g.defaultId) ?? (visible.length === 1 ? visible[0] : undefined);
+        if (choice) add(choice);
       }
-      visit(group, depth + 1);
+      visit(g);
     }
   };
 
-  visit(node, 0);
+  visit(root);
   return wargear;
 }
 
@@ -545,7 +702,10 @@ function unitFacts(unit: BsEntry, rootLink: BsEntry, models: ModelEntry[]): Reco
   for (const m of models) {
     add(m.entryId, m.min);
     for (const c of modelDefs.get(m.entryId)?.categoryLinks ?? []) add(c.targetId, m.min);
-    for (const w of m.defaultWargear) add(w.entryId, m.min);
+    for (const w of m.defaultWargear) {
+      add(w.entryId, m.min);
+      add(w.targetId, m.min);
+    }
   }
   return facts;
 }
@@ -566,13 +726,19 @@ function detachmentChoiceIds(index: SharedIndex): RulesData['detachmentChoice'] 
 /** The game system's shared "Prime Unit" upgrade that every prime-capable unit links. */
 const PRIME_UNIT_NAME = 'Prime Unit';
 
-function primeLinkage(unit: BsEntry): UnitEntry['prime'] {
+function primeLinkage(unit: BsEntry, rootLinkId: string): UnitEntry['prime'] {
   const link = (unit.entryLinks ?? []).find((l) => l.name === PRIME_UNIT_NAME && l.targetId);
   if (!link) return undefined;
-  const groups = (link.entryLinks ?? [])
-    .filter((l) => l.type === 'selectionEntryGroup' && l.targetId)
-    .map((l) => l.targetId as string);
-  return groups.length > 0 ? { linkId: link.id, groups } : undefined;
+  // Benefit groups are children of the Prime Unit link itself, so the link's id
+  // isn't part of their paths: "root::groupLink::…"
+  const groupLinks = (link.entryLinks ?? []).filter((l) => l.type === 'selectionEntryGroup' && l.targetId);
+  if (groupLinks.length === 0) return undefined;
+  return {
+    linkId: link.id,
+    path: join([rootLinkId, link.id, link.targetId as string]),
+    groups: groupLinks.map((l) => l.targetId as string),
+    groupPrefixes: Object.fromEntries(groupLinks.map((l) => [l.targetId as string, join([rootLinkId, l.id])])),
+  };
 }
 
 function describe(entry: BsEntry, rules: Map<string, BsRule>): string | undefined {
@@ -588,32 +754,109 @@ function describe(entry: BsEntry, rules: Map<string, BsRule>): string | undefine
   return linked.length > 0 ? linked.join('\n\n') : undefined;
 }
 
-/** Builds a Prime benefit tree node, following entry links into shared entries/groups. */
-function buildPrimeNode(entry: BsEntry, index: SharedIndex, rules: Map<string, BsRule>, depth = 0): PrimeNode {
+const ARMY_CONFIG_CATEGORIES = new Set(['Allegiance', 'Army Configuration']);
+
+/** A root entry's army-config definition, or undefined if it isn't one. */
+function armyConfigEntry(
+  entry: BsEntry,
+  index: SharedIndex,
+  categoryNames: Map<string, string>
+): ArmyConfigEntry | undefined {
   const target = entry.targetId ? index.get(entry.targetId) : undefined;
-  const node: BsEntry = target
-    ? { ...target, id: entry.id, name: entry.name, hidden: Boolean(entry.hidden || target.hidden),
-        modifiers: [...(entry.modifiers ?? []), ...(target.modifiers ?? [])],
-        modifierGroups: [...(entry.modifierGroups ?? []), ...(target.modifierGroups ?? [])] }
-    : entry;
-  const isGroup = entry.type === 'selectionEntryGroup' || (!entry.type && !entry.targetId);
-  const hiddenMods = allModifiers(node).filter((m) => m.field === 'hidden').map(slimModifier);
-  const children =
-    depth < 6
-      ? [...(node.selectionEntries ?? []), ...(node.selectionEntryGroups ?? []), ...(node.entryLinks ?? [])].map((c) =>
-          buildPrimeNode(c, index, rules, depth + 1)
-        )
-      : [];
-  const description = isGroup ? undefined : describe(target ?? entry, rules);
+  const primary = [...(entry.categoryLinks ?? []), ...(target?.categoryLinks ?? [])].find((c) => c.primary);
+  const category = primary ? categoryNames.get(primary.targetId) ?? primary.name : undefined;
+  if (!category || !ARMY_CONFIG_CATEGORIES.has(category)) return undefined;
+
+  // A root link enters its target (prefix = link id); a root inline entry starts fresh
+  const member: Member = { entry, prefix: [] };
+  const inner = optionContents(member, index, 0);
+  const choices = inner.groups.flatMap((g) =>
+    g.options.map((o) => ({
+      name: o.entry.name,
+      path: join(memberPath(o)),
+      ...(o.groupPath ? { groupPath: join(o.groupPath) } : {}),
+    }))
+  );
+  const constraints = [...(entry.constraints ?? []), ...(target?.constraints ?? [])];
+  const min = Math.max(0, ...constraints.filter((c) => c.type === 'min' && c.field === 'selections').map((c) => c.value));
+  const mods = hiddenModifiers([...allModifiers(entry), ...(target ? allModifiers(target) : [])]);
   return {
-    id: node.id,
-    name: node.name.trim(),
-    kind: isGroup ? 'group' : 'option',
-    ...(node.hidden ? { hidden: true } : {}),
-    ...(hiddenMods.length > 0 ? { modifiers: hiddenMods } : {}),
-    ...(description ? { description } : {}),
-    ...(children.length > 0 ? { children } : {}),
+    name: entry.name.trim().replace(/:$/, ''),
+    category,
+    path: join(memberPath(member)),
+    min,
+    ...(entry.hidden || target?.hidden ? { hidden: true } : {}),
+    ...(mods.length > 0 ? { modifiers: mods } : {}),
+    choices,
+    defaults: mandatoryIn(inner, index, 0),
   };
+}
+
+function extractArmyConfig(root: BsRoot, index: SharedIndex, categoryNames: Map<string, string>): ArmyConfigEntry[] {
+  return [...(root.selectionEntries ?? []), ...(root.entryLinks ?? [])]
+    .map((e) => armyConfigEntry(e, index, categoryNames))
+    .filter((e): e is ArmyConfigEntry => e !== undefined);
+}
+
+/** Hidden-related modifiers, slimmed. */
+function hiddenModifiers(mods: BsModifier[]): RuleModifier[] {
+  return mods.filter((m) => m.field === 'hidden').map(slimModifier);
+}
+
+/**
+ * A Prime benefit tree for a shared benefit group, with option paths relative to
+ * the group's entry (each unit prepends its own "root::groupLink" prefix).
+ */
+function buildPrimeTree(group: BsEntry, index: SharedIndex, rules: Map<string, BsRule>): PrimeNode {
+  const fromGroup = (g: GroupView, depth: number): PrimeNode => {
+    const children = [
+      ...g.options.map((o) => fromOption(o, depth)),
+      ...g.groups.map((sub) => fromGroup(sub, depth + 1)),
+    ];
+    const mods = hiddenModifiers(g.modifiers);
+    return {
+      id: g.id,
+      name: g.name.trim(),
+      kind: 'group',
+      ...(g.hidden ? { hidden: true } : {}),
+      ...(mods.length > 0 ? { modifiers: mods } : {}),
+      ...(children.length > 0 ? { children } : {}),
+    };
+  };
+  const fromOption = (m: Member, depth: number): PrimeNode => {
+    const e = m.entry;
+    const target = e.targetId ? index.get(e.targetId) : undefined;
+    const mods = hiddenModifiers([...allModifiers(e), ...(target ? allModifiers(target) : [])]);
+    const sub = depth < 6 ? optionContents(m, index, depth) : { options: [], groups: [] };
+    const children = [
+      ...sub.options.map((o) => fromOption(o, depth + 1)),
+      ...sub.groups.map((g) => fromGroup(g, depth + 1)),
+    ];
+    const description = describe(target ?? e, rules);
+    return {
+      id: e.id,
+      name: e.name.trim(),
+      kind: 'option',
+      path: join(memberPath(m)),
+      ...(m.groupPath ? { groupPath: join(m.groupPath) } : {}),
+      ...(e.hidden || target?.hidden ? { hidden: true } : {}),
+      ...(mods.length > 0 ? { modifiers: mods } : {}),
+      ...(description ? { description } : {}),
+      ...(children.length > 0 ? { children } : {}),
+    };
+  };
+  const view: GroupView = {
+    id: group.id,
+    name: group.name,
+    source: group,
+    hidden: Boolean(group.hidden),
+    constraints: group.constraints,
+    modifiers: allModifiers(group),
+    defaultId: group.defaultSelectionEntryId,
+    groupPath: [group.id],
+    ...contents(group, [], [group.id], index, 0),
+  };
+  return fromGroup(view, 0);
 }
 
 // ---------------------------------------------------------------------------
@@ -626,7 +869,7 @@ interface PointsBreakdown {
   models: ModelEntry[];
 }
 
-function extractPointsBreakdown(unit: BsEntry, index: SharedIndex): PointsBreakdown | null {
+function extractPointsBreakdown(unit: BsEntry, rootLinkId: string, index: SharedIndex): PointsBreakdown | null {
   const baseCost = Math.round(pointsOf(unit));
   const children = unit.selectionEntries ?? [];
 
@@ -655,7 +898,15 @@ function extractPointsBreakdown(unit: BsEntry, index: SharedIndex): PointsBreakd
       const min = selectionConstraint(m, 'min') ?? 1;
       const max = selectionConstraint(m, 'max') ?? min;
       rawTotal += cost * min;
-      return { name: m.name, entryId: m.id, cost, min, max, defaultWargear: collectMandatoryWargear(m, index) };
+      return {
+        name: m.name,
+        entryId: m.id,
+        path: join([rootLinkId, m.id]),
+        cost,
+        min,
+        max,
+        defaultWargear: collectMandatoryWargear(m, [rootLinkId], index),
+      };
     });
     const points = Math.round(baseCost + rawTotal);
     if (points === 0 && models.every((m) => m.cost === 0)) return null;
@@ -673,7 +924,31 @@ function extractPointsBreakdown(unit: BsEntry, index: SharedIndex): PointsBreakd
       const max = selectionConstraint(s, 'max') ?? min;
       if (min === 0) continue;
       rawTotal += cost * min;
-      models.push({ name: s.name, entryId: s.id, cost, min, max, defaultWargear: [] });
+      const inner = (s.selectionEntries ?? [])
+        .filter((e) => e.type === 'model')
+        .map((m): ModelEntry => {
+          const mMin = selectionConstraint(m, 'min') ?? 1;
+          return {
+            name: m.name,
+            entryId: m.id,
+            path: join([rootLinkId, m.id]),
+            cost: pointsOf(m),
+            min: mMin,
+            max: selectionConstraint(m, 'max') ?? mMin,
+            defaultWargear: collectMandatoryWargear(m, [rootLinkId], index),
+          };
+        });
+      models.push({
+        name: s.name,
+        entryId: s.id,
+        path: join([rootLinkId, s.id]),
+        kind: 'unit',
+        cost,
+        min,
+        max,
+        defaultWargear: collectMandatoryWargear(s, [rootLinkId], index),
+        ...(inner.length > 0 ? { models: inner } : {}),
+      });
     }
     const points = Math.round(baseCost + rawTotal);
     if (points > 0 || baseCost > 0) return { points, baseCost, models };
@@ -787,18 +1062,20 @@ function extractUnitsFromCatalogue(
     const link = rootLinks.get(entry.id);
     if (!link) continue; // not a force-org unit (internal sub-entry)
 
-    const breakdown = extractPointsBreakdown(entry, index);
+    const breakdown = extractPointsBreakdown(entry, link.linkId, index);
     if (breakdown === null) warnings.push(`${source}: No points found for "${entry.name}" (id=${entry.id})`);
 
-    const unitWargear = collectMandatoryWargear(entry, index);
-    const prime = primeLinkage(entry);
+    const unitWargear = collectMandatoryWargear(entry, [link.linkId], index);
+    const prime = primeLinkage(entry, link.linkId);
     const categoryRules = primaryCategoryRules(link.link, entry, categoryNames);
     const alternateLinks = (allRootLinks.get(entry.id) ?? []).filter((l) => l.entryId !== link.linkId);
+    const choiceLink = (entry.entryLinks ?? []).find((l) => FORCE_ORG_CHOICE_GROUP_IDS.has(l.targetId ?? ''));
     const officerOfTheLine = officerOfTheLineFor(entry, ootlMap);
 
     units.push({
       name: entry.name,
       entryId: link.linkId,
+      path: join([link.linkId, entry.id]),
       role: normalizeRole(link.role),
       primaryCategory: link.role,
       points: breakdown?.points ?? 0,
@@ -811,6 +1088,9 @@ function extractUnitsFromCatalogue(
       ...(prime ? { prime } : {}),
       ...(categoryRules ? { primaryCategoryRules: categoryRules } : {}),
       ...(alternateLinks.length > 0 ? { alternateLinks } : {}),
+      ...(choiceLink
+        ? { detachmentChoice: { prefix: join([link.linkId, choiceLink.id]), groupId: choiceLink.targetId as string } }
+        : {}),
     });
     for (const groupId of prime?.groups ?? []) primeGroupIds.add(groupId);
   }
@@ -991,7 +1271,7 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
   const primeGroups: Record<string, PrimeNode> = {};
   for (const groupId of primeGroupIds) {
     const group = index.get(groupId);
-    if (group) primeGroups[groupId] = buildPrimeNode({ ...group, type: 'selectionEntryGroup' }, index, sharedRules);
+    if (group) primeGroups[groupId] = buildPrimeTree(group, index, sharedRules);
   }
 
   return {
@@ -999,7 +1279,19 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
     detachments,
     system,
     catalogues: catalogueInfo,
-    rules: { primeGroups, detachmentChoice: detachmentChoiceIds(index) },
+    rules: {
+      primeGroups,
+      detachmentChoice: detachmentChoiceIds(index),
+      armyConfig: {
+        'game-system': extractArmyConfig(gst, index, categoryNames),
+        ...Object.fromEntries(
+          unitFactions.flatMap((key) => {
+            const root = catalogueByKey.get(key);
+            return root ? [[key, extractArmyConfig(root, index, categoryNames)]] : [];
+          })
+        ),
+      },
+    },
     warnings,
   };
 }
