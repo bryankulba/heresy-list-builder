@@ -187,6 +187,7 @@ export type ModalState =
   | { type: 'allySelector' }
   | { type: 'additionalDetachmentSelector' }
   | { type: 'confirmRemoveForce'; forceId: string }
+  | { type: 'confirmRemoveDetachment'; detachmentId: string }
   | { type: 'confirmClear'; detachmentId: string; slotKey: string; affectedIds: string[] }
   | { type: 'export' }
   | { type: 'saveLoad' }

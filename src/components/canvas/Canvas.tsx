@@ -14,6 +14,7 @@ import {
   getAllyFactions,
   getBaseRole,
   getChart,
+  getDetachmentDisplayName,
   lordOfWarChartFor,
   stripPrimePrefix,
 } from '../../data/loader';
@@ -601,11 +602,24 @@ export default function Canvas() {
   }
 
   /** Remove action for a card, if it can be removed on its own. */
+  /**
+   * Remove action for a card, if it can be removed on its own: an allied army
+   * or Lord of War Detachment (from its root card), the Warlord Detachment,
+   * and freely-added detachments. Asks first when units would be lost.
+   */
   function removeActionFor(force: Force, det: PlacedDetachment): (() => void) | undefined {
+    const hasUnits = (dets: PlacedDetachment[]) =>
+      dets.some((d) => Object.values(d.slots).some(Boolean) || (d.bonusSlots ?? []).some((b) => b.unit));
     if (force.kind !== 'primary' && det.id === force.detachments[0]?.id) {
-      return () => setModal({ type: 'confirmRemoveForce', forceId: force.id });
+      return () =>
+        hasUnits(force.detachments) ? setModal({ type: 'confirmRemoveForce', forceId: force.id }) : removeForce(force.id);
     }
-    if (det.def.type === 'additional') return () => removeDetachment(det.id);
+    if (det.def.type === 'additional' || det.def.name === 'Warlord Detachment') {
+      // The detachment and anything its slots unlocked
+      const affected = detachments.filter((d) => d.id === det.id || d.unlockedBy?.startsWith(`${det.id}::`));
+      return () =>
+        hasUnits(affected) ? setModal({ type: 'confirmRemoveDetachment', detachmentId: det.id }) : removeDetachment(det.id);
+    }
     return undefined;
   }
 
@@ -951,6 +965,20 @@ export default function Canvas() {
           primaryButtonText="Remove"
           onConfirm={() => {
             if (modal.type === 'confirmRemoveForce') removeForce(modal.forceId);
+            setModal({ type: 'none' });
+          }}
+          onClose={() => setModal({ type: 'none' })}
+        />
+      )}
+
+      {modal.type === 'confirmRemoveDetachment' && (
+        <ConfirmModal
+          message={`Remove the ${getDetachmentDisplayName(
+            detachments.find((d) => d.id === modal.detachmentId)?.def.name ?? 'detachment'
+          )} and its units?`}
+          primaryButtonText="Remove"
+          onConfirm={() => {
+            if (modal.type === 'confirmRemoveDetachment') removeDetachment(modal.detachmentId);
             setModal({ type: 'none' });
           }}
           onClose={() => setModal({ type: 'none' })}
