@@ -11,7 +11,7 @@ import { cataloguesData, factionUnitsLoaded, getChart, getUnitsForFaction, rules
 import { conditionsHold, type RuleCondition, type RuleConditionGroup, type RuleContext } from './evaluate';
 import { rosterCounts, type RosterCounts } from './context';
 import { allowanceFor, isDetachmentLocked } from './detachmentLimits';
-import { chartBan } from './availability';
+import { allegianceCounts, chartBan, ignoresAllegiance, isAllegianceLocked } from './availability';
 import { unitsForSlot } from './slots';
 import type { PrimeNode } from './primeBenefits';
 
@@ -74,7 +74,25 @@ function armyContext(force: Force, counts: RosterCounts): RuleContext {
 
 /** Whether any unit of the army could fill a slot of this role in this detachment (and its chart allows: no Zone Mortalis transports). */
 export function slotHasUnits(forces: Force[], force: Force, det: PlacedDetachment, slot: SlotDef, counts: RosterCounts): boolean {
-  return unitsForSlot(forces, force, det, slot, counts).some((u) => !chartBan(force, u));
+  // The allegiance's units only (a Loyalist Death Guard has no Mortarion for the Warlord slot)
+  const locked = counts.allegiance && !ignoresAllegiance(slot.role) ? allegianceCounts(forces, counts.allegiance) : undefined;
+  return unitsForSlot(forces, force, det, slot, counts).some(
+    (u) => !chartBan(force, u) && !(locked && isAllegianceLocked(forces, force, det, u, locked))
+  );
+}
+
+/**
+ * Whether the army has a unit for every slot the detachment must fill — a
+ * Warlord Detachment needs a Warlord (a Primarch of this allegiance, or Valdor).
+ */
+export function compulsorySlotsFillable(
+  forces: Force[],
+  force: Force,
+  def: DetachmentDef,
+  counts: RosterCounts = rosterCounts(forces)
+): boolean {
+  const probe: PlacedDetachment = { id: '__probe__', def, slots: {} };
+  return def.slots.every((s) => s.min <= 0 || slotHasUnits(forces, force, probe, s, counts));
 }
 
 /** Should the detachment picker offer this detachment, and how? */
@@ -87,6 +105,8 @@ export function detachmentAvailability(
   // Nothing in the army can fill it (e.g. Daemon Brutes only, Araknae only)
   const probe: PlacedDetachment = { id: '__probe__', def, slots: {} };
   if (!def.slots.some((s) => s.max > 0 && slotHasUnits(forces, force, probe, s, counts))) return { status: 'hidden' };
+  // …or nothing can fill a slot it must fill (a Warlord Detachment without a Warlord-capable unit)
+  if (!compulsorySlotsFillable(forces, force, def, counts)) return { status: 'hidden' };
 
   if (!isDetachmentLocked(forces, force, def, counts)) return { status: 'ok' };
 

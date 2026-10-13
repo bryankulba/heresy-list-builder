@@ -14,13 +14,29 @@ import { rosterCounts, unitContext, type RosterCounts } from './context';
 
 const OTHER: Record<Allegiance, Allegiance> = { Loyalist: 'Traitor', Traitor: 'Loyalist' };
 
+/**
+ * Slots offered regardless of allegiance: the Warlord slot takes any of the
+ * Legion's Primarchs — a Traitor Leman Russ against a Loyalist Horus is a
+ * game people play. (Still a warning, as New Recruit flags it.)
+ */
+export function ignoresAllegiance(slotRole: string): boolean {
+  return slotRole.replace(/^Prime /, '').split(' - ')[0] === 'Warlord';
+}
+
 function hiddenWith(forces: Force[], force: Force, det: PlacedDetachment, unit: UnitEntry, counts: RosterCounts): boolean {
   return effectiveHidden(unit.hidden ?? false, unit.visibility, unitContext(forces, force, det, unit, undefined, counts));
 }
 
-/** Roster counts under each allegiance, for repeated checks. */
+const countsCache = new WeakMap<Force[], Partial<Record<Allegiance, { own: RosterCounts; other: RosterCounts }>>>();
+
+/** Roster counts under each allegiance, for repeated checks (cached per forces array). */
 export function allegianceCounts(forces: Force[], allegiance: Allegiance) {
-  return { own: rosterCounts(forces, { allegiance }), other: rosterCounts(forces, { allegiance: OTHER[allegiance] }) };
+  const cached = countsCache.get(forces) ?? {};
+  if (!cached[allegiance]) {
+    cached[allegiance] = { own: rosterCounts(forces, { allegiance }), other: rosterCounts(forces, { allegiance: OTHER[allegiance] }) };
+    countsCache.set(forces, cached);
+  }
+  return cached[allegiance]!;
 }
 
 export function isAllegianceLocked(

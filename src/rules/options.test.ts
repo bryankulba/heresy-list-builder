@@ -2,7 +2,7 @@ import { describe, test, expect } from 'vitest';
 import { createForce } from '../store/rosterModel';
 import { getChart, getDetachmentsForFaction, getAdditionalDetachments, getUnitsForFaction } from '../data/loader';
 import { rosterCounts, unitContext } from './context';
-import { detachmentAvailability, fillableSlots } from './options';
+import { compulsorySlotsFillable, detachmentAvailability, fillableSlots } from './options';
 import { getPrimeOptions } from './primeBenefits';
 import { doctrineOptions, normalizeDoctrine } from './armyConfig';
 
@@ -14,6 +14,21 @@ const availability = (faction: string, name: string, type: 'auxiliary' | 'additi
 };
 
 describe('choices offered', () => {
+  test('a Warlord Detachment is only offered to armies with a unit for its Warlord slot', () => {
+    const warlord = (faction: string, allegiance: 'Loyalist' | 'Traitor') => {
+      const force = createForce(faction, 'primary');
+      const def = getChart(force.chart).detachments.find(
+        (d) => d.name === 'Warlord Detachment' && (!d.sources?.length || d.sources.includes(faction))
+      )!;
+      return compulsorySlotsFillable([force], force, def, rosterCounts([force], { allegiance })) ? 'ok' : 'hidden';
+    };
+    // Only Primarchs (and Valdor) fill the Warlord slot — of either allegiance (a Loyalist Mortarion is a warning, not hidden)
+    expect(warlord('death-guard', 'Traitor')).not.toBe('hidden');
+    expect(warlord('death-guard', 'Loyalist')).not.toBe('hidden');
+    expect(warlord('ultramarines', 'Loyalist')).not.toBe('hidden');
+    for (const faction of ['mechanicum', 'solar-auxilia', 'anathema-psykana']) expect(warlord(faction, 'Traitor')).toBe('hidden');
+  });
+
   test("detachments the army can't fill are hidden; ones a unit unlocks are dimmed with the reason", () => {
     expect(availability('skitarii-conclaves', 'Auxiliary - Shock Assault').status).toBe('hidden');
     expect(availability('death-guard', 'Auxiliary - Storm Battery')).toEqual({
