@@ -35,6 +35,8 @@ interface RosterStore {
   cohortDoctrine: string;
   /** Army-wide picks for per-unit choices (sub-faction): group id → option id */
   armyChoices: Record<string, string>;
+  /** Army settings (Rite of War, Household Paradigms…): entry name → choice name */
+  configChoices: Record<string, string>;
   /** The primary army first, then any allied forces */
   forces: Force[];
 
@@ -43,9 +45,11 @@ interface RosterStore {
     allegiance: Allegiance,
     pointsLimit: number,
     cohortDoctrine?: string,
-    armyChoices?: Record<string, string>
+    armyChoices?: Record<string, string>,
+    configChoices?: Record<string, string>
   ) => void;
   setArmyChoice: (groupId: string, optionId: string) => void;
+  setConfigChoice: (entry: string, choice: string) => void;
   loadSave: (saved: RosterSnapshot) => void;
   addDetachment: (def: DetachmentDef, opts?: { unlockedBy?: string; forceId?: string }) => void;
   addAlliedForce: (faction: string) => void;
@@ -67,6 +71,7 @@ const INITIAL_STATE = {
   pointsLimit: 3000,
   cohortDoctrine: '',
   armyChoices: {} as Record<string, string>,
+  configChoices: {} as Record<string, string>,
   forces: [] as Force[],
 };
 
@@ -80,24 +85,38 @@ export const useRosterStore = create<RosterStore>()(
     (set) => ({
       ...INITIAL_STATE,
 
-      startBuild(faction, allegiance, pointsLimit, cohortDoctrine = '', armyChoices = {}) {
+      startBuild(faction, allegiance, pointsLimit, cohortDoctrine = '', armyChoices = {}, configChoices = {}) {
         set({
           phase: 'canvas',
           allegiance,
           pointsLimit,
           cohortDoctrine,
           armyChoices,
+          configChoices,
           forces: [createForce(faction, 'primary')],
         });
       },
 
       loadSave(saved) {
         const snapshot = migrateSnapshot(saved);
-        set({ phase: 'canvas', ...snapshot, armyChoices: snapshot.armyChoices ?? {}, forces: refreshUnits(snapshot.forces) });
+        set({
+          phase: 'canvas',
+          ...snapshot,
+          armyChoices: snapshot.armyChoices ?? {},
+          configChoices: snapshot.configChoices ?? {},
+          forces: refreshUnits(snapshot.forces),
+        });
       },
 
       setArmyChoice(groupId, optionId) {
         set((s) => ({ armyChoices: { ...s.armyChoices, [groupId]: optionId } }));
+      },
+
+      setConfigChoice(entry, choice) {
+        set((s) => {
+          const { [entry]: _old, ...rest } = s.configChoices;
+          return { configChoices: choice ? { ...rest, [entry]: choice } : rest };
+        });
       },
 
       addDetachment(def, opts) {
@@ -188,6 +207,7 @@ export const useRosterStore = create<RosterStore>()(
         pointsLimit: state.pointsLimit,
         cohortDoctrine: state.cohortDoctrine,
         armyChoices: state.armyChoices,
+        configChoices: state.configChoices,
         forces: state.forces,
       }),
       // v1 persisted { faction, detachments }; v2 persists { forces }

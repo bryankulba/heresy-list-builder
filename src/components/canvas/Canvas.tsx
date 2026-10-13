@@ -186,9 +186,13 @@ export default function Canvas() {
   const reset = useRosterStore((s) => s.reset);
 
   const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
+  const configChoices = useRosterStore((s) => s.configChoices);
   const totalPoints = computeTotalPoints(forces);
   // What the army's configuration contributes to every BSData rule check
-  const rosterOpts = useMemo(() => ({ allegiance, pointsLimit, cohortDoctrine }), [allegiance, pointsLimit, cohortDoctrine]);
+  const rosterOpts = useMemo(
+    () => ({ allegiance, pointsLimit, cohortDoctrine, configChoices }),
+    [allegiance, pointsLimit, cohortDoctrine, configChoices]
+  );
   const counts = useMemo(() => rosterCounts(forces, rosterOpts), [forces, rosterOpts]);
   // What the canvas shows: detachments with slot counts evaluated from their contents
   // (without slot roles no unit of the army can fill, e.g. Skitarii Transport)

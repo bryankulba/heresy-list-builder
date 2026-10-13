@@ -81,6 +81,8 @@ export interface RosterOptions {
   pointsLimit?: number;
   /** BSData choice name, e.g. "Cohort Doctrine: Mechanised Pattern Cohort" */
   cohortDoctrine?: string;
+  /** Other army settings: entry name → choice name (Rite of War, Household Paradigms…) */
+  configChoices?: Record<string, string>;
 }
 
 export function rosterCounts(forces: Force[], opts: RosterOptions = {}): RosterCounts {

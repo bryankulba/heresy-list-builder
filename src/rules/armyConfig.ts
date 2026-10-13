@@ -48,14 +48,48 @@ function choiceIds(faction: string, entryName: string, choiceName: string | unde
   return entry?.choices.find((c) => c.name === choiceName)?.ids ?? [];
 }
 
-/** What the army's configuration puts in the roster: its allegiance and doctrine choices. */
+/** Army settings with their own picker: single choices among several (Rite of War, Household Paradigm…). */
+export interface ConfigOption {
+  name: string;
+  choices: string[];
+  /** May be left unset (min 0) */
+  optional: boolean;
+  /** BSData's default, or the first choice when one is required */
+  defaultChoice?: string;
+}
+
+export function configOptions(faction: string): ConfigOption[] {
+  return armyConfigFor(faction)
+    .filter((e) => e.category !== 'Allegiance' && e.name !== DOCTRINE_ENTRY)
+    .filter((e) => e.pick?.max === 1 && e.choices.length > 1)
+    .map((e) => {
+      const optional = (e.pick?.min ?? 0) < 1;
+      const bsDefault = e.defaults.find((d) => e.choices.some((c) => c.name === d.name))?.name;
+      return {
+        name: e.name,
+        choices: e.choices.map((c) => c.name),
+        optional,
+        ...(bsDefault || !optional ? { defaultChoice: bsDefault ?? e.choices[0].name } : {}),
+      };
+    });
+}
+
+/** Picks for an army's settings, starting from BSData's defaults. */
+export function defaultConfigChoices(faction: string): Record<string, string> {
+  return Object.fromEntries(configOptions(faction).flatMap((o) => (o.defaultChoice ? [[o.name, o.defaultChoice]] : [])));
+}
+
+/** What the army's configuration puts in the roster: its allegiance, doctrine and other setting choices. */
 export function configCounts(
   faction: string | undefined,
-  opts: { allegiance?: Allegiance; cohortDoctrine?: string }
+  opts: { allegiance?: Allegiance; cohortDoctrine?: string; configChoices?: Record<string, string> }
 ): Record<string, number> {
   const counts: Record<string, number> = {};
   const add = (ids: string[]) => ids.forEach((id) => (counts[id] = (counts[id] ?? 0) + 1));
   add(choiceIds(faction ?? '', 'Allegiance', opts.allegiance));
-  if (faction) add(choiceIds(faction, DOCTRINE_ENTRY, opts.cohortDoctrine));
+  if (faction) {
+    add(choiceIds(faction, DOCTRINE_ENTRY, opts.cohortDoctrine));
+    for (const [entry, choice] of Object.entries(opts.configChoices ?? {})) add(choiceIds(faction, entry, choice));
+  }
   return counts;
 }

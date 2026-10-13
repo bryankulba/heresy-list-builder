@@ -84,6 +84,7 @@ export default function ExportModal({
 }: ExportModalProps) {
   const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
   const armyChoices = useRosterStore((s) => s.armyChoices);
+  const configChoices = useRosterStore((s) => s.configChoices);
   const text = useMemo(
     () => buildExportText(withEffectiveSlots(forces), allegiance, pointsLimit, totalPoints),
     [forces, allegiance, pointsLimit, totalPoints]
@@ -94,7 +95,7 @@ export default function ExportModal({
   }
 
   function handleDownloadRos() {
-    const xml = buildRosXml(forces, pointsLimit, totalPoints, { allegiance, cohortDoctrine, armyChoices });
+    const xml = buildRosXml(forces, pointsLimit, totalPoints, { allegiance, cohortDoctrine, armyChoices, configChoices });
     downloadRos(xml, forces.find((f) => f.kind === 'primary')?.faction ?? 'roster');
   }
 

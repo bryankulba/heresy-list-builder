@@ -166,6 +166,8 @@ export interface RosterSnapshot {
    * unit's sub-faction): choice group id → option id. See rules/armyChoices.ts
    */
   armyChoices?: Record<string, string>;
+  /** Army settings from BSData's army configuration (Rite of War, Household Paradigms…): entry name → choice */
+  configChoices?: Record<string, string>;
   forces: Force[];
 }
 

@@ -7432,6 +7432,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Loyalist",
@@ -7503,6 +7507,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 0,
+          "max": -1
+        },
         "defaults": []
       }
     ],
@@ -7526,6 +7534,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Alpha Legion",
@@ -7570,6 +7582,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Blood Angels",
@@ -7614,6 +7630,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Dark Angels",
@@ -7658,6 +7678,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Death Guard",
@@ -7712,6 +7736,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Emperor's Children",
@@ -7756,6 +7784,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Imperial Fists",
@@ -7800,6 +7832,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Iron Hands",
@@ -7844,6 +7880,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Iron Warriors",
@@ -7888,6 +7928,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Night Lords",
@@ -7932,6 +7976,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Raven Guard",
@@ -7976,6 +8024,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Salamanders",
@@ -8020,6 +8072,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Sons of Horus",
@@ -8064,6 +8120,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Space Wolves",
@@ -8108,6 +8168,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Thousand Sons",
@@ -8152,6 +8216,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Ultramarines",
@@ -8196,6 +8264,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes White Scars",
@@ -8240,6 +8312,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes Word Bearers",
@@ -8294,6 +8370,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Legiones Astartes World Eaters",
@@ -8427,6 +8507,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 0,
+          "max": -1
+        },
         "defaults": []
       },
       {
@@ -8597,6 +8681,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 0,
+          "max": 1
+        },
         "defaults": []
       },
       {
@@ -8695,6 +8783,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 0,
+          "max": 1
+        },
         "defaults": []
       },
       {
@@ -8874,6 +8966,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 0,
+          "max": 1
+        },
         "defaults": []
       }
     ],
@@ -8921,6 +9017,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 0,
+          "max": -1
+        },
         "defaults": [
           {
             "name": "Legio Tactica",
@@ -8960,6 +9060,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 0,
+          "max": -1
+        },
         "defaults": [
           {
             "name": "Divisio Tactica",
@@ -9023,6 +9127,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 1,
+          "max": 1
+        },
         "defaults": [
           {
             "name": "Questoris Imperialis",
@@ -9081,6 +9189,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 3,
+          "max": 3
+        },
         "defaults": [
           {
             "name": "Joust!",
@@ -9267,6 +9379,10 @@
             ]
           }
         ],
+        "pick": {
+          "min": 0,
+          "max": 1
+        },
         "defaults": []
       }
     ]

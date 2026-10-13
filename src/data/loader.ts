@@ -39,6 +39,8 @@ export interface ArmyConfigEntry {
   min: number;
   hidden?: boolean;
   modifiers?: RuleModifier[];
+  /** How many of `choices` must / may be picked (its choice group's constraints) */
+  pick?: { min: number; max: number };
   /** `ids`: what choosing it puts in the roster (its entry, link target and categories) for BSData conditions */
   choices: Array<{ name: string; path: string; groupPath?: string; ids?: string[] }>;
   defaults: WargearEntry[];

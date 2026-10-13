@@ -80,3 +80,25 @@ describe('Assassins and Cult Operatives', () => {
     }
   });
 });
+
+describe('army settings', () => {
+  test('Rite of War, Household Paradigm and other single-choice settings come from BSData', async () => {
+    const { configOptions, defaultConfigChoices } = await import('./armyConfig');
+    expect(configOptions('emperors-children').find((o) => o.name === 'Rite of War')?.choices).toEqual([
+      "Legiones Astartes Emperor's Children",
+      "Legiones Hereticus Emperor's Children",
+    ]);
+    expect(defaultConfigChoices('questoris-familia')).toEqual({ 'Household Paradigms': 'Questoris Imperialis' });
+    expect(configOptions('solar-auxilia').map((o) => o.name)).toEqual(['Legiones Auxilia designation', 'Provenances of War']);
+    expect(configOptions('death-guard')).toEqual([]); // one Rite of War only
+  });
+
+  test('the export writes the chosen settings, and every choice when all are required (Knights reactions)', async () => {
+    const { buildRosXml } = await import('../utils/buildRos');
+    const { importRos } = await import('../utils/importRos');
+    const knights = createForce('questoris-familia', 'primary');
+    const xml = buildRosXml([knights], 3000, 0, { allegiance: 'Loyalist', configChoices: { 'Household Paradigms': 'Questoris Mechanicum' } });
+    for (const reaction of ['Stomp', 'Joust!', 'Rotate Ion Shields']) expect(xml).toContain(`name="${reaction}"`);
+    expect(importRos(xml).snapshot.configChoices).toEqual({ 'Household Paradigms': 'Questoris Mechanicum' });
+  });
+});

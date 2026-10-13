@@ -31,6 +31,8 @@ export interface RosOptions {
   cohortDoctrine?: string;
   /** Army-wide picks for per-unit choices (sub-faction) — see rules/armyChoices.ts */
   armyChoices?: ArmyChoices;
+  /** Army settings (Rite of War, Household Paradigms…): entry name → choice */
+  configChoices?: Record<string, string>;
 }
 
 /** A selection to emit. */
@@ -160,10 +162,21 @@ function unitSel(
 // ---------------------------------------------------------------------------
 
 function configSel(entry: ArmyConfigEntry, choiceName: string | undefined): Sel {
+  const asSel = (c: ArmyConfigEntry['choices'][number]): Sel => ({
+    name: c.name,
+    entryId: c.path,
+    entryGroupId: c.groupPath,
+    type: 'upgrade',
+    number: 1,
+  });
   const choice = choiceName ? entry.choices.find((c) => c.name === choiceName) : undefined;
-  const children = choice
-    ? [{ name: choice.name, entryId: choice.path, entryGroupId: choice.groupPath, type: 'upgrade' as const, number: 1 }]
-    : entry.defaults.map((w) => wargearSel(w, 1));
+  // Every choice when all are required (Knights' three Advanced Reactions), else the pick, else BSData's defaults
+  const children =
+    entry.pick && entry.choices.length > 0 && entry.pick.min >= entry.choices.length
+      ? entry.choices.map(asSel)
+      : choice
+        ? [asSel(choice)]
+        : entry.defaults.map((w) => wargearSel(w, 1));
   return {
     name: entry.name,
     entryId: entry.path,
@@ -188,7 +201,7 @@ function armyConfigSelections(force: Force, ctx: RuleContext, opts: RosOptions):
     .map((e) => {
       if (e.category === 'Allegiance') return configSel(e, opts.allegiance);
       if (e.name === 'Cohort Doctrine' && opts.cohortDoctrine) return configSel(e, normalizeDoctrine(opts.cohortDoctrine));
-      return configSel(e, undefined);
+      return configSel(e, opts.configChoices?.[e.name]);
     });
 }
 
@@ -201,7 +214,12 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
   const primary = forces.find((f) => f.kind === 'primary') ?? forces[0];
   const rosterName = escapeXml(primary ? factionLabel(primary.faction) : gameSystemName);
   const detachments = forces.flatMap((f) => f.detachments);
-  const counts = rosterCounts(forces, { allegiance: opts.allegiance, pointsLimit, cohortDoctrine: opts.cohortDoctrine });
+  const counts = rosterCounts(forces, {
+    allegiance: opts.allegiance,
+    pointsLimit,
+    cohortDoctrine: opts.cohortDoctrine,
+    configChoices: opts.configChoices,
+  });
 
   // Slot roles as the canvas shows them (slot counts evaluated from the
   // detachment's contents), so a unit in a position a rule made Prime exports

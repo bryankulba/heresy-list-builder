@@ -163,6 +163,7 @@ export function migrateSnapshot(raw: unknown): RosterSnapshot {
       pointsLimit: r.pointsLimit ?? 3000,
       cohortDoctrine: normalizeDoctrine(r.cohortDoctrine),
       armyChoices: r.armyChoices ?? {},
+      configChoices: r.configChoices ?? {},
       forces: r.forces,
     };
   }

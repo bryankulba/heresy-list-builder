@@ -37,6 +37,7 @@ export default function SavedListsModal({ onClose }: SavedListsModalProps) {
   const pointsLimit = useRosterStore((s) => s.pointsLimit);
   const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
   const armyChoices = useRosterStore((s) => s.armyChoices);
+  const configChoices = useRosterStore((s) => s.configChoices);
   const forces = useRosterStore((s) => s.forces);
   const loadSave = useRosterStore((s) => s.loadSave);
 
@@ -79,7 +80,7 @@ export default function SavedListsModal({ onClose }: SavedListsModalProps) {
 
   function handleSave() {
     if (!listName.trim() || atLimit) return;
-    saveList({ allegiance, pointsLimit, cohortDoctrine, armyChoices, forces }, listName.trim());
+    saveList({ allegiance, pointsLimit, cohortDoctrine, armyChoices, configChoices, forces }, listName.trim());
     setListName('');
     refreshSaves();
   }

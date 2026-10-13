@@ -3,7 +3,7 @@ import { Button, NumberInput, Select, SelectItem, SelectItemGroup } from '@carbo
 import type { Allegiance } from '../types';
 import { useRosterStore } from '../store/rosterStore';
 import { FACTIONS, FACTION_GROUPS, factionLabel } from '../data/factions';
-import { doctrineLabel, doctrineOptions } from '../rules/armyConfig';
+import { configOptions, defaultConfigChoices, doctrineLabel, doctrineOptions } from '../rules/armyConfig';
 import { armyChoiceGroups, armyChoiceLabel, defaultArmyChoices } from '../rules/armyChoices';
 import SavedListsModal from './modals/SavedListsModal';
 
@@ -16,6 +16,8 @@ export default function StartScreen() {
   const [cohortDoctrine, setCohortDoctrine] = useState('');
   const [armyChoices, setArmyChoices] = useState(() => defaultArmyChoices(FACTIONS[0].id));
   const choiceGroups = armyChoiceGroups(faction);
+  const [configChoices, setConfigChoices] = useState(() => defaultConfigChoices(FACTIONS[0].id));
+  const settings = configOptions(faction);
   const [showSavedLists, setShowSavedLists] = useState(false);
 
   function handleFactionChange(e: React.ChangeEvent<HTMLSelectElement>) {
@@ -23,10 +25,11 @@ export default function StartScreen() {
     setFaction(next);
     if (!doctrineOptions(next).includes(cohortDoctrine)) setCohortDoctrine('');
     setArmyChoices(defaultArmyChoices(next));
+    setConfigChoices(defaultConfigChoices(next));
   }
 
   function handleStart() {
-    startBuild(faction, allegiance, pointsLimit, cohortDoctrine, armyChoices);
+    startBuild(faction, allegiance, pointsLimit, cohortDoctrine, armyChoices, configChoices);
   }
 
   return (
@@ -115,6 +118,28 @@ export default function StartScreen() {
             </Select>
           </div>
         )}
+
+        {/* Army settings from BSData (Rite of War, Household Paradigm, Provenances of War…) */}
+        {settings.map((o) => (
+          <div className="mb-6" key={o.name}>
+            <Select
+              id={`config-${o.name}`}
+              labelText={o.name}
+              value={configChoices[o.name] ?? ''}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                setConfigChoices((c) => {
+                  const { [o.name]: _old, ...rest } = c;
+                  return e.target.value ? { ...rest, [o.name]: e.target.value } : rest;
+                })
+              }
+            >
+              {o.optional && <SelectItem value="" text="— None —" />}
+              {o.choices.map((c) => (
+                <SelectItem key={c} value={c} text={c} />
+              ))}
+            </Select>
+          </div>
+        ))}
 
         {/* Army-wide picks for per-unit choices (Skitarii / Mechanicum sub-faction) */}
         {choiceGroups.map((g) => (

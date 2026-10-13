@@ -12,6 +12,7 @@ import { v4 as uuidv4 } from 'uuid';
 import type { Allegiance, Force, PlacedDetachment, PrimeBenefit, RosterSnapshot, UnitEntry } from '../types';
 import { cataloguesData, detachmentsData, getBaseRole, getUnitsForFaction, rulesData, unitVariant } from '../data/loader';
 import { ALLIED_CHART, ALLIED_DETACHMENT, FACTION_BY_ID } from '../data/factions';
+import { configOptions } from '../rules/armyConfig';
 import type { PrimeNode } from '../rules/primeBenefits';
 import { categoryFitsSlot, withEffectiveSlots } from '../rules/slots';
 import { cardSlots } from '../components/canvas/slotLayout';
@@ -181,6 +182,7 @@ export function importRos(xml: string): ImportResult {
   const factionByCatalogue = new Map(Object.entries(cataloguesData).map(([key, c]) => [c.catalogueId, key]));
   let allegiance: Allegiance = 'Loyalist';
   let cohortDoctrine = '';
+  const configChoices: Record<string, string> = {};
   const armyChoiceVotes: Record<string, Record<string, number>> = {};
   const forces: Force[] = [];
 
@@ -199,6 +201,10 @@ export function importRos(xml: string): ImportResult {
     for (const sel of children(rootForce)) {
       const choice = children(sel)[0]?.name ?? '';
       if (sel.name === 'Allegiance' && (choice === 'Loyalist' || choice === 'Traitor')) allegiance = choice;
+      // Other army settings with a picker (Rite of War, Household Paradigms…)
+      if (kind === 'primary' && configOptions(faction).some((o) => o.name === sel.name && o.choices.includes(choice))) {
+        configChoices[sel.name ?? ''] = choice;
+      }
       if (sel.name === 'Cohort Doctrine') {
         cohortDoctrine = choice || cohortDoctrine;
       }
@@ -247,6 +253,7 @@ export function importRos(xml: string): ImportResult {
       allegiance,
       pointsLimit: limit > 0 ? limit : Math.max(1000, Math.ceil(total / 500) * 500),
       cohortDoctrine,
+      configChoices,
       // The most common pick for each army-wide choice (New Recruit stores one per unit)
       armyChoices: Object.fromEntries(
         Object.entries(armyChoiceVotes).map(([g, votes]) => [g, Object.entries(votes).sort((a, b) => b[1] - a[1])[0][0]])

@@ -266,6 +266,8 @@ export interface ArmyConfigEntry {
   hidden?: boolean;
   modifiers?: RuleModifier[];
   /** Choices in its first-level groups (e.g. Loyalist/Traitor, each Cohort Doctrine) */
+  /** How many of `choices` must / may be picked (its choice group's constraints) */
+  pick?: { min: number; max: number };
   /** `ids`: what choosing it puts in the roster (its entry, link target and categories) for BSData conditions */
   choices: Array<{ name: string; path: string; groupPath?: string; ids?: string[] }>;
   /** Mandatory/default sub-selections */
@@ -958,6 +960,9 @@ function armyConfigEntry(
   );
   const constraints = [...(entry.constraints ?? []), ...(target?.constraints ?? [])];
   const min = Math.max(0, ...constraints.filter((c) => c.type === 'min' && c.field === 'selections').map((c) => c.value));
+  const groupConstraint = (type: 'min' | 'max') =>
+    inner.groups[0]?.constraints?.find((c) => c.type === type && c.field === 'selections')?.value;
+  const pick = inner.groups[0] ? { min: groupConstraint('min') ?? 0, max: groupConstraint('max') ?? -1 } : undefined;
   const mods = hiddenModifiers([...allModifiers(entry), ...(target ? allModifiers(target) : [])]);
   return {
     name: entry.name.trim().replace(/:$/, ''),
@@ -970,6 +975,7 @@ function armyConfigEntry(
     ...(entry.hidden || target?.hidden ? { hidden: true } : {}),
     ...(mods.length > 0 ? { modifiers: mods } : {}),
     choices,
+    ...(pick ? { pick } : {}),
     defaults: mandatoryIn(inner, index, 0),
   };
 }
