@@ -3,6 +3,7 @@ import { Close } from '@carbon/icons-react';
 import type { FilledSlot, SlotDef } from '../../types';
 import RoleIcon from '../ui/RoleIcon';
 import { getBaseRole, stripPrimePrefix } from '../../data/loader';
+import { unitModelTotal } from '../../rules/unitSize';
 
 interface SlotProps {
   slotDef: SlotDef;
@@ -112,6 +113,9 @@ export default function Slot({ slotDef, filled, onClick, onClear, slotRef, isDas
           }}
         >
           {filled.unit.name}
+          {filled.modelCounts && (
+            <span style={{ color: 'var(--cds-text-secondary)' }}> ×{unitModelTotal(filled)}</span>
+          )}
         </span>
       )}
 

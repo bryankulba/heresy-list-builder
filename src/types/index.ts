@@ -117,6 +117,8 @@ export interface FilledSlot {
   isPrime?: boolean;
   /** Detachment-choice marks carried over from an imported roster ("One Apex / Auxiliary Detachment") */
   detachmentChoices?: Array<'apex' | 'auxiliary'>;
+  /** Models of each type, by `modelKey`, where it differs from the minimum (unit size) */
+  modelCounts?: Record<string, number>;
   notes?: string;
   extraPoints?: number;
 }

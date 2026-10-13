@@ -10,7 +10,7 @@
  * with the same entries a list built there would have.
  */
 
-import type { Allegiance, DetachmentDef, Force, ModelEntry, UnitEntry, WargearEntry } from '../types';
+import type { Allegiance, DetachmentDef, FilledSlot, Force, ModelEntry, UnitEntry, WargearEntry } from '../types';
 import { systemData, cataloguesData, detachmentsData, getBaseRole, getChart, rulesData, type ArmyConfigEntry } from '../data/loader';
 import { FACTION_BY_ID, factionLabel } from '../data/factions';
 import { armyConfigFor, normalizeDoctrine } from '../rules/armyConfig';
@@ -20,6 +20,7 @@ import { rosterCounts, unitContext } from '../rules/context';
 import { effectiveHidden, type RuleContext } from '../rules/evaluate';
 import { cardSlots } from '../components/canvas/slotLayout';
 import { applyArmyChoice, type ArmyChoices } from '../rules/armyChoices';
+import { modelCount } from '../rules/unitSize';
 
 // Points cost type — consistent across all HH3 BSData files
 const POINTS_TYPE_ID = '9893-c379-920b-8982';
@@ -115,16 +116,17 @@ function wargearSel(entry: WargearEntry, number: number, choices?: ArmyChoices):
   };
 }
 
-function modelSel(m: ModelEntry, choices?: ArmyChoices): Sel {
+/** A model type at `number` models (its minimum unless the unit's size was changed); default wargear scales with it. */
+function modelSel(m: ModelEntry, number: number, choices?: ArmyChoices): Sel {
   return {
     name: m.name,
     entryId: m.path ?? m.entryId ?? '',
     type: m.kind === 'unit' ? 'unit-group' : 'model',
-    number: m.min,
-    cost: Math.round(m.cost * m.min),
+    number,
+    cost: Math.round(m.cost * number),
     children: [
-      ...(m.models ?? []).map((sub) => modelSel(sub, choices)),
-      ...m.defaultWargear.map((w) => wargearSel(w, m.min, choices)),
+      ...(m.models ?? []).filter((sub) => sub.min > 0).map((sub) => modelSel(sub, sub.min, choices)),
+      ...m.defaultWargear.map((w) => wargearSel(w, number, choices)),
     ],
   };
 }
@@ -135,12 +137,13 @@ function primaryCategory(role: string, categoryId: string | undefined): Sel['cat
 }
 
 function unitSel(
-  unit: UnitEntry,
+  filled: FilledSlot,
   categories: Sel['categories'],
   extraPoints: number,
   extras: Sel[],
   choices?: ArmyChoices
 ): Sel {
+  const unit = filled.unit;
   return {
     name: unit.name,
     entryId: unit.path ?? unit.entryId ?? '',
@@ -150,7 +153,11 @@ function unitSel(
     cost: unit.baseCost + extraPoints,
     categories,
     children: [
-      ...unit.models.map((m) => modelSel(m, choices)),
+      // Model types at their count in this slot; none of an optional type (an Apothecary not taken) is no selection
+      ...unit.models.flatMap((m) => {
+        const n = modelCount(filled, m);
+        return n > 0 ? [modelSel(m, n, choices)] : [];
+      }),
       ...(unit.unitWargear ?? []).map((w) => wargearSel(w, 1, choices)),
       ...extras,
     ],
@@ -357,7 +364,7 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
           }
         }
 
-        sels.push(unitSel(unit, primaryCategory(unitRole, unitCategoryId), filled.extraPoints ?? 0, extras, opts.armyChoices));
+        sels.push(unitSel(filled, primaryCategory(unitRole, unitCategoryId), filled.extraPoints ?? 0, extras, opts.armyChoices));
       }
 
       return sels;

@@ -3,8 +3,9 @@
  * Reads a BattleScribe / New Recruit .ros roster into the builder's roster
  * model, at force-org level: armies, detachments, units in slots, Prime
  * benefits (incl. Logistical Benefit roles), allegiance and cohort doctrine.
- * Unit options (wargear, model counts) aren't modelled by the builder and are
- * left behind — the export regenerates defaults.
+ * Unit sizes come across (model counts per type); other unit options
+ * (wargear) aren't modelled by the builder and are left behind — the export
+ * regenerates defaults.
  */
 
 import { XMLParser } from 'fast-xml-parser';
@@ -16,6 +17,7 @@ import { configOptions } from '../rules/armyConfig';
 import type { PrimeNode } from '../rules/primeBenefits';
 import { categoryFitsSlot, withEffectiveSlots } from '../rules/slots';
 import { cardSlots } from '../components/canvas/slotLayout';
+import { isSizeAdjustable, modelKey } from '../rules/unitSize';
 
 export interface ImportResult {
   snapshot: RosterSnapshot;
@@ -28,6 +30,7 @@ interface RosNode {
   entryId?: string;
   entryGroupId?: string;
   type?: string;
+  number?: string;
   catalogueId?: string;
   selections?: { selection?: RosNode[] };
   forces?: { force?: RosNode[] };
@@ -49,6 +52,8 @@ interface PendingUnit {
   prime: boolean;
   benefit?: PrimeBenefit;
   lbRole?: string;
+  /** Unit size, where it differs from the minimum (by modelKey) */
+  modelCounts?: Record<string, number>;
   unlocksApex: number;
   unlocksAuxiliary: number;
 }
@@ -98,12 +103,23 @@ function pendingUnit(faction: string, sel: RosNode, warnings: string[]): Pending
   const benefitSel = children(primeSel)[0];
   const lbSel = children(benefitSel).find((c) => c.name?.startsWith('LB - '));
   const marks = children(sel).map((c) => c.name);
+  // Unit size: each model type's selections summed (New Recruit splits a type by loadout)
+  const modelCounts: Record<string, number> = {};
+  for (const m of unit.models) {
+    const id = m.path ?? m.entryId;
+    if (!id || !isSizeAdjustable(m)) continue;
+    const n = children(sel)
+      .filter((c) => c.entryId === id)
+      .reduce((sum, c) => sum + Number(c.number ?? 1), 0);
+    if (n !== m.min) modelCounts[modelKey(m)] = Math.max(m.min, Math.min(m.max, n));
+  }
   return {
     unit,
     category: primaryCategory(sel) ?? unit.primaryCategory ?? unit.role,
     prime: Boolean(primeSel),
     benefit: benefitSel ? findBenefit(unit, benefitSel) : undefined,
     lbRole: lbSel?.name?.replace(/^LB - /, ''),
+    ...(Object.keys(modelCounts).length > 0 ? { modelCounts } : {}),
     unlocksApex: marks.filter((m) => m === rulesData.detachmentChoice.apex?.name).length,
     unlocksAuxiliary: marks.filter((m) => m === rulesData.detachmentChoice.auxiliary?.name).length,
   };
@@ -126,6 +142,7 @@ function place(forces: Force[], det: PlacedDetachment, p: PendingUnit, warnings:
       unit: p.unit,
       isPrime: p.prime,
       ...(p.benefit ? { primeBenefit: p.benefit } : {}),
+      ...(p.modelCounts ? { modelCounts: p.modelCounts } : {}),
       ...(p.unit.detachmentChoice ? { detachmentChoices: choices } : {}),
     };
     if (p.lbRole) det.slots[slot.key] = { ...det.slots[slot.key]!, lbRole: p.lbRole };

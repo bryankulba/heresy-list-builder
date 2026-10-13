@@ -41,6 +41,7 @@ export default function CanvasModals({ roster, flow, primary, additionalDetachme
   const removeForce = useRosterStore((s) => s.removeForce);
   const removeDetachment = useRosterStore((s) => s.removeDetachment);
   const updateSlotAnnotations = useRosterStore((s) => s.updateSlotAnnotations);
+  const setModelCount = useRosterStore((s) => s.setModelCount);
   const reset = useRosterStore((s) => s.reset);
 
   /** Faction of the army a detachment (or "detId::slotKey" reference) belongs to. */
@@ -52,7 +53,9 @@ export default function CanvasModals({ roster, flow, primary, additionalDetachme
       {modal.type === 'slotEdit' && (
         <SlotEditModal
           slotDef={modal.slotDef}
-          filled={modal.filled}
+          // The slot as it is now (unit size changes while the editor is open)
+          filled={detachments.find((d) => d.id === modal.detachmentId)?.slots[modal.slotKey] ?? modal.filled}
+          onModelCountChange={(key, count) => setModelCount(modal.detachmentId, modal.slotKey, key, count)}
           {...flow.slotEditActions(modal.detachmentId, modal.slotKey, modal.slotDef, modal.filled)}
           onAnnotationsChange={(notes, extraPoints) =>
             updateSlotAnnotations(modal.detachmentId, modal.slotKey, notes, extraPoints)

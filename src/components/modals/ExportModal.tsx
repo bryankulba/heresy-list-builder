@@ -5,6 +5,7 @@ import { getDetachmentDisplayName } from '../../data/loader';
 import { cardSlots } from '../canvas/DetachmentCard';
 import { ZONE_MORTALIS_CHART, factionLabel } from '../../data/factions';
 import { buildRosXml } from '../../utils/buildRos';
+import { isSizeAdjustable, slotPoints, unitModelTotal } from '../../rules/unitSize';
 import { withEffectiveSlots } from '../../rules/slots';
 import { useRosterStore } from '../../store/rosterStore';
 
@@ -26,9 +27,10 @@ function detachmentLines(det: PlacedDetachment): string[] {
       ? `  [Prime: ${filled.primeBenefit.name}${filled.lbRole ? ` — ${filled.lbRole}` : ''}]`
       : '';
     const role = slotDef.role.replace('Prime ', '★ ');
-    const effectivePts = filled.unit.points + (filled.extraPoints ?? 0);
+    const effectivePts = slotPoints(filled);
+    const size = filled.unit.models.some(isSizeAdjustable) ? ` ×${unitModelTotal(filled)}` : '';
     const notesStr = filled.notes ? `  — ${filled.notes}` : '';
-    lines.push(`  ${role}: ${filled.unit.name} (${effectivePts}pts)${benefitStr}${notesStr}`);
+    lines.push(`  ${role}: ${filled.unit.name}${size} (${effectivePts}pts)${benefitStr}${notesStr}`);
   }
   return lines;
 }

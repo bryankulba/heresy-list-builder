@@ -8,6 +8,7 @@ import { cataloguesData, getChart, rulesData } from '../data/loader';
 import { configCounts } from './armyConfig';
 import { findPrimeNode, logisticalBenefitChoice } from './primeBenefits';
 import type { RuleContext } from './evaluate';
+import { slotPoints } from './unitSize';
 
 type Counts = Record<string, number>;
 
@@ -99,9 +100,8 @@ export function rosterCounts(forces: Force[], opts: RosterOptions = {}): RosterC
       const counts = detachmentCounts(det, choices);
       byDetachment.set(det.id, counts);
       addCounts(roster, counts);
-      const units = Object.values(det.slots).flatMap((fs) => (fs ? [{ unit: fs.unit, extra: fs.extraPoints ?? 0 }] : []));
-      for (const { unit, extra } of units) {
-        const points = unit.points + extra;
+      const units = Object.values(det.slots).flatMap((fs) => (fs ? [{ unit: fs.unit, points: slotPoints(fs) }] : []));
+      for (const { unit, points } of units) {
         rosterCosts.any = (rosterCosts.any ?? 0) + points;
         for (const id of Object.keys(unit.facts ?? {})) rosterCosts[id] = (rosterCosts[id] ?? 0) + points;
       }
