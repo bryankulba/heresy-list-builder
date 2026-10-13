@@ -113,9 +113,15 @@ Each `SlotDef` has `max: N` and expands to N individual slot instances with keys
 
 Carbon Design System header is `position: fixed` (48px tall). Any scrollable content area directly below it needs `paddingTop: 64` (48px header + 16px gap).
 
+### Phones and tablets
+
+`useIsPhone` (`PHONE_QUERY`: below 672px, or a touch screen under 500px tall — a phone held sideways) switches the canvas to `StackedView`: the same cards in one scrolling column — each army's root detachment, then each detachment under the one whose slot unlocked it ("Unlocked by <unit>", `stackedOrder`) — with the army line (`ArmySummary` panel) on top, a sticky strip of detachment chips to jump between cards (highlighting the one in view), and the points card as a bottom bar. Below 1056px (`useIsCompactHeader`) header actions go in a menu. The canvas uses pointer events (`useCanvasViewport`): one finger pans (from cards too), two pinch-zoom, long press drags a card; `touch-action: none` keeps the browser from scrolling.
+
+`index.scss` holds the rest: on phones modals are bottom sheets (same query as `PHONE_QUERY`); on touch devices form fields are 16px (iOS zooms into smaller ones) and the slot ✕ is hidden — the slot editor's "Remove unit" replaces it. `viewport-fit=cover` plus `env(safe-area-inset-*)` padding (`SAFE` in `PointsCard.tsx`) keeps the bars clear of notches and the home indicator. On touch devices that can share files, Export offers "Share .ros" (system share sheet; needs HTTPS) instead of a download.
+
 ### Canvas Layout
 
-The canvas is a large `4000×3000px` div inside an `overflow: hidden` viewport container. Pan is CSS `transform: translate(panX, panY)`; ctrl/pinch zooms. Armies are stacked vertically (allied armies get a label); within an army the root detachment is anchored left (Warlord below), Apex detachments in a 2-column grid to the right, other detachments below. Row heights come from `estimateCardHeight` in `slotLayout.ts`; positions from `canvasLayout.ts`. Cards can be long-press dragged (position overrides are not persisted). SVG connector lines are rendered as an absolute-positioned overlay with `pointer-events: none`.
+The canvas is a large `4000×3000px` div inside an `overflow: hidden` viewport container. Pan is CSS `transform: translate(panX, panY)`; ctrl/pinch zooms (trackpad or touch). Armies are stacked vertically (allied armies get a label); within an army the root detachment is anchored left (Warlord below), Apex detachments in a 2-column grid to the right, other detachments below. Row heights come from `estimateCardHeight` in `slotLayout.ts`; positions from `canvasLayout.ts`. Cards can be long-press dragged (position overrides are not persisted). SVG connector lines are rendered as an absolute-positioned overlay with `pointer-events: none`.
 
 ## Key Files
 

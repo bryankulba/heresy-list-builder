@@ -31,8 +31,8 @@ body {
 }
 
 // Hide the tooltip that appears on the modal close button
-.cds--modal .cds--popover-content {
-  display: none;
+.cds--modal .cds--modal-close-button .cds--popover {
+  display: none !important;
 }
 
 // One scroll area per modal, without Carbon's fade at the bottom edge (it left
@@ -40,4 +40,79 @@ body {
 .cds--modal-content.cds--modal-scroll-content {
   mask-image: none;
   -webkit-mask-image: none;
+}
+
+// Phone header menu: match the header's height and colours
+.cds--header .app-header__menu {
+  block-size: 3rem;
+  inline-size: 3rem;
+  color: var(--cds-icon-primary);
+}
+
+.cds--header .app-header__name {
+  white-space: nowrap;
+}
+
+// -----------------------------
+// Phones and touch devices
+// -----------------------------
+
+// iOS zooms the page into any focused field under 16px; touch devices get 16px fields
+@media (hover: none) and (pointer: coarse) {
+  input,
+  select,
+  textarea,
+  .cds--text-input,
+  .cds--search-input,
+  .cds--number input[type='number'] {
+    font-size: 16px !important;
+  }
+
+  // Too small to hit reliably — the slot editor has "Remove unit" instead
+  .slot-clear {
+    display: none !important;
+  }
+
+  .detachment-remove {
+    padding: 8px !important;
+    margin: -8px -8px -8px 0;
+  }
+}
+
+// Header clear of a landscape notch
+.cds--header {
+  padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
+}
+
+// Phones: modals are bottom sheets that slide up, sized to their content
+@media (max-width: 671px), (max-height: 500px) and (pointer: coarse) {
+  body .cds--modal {
+    align-items: flex-end;
+  }
+
+  body .cds--modal .cds--modal-container {
+    position: fixed;
+    inset-block: auto 0;
+    inline-size: 100%;
+    max-block-size: 92dvh;
+    border-radius: 12px 12px 0 0;
+    border-block-end: none;
+    overflow: hidden;
+  }
+
+  body .cds--modal:not(.is-visible) .cds--modal-container {
+    transform: translate3d(0, 100%, 0);
+  }
+
+  // Footer buttons span the sheet, above the home indicator
+  body .cds--modal-footer {
+    block-size: auto;
+    padding-block-end: env(safe-area-inset-bottom);
+    background: var(--cds-layer);
+  }
+
+  body .cds--modal-footer .cds--btn {
+    flex: 1 1 0;
+    min-inline-size: 0;
+  }
 }

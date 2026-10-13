@@ -59,7 +59,12 @@ export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, 
     return getPrimeOptions(unit, unitContext(forces, force, det, unit, findSlotDef(detachmentId, slotKey)?.categoryId, counts));
   }
 
-  const close = () => setModal({ type: 'none' });
+  /** Closes the open modal and ends any edit or unlock chain (Cancel mid-edit must not leak into the next fill). */
+  const close = () => {
+    isEditingSlot.current = null;
+    pendingUnlocks.current = null;
+    setModal({ type: 'none' });
+  };
 
   /** After an edit, back to the slot editor with the updated slot. */
   function goBackToSlotEdit(detachmentId: string, slotKey: string, filled: FilledSlot) {
@@ -80,6 +85,9 @@ export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, 
   }
 
   function handleSlotClick(detachmentId: string, slotKey: string, slotDef: SlotDef) {
+    // A fresh click starts a new flow; edit mode is entered only from the slot editor's actions
+    isEditingSlot.current = null;
+    pendingUnlocks.current = null;
     const filled = detachments.find((d) => d.id === detachmentId)?.slots[slotKey];
     if (filled) setModal({ type: 'slotEdit', detachmentId, slotKey, slotDef, filled });
     else {

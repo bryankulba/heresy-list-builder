@@ -23,6 +23,8 @@ import { useCanvasViewport } from './useCanvasViewport';
 import { useConnections } from './useConnections';
 import { useRosterView } from './useRosterView';
 import { useSlotFlow } from './useSlotFlow';
+import StackedView from './StackedView';
+import { useIsCompactHeader, useIsPhone } from '../ui/useIsPhone';
 
 export default function Canvas() {
   const roster = useRosterView();
@@ -73,24 +75,77 @@ export default function Canvas() {
     return undefined;
   }
 
-  const { positions: cardPositions, labels: forceLabels } = computeCardPositions(view);
+  const isPhone = useIsPhone();
+  const compactHeader = useIsCompactHeader();
+  const pointsCard = (
+    <PointsCard
+      current={totalPoints}
+      limit={pointsLimit}
+      warnings={warnings}
+      variant={isPhone ? 'bar' : 'card'}
+      allowances={
+        primary
+          ? detachmentAllowances(forces, primary, counts)
+              .filter((a) => a.max > 0 || a.used > 0)
+              .map((a) => ({ label: a.name.replace(/ Detachment\(s\)$|s$/, ''), used: a.used, max: a.max }))
+          : []
+      }
+    />
+  );
+  const header = (
+    <AppHeader
+      compact={compactHeader}
+      showSummary={!isPhone}
+      onExport={() => setModal({ type: 'export' })}
+      onSaveLoad={() => setModal({ type: 'saveLoad' })}
+      onNewList={() => setModal({ type: 'confirmReset' })}
+      onAddWarlord={warlordDef && primary ? () => addDetachment(warlordDef, { forceId: primary.id }) : undefined}
+      onAddAllies={allyFactions.length > 0 ? () => setModal({ type: 'allySelector' }) : undefined}
+      onAddLordOfWar={canAddLordOfWar ? addLordOfWar : undefined}
+      onAddDetachment={
+        additionalDetachments.length > 0 ? () => setModal({ type: 'additionalDetachmentSelector' }) : undefined
+      }
+    />
+  );
+  const modals = (
+    <CanvasModals
+      roster={roster}
+      flow={flow}
+      primary={primary}
+      additionalDetachments={additionalDetachments}
+      allyFactions={allyFactions}
+      totalPoints={totalPoints}
+    />
+  );
   const instanceNumbers = computeInstanceNumbers(detachments);
+
+  // Phones: the same cards in one scrolling column
+  if (isPhone) {
+    return (
+      <div className="flex flex-col" style={{ height: '100dvh', overflow: 'hidden' }}>
+        {header}
+        <StackedView
+          view={view}
+          instanceNumbers={instanceNumbers}
+          warningsByDetachment={warningsByDetachment}
+          removeActionFor={removeActionFor}
+          onSlotClick={flow.handleSlotClick}
+          onSlotClear={flow.handleSlotClear}
+          bottomInset={warnings.length > 0 ? 96 : 68}
+        />
+        {pointsCard}
+        {modals}
+      </div>
+    );
+  }
+
+  const { positions: cardPositions, labels: forceLabels } = computeCardPositions(view);
   // A dragged card's position overrides the computed layout
   const getCardPos = (detId: string): CardPosition => positionOverrides[detId] ?? cardPositions.get(detId) ?? { x: 0, y: 0 };
 
   return (
     <div className="flex flex-col" style={{ height: '100vh', overflow: 'hidden' }}>
-      <AppHeader
-        onExport={() => setModal({ type: 'export' })}
-        onSaveLoad={() => setModal({ type: 'saveLoad' })}
-        onNewList={() => setModal({ type: 'confirmReset' })}
-        onAddWarlord={warlordDef && primary ? () => addDetachment(warlordDef, { forceId: primary.id }) : undefined}
-        onAddAllies={allyFactions.length > 0 ? () => setModal({ type: 'allySelector' }) : undefined}
-        onAddLordOfWar={canAddLordOfWar ? addLordOfWar : undefined}
-        onAddDetachment={
-          additionalDetachments.length > 0 ? () => setModal({ type: 'additionalDetachmentSelector' }) : undefined
-        }
-      />
+      {header}
 
       {/* Canvas area */}
       <div
@@ -101,7 +156,11 @@ export default function Canvas() {
           position: 'relative',
           cursor: draggingId ? 'grabbing' : 'grab',
           background: 'var(--cds-background)',
-          userSelect: draggingId ? 'none' : undefined,
+          // Panning across cards shouldn't select their text
+          userSelect: 'none',
+          WebkitUserSelect: 'none',
+          // Touch gestures are the canvas's own (pan / pinch), not the browser's
+          touchAction: 'none',
         }}
         {...viewport.viewportHandlers}
       >
@@ -163,7 +222,7 @@ export default function Canvas() {
                   zIndex: isDragging ? 10 : undefined,
                   transition: isDragging ? undefined : 'box-shadow 0.15s, outline 0.15s',
                 }}
-                onMouseDown={(e) => viewport.handleCardMouseDown(e, det.id, pos)}
+                onPointerDown={(e) => viewport.handleCardPointerDown(e, det.id, pos)}
               >
                 <DetachmentCard
                   detachment={det}
@@ -205,27 +264,8 @@ export default function Canvas() {
         </button>
       </div>
 
-      <PointsCard
-        current={totalPoints}
-        limit={pointsLimit}
-        warnings={warnings}
-        allowances={
-          primary
-            ? detachmentAllowances(forces, primary, counts)
-                .filter((a) => a.max > 0 || a.used > 0)
-                .map((a) => ({ label: a.name.replace(/ Detachment\(s\)$|s$/, ''), used: a.used, max: a.max }))
-            : []
-        }
-      />
-
-      <CanvasModals
-        roster={roster}
-        flow={flow}
-        primary={primary}
-        additionalDetachments={additionalDetachments}
-        allyFactions={allyFactions}
-        totalPoints={totalPoints}
-      />
+      {pointsCard}
+      {modals}
     </div>
   );
 }

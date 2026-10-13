@@ -5,25 +5,11 @@ import {
   HeaderGlobalBar,
   HeaderGlobalAction,
   Button,
+  OverflowMenu,
+  OverflowMenuItem,
 } from '@carbon/react';
-import { Export, Reset, Add, Save } from '@carbon/icons-react';
-import { useRosterStore, selectPrimaryFaction } from '../../store/rosterStore';
-import { factionLabel } from '../../data/factions';
-import { doctrineLabel as labelOfDoctrine, normalizeDoctrine } from '../../rules/armyConfig';
-import { armyChoiceLabel, rosterArmyChoiceGroups } from '../../rules/armyChoices';
-import { configOptions } from '../../rules/armyConfig';
-
-const HEADER_SELECT_STYLE: React.CSSProperties = {
-  pointerEvents: 'auto',
-  background: 'transparent',
-  color: 'var(--cds-text-primary)',
-  border: 'none',
-  borderBottom: '1px solid var(--cds-border-strong-01)',
-  fontSize: 13,
-  padding: '2px 4px',
-  cursor: 'pointer',
-  maxWidth: 220,
-};
+import { Export, Reset, Add, Save, Menu } from '@carbon/icons-react';
+import ArmySummary from './ArmySummary';
 
 interface AppHeaderProps {
   onExport: () => void;
@@ -37,6 +23,10 @@ interface AppHeaderProps {
   onAddLordOfWar?: () => void;
   /** Shown when the army's chart has freely-added detachments (e.g. Knight talons) */
   onAddDetachment?: () => void;
+  /** Narrow screens: actions in a menu */
+  compact?: boolean;
+  /** With `compact`: keep the army line in the header (tablets; phones show it above the cards) */
+  showSummary?: boolean;
 }
 
 export default function AppHeader({
@@ -47,19 +37,44 @@ export default function AppHeader({
   onAddAllies,
   onAddLordOfWar,
   onAddDetachment,
+  compact = false,
+  showSummary = false,
 }: AppHeaderProps) {
-  const faction = useRosterStore(selectPrimaryFaction);
-  const allies = useRosterStore((s) => s.forces.filter((f) => f.kind === 'allied').map((f) => f.faction));
-  const allegiance = useRosterStore((s) => s.allegiance);
-  const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
-  const armyChoices = useRosterStore((s) => s.armyChoices);
-  const setArmyChoice = useRosterStore((s) => s.setArmyChoice);
-  const choiceGroups = rosterArmyChoiceGroups([faction, ...allies]);
-  const configChoices = useRosterStore((s) => s.configChoices);
-  const setConfigChoice = useRosterStore((s) => s.setConfigChoice);
-  const settings = configOptions(faction);
+  const addActions = [
+    { label: 'Add Warlord', onClick: onAddWarlord },
+    { label: 'Add Lord of War', onClick: onAddLordOfWar },
+    { label: 'Add Detachment', onClick: onAddDetachment },
+    { label: 'Add Allies', onClick: onAddAllies },
+  ].filter((a): a is { label: string; onClick: () => void } => !!a.onClick);
 
-  const doctrineLabel = cohortDoctrine ? labelOfDoctrine(normalizeDoctrine(cohortDoctrine)) || null : null;
+  // Narrow screens: every action in one menu
+  if (compact) {
+    return (
+      <Header aria-label="Heresy List Builder">
+        <HeaderName href="#" prefix="" className="app-header__name">
+          Heresy List Builder
+        </HeaderName>
+        {showSummary ? <ArmySummary layout="inline" /> : <div style={{ flex: 1 }} />}
+        <HeaderGlobalBar style={{ flex: 'none' }}>
+          <OverflowMenu
+            aria-label="List actions"
+            iconDescription="List actions"
+            renderIcon={() => <Menu size={20} />}
+            flipped
+            size="lg"
+            className="app-header__menu"
+          >
+            {addActions.map((a) => (
+              <OverflowMenuItem key={a.label} itemText={a.label} onClick={a.onClick} />
+            ))}
+            <OverflowMenuItem itemText="Save / load lists" onClick={onSaveLoad} hasDivider={addActions.length > 0} />
+            <OverflowMenuItem itemText="Export list" onClick={onExport} />
+            <OverflowMenuItem itemText="New list" onClick={onNewList} isDelete />
+          </OverflowMenu>
+        </HeaderGlobalBar>
+      </Header>
+    );
+  }
 
   return (
     <Header aria-label="Heresy List Builder">
@@ -67,119 +82,26 @@ export default function AppHeader({
         Heresy List Builder
       </HeaderName>
 
-      {/* Center: faction + allegiance */}
-      <div
-        style={{
-          flex: 1,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          color: 'var(--cds-text-secondary)',
-          fontSize: 13,
-          gap: 8,
-          whiteSpace: 'nowrap',
-          pointerEvents: 'none',
-        }}
-      >
-        <span>{factionLabel(faction)}</span>
-        {allies.length > 0 && <span>+ {allies.map(factionLabel).join(' + ')}</span>}
-        <span style={{ color: 'var(--cds-border-strong-01)' }}>·</span>
-        <span>{allegiance}</span>
-        {doctrineLabel && (
-          <>
-            <span style={{ color: 'var(--cds-border-strong-01)' }}>·</span>
-            <span>{doctrineLabel}</span>
-          </>
-        )}
-        {/* Army settings (Rite of War, Household Paradigm…): changeable at any time */}
-        {settings.map((o) => (
-          <React.Fragment key={o.name}>
-            <span style={{ color: 'var(--cds-border-strong-01)' }}>·</span>
-            <select
-              aria-label={o.name}
-              title={o.name}
-              value={configChoices[o.name] ?? ''}
-              onChange={(e) => setConfigChoice(o.name, e.target.value)}
-              style={HEADER_SELECT_STYLE}
-            >
-              {o.optional && (
-                <option value="" style={{ color: 'initial' }}>
-                  {o.name}: none
-                </option>
-              )}
-              {o.choices.map((c) => (
-                <option key={c} value={c} style={{ color: 'initial' }}>
-                  {c}
-                </option>
-              ))}
-            </select>
-          </React.Fragment>
-        ))}
-        {/* Army-wide sub-faction: changeable at any time, applied to every unit on export */}
-        {choiceGroups.map((g) => (
-          <React.Fragment key={g.id}>
-            <span style={{ color: 'var(--cds-border-strong-01)' }}>·</span>
-            <select
-              aria-label={armyChoiceLabel(g)}
-              title={armyChoiceLabel(g)}
-              value={armyChoices[g.id] ?? g.options[0]?.id ?? ''}
-              onChange={(e) => setArmyChoice(g.id, e.target.value)}
-              style={HEADER_SELECT_STYLE}
-            >
-              {g.options.map((o) => (
-                <option key={o.id} value={o.id} style={{ color: 'initial' }}>
-                  {o.name}
-                </option>
-              ))}
-            </select>
-          </React.Fragment>
-        ))}
-      </div>
+      {/* Center: the army and its army-wide settings */}
+      <ArmySummary layout="inline" />
 
       {/* Add buttons */}
       <div style={{ display: 'flex', alignItems: 'center', gap: 4, paddingRight: 8 }}>
-        {onAddWarlord && (
-          <Button kind="ghost" size="sm" renderIcon={Add} onClick={onAddWarlord}>
-            Add Warlord
+        {addActions.map((a) => (
+          <Button key={a.label} kind="ghost" size="sm" renderIcon={Add} onClick={a.onClick}>
+            {a.label}
           </Button>
-        )}
-        {onAddLordOfWar && (
-          <Button kind="ghost" size="sm" renderIcon={Add} onClick={onAddLordOfWar}>
-            Add Lord of War
-          </Button>
-        )}
-        {onAddDetachment && (
-          <Button kind="ghost" size="sm" renderIcon={Add} onClick={onAddDetachment}>
-            Add Detachment
-          </Button>
-        )}
-        {onAddAllies && (
-          <Button kind="ghost" size="sm" renderIcon={Add} onClick={onAddAllies}>
-            Add Allies
-          </Button>
-        )}
+        ))}
       </div>
 
       <HeaderGlobalBar>
-        <HeaderGlobalAction
-          aria-label="Save / load lists"
-          tooltipAlignment="end"
-          onClick={onSaveLoad}
-        >
+        <HeaderGlobalAction aria-label="Save / load lists" tooltipAlignment="end" onClick={onSaveLoad}>
           <Save size={20} />
         </HeaderGlobalAction>
-        <HeaderGlobalAction
-          aria-label="Export list"
-          tooltipAlignment="end"
-          onClick={onExport}
-        >
+        <HeaderGlobalAction aria-label="Export list" tooltipAlignment="end" onClick={onExport}>
           <Export size={20} />
         </HeaderGlobalAction>
-        <HeaderGlobalAction
-          aria-label="New list"
-          tooltipAlignment="end"
-          onClick={onNewList}
-        >
+        <HeaderGlobalAction aria-label="New list" tooltipAlignment="end" onClick={onNewList}>
           <Reset size={20} />
         </HeaderGlobalAction>
       </HeaderGlobalBar>

@@ -57,6 +57,7 @@ export default function CanvasModals({ roster, flow, primary, additionalDetachme
           onAnnotationsChange={(notes, extraPoints) =>
             updateSlotAnnotations(modal.detachmentId, modal.slotKey, notes, extraPoints)
           }
+          onRemove={() => flow.handleSlotClear(modal.detachmentId, modal.slotKey)}
           onClose={close}
         />
       )}
