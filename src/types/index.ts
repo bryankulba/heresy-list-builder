@@ -88,6 +88,8 @@ export interface DetachmentDef {
   sources?: string[];
   /** What it uses of its chart's detachment limits, by cost type id — see rules/detachmentLimits.ts */
   costs?: Record<string, number>;
+  /** Modifiers on those costs (a Tercio counts as half an Auxiliary detachment with its cohort doctrine) */
+  costModifiers?: Record<string, RuleModifier[]>;
   /** How many the roster may contain, raised by modifiers (Knight Additional detachments) */
   rosterMax?: { max: number; modifiers: RuleModifier[] };
   /** BSData error messages and when they apply ("Storm Battery Detachment requires a Siege Breaker") */

@@ -42,6 +42,13 @@ function armyContext(forces: Force[], force: Force, counts: RosterCounts): RuleC
   };
 }
 
+/** What a detachment uses of a limit, after its cost modifiers (a Tercio with its doctrine: 0.5). */
+function detachmentCost(def: DetachmentDef, costTypeId: string, ctx: RuleContext): number {
+  const base = def.costs?.[costTypeId] ?? 0;
+  const mods = def.costModifiers?.[costTypeId];
+  return mods ? applyNumericModifiers(base, mods, ctx) : base;
+}
+
 /** Each detachment limit of the army's chart, with what the army uses of it. */
 export function detachmentAllowances(
   forces: Force[],
@@ -57,7 +64,7 @@ export function detachmentAllowances(
     used:
       limit.costTypeId === POINTS_TYPE_ID
         ? force.detachments.reduce((n, d) => n + detachmentPoints(d), 0)
-        : force.detachments.reduce((n, d) => n + (d.def.costs?.[limit.costTypeId] ?? 0), 0),
+        : force.detachments.reduce((n, d) => n + detachmentCost(d.def, limit.costTypeId, ctx), 0),
   }));
 }
 

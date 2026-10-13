@@ -19505,6 +19505,24 @@
           "costs": {
             "3e8e-05ee-be52-12d6": 1
           },
+          "costModifiers": {
+            "3e8e-05ee-be52-12d6": [
+              {
+                "type": "set",
+                "field": "3e8e-05ee-be52-12d6",
+                "value": 0.5,
+                "conditions": [
+                  {
+                    "type": "equalTo",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "f2be-abfe-311c-afe2"
+                  }
+                ]
+              }
+            ]
+          },
           "rosterMax": {
             "max": 0,
             "modifiers": [
@@ -19576,6 +19594,24 @@
           "costs": {
             "3e8e-05ee-be52-12d6": 1
           },
+          "costModifiers": {
+            "3e8e-05ee-be52-12d6": [
+              {
+                "type": "set",
+                "field": "3e8e-05ee-be52-12d6",
+                "value": 0.5,
+                "conditions": [
+                  {
+                    "type": "equalTo",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "1d7a-eb2d-5d0f-0fa4"
+                  }
+                ]
+              }
+            ]
+          },
           "rosterMax": {
             "max": 0,
             "modifiers": [
@@ -19646,6 +19682,24 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "costModifiers": {
+            "3e8e-05ee-be52-12d6": [
+              {
+                "type": "set",
+                "field": "3e8e-05ee-be52-12d6",
+                "value": 0.5,
+                "conditions": [
+                  {
+                    "type": "equalTo",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "c9ef-b204-e951-6b7e"
+                  }
+                ]
+              }
+            ]
           },
           "rosterMax": {
             "max": 0,
@@ -20026,6 +20080,24 @@
           "costs": {
             "3e8e-05ee-be52-12d6": 1
           },
+          "costModifiers": {
+            "3e8e-05ee-be52-12d6": [
+              {
+                "type": "set",
+                "field": "3e8e-05ee-be52-12d6",
+                "value": 0.5,
+                "conditions": [
+                  {
+                    "type": "equalTo",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "1241-4ccd-80b8-8ff2"
+                  }
+                ]
+              }
+            ]
+          },
           "rosterMax": {
             "max": 0,
             "modifiers": [
@@ -20103,6 +20175,24 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "costModifiers": {
+            "3e8e-05ee-be52-12d6": [
+              {
+                "type": "set",
+                "field": "3e8e-05ee-be52-12d6",
+                "value": 0.5,
+                "conditions": [
+                  {
+                    "type": "equalTo",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "7f98-e8eb-f86e-180d"
+                  }
+                ]
+              }
+            ]
           },
           "rosterMax": {
             "max": 0,
@@ -35719,6 +35809,24 @@
           ],
           "costs": {
             "2cdf-186c-a655-d907": 1
+          },
+          "costModifiers": {
+            "2cdf-186c-a655-d907": [
+              {
+                "type": "set",
+                "field": "2cdf-186c-a655-d907",
+                "value": 0.5,
+                "conditions": [
+                  {
+                    "type": "equalTo",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "1d7a-eb2d-5d0f-0fa4"
+                  }
+                ]
+              }
+            ]
           }
         },
         {

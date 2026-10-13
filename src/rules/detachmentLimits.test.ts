@@ -3,6 +3,7 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import { importRos } from '../utils/importRos';
 import { auxiliaryUnlocks, detachmentAllowances, isDetachmentLocked } from './detachmentLimits';
+import { rosterCounts } from './context';
 import { getChart, getUnitsForFaction, unitVariant } from '../data/loader';
 
 const load = (file: string) =>
@@ -54,5 +55,15 @@ describe('detachment limits from BSData', () => {
     expect(isDetachmentLocked(nightLords, nightLords[0], stormBattery)).toBe(true);
     const armouredSupport = getChart('Crusade Force Organization Chart').detachments.find((d) => d.name === 'Auxiliary - Armoured Support')!;
     expect(isDetachmentLocked(deathGuard, deathGuard[0], armouredSupport)).toBe(false);
+  });
+
+  test('a Tercio counts as half an Auxiliary detachment with its cohort doctrine', () => {
+    const snapshot = importRos(readFileSync(join(__dirname, '../../reference_armies', 'Wild Hunt 2026.ros'), 'utf-8')).snapshot;
+    const aux = (cohortDoctrine: string) =>
+      detachmentAllowances(snapshot.forces, snapshot.forces[0], rosterCounts(snapshot.forces, { ...snapshot, cohortDoctrine })).find(
+        (a) => a.name === 'Auxiliary Detachment(s)'
+      )!.used;
+    expect(aux('Cohort Doctrine: Ultima Pattern Cohort')).toBe(3.5); // its Infantry Tercio counts half
+    expect(aux('')).toBe(4);
   });
 });

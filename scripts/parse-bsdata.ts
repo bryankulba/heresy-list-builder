@@ -372,6 +372,8 @@ export interface Detachment {
   sources: string[];
   /** What it uses of its chart's detachment limits, by cost type id (e.g. 1 "Auxiliary Detachment(s)") */
   costs?: Record<string, number>;
+  /** Modifiers on those costs (a Tercio counts as half an Auxiliary detachment with its cohort doctrine) */
+  costModifiers?: Record<string, RuleModifier[]>;
   /** How many the roster may contain, raised by modifiers (Knight Additional detachments: +1 per …) */
   rosterMax?: { max: number; modifiers: RuleModifier[] };
   /** BSData error messages and when they apply ("Storm Battery Detachment requires a Siege Breaker") */
@@ -1426,6 +1428,10 @@ function parseDetachment(
   for (const c of fe.costs ?? []) {
     if (c.typeId !== POINTS_TYPE_ID && c.value > 0) costs[c.typeId] = c.value;
   }
+  const costModifiers: Record<string, RuleModifier[]> = {};
+  for (const m of allModifiers(fe)) {
+    if (m.field in costs) costModifiers[m.field] = [...(costModifiers[m.field] ?? []), slimModifier(m)];
+  }
   // A roster-wide cap on this detachment, with the modifiers that raise it
   const cap = (fe.constraints ?? []).find((c) => c.type === 'max' && c.field === 'forces' && c.scope === 'roster');
   const rosterMax = cap
@@ -1444,6 +1450,7 @@ function parseDetachment(
     slots,
     sources: extractFactionSources(fe, catalogueKeyById),
     ...(Object.keys(costs).length > 0 ? { costs } : {}),
+    ...(Object.keys(costModifiers).length > 0 ? { costModifiers } : {}),
     ...(rosterMax ? { rosterMax } : {}),
     ...(errors.length > 0 ? { errors } : {}),
   };
