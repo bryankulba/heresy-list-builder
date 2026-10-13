@@ -7,7 +7,7 @@
  */
 
 import type { UnitEntry, WargearEntry } from '../types';
-import { cataloguesData, getUnitsForFaction, rulesData, type ArmyChoiceGroup } from '../data/loader';
+import { cataloguesData, factionUnitsLoaded, getUnitsForFaction, rulesData, type ArmyChoiceGroup } from '../data/loader';
 import { effectiveHidden, type RuleContext } from './evaluate';
 
 export type ArmyChoices = Record<string, string>;
@@ -49,7 +49,7 @@ export function armyChoiceGroups(faction: string): Array<{ id: string } & ArmyCh
     const g = rulesData.armyChoices[id];
     return { id, ...g, options: g.options.filter((o) => !effectiveHidden(o.hidden ?? false, o.modifiers, ctx)) };
   });
-  cache.set(faction, groups);
+  if (factionUnitsLoaded(faction)) cache.set(faction, groups);
   return groups;
 }
 

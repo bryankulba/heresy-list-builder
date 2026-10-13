@@ -1,0 +1,1276 @@
+[
+  {
+    "name": "Magnus the Red",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "c408-52f1-b632-4c82",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "2d3f-a65d-edd7-847b",
+    "path": "2d3f-a65d-edd7-847b::cf2e-fa27-23ce-7502",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 470,
+    "baseCost": 470,
+    "models": [
+      {
+        "name": "Magnus the Red",
+        "entryId": "17fa-b67d-fc71-157a",
+        "path": "2d3f-a65d-edd7-847b::17fa-b67d-fc71-157a",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Psyfire Serpenta",
+            "entryId": "789e-8295-a1f6-303c",
+            "path": "2d3f-a65d-edd7-847b::789e-8295-a1f6-303c"
+          },
+          {
+            "name": "The Blade of Ahn-nunurta",
+            "entryId": "0788-7155-cc1c-cc74",
+            "path": "2d3f-a65d-edd7-847b::0788-7155-cc1c-cc74"
+          },
+          {
+            "name": "Athanaean",
+            "entryId": "e354-0333-bece-8322",
+            "targetId": "fc42-7d7b-e1ba-8946",
+            "path": "2d3f-a65d-edd7-847b::e354-0333-bece-8322::fc42-7d7b-e1ba-8946"
+          },
+          {
+            "name": "Corvidae",
+            "entryId": "7e59-6ca4-3aa7-02cc",
+            "targetId": "cff7-56bc-7e47-1c7d",
+            "path": "2d3f-a65d-edd7-847b::7e59-6ca4-3aa7-02cc::cff7-56bc-7e47-1c7d"
+          },
+          {
+            "name": "Pavoni",
+            "entryId": "b75c-c354-8ed4-729d",
+            "targetId": "ef46-38e5-0b94-41c1",
+            "path": "2d3f-a65d-edd7-847b::b75c-c354-8ed4-729d::ef46-38e5-0b94-41c1"
+          },
+          {
+            "name": "Pyrae",
+            "entryId": "effe-06e8-f496-77b7",
+            "targetId": "6c08-592d-ebee-6003",
+            "path": "2d3f-a65d-edd7-847b::effe-06e8-f496-77b7::6c08-592d-ebee-6003"
+          },
+          {
+            "name": "Raptora",
+            "entryId": "0a6b-bc63-0415-262c",
+            "targetId": "ba0e-77b7-36be-8a4e",
+            "path": "2d3f-a65d-edd7-847b::0a6b-bc63-0415-262c::ba0e-77b7-36be-8a4e"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "facts": {
+      "cf2e-fa27-23ce-7502": 1,
+      "2d3f-a65d-edd7-847b": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "d251-944b-3c3b-0579": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "22ee-7208-4089-b005": 1,
+      "7c3f-93c7-d5b9-89e3": 1,
+      "17fa-b67d-fc71-157a": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1,
+      "789e-8295-a1f6-303c": 1,
+      "0788-7155-cc1c-cc74": 1,
+      "e354-0333-bece-8322": 1,
+      "fc42-7d7b-e1ba-8946": 1,
+      "7e59-6ca4-3aa7-02cc": 1,
+      "cff7-56bc-7e47-1c7d": 1,
+      "b75c-c354-8ed4-729d": 1,
+      "ef46-38e5-0b94-41c1": 1,
+      "effe-06e8-f496-77b7": 1,
+      "6c08-592d-ebee-6003": 1,
+      "0a6b-bc63-0415-262c": 1,
+      "ba0e-77b7-36be-8a4e": 1
+    }
+  },
+  {
+    "name": "Ahzek Ahriman",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "c408-52f1-b632-4c82",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "6585-dd01-4a66-3422",
+    "path": "6585-dd01-4a66-3422::1b93-d5ce-f6d7-8ad2",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 185,
+    "baseCost": 185,
+    "models": [
+      {
+        "name": "Ahzek Ahriman",
+        "entryId": "2a1d-62b7-0db6-cc7d",
+        "path": "6585-dd01-4a66-3422::2a1d-62b7-0db6-cc7d",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "The Corvidaen Sceptre",
+            "entryId": "5477-d021-9622-98f1",
+            "path": "6585-dd01-4a66-3422::5477-d021-9622-98f1"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "5f60-bcfd-300a-97d8",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "6585-dd01-4a66-3422::5f60-bcfd-300a-97d8::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "1a88-ca74-b4b6-fbe2",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "6585-dd01-4a66-3422::1a88-ca74-b4b6-fbe2::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "9a6b-d4c3-13b1-096d",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "6585-dd01-4a66-3422::9a6b-d4c3-13b1-096d::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Divination",
+            "entryId": "0b85-71ed-4983-1743",
+            "targetId": "5f50-43e2-30a1-01c8",
+            "path": "6585-dd01-4a66-3422::0b85-71ed-4983-1743::5f50-43e2-30a1-01c8"
+          },
+          {
+            "name": "Thaumaturgy",
+            "entryId": "1288-a605-46ca-2fcc",
+            "targetId": "15a9-e44f-2393-0d6a",
+            "path": "6585-dd01-4a66-3422::1288-a605-46ca-2fcc::15a9-e44f-2393-0d6a"
+          },
+          {
+            "name": "Corvidae",
+            "entryId": "d44d-d15c-337a-2f64",
+            "targetId": "cff7-56bc-7e47-1c7d",
+            "path": "6585-dd01-4a66-3422::d44d-d15c-337a-2f64::cff7-56bc-7e47-1c7d"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "facts": {
+      "1b93-d5ce-f6d7-8ad2": 1,
+      "6585-dd01-4a66-3422": 1,
+      "d251-944b-3c3b-0579": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "7c3f-93c7-d5b9-89e3": 1,
+      "2a1d-62b7-0db6-cc7d": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1,
+      "5477-d021-9622-98f1": 1,
+      "5f60-bcfd-300a-97d8": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "1a88-ca74-b4b6-fbe2": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "9a6b-d4c3-13b1-096d": 1,
+      "2942-f783-d627-33c5": 1,
+      "0b85-71ed-4983-1743": 1,
+      "5f50-43e2-30a1-01c8": 1,
+      "1288-a605-46ca-2fcc": 1,
+      "15a9-e44f-2393-0d6a": 1,
+      "d44d-d15c-337a-2f64": 1,
+      "cff7-56bc-7e47-1c7d": 1
+    },
+    "prime": {
+      "linkId": "e08e-dbec-435d-a486",
+      "path": "6585-dd01-4a66-3422::e08e-dbec-435d-a486::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "6585-dd01-4a66-3422::7355-cb63-48fc-8c3b"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "6585-dd01-4a66-3422::f3f8-bb39-9ca0-9ca7",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Magistus Amon",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "c408-52f1-b632-4c82",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "b509-f1ce-4a4d-4b90",
+    "path": "b509-f1ce-4a4d-4b90::b0a0-fbcd-0605-47df",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 185,
+    "baseCost": 185,
+    "models": [
+      {
+        "name": "Magistus Amon",
+        "entryId": "7db9-24e0-8610-8b70",
+        "path": "b509-f1ce-4a4d-4b90::7db9-24e0-8610-8b70",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "The Reliquary of Dust",
+            "entryId": "2981-a732-bf07-b3d3",
+            "path": "b509-f1ce-4a4d-4b90::2981-a732-bf07-b3d3"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "c9fc-8121-fe24-5e63",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "b509-f1ce-4a4d-4b90::c9fc-8121-fe24-5e63::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "3f6d-17fb-e965-c184",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "b509-f1ce-4a4d-4b90::3f6d-17fb-e965-c184::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Divination",
+            "entryId": "e8e9-e72b-c764-7cbf",
+            "targetId": "5f50-43e2-30a1-01c8",
+            "path": "b509-f1ce-4a4d-4b90::e8e9-e72b-c764-7cbf::5f50-43e2-30a1-01c8"
+          },
+          {
+            "name": "Telepathy",
+            "entryId": "1036-30ca-2462-f505",
+            "targetId": "13c2-f899-efef-20cb",
+            "path": "b509-f1ce-4a4d-4b90::1036-30ca-2462-f505::13c2-f899-efef-20cb"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "facts": {
+      "b0a0-fbcd-0605-47df": 1,
+      "b509-f1ce-4a4d-4b90": 1,
+      "d251-944b-3c3b-0579": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "7c3f-93c7-d5b9-89e3": 1,
+      "7db9-24e0-8610-8b70": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1,
+      "2981-a732-bf07-b3d3": 1,
+      "c9fc-8121-fe24-5e63": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "3f6d-17fb-e965-c184": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "e8e9-e72b-c764-7cbf": 1,
+      "5f50-43e2-30a1-01c8": 1,
+      "1036-30ca-2462-f505": 1,
+      "13c2-f899-efef-20cb": 1
+    },
+    "prime": {
+      "linkId": "4480-a6bd-493a-84ad",
+      "path": "b509-f1ce-4a4d-4b90::4480-a6bd-493a-84ad::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "b509-f1ce-4a4d-4b90::2024-9ab1-4542-8efb"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "b509-f1ce-4a4d-4b90::a33f-a5a6-d690-b889",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Prosperine Sorcerer",
+    "entryId": "4bb2-4c28-439d-6074",
+    "path": "4bb2-4c28-439d-6074::62bf-2931-3aab-3937",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 105,
+    "baseCost": 105,
+    "models": [
+      {
+        "name": "Prosperine Sorcerer",
+        "entryId": "f946-8223-508d-d1c5",
+        "path": "4bb2-4c28-439d-6074::f946-8223-508d-d1c5",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Prosperine Spirestave",
+            "entryId": "d0ea-1c9c-779e-f0c7",
+            "path": "4bb2-4c28-439d-6074::d0ea-1c9c-779e-f0c7"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "bd7f-77d2-102b-d0a3",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "4bb2-4c28-439d-6074::bd7f-77d2-102b-d0a3::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "fc54-5ee3-7085-8a24",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "4bb2-4c28-439d-6074::fc54-5ee3-7085-8a24::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "4d1d-1133-ce0a-d1fd",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "4bb2-4c28-439d-6074::4d1d-1133-ce0a-d1fd::2942-f783-d627-33c5",
+            "groupPath": "4bb2-4c28-439d-6074::4cfa-1c15-686d-f114"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "facts": {
+      "62bf-2931-3aab-3937": 1,
+      "4bb2-4c28-439d-6074": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "7c3f-93c7-d5b9-89e3": 1,
+      "04b3-9ebe-bf51-20f2": 1,
+      "f946-8223-508d-d1c5": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "d0ea-1c9c-779e-f0c7": 1,
+      "bd7f-77d2-102b-d0a3": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "fc54-5ee3-7085-8a24": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "4d1d-1133-ce0a-d1fd": 1,
+      "2942-f783-d627-33c5": 1
+    },
+    "prime": {
+      "linkId": "dd73-f446-4825-b6b4",
+      "path": "4bb2-4c28-439d-6074::dd73-f446-4825-b6b4::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "4bb2-4c28-439d-6074::402f-f834-48b7-bb2c"
+      }
+    }
+  },
+  {
+    "name": "Sekhmet Terminator Cabal",
+    "entryId": "6b76-ee97-f18f-5538",
+    "path": "6b76-ee97-f18f-5538::c5a4-8dfe-5b4c-eef2",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 250,
+    "baseCost": 70,
+    "models": [
+      {
+        "name": "Sekhmet Inceptor",
+        "entryId": "6b06-8e9d-f110-8058",
+        "path": "6b76-ee97-f18f-5538::6b06-8e9d-f110-8058",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Combi-bolter",
+            "entryId": "4171-e7f2-dab4-13c8",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "6b76-ee97-f18f-5538::4171-e7f2-dab4-13c8::042d-9e60-db9e-c147",
+            "groupPath": "6b76-ee97-f18f-5538::37df-7b70-a5c3-446b"
+          },
+          {
+            "name": "Achea pattern force sword",
+            "entryId": "0eaa-4381-ddb0-1cac",
+            "targetId": "e8b5-34e0-9d9c-9b20",
+            "path": "6b76-ee97-f18f-5538::0eaa-4381-ddb0-1cac::e8b5-34e0-9d9c-9b20",
+            "groupPath": "6b76-ee97-f18f-5538::c9a1-11f9-3696-432f"
+          }
+        ]
+      },
+      {
+        "name": "Sekhmet",
+        "entryId": "cc44-6a6f-b9c7-c772",
+        "path": "6b76-ee97-f18f-5538::cc44-6a6f-b9c7-c772",
+        "cost": 45,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Combi-bolter",
+            "entryId": "3b30-6663-dcc5-a413",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "6b76-ee97-f18f-5538::3b30-6663-dcc5-a413::042d-9e60-db9e-c147",
+            "groupPath": "6b76-ee97-f18f-5538::0fa8-b905-355a-aec5"
+          },
+          {
+            "name": "Achea pattern force sword",
+            "entryId": "2151-1c9f-a4d2-3f00",
+            "targetId": "e8b5-34e0-9d9c-9b20",
+            "path": "6b76-ee97-f18f-5538::2151-1c9f-a4d2-3f00::e8b5-34e0-9d9c-9b20",
+            "groupPath": "6b76-ee97-f18f-5538::9e56-9445-e60f-0a57"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "facts": {
+      "c5a4-8dfe-5b4c-eef2": 1,
+      "6b76-ee97-f18f-5538": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "7c3f-93c7-d5b9-89e3": 1,
+      "6b06-8e9d-f110-8058": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "4171-e7f2-dab4-13c8": 1,
+      "042d-9e60-db9e-c147": 5,
+      "0eaa-4381-ddb0-1cac": 1,
+      "e8b5-34e0-9d9c-9b20": 5,
+      "cc44-6a6f-b9c7-c772": 4,
+      "3b30-6663-dcc5-a413": 4,
+      "2151-1c9f-a4d2-3f00": 4
+    },
+    "prime": {
+      "linkId": "2daf-0ade-4c91-a566",
+      "path": "6b76-ee97-f18f-5538::2daf-0ade-4c91-a566::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "6b76-ee97-f18f-5538::7b7d-8fd8-4f7f-ade0"
+      }
+    }
+  },
+  {
+    "name": "Khenetai Occult Cabal",
+    "entryId": "0e9e-1fd6-40aa-5236",
+    "path": "0e9e-1fd6-40aa-5236::3f0f-9a7b-bd90-8fd3",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 145,
+    "baseCost": 49,
+    "models": [
+      {
+        "name": "Khenetai Blademaster",
+        "entryId": "b811-45c5-f560-eea7",
+        "path": "0e9e-1fd6-40aa-5236::b811-45c5-f560-eea7",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Paired Achea pattern force sword",
+            "entryId": "6291-b630-717f-593d",
+            "targetId": "3a16-3c8d-bb61-705b",
+            "path": "0e9e-1fd6-40aa-5236::6291-b630-717f-593d::3a16-3c8d-bb61-705b"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "6f13-c2e9-4e0f-adb1",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "0e9e-1fd6-40aa-5236::6f13-c2e9-4e0f-adb1::2942-f783-d627-33c5",
+            "groupPath": "0e9e-1fd6-40aa-5236::33ff-36ed-8eda-ad60"
+          }
+        ]
+      },
+      {
+        "name": "Khenetai Blade",
+        "entryId": "5ffc-2d00-d1b9-73e8",
+        "path": "0e9e-1fd6-40aa-5236::5ffc-2d00-d1b9-73e8",
+        "cost": 24,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Paired Achea pattern force sword",
+            "entryId": "7033-0294-ed11-3b96",
+            "targetId": "3a16-3c8d-bb61-705b",
+            "path": "0e9e-1fd6-40aa-5236::7033-0294-ed11-3b96::3a16-3c8d-bb61-705b"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "497d-8cba-0a70-a080",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "0e9e-1fd6-40aa-5236::497d-8cba-0a70-a080::2942-f783-d627-33c5",
+            "groupPath": "0e9e-1fd6-40aa-5236::7af1-1594-1b9d-ad83"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "10da-3443-fb32-03d9",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "0e9e-1fd6-40aa-5236::10da-3443-fb32-03d9::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "36fa-8880-42b8-5c62",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "0e9e-1fd6-40aa-5236::36fa-8880-42b8-5c62::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "3f0f-9a7b-bd90-8fd3": 1,
+      "0e9e-1fd6-40aa-5236": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "7c3f-93c7-d5b9-89e3": 1,
+      "b811-45c5-f560-eea7": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "6291-b630-717f-593d": 1,
+      "3a16-3c8d-bb61-705b": 5,
+      "6f13-c2e9-4e0f-adb1": 1,
+      "2942-f783-d627-33c5": 5,
+      "5ffc-2d00-d1b9-73e8": 4,
+      "7033-0294-ed11-3b96": 4,
+      "497d-8cba-0a70-a080": 4
+    },
+    "prime": {
+      "linkId": "7d23-3369-4011-a5cf",
+      "path": "0e9e-1fd6-40aa-5236::7d23-3369-4011-a5cf::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "0e9e-1fd6-40aa-5236::a703-43d7-49ea-a280"
+      }
+    }
+  },
+  {
+    "name": "Contemptor-Osiron Dreadnought",
+    "entryId": "1ee2-34ab-cb0e-3b25",
+    "path": "1ee2-34ab-cb0e-3b25::6580-3281-36a9-564a",
+    "role": "War-engine",
+    "primaryCategory": "War-engine",
+    "points": 200,
+    "baseCost": 200,
+    "models": [
+      {
+        "name": "Contemptor-Osiron Dreadnought",
+        "entryId": "681d-5a87-a24d-040c",
+        "path": "1ee2-34ab-cb0e-3b25::681d-5a87-a24d-040c",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Gravis force blade",
+            "entryId": "9b5d-00d1-3be9-1580",
+            "path": "1ee2-34ab-cb0e-3b25::9b5d-00d1-3be9-1580"
+          },
+          {
+            "name": "Gravis bolt cannon",
+            "entryId": "84d1-f74c-bca4-73a4",
+            "targetId": "50d5-02d3-0be6-9143",
+            "path": "1ee2-34ab-cb0e-3b25::84d1-f74c-bca4-73a4::50d5-02d3-0be6-9143",
+            "groupPath": "1ee2-34ab-cb0e-3b25::56fb-fb67-24c9-b350"
+          },
+          {
+            "name": "Combi-bolter",
+            "entryId": "e88c-c5e8-7b58-cb68",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "1ee2-34ab-cb0e-3b25::e88c-c5e8-7b58-cb68::042d-9e60-db9e-c147",
+            "groupPath": "1ee2-34ab-cb0e-3b25::c849-1153-1e0c-a902"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "facts": {
+      "6580-3281-36a9-564a": 1,
+      "1ee2-34ab-cb0e-3b25": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "49fc-361e-9168-c460": 1,
+      "2499-7239-685f-8465": 1,
+      "7c3f-93c7-d5b9-89e3": 1,
+      "681d-5a87-a24d-040c": 1,
+      "38d4-d720-8009-acd3": 1,
+      "9b5d-00d1-3be9-1580": 1,
+      "84d1-f74c-bca4-73a4": 1,
+      "50d5-02d3-0be6-9143": 1,
+      "e88c-c5e8-7b58-cb68": 1,
+      "042d-9e60-db9e-c147": 1
+    },
+    "prime": {
+      "linkId": "1cfb-ccf3-40a6-acac",
+      "path": "1ee2-34ab-cb0e-3b25::1cfb-ccf3-40a6-acac::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "1ee2-34ab-cb0e-3b25::18f5-0d35-4477-97b0"
+      }
+    }
+  },
+  {
+    "name": "Castellax-Achea Automata",
+    "entryId": "4e95-8076-b824-8c02",
+    "path": "4e95-8076-b824-8c02::8372-11b0-af24-4996",
+    "role": "Support",
+    "primaryCategory": "Support",
+    "points": 80,
+    "baseCost": 80,
+    "models": [
+      {
+        "name": "Castellax-Achea",
+        "entryId": "9127-1209-f34d-c991",
+        "path": "4e95-8076-b824-8c02::9127-1209-f34d-c991",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Achea force claws ",
+            "entryId": "bd48-b242-9657-4fa8",
+            "path": "4e95-8076-b824-8c02::bd48-b242-9657-4fa8"
+          },
+          {
+            "name": "Bolter",
+            "count": 2,
+            "entryId": "4e79-b93f-6223-7456",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "4e95-8076-b824-8c02::4e79-b93f-6223-7456::d3f9-b9e6-3ea5-cc8e"
+          },
+          {
+            "name": "Asphyx bolt cannon",
+            "entryId": "ecec-d2f3-ad61-ca00",
+            "path": "4e95-8076-b824-8c02::ecec-d2f3-ad61-ca00",
+            "groupPath": "4e95-8076-b824-8c02::420f-b4af-5f34-0756"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "facts": {
+      "8372-11b0-af24-4996": 1,
+      "4e95-8076-b824-8c02": 1,
+      "345f-9ba6-9b02-ed5c": 1,
+      "7c3f-93c7-d5b9-89e3": 1,
+      "9127-1209-f34d-c991": 1,
+      "5833-5e86-26bc-0916": 1,
+      "bd48-b242-9657-4fa8": 1,
+      "4e79-b93f-6223-7456": 1,
+      "d3f9-b9e6-3ea5-cc8e": 1,
+      "ecec-d2f3-ad61-ca00": 1
+    },
+    "prime": {
+      "linkId": "05b2-c3f9-42f4-94d8",
+      "path": "4e95-8076-b824-8c02::05b2-c3f9-42f4-94d8::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "4e95-8076-b824-8c02::ee57-dc57-4a8f-8f7b"
+      }
+    }
+  },
+  {
+    "name": "Numerologist Cabal",
+    "entryId": "3aa7-5a07-e53e-9cd9",
+    "path": "3aa7-5a07-e53e-9cd9::ccfe-0bd6-4e88-ba89",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 130,
+    "baseCost": 70,
+    "models": [
+      {
+        "name": "Life Ward",
+        "entryId": "ddaa-5e34-46cc-b4a1",
+        "path": "3aa7-5a07-e53e-9cd9::ddaa-5e34-46cc-b4a1",
+        "cost": 15,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "66e8-d92e-51fe-bce1",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "3aa7-5a07-e53e-9cd9::66e8-d92e-51fe-bce1::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "6fe7-8437-053d-b53f",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "3aa7-5a07-e53e-9cd9::6fe7-8437-053d-b53f::78f4-4967-2896-c3a5"
+          }
+        ]
+      },
+      {
+        "name": "Numerologist",
+        "entryId": "ff53-083b-489b-b9c6",
+        "path": "3aa7-5a07-e53e-9cd9::ff53-083b-489b-b9c6",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Servo-arm",
+            "entryId": "14f6-3bbd-4b23-bb79",
+            "targetId": "9902-2d5f-0df2-5cf0",
+            "path": "3aa7-5a07-e53e-9cd9::14f6-3bbd-4b23-bb79::9902-2d5f-0df2-5cf0"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "ce06-5c71-44ef-8e3d",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "3aa7-5a07-e53e-9cd9::ce06-5c71-44ef-8e3d::78f4-4967-2896-c3a5",
+            "groupPath": "3aa7-5a07-e53e-9cd9::5b2d-8551-452a-9267"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "2fc9-960e-4281-a4fb",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "3aa7-5a07-e53e-9cd9::2fc9-960e-4281-a4fb::2942-f783-d627-33c5",
+            "groupPath": "3aa7-5a07-e53e-9cd9::ce65-822e-4254-bdf4"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "f9fc-ea32-45cc-a070",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "3aa7-5a07-e53e-9cd9::f9fc-ea32-45cc-a070::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "3f92-b861-4e0a-a078",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "3aa7-5a07-e53e-9cd9::3f92-b861-4e0a-a078::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "ccfe-0bd6-4e88-ba89": 1,
+      "3aa7-5a07-e53e-9cd9": 1,
+      "dd1b-70ef-6015-1291": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "ddaa-5e34-46cc-b4a1": 4,
+      "594d-fa82-13cb-a345": 5,
+      "66e8-d92e-51fe-bce1": 4,
+      "2942-f783-d627-33c5": 5,
+      "6fe7-8437-053d-b53f": 4,
+      "78f4-4967-2896-c3a5": 5,
+      "ff53-083b-489b-b9c6": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "d269-d26a-cac1-c953": 1,
+      "c457-4d05-c6b9-9a82": 1,
+      "14f6-3bbd-4b23-bb79": 1,
+      "9902-2d5f-0df2-5cf0": 1,
+      "ce06-5c71-44ef-8e3d": 1,
+      "2fc9-960e-4281-a4fb": 1
+    },
+    "prime": {
+      "linkId": "da97-fa79-5f2a-dced",
+      "path": "3aa7-5a07-e53e-9cd9::da97-fa79-5f2a-dced::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "3aa7-5a07-e53e-9cd9::a583-a07b-2f58-64bc"
+      }
+    }
+  },
+  {
+    "name": "Ammitara Occult Intercession Cabal",
+    "entryId": "72ac-23f1-6eee-988e",
+    "path": "72ac-23f1-6eee-988e::d661-5aa7-4e05-a6e5",
+    "role": "Recon",
+    "primaryCategory": "Recon",
+    "points": 145,
+    "baseCost": 37,
+    "models": [
+      {
+        "name": "Intercessor",
+        "entryId": "2507-0dbb-49af-9357",
+        "path": "72ac-23f1-6eee-988e::2507-0dbb-49af-9357",
+        "cost": 27,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Nemesis bolter",
+            "entryId": "9b09-dc9c-3bf4-3742",
+            "targetId": "96e3-031c-2139-1335",
+            "path": "72ac-23f1-6eee-988e::9b09-dc9c-3bf4-3742::96e3-031c-2139-1335",
+            "groupPath": "72ac-23f1-6eee-988e::0f57-f9b7-27d2-5037"
+          }
+        ]
+      },
+      {
+        "name": "Ammitara Fate",
+        "entryId": "5bd7-0847-420e-b1f4",
+        "path": "72ac-23f1-6eee-988e::5bd7-0847-420e-b1f4",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Nemesis bolter",
+            "entryId": "ecf5-b800-4d97-b959",
+            "targetId": "96e3-031c-2139-1335",
+            "path": "72ac-23f1-6eee-988e::ecf5-b800-4d97-b959::96e3-031c-2139-1335"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "bcfa-c0f6-420a-a96a",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "72ac-23f1-6eee-988e::bcfa-c0f6-420a-a96a::2942-f783-d627-33c5",
+            "groupPath": "72ac-23f1-6eee-988e::523f-eaa6-4382-baec"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "2d47-8713-4e9f-8889",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "72ac-23f1-6eee-988e::2d47-8713-4e9f-8889::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "4872-b627-4ee7-b41d",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "72ac-23f1-6eee-988e::4872-b627-4ee7-b41d::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "d661-5aa7-4e05-a6e5": 1,
+      "72ac-23f1-6eee-988e": 1,
+      "195c-d66b-8b86-c5ad": 1,
+      "2b65-a3f2-620a-dc58": 1,
+      "2507-0dbb-49af-9357": 4,
+      "594d-fa82-13cb-a345": 5,
+      "f4ba-00e5-3d2e-eaac": 5,
+      "d2d6-5a84-672b-2833": 5,
+      "9b09-dc9c-3bf4-3742": 4,
+      "96e3-031c-2139-1335": 5,
+      "5bd7-0847-420e-b1f4": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "ecf5-b800-4d97-b959": 1,
+      "bcfa-c0f6-420a-a96a": 1,
+      "2942-f783-d627-33c5": 1
+    },
+    "prime": {
+      "linkId": "b549-9ec5-95f1-1aac",
+      "path": "72ac-23f1-6eee-988e::b549-9ec5-95f1-1aac::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "72ac-23f1-6eee-988e::4d58-b0be-e19c-b525"
+      }
+    }
+  },
+  {
+    "name": "Inductii Squad",
+    "entryId": "f4f6-a913-a0f2-9666",
+    "path": "f4f6-a913-a0f2-9666::8dfd-8240-4e8d-8e0e",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 90,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Inductii",
+        "entryId": "ce3a-5a2a-42ae-ab34",
+        "path": "f4f6-a913-a0f2-9666::ce3a-5a2a-42ae-ab34",
+        "cost": 9,
+        "min": 10,
+        "max": 20,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "6a36-d0e7-486c-ab32",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "f4f6-a913-a0f2-9666::6a36-d0e7-486c-ab32::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "04ad-ae67-4cce-93c2",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "f4f6-a913-a0f2-9666::04ad-ae67-4cce-93c2::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolter",
+            "entryId": "a46e-dda0-4bb9-baf2",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "f4f6-a913-a0f2-9666::a46e-dda0-4bb9-baf2::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "f4f6-a913-a0f2-9666::6fa3-babe-74c3-1452"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "68e4-6a8a-4faa-b7b5",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "f4f6-a913-a0f2-9666::68e4-6a8a-4faa-b7b5::2942-f783-d627-33c5",
+            "groupPath": "f4f6-a913-a0f2-9666::62a8-1cb1-b3bd-c022"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "facts": {
+      "8dfd-8240-4e8d-8e0e": 1,
+      "f4f6-a913-a0f2-9666": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "ce3a-5a2a-42ae-ab34": 10,
+      "594d-fa82-13cb-a345": 10,
+      "6a36-d0e7-486c-ab32": 10,
+      "60e4-ca33-2e68-9afc": 10,
+      "04ad-ae67-4cce-93c2": 10,
+      "fa20-82bc-c7de-9e97": 10,
+      "a46e-dda0-4bb9-baf2": 10,
+      "d3f9-b9e6-3ea5-cc8e": 10,
+      "68e4-6a8a-4faa-b7b5": 10,
+      "2942-f783-d627-33c5": 10
+    }
+  },
+  {
+    "name": "Flamers of Tzeench",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "6e82-aa39-dba1-8a8f",
+    "path": "6e82-aa39-dba1-8a8f::b8de-a6ca-73b3-72df",
+    "role": "Support",
+    "primaryCategory": "Support - Tzeench only",
+    "points": 105,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Flamer of Tzeench",
+        "entryId": "9beb-7964-4aa7-4c7d",
+        "path": "6e82-aa39-dba1-8a8f::9beb-7964-4aa7-4c7d",
+        "cost": 30,
+        "min": 2,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Changefire",
+            "entryId": "5f8e-5d52-82a4-5787",
+            "path": "6e82-aa39-dba1-8a8f::5f8e-5d52-82a4-5787"
+          }
+        ]
+      },
+      {
+        "name": "Exalted Flamer of Tzeench",
+        "entryId": "34a6-68ad-0b75-b4ac",
+        "path": "6e82-aa39-dba1-8a8f::34a6-68ad-0b75-b4ac",
+        "cost": 45,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Changefire",
+            "entryId": "b3f4-226d-1901-d0aa",
+            "path": "6e82-aa39-dba1-8a8f::b3f4-226d-1901-d0aa"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "facts": {
+      "b8de-a6ca-73b3-72df": 1,
+      "6e82-aa39-dba1-8a8f": 1,
+      "ae2f-1378-9622-a874": 1,
+      "345f-9ba6-9b02-ed5c": 1,
+      "9beb-7964-4aa7-4c7d": 2,
+      "594d-fa82-13cb-a345": 3,
+      "2de1-ddd6-ebb4-10df": 3,
+      "5f8e-5d52-82a4-5787": 2,
+      "34a6-68ad-0b75-b4ac": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "b3f4-226d-1901-d0aa": 1
+    },
+    "prime": {
+      "linkId": "0bac-66f7-b2e9-75d9",
+      "path": "6e82-aa39-dba1-8a8f::0bac-66f7-b2e9-75d9::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "6a33-a28e-9c63-5829"
+      ],
+      "groupPrefixes": {
+        "6a33-a28e-9c63-5829": "6e82-aa39-dba1-8a8f::f275-0414-7e96-f518"
+      }
+    }
+  },
+  {
+    "name": "Herald of Tzeench",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "9c8d-1c17-7244-1e53",
+    "path": "9c8d-1c17-7244-1e53::e306-6512-1f49-49c7",
+    "role": "Command",
+    "primaryCategory": "Command - Tzeench only",
+    "points": 135,
+    "baseCost": 135,
+    "models": [
+      {
+        "name": "Herald of Tzeench",
+        "entryId": "35fc-1a91-149b-4bdf",
+        "path": "9c8d-1c17-7244-1e53::35fc-1a91-149b-4bdf",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Ætherblade",
+            "entryId": "7424-8088-e563-60a0",
+            "path": "9c8d-1c17-7244-1e53::7424-8088-e563-60a0"
+          },
+          {
+            "name": "Staff of Change",
+            "entryId": "86ce-5743-8993-3b97",
+            "path": "9c8d-1c17-7244-1e53::86ce-5743-8993-3b97"
+          },
+          {
+            "name": "Fateweaving",
+            "entryId": "b8c2-8510-0ad1-ce4d",
+            "targetId": "f48c-34a7-c395-be6c",
+            "path": "9c8d-1c17-7244-1e53::b8c2-8510-0ad1-ce4d::f48c-34a7-c395-be6c",
+            "groupPath": "9c8d-1c17-7244-1e53::9c3a-ffb8-f522-a844"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "facts": {
+      "e306-6512-1f49-49c7": 1,
+      "9c8d-1c17-7244-1e53": 1,
+      "ae2f-1378-9622-a874": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "35fc-1a91-149b-4bdf": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "2de1-ddd6-ebb4-10df": 1,
+      "7424-8088-e563-60a0": 1,
+      "86ce-5743-8993-3b97": 1,
+      "b8c2-8510-0ad1-ce4d": 1,
+      "f48c-34a7-c395-be6c": 1
+    },
+    "prime": {
+      "linkId": "1628-b3af-09bd-bada",
+      "path": "9c8d-1c17-7244-1e53::1628-b3af-09bd-bada::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "6a33-a28e-9c63-5829"
+      ],
+      "groupPrefixes": {
+        "6a33-a28e-9c63-5829": "9c8d-1c17-7244-1e53::8c77-be0a-07d4-f7e9"
+      }
+    }
+  },
+  {
+    "name": "Horrors of Tzeench",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "d33c-d7c4-20c3-e515",
+    "path": "d33c-d7c4-20c3-e515::d950-0c4a-5d81-0578",
+    "role": "Troops",
+    "primaryCategory": "Troops - Tzeench only",
+    "points": 140,
+    "baseCost": 20,
+    "models": [
+      {
+        "name": "Pink Horror",
+        "entryId": "7355-36f5-4d6e-c2c0",
+        "path": "d33c-d7c4-20c3-e515::7355-36f5-4d6e-c2c0",
+        "cost": 12,
+        "min": 10,
+        "max": 20,
+        "defaultWargear": [
+          {
+            "name": "Warpfire",
+            "entryId": "c7b4-4a36-fef8-8686",
+            "path": "d33c-d7c4-20c3-e515::c7b4-4a36-fef8-8686"
+          },
+          {
+            "name": "Coruscating grasp",
+            "entryId": "5cd0-1b44-0de9-be20",
+            "path": "d33c-d7c4-20c3-e515::5cd0-1b44-0de9-be20"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "facts": {
+      "d950-0c4a-5d81-0578": 1,
+      "d33c-d7c4-20c3-e515": 1,
+      "ae2f-1378-9622-a874": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "7355-36f5-4d6e-c2c0": 10,
+      "594d-fa82-13cb-a345": 10,
+      "2de1-ddd6-ebb4-10df": 10,
+      "c7b4-4a36-fef8-8686": 10,
+      "5cd0-1b44-0de9-be20": 10
+    },
+    "prime": {
+      "linkId": "7d54-4829-c4a5-c7df",
+      "path": "d33c-d7c4-20c3-e515::7d54-4829-c4a5-c7df::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "6a33-a28e-9c63-5829"
+      ],
+      "groupPrefixes": {
+        "6a33-a28e-9c63-5829": "d33c-d7c4-20c3-e515::5398-8c43-4b7e-450c"
+      }
+    }
+  },
+  {
+    "name": "Screamers of Tzeench",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "1a82-456d-cc72-4570",
+    "path": "1a82-456d-cc72-4570::6e09-fdbd-dc83-ed56",
+    "role": "Fast Attack",
+    "primaryCategory": "Fast Attack - Tzeench only",
+    "points": 130,
+    "baseCost": 10,
+    "models": [
+      {
+        "name": "Screamer of Tzeench",
+        "entryId": "a7b7-ec54-d898-d43b",
+        "path": "1a82-456d-cc72-4570::a7b7-ec54-d898-d43b",
+        "cost": 40,
+        "min": 3,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Razorspines",
+            "entryId": "f59a-540b-0000-cd90",
+            "path": "1a82-456d-cc72-4570::f59a-540b-0000-cd90"
+          }
+        ]
+      }
+    ],
+    "source": "thousand-sons",
+    "facts": {
+      "6e09-fdbd-dc83-ed56": 1,
+      "1a82-456d-cc72-4570": 1,
+      "ae2f-1378-9622-a874": 1,
+      "cf96-8891-3f9a-8921": 1,
+      "a7b7-ec54-d898-d43b": 3,
+      "a073-2d4a-5bed-123e": 3,
+      "c504-9dfa-35d3-c98f": 3,
+      "2de1-ddd6-ebb4-10df": 3,
+      "f59a-540b-0000-cd90": 3
+    },
+    "prime": {
+      "linkId": "781c-ca0b-33de-2c06",
+      "path": "1a82-456d-cc72-4570::781c-ca0b-33de-2c06::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "6a33-a28e-9c63-5829"
+      ],
+      "groupPrefixes": {
+        "6a33-a28e-9c63-5829": "1a82-456d-cc72-4570::428c-e176-bbb1-f5fa"
+      }
+    }
+  }
+]

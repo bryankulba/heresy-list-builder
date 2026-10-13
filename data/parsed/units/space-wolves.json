@@ -1,0 +1,1316 @@
+[
+  {
+    "name": "Leman Russ",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "entryId": "816c-fff9-b834-bec8",
+    "path": "816c-fff9-b834-bec8::e308-c9ee-3be5-0f71",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 450,
+    "baseCost": 450,
+    "models": [
+      {
+        "name": "Leman Russ",
+        "entryId": "228b-6ba2-b03f-cdc8",
+        "path": "816c-fff9-b834-bec8::228b-6ba2-b03f-cdc8",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "space-wolves",
+    "unitWargear": [
+      {
+        "name": "Sire of the Space Wolves",
+        "entryId": "315e-48e1-984d-0250",
+        "path": "816c-fff9-b834-bec8::315e-48e1-984d-0250"
+      },
+      {
+        "name": "The Axe of Helwinter",
+        "entryId": "afc6-47e8-44eb-442a",
+        "path": "816c-fff9-b834-bec8::afc6-47e8-44eb-442a"
+      },
+      {
+        "name": "The Sword of Balenight",
+        "entryId": "9af0-bab3-aa73-73c1",
+        "path": "816c-fff9-b834-bec8::9af0-bab3-aa73-73c1"
+      },
+      {
+        "name": "Scornspitter",
+        "entryId": "944d-f3b9-c3c9-99c7",
+        "path": "816c-fff9-b834-bec8::944d-f3b9-c3c9-99c7"
+      }
+    ],
+    "facts": {
+      "e308-c9ee-3be5-0f71": 1,
+      "816c-fff9-b834-bec8": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "f804-d214-a195-58e7": 1,
+      "22ee-7208-4089-b005": 1,
+      "228b-6ba2-b03f-cdc8": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1
+    }
+  },
+  {
+    "name": "Deathsworn Pack",
+    "entryId": "b0bd-300f-59df-f92e",
+    "path": "b0bd-300f-59df-f92e::cb82-a73f-b30f-c30f",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 175,
+    "baseCost": 25,
+    "models": [
+      {
+        "name": "Deathsworn",
+        "entryId": "bafe-015a-1132-6505",
+        "path": "b0bd-300f-59df-f92e::bafe-015a-1132-6505",
+        "cost": 30,
+        "min": 5,
+        "max": 10,
+        "defaultWargear": []
+      }
+    ],
+    "source": "space-wolves",
+    "unitWargear": [
+      {
+        "name": "Ymira class stasis bombs",
+        "entryId": "6c39-ba8a-922d-1f89",
+        "path": "b0bd-300f-59df-f92e::6c39-ba8a-922d-1f89"
+      },
+      {
+        "name": "Bolt pistol",
+        "entryId": "195a-174b-6ed2-de71",
+        "targetId": "2942-f783-d627-33c5",
+        "path": "b0bd-300f-59df-f92e::195a-174b-6ed2-de71::2942-f783-d627-33c5"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "7b2a-ff06-9eb7-6e96",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "b0bd-300f-59df-f92e::7b2a-ff06-9eb7-6e96::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "bafc-0571-7dba-5725",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "b0bd-300f-59df-f92e::bafc-0571-7dba-5725::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "cb82-a73f-b30f-c30f": 1,
+      "b0bd-300f-59df-f92e": 1,
+      "f804-d214-a195-58e7": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "bafe-015a-1132-6505": 5,
+      "594d-fa82-13cb-a345": 5
+    },
+    "prime": {
+      "linkId": "7a74-2c23-4246-e239",
+      "path": "b0bd-300f-59df-f92e::7a74-2c23-4246-e239::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "b0bd-300f-59df-f92e::6b25-b418-b5a4-c221"
+      }
+    }
+  },
+  {
+    "name": "Geigor Fell-Hand",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "c408-52f1-b632-4c82",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "48ab-ffac-313a-7708",
+    "path": "48ab-ffac-313a-7708::8280-b241-c837-f3ca",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 105,
+    "baseCost": 105,
+    "models": [
+      {
+        "name": "Geigor Fell-Hand",
+        "entryId": "bf8e-a6ed-a23f-8a2d",
+        "path": "48ab-ffac-313a-7708::bf8e-a6ed-a23f-8a2d",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "space-wolves",
+    "unitWargear": [
+      {
+        "name": "The Fell-hand",
+        "entryId": "9aa8-2840-1cf4-5d8d",
+        "path": "48ab-ffac-313a-7708::9aa8-2840-1cf4-5d8d"
+      },
+      {
+        "name": "Bolt pistol",
+        "entryId": "3535-2d2b-68e6-ce4a",
+        "targetId": "2942-f783-d627-33c5",
+        "path": "48ab-ffac-313a-7708::3535-2d2b-68e6-ce4a::2942-f783-d627-33c5"
+      },
+      {
+        "name": "Bolter",
+        "entryId": "407a-88e1-248a-4228",
+        "targetId": "d3f9-b9e6-3ea5-cc8e",
+        "path": "48ab-ffac-313a-7708::407a-88e1-248a-4228::d3f9-b9e6-3ea5-cc8e"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "6bf5-de0f-7997-b084",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "48ab-ffac-313a-7708::6bf5-de0f-7997-b084::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "052f-86da-15d0-e6c1",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "48ab-ffac-313a-7708::052f-86da-15d0-e6c1::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "officerOfTheLine": 2,
+    "facts": {
+      "8280-b241-c837-f3ca": 1,
+      "48ab-ffac-313a-7708": 1,
+      "901a-6b71-7a29-4597": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "f804-d214-a195-58e7": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "bf8e-a6ed-a23f-8a2d": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "4906-12c3-48ad-a2f3",
+      "path": "48ab-ffac-313a-7708::4906-12c3-48ad-a2f3::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "48ab-ffac-313a-7708::1139-624c-0580-9f13"
+      }
+    }
+  },
+  {
+    "name": "Grey Slayer Pack",
+    "entryId": "0171-c81f-3045-617e",
+    "path": "0171-c81f-3045-617e::9a43-13b5-bd92-d8be",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 145,
+    "baseCost": 37,
+    "models": [
+      {
+        "name": "Huscarl",
+        "entryId": "6117-7e9b-4647-18d7",
+        "path": "0171-c81f-3045-617e::6117-7e9b-4647-18d7",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      },
+      {
+        "name": "Grey Slayer",
+        "entryId": "22a4-4fe2-f256-c5bf",
+        "path": "0171-c81f-3045-617e::22a4-4fe2-f256-c5bf",
+        "cost": 12,
+        "min": 9,
+        "max": 19,
+        "defaultWargear": []
+      }
+    ],
+    "source": "space-wolves",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "f9c0-5047-e29e-ca4b",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "0171-c81f-3045-617e::f9c0-5047-e29e-ca4b::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "269d-19eb-653b-7fba",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "0171-c81f-3045-617e::269d-19eb-653b-7fba::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "9a43-13b5-bd92-d8be": 1,
+      "0171-c81f-3045-617e": 1,
+      "c9fe-41a5-f6c9-881f": 1,
+      "f804-d214-a195-58e7": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "6117-7e9b-4647-18d7": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 10,
+      "22a4-4fe2-f256-c5bf": 9
+    },
+    "prime": {
+      "linkId": "87b7-dc34-fec8-6bfb",
+      "path": "0171-c81f-3045-617e::87b7-dc34-fec8-6bfb::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "0171-c81f-3045-617e::d95a-4a9e-997f-4258"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Troops - Grey Slayer Packs Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "ancestor",
+            "field": "selections",
+            "value": 1,
+            "childId": "06b3-c35d-da74-de37"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Hvarl Red-Blade",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "1c16-1b01-9abd-5cb9",
+    "path": "1c16-1b01-9abd-5cb9::a681-0e72-a7fa-7bdd",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 210,
+    "baseCost": 210,
+    "models": [
+      {
+        "name": "Hvarl Red-Blade",
+        "entryId": "2f42-b626-976d-121c",
+        "path": "1c16-1b01-9abd-5cb9::2f42-b626-976d-121c",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "space-wolves",
+    "unitWargear": [
+      {
+        "name": "Hearth-splitter",
+        "entryId": "afa0-a9d5-abac-5f5e",
+        "path": "1c16-1b01-9abd-5cb9::afa0-a9d5-abac-5f5e"
+      },
+      {
+        "name": "Heavy bolter",
+        "entryId": "2a84-9208-ec4e-cf3c",
+        "targetId": "bc40-b14a-978e-0232",
+        "path": "1c16-1b01-9abd-5cb9::2a84-9208-ec4e-cf3c::bc40-b14a-978e-0232"
+      }
+    ],
+    "facts": {
+      "a681-0e72-a7fa-7bdd": 1,
+      "1c16-1b01-9abd-5cb9": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "f804-d214-a195-58e7": 1,
+      "2f42-b626-976d-121c": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "6770-eb3d-492a-91e4",
+      "path": "1c16-1b01-9abd-5cb9::6770-eb3d-492a-91e4::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "1c16-1b01-9abd-5cb9::e683-6906-482d-a162"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "1c16-1b01-9abd-5cb9::57d5-e479-aade-73c4",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Varagyr Wolf Guard Terminators",
+    "entryId": "874a-10f5-f218-8df0",
+    "path": "874a-10f5-f218-8df0::efd1-c611-841f-0cbb",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 250,
+    "baseCost": 70,
+    "models": [
+      {
+        "name": "Thegn",
+        "entryId": "e34d-2033-1311-7500",
+        "path": "874a-10f5-f218-8df0::e34d-2033-1311-7500",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      },
+      {
+        "name": "Varagyr",
+        "entryId": "59b5-a46c-5bff-2071",
+        "path": "874a-10f5-f218-8df0::59b5-a46c-5bff-2071",
+        "cost": 45,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": []
+      }
+    ],
+    "source": "space-wolves",
+    "facts": {
+      "efd1-c611-841f-0cbb": 1,
+      "874a-10f5-f218-8df0": 1,
+      "e734-034b-8652-ffca": 1,
+      "f804-d214-a195-58e7": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "e34d-2033-1311-7500": 1,
+      "5a95-e564-96b2-8dc9": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "59b5-a46c-5bff-2071": 4
+    },
+    "prime": {
+      "linkId": "b1f2-c805-7c8d-4b47",
+      "path": "874a-10f5-f218-8df0::b1f2-c805-7c8d-4b47::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "874a-10f5-f218-8df0::b7eb-fef3-6213-30c6"
+      }
+    }
+  },
+  {
+    "name": "Wolf-kin of Russ",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "676e-7dbf-8fa7-11e5",
+    "path": "676e-7dbf-8fa7-11e5::ce16-cc72-704a-bd2d",
+    "role": "Retinue",
+    "primaryCategory": "Retinue",
+    "points": 100,
+    "baseCost": 100,
+    "models": [
+      {
+        "name": "Freki",
+        "entryId": "dabd-53c3-171f-335b",
+        "path": "676e-7dbf-8fa7-11e5::dabd-53c3-171f-335b",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      },
+      {
+        "name": "Geri",
+        "entryId": "dae7-eb0b-c4d8-04e1",
+        "path": "676e-7dbf-8fa7-11e5::dae7-eb0b-c4d8-04e1",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "space-wolves",
+    "unitWargear": [
+      {
+        "name": "Tooth & Claw",
+        "entryId": "8144-76a6-dc56-f2b1",
+        "path": "676e-7dbf-8fa7-11e5::8144-76a6-dc56-f2b1"
+      }
+    ],
+    "facts": {
+      "ce16-cc72-704a-bd2d": 1,
+      "676e-7dbf-8fa7-11e5": 1,
+      "f804-d214-a195-58e7": 1,
+      "a38e-50ff-310f-f19e": 1,
+      "dabd-53c3-171f-335b": 1,
+      "594d-fa82-13cb-a345": 2,
+      "b980-187b-2b17-d635": 2,
+      "dae7-eb0b-c4d8-04e1": 1
+    },
+    "prime": {
+      "linkId": "ca33-2ab0-46d0-9f2d",
+      "path": "676e-7dbf-8fa7-11e5::ca33-2ab0-46d0-9f2d::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "676e-7dbf-8fa7-11e5::6ca6-9d4a-4309-bac1"
+      }
+    }
+  },
+  {
+    "name": "Caster of Runes",
+    "entryId": "ba33-40ec-d766-6408",
+    "path": "ba33-40ec-d766-6408::0fe3-fde9-4086-e3ab",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 110,
+    "baseCost": 110,
+    "models": [
+      {
+        "name": "Caster of Runes",
+        "entryId": "0ed7-1ca3-1052-c852",
+        "path": "ba33-40ec-d766-6408::0ed7-1ca3-1052-c852",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "space-wolves",
+    "unitWargear": [
+      {
+        "name": "Force staff",
+        "entryId": "1452-9cd2-598e-4702",
+        "targetId": "968c-969b-bf56-8bde",
+        "path": "ba33-40ec-d766-6408::1452-9cd2-598e-4702::968c-969b-bf56-8bde"
+      },
+      {
+        "name": "Frost axe",
+        "entryId": "6472-821b-ffa7-7b90",
+        "targetId": "5b5e-41a1-72b9-47c6",
+        "path": "ba33-40ec-d766-6408::6472-821b-ffa7-7b90::5b5e-41a1-72b9-47c6"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "d61a-5ced-1e04-1ff3",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "ba33-40ec-d766-6408::d61a-5ced-1e04-1ff3::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "84ec-a2cd-48cc-e000",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "ba33-40ec-d766-6408::84ec-a2cd-48cc-e000::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Bolt pistol",
+        "entryId": "9a70-4511-6e8e-4dab",
+        "targetId": "2942-f783-d627-33c5",
+        "path": "ba33-40ec-d766-6408::9a70-4511-6e8e-4dab::2942-f783-d627-33c5",
+        "groupPath": "ba33-40ec-d766-6408::562c-9873-666f-7f6e"
+      }
+    ],
+    "facts": {
+      "0fe3-fde9-4086-e3ab": 1,
+      "ba33-40ec-d766-6408": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "f804-d214-a195-58e7": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "0ed7-1ca3-1052-c852": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "a00e-e5ba-443b-ccdd",
+      "path": "ba33-40ec-d766-6408::a00e-e5ba-443b-ccdd::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "ba33-40ec-d766-6408::e570-6918-3be3-168c"
+      }
+    }
+  },
+  {
+    "name": "Caster Of Runes In Terminator Armour",
+    "entryId": "eb52-01f6-3a20-6da5",
+    "path": "eb52-01f6-3a20-6da5::2870-87cf-429b-841a",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 130,
+    "baseCost": 130,
+    "models": [
+      {
+        "name": "Caster of Runes in Terminator Armour",
+        "entryId": "1bc0-b025-4aeb-a7b7",
+        "path": "eb52-01f6-3a20-6da5::1bc0-b025-4aeb-a7b7",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Force staff",
+            "entryId": "c025-5518-4dd1-9231",
+            "targetId": "968c-969b-bf56-8bde",
+            "path": "eb52-01f6-3a20-6da5::c025-5518-4dd1-9231::968c-969b-bf56-8bde"
+          },
+          {
+            "name": "Frost axe",
+            "entryId": "a8e3-e85b-4420-a916",
+            "targetId": "1deb-afd8-f63d-0fe5",
+            "path": "eb52-01f6-3a20-6da5::a8e3-e85b-4420-a916::1deb-afd8-f63d-0fe5"
+          },
+          {
+            "name": "Cataphractii",
+            "entryId": "38a8-2683-c590-3c4b",
+            "path": "eb52-01f6-3a20-6da5::aeeb-e47d-0c06-b7ec::38a8-2683-c590-3c4b",
+            "groupPath": "eb52-01f6-3a20-6da5::aeeb-e47d-0c06-b7ec::170b-d9c0-e9d6-b314"
+          }
+        ]
+      }
+    ],
+    "source": "space-wolves",
+    "facts": {
+      "2870-87cf-429b-841a": 1,
+      "eb52-01f6-3a20-6da5": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "f804-d214-a195-58e7": 1,
+      "1bc0-b025-4aeb-a7b7": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "1e7d-9066-28d2-97a0": 1,
+      "c025-5518-4dd1-9231": 1,
+      "968c-969b-bf56-8bde": 1,
+      "a8e3-e85b-4420-a916": 1,
+      "1deb-afd8-f63d-0fe5": 1,
+      "38a8-2683-c590-3c4b": 1
+    },
+    "prime": {
+      "linkId": "4f87-ebbc-b028-c57f",
+      "path": "eb52-01f6-3a20-6da5::4f87-ebbc-b028-c57f::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "eb52-01f6-3a20-6da5::9d41-21ab-0c81-0bce"
+      }
+    }
+  },
+  {
+    "name": "Caster Of Runes With Jump Pack",
+    "entryId": "a485-f401-8e76-6d6e",
+    "path": "a485-f401-8e76-6d6e::cbdd-c447-4b61-8778",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 140,
+    "baseCost": 140,
+    "models": [
+      {
+        "name": "Caster of Runes with Jump Pack",
+        "entryId": "12b7-c8dc-4beb-9500",
+        "path": "a485-f401-8e76-6d6e::12b7-c8dc-4beb-9500",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Force staff",
+            "entryId": "6760-7081-4f6a-81e5",
+            "targetId": "968c-969b-bf56-8bde",
+            "path": "a485-f401-8e76-6d6e::6760-7081-4f6a-81e5::968c-969b-bf56-8bde"
+          },
+          {
+            "name": "Frost axe",
+            "entryId": "6da6-642c-48f1-a9a8",
+            "targetId": "1deb-afd8-f63d-0fe5",
+            "path": "a485-f401-8e76-6d6e::6da6-642c-48f1-a9a8::1deb-afd8-f63d-0fe5"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "9fc2-fcb7-4447-b637",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "a485-f401-8e76-6d6e::9fc2-fcb7-4447-b637::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "fb13-7248-4224-bc82",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "a485-f401-8e76-6d6e::fb13-7248-4224-bc82::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "d271-1a22-bf8c-b473",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "a485-f401-8e76-6d6e::d271-1a22-bf8c-b473::2942-f783-d627-33c5",
+            "groupPath": "a485-f401-8e76-6d6e::679a-2b92-246b-e02a"
+          }
+        ]
+      }
+    ],
+    "source": "space-wolves",
+    "facts": {
+      "cbdd-c447-4b61-8778": 1,
+      "a485-f401-8e76-6d6e": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "12b7-c8dc-4beb-9500": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "c504-9dfa-35d3-c98f": 1,
+      "6760-7081-4f6a-81e5": 1,
+      "968c-969b-bf56-8bde": 1,
+      "6da6-642c-48f1-a9a8": 1,
+      "1deb-afd8-f63d-0fe5": 1,
+      "9fc2-fcb7-4447-b637": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "fb13-7248-4224-bc82": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "d271-1a22-bf8c-b473": 1,
+      "2942-f783-d627-33c5": 1
+    },
+    "prime": {
+      "linkId": "13aa-2f41-9844-c7d6",
+      "path": "a485-f401-8e76-6d6e::13aa-2f41-9844-c7d6::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "a485-f401-8e76-6d6e::2ab0-bb60-0b88-dbf0"
+      }
+    }
+  },
+  {
+    "name": "Jorlund Hunter Pack",
+    "entryId": "5ab5-1196-7afa-9cfc",
+    "path": "5ab5-1196-7afa-9cfc::083c-9430-4a33-8233",
+    "role": "Support",
+    "primaryCategory": "Support",
+    "points": 95,
+    "baseCost": 27,
+    "models": [
+      {
+        "name": "Hunter",
+        "entryId": "6058-1643-456c-b94e",
+        "path": "5ab5-1196-7afa-9cfc::6058-1643-456c-b94e",
+        "cost": 17,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "c1bf-c349-44a7-b3ab",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "5ab5-1196-7afa-9cfc::c1bf-c349-44a7-b3ab::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "a8ea-418b-4881-949f",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "5ab5-1196-7afa-9cfc::a8ea-418b-4881-949f::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Hand flamer",
+            "entryId": "7733-752c-9219-58e7",
+            "targetId": "9322-09ed-abec-6e13",
+            "path": "5ab5-1196-7afa-9cfc::7733-752c-9219-58e7::9322-09ed-abec-6e13",
+            "groupPath": "5ab5-1196-7afa-9cfc::5c40-1259-9a42-beb1"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "3ba3-3239-49ce-b26e",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "5ab5-1196-7afa-9cfc::3ba3-3239-49ce-b26e::78f4-4967-2896-c3a5",
+            "groupPath": "5ab5-1196-7afa-9cfc::23fc-b2e9-cc11-3d24"
+          }
+        ]
+      },
+      {
+        "name": "Hunt-master",
+        "entryId": "b8c2-7a1c-47a8-818d",
+        "path": "5ab5-1196-7afa-9cfc::b8c2-7a1c-47a8-818d",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "0fc2-b622-4615-b462",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "5ab5-1196-7afa-9cfc::0fc2-b622-4615-b462::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "db10-5719-4026-9378",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "5ab5-1196-7afa-9cfc::db10-5719-4026-9378::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Hand flamer",
+            "entryId": "681f-fb3b-408c-a7bb",
+            "targetId": "9322-09ed-abec-6e13",
+            "path": "5ab5-1196-7afa-9cfc::681f-fb3b-408c-a7bb::9322-09ed-abec-6e13",
+            "groupPath": "5ab5-1196-7afa-9cfc::f50f-14c1-4e33-ad82"
+          }
+        ]
+      }
+    ],
+    "source": "space-wolves",
+    "facts": {
+      "083c-9430-4a33-8233": 1,
+      "5ab5-1196-7afa-9cfc": 1,
+      "345f-9ba6-9b02-ed5c": 1,
+      "6058-1643-456c-b94e": 4,
+      "594d-fa82-13cb-a345": 5,
+      "c1bf-c349-44a7-b3ab": 4,
+      "60e4-ca33-2e68-9afc": 5,
+      "a8ea-418b-4881-949f": 4,
+      "fa20-82bc-c7de-9e97": 5,
+      "7733-752c-9219-58e7": 4,
+      "9322-09ed-abec-6e13": 5,
+      "3ba3-3239-49ce-b26e": 4,
+      "78f4-4967-2896-c3a5": 4,
+      "b8c2-7a1c-47a8-818d": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "0fc2-b622-4615-b462": 1,
+      "db10-5719-4026-9378": 1,
+      "681f-fb3b-408c-a7bb": 1
+    },
+    "prime": {
+      "linkId": "7cbb-dbf3-bc09-90ed",
+      "path": "5ab5-1196-7afa-9cfc::7cbb-dbf3-bc09-90ed::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "5ab5-1196-7afa-9cfc::57ce-92cf-7803-b7d8"
+      }
+    }
+  },
+  {
+    "name": "Mounted Caster Of Runes",
+    "entryId": "33f1-3213-0cc4-df63",
+    "path": "33f1-3213-0cc4-df63::f592-7632-4c97-b1a7",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 150,
+    "baseCost": 150,
+    "models": [
+      {
+        "name": "Outrider Caster of Runes",
+        "entryId": "e8c0-82fa-4d4c-9573",
+        "path": "33f1-3213-0cc4-df63::e8c0-82fa-4d4c-9573",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Force staff",
+            "entryId": "24d6-8ce0-4466-b061",
+            "targetId": "968c-969b-bf56-8bde",
+            "path": "33f1-3213-0cc4-df63::24d6-8ce0-4466-b061::968c-969b-bf56-8bde"
+          },
+          {
+            "name": "Frost axe",
+            "entryId": "8d49-7082-4e71-8e60",
+            "targetId": "1deb-afd8-f63d-0fe5",
+            "path": "33f1-3213-0cc4-df63::8d49-7082-4e71-8e60::1deb-afd8-f63d-0fe5"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "e92a-1b30-4c8e-bca4",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "33f1-3213-0cc4-df63::e92a-1b30-4c8e-bca4::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "12b0-b882-4f1f-a4e7",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "33f1-3213-0cc4-df63::12b0-b882-4f1f-a4e7::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Outrider",
+            "entryId": "4f20-9a87-8334-9f26",
+            "path": "33f1-3213-0cc4-df63::bc02-7f7a-d38d-661a::4f20-9a87-8334-9f26",
+            "groupPath": "33f1-3213-0cc4-df63::bc02-7f7a-d38d-661a::9089-07e5-3653-84b6"
+          },
+          {
+            "name": "Twin bolter",
+            "entryId": "afda-c212-46c5-a0ef",
+            "targetId": "222f-82cb-05a2-f8f1",
+            "path": "33f1-3213-0cc4-df63::afda-c212-46c5-a0ef::222f-82cb-05a2-f8f1",
+            "groupPath": "33f1-3213-0cc4-df63::43ee-9347-4cf3-8a9a"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "0f19-a711-cc3b-e1fd",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "33f1-3213-0cc4-df63::0f19-a711-cc3b-e1fd::2942-f783-d627-33c5",
+            "groupPath": "33f1-3213-0cc4-df63::5392-c4c7-c010-79fd"
+          },
+          {
+            "name": "Heavy bolter",
+            "entryId": "c5a1-669e-4390-af43",
+            "targetId": "bc40-b14a-978e-0232",
+            "path": "33f1-3213-0cc4-df63::c5a1-669e-4390-af43::bc40-b14a-978e-0232",
+            "groupPath": "33f1-3213-0cc4-df63::724b-f221-4679-822d"
+          }
+        ]
+      }
+    ],
+    "source": "space-wolves",
+    "facts": {
+      "f592-7632-4c97-b1a7": 1,
+      "33f1-3213-0cc4-df63": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "e8c0-82fa-4d4c-9573": 1,
+      "a073-2d4a-5bed-123e": 1,
+      "9871-cb62-5283-2216": 1,
+      "24d6-8ce0-4466-b061": 1,
+      "968c-969b-bf56-8bde": 1,
+      "8d49-7082-4e71-8e60": 1,
+      "1deb-afd8-f63d-0fe5": 1,
+      "e92a-1b30-4c8e-bca4": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "12b0-b882-4f1f-a4e7": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "4f20-9a87-8334-9f26": 1,
+      "afda-c212-46c5-a0ef": 1,
+      "222f-82cb-05a2-f8f1": 1,
+      "0f19-a711-cc3b-e1fd": 1,
+      "2942-f783-d627-33c5": 1,
+      "c5a1-669e-4390-af43": 1,
+      "bc40-b14a-978e-0232": 1
+    },
+    "prime": {
+      "linkId": "5cfc-e516-baf1-be46",
+      "path": "33f1-3213-0cc4-df63::5cfc-e516-baf1-be46::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "33f1-3213-0cc4-df63::deef-016f-db2d-3b0f"
+      }
+    }
+  },
+  {
+    "name": "Fenrisian Wolf Pack",
+    "entryId": "52cd-b415-331f-c1f2",
+    "path": "52cd-b415-331f-c1f2::3179-ad73-4373-bc5c",
+    "role": "Retinue",
+    "primaryCategory": "Retinue",
+    "points": 10,
+    "baseCost": 1,
+    "models": [
+      {
+        "name": "Fenrisian Wolf",
+        "entryId": "b585-20b3-40b6-af46",
+        "path": "52cd-b415-331f-c1f2::b585-20b3-40b6-af46",
+        "cost": 9,
+        "min": 1,
+        "max": 5,
+        "defaultWargear": [
+          {
+            "name": "Wolf teeth and claws",
+            "entryId": "d27d-925e-f07e-0954",
+            "path": "52cd-b415-331f-c1f2::d27d-925e-f07e-0954"
+          }
+        ]
+      }
+    ],
+    "source": "space-wolves",
+    "facts": {
+      "3179-ad73-4373-bc5c": 1,
+      "52cd-b415-331f-c1f2": 1,
+      "a38e-50ff-310f-f19e": 1,
+      "b585-20b3-40b6-af46": 1,
+      "594d-fa82-13cb-a345": 1,
+      "f4ba-00e5-3d2e-eaac": 1,
+      "d27d-925e-f07e-0954": 1
+    },
+    "prime": {
+      "linkId": "f34a-727d-533e-828d",
+      "path": "52cd-b415-331f-c1f2::f34a-727d-533e-828d::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "52cd-b415-331f-c1f2::16bb-7ea3-9216-2985"
+      }
+    }
+  },
+  {
+    "name": "Speaker Of The Dead",
+    "entryId": "5728-31fc-8584-a01f",
+    "path": "5728-31fc-8584-a01f::9db5-7da3-4df4-b9c0",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 100,
+    "baseCost": 100,
+    "models": [
+      {
+        "name": "Speaker of the Dead",
+        "entryId": "ccd7-9485-4759-aa84",
+        "path": "5728-31fc-8584-a01f::ccd7-9485-4759-aa84",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Crozius arcanum",
+            "entryId": "d329-3fd3-4639-9085",
+            "targetId": "4da8-c2aa-1380-9825",
+            "path": "5728-31fc-8584-a01f::d329-3fd3-4639-9085::4da8-c2aa-1380-9825"
+          },
+          {
+            "name": "Narthecium",
+            "entryId": "4275-0330-4e4d-b790",
+            "targetId": "a7bb-ae7f-3ef2-90d1",
+            "path": "5728-31fc-8584-a01f::4275-0330-4e4d-b790::a7bb-ae7f-3ef2-90d1"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "7fb3-8af8-49ba-8431",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "5728-31fc-8584-a01f::7fb3-8af8-49ba-8431::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "e21d-cb08-432e-ba3c",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "5728-31fc-8584-a01f::e21d-cb08-432e-ba3c::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "993c-2f6f-a1cb-5b66",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "5728-31fc-8584-a01f::993c-2f6f-a1cb-5b66::2942-f783-d627-33c5",
+            "groupPath": "5728-31fc-8584-a01f::ce9a-c2e4-7140-082f"
+          }
+        ]
+      }
+    ],
+    "source": "space-wolves",
+    "facts": {
+      "9db5-7da3-4df4-b9c0": 1,
+      "5728-31fc-8584-a01f": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "ccd7-9485-4759-aa84": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "d329-3fd3-4639-9085": 1,
+      "4da8-c2aa-1380-9825": 1,
+      "4275-0330-4e4d-b790": 1,
+      "a7bb-ae7f-3ef2-90d1": 1,
+      "7fb3-8af8-49ba-8431": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "e21d-cb08-432e-ba3c": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "993c-2f6f-a1cb-5b66": 1,
+      "2942-f783-d627-33c5": 1
+    },
+    "prime": {
+      "linkId": "70ee-8fb8-4921-d179",
+      "path": "5728-31fc-8584-a01f::70ee-8fb8-4921-d179::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "5728-31fc-8584-a01f::c452-a49c-094f-8a39"
+      }
+    }
+  },
+  {
+    "name": "Speaker Of The Dead In Terminator Armour",
+    "entryId": "14f3-17cf-117e-a255",
+    "path": "14f3-17cf-117e-a255::c1ed-59b1-4d25-8cac",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 120,
+    "baseCost": 120,
+    "models": [
+      {
+        "name": "Speaker Of The Dead In Terminator Armour",
+        "entryId": "470b-934a-48c2-8b27",
+        "path": "14f3-17cf-117e-a255::470b-934a-48c2-8b27",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Crozius arcanum",
+            "entryId": "e235-e37e-4d47-a006",
+            "targetId": "4da8-c2aa-1380-9825",
+            "path": "14f3-17cf-117e-a255::e235-e37e-4d47-a006::4da8-c2aa-1380-9825"
+          },
+          {
+            "name": "Narthecium",
+            "entryId": "714c-d6dc-404e-a64f",
+            "targetId": "a7bb-ae7f-3ef2-90d1",
+            "path": "14f3-17cf-117e-a255::714c-d6dc-404e-a64f::a7bb-ae7f-3ef2-90d1"
+          },
+          {
+            "name": "Cataphractii",
+            "entryId": "38a8-2683-c590-3c4b",
+            "path": "14f3-17cf-117e-a255::0b6e-b6c2-f9c0-5798::38a8-2683-c590-3c4b",
+            "groupPath": "14f3-17cf-117e-a255::0b6e-b6c2-f9c0-5798::170b-d9c0-e9d6-b314"
+          },
+          {
+            "name": "Combi-bolter",
+            "entryId": "20bd-64b6-08fa-7705",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "14f3-17cf-117e-a255::20bd-64b6-08fa-7705::042d-9e60-db9e-c147",
+            "groupPath": "14f3-17cf-117e-a255::a35d-6c3d-1934-e1b7::f335-622e-6b0a-6b08"
+          }
+        ]
+      }
+    ],
+    "source": "space-wolves",
+    "facts": {
+      "c1ed-59b1-4d25-8cac": 1,
+      "14f3-17cf-117e-a255": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "470b-934a-48c2-8b27": 1,
+      "1e7d-9066-28d2-97a0": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "e235-e37e-4d47-a006": 1,
+      "4da8-c2aa-1380-9825": 1,
+      "714c-d6dc-404e-a64f": 1,
+      "a7bb-ae7f-3ef2-90d1": 1,
+      "38a8-2683-c590-3c4b": 1,
+      "20bd-64b6-08fa-7705": 1,
+      "042d-9e60-db9e-c147": 1
+    },
+    "prime": {
+      "linkId": "86c3-8c55-031c-b33a",
+      "path": "14f3-17cf-117e-a255::86c3-8c55-031c-b33a::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "14f3-17cf-117e-a255::78c2-82b1-d82a-ed4f"
+      }
+    }
+  },
+  {
+    "name": "Mounted Speaker Of The Dead",
+    "entryId": "b795-ec81-8e34-fc91",
+    "path": "b795-ec81-8e34-fc91::a4af-75ac-42a8-a904",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 130,
+    "baseCost": 130,
+    "models": [
+      {
+        "name": "Outrider Speaker of the Dead",
+        "entryId": "9266-0c4a-4f48-81d6",
+        "path": "b795-ec81-8e34-fc91::9266-0c4a-4f48-81d6",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "4b34-06fc-4185-b860",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "b795-ec81-8e34-fc91::4b34-06fc-4185-b860::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Crozius arcanum",
+            "entryId": "8443-618c-4fc4-8c1c",
+            "targetId": "4da8-c2aa-1380-9825",
+            "path": "b795-ec81-8e34-fc91::8443-618c-4fc4-8c1c::4da8-c2aa-1380-9825"
+          },
+          {
+            "name": "Narthecium",
+            "entryId": "c65d-5c7d-4609-902c",
+            "targetId": "a7bb-ae7f-3ef2-90d1",
+            "path": "b795-ec81-8e34-fc91::c65d-5c7d-4609-902c::a7bb-ae7f-3ef2-90d1"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "9e94-ea16-4b5c-9507",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "b795-ec81-8e34-fc91::9e94-ea16-4b5c-9507::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "8ce7-9222-4321-b8fe",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "b795-ec81-8e34-fc91::8ce7-9222-4321-b8fe::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Outrider",
+            "entryId": "4f20-9a87-8334-9f26",
+            "path": "b795-ec81-8e34-fc91::1fbc-8c29-1fc2-2963::4f20-9a87-8334-9f26",
+            "groupPath": "b795-ec81-8e34-fc91::1fbc-8c29-1fc2-2963::9089-07e5-3653-84b6"
+          },
+          {
+            "name": "Twin bolter",
+            "entryId": "4598-115b-4036-b1ef",
+            "targetId": "222f-82cb-05a2-f8f1",
+            "path": "b795-ec81-8e34-fc91::4598-115b-4036-b1ef::222f-82cb-05a2-f8f1",
+            "groupPath": "b795-ec81-8e34-fc91::1676-9cc3-47c6-b3d5"
+          },
+          {
+            "name": "Heavy bolter",
+            "entryId": "6ae7-e752-abad-cb74",
+            "targetId": "bc40-b14a-978e-0232",
+            "path": "b795-ec81-8e34-fc91::6ae7-e752-abad-cb74::bc40-b14a-978e-0232",
+            "groupPath": "b795-ec81-8e34-fc91::cd5e-cddf-7306-06f6"
+          }
+        ]
+      }
+    ],
+    "source": "space-wolves",
+    "facts": {
+      "a4af-75ac-42a8-a904": 1,
+      "b795-ec81-8e34-fc91": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "9266-0c4a-4f48-81d6": 1,
+      "a073-2d4a-5bed-123e": 1,
+      "9871-cb62-5283-2216": 1,
+      "4b34-06fc-4185-b860": 1,
+      "2942-f783-d627-33c5": 1,
+      "8443-618c-4fc4-8c1c": 1,
+      "4da8-c2aa-1380-9825": 1,
+      "c65d-5c7d-4609-902c": 1,
+      "a7bb-ae7f-3ef2-90d1": 1,
+      "9e94-ea16-4b5c-9507": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "8ce7-9222-4321-b8fe": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "4f20-9a87-8334-9f26": 1,
+      "4598-115b-4036-b1ef": 1,
+      "222f-82cb-05a2-f8f1": 1,
+      "6ae7-e752-abad-cb74": 1,
+      "bc40-b14a-978e-0232": 1
+    },
+    "prime": {
+      "linkId": "5f67-bc5c-7ab2-2852",
+      "path": "b795-ec81-8e34-fc91::5f67-bc5c-7ab2-2852::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "b795-ec81-8e34-fc91::4807-3634-39e8-ba69"
+      }
+    }
+  },
+  {
+    "name": "Inductii Squad",
+    "entryId": "dabe-5c4c-f981-16fa",
+    "path": "dabe-5c4c-f981-16fa::3ade-f63f-41e2-9a99",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 100,
+    "baseCost": 10,
+    "models": [
+      {
+        "name": "Inductii",
+        "entryId": "e023-9b60-4a25-8933",
+        "path": "dabe-5c4c-f981-16fa::e023-9b60-4a25-8933",
+        "cost": 9,
+        "min": 10,
+        "max": 20,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "9391-793c-40dc-bd38",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "dabe-5c4c-f981-16fa::9391-793c-40dc-bd38::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "25bb-17f9-41ce-bdae",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "dabe-5c4c-f981-16fa::25bb-17f9-41ce-bdae::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "798e-3452-4fd9-b759",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "dabe-5c4c-f981-16fa::798e-3452-4fd9-b759::78f4-4967-2896-c3a5",
+            "groupPath": "dabe-5c4c-f981-16fa::a156-4022-4211-a366"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "3f5b-1c02-429b-9280",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "dabe-5c4c-f981-16fa::3f5b-1c02-429b-9280::2942-f783-d627-33c5",
+            "groupPath": "dabe-5c4c-f981-16fa::5631-2fd6-4d4e-b4e3"
+          }
+        ]
+      }
+    ],
+    "source": "space-wolves",
+    "facts": {
+      "3ade-f63f-41e2-9a99": 1,
+      "dabe-5c4c-f981-16fa": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "e023-9b60-4a25-8933": 10,
+      "594d-fa82-13cb-a345": 10,
+      "9391-793c-40dc-bd38": 10,
+      "60e4-ca33-2e68-9afc": 10,
+      "25bb-17f9-41ce-bdae": 10,
+      "fa20-82bc-c7de-9e97": 10,
+      "798e-3452-4fd9-b759": 10,
+      "78f4-4967-2896-c3a5": 10,
+      "3f5b-1c02-429b-9280": 10,
+      "2942-f783-d627-33c5": 10
+    }
+  }
+]

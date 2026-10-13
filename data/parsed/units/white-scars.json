@@ -1,0 +1,1055 @@
+[
+  {
+    "name": "Jaghatai Khan",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "c408-52f1-b632-4c82",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "0fd4-5d93-4678-4064",
+    "path": "0fd4-5d93-4678-4064::8192-47ac-99f9-73e9",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 440,
+    "baseCost": 440,
+    "models": [
+      {
+        "name": "Jaghatai Khan",
+        "entryId": "33f0-649c-8325-7804",
+        "path": "0fd4-5d93-4678-4064::33f0-649c-8325-7804",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Storm's Voice",
+            "entryId": "0838-482c-85f1-dd80",
+            "path": "0fd4-5d93-4678-4064::0838-482c-85f1-dd80"
+          },
+          {
+            "name": "The White Tiger Dao",
+            "entryId": "3352-3588-07e7-53f7",
+            "path": "0fd4-5d93-4678-4064::3352-3588-07e7-53f7"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "375e-2d82-ec34-3355",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "0fd4-5d93-4678-4064::375e-2d82-ec34-3355::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "e7ef-5615-0eec-bd85",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "0fd4-5d93-4678-4064::e7ef-5615-0eec-bd85::fa20-82bc-c7de-9e97"
+          }
+        ]
+      }
+    ],
+    "source": "white-scars",
+    "facts": {
+      "8192-47ac-99f9-73e9": 1,
+      "0fd4-5d93-4678-4064": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "22ee-7208-4089-b005": 1,
+      "ad95-5dc4-7b15-8ff3": 1,
+      "33f0-649c-8325-7804": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1,
+      "0838-482c-85f1-dd80": 1,
+      "3352-3588-07e7-53f7": 1,
+      "375e-2d82-ec34-3355": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "e7ef-5615-0eec-bd85": 1,
+      "fa20-82bc-c7de-9e97": 1
+    }
+  },
+  {
+    "name": "Qin Xa",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "c408-52f1-b632-4c82",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "aef2-d55a-ceca-ef8e",
+    "path": "aef2-d55a-ceca-ef8e::0935-9158-92d0-5528",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 220,
+    "baseCost": 220,
+    "models": [
+      {
+        "name": "Qin Xa",
+        "entryId": "3612-7539-b8a1-ac02",
+        "path": "aef2-d55a-ceca-ef8e::3612-7539-b8a1-ac02",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "The Tails of the Dragon",
+            "entryId": "aefb-47ab-00a4-54e0",
+            "path": "aef2-d55a-ceca-ef8e::aefb-47ab-00a4-54e0"
+          }
+        ]
+      }
+    ],
+    "source": "white-scars",
+    "facts": {
+      "0935-9158-92d0-5528": 1,
+      "aef2-d55a-ceca-ef8e": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "ad95-5dc4-7b15-8ff3": 1,
+      "3612-7539-b8a1-ac02": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1,
+      "aefb-47ab-00a4-54e0": 1
+    },
+    "prime": {
+      "linkId": "ac65-30bd-4104-82a4",
+      "path": "aef2-d55a-ceca-ef8e::ac65-30bd-4104-82a4::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "aef2-d55a-ceca-ef8e::3097-7bdd-4af6-aa12"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "aef2-d55a-ceca-ef8e::38d6-9dec-50ba-c18c",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Stormseer",
+    "entryId": "613c-ffd0-7238-a10c",
+    "path": "613c-ffd0-7238-a10c::5123-b5ea-c6dc-7bb9",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 95,
+    "baseCost": 95,
+    "models": [
+      {
+        "name": "Stormseer",
+        "entryId": "c45b-d7b8-0dfd-3dbe",
+        "path": "613c-ffd0-7238-a10c::c45b-d7b8-0dfd-3dbe",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Krak grenades",
+            "entryId": "0593-a4a1-f233-03f7",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "613c-ffd0-7238-a10c::0593-a4a1-f233-03f7::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Force staff",
+            "entryId": "7013-8374-a6e1-9eb5",
+            "targetId": "968c-969b-bf56-8bde",
+            "path": "613c-ffd0-7238-a10c::7013-8374-a6e1-9eb5::968c-969b-bf56-8bde"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "d6a5-fd6b-ef6d-b382",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "613c-ffd0-7238-a10c::d6a5-fd6b-ef6d-b382::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "787f-d535-2b74-0515",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "613c-ffd0-7238-a10c::787f-d535-2b74-0515::2942-f783-d627-33c5",
+            "groupPath": "613c-ffd0-7238-a10c::52a2-fedd-8882-f648"
+          }
+        ]
+      }
+    ],
+    "source": "white-scars",
+    "facts": {
+      "5123-b5ea-c6dc-7bb9": 1,
+      "613c-ffd0-7238-a10c": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "ad95-5dc4-7b15-8ff3": 1,
+      "c45b-d7b8-0dfd-3dbe": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "0593-a4a1-f233-03f7": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "7013-8374-a6e1-9eb5": 1,
+      "968c-969b-bf56-8bde": 1,
+      "d6a5-fd6b-ef6d-b382": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "787f-d535-2b74-0515": 1,
+      "2942-f783-d627-33c5": 1
+    },
+    "prime": {
+      "linkId": "5307-8da0-4a43-aff1",
+      "path": "613c-ffd0-7238-a10c::5307-8da0-4a43-aff1::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "613c-ffd0-7238-a10c::5ed8-a245-4644-9682"
+      }
+    }
+  },
+  {
+    "name": "Hibou Khan",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "c408-52f1-b632-4c82",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "237b-ac58-1954-957e",
+    "path": "237b-ac58-1954-957e::fd81-80fc-3d80-5f8b",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 165,
+    "baseCost": 165,
+    "models": [
+      {
+        "name": "Hibou Khan",
+        "entryId": "ea88-3b4e-ddd8-57fa",
+        "path": "237b-ac58-1954-957e::ea88-3b4e-ddd8-57fa",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "The Breath of the Storm",
+            "entryId": "7e90-dcea-eaec-23a5",
+            "path": "237b-ac58-1954-957e::7e90-dcea-eaec-23a5"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "9a13-08dd-00ff-4197",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "237b-ac58-1954-957e::9a13-08dd-00ff-4197::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "11c8-35f2-c19a-4826",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "237b-ac58-1954-957e::11c8-35f2-c19a-4826::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "0e78-07e7-2410-0892",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "237b-ac58-1954-957e::0e78-07e7-2410-0892::fa20-82bc-c7de-9e97"
+          }
+        ]
+      }
+    ],
+    "source": "white-scars",
+    "officerOfTheLine": 2,
+    "facts": {
+      "fd81-80fc-3d80-5f8b": 1,
+      "237b-ac58-1954-957e": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "901a-6b71-7a29-4597": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "ad95-5dc4-7b15-8ff3": 1,
+      "ea88-3b4e-ddd8-57fa": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1,
+      "7e90-dcea-eaec-23a5": 1,
+      "9a13-08dd-00ff-4197": 1,
+      "2942-f783-d627-33c5": 1,
+      "11c8-35f2-c19a-4826": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "0e78-07e7-2410-0892": 1,
+      "fa20-82bc-c7de-9e97": 1
+    },
+    "prime": {
+      "linkId": "7203-78d7-4ee0-8f16",
+      "path": "237b-ac58-1954-957e::7203-78d7-4ee0-8f16::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "237b-ac58-1954-957e::1e71-f3e9-4fda-a02a"
+      }
+    }
+  },
+  {
+    "name": "Golden Keshig",
+    "entryId": "37a0-e9fb-e17c-cd83",
+    "path": "37a0-e9fb-e17c-cd83::fa6f-2652-34c9-2ea2",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 140,
+    "baseCost": 60,
+    "models": [
+      {
+        "name": "Keshig Rider",
+        "entryId": "3c80-c6ab-8fbb-79f1",
+        "path": "37a0-e9fb-e17c-cd83::3c80-c6ab-8fbb-79f1",
+        "cost": 40,
+        "min": 2,
+        "max": 5,
+        "defaultWargear": [
+          {
+            "name": "Kontos Power Lance",
+            "entryId": "d5b6-3335-4113-e8f1",
+            "targetId": "460b-3b52-f7d1-7d69",
+            "path": "37a0-e9fb-e17c-cd83::d5b6-3335-4113-e8f1::460b-3b52-f7d1-7d69"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "5030-ad9b-93c0-77bb",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "37a0-e9fb-e17c-cd83::5030-ad9b-93c0-77bb::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Scatterbolt Launcher",
+            "entryId": "79c2-9186-014d-692d",
+            "targetId": "c1c7-95ce-093a-3fee",
+            "path": "37a0-e9fb-e17c-cd83::79c2-9186-014d-692d::c1c7-95ce-093a-3fee"
+          },
+          {
+            "name": "Power sword",
+            "entryId": "8962-7ea7-faac-0527",
+            "targetId": "59a9-57c1-fff9-ca75",
+            "path": "37a0-e9fb-e17c-cd83::8962-7ea7-faac-0527::59a9-57c1-fff9-ca75",
+            "groupPath": "37a0-e9fb-e17c-cd83::f036-ea9b-0df5-1fb0"
+          }
+        ]
+      },
+      {
+        "name": "Keshig Champion",
+        "entryId": "6b0c-85a5-88ab-dc44",
+        "path": "37a0-e9fb-e17c-cd83::6b0c-85a5-88ab-dc44",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Kontos Power Lance",
+            "entryId": "f0a2-af0b-4797-3ef5",
+            "targetId": "460b-3b52-f7d1-7d69",
+            "path": "37a0-e9fb-e17c-cd83::f0a2-af0b-4797-3ef5::460b-3b52-f7d1-7d69"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "8c66-8af3-a989-aee0",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "37a0-e9fb-e17c-cd83::8c66-8af3-a989-aee0::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Scatterbolt Launcher",
+            "entryId": "8d66-7430-967a-cc95",
+            "targetId": "c1c7-95ce-093a-3fee",
+            "path": "37a0-e9fb-e17c-cd83::8d66-7430-967a-cc95::c1c7-95ce-093a-3fee"
+          },
+          {
+            "name": "Power sword",
+            "entryId": "44df-7add-7e5c-4f65",
+            "targetId": "59a9-57c1-fff9-ca75",
+            "path": "37a0-e9fb-e17c-cd83::44df-7add-7e5c-4f65::59a9-57c1-fff9-ca75",
+            "groupPath": "37a0-e9fb-e17c-cd83::43b5-60ae-ca09-6e89"
+          }
+        ]
+      }
+    ],
+    "source": "white-scars",
+    "facts": {
+      "fa6f-2652-34c9-2ea2": 1,
+      "37a0-e9fb-e17c-cd83": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "ad95-5dc4-7b15-8ff3": 1,
+      "3c80-c6ab-8fbb-79f1": 2,
+      "a073-2d4a-5bed-123e": 3,
+      "c504-9dfa-35d3-c98f": 3,
+      "d5b6-3335-4113-e8f1": 2,
+      "460b-3b52-f7d1-7d69": 3,
+      "5030-ad9b-93c0-77bb": 2,
+      "2942-f783-d627-33c5": 3,
+      "79c2-9186-014d-692d": 2,
+      "c1c7-95ce-093a-3fee": 3,
+      "8962-7ea7-faac-0527": 2,
+      "59a9-57c1-fff9-ca75": 3,
+      "6b0c-85a5-88ab-dc44": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "f0a2-af0b-4797-3ef5": 1,
+      "8c66-8af3-a989-aee0": 1,
+      "8d66-7430-967a-cc95": 1,
+      "44df-7add-7e5c-4f65": 1
+    },
+    "prime": {
+      "linkId": "35aa-cd6b-449f-9748",
+      "path": "37a0-e9fb-e17c-cd83::35aa-cd6b-449f-9748::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "37a0-e9fb-e17c-cd83::9f17-53ca-47a3-ba77"
+      }
+    }
+  },
+  {
+    "name": "Ebon Keshig",
+    "entryId": "795e-893e-346b-2ddb",
+    "path": "795e-893e-346b-2ddb::9f57-6829-5ec9-4d69",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 200,
+    "baseCost": 25,
+    "models": [
+      {
+        "name": "Kharash",
+        "entryId": "e752-362c-0701-bda7",
+        "path": "795e-893e-346b-2ddb::e752-362c-0701-bda7",
+        "cost": 35,
+        "min": 5,
+        "max": 10,
+        "defaultWargear": [
+          {
+            "name": "Power Glaive",
+            "entryId": "debb-4bd2-55be-1b74",
+            "targetId": "ac01-88cb-3832-1ef8",
+            "path": "795e-893e-346b-2ddb::debb-4bd2-55be-1b74::ac01-88cb-3832-1ef8",
+            "groupPath": "795e-893e-346b-2ddb::d428-7b77-8e7d-fa6c"
+          }
+        ]
+      }
+    ],
+    "source": "white-scars",
+    "facts": {
+      "9f57-6829-5ec9-4d69": 1,
+      "795e-893e-346b-2ddb": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "ad95-5dc4-7b15-8ff3": 1,
+      "e752-362c-0701-bda7": 5,
+      "594d-fa82-13cb-a345": 5,
+      "debb-4bd2-55be-1b74": 5,
+      "ac01-88cb-3832-1ef8": 5
+    },
+    "prime": {
+      "linkId": "849e-6508-4cfd-88d3",
+      "path": "795e-893e-346b-2ddb::849e-6508-4cfd-88d3::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "795e-893e-346b-2ddb::1bb5-76e8-4ec8-a6c2"
+      }
+    }
+  },
+  {
+    "name": "Kyzagan Assault Speeder",
+    "entryId": "2755-5fcf-4ecd-79e6",
+    "path": "2755-5fcf-4ecd-79e6::6efd-34c7-2212-1474",
+    "role": "Support",
+    "primaryCategory": "Support",
+    "points": 105,
+    "baseCost": 105,
+    "models": [
+      {
+        "name": "Kyzagan Assault Speeder",
+        "entryId": "0244-89d5-df79-9850",
+        "path": "2755-5fcf-4ecd-79e6::0244-89d5-df79-9850",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Kheres assault cannon",
+            "entryId": "7d84-f748-cf73-5c52",
+            "targetId": "11a5-70a9-9b14-10d3",
+            "path": "2755-5fcf-4ecd-79e6::7d84-f748-cf73-5c52::11a5-70a9-9b14-10d3"
+          },
+          {
+            "name": "Reaper autocannon",
+            "count": 2,
+            "entryId": "9601-2798-9344-0672",
+            "targetId": "196d-a0ea-a851-d09e",
+            "path": "2755-5fcf-4ecd-79e6::9601-2798-9344-0672::196d-a0ea-a851-d09e"
+          }
+        ]
+      }
+    ],
+    "source": "white-scars",
+    "facts": {
+      "6efd-34c7-2212-1474": 1,
+      "2755-5fcf-4ecd-79e6": 1,
+      "345f-9ba6-9b02-ed5c": 1,
+      "ad95-5dc4-7b15-8ff3": 1,
+      "0244-89d5-df79-9850": 1,
+      "a073-2d4a-5bed-123e": 1,
+      "c504-9dfa-35d3-c98f": 1,
+      "7d84-f748-cf73-5c52": 1,
+      "11a5-70a9-9b14-10d3": 1,
+      "9601-2798-9344-0672": 1,
+      "196d-a0ea-a851-d09e": 1
+    },
+    "prime": {
+      "linkId": "1968-74fe-4a94-9b31",
+      "path": "2755-5fcf-4ecd-79e6::1968-74fe-4a94-9b31::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "2755-5fcf-4ecd-79e6::6324-8ee8-4ae2-ac5b"
+      }
+    }
+  },
+  {
+    "name": "Falcon's Claws",
+    "entryId": "e6bb-8795-db5e-95e3",
+    "path": "e6bb-8795-db5e-95e3::50ec-3549-586e-6bdd",
+    "role": "Recon",
+    "primaryCategory": "Recon",
+    "points": 110,
+    "baseCost": 38,
+    "models": [
+      {
+        "name": "Falcon's Claw Champion",
+        "entryId": "6660-8360-a743-680f",
+        "path": "e6bb-8795-db5e-95e3::6660-8360-a743-680f",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "7221-8373-095c-53a4",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "e6bb-8795-db5e-95e3::7221-8373-095c-53a4::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "cea5-e8b1-1931-400d",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "e6bb-8795-db5e-95e3::cea5-e8b1-1931-400d::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Pair of lightning claws",
+            "entryId": "79ed-138f-bcd8-5319",
+            "targetId": "6754-24dd-5be0-26ff",
+            "path": "e6bb-8795-db5e-95e3::79ed-138f-bcd8-5319::6754-24dd-5be0-26ff",
+            "groupPath": "e6bb-8795-db5e-95e3::2a45-2dec-6bc3-f130"
+          }
+        ]
+      },
+      {
+        "name": "Falcon's Claw",
+        "entryId": "662c-33cb-13d1-483c",
+        "path": "e6bb-8795-db5e-95e3::662c-33cb-13d1-483c",
+        "cost": 18,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "1a7d-1713-cbad-ee52",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "e6bb-8795-db5e-95e3::1a7d-1713-cbad-ee52::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "2e29-c759-075f-2e93",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "e6bb-8795-db5e-95e3::2e29-c759-075f-2e93::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Pair of lightning claws",
+            "entryId": "2bb1-1be5-d4e9-5d67",
+            "targetId": "6754-24dd-5be0-26ff",
+            "path": "e6bb-8795-db5e-95e3::2bb1-1be5-d4e9-5d67::6754-24dd-5be0-26ff",
+            "groupPath": "e6bb-8795-db5e-95e3::164c-cb34-6993-9fa6"
+          }
+        ]
+      }
+    ],
+    "source": "white-scars",
+    "facts": {
+      "50ec-3549-586e-6bdd": 1,
+      "e6bb-8795-db5e-95e3": 1,
+      "ad95-5dc4-7b15-8ff3": 1,
+      "2b65-a3f2-620a-dc58": 1,
+      "6660-8360-a743-680f": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "f4ba-00e5-3d2e-eaac": 5,
+      "7221-8373-095c-53a4": 1,
+      "60e4-ca33-2e68-9afc": 5,
+      "cea5-e8b1-1931-400d": 1,
+      "fa20-82bc-c7de-9e97": 5,
+      "79ed-138f-bcd8-5319": 1,
+      "6754-24dd-5be0-26ff": 5,
+      "662c-33cb-13d1-483c": 4,
+      "1a7d-1713-cbad-ee52": 4,
+      "2e29-c759-075f-2e93": 4,
+      "2bb1-1be5-d4e9-5d67": 4
+    },
+    "prime": {
+      "linkId": "15b9-7c17-7494-c33b",
+      "path": "e6bb-8795-db5e-95e3::15b9-7c17-7494-c33b::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "e6bb-8795-db5e-95e3::b346-6875-480a-99a0"
+      }
+    }
+  },
+  {
+    "name": "Stormseer with Jump Pack",
+    "entryId": "6361-e0e3-65a2-591e",
+    "path": "6361-e0e3-65a2-591e::ebf6-f8fc-a45b-2799",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 115,
+    "baseCost": 115,
+    "models": [
+      {
+        "name": "Stormseer with Jump Pack",
+        "entryId": "861a-9f46-d3ed-b1b1",
+        "path": "6361-e0e3-65a2-591e::861a-9f46-d3ed-b1b1",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Krak grenades",
+            "entryId": "735e-78a4-82d6-6985",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "6361-e0e3-65a2-591e::735e-78a4-82d6-6985::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Force staff",
+            "entryId": "a431-2e3e-4ae2-47d9",
+            "targetId": "968c-969b-bf56-8bde",
+            "path": "6361-e0e3-65a2-591e::a431-2e3e-4ae2-47d9::968c-969b-bf56-8bde"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "2e7c-1a69-58c3-4585",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "6361-e0e3-65a2-591e::2e7c-1a69-58c3-4585::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "5200-ce7c-ba95-342c",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "6361-e0e3-65a2-591e::5200-ce7c-ba95-342c::2942-f783-d627-33c5",
+            "groupPath": "6361-e0e3-65a2-591e::90c1-ae11-cd05-b044"
+          }
+        ]
+      }
+    ],
+    "source": "white-scars",
+    "facts": {
+      "ebf6-f8fc-a45b-2799": 1,
+      "6361-e0e3-65a2-591e": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "ad95-5dc4-7b15-8ff3": 1,
+      "861a-9f46-d3ed-b1b1": 1,
+      "9871-cb62-5283-2216": 1,
+      "c504-9dfa-35d3-c98f": 1,
+      "594d-fa82-13cb-a345": 1,
+      "735e-78a4-82d6-6985": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "a431-2e3e-4ae2-47d9": 1,
+      "968c-969b-bf56-8bde": 1,
+      "2e7c-1a69-58c3-4585": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "5200-ce7c-ba95-342c": 1,
+      "2942-f783-d627-33c5": 1
+    },
+    "prime": {
+      "linkId": "49e0-f183-95df-b214",
+      "path": "6361-e0e3-65a2-591e::49e0-f183-95df-b214::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "6361-e0e3-65a2-591e::9661-158c-fd86-faec"
+      }
+    }
+  },
+  {
+    "name": "Mounted Stormseer",
+    "entryId": "6e66-86f5-5467-6b7c",
+    "path": "6e66-86f5-5467-6b7c::d929-8371-72d9-8cb4",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 125,
+    "baseCost": 125,
+    "models": [
+      {
+        "name": "Outrider Stormseer",
+        "entryId": "8ce5-7901-f912-277a",
+        "path": "6e66-86f5-5467-6b7c::8ce5-7901-f912-277a",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Krak grenades",
+            "entryId": "c575-dddb-20c1-ee06",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "6e66-86f5-5467-6b7c::c575-dddb-20c1-ee06::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Force staff",
+            "entryId": "9b07-e2e9-67ed-3fa3",
+            "targetId": "968c-969b-bf56-8bde",
+            "path": "6e66-86f5-5467-6b7c::9b07-e2e9-67ed-3fa3::968c-969b-bf56-8bde"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "142e-da7a-c2f2-931d",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "6e66-86f5-5467-6b7c::142e-da7a-c2f2-931d::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Outrider",
+            "entryId": "4f20-9a87-8334-9f26",
+            "path": "6e66-86f5-5467-6b7c::6561-3415-7a2f-bcc6::4f20-9a87-8334-9f26",
+            "groupPath": "6e66-86f5-5467-6b7c::6561-3415-7a2f-bcc6::9089-07e5-3653-84b6"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "7d24-9c47-4392-8af3",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "6e66-86f5-5467-6b7c::7d24-9c47-4392-8af3::2942-f783-d627-33c5",
+            "groupPath": "6e66-86f5-5467-6b7c::4953-0c6d-e4ba-3316"
+          },
+          {
+            "name": "Twin bolter",
+            "entryId": "8908-e888-d8c5-7825",
+            "targetId": "222f-82cb-05a2-f8f1",
+            "path": "6e66-86f5-5467-6b7c::8908-e888-d8c5-7825::222f-82cb-05a2-f8f1",
+            "groupPath": "6e66-86f5-5467-6b7c::d766-e7d7-e781-6016"
+          },
+          {
+            "name": "Heavy bolter",
+            "entryId": "1391-9fa3-5042-dafc",
+            "targetId": "bc40-b14a-978e-0232",
+            "path": "6e66-86f5-5467-6b7c::1391-9fa3-5042-dafc::bc40-b14a-978e-0232",
+            "groupPath": "6e66-86f5-5467-6b7c::5e59-6674-2d2d-4546"
+          }
+        ]
+      }
+    ],
+    "source": "white-scars",
+    "facts": {
+      "d929-8371-72d9-8cb4": 1,
+      "6e66-86f5-5467-6b7c": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "ad95-5dc4-7b15-8ff3": 1,
+      "8ce5-7901-f912-277a": 1,
+      "a073-2d4a-5bed-123e": 1,
+      "9871-cb62-5283-2216": 1,
+      "c575-dddb-20c1-ee06": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "9b07-e2e9-67ed-3fa3": 1,
+      "968c-969b-bf56-8bde": 1,
+      "142e-da7a-c2f2-931d": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "4f20-9a87-8334-9f26": 1,
+      "7d24-9c47-4392-8af3": 1,
+      "2942-f783-d627-33c5": 1,
+      "8908-e888-d8c5-7825": 1,
+      "222f-82cb-05a2-f8f1": 1,
+      "1391-9fa3-5042-dafc": 1,
+      "bc40-b14a-978e-0232": 1
+    },
+    "prime": {
+      "linkId": "9292-1bca-dbf3-46b7",
+      "path": "6e66-86f5-5467-6b7c::9292-1bca-dbf3-46b7::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "6e66-86f5-5467-6b7c::f73c-1928-8a78-1602"
+      }
+    }
+  },
+  {
+    "name": "Stormseer in Terminator Armour",
+    "entryId": "e166-3556-d622-2dcd",
+    "path": "e166-3556-d622-2dcd::f4d1-2dac-0a5b-c516",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 115,
+    "baseCost": 115,
+    "models": [
+      {
+        "name": "Stormseer in Terminator Armour",
+        "entryId": "1c43-00e6-ca68-344f",
+        "path": "e166-3556-d622-2dcd::1c43-00e6-ca68-344f",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Force staff",
+            "entryId": "aec7-5ca9-6a8b-6241",
+            "targetId": "968c-969b-bf56-8bde",
+            "path": "e166-3556-d622-2dcd::aec7-5ca9-6a8b-6241::968c-969b-bf56-8bde"
+          }
+        ]
+      }
+    ],
+    "source": "white-scars",
+    "unitWargear": [
+      {
+        "name": "Cataphractii",
+        "entryId": "891a-1a2e-ef17-f98e",
+        "path": "e166-3556-d622-2dcd::891a-1a2e-ef17-f98e",
+        "groupPath": "e166-3556-d622-2dcd::84b3-42fd-0f83-a92d"
+      }
+    ],
+    "facts": {
+      "f4d1-2dac-0a5b-c516": 1,
+      "e166-3556-d622-2dcd": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "ad95-5dc4-7b15-8ff3": 1,
+      "1c43-00e6-ca68-344f": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "1e7d-9066-28d2-97a0": 1,
+      "aec7-5ca9-6a8b-6241": 1,
+      "968c-969b-bf56-8bde": 1
+    },
+    "prime": {
+      "linkId": "af05-fe2c-6236-976b",
+      "path": "e166-3556-d622-2dcd::af05-fe2c-6236-976b::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "e166-3556-d622-2dcd::f79e-0724-8e10-058e"
+      }
+    }
+  },
+  {
+    "name": "Dark Sons of Death",
+    "entryId": "ec4e-16b6-8313-4ab3",
+    "path": "ec4e-16b6-8313-4ab3::d002-d1d6-c784-1f15",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 125,
+    "baseCost": 45,
+    "models": [
+      {
+        "name": "Dark Son",
+        "entryId": "1dc7-fc84-c17c-85d0",
+        "path": "ec4e-16b6-8313-4ab3::1dc7-fc84-c17c-85d0",
+        "cost": 20,
+        "min": 4,
+        "max": 14,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "98d7-7a1a-984e-8355",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "ec4e-16b6-8313-4ab3::98d7-7a1a-984e-8355::2942-f783-d627-33c5",
+            "groupPath": "ec4e-16b6-8313-4ab3::b992-3c89-e6e7-e40f"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "3196-aa0a-9b83-132e",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "ec4e-16b6-8313-4ab3::3196-aa0a-9b83-132e::78f4-4967-2896-c3a5",
+            "groupPath": "ec4e-16b6-8313-4ab3::1a0c-e25c-a177-3ce9"
+          }
+        ]
+      },
+      {
+        "name": "Death's Champion",
+        "entryId": "15fd-61b6-f9ad-9b46",
+        "path": "ec4e-16b6-8313-4ab3::15fd-61b6-f9ad-9b46",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Pair of lightning claws",
+            "entryId": "949c-ae23-394e-4e2c",
+            "targetId": "6754-24dd-5be0-26ff",
+            "path": "ec4e-16b6-8313-4ab3::949c-ae23-394e-4e2c::6754-24dd-5be0-26ff",
+            "groupPath": "ec4e-16b6-8313-4ab3::1650-6cf7-620d-0f8c"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "e8b0-1a7d-a350-12fb",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "ec4e-16b6-8313-4ab3::e8b0-1a7d-a350-12fb::2942-f783-d627-33c5",
+            "groupPath": "ec4e-16b6-8313-4ab3::c59f-f6c9-3cab-c141"
+          },
+          {
+            "name": "Chainsword (default)",
+            "entryId": "8751-a984-278c-fd14",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "ec4e-16b6-8313-4ab3::8751-a984-278c-fd14::78f4-4967-2896-c3a5",
+            "groupPath": "ec4e-16b6-8313-4ab3::3c9d-d3c2-007c-f042"
+          }
+        ]
+      }
+    ],
+    "source": "white-scars",
+    "unitWargear": [
+      {
+        "name": "Krak grenades",
+        "entryId": "dd0e-aece-a5e7-1324",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "ec4e-16b6-8313-4ab3::dd0e-aece-a5e7-1324::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "1295-b3d1-8a64-5469",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "ec4e-16b6-8313-4ab3::1295-b3d1-8a64-5469::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Rad grenades",
+        "entryId": "64d8-d7ad-920d-5180",
+        "targetId": "cd5f-1eff-df69-6bd2",
+        "path": "ec4e-16b6-8313-4ab3::64d8-d7ad-920d-5180::cd5f-1eff-df69-6bd2"
+      }
+    ],
+    "facts": {
+      "d002-d1d6-c784-1f15": 1,
+      "ec4e-16b6-8313-4ab3": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "ad95-5dc4-7b15-8ff3": 1,
+      "1dc7-fc84-c17c-85d0": 4,
+      "594d-fa82-13cb-a345": 5,
+      "c504-9dfa-35d3-c98f": 5,
+      "98d7-7a1a-984e-8355": 4,
+      "2942-f783-d627-33c5": 5,
+      "3196-aa0a-9b83-132e": 4,
+      "78f4-4967-2896-c3a5": 5,
+      "15fd-61b6-f9ad-9b46": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "949c-ae23-394e-4e2c": 1,
+      "6754-24dd-5be0-26ff": 1,
+      "e8b0-1a7d-a350-12fb": 1,
+      "8751-a984-278c-fd14": 1
+    },
+    "prime": {
+      "linkId": "ad21-ab1a-c1f4-1b76",
+      "path": "ec4e-16b6-8313-4ab3::ad21-ab1a-c1f4-1b76::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "ec4e-16b6-8313-4ab3::6973-ec86-3f86-4ad0"
+      }
+    }
+  },
+  {
+    "name": "Inductii Squad",
+    "entryId": "1d03-582d-35ba-8cc9",
+    "path": "1d03-582d-35ba-8cc9::5729-fd79-4bf5-a53b",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 100,
+    "baseCost": 10,
+    "models": [
+      {
+        "name": "Inductii",
+        "entryId": "9ef3-d988-4772-af59",
+        "path": "1d03-582d-35ba-8cc9::9ef3-d988-4772-af59",
+        "cost": 9,
+        "min": 10,
+        "max": 20,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "8c89-82d8-41c4-81c8",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "1d03-582d-35ba-8cc9::8c89-82d8-41c4-81c8::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "2802-e70e-49cc-8371",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "1d03-582d-35ba-8cc9::2802-e70e-49cc-8371::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "9cd6-94e3-478d-a7ed",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "1d03-582d-35ba-8cc9::9cd6-94e3-478d-a7ed::78f4-4967-2896-c3a5",
+            "groupPath": "1d03-582d-35ba-8cc9::c5a9-1caf-417a-9c45"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "2e79-0db1-4845-a7d8",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "1d03-582d-35ba-8cc9::2e79-0db1-4845-a7d8::2942-f783-d627-33c5",
+            "groupPath": "1d03-582d-35ba-8cc9::573b-6bea-41ec-b0ee"
+          }
+        ]
+      }
+    ],
+    "source": "white-scars",
+    "facts": {
+      "5729-fd79-4bf5-a53b": 1,
+      "1d03-582d-35ba-8cc9": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "9ef3-d988-4772-af59": 10,
+      "594d-fa82-13cb-a345": 10,
+      "8c89-82d8-41c4-81c8": 10,
+      "60e4-ca33-2e68-9afc": 10,
+      "2802-e70e-49cc-8371": 10,
+      "fa20-82bc-c7de-9e97": 10,
+      "9cd6-94e3-478d-a7ed": 10,
+      "78f4-4967-2896-c3a5": 10,
+      "2e79-0db1-4845-a7d8": 10,
+      "2942-f783-d627-33c5": 10
+    }
+  }
+]

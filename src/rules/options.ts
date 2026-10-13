@@ -7,7 +7,7 @@
  */
 
 import type { DetachmentDef, Force, PlacedDetachment, SlotDef } from '../types';
-import { cataloguesData, getChart, getUnitsForFaction, rulesData } from '../data/loader';
+import { cataloguesData, factionUnitsLoaded, getChart, getUnitsForFaction, rulesData } from '../data/loader';
 import { conditionsHold, type RuleCondition, type RuleConditionGroup, type RuleContext } from './evaluate';
 import { rosterCounts, type RosterCounts } from './context';
 import { allowanceFor, isDetachmentLocked } from './detachmentLimits';
@@ -35,7 +35,7 @@ function obtainableIds(faction: string): Set<string> {
   for (const choice of Object.values(rulesData.detachmentChoice)) {
     for (const id of [choice?.id, ...(choice?.categoryIds ?? [])]) if (id) ids.add(id);
   }
-  obtainableCache.set(faction, ids);
+  if (factionUnitsLoaded(faction)) obtainableCache.set(faction, ids);
   return ids;
 }
 

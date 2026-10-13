@@ -1,0 +1,1106 @@
+[
+  {
+    "name": "Skitarii Battle-Pilgrym Marshal",
+    "entryId": "423f-fa68-18c6-dea8",
+    "path": "423f-fa68-18c6-dea8::b9df-ff4a-dec5-2fb5",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 100,
+    "baseCost": 100,
+    "models": [
+      {
+        "name": "Skitarii Battle-Pilgrym Marshall",
+        "entryId": "5f99-f377-8379-bb33",
+        "path": "423f-fa68-18c6-dea8::5f99-f377-8379-bb33",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Auctorit sceptre",
+            "entryId": "f38e-36e3-34b8-8234",
+            "targetId": "2dc6-0a85-9ef2-c9ea",
+            "path": "423f-fa68-18c6-dea8::f38e-36e3-34b8-8234::2dc6-0a85-9ef2-c9ea",
+            "groupPath": "423f-fa68-18c6-dea8::da46-33a8-1dec-2845"
+          },
+          {
+            "name": "Voltlock handgun",
+            "entryId": "003d-b1b9-11dc-b92a",
+            "targetId": "6f52-c7a6-738b-e20a",
+            "path": "423f-fa68-18c6-dea8::003d-b1b9-11dc-b92a::6f52-c7a6-738b-e20a",
+            "groupPath": "423f-fa68-18c6-dea8::a253-ec82-6a15-7700"
+          }
+        ]
+      }
+    ],
+    "source": "skitarii-conclaves",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "d9db-da26-7458-375d",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "423f-fa68-18c6-dea8::d9db-da26-7458-375d::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "6692-0feb-d04b-578f",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "423f-fa68-18c6-dea8::6692-0feb-d04b-578f::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Acquisitor",
+        "entryId": "637f-8850-f6f5-6f6a",
+        "path": "423f-fa68-18c6-dea8::6375-80fd-dfed-c82d::637f-8850-f6f5-6f6a",
+        "groupPath": "423f-fa68-18c6-dea8::6375-80fd-dfed-c82d::cdc4-0bc4-89cb-3689"
+      }
+    ],
+    "facts": {
+      "b9df-ff4a-dec5-2fb5": 1,
+      "423f-fa68-18c6-dea8": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "5f99-f377-8379-bb33": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "f38e-36e3-34b8-8234": 1,
+      "2dc6-0a85-9ef2-c9ea": 1,
+      "003d-b1b9-11dc-b92a": 1,
+      "6f52-c7a6-738b-e20a": 1
+    },
+    "prime": {
+      "linkId": "bc8d-ef39-94cf-1129",
+      "path": "423f-fa68-18c6-dea8::bc8d-ef39-94cf-1129::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "93f7-d7db-d7f0-2146"
+      ],
+      "groupPrefixes": {
+        "93f7-d7db-d7f0-2146": "423f-fa68-18c6-dea8::9c88-e89b-c5a8-849f"
+      }
+    }
+  },
+  {
+    "name": "Skitarii Battle-Pilgrym Corpus",
+    "entryId": "18b6-6864-1121-9cd2",
+    "path": "18b6-6864-1121-9cd2::699d-12fb-f6eb-3822",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 100,
+    "baseCost": 30,
+    "models": [
+      {
+        "name": "Skitarii Ordinatus",
+        "entryId": "791c-5df9-be05-0a0d",
+        "path": "18b6-6864-1121-9cd2::791c-5df9-be05-0a0d",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Voltlock arquebus",
+            "entryId": "2500-b5ab-ff51-7813",
+            "targetId": "e3b6-1a1e-9837-343a",
+            "path": "18b6-6864-1121-9cd2::2500-b5ab-ff51-7813::e3b6-1a1e-9837-343a",
+            "groupPath": "18b6-6864-1121-9cd2::81dc-5721-520e-edd2"
+          }
+        ]
+      },
+      {
+        "name": "Skitarii Battle-Pigrym",
+        "entryId": "ddee-b4fb-12d7-cfbf",
+        "path": "18b6-6864-1121-9cd2::ddee-b4fb-12d7-cfbf",
+        "cost": 10,
+        "min": 7,
+        "max": 15,
+        "defaultWargear": [
+          {
+            "name": "Voltlock arquebus",
+            "entryId": "446e-1606-fe3f-85f9",
+            "targetId": "e3b6-1a1e-9837-343a",
+            "path": "18b6-6864-1121-9cd2::446e-1606-fe3f-85f9::e3b6-1a1e-9837-343a"
+          }
+        ]
+      }
+    ],
+    "source": "skitarii-conclaves",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "9c69-4635-0414-9de2",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "18b6-6864-1121-9cd2::9c69-4635-0414-9de2::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "0b15-411f-cbb6-c4b2",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "18b6-6864-1121-9cd2::0b15-411f-cbb6-c4b2::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Acquisitor",
+        "entryId": "637f-8850-f6f5-6f6a",
+        "path": "18b6-6864-1121-9cd2::c67f-6fec-b33f-d2c0::637f-8850-f6f5-6f6a",
+        "groupPath": "18b6-6864-1121-9cd2::c67f-6fec-b33f-d2c0::cdc4-0bc4-89cb-3689"
+      }
+    ],
+    "facts": {
+      "699d-12fb-f6eb-3822": 1,
+      "18b6-6864-1121-9cd2": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "791c-5df9-be05-0a0d": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 8,
+      "2500-b5ab-ff51-7813": 1,
+      "e3b6-1a1e-9837-343a": 8,
+      "ddee-b4fb-12d7-cfbf": 7,
+      "446e-1606-fe3f-85f9": 7
+    },
+    "prime": {
+      "linkId": "500f-7835-89ed-3c91",
+      "path": "18b6-6864-1121-9cd2::500f-7835-89ed-3c91::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "93f7-d7db-d7f0-2146"
+      ],
+      "groupPrefixes": {
+        "93f7-d7db-d7f0-2146": "18b6-6864-1121-9cd2::fd17-b1d8-3051-f2c1"
+      }
+    }
+  },
+  {
+    "name": "Bonepicker Host",
+    "entryId": "b6b8-47c2-c0a1-7ca0",
+    "path": "b6b8-47c2-c0a1-7ca0::2e2e-87d0-2624-eae6",
+    "role": "Support",
+    "primaryCategory": "Support",
+    "points": 50,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Bonepicker",
+        "entryId": "427d-0aa1-011c-14f6",
+        "path": "b6b8-47c2-c0a1-7ca0::427d-0aa1-011c-14f6",
+        "cost": 5,
+        "min": 10,
+        "max": 30,
+        "defaultWargear": [
+          {
+            "name": "Las-lock",
+            "entryId": "f8ff-6e5e-8dcf-3b26",
+            "targetId": "f8c0-734c-42a2-ab7b",
+            "path": "b6b8-47c2-c0a1-7ca0::f8ff-6e5e-8dcf-3b26::f8c0-734c-42a2-ab7b"
+          }
+        ]
+      }
+    ],
+    "source": "skitarii-conclaves",
+    "unitWargear": [
+      {
+        "name": "Acquisitor",
+        "entryId": "637f-8850-f6f5-6f6a",
+        "path": "90af-21a5-e0fd-af39::637f-8850-f6f5-6f6a",
+        "groupPath": "90af-21a5-e0fd-af39::cdc4-0bc4-89cb-3689"
+      }
+    ],
+    "facts": {
+      "2e2e-87d0-2624-eae6": 1,
+      "b6b8-47c2-c0a1-7ca0": 1,
+      "345f-9ba6-9b02-ed5c": 1,
+      "427d-0aa1-011c-14f6": 10,
+      "594d-fa82-13cb-a345": 10,
+      "f8ff-6e5e-8dcf-3b26": 10,
+      "f8c0-734c-42a2-ab7b": 10
+    },
+    "prime": {
+      "linkId": "9692-ac69-6a31-b61d",
+      "path": "b6b8-47c2-c0a1-7ca0::9692-ac69-6a31-b61d::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "93f7-d7db-d7f0-2146"
+      ],
+      "groupPrefixes": {
+        "93f7-d7db-d7f0-2146": "b6b8-47c2-c0a1-7ca0::ad46-da9f-d7e2-35a0"
+      }
+    }
+  },
+  {
+    "name": "Skitarii Vultarax Stratos-Automata",
+    "entryId": "7986-c0de-a682-3ccc",
+    "path": "7986-c0de-a682-3ccc::710e-f1ea-0061-d3cb",
+    "role": "Fast Attack",
+    "primaryCategory": "Fast Attack",
+    "points": 100,
+    "baseCost": 100,
+    "models": [
+      {
+        "name": "Vultarax",
+        "entryId": "3583-7243-9323-073e",
+        "path": "7986-c0de-a682-3ccc::3583-7243-9323-073e",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "skitarii-conclaves",
+    "unitWargear": [
+      {
+        "name": "Vultarax missile-launcher",
+        "entryId": "19db-9500-b308-5593",
+        "path": "7986-c0de-a682-3ccc::19db-9500-b308-5593",
+        "children": [
+          {
+            "name": "Vultarax missile-launcher - Airburst",
+            "entryId": "ea3b-b3ce-b2b6-54ed",
+            "path": "7986-c0de-a682-3ccc::ea3b-b3ce-b2b6-54ed"
+          },
+          {
+            "name": "Vultarax missile-launcher - Shaped Charge",
+            "entryId": "f885-a412-8a12-7712",
+            "path": "7986-c0de-a682-3ccc::f885-a412-8a12-7712"
+          }
+        ]
+      },
+      {
+        "name": "Arc blaster",
+        "entryId": "5c61-5177-9588-c7cb",
+        "targetId": "e8bd-5972-dafc-783e",
+        "path": "7986-c0de-a682-3ccc::5c61-5177-9588-c7cb::e8bd-5972-dafc-783e"
+      },
+      {
+        "name": "Dendrite talons",
+        "entryId": "6907-7db4-81c8-2581",
+        "targetId": "5a33-b483-64cb-9853",
+        "path": "7986-c0de-a682-3ccc::6907-7db4-81c8-2581::5a33-b483-64cb-9853"
+      },
+      {
+        "name": "Acquisitor",
+        "entryId": "637f-8850-f6f5-6f6a",
+        "path": "abd3-c1ac-17be-9d21::637f-8850-f6f5-6f6a",
+        "groupPath": "abd3-c1ac-17be-9d21::cdc4-0bc4-89cb-3689"
+      }
+    ],
+    "facts": {
+      "710e-f1ea-0061-d3cb": 1,
+      "7986-c0de-a682-3ccc": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "cf96-8891-3f9a-8921": 1,
+      "3583-7243-9323-073e": 1,
+      "5833-5e86-26bc-0916": 1,
+      "c504-9dfa-35d3-c98f": 1
+    },
+    "prime": {
+      "linkId": "d7c8-a204-8c6d-6f67",
+      "path": "7986-c0de-a682-3ccc::d7c8-a204-8c6d-6f67::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "7986-c0de-a682-3ccc::6d2f-5545-0f2d-c5d1",
+        "1abc-7dd4-54e7-48e5": "7986-c0de-a682-3ccc::25b7-ec59-193a-4e62"
+      }
+    },
+    "alternateLinks": [
+      {
+        "entryId": "8974-9163-b42c-9015",
+        "category": "Fast Attack - Vultarax Stratos Squadron Only",
+        "categoryIds": [
+          "7db9-74d1-6ba1-061e"
+        ]
+      }
+    ],
+    "linkCategoryIds": [
+      "cf96-8891-3f9a-8921"
+    ]
+  },
+  {
+    "name": "Skitarii Triaros Armoured Conveyor",
+    "entryId": "7acc-6115-828f-c94d",
+    "path": "7acc-6115-828f-c94d::0896-07f4-8844-9542",
+    "role": "Heavy Transport",
+    "primaryCategory": "Heavy Transport",
+    "points": 200,
+    "baseCost": 200,
+    "models": [
+      {
+        "name": "Triaros",
+        "entryId": "aa34-80c1-e81c-f512",
+        "path": "7acc-6115-828f-c94d::aa34-80c1-e81c-f512",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "skitarii-conclaves",
+    "unitWargear": [
+      {
+        "name": "Two Centreline Mounted Volkite Calivers",
+        "entryId": "f758-5a2b-e76c-0297",
+        "path": "7acc-6115-828f-c94d::f758-5a2b-e76c-0297",
+        "children": [
+          {
+            "name": "Centreline Mounted Volkite Caliver",
+            "entryId": "8a32-629c-3be2-3b3e",
+            "targetId": "a042-1a69-9052-c59a",
+            "path": "7acc-6115-828f-c94d::8a32-629c-3be2-3b3e::a042-1a69-9052-c59a"
+          }
+        ]
+      },
+      {
+        "name": "Pintle Mounted twin mauler bolt cannon",
+        "entryId": "32b5-b2a7-e690-a4bb",
+        "path": "7acc-6115-828f-c94d::32b5-b2a7-e690-a4bb",
+        "children": [
+          {
+            "name": "Twin mauler bolt cannon",
+            "entryId": "2345-72c6-3307-4614",
+            "targetId": "f55e-5279-ca20-3a9b",
+            "path": "7acc-6115-828f-c94d::2345-72c6-3307-4614::f55e-5279-ca20-3a9b"
+          }
+        ]
+      },
+      {
+        "name": "Flare Shield",
+        "entryId": "ca2e-618e-faf9-754d",
+        "targetId": "988f-36eb-7aa2-9ef4",
+        "path": "7acc-6115-828f-c94d::ca2e-618e-faf9-754d::988f-36eb-7aa2-9ef4"
+      },
+      {
+        "name": "Searchlight",
+        "entryId": "9e53-e96f-601f-172e",
+        "targetId": "5a85-bf28-f790-7bf0",
+        "path": "7acc-6115-828f-c94d::9e53-e96f-601f-172e::5a85-bf28-f790-7bf0"
+      },
+      {
+        "name": "Archimandrite",
+        "entryId": "6a01-072d-5f2a-deed",
+        "path": "7acc-6115-828f-c94d::6516-bee0-56b2-0965::6a01-072d-5f2a-deed",
+        "groupPath": "7acc-6115-828f-c94d::6516-bee0-56b2-0965::ce61-2d74-5519-70bf"
+      },
+      {
+        "name": "Acquisitor",
+        "entryId": "637f-8850-f6f5-6f6a",
+        "path": "6c23-7e36-20a9-2ff6::637f-8850-f6f5-6f6a",
+        "groupPath": "6c23-7e36-20a9-2ff6::cdc4-0bc4-89cb-3689"
+      }
+    ],
+    "facts": {
+      "0896-07f4-8844-9542": 1,
+      "7acc-6115-828f-c94d": 1,
+      "52d0-8b78-439e-18e5": 1,
+      "8d49-126f-5500-aa28": 1,
+      "aa34-80c1-e81c-f512": 1,
+      "aa5a-c9fd-1eb1-7a45": 1,
+      "2e6d-36f6-eeca-8e0c": 1
+    },
+    "prime": {
+      "linkId": "b4b1-4982-7100-2392",
+      "path": "7acc-6115-828f-c94d::b4b1-4982-7100-2392::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "7acc-6115-828f-c94d::ab1b-2965-8fe9-8334"
+      }
+    }
+  },
+  {
+    "name": "Skitarii Karacnos Assault Tank",
+    "entryId": "36d4-66e8-efcc-23bd",
+    "path": "36d4-66e8-efcc-23bd::ce4c-753d-aaf1-b4ab",
+    "role": "Armour",
+    "primaryCategory": "Armour",
+    "points": 235,
+    "baseCost": 235,
+    "models": [
+      {
+        "name": "Karacnos ",
+        "entryId": "bd29-af9c-378e-28dd",
+        "path": "36d4-66e8-efcc-23bd::bd29-af9c-378e-28dd",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "skitarii-conclaves",
+    "unitWargear": [
+      {
+        "name": "Two Sponson Mounted lightning locks",
+        "entryId": "9f66-5262-820f-ec12",
+        "path": "36d4-66e8-efcc-23bd::9f66-5262-820f-ec12",
+        "children": [
+          {
+            "name": "Lightning lock",
+            "count": 2,
+            "entryId": "f053-4b9d-5960-a8e3",
+            "targetId": "d22a-d9bc-ed06-1a7f",
+            "path": "36d4-66e8-efcc-23bd::f053-4b9d-5960-a8e3::d22a-d9bc-ed06-1a7f"
+          }
+        ]
+      },
+      {
+        "name": "Hull (Front) Mounted Karacnos mortar battery",
+        "entryId": "39ff-fda9-96ed-393b",
+        "path": "36d4-66e8-efcc-23bd::39ff-fda9-96ed-393b",
+        "children": [
+          {
+            "name": "Hull (Front) Mounted Karacnos mortar battery",
+            "entryId": "5524-0525-7ebb-d071",
+            "targetId": "df6d-6b6e-feb8-e5f5",
+            "path": "36d4-66e8-efcc-23bd::5524-0525-7ebb-d071::df6d-6b6e-feb8-e5f5"
+          }
+        ]
+      },
+      {
+        "name": "Flare Shield",
+        "entryId": "5ea4-28d0-5af9-5d3b",
+        "targetId": "988f-36eb-7aa2-9ef4",
+        "path": "36d4-66e8-efcc-23bd::5ea4-28d0-5af9-5d3b::988f-36eb-7aa2-9ef4"
+      },
+      {
+        "name": "Searchlight",
+        "entryId": "0359-2d91-5f70-eaf2",
+        "targetId": "5a85-bf28-f790-7bf0",
+        "path": "36d4-66e8-efcc-23bd::0359-2d91-5f70-eaf2::5a85-bf28-f790-7bf0"
+      },
+      {
+        "name": "Acquisitor",
+        "entryId": "637f-8850-f6f5-6f6a",
+        "path": "7530-1594-bf7c-7e1c::637f-8850-f6f5-6f6a",
+        "groupPath": "7530-1594-bf7c-7e1c::cdc4-0bc4-89cb-3689"
+      }
+    ],
+    "facts": {
+      "ce4c-753d-aaf1-b4ab": 1,
+      "36d4-66e8-efcc-23bd": 1,
+      "1ec3-1433-658a-f04e": 1,
+      "643a-1012-bd51-6537": 1,
+      "8d49-126f-5500-aa28": 1,
+      "bd29-af9c-378e-28dd": 1,
+      "aa5a-c9fd-1eb1-7a45": 1
+    },
+    "prime": {
+      "linkId": "c670-7126-8a54-8325",
+      "path": "36d4-66e8-efcc-23bd::c670-7126-8a54-8325::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "36d4-66e8-efcc-23bd::1be1-f186-85bb-52a0"
+      }
+    }
+  },
+  {
+    "name": "Skitarii Krios Battle Tank",
+    "entryId": "8480-0708-1019-3c83",
+    "path": "8480-0708-1019-3c83::135f-153c-308a-7a1c",
+    "role": "Armour",
+    "primaryCategory": "Armour",
+    "points": 135,
+    "baseCost": 135,
+    "models": [
+      {
+        "name": "Krios",
+        "entryId": "3044-7727-3906-2385",
+        "path": "8480-0708-1019-3c83::3044-7727-3906-2385",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "skitarii-conclaves",
+    "unitWargear": [
+      {
+        "name": "Centreline Mounted lightning cannon",
+        "entryId": "9e35-1648-18af-6a7c",
+        "targetId": "fae1-04cd-0971-ee22",
+        "path": "8480-0708-1019-3c83::9e35-1648-18af-6a7c::fae1-04cd-0971-ee22",
+        "groupPath": "8480-0708-1019-3c83::2cff-2fa3-0522-4381"
+      },
+      {
+        "name": "Acquisitor",
+        "entryId": "637f-8850-f6f5-6f6a",
+        "path": "7a35-9046-6d58-d0d9::637f-8850-f6f5-6f6a",
+        "groupPath": "7a35-9046-6d58-d0d9::cdc4-0bc4-89cb-3689"
+      }
+    ],
+    "facts": {
+      "135f-153c-308a-7a1c": 1,
+      "8480-0708-1019-3c83": 1,
+      "1ec3-1433-658a-f04e": 1,
+      "643a-1012-bd51-6537": 1,
+      "8d49-126f-5500-aa28": 1,
+      "3044-7727-3906-2385": 1,
+      "aa5a-c9fd-1eb1-7a45": 1,
+      "a5c6-b359-cecb-e0b1": 1
+    },
+    "prime": {
+      "linkId": "7832-6b3a-bd5a-f9b5",
+      "path": "8480-0708-1019-3c83::7832-6b3a-bd5a-f9b5::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "8480-0708-1019-3c83::dce4-45ed-862f-7b33"
+      }
+    }
+  },
+  {
+    "name": "Skitarii Krios Venator Tank Destroyer",
+    "entryId": "1267-0dec-49c3-5f88",
+    "path": "1267-0dec-49c3-5f88::b444-b85f-85f8-e6f3",
+    "role": "Armour",
+    "primaryCategory": "Armour",
+    "points": 160,
+    "baseCost": 160,
+    "models": [
+      {
+        "name": "Krios",
+        "entryId": "4684-1eb3-81a9-48ba",
+        "path": "1267-0dec-49c3-5f88::4684-1eb3-81a9-48ba",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "skitarii-conclaves",
+    "unitWargear": [
+      {
+        "name": "Centreline Mounted pulsar-fusil",
+        "entryId": "d3c5-910d-7de4-44b9",
+        "targetId": "d114-2798-e500-c4a4",
+        "path": "1267-0dec-49c3-5f88::d3c5-910d-7de4-44b9::d114-2798-e500-c4a4"
+      },
+      {
+        "name": "Acquisitor",
+        "entryId": "637f-8850-f6f5-6f6a",
+        "path": "247a-119f-a332-f30f::637f-8850-f6f5-6f6a",
+        "groupPath": "247a-119f-a332-f30f::cdc4-0bc4-89cb-3689"
+      }
+    ],
+    "facts": {
+      "b444-b85f-85f8-e6f3": 1,
+      "1267-0dec-49c3-5f88": 1,
+      "1ec3-1433-658a-f04e": 1,
+      "643a-1012-bd51-6537": 1,
+      "8d49-126f-5500-aa28": 1,
+      "4684-1eb3-81a9-48ba": 1,
+      "aa5a-c9fd-1eb1-7a45": 1,
+      "a5c6-b359-cecb-e0b1": 1
+    },
+    "prime": {
+      "linkId": "c011-9a59-eede-6c1e",
+      "path": "1267-0dec-49c3-5f88::c011-9a59-eede-6c1e::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "1267-0dec-49c3-5f88::8f56-c7ae-4144-abd5"
+      }
+    }
+  },
+  {
+    "name": "Castellax Battle Maniple",
+    "entryId": "9568-7307-e33d-4d14",
+    "path": "9568-7307-e33d-4d14::e8d6-2ba5-d10d-d617",
+    "role": "Support",
+    "primaryCategory": "Support - Castellax Battle Maniple Only",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Castellax (Paragon of Metal)",
+        "entryId": "61ae-2955-4177-a4df",
+        "path": "9568-7307-e33d-4d14::61ae-2955-4177-a4df",
+        "cost": 50,
+        "min": 0,
+        "max": 0,
+        "defaultWargear": [
+          {
+            "name": "Mauler bolt cannon",
+            "entryId": "ce29-a75b-7037-2623",
+            "targetId": "ec2c-185f-3e9e-7ccd",
+            "path": "9568-7307-e33d-4d14::ce29-a75b-7037-2623::ec2c-185f-3e9e-7ccd"
+          },
+          {
+            "name": "Shock chargers",
+            "entryId": "d737-d2d2-d671-78ed",
+            "targetId": "9f0d-5e6b-1a6e-0546",
+            "path": "9568-7307-e33d-4d14::d737-d2d2-d671-78ed::9f0d-5e6b-1a6e-0546",
+            "groupPath": "9568-7307-e33d-4d14::3d55-db80-0636-342d"
+          },
+          {
+            "name": "Bolter",
+            "count": 2,
+            "entryId": "8606-def5-7473-defb",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "9568-7307-e33d-4d14::8606-def5-7473-defb::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "9568-7307-e33d-4d14::ff8a-d46f-b8c8-16a9"
+          }
+        ]
+      },
+      {
+        "name": "Castellax",
+        "entryId": "6d1b-0e66-a950-f0ea",
+        "path": "9568-7307-e33d-4d14::6d1b-0e66-a950-f0ea",
+        "cost": 50,
+        "min": 2,
+        "max": 10,
+        "defaultWargear": [
+          {
+            "name": "Mauler bolt cannon",
+            "entryId": "27d1-a226-320d-2999",
+            "targetId": "ec2c-185f-3e9e-7ccd",
+            "path": "9568-7307-e33d-4d14::27d1-a226-320d-2999::ec2c-185f-3e9e-7ccd"
+          },
+          {
+            "name": "Shock chargers",
+            "entryId": "7f17-ee9e-8cfb-4e5e",
+            "targetId": "9f0d-5e6b-1a6e-0546",
+            "path": "9568-7307-e33d-4d14::7f17-ee9e-8cfb-4e5e::9f0d-5e6b-1a6e-0546",
+            "groupPath": "9568-7307-e33d-4d14::0f15-ade9-42bf-8eb7"
+          },
+          {
+            "name": "Bolter",
+            "count": 2,
+            "entryId": "94da-d659-4db3-d979",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "9568-7307-e33d-4d14::94da-d659-4db3-d979::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "9568-7307-e33d-4d14::762a-0f39-afd1-1f0c"
+          }
+        ]
+      }
+    ],
+    "source": "skitarii-conclaves",
+    "unitWargear": [
+      {
+        "name": "Cybernetica",
+        "entryId": "2b49-5e7b-9f4b-2f4f",
+        "targetId": "403d-7806-215e-7676",
+        "path": "9568-7307-e33d-4d14::2b49-5e7b-9f4b-2f4f::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "e8d6-2ba5-d10d-d617": 1,
+      "9568-7307-e33d-4d14": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "61eb-11e2-1592-3161": 1,
+      "6d1b-0e66-a950-f0ea": 2,
+      "5833-5e86-26bc-0916": 2,
+      "27d1-a226-320d-2999": 2,
+      "ec2c-185f-3e9e-7ccd": 2,
+      "7f17-ee9e-8cfb-4e5e": 2,
+      "9f0d-5e6b-1a6e-0546": 2,
+      "94da-d659-4db3-d979": 2,
+      "d3f9-b9e6-3ea5-cc8e": 2
+    },
+    "prime": {
+      "linkId": "f0bf-fcb1-3cee-5d06",
+      "path": "9568-7307-e33d-4d14::f0bf-fcb1-3cee-5d06::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "9568-7307-e33d-4d14::89c3-e386-201c-227b",
+        "1abc-7dd4-54e7-48e5": "9568-7307-e33d-4d14::ba74-fa42-f195-4dbe"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Support - Castellax Battle Maniple Only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Castellax Destructor Maniple",
+    "entryId": "caca-e904-836d-952a",
+    "path": "caca-e904-836d-952a::112f-1168-d07c-7f8f",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault - Castellax Destructor Maniple only",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Castellax",
+        "entryId": "66b7-9883-86f7-a90f",
+        "path": "caca-e904-836d-952a::66b7-9883-86f7-a90f",
+        "cost": 50,
+        "min": 2,
+        "max": 6,
+        "defaultWargear": [
+          {
+            "name": "Shock chargers",
+            "entryId": "407b-457c-8bc4-f296",
+            "targetId": "9f0d-5e6b-1a6e-0546",
+            "path": "caca-e904-836d-952a::407b-457c-8bc4-f296::9f0d-5e6b-1a6e-0546",
+            "groupPath": "caca-e904-836d-952a::1241-6eab-4261-d15a"
+          },
+          {
+            "name": "Bolter",
+            "count": 2,
+            "entryId": "c050-620e-c956-df2c",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "caca-e904-836d-952a::c050-620e-c956-df2c::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "caca-e904-836d-952a::0215-ef86-01e4-0f1f"
+          },
+          {
+            "name": "Mauler bolt cannon",
+            "entryId": "d7ec-04c6-4688-c02e",
+            "targetId": "ec2c-185f-3e9e-7ccd",
+            "path": "caca-e904-836d-952a::d7ec-04c6-4688-c02e::ec2c-185f-3e9e-7ccd",
+            "groupPath": "caca-e904-836d-952a::d5cd-f8b5-86c8-944f"
+          }
+        ]
+      }
+    ],
+    "source": "skitarii-conclaves",
+    "unitWargear": [
+      {
+        "name": "Cybernetica",
+        "entryId": "a92a-c17d-f444-9e5b",
+        "targetId": "403d-7806-215e-7676",
+        "path": "caca-e904-836d-952a::a92a-c17d-f444-9e5b::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "112f-1168-d07c-7f8f": 1,
+      "caca-e904-836d-952a": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "d49e-048b-a8e2-ba52": 1,
+      "66b7-9883-86f7-a90f": 2,
+      "5833-5e86-26bc-0916": 2,
+      "407b-457c-8bc4-f296": 2,
+      "9f0d-5e6b-1a6e-0546": 2,
+      "c050-620e-c956-df2c": 2,
+      "d3f9-b9e6-3ea5-cc8e": 2,
+      "d7ec-04c6-4688-c02e": 2,
+      "ec2c-185f-3e9e-7ccd": 2
+    },
+    "prime": {
+      "linkId": "0121-094d-bbac-806b",
+      "path": "caca-e904-836d-952a::0121-094d-bbac-806b::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "caca-e904-836d-952a::2add-3992-0734-9159",
+        "1abc-7dd4-54e7-48e5": "caca-e904-836d-952a::34a0-1bee-1d5f-7758"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Heavy Assault - Castellax Destructor Maniple only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Domitar Battle Maniple",
+    "entryId": "320b-d4af-59b4-a30f",
+    "path": "320b-d4af-59b4-a30f::cefd-9aca-871d-3263",
+    "role": "Elites",
+    "primaryCategory": "Elites - Domitar Battle Maniple Only",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Domitar",
+        "entryId": "e8f4-acac-c459-7d6b",
+        "path": "320b-d4af-59b4-a30f::e8f4-acac-c459-7d6b",
+        "cost": 100,
+        "min": 1,
+        "max": 4,
+        "defaultWargear": []
+      },
+      {
+        "name": "Domitar (Paragon of Metal)",
+        "entryId": "0a4a-9eac-49c1-569e",
+        "path": "320b-d4af-59b4-a30f::0a4a-9eac-49c1-569e",
+        "cost": 100,
+        "min": 0,
+        "max": 0,
+        "defaultWargear": []
+      }
+    ],
+    "source": "skitarii-conclaves",
+    "unitWargear": [
+      {
+        "name": "Domitar fists",
+        "entryId": "d399-d1a3-0440-dbb8",
+        "path": "320b-d4af-59b4-a30f::d399-d1a3-0440-dbb8"
+      },
+      {
+        "name": "Cyclone missile launcher",
+        "entryId": "c037-028a-8ad1-ecf1",
+        "targetId": "b341-159d-9dfb-ff31",
+        "path": "320b-d4af-59b4-a30f::c037-028a-8ad1-ecf1::b341-159d-9dfb-ff31"
+      },
+      {
+        "name": "Graviton hammers",
+        "entryId": "998d-5c50-fafa-b052",
+        "targetId": "39bd-daf2-8118-1611",
+        "path": "320b-d4af-59b4-a30f::998d-5c50-fafa-b052::39bd-daf2-8118-1611"
+      },
+      {
+        "name": "Cybernetica",
+        "entryId": "c4a3-8ded-261d-6c7d",
+        "targetId": "403d-7806-215e-7676",
+        "path": "320b-d4af-59b4-a30f::c4a3-8ded-261d-6c7d::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "cefd-9aca-871d-3263": 1,
+      "320b-d4af-59b4-a30f": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "826c-7b05-0f62-8b16": 1,
+      "e8f4-acac-c459-7d6b": 1,
+      "5833-5e86-26bc-0916": 1
+    },
+    "prime": {
+      "linkId": "b377-f86e-6cd7-e128",
+      "path": "320b-d4af-59b4-a30f::b377-f86e-6cd7-e128::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "320b-d4af-59b4-a30f::f7bd-69d0-8993-bd24",
+        "1abc-7dd4-54e7-48e5": "320b-d4af-59b4-a30f::5a20-af64-74ec-708d"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Elites - Domitar Battle Maniple Only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Thanatar Siege Maniple",
+    "entryId": "3c9a-0dae-acb6-e94a",
+    "path": "3c9a-0dae-acb6-e94a::3833-2f09-7ec7-b5f5",
+    "role": "War Engine",
+    "primaryCategory": "War Engine - Thanatar Siege Maniple only",
+    "points": 225,
+    "baseCost": 225,
+    "models": [
+      {
+        "name": "Thanatar",
+        "entryId": "f4d8-5c0c-290e-c9f8",
+        "path": "3c9a-0dae-acb6-e94a::f4d8-5c0c-290e-c9f8",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "skitarii-conclaves",
+    "unitWargear": [
+      {
+        "name": "Shock chargers",
+        "entryId": "c940-cbc1-1ebf-ada3",
+        "targetId": "9f0d-5e6b-1a6e-0546",
+        "path": "3c9a-0dae-acb6-e94a::c940-cbc1-1ebf-ada3::9f0d-5e6b-1a6e-0546"
+      },
+      {
+        "name": "Twin mauler bolt cannon",
+        "entryId": "aba3-6a80-765a-2dfe",
+        "targetId": "f55e-5279-ca20-3a9b",
+        "path": "3c9a-0dae-acb6-e94a::aba3-6a80-765a-2dfe::f55e-5279-ca20-3a9b"
+      },
+      {
+        "name": "Cybernetica",
+        "entryId": "60d6-3379-8896-86d8",
+        "targetId": "403d-7806-215e-7676",
+        "path": "3c9a-0dae-acb6-e94a::60d6-3379-8896-86d8::403d-7806-215e-7676"
+      },
+      {
+        "name": "Cavas Configuration",
+        "entryId": "b0c4-16a4-19e9-d90f",
+        "path": "3c9a-0dae-acb6-e94a::b0c4-16a4-19e9-d90f",
+        "groupPath": "3c9a-0dae-acb6-e94a::07a5-b643-1588-1cee",
+        "children": [
+          {
+            "name": "Plasma mortar",
+            "entryId": "4f39-b26f-c2b2-7d98",
+            "targetId": "1b63-cd6f-7762-2fb2",
+            "path": "3c9a-0dae-acb6-e94a::4f39-b26f-c2b2-7d98::1b63-cd6f-7762-2fb2"
+          }
+        ]
+      }
+    ],
+    "facts": {
+      "3833-2f09-7ec7-b5f5": 1,
+      "3c9a-0dae-acb6-e94a": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "64d7-855f-726b-803f": 1,
+      "f4d8-5c0c-290e-c9f8": 1,
+      "5833-5e86-26bc-0916": 1,
+      "1e7d-9066-28d2-97a0": 1
+    },
+    "prime": {
+      "linkId": "1cf3-2329-6452-494b",
+      "path": "3c9a-0dae-acb6-e94a::1cf3-2329-6452-494b::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "3c9a-0dae-acb6-e94a::f87b-760f-5b44-e00c",
+        "1abc-7dd4-54e7-48e5": "3c9a-0dae-acb6-e94a::4da8-2deb-a4e7-774e"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "War Engine - Thanatar Siege Maniple only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vorax Attack Maniple",
+    "entryId": "9621-4928-742e-c4db",
+    "path": "9621-4928-742e-c4db::de2e-f9b5-abe6-b8b5",
+    "role": "Recon",
+    "primaryCategory": "Recon - Vorax Attack Maniple Only",
+    "points": 90,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Vorax",
+        "entryId": "3fe5-3f4e-c7cb-7ba8",
+        "path": "9621-4928-742e-c4db::3fe5-3f4e-c7cb-7ba8",
+        "cost": 45,
+        "min": 2,
+        "max": 8,
+        "defaultWargear": [
+          {
+            "name": "Lightning gun",
+            "entryId": "da09-78fe-fc7b-086a",
+            "targetId": "9b86-e05d-8ce5-ab8b",
+            "path": "9621-4928-742e-c4db::da09-78fe-fc7b-086a::9b86-e05d-8ce5-ab8b",
+            "groupPath": "9621-4928-742e-c4db::2430-259f-ad59-e794"
+          }
+        ]
+      }
+    ],
+    "source": "skitarii-conclaves",
+    "unitWargear": [
+      {
+        "name": "Pair of power blades",
+        "entryId": "28ff-37d7-48a8-ae88",
+        "targetId": "b6de-1568-2981-de20",
+        "path": "9621-4928-742e-c4db::28ff-37d7-48a8-ae88::b6de-1568-2981-de20"
+      },
+      {
+        "name": "Twin rotor cannon",
+        "entryId": "61f2-d958-8936-310e",
+        "targetId": "8346-d5be-e159-326d",
+        "path": "9621-4928-742e-c4db::61f2-d958-8936-310e::8346-d5be-e159-326d"
+      },
+      {
+        "name": "Cybernetica",
+        "entryId": "9a26-ef5e-552f-8248",
+        "targetId": "403d-7806-215e-7676",
+        "path": "9621-4928-742e-c4db::9a26-ef5e-552f-8248::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "de2e-f9b5-abe6-b8b5": 1,
+      "9621-4928-742e-c4db": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "0fb1-2125-2a33-b094": 1,
+      "3fe5-3f4e-c7cb-7ba8": 2,
+      "5833-5e86-26bc-0916": 2,
+      "da09-78fe-fc7b-086a": 2,
+      "9b86-e05d-8ce5-ab8b": 2
+    },
+    "prime": {
+      "linkId": "74da-ed32-b735-0799",
+      "path": "9621-4928-742e-c4db::74da-ed32-b735-0799::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "9621-4928-742e-c4db::440a-bcbb-f6ae-54ab",
+        "1abc-7dd4-54e7-48e5": "9621-4928-742e-c4db::114c-e998-d5b5-06d6"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Recon - Vorax Attack Maniple Only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

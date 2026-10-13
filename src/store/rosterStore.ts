@@ -1,3 +1,4 @@
+import { loadFactionUnits } from '../data/loader';
 import { normalizeDoctrine } from '../rules/armyConfig';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
@@ -53,6 +54,8 @@ interface RosterStore {
   loadSave: (saved: RosterSnapshot) => void;
   addDetachment: (def: DetachmentDef, opts?: { unlockedBy?: string; forceId?: string }) => void;
   addAlliedForce: (faction: string) => void;
+  /** Loads the units of the session's armies (after a reload) and refreshes the stored ones */
+  ensureUnitsLoaded: () => Promise<void>;
   /** Adds a Lord of War Detachment for the primary army (right after it) */
   addLordOfWar: () => void;
   removeForce: (forceId: string) => void;
@@ -85,7 +88,8 @@ export const useRosterStore = create<RosterStore>()(
     (set) => ({
       ...INITIAL_STATE,
 
-      startBuild(faction, allegiance, pointsLimit, cohortDoctrine = '', armyChoices = {}, configChoices = {}) {
+      async startBuild(faction, allegiance, pointsLimit, cohortDoctrine = '', armyChoices = {}, configChoices = {}) {
+        await loadFactionUnits(faction);
         set({
           phase: 'canvas',
           allegiance,
@@ -97,8 +101,9 @@ export const useRosterStore = create<RosterStore>()(
         });
       },
 
-      loadSave(saved) {
+      async loadSave(saved) {
         const snapshot = migrateSnapshot(saved);
+        await loadFactionUnits(...snapshot.forces.map((f) => f.faction));
         set({
           phase: 'canvas',
           ...snapshot,
@@ -132,8 +137,16 @@ export const useRosterStore = create<RosterStore>()(
         });
       },
 
-      addAlliedForce(faction) {
+      async addAlliedForce(faction) {
+        await loadFactionUnits(faction);
         set((s) => ({ forces: [...s.forces, createForce(faction, 'allied')] }));
+      },
+
+      async ensureUnitsLoaded() {
+        const { forces } = useRosterStore.getState();
+        await loadFactionUnits(...forces.map((f) => f.faction));
+        // Saved units were kept as-is until their army's data arrived; refresh them now
+        set((s) => ({ forces: refreshUnits(s.forces) }));
       },
 
       removeForce(forceId) {

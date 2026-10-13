@@ -28,7 +28,7 @@ The BSData JSON is the BattleScribe schema as objects (`forceEntries`, `sharedSe
 - `modifierGroups` carry conditions that apply to every modifier inside them
 - Root entry links may be re-filed by unconditional `set-primary` category modifiers
 
-- `data/parsed/units.json` — `Record<factionKey, UnitEntry[]>`; faction keys are slugified catalogue names (`emperors-children`, `skitarii-conclaves`); the extracted factions are listed in `UNIT_FACTIONS` in `scripts/sync-data.ts`
+- `data/parsed/units/<key>.json` — each catalogue's `UnitEntry[]`; keys are slugified catalogue names (`emperors-children`, `skitarii-conclaves`); the extracted catalogues are listed in `UNIT_FACTIONS` in `scripts/sync-data.ts`. The app loads them on demand (`loadFactionUnits` / `loadAllUnits` in `loader.ts`): store actions that start, load or add an army await them, the app waits for a restored session's armies, and import loads all. Reads (`getUnitsForFaction`) are synchronous once loaded; tests load everything in `src/test/setup.ts`
 - `data/parsed/detachments.json` — `{ charts }`: every supported force org chart (Crusade, Allied Detachment, Knight Households…) with its detachments. `loader.ts` derives `detachmentsData.core/apex/auxiliary` from the Crusade chart. Each `DetachmentDef` has `sources?: string[]`; each slot may carry `maxModifiers`
 - `data/parsed/rules.json` — Prime benefit trees (`primeGroups`) with their BSData visibility conditions, and the High Command detachment-choice upgrade ids
 - Empty `sources[]` = available to all factions; non-empty = faction-restricted

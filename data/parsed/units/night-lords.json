@@ -1,0 +1,596 @@
+[
+  {
+    "name": "Konrad Curze",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "15d6-a1f4-4e9c-40c4",
+    "path": "15d6-a1f4-4e9c-40c4::f5fd-f425-c610-4a94",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 450,
+    "baseCost": 450,
+    "models": [
+      {
+        "name": "Konrad Curze",
+        "entryId": "e47b-d8f0-a85c-71a9",
+        "path": "15d6-a1f4-4e9c-40c4::e47b-d8f0-a85c-71a9",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "night-lords",
+    "unitWargear": [
+      {
+        "name": "Sire of the Night Lords",
+        "entryId": "1ad5-c601-409d-73bd",
+        "path": "15d6-a1f4-4e9c-40c4::1ad5-c601-409d-73bd"
+      },
+      {
+        "name": "Mercy and Forgiveness",
+        "entryId": "3194-9ee3-e070-f912",
+        "path": "15d6-a1f4-4e9c-40c4::3194-9ee3-e070-f912"
+      },
+      {
+        "name": "The Widowmakers",
+        "entryId": "f50b-829a-1620-77dd",
+        "path": "15d6-a1f4-4e9c-40c4::f50b-829a-1620-77dd"
+      },
+      {
+        "name": "Gambit: A Death Long Foreseen",
+        "entryId": "970d-2e26-9139-8d07",
+        "path": "15d6-a1f4-4e9c-40c4::970d-2e26-9139-8d07"
+      }
+    ],
+    "facts": {
+      "f5fd-f425-c610-4a94": 1,
+      "15d6-a1f4-4e9c-40c4": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d251-944b-3c3b-0579": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "22ee-7208-4089-b005": 1,
+      "9c9d-4e53-09d5-8748": 1,
+      "e47b-d8f0-a85c-71a9": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1
+    }
+  },
+  {
+    "name": "Contekar Terminator Squad",
+    "entryId": "d84c-210c-2494-136a",
+    "path": "d84c-210c-2494-136a::baca-aa73-5db0-17fa",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 225,
+    "baseCost": 65,
+    "models": [
+      {
+        "name": "Dissident",
+        "entryId": "923b-7664-eddc-1ede",
+        "path": "d84c-210c-2494-136a::923b-7664-eddc-1ede",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Chainblade",
+            "entryId": "a6e7-cc66-4096-3e2b",
+            "path": "d84c-210c-2494-136a::a6e7-cc66-4096-3e2b",
+            "groupPath": "d84c-210c-2494-136a::2317-f609-9fb9-4d27"
+          }
+        ]
+      },
+      {
+        "name": "Contekar",
+        "entryId": "8694-d026-1301-a0df",
+        "path": "d84c-210c-2494-136a::8694-d026-1301-a0df",
+        "cost": 40,
+        "min": 4,
+        "max": 14,
+        "defaultWargear": [
+          {
+            "name": "Chainblade",
+            "entryId": "67b2-7f1a-e8da-55aa",
+            "targetId": "c771-887d-bb22-6a27",
+            "path": "d84c-210c-2494-136a::67b2-7f1a-e8da-55aa::c771-887d-bb22-6a27"
+          }
+        ]
+      }
+    ],
+    "source": "night-lords",
+    "facts": {
+      "baca-aa73-5db0-17fa": 1,
+      "d84c-210c-2494-136a": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "9c9d-4e53-09d5-8748": 1,
+      "923b-7664-eddc-1ede": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "a6e7-cc66-4096-3e2b": 1,
+      "8694-d026-1301-a0df": 4,
+      "67b2-7f1a-e8da-55aa": 4,
+      "c771-887d-bb22-6a27": 4
+    },
+    "prime": {
+      "linkId": "b666-20f1-f933-9db6",
+      "path": "d84c-210c-2494-136a::b666-20f1-f933-9db6::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "d84c-210c-2494-136a::2ef5-9edc-9eed-3464"
+      }
+    }
+  },
+  {
+    "name": "Night Raptor Squad",
+    "entryId": "d958-12a2-ec35-ac8f",
+    "path": "d958-12a2-ec35-ac8f::2090-3883-5cff-e344",
+    "role": "Fast Attack",
+    "primaryCategory": "Fast Attack",
+    "points": 150,
+    "baseCost": 50,
+    "models": [
+      {
+        "name": "Huntmaster",
+        "entryId": "d5ac-1bc7-f60e-19d4",
+        "path": "d958-12a2-ec35-ac8f::d5ac-1bc7-f60e-19d4",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Chainsword",
+            "entryId": "832f-bc8a-3cef-8078",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "d958-12a2-ec35-ac8f::832f-bc8a-3cef-8078::78f4-4967-2896-c3a5",
+            "groupPath": "d958-12a2-ec35-ac8f::1587-41ca-dea5-8e8c"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "342e-8ef5-60a1-775f",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "d958-12a2-ec35-ac8f::342e-8ef5-60a1-775f::2942-f783-d627-33c5",
+            "groupPath": "d958-12a2-ec35-ac8f::28c8-8f4e-a2f8-dbb8"
+          }
+        ]
+      },
+      {
+        "name": "Night Raptor",
+        "entryId": "2cf7-d782-bfc5-d3cf",
+        "path": "d958-12a2-ec35-ac8f::2cf7-d782-bfc5-d3cf",
+        "cost": 25,
+        "min": 4,
+        "max": 14,
+        "defaultWargear": [
+          {
+            "name": "Chainsword",
+            "entryId": "5b46-66e9-fa3a-61a0",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "d958-12a2-ec35-ac8f::5b46-66e9-fa3a-61a0::78f4-4967-2896-c3a5",
+            "groupPath": "d958-12a2-ec35-ac8f::1cee-1725-3357-5f9b"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "018c-4e6d-9eb7-710a",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "d958-12a2-ec35-ac8f::018c-4e6d-9eb7-710a::2942-f783-d627-33c5",
+            "groupPath": "d958-12a2-ec35-ac8f::b694-8377-e4f9-02fb"
+          }
+        ]
+      }
+    ],
+    "source": "night-lords",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "c233-47bd-46b3-5754",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "d958-12a2-ec35-ac8f::c233-47bd-46b3-5754::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "8c10-923b-361d-f30b",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "d958-12a2-ec35-ac8f::8c10-923b-361d-f30b::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "2090-3883-5cff-e344": 1,
+      "d958-12a2-ec35-ac8f": 1,
+      "3edc-0325-4190-a414": 1,
+      "cf96-8891-3f9a-8921": 1,
+      "9c9d-4e53-09d5-8748": 1,
+      "d5ac-1bc7-f60e-19d4": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "c504-9dfa-35d3-c98f": 5,
+      "832f-bc8a-3cef-8078": 1,
+      "78f4-4967-2896-c3a5": 5,
+      "342e-8ef5-60a1-775f": 1,
+      "2942-f783-d627-33c5": 5,
+      "2cf7-d782-bfc5-d3cf": 4,
+      "5b46-66e9-fa3a-61a0": 4,
+      "018c-4e6d-9eb7-710a": 4
+    },
+    "prime": {
+      "linkId": "4da6-9eff-b6e8-a2d8",
+      "path": "d958-12a2-ec35-ac8f::4da6-9eff-b6e8-a2d8::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "d958-12a2-ec35-ac8f::ac69-50af-302f-a175"
+      }
+    }
+  },
+  {
+    "name": "Terror Squad",
+    "entryId": "1601-d678-e09f-042a",
+    "path": "1601-d678-e09f-042a::d1bc-17f7-b3d7-ca84",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 115,
+    "baseCost": 43,
+    "models": [
+      {
+        "name": "Headsman",
+        "entryId": "7a9d-b03d-d9f9-dfb6",
+        "path": "1601-d678-e09f-042a::7a9d-b03d-d9f9-dfb6",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Chainsword",
+            "entryId": "29e5-796a-62cf-b037",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "1601-d678-e09f-042a::29e5-796a-62cf-b037::78f4-4967-2896-c3a5",
+            "groupPath": "1601-d678-e09f-042a::7dfc-9eac-d171-f2ed"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "e845-4039-97b6-5357",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "1601-d678-e09f-042a::e845-4039-97b6-5357::2942-f783-d627-33c5",
+            "groupPath": "1601-d678-e09f-042a::52c4-225c-8526-5d64"
+          }
+        ]
+      },
+      {
+        "name": "Executioner",
+        "entryId": "2fc1-8f08-e3ee-fb5b",
+        "path": "1601-d678-e09f-042a::2fc1-8f08-e3ee-fb5b",
+        "cost": 18,
+        "min": 4,
+        "max": 14,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "ef89-9725-5f50-63b7",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "1601-d678-e09f-042a::ef89-9725-5f50-63b7::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "2603-56d0-6187-0b52",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "1601-d678-e09f-042a::2603-56d0-6187-0b52::78f4-4967-2896-c3a5",
+            "groupPath": "1601-d678-e09f-042a::c4c3-7672-a986-4a93"
+          }
+        ]
+      }
+    ],
+    "source": "night-lords",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "2c3f-f75d-cee5-5542",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "1601-d678-e09f-042a::2c3f-f75d-cee5-5542::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "f92d-9221-c22c-2509",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "1601-d678-e09f-042a::f92d-9221-c22c-2509::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "d1bc-17f7-b3d7-ca84": 1,
+      "1601-d678-e09f-042a": 1,
+      "22ae-fd5c-00ec-474a": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "9c9d-4e53-09d5-8748": 1,
+      "7a9d-b03d-d9f9-dfb6": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "29e5-796a-62cf-b037": 1,
+      "78f4-4967-2896-c3a5": 5,
+      "e845-4039-97b6-5357": 1,
+      "2942-f783-d627-33c5": 5,
+      "2fc1-8f08-e3ee-fb5b": 4,
+      "ef89-9725-5f50-63b7": 4,
+      "2603-56d0-6187-0b52": 4
+    },
+    "prime": {
+      "linkId": "6284-4960-5085-10d3",
+      "path": "1601-d678-e09f-042a::6284-4960-5085-10d3::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "1601-d678-e09f-042a::9f06-57e4-12a8-c9c8"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Troops - Terror Squads Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "ancestor",
+            "field": "selections",
+            "value": 1,
+            "childId": "8fe1-7b62-49cf-479b"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Sevatar",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "250f-e956-e1d3-c2c9",
+    "path": "250f-e956-e1d3-c2c9::b970-48ad-c8ff-86ca",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 220,
+    "baseCost": 220,
+    "models": [
+      {
+        "name": "Sevatar",
+        "entryId": "f48b-5cfc-c02d-0b3c",
+        "path": "250f-e956-e1d3-c2c9::f48b-5cfc-c02d-0b3c",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "night-lords",
+    "unitWargear": [
+      {
+        "name": "Gambit: Dirty Fighter",
+        "entryId": "b9f3-56c6-6a69-3520",
+        "path": "250f-e956-e1d3-c2c9::b9f3-56c6-6a69-3520"
+      },
+      {
+        "name": "Night's Whisper",
+        "entryId": "0176-c5e6-fa04-b294",
+        "path": "250f-e956-e1d3-c2c9::0176-c5e6-fa04-b294"
+      },
+      {
+        "name": "Bolt pistol",
+        "entryId": "a6ce-dc34-64c1-13cb",
+        "targetId": "2942-f783-d627-33c5",
+        "path": "250f-e956-e1d3-c2c9::a6ce-dc34-64c1-13cb::2942-f783-d627-33c5"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "b150-be76-801d-7d0e",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "250f-e956-e1d3-c2c9::b150-be76-801d-7d0e::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "f028-c5cf-053b-9d75",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "250f-e956-e1d3-c2c9::f028-c5cf-053b-9d75::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "b970-48ad-c8ff-86ca": 1,
+      "250f-e956-e1d3-c2c9": 1,
+      "d251-944b-3c3b-0579": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "9c9d-4e53-09d5-8748": 1,
+      "f48b-5cfc-c02d-0b3c": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "9867-805b-47f7-a6b8",
+      "path": "250f-e956-e1d3-c2c9::9867-805b-47f7-a6b8::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "250f-e956-e1d3-c2c9::cd56-fe72-484e-8658"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "250f-e956-e1d3-c2c9::f603-864e-2f7f-983f",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Atramentar Flay-clade",
+    "entryId": "3cf5-0b78-6f41-4a8f",
+    "path": "3cf5-0b78-6f41-4a8f::ff9f-4970-7f72-e517",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 170,
+    "baseCost": 30,
+    "models": [
+      {
+        "name": "Atramentar Trucidor",
+        "entryId": "8903-7461-dbb1-20eb",
+        "path": "3cf5-0b78-6f41-4a8f::8903-7461-dbb1-20eb",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Combi-bolter",
+            "entryId": "4cbd-6f1f-d45c-c11f",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "3cf5-0b78-6f41-4a8f::4cbd-6f1f-d45c-c11f::042d-9e60-db9e-c147",
+            "groupPath": "3cf5-0b78-6f41-4a8f::2cca-3e19-2553-94fd"
+          },
+          {
+            "name": "Nostraman chainglaive ",
+            "entryId": "980d-6d03-7960-6e76",
+            "targetId": "3708-b181-5f26-4387",
+            "path": "3cf5-0b78-6f41-4a8f::980d-6d03-7960-6e76::3708-b181-5f26-4387",
+            "groupPath": "3cf5-0b78-6f41-4a8f::cf56-5f30-bd28-7b4a"
+          }
+        ]
+      },
+      {
+        "name": "Atramentar",
+        "entryId": "6c97-58d8-096d-89ae",
+        "path": "3cf5-0b78-6f41-4a8f::6c97-58d8-096d-89ae",
+        "cost": 35,
+        "min": 4,
+        "max": 19,
+        "defaultWargear": [
+          {
+            "name": "Combi-bolter",
+            "entryId": "379e-73cb-c909-2b96",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "3cf5-0b78-6f41-4a8f::379e-73cb-c909-2b96::042d-9e60-db9e-c147",
+            "groupPath": "3cf5-0b78-6f41-4a8f::4682-9300-f7a1-15bd"
+          },
+          {
+            "name": "Nostraman chainglaive  ",
+            "entryId": "5f76-a9fa-42a1-e33c",
+            "targetId": "3708-b181-5f26-4387",
+            "path": "3cf5-0b78-6f41-4a8f::5f76-a9fa-42a1-e33c::3708-b181-5f26-4387",
+            "groupPath": "3cf5-0b78-6f41-4a8f::356d-8339-dea2-db4c"
+          }
+        ]
+      }
+    ],
+    "source": "night-lords",
+    "facts": {
+      "ff9f-4970-7f72-e517": 1,
+      "3cf5-0b78-6f41-4a8f": 1,
+      "647c-faca-3c98-c203": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "8903-7461-dbb1-20eb": 1,
+      "594d-fa82-13cb-a345": 5,
+      "8045-89a4-76d4-fcef": 1,
+      "4cbd-6f1f-d45c-c11f": 1,
+      "042d-9e60-db9e-c147": 5,
+      "980d-6d03-7960-6e76": 1,
+      "3708-b181-5f26-4387": 5,
+      "6c97-58d8-096d-89ae": 4,
+      "379e-73cb-c909-2b96": 4,
+      "5f76-a9fa-42a1-e33c": 4
+    },
+    "prime": {
+      "linkId": "a1fc-bfb3-dafc-99aa",
+      "path": "3cf5-0b78-6f41-4a8f::a1fc-bfb3-dafc-99aa::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "3cf5-0b78-6f41-4a8f::d3c7-a2cf-0cd9-fadf"
+      }
+    }
+  },
+  {
+    "name": "Inductii Squad",
+    "entryId": "fc77-f59b-d79f-2ead",
+    "path": "fc77-f59b-d79f-2ead::a38d-19ab-470a-8e53",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 100,
+    "baseCost": 10,
+    "models": [
+      {
+        "name": "Inductii",
+        "entryId": "d5ee-6b05-4330-8e67",
+        "path": "fc77-f59b-d79f-2ead::d5ee-6b05-4330-8e67",
+        "cost": 9,
+        "min": 10,
+        "max": 20,
+        "defaultWargear": [
+          {
+            "name": "Killer's blade",
+            "entryId": "3b1d-af80-78e9-aaff",
+            "path": "fc77-f59b-d79f-2ead::3b1d-af80-78e9-aaff"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "ff41-ede5-4587-b138",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "fc77-f59b-d79f-2ead::ff41-ede5-4587-b138::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "6802-f141-44c9-aa20",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "fc77-f59b-d79f-2ead::6802-f141-44c9-aa20::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "7829-2210-431c-af17",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "fc77-f59b-d79f-2ead::7829-2210-431c-af17::2942-f783-d627-33c5",
+            "groupPath": "fc77-f59b-d79f-2ead::af4e-2fe2-4fc4-a8a4"
+          }
+        ]
+      }
+    ],
+    "source": "night-lords",
+    "facts": {
+      "a38d-19ab-470a-8e53": 1,
+      "fc77-f59b-d79f-2ead": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "d5ee-6b05-4330-8e67": 10,
+      "594d-fa82-13cb-a345": 10,
+      "3b1d-af80-78e9-aaff": 10,
+      "ff41-ede5-4587-b138": 10,
+      "60e4-ca33-2e68-9afc": 10,
+      "6802-f141-44c9-aa20": 10,
+      "fa20-82bc-c7de-9e97": 10,
+      "7829-2210-431c-af17": 10,
+      "2942-f783-d627-33c5": 10
+    }
+  }
+]

@@ -1,0 +1,569 @@
+[
+  {
+    "name": "Corvus Corax",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "c408-52f1-b632-4c82",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "0528-233c-3adc-04b0",
+    "path": "0528-233c-3adc-04b0::e0a6-5800-3e64-4163",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 440,
+    "baseCost": 440,
+    "models": [
+      {
+        "name": "Corvus Corax",
+        "entryId": "42e4-b43c-0bec-f91b",
+        "path": "0528-233c-3adc-04b0::42e4-b43c-0bec-f91b",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Wrath & Justice",
+            "entryId": "0372-c23f-905d-b328",
+            "path": "0528-233c-3adc-04b0::0372-c23f-905d-b328"
+          },
+          {
+            "name": "Talionis",
+            "entryId": "be0d-0226-6248-748a",
+            "path": "0528-233c-3adc-04b0::be0d-0226-6248-748a"
+          },
+          {
+            "name": "The Corvidine Talons",
+            "entryId": "2bcc-e051-4436-6c95",
+            "path": "0528-233c-3adc-04b0::2bcc-e051-4436-6c95"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "a1aa-2696-3c71-354f",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "0528-233c-3adc-04b0::a1aa-2696-3c71-354f::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "b2fd-9a4d-4f3e-82df",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "0528-233c-3adc-04b0::b2fd-9a4d-4f3e-82df::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Cameleoline",
+            "entryId": "1f8d-6496-3eaf-d2ed",
+            "targetId": "babd-5877-3279-a557",
+            "path": "0528-233c-3adc-04b0::1f8d-6496-3eaf-d2ed::babd-5877-3279-a557"
+          }
+        ]
+      }
+    ],
+    "source": "raven-guard",
+    "facts": {
+      "e0a6-5800-3e64-4163": 1,
+      "0528-233c-3adc-04b0": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "22ee-7208-4089-b005": 1,
+      "4346-67d5-360d-89fa": 1,
+      "42e4-b43c-0bec-f91b": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1,
+      "c504-9dfa-35d3-c98f": 1,
+      "0372-c23f-905d-b328": 1,
+      "be0d-0226-6248-748a": 1,
+      "2bcc-e051-4436-6c95": 1,
+      "a1aa-2696-3c71-354f": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "b2fd-9a4d-4f3e-82df": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "1f8d-6496-3eaf-d2ed": 1,
+      "babd-5877-3279-a557": 1
+    }
+  },
+  {
+    "name": "Kaedes Nex",
+    "rosterMax": 1,
+    "entryId": "836e-a26a-ef08-61d7",
+    "path": "836e-a26a-ef08-61d7::7447-6e18-ef24-afb0",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 165,
+    "baseCost": 165,
+    "models": [
+      {
+        "name": "Kaedes Nex",
+        "entryId": "f40a-d97b-1c49-98f1",
+        "path": "836e-a26a-ef08-61d7::f40a-d97b-1c49-98f1",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Fulcrum Hand Cannons",
+            "entryId": "fe4f-d148-033e-fa53",
+            "path": "836e-a26a-ef08-61d7::fe4f-d148-033e-fa53"
+          },
+          {
+            "name": "Cameleoline",
+            "entryId": "c379-67ba-e99f-7c0e",
+            "targetId": "babd-5877-3279-a557",
+            "path": "836e-a26a-ef08-61d7::c379-67ba-e99f-7c0e::babd-5877-3279-a557"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "1101-8b91-1875-edc4",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "836e-a26a-ef08-61d7::1101-8b91-1875-edc4::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "8611-7ab3-5f23-8db7",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "836e-a26a-ef08-61d7::8611-7ab3-5f23-8db7::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Melta bombs",
+            "entryId": "1ae2-36e5-2a7e-5d08",
+            "targetId": "2eb4-687e-a515-ee3d",
+            "path": "836e-a26a-ef08-61d7::1ae2-36e5-2a7e-5d08::2eb4-687e-a515-ee3d"
+          }
+        ]
+      }
+    ],
+    "source": "raven-guard",
+    "facts": {
+      "7447-6e18-ef24-afb0": 1,
+      "836e-a26a-ef08-61d7": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "4346-67d5-360d-89fa": 1,
+      "f40a-d97b-1c49-98f1": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "af7d-af64-6b7d-da9d": 1,
+      "fe4f-d148-033e-fa53": 1,
+      "c379-67ba-e99f-7c0e": 1,
+      "babd-5877-3279-a557": 1,
+      "1101-8b91-1875-edc4": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "8611-7ab3-5f23-8db7": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "1ae2-36e5-2a7e-5d08": 1,
+      "2eb4-687e-a515-ee3d": 1
+    },
+    "prime": {
+      "linkId": "66ad-9716-4dc7-a904",
+      "path": "836e-a26a-ef08-61d7::66ad-9716-4dc7-a904::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "836e-a26a-ef08-61d7::1699-cd13-43e1-ac80"
+      }
+    }
+  },
+  {
+    "name": "Mor Deythan Squad",
+    "entryId": "d295-c96d-41cb-d551",
+    "path": "d295-c96d-41cb-d551::4bb8-d53e-23a8-64da",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 175,
+    "baseCost": 55,
+    "models": [
+      {
+        "name": "Mor Deythan",
+        "entryId": "418c-5306-3994-2698",
+        "path": "d295-c96d-41cb-d551::418c-5306-3994-2698",
+        "cost": 30,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "2e1b-bed0-bf9b-8285",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "d295-c96d-41cb-d551::2e1b-bed0-bf9b-8285::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Cameleoline",
+            "entryId": "2359-0fb9-830f-6a63",
+            "targetId": "babd-5877-3279-a557",
+            "path": "d295-c96d-41cb-d551::2359-0fb9-830f-6a63::babd-5877-3279-a557"
+          },
+          {
+            "name": "Nemesis bolter",
+            "entryId": "657c-9bb7-89b4-ff29",
+            "targetId": "96e3-031c-2139-1335",
+            "path": "d295-c96d-41cb-d551::657c-9bb7-89b4-ff29::96e3-031c-2139-1335",
+            "groupPath": "d295-c96d-41cb-d551::eb40-8801-8762-a9a4"
+          }
+        ]
+      },
+      {
+        "name": "Mor Deythan Shade",
+        "entryId": "82dc-edb6-6534-0f6f",
+        "path": "d295-c96d-41cb-d551::82dc-edb6-6534-0f6f",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "1618-0ea8-7d9f-d353",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "d295-c96d-41cb-d551::1618-0ea8-7d9f-d353::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Cameleoline",
+            "entryId": "cd86-63a2-a1cb-83ca",
+            "targetId": "babd-5877-3279-a557",
+            "path": "d295-c96d-41cb-d551::cd86-63a2-a1cb-83ca::babd-5877-3279-a557"
+          },
+          {
+            "name": "Nemesis bolter",
+            "entryId": "cf25-7d61-f5fb-adb5",
+            "targetId": "96e3-031c-2139-1335",
+            "path": "d295-c96d-41cb-d551::cf25-7d61-f5fb-adb5::96e3-031c-2139-1335",
+            "groupPath": "d295-c96d-41cb-d551::2a84-7aba-0398-3438"
+          }
+        ]
+      }
+    ],
+    "source": "raven-guard",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "a954-5e65-ae26-f19d",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "d295-c96d-41cb-d551::a954-5e65-ae26-f19d::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "496d-9735-8d96-f796",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "d295-c96d-41cb-d551::496d-9735-8d96-f796::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "4bb8-d53e-23a8-64da": 1,
+      "d295-c96d-41cb-d551": 1,
+      "dd1b-70ef-6015-1291": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "4346-67d5-360d-89fa": 1,
+      "418c-5306-3994-2698": 4,
+      "594d-fa82-13cb-a345": 5,
+      "d2d6-5a84-672b-2833": 5,
+      "2e1b-bed0-bf9b-8285": 4,
+      "2942-f783-d627-33c5": 5,
+      "2359-0fb9-830f-6a63": 4,
+      "babd-5877-3279-a557": 5,
+      "657c-9bb7-89b4-ff29": 4,
+      "96e3-031c-2139-1335": 5,
+      "82dc-edb6-6534-0f6f": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "1618-0ea8-7d9f-d353": 1,
+      "cd86-63a2-a1cb-83ca": 1,
+      "cf25-7d61-f5fb-adb5": 1
+    },
+    "prime": {
+      "linkId": "1292-a48a-4082-a594",
+      "path": "d295-c96d-41cb-d551::1292-a48a-4082-a594::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "d295-c96d-41cb-d551::8ceb-a533-4111-8088"
+      }
+    }
+  },
+  {
+    "name": "Dark Fury Squad",
+    "entryId": "c213-20ea-1ed8-11a0",
+    "path": "c213-20ea-1ed8-11a0::8487-ac3b-d0ec-6d08",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 175,
+    "baseCost": 20,
+    "models": [
+      {
+        "name": "Dark Fury",
+        "entryId": "c88e-ddfb-6f84-acd8",
+        "path": "c213-20ea-1ed8-11a0::c88e-ddfb-6f84-acd8",
+        "cost": 30,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Corvid Pattern Jump Pack",
+            "entryId": "c0dc-0bc8-3979-b680",
+            "targetId": "3f94-3ed7-02ee-0c1b",
+            "path": "c213-20ea-1ed8-11a0::c0dc-0bc8-3979-b680::3f94-3ed7-02ee-0c1b"
+          },
+          {
+            "name": "Pair of Raven's Talons",
+            "entryId": "847d-0e02-a37d-c47f",
+            "targetId": "ab57-e7ca-3fc7-b256",
+            "path": "c213-20ea-1ed8-11a0::847d-0e02-a37d-c47f::ab57-e7ca-3fc7-b256"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "33f8-6cd3-05e1-625f",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "c213-20ea-1ed8-11a0::33f8-6cd3-05e1-625f::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "9c7f-4b30-0cea-e861",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "c213-20ea-1ed8-11a0::9c7f-4b30-0cea-e861::fa20-82bc-c7de-9e97"
+          }
+        ]
+      },
+      {
+        "name": "Chooser of the Slain",
+        "entryId": "9b5f-3411-f1b0-f87d",
+        "path": "c213-20ea-1ed8-11a0::9b5f-3411-f1b0-f87d",
+        "cost": 35,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Corvid Pattern Jump Pack",
+            "entryId": "6304-24a4-4cde-b17b",
+            "targetId": "3f94-3ed7-02ee-0c1b",
+            "path": "c213-20ea-1ed8-11a0::6304-24a4-4cde-b17b::3f94-3ed7-02ee-0c1b"
+          },
+          {
+            "name": "Pair of Raven's Talons",
+            "entryId": "a751-ebcd-4f74-d48a",
+            "targetId": "ab57-e7ca-3fc7-b256",
+            "path": "c213-20ea-1ed8-11a0::a751-ebcd-4f74-d48a::ab57-e7ca-3fc7-b256"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "ee5e-0884-c9b0-0f96",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "c213-20ea-1ed8-11a0::ee5e-0884-c9b0-0f96::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "0830-fe2c-8500-d367",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "c213-20ea-1ed8-11a0::0830-fe2c-8500-d367::fa20-82bc-c7de-9e97"
+          }
+        ]
+      }
+    ],
+    "source": "raven-guard",
+    "facts": {
+      "8487-ac3b-d0ec-6d08": 1,
+      "c213-20ea-1ed8-11a0": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "4346-67d5-360d-89fa": 1,
+      "c88e-ddfb-6f84-acd8": 4,
+      "594d-fa82-13cb-a345": 5,
+      "c504-9dfa-35d3-c98f": 5,
+      "c0dc-0bc8-3979-b680": 4,
+      "3f94-3ed7-02ee-0c1b": 5,
+      "847d-0e02-a37d-c47f": 4,
+      "ab57-e7ca-3fc7-b256": 5,
+      "33f8-6cd3-05e1-625f": 4,
+      "60e4-ca33-2e68-9afc": 5,
+      "9c7f-4b30-0cea-e861": 4,
+      "fa20-82bc-c7de-9e97": 5,
+      "9b5f-3411-f1b0-f87d": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "6304-24a4-4cde-b17b": 1,
+      "a751-ebcd-4f74-d48a": 1,
+      "ee5e-0884-c9b0-0f96": 1,
+      "0830-fe2c-8500-d367": 1
+    },
+    "prime": {
+      "linkId": "07db-dc6a-483f-aa0e",
+      "path": "c213-20ea-1ed8-11a0::07db-dc6a-483f-aa0e::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "c213-20ea-1ed8-11a0::6a5a-0d9a-486d-88fe"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Elites - Veteran Assault Squads or Dark Fury Squads Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "force",
+            "field": "forces",
+            "value": 1,
+            "childId": "27bf-3e6b-587c-74bb"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Deliverers Squad",
+    "entryId": "30c4-e580-a2b6-11da",
+    "path": "30c4-e580-a2b6-11da::eef8-a49d-4568-a714",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 215,
+    "baseCost": 55,
+    "models": [
+      {
+        "name": "Deliverer",
+        "entryId": "377e-9bef-41e2-b597",
+        "path": "30c4-e580-a2b6-11da::377e-9bef-41e2-b597",
+        "cost": 40,
+        "min": 4,
+        "max": 14,
+        "defaultWargear": [
+          {
+            "name": "Power fist",
+            "entryId": "2031-bace-42f1-800b",
+            "targetId": "2fcc-92a6-d03a-4b55",
+            "path": "30c4-e580-a2b6-11da::2031-bace-42f1-800b::2fcc-92a6-d03a-4b55",
+            "groupPath": "30c4-e580-a2b6-11da::2b1f-2b4d-4987-92f9"
+          },
+          {
+            "name": "Combi-bolter",
+            "entryId": "1332-d41c-44cf-b702",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "30c4-e580-a2b6-11da::1332-d41c-44cf-b702::042d-9e60-db9e-c147",
+            "groupPath": "30c4-e580-a2b6-11da::b63d-c43f-4979-a3b0"
+          }
+        ]
+      },
+      {
+        "name": "Deliverer Chieftain",
+        "entryId": "4773-8470-43ef-846b",
+        "path": "30c4-e580-a2b6-11da::4773-8470-43ef-846b",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Power fist",
+            "entryId": "5839-54eb-4398-9a40",
+            "targetId": "2fcc-92a6-d03a-4b55",
+            "path": "30c4-e580-a2b6-11da::5839-54eb-4398-9a40::2fcc-92a6-d03a-4b55",
+            "groupPath": "30c4-e580-a2b6-11da::bcc0-f431-429a-9e59"
+          },
+          {
+            "name": "Combi-bolter",
+            "entryId": "c38a-8234-4c29-9ef6",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "30c4-e580-a2b6-11da::c38a-8234-4c29-9ef6::042d-9e60-db9e-c147",
+            "groupPath": "30c4-e580-a2b6-11da::b10a-4dc5-4e0d-b5ce"
+          }
+        ]
+      }
+    ],
+    "source": "raven-guard",
+    "facts": {
+      "eef8-a49d-4568-a714": 1,
+      "30c4-e580-a2b6-11da": 1,
+      "647c-faca-3c98-c203": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "377e-9bef-41e2-b597": 4,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "2031-bace-42f1-800b": 4,
+      "2fcc-92a6-d03a-4b55": 5,
+      "1332-d41c-44cf-b702": 4,
+      "042d-9e60-db9e-c147": 5,
+      "4773-8470-43ef-846b": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "5839-54eb-4398-9a40": 1,
+      "c38a-8234-4c29-9ef6": 1
+    },
+    "prime": {
+      "linkId": "6151-2dd0-8440-392e",
+      "path": "30c4-e580-a2b6-11da::6151-2dd0-8440-392e::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "30c4-e580-a2b6-11da::f30c-2798-5b5b-3b06"
+      }
+    }
+  },
+  {
+    "name": "Inductii Squad",
+    "entryId": "b472-2c57-cfc7-0bc0",
+    "path": "b472-2c57-cfc7-0bc0::a997-c8f0-4906-bf63",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 90,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Inductii",
+        "entryId": "59e9-6f10-48a5-9dd4",
+        "path": "b472-2c57-cfc7-0bc0::59e9-6f10-48a5-9dd4",
+        "cost": 9,
+        "min": 10,
+        "max": 20,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "64ec-62dc-44df-95e9",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "b472-2c57-cfc7-0bc0::64ec-62dc-44df-95e9::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "a459-5d8a-424d-b5c7",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "b472-2c57-cfc7-0bc0::a459-5d8a-424d-b5c7::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "0bd5-34d1-4413-8488",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "b472-2c57-cfc7-0bc0::0bd5-34d1-4413-8488::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolter",
+            "entryId": "4931-a462-4427-aa10",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "b472-2c57-cfc7-0bc0::4931-a462-4427-aa10::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "b472-2c57-cfc7-0bc0::e6fe-393f-4e21-82a2"
+          }
+        ]
+      }
+    ],
+    "source": "raven-guard",
+    "facts": {
+      "a997-c8f0-4906-bf63": 1,
+      "b472-2c57-cfc7-0bc0": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "59e9-6f10-48a5-9dd4": 10,
+      "594d-fa82-13cb-a345": 10,
+      "64ec-62dc-44df-95e9": 10,
+      "2942-f783-d627-33c5": 10,
+      "a459-5d8a-424d-b5c7": 10,
+      "60e4-ca33-2e68-9afc": 10,
+      "0bd5-34d1-4413-8488": 10,
+      "fa20-82bc-c7de-9e97": 10,
+      "4931-a462-4427-aa10": 10,
+      "d3f9-b9e6-3ea5-cc8e": 10
+    }
+  }
+]

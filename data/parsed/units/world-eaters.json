@@ -1,0 +1,759 @@
+[
+  {
+    "name": "Angron",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "2385-2519-105f-fc50",
+    "path": "2385-2519-105f-fc50::af62-d4a0-c800-712e",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 450,
+    "baseCost": 450,
+    "models": [
+      {
+        "name": "Angron",
+        "entryId": "ff66-f09a-4b15-bfcf",
+        "path": "2385-2519-105f-fc50::ff66-f09a-4b15-bfcf",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "world-eaters",
+    "unitWargear": [
+      {
+        "name": "Sire of the World Eaters",
+        "entryId": "c8bb-53b9-2664-7cf8",
+        "path": "2385-2519-105f-fc50::c8bb-53b9-2664-7cf8"
+      },
+      {
+        "name": "Gambit: Lord of the Red Sands",
+        "entryId": "39cb-cc09-3274-88bf",
+        "path": "2385-2519-105f-fc50::39cb-cc09-3274-88bf"
+      },
+      {
+        "name": "Gorefather & Gorechild",
+        "entryId": "a1f9-f588-cc1b-8004",
+        "path": "2385-2519-105f-fc50::a1f9-f588-cc1b-8004"
+      },
+      {
+        "name": "The Spite Furnace",
+        "entryId": "c547-1104-0c83-5e4c",
+        "path": "2385-2519-105f-fc50::c547-1104-0c83-5e4c"
+      }
+    ],
+    "facts": {
+      "af62-d4a0-c800-712e": 1,
+      "2385-2519-105f-fc50": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d251-944b-3c3b-0579": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "22ee-7208-4089-b005": 1,
+      "48b7-17a8-eaf4-d6c2": 1,
+      "ff66-f09a-4b15-bfcf": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1
+    }
+  },
+  {
+    "name": "Rampager Squad",
+    "entryId": "6ab4-9770-dcb2-8b0b",
+    "path": "6ab4-9770-dcb2-8b0b::c660-c7ad-70b0-5318",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 135,
+    "baseCost": 47,
+    "models": [
+      {
+        "name": "Rampager Champion",
+        "entryId": "0003-9a3a-fba8-92aa",
+        "path": "6ab4-9770-dcb2-8b0b::0003-9a3a-fba8-92aa",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Pair of lightning claws",
+            "entryId": "3107-dce7-8751-c598",
+            "targetId": "6754-24dd-5be0-26ff",
+            "path": "6ab4-9770-dcb2-8b0b::3107-dce7-8751-c598::6754-24dd-5be0-26ff",
+            "groupPath": "6ab4-9770-dcb2-8b0b::cb5c-6109-959e-43e3"
+          },
+          {
+            "name": "Meteor hammer",
+            "entryId": "5d93-8523-229e-32df",
+            "path": "6ab4-9770-dcb2-8b0b::2bc2-d4d8-3c17-1546::5d93-8523-229e-32df",
+            "groupPath": "6ab4-9770-dcb2-8b0b::2bc2-d4d8-3c17-1546::f18f-e86f-e13e-4a48"
+          }
+        ]
+      },
+      {
+        "name": "Rampager",
+        "entryId": "821a-4497-0743-9777",
+        "path": "6ab4-9770-dcb2-8b0b::821a-4497-0743-9777",
+        "cost": 22,
+        "min": 4,
+        "max": 14,
+        "defaultWargear": [
+          {
+            "name": "Meteor hammer",
+            "entryId": "5d93-8523-229e-32df",
+            "path": "6ab4-9770-dcb2-8b0b::3ee1-dc34-0734-d740::5d93-8523-229e-32df",
+            "groupPath": "6ab4-9770-dcb2-8b0b::3ee1-dc34-0734-d740::f18f-e86f-e13e-4a48"
+          }
+        ]
+      }
+    ],
+    "source": "world-eaters",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "49c6-84b3-056f-b941",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "6ab4-9770-dcb2-8b0b::49c6-84b3-056f-b941::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "4142-f424-6178-884c",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "6ab4-9770-dcb2-8b0b::4142-f424-6178-884c::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "c660-c7ad-70b0-5318": 1,
+      "6ab4-9770-dcb2-8b0b": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "48b7-17a8-eaf4-d6c2": 1,
+      "0003-9a3a-fba8-92aa": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "5a95-e564-96b2-8dc9": 1,
+      "594d-fa82-13cb-a345": 5,
+      "3107-dce7-8751-c598": 1,
+      "6754-24dd-5be0-26ff": 1,
+      "5d93-8523-229e-32df": 5,
+      "821a-4497-0743-9777": 4
+    },
+    "prime": {
+      "linkId": "75e2-c52e-dc2b-cf89",
+      "path": "6ab4-9770-dcb2-8b0b::75e2-c52e-dc2b-cf89::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "6ab4-9770-dcb2-8b0b::acc4-9d67-b5cc-b209"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Heavy Assault - Rampager Squads Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "force",
+            "field": "forces",
+            "value": 1,
+            "childId": "bda6-c5d3-eafc-4eb5"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Red Butchers",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "542f-ad6f-ca67-8e34",
+    "path": "542f-ad6f-ca67-8e34::e149-7a3c-d62c-e941",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 250,
+    "baseCost": 70,
+    "models": [
+      {
+        "name": "Devoured",
+        "entryId": "09d6-294d-4dc8-7f31",
+        "path": "542f-ad6f-ca67-8e34::09d6-294d-4dc8-7f31",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Power axe",
+            "entryId": "ba91-dffc-8cb2-2c2a",
+            "targetId": "4861-b77a-620c-f0d6",
+            "path": "542f-ad6f-ca67-8e34::ba91-dffc-8cb2-2c2a::4861-b77a-620c-f0d6",
+            "groupPath": "542f-ad6f-ca67-8e34::5d34-8687-651e-5869"
+          },
+          {
+            "name": "Combi-bolter",
+            "entryId": "dbb8-d19b-b379-651a",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "542f-ad6f-ca67-8e34::dbb8-d19b-b379-651a::042d-9e60-db9e-c147",
+            "groupPath": "542f-ad6f-ca67-8e34::445c-55d2-3fc8-05c4"
+          }
+        ]
+      },
+      {
+        "name": "Red Butcher",
+        "entryId": "08a3-46d5-a3ce-0b30",
+        "path": "542f-ad6f-ca67-8e34::08a3-46d5-a3ce-0b30",
+        "cost": 45,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": []
+      }
+    ],
+    "source": "world-eaters",
+    "facts": {
+      "e149-7a3c-d62c-e941": 1,
+      "542f-ad6f-ca67-8e34": 1,
+      "d251-944b-3c3b-0579": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "48b7-17a8-eaf4-d6c2": 1,
+      "09d6-294d-4dc8-7f31": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "ba91-dffc-8cb2-2c2a": 1,
+      "4861-b77a-620c-f0d6": 1,
+      "dbb8-d19b-b379-651a": 1,
+      "042d-9e60-db9e-c147": 1,
+      "08a3-46d5-a3ce-0b30": 4
+    },
+    "prime": {
+      "linkId": "cfc6-8bd4-e931-696c",
+      "path": "542f-ad6f-ca67-8e34::cfc6-8bd4-e931-696c::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "542f-ad6f-ca67-8e34::373b-bc1b-8ac2-bde9"
+      }
+    }
+  },
+  {
+    "name": "Lotara Sarrin",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "cfd9-ce39-c208-7dc0",
+    "path": "cfd9-ce39-c208-7dc0::e628-409b-5f93-170a",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 85,
+    "baseCost": 85,
+    "models": [
+      {
+        "name": "Lotara Sarrin",
+        "entryId": "ca3d-b793-3889-2beb",
+        "path": "cfd9-ce39-c208-7dc0::ca3d-b793-3889-2beb",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "world-eaters",
+    "unitWargear": [
+      {
+        "name": "Fleet service pistol",
+        "entryId": "ac3c-2b8c-6b0e-57f4",
+        "path": "cfd9-ce39-c208-7dc0::ac3c-2b8c-6b0e-57f4"
+      },
+      {
+        "name": "The Conqueror's Bite",
+        "entryId": "e22d-fc14-1bde-d8c8",
+        "path": "cfd9-ce39-c208-7dc0::e22d-fc14-1bde-d8c8"
+      },
+      {
+        "name": "Guns of the Conquerer",
+        "entryId": "751d-564f-32c5-7425",
+        "path": "cfd9-ce39-c208-7dc0::751d-564f-32c5-7425"
+      }
+    ],
+    "facts": {
+      "e628-409b-5f93-170a": 1,
+      "cfd9-ce39-c208-7dc0": 1,
+      "d251-944b-3c3b-0579": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "48b7-17a8-eaf4-d6c2": 1,
+      "ca3d-b793-3889-2beb": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "af7d-af64-6b7d-da9d": 1
+    },
+    "prime": {
+      "linkId": "46ca-476d-d8b5-66fb",
+      "path": "cfd9-ce39-c208-7dc0::46ca-476d-d8b5-66fb::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "cfd9-ce39-c208-7dc0::70f0-6d4d-2d1f-3bed"
+      }
+    }
+  },
+  {
+    "name": "Angron Transfigured",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "ccc1-bba6-cf7c-cfa8",
+    "path": "ccc1-bba6-cf7c-cfa8::eb31-de9c-e5ef-a9ac",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 600,
+    "baseCost": 600,
+    "models": [
+      {
+        "name": "Angron Transfigured",
+        "entryId": "7c0c-252b-3808-12ed",
+        "path": "ccc1-bba6-cf7c-cfa8::7c0c-252b-3808-12ed",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "world-eaters",
+    "unitWargear": [
+      {
+        "name": "Blades of the Red Angel",
+        "entryId": "8177-c403-8a62-15bd",
+        "path": "ccc1-bba6-cf7c-cfa8::8177-c403-8a62-15bd"
+      }
+    ],
+    "facts": {
+      "eb31-de9c-e5ef-a9ac": 1,
+      "ccc1-bba6-cf7c-cfa8": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d251-944b-3c3b-0579": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "22ee-7208-4089-b005": 1,
+      "48b7-17a8-eaf4-d6c2": 1,
+      "7c0c-252b-3808-12ed": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1,
+      "c504-9dfa-35d3-c98f": 1,
+      "2de1-ddd6-ebb4-10df": 1
+    }
+  },
+  {
+    "name": "Kharn the Bloody",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "e0d5-8405-aba7-628b",
+    "path": "e0d5-8405-aba7-628b::19c9-b57d-a308-b655",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 175,
+    "baseCost": 175,
+    "models": [
+      {
+        "name": "Kharn the Bloody",
+        "entryId": "c9ff-4904-656c-c6e3",
+        "path": "e0d5-8405-aba7-628b::c9ff-4904-656c-c6e3",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "world-eaters",
+    "unitWargear": [
+      {
+        "name": "Plasma pistol",
+        "entryId": "83eb-961a-a893-5257",
+        "targetId": "659f-d52e-1515-2912",
+        "path": "e0d5-8405-aba7-628b::83eb-961a-a893-5257::659f-d52e-1515-2912"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "3459-d4d4-e994-1b00",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "e0d5-8405-aba7-628b::3459-d4d4-e994-1b00::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "7633-63d7-2325-dce7",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "e0d5-8405-aba7-628b::7633-63d7-2325-dce7::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "The Cutter",
+        "entryId": "7b2e-a185-35c1-6af3",
+        "path": "e0d5-8405-aba7-628b::7b2e-a185-35c1-6af3",
+        "groupPath": "e0d5-8405-aba7-628b::35df-180b-2bdf-81eb"
+      }
+    ],
+    "facts": {
+      "19c9-b57d-a308-b655": 1,
+      "e0d5-8405-aba7-628b": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d251-944b-3c3b-0579": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "48b7-17a8-eaf4-d6c2": 1,
+      "c9ff-4904-656c-c6e3": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "7888-b09c-49fd-a07d",
+      "path": "e0d5-8405-aba7-628b::7888-b09c-49fd-a07d::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "e0d5-8405-aba7-628b::0739-43c6-450f-8821"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "e0d5-8405-aba7-628b::a1e4-4269-b0fb-ed00",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Red Hand Destroyer Mortalis Squad",
+    "entryId": "d805-a058-7b00-528c",
+    "path": "d805-a058-7b00-528c::a2c1-6aaf-434a-acc3",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 85,
+    "baseCost": 25,
+    "models": [
+      {
+        "name": "Ravager",
+        "entryId": "5c18-97c2-498c-bcc9",
+        "path": "d805-a058-7b00-528c::5c18-97c2-498c-bcc9",
+        "cost": 15,
+        "min": 4,
+        "max": 14,
+        "defaultWargear": [
+          {
+            "name": "Two bolt pistols",
+            "entryId": "ad17-9da2-48cc-a817",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "d805-a058-7b00-528c::ad17-9da2-48cc-a817::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "a8de-80b6-4988-82f6",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "d805-a058-7b00-528c::a8de-80b6-4988-82f6::78f4-4967-2896-c3a5",
+            "groupPath": "d805-a058-7b00-528c::ab9d-0193-46ec-9213"
+          }
+        ]
+      },
+      {
+        "name": "Blood Bonded",
+        "entryId": "6a93-e0c6-49e9-967b",
+        "path": "d805-a058-7b00-528c::6a93-e0c6-49e9-967b",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Two bolt pistols",
+            "entryId": "5ca2-a6f6-47e4-b247",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "d805-a058-7b00-528c::5ca2-a6f6-47e4-b247::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "9507-587e-4aeb-8f09",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "d805-a058-7b00-528c::9507-587e-4aeb-8f09::78f4-4967-2896-c3a5",
+            "groupPath": "d805-a058-7b00-528c::1413-ddc1-4351-9a82"
+          }
+        ]
+      }
+    ],
+    "source": "world-eaters",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "8475-4222-4f45-bf65",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "d805-a058-7b00-528c::8475-4222-4f45-bf65::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "dc35-4ebb-4e8a-9c33",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "d805-a058-7b00-528c::dc35-4ebb-4e8a-9c33::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Rad grenades",
+        "entryId": "c17d-b585-4f47-a9ef",
+        "targetId": "cd5f-1eff-df69-6bd2",
+        "path": "d805-a058-7b00-528c::c17d-b585-4f47-a9ef::cd5f-1eff-df69-6bd2"
+      }
+    ],
+    "facts": {
+      "a2c1-6aaf-434a-acc3": 1,
+      "d805-a058-7b00-528c": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "5c18-97c2-498c-bcc9": 4,
+      "594d-fa82-13cb-a345": 5,
+      "ad17-9da2-48cc-a817": 4,
+      "2942-f783-d627-33c5": 5,
+      "a8de-80b6-4988-82f6": 4,
+      "78f4-4967-2896-c3a5": 5,
+      "6a93-e0c6-49e9-967b": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "5ca2-a6f6-47e4-b247": 1,
+      "9507-587e-4aeb-8f09": 1
+    },
+    "prime": {
+      "linkId": "cfd0-c637-5638-5ba2",
+      "path": "d805-a058-7b00-528c::cfd0-c637-5638-5ba2::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "d805-a058-7b00-528c::b726-0059-c5fb-2a86"
+      }
+    }
+  },
+  {
+    "name": "Red Hand Destroyer Assault Squad",
+    "entryId": "4041-a9f5-7767-1900",
+    "path": "4041-a9f5-7767-1900::95af-8507-44dc-bcc3",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 110,
+    "baseCost": 30,
+    "models": [
+      {
+        "name": "Ravager with Jump Pack",
+        "entryId": "175d-5084-4a94-a562",
+        "path": "4041-a9f5-7767-1900::175d-5084-4a94-a562",
+        "cost": 20,
+        "min": 4,
+        "max": 14,
+        "defaultWargear": [
+          {
+            "name": "Two bolt pistols",
+            "entryId": "7890-90e5-46e8-ad27",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "4041-a9f5-7767-1900::7890-90e5-46e8-ad27::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "a1a5-919d-4128-91bc",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "4041-a9f5-7767-1900::a1a5-919d-4128-91bc::78f4-4967-2896-c3a5",
+            "groupPath": "4041-a9f5-7767-1900::3226-d9e3-479b-a964"
+          }
+        ]
+      },
+      {
+        "name": "Blood Bonded with Jump Pack",
+        "entryId": "1af9-fee8-4304-921b",
+        "path": "4041-a9f5-7767-1900::1af9-fee8-4304-921b",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Two bolt pistols",
+            "entryId": "0186-4cb3-447d-bd43",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "4041-a9f5-7767-1900::0186-4cb3-447d-bd43::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "e7b4-8442-44ac-b59d",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "4041-a9f5-7767-1900::e7b4-8442-44ac-b59d::78f4-4967-2896-c3a5",
+            "groupPath": "4041-a9f5-7767-1900::14ef-ca1b-4128-b644"
+          }
+        ]
+      }
+    ],
+    "source": "world-eaters",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "bbe0-d0f8-43c2-8051",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "4041-a9f5-7767-1900::bbe0-d0f8-43c2-8051::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "7a41-ffa9-4cbe-861a",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "4041-a9f5-7767-1900::7a41-ffa9-4cbe-861a::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Rad grenades",
+        "entryId": "15d8-b3d8-4ce1-8af1",
+        "targetId": "cd5f-1eff-df69-6bd2",
+        "path": "4041-a9f5-7767-1900::15d8-b3d8-4ce1-8af1::cd5f-1eff-df69-6bd2"
+      }
+    ],
+    "facts": {
+      "95af-8507-44dc-bcc3": 1,
+      "4041-a9f5-7767-1900": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "175d-5084-4a94-a562": 4,
+      "594d-fa82-13cb-a345": 5,
+      "c504-9dfa-35d3-c98f": 5,
+      "7890-90e5-46e8-ad27": 4,
+      "2942-f783-d627-33c5": 5,
+      "a1a5-919d-4128-91bc": 4,
+      "78f4-4967-2896-c3a5": 5,
+      "1af9-fee8-4304-921b": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "0186-4cb3-447d-bd43": 1,
+      "e7b4-8442-44ac-b59d": 1
+    },
+    "prime": {
+      "linkId": "4bc8-83ec-32d0-b52d",
+      "path": "4041-a9f5-7767-1900::4bc8-83ec-32d0-b52d::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "4041-a9f5-7767-1900::f39b-1edb-696d-5b71"
+      }
+    }
+  },
+  {
+    "name": "Inductii Squad",
+    "entryId": "00b8-a44a-f21d-3c6c",
+    "path": "00b8-a44a-f21d-3c6c::b725-0c21-4adf-a683",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 100,
+    "baseCost": 10,
+    "models": [
+      {
+        "name": "Inductii",
+        "entryId": "9610-3989-47b8-91f7",
+        "path": "00b8-a44a-f21d-3c6c::9610-3989-47b8-91f7",
+        "cost": 9,
+        "min": 10,
+        "max": 20,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "1da7-2909-4e7f-abfb",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "00b8-a44a-f21d-3c6c::1da7-2909-4e7f-abfb::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "3b7c-a490-4277-8847",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "00b8-a44a-f21d-3c6c::3b7c-a490-4277-8847::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "1078-3ddf-4403-830c",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "00b8-a44a-f21d-3c6c::1078-3ddf-4403-830c::2942-f783-d627-33c5",
+            "groupPath": "00b8-a44a-f21d-3c6c::bb95-76ba-3a9d-99d5"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "496c-1d82-4b37-9bc0",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "00b8-a44a-f21d-3c6c::496c-1d82-4b37-9bc0::78f4-4967-2896-c3a5",
+            "groupPath": "00b8-a44a-f21d-3c6c::810d-c10a-3ed8-eb8e"
+          }
+        ]
+      }
+    ],
+    "source": "world-eaters",
+    "facts": {
+      "b725-0c21-4adf-a683": 1,
+      "00b8-a44a-f21d-3c6c": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "9610-3989-47b8-91f7": 10,
+      "594d-fa82-13cb-a345": 10,
+      "1da7-2909-4e7f-abfb": 10,
+      "60e4-ca33-2e68-9afc": 10,
+      "3b7c-a490-4277-8847": 10,
+      "fa20-82bc-c7de-9e97": 10,
+      "1078-3ddf-4403-830c": 10,
+      "2942-f783-d627-33c5": 10,
+      "496c-1d82-4b37-9bc0": 10,
+      "78f4-4967-2896-c3a5": 10
+    }
+  }
+]

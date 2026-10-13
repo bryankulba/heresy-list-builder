@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import { loadFactionUnits } from '../data/loader';
+import React, { useEffect, useState } from 'react';
 import { Button, NumberInput, Select, SelectItem, SelectItemGroup } from '@carbon/react';
 import type { Allegiance } from '../types';
 import { useRosterStore } from '../store/rosterStore';
@@ -14,8 +15,21 @@ export default function StartScreen() {
   const [allegiance, setAllegiance] = useState<Allegiance>('Loyalist');
   const [pointsLimit, setPointsLimit] = useState(3000);
   const [cohortDoctrine, setCohortDoctrine] = useState('');
-  const [armyChoices, setArmyChoices] = useState(() => defaultArmyChoices(FACTIONS[0].id));
-  const choiceGroups = armyChoiceGroups(faction);
+  const [armyChoices, setArmyChoices] = useState<Record<string, string>>({});
+  // The army's units load when it's picked; its sub-faction choices come from them
+  const [loadedFaction, setLoadedFaction] = useState<string | null>(null);
+  useEffect(() => {
+    let current = true;
+    loadFactionUnits(faction).then(() => {
+      if (!current) return;
+      setLoadedFaction(faction);
+      setArmyChoices(defaultArmyChoices(faction));
+    });
+    return () => {
+      current = false;
+    };
+  }, [faction]);
+  const choiceGroups = loadedFaction === faction ? armyChoiceGroups(faction) : [];
   const [configChoices, setConfigChoices] = useState(() => defaultConfigChoices(FACTIONS[0].id));
   const settings = configOptions(faction);
   const [showSavedLists, setShowSavedLists] = useState(false);
@@ -24,7 +38,6 @@ export default function StartScreen() {
     const next = e.target.value;
     setFaction(next);
     if (!doctrineOptions(next).includes(cohortDoctrine)) setCohortDoctrine('');
-    setArmyChoices(defaultArmyChoices(next));
     setConfigChoices(defaultConfigChoices(next));
   }
 

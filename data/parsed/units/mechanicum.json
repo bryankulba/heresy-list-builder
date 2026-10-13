@@ -1,0 +1,3268 @@
+[
+  {
+    "name": "Anacharis Scoria",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditionGroups": [
+          {
+            "type": "or",
+            "conditions": [
+              {
+                "type": "equalTo",
+                "scope": "roster",
+                "field": "selections",
+                "value": 0,
+                "childId": "597e-83d8-32e1-8eaa"
+              },
+              {
+                "type": "atLeast",
+                "scope": "roster",
+                "field": "selections",
+                "value": 1,
+                "childId": "e1e1-a344-d3e2-0b91"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "a580-4729-a18a-f9e0",
+    "path": "a580-4729-a18a-f9e0::10f5-dae8-f081-d82f",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 410,
+    "baseCost": 410,
+    "models": [
+      {
+        "name": "Anacharis Scoria",
+        "entryId": "9744-bec4-0f25-5a92",
+        "path": "a580-4729-a18a-f9e0::9744-bec4-0f25-5a92",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "The Vodian Sceptre",
+        "entryId": "9c53-20f4-b5da-59df",
+        "path": "a580-4729-a18a-f9e0::9c53-20f4-b5da-59df"
+      },
+      {
+        "name": "Scorian talons",
+        "entryId": "801c-fb69-20cf-4a09",
+        "path": "a580-4729-a18a-f9e0::801c-fb69-20cf-4a09"
+      },
+      {
+        "name": "Twin archaeotech pistols",
+        "entryId": "c62f-96ab-d5e6-f81a",
+        "targetId": "e4a5-b85a-1a93-6368",
+        "path": "a580-4729-a18a-f9e0::c62f-96ab-d5e6-f81a::e4a5-b85a-1a93-6368"
+      },
+      {
+        "name": "Photon thruster",
+        "entryId": "b40c-ed79-8a4a-7184",
+        "targetId": "378a-3959-2f9f-8cf4",
+        "path": "a580-4729-a18a-f9e0::b40c-ed79-8a4a-7184::378a-3959-2f9f-8cf4"
+      },
+      {
+        "name": "Theurgika Maximus",
+        "entryId": "4740-f75c-8704-5f02",
+        "targetId": "aba1-9c44-dd47-d77d",
+        "path": "a580-4729-a18a-f9e0::4740-f75c-8704-5f02::aba1-9c44-dd47-d77d"
+      },
+      {
+        "name": "Archimandrite",
+        "entryId": "2bd2-6b4f-9936-6416",
+        "targetId": "6a01-072d-5f2a-deed",
+        "path": "a580-4729-a18a-f9e0::2bd2-6b4f-9936-6416::6a01-072d-5f2a-deed"
+      },
+      {
+        "name": "Overcharge Reactors",
+        "entryId": "5612-cb38-cbc2-80c6",
+        "targetId": "8509-21c7-f7df-6f81",
+        "path": "a580-4729-a18a-f9e0::5612-cb38-cbc2-80c6::8509-21c7-f7df-6f81",
+        "groupPath": "a580-4729-a18a-f9e0::da2c-9e35-7c84-0607"
+      },
+      {
+        "name": "Cogitator Purge",
+        "entryId": "0863-ede2-b664-f6ab",
+        "targetId": "cee5-60ce-2035-8a9b",
+        "path": "a580-4729-a18a-f9e0::0863-ede2-b664-f6ab::cee5-60ce-2035-8a9b",
+        "groupPath": "a580-4729-a18a-f9e0::da2c-9e35-7c84-0607"
+      },
+      {
+        "name": "Scrap-code Infection",
+        "entryId": "b684-afae-acbe-def3",
+        "targetId": "c8fa-a317-bc53-8764",
+        "path": "a580-4729-a18a-f9e0::b684-afae-acbe-def3::c8fa-a317-bc53-8764",
+        "groupPath": "a580-4729-a18a-f9e0::da2c-9e35-7c84-0607"
+      }
+    ],
+    "facts": {
+      "10f5-dae8-f081-d82f": 1,
+      "a580-4729-a18a-f9e0": 1,
+      "3252-003d-1181-0f99": 1,
+      "a660-a2a5-eef3-2fbc": 1,
+      "9892-3b91-8a3b-51e8": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "9744-bec4-0f25-5a92": 1,
+      "38d4-d720-8009-acd3": 1,
+      "5a95-e564-96b2-8dc9": 1,
+      "b980-187b-2b17-d635": 1
+    },
+    "prime": {
+      "linkId": "c2e5-e390-450e-8515",
+      "path": "a580-4729-a18a-f9e0::c2e5-e390-450e-8515::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "a580-4729-a18a-f9e0::5da2-e16a-4358-9f82"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "a580-4729-a18a-f9e0::4677-5ebc-8319-8799",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Archmagos",
+    "entryId": "a5e9-209d-9f17-9afd",
+    "path": "a5e9-209d-9f17-9afd::b16b-29ee-1239-60c3",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 120,
+    "baseCost": 120,
+    "models": [
+      {
+        "name": "Archmagos",
+        "entryId": "b996-334f-9f55-f896",
+        "path": "a5e9-209d-9f17-9afd::b996-334f-9f55-f896",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "5649-a889-af77-ae35",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "a5e9-209d-9f17-9afd::5649-a889-af77-ae35::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Archimandrite",
+        "entryId": "6a01-072d-5f2a-deed",
+        "path": "a5e9-209d-9f17-9afd::f00f-c9df-b87d-58d3::6a01-072d-5f2a-deed",
+        "groupPath": "a5e9-209d-9f17-9afd::f00f-c9df-b87d-58d3::ce61-2d74-5519-70bf"
+      }
+    ],
+    "facts": {
+      "b16b-29ee-1239-60c3": 1,
+      "a5e9-209d-9f17-9afd": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "b996-334f-9f55-f896": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "5b9f-3491-1b56-8599",
+      "path": "a5e9-209d-9f17-9afd::5b9f-3491-1b56-8599::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "a5e9-209d-9f17-9afd::b4bb-8af8-4c52-bbbe"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Command",
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "self",
+            "field": "selections",
+            "value": 1,
+            "childId": "c857-47bd-6a4f-fcf8"
+          }
+        ]
+      }
+    ],
+    "detachmentChoice": {
+      "prefix": "a5e9-209d-9f17-9afd::d3cb-436c-4a35-03a6",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Archmagos on Abeyant",
+    "entryId": "a2f9-908e-52aa-046f",
+    "path": "a2f9-908e-52aa-046f::6512-b1e9-975b-184b",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 150,
+    "baseCost": 150,
+    "models": [
+      {
+        "name": "Archmagos on Abeyant",
+        "entryId": "b71a-f6da-e0f6-b570",
+        "path": "a2f9-908e-52aa-046f::b71a-f6da-e0f6-b570",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "3562-ecc3-6acf-5346",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "a2f9-908e-52aa-046f::3562-ecc3-6acf-5346::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Archimandrite",
+        "entryId": "6a01-072d-5f2a-deed",
+        "path": "a2f9-908e-52aa-046f::577d-b859-7392-8223::6a01-072d-5f2a-deed",
+        "groupPath": "a2f9-908e-52aa-046f::577d-b859-7392-8223::ce61-2d74-5519-70bf"
+      }
+    ],
+    "facts": {
+      "6512-b1e9-975b-184b": 1,
+      "a2f9-908e-52aa-046f": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "b71a-f6da-e0f6-b570": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "c504-9dfa-35d3-c98f": 1,
+      "1e7d-9066-28d2-97a0": 1
+    },
+    "prime": {
+      "linkId": "6552-3cd8-1b54-9606",
+      "path": "a2f9-908e-52aa-046f::6552-3cd8-1b54-9606::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "a2f9-908e-52aa-046f::3b76-a493-49b6-9b1d"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Command",
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "self",
+            "field": "selections",
+            "value": 1,
+            "childId": "c857-47bd-6a4f-fcf8"
+          }
+        ]
+      }
+    ],
+    "detachmentChoice": {
+      "prefix": "a2f9-908e-52aa-046f::61f5-f46a-fadf-cb58",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Magos",
+    "entryId": "59e2-dde7-5e8f-30e2",
+    "path": "59e2-dde7-5e8f-30e2::0ccf-5e81-b051-6db9",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 100,
+    "baseCost": 100,
+    "models": [
+      {
+        "name": "Magos",
+        "entryId": "5778-8418-15ae-f9e9",
+        "path": "59e2-dde7-5e8f-30e2::5778-8418-15ae-f9e9",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "6d15-44db-201f-f6b2",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "59e2-dde7-5e8f-30e2::6d15-44db-201f-f6b2::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Archimandrite",
+        "entryId": "6a01-072d-5f2a-deed",
+        "path": "59e2-dde7-5e8f-30e2::40b6-5935-2a4f-f5eb::6a01-072d-5f2a-deed",
+        "groupPath": "59e2-dde7-5e8f-30e2::40b6-5935-2a4f-f5eb::ce61-2d74-5519-70bf"
+      }
+    ],
+    "officerOfTheLine": 2,
+    "facts": {
+      "0ccf-5e81-b051-6db9": 1,
+      "59e2-dde7-5e8f-30e2": 1,
+      "901a-6b71-7a29-4597": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "5778-8418-15ae-f9e9": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "9fd7-b9e1-0828-7e07",
+      "path": "59e2-dde7-5e8f-30e2::9fd7-b9e1-0828-7e07::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "59e2-dde7-5e8f-30e2::2da5-37c0-d6e3-ea11"
+      }
+    }
+  },
+  {
+    "name": "Scyllax Guardian Maniple",
+    "entryId": "7fd7-738d-d9d2-a73c",
+    "path": "7fd7-738d-d9d2-a73c::deed-12c8-f6e8-d95c",
+    "role": "Retinue",
+    "primaryCategory": "Retinue",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Scyllax (Paragon of Metal)",
+        "entryId": "3178-fa28-726a-a41d",
+        "path": "7fd7-738d-d9d2-a73c::3178-fa28-726a-a41d",
+        "cost": 25,
+        "min": 0,
+        "max": 0,
+        "defaultWargear": []
+      },
+      {
+        "name": "Scyllax",
+        "entryId": "a6dd-7eec-58ab-0bcd",
+        "path": "7fd7-738d-d9d2-a73c::a6dd-7eec-58ab-0bcd",
+        "cost": 25,
+        "min": 4,
+        "max": 16,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Scyllax combat array",
+        "entryId": "6668-e7b9-b720-e5a9",
+        "path": "7fd7-738d-d9d2-a73c::6668-e7b9-b720-e5a9"
+      },
+      {
+        "name": "Rad furnace",
+        "entryId": "695e-1dd4-98e1-ad3e",
+        "targetId": "e269-7996-f41f-b892",
+        "path": "7fd7-738d-d9d2-a73c::695e-1dd4-98e1-ad3e::e269-7996-f41f-b892"
+      },
+      {
+        "name": "Archimandrite",
+        "entryId": "6a01-072d-5f2a-deed",
+        "path": "7fd7-738d-d9d2-a73c::3f36-ef37-6adb-409e::6a01-072d-5f2a-deed",
+        "groupPath": "7fd7-738d-d9d2-a73c::3f36-ef37-6adb-409e::ce61-2d74-5519-70bf"
+      }
+    ],
+    "facts": {
+      "deed-12c8-f6e8-d95c": 1,
+      "7fd7-738d-d9d2-a73c": 1,
+      "a38e-50ff-310f-f19e": 2,
+      "a6dd-7eec-58ab-0bcd": 4,
+      "5833-5e86-26bc-0916": 4
+    },
+    "prime": {
+      "linkId": "6b81-88e9-8630-aa72",
+      "path": "7fd7-738d-d9d2-a73c::6b81-88e9-8630-aa72::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "7fd7-738d-d9d2-a73c::b908-cc3a-f91b-c9f0"
+      }
+    }
+  },
+  {
+    "name": "Arcuitor Magisterium",
+    "entryId": "0701-af75-3ed0-5330",
+    "path": "0701-af75-3ed0-5330::d704-b125-8dc3-7ba2",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 115,
+    "baseCost": 115,
+    "models": [
+      {
+        "name": "Arcuitor",
+        "entryId": "6441-1541-3a3f-0d94",
+        "path": "0701-af75-3ed0-5330::6441-1541-3a3f-0d94",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "1541-4af4-3753-3ef4",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "0701-af75-3ed0-5330::1541-4af4-3753-3ef4::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Malagra",
+        "entryId": "eff0-d7db-316b-4f78",
+        "targetId": "7560-ba42-5273-27fd",
+        "path": "0701-af75-3ed0-5330::eff0-d7db-316b-4f78::7560-ba42-5273-27fd"
+      }
+    ],
+    "facts": {
+      "d704-b125-8dc3-7ba2": 1,
+      "0701-af75-3ed0-5330": 1,
+      "eba5-3e47-aa06-65fe": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "6441-1541-3a3f-0d94": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "0438-a547-ec52-44e2",
+      "path": "0701-af75-3ed0-5330::0438-a547-ec52-44e2::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "0701-af75-3ed0-5330::c339-6218-8921-c0a2"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Command - Arcuitor Magesterium Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "force",
+            "field": "selections",
+            "value": 1,
+            "childId": "4f19-3023-0077-1049"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Echidnax Servo Maniple",
+    "entryId": "9d21-5f4a-0234-078a",
+    "path": "9d21-5f4a-0234-078a::466e-0da4-2961-6263",
+    "role": "Retinue",
+    "primaryCategory": "Retinue",
+    "points": 40,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Echidnax (Paragon of Metal)",
+        "entryId": "3500-158d-3ef0-ac7a",
+        "path": "9d21-5f4a-0234-078a::3500-158d-3ef0-ac7a",
+        "cost": 10,
+        "min": 0,
+        "max": 0,
+        "defaultWargear": []
+      },
+      {
+        "name": "Echidnax",
+        "entryId": "30b6-7817-41dc-17de",
+        "path": "9d21-5f4a-0234-078a::30b6-7817-41dc-17de",
+        "cost": 10,
+        "min": 4,
+        "max": 12,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Servo-harness",
+        "entryId": "f2a3-6675-fa16-47c7",
+        "targetId": "a71c-d284-cb63-869e",
+        "path": "9d21-5f4a-0234-078a::f2a3-6675-fa16-47c7::a71c-d284-cb63-869e"
+      },
+      {
+        "name": "Archimandrite",
+        "entryId": "6a01-072d-5f2a-deed",
+        "path": "9d21-5f4a-0234-078a::fee7-bc64-5422-4317::6a01-072d-5f2a-deed",
+        "groupPath": "9d21-5f4a-0234-078a::fee7-bc64-5422-4317::ce61-2d74-5519-70bf"
+      }
+    ],
+    "facts": {
+      "466e-0da4-2961-6263": 1,
+      "9d21-5f4a-0234-078a": 1,
+      "a38e-50ff-310f-f19e": 2,
+      "30b6-7817-41dc-17de": 4,
+      "5833-5e86-26bc-0916": 4
+    },
+    "prime": {
+      "linkId": "be84-5769-5633-c637",
+      "path": "9d21-5f4a-0234-078a::be84-5769-5633-c637::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "9d21-5f4a-0234-078a::ea94-751e-0d74-6c95"
+      }
+    }
+  },
+  {
+    "name": "Domitar Battle Maniple",
+    "entryId": "994a-d2fc-3d52-61cd",
+    "path": "994a-d2fc-3d52-61cd::cefd-9aca-871d-3263",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Domitar",
+        "entryId": "e8f4-acac-c459-7d6b",
+        "path": "994a-d2fc-3d52-61cd::e8f4-acac-c459-7d6b",
+        "cost": 100,
+        "min": 1,
+        "max": 4,
+        "defaultWargear": []
+      },
+      {
+        "name": "Domitar (Paragon of Metal)",
+        "entryId": "0a4a-9eac-49c1-569e",
+        "path": "994a-d2fc-3d52-61cd::0a4a-9eac-49c1-569e",
+        "cost": 100,
+        "min": 0,
+        "max": 0,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Domitar fists",
+        "entryId": "d399-d1a3-0440-dbb8",
+        "path": "994a-d2fc-3d52-61cd::d399-d1a3-0440-dbb8"
+      },
+      {
+        "name": "Cyclone missile launcher",
+        "entryId": "c037-028a-8ad1-ecf1",
+        "targetId": "b341-159d-9dfb-ff31",
+        "path": "994a-d2fc-3d52-61cd::c037-028a-8ad1-ecf1::b341-159d-9dfb-ff31"
+      },
+      {
+        "name": "Graviton hammers",
+        "entryId": "998d-5c50-fafa-b052",
+        "targetId": "39bd-daf2-8118-1611",
+        "path": "994a-d2fc-3d52-61cd::998d-5c50-fafa-b052::39bd-daf2-8118-1611"
+      },
+      {
+        "name": "Cybernetica",
+        "entryId": "c4a3-8ded-261d-6c7d",
+        "targetId": "403d-7806-215e-7676",
+        "path": "994a-d2fc-3d52-61cd::c4a3-8ded-261d-6c7d::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "cefd-9aca-871d-3263": 1,
+      "994a-d2fc-3d52-61cd": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "e8f4-acac-c459-7d6b": 1,
+      "5833-5e86-26bc-0916": 1
+    },
+    "prime": {
+      "linkId": "b377-f86e-6cd7-e128",
+      "path": "994a-d2fc-3d52-61cd::b377-f86e-6cd7-e128::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "994a-d2fc-3d52-61cd::f7bd-69d0-8993-bd24",
+        "1abc-7dd4-54e7-48e5": "994a-d2fc-3d52-61cd::5a20-af64-74ec-708d"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Elites - Automata Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "primary-catalogue",
+            "field": "selections",
+            "value": 1,
+            "childId": "dbe3-9946-d4de-dc73"
+          }
+        ]
+      },
+      {
+        "category": "Elites - Domitar Battle Maniple Only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Magos on Abeyant",
+    "entryId": "945b-b281-c049-2dfc",
+    "path": "945b-b281-c049-2dfc::0836-d574-9d22-307f",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 130,
+    "baseCost": 130,
+    "models": [
+      {
+        "name": "Magos on Abeyant",
+        "entryId": "c181-555b-ac73-6303",
+        "path": "945b-b281-c049-2dfc::c181-555b-ac73-6303",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "a99f-f713-a766-617b",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "945b-b281-c049-2dfc::a99f-f713-a766-617b::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Archimandrite",
+        "entryId": "6a01-072d-5f2a-deed",
+        "path": "945b-b281-c049-2dfc::1f26-8829-0310-fcff::6a01-072d-5f2a-deed",
+        "groupPath": "945b-b281-c049-2dfc::1f26-8829-0310-fcff::ce61-2d74-5519-70bf"
+      }
+    ],
+    "officerOfTheLine": 2,
+    "facts": {
+      "0836-d574-9d22-307f": 1,
+      "945b-b281-c049-2dfc": 1,
+      "901a-6b71-7a29-4597": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "c181-555b-ac73-6303": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "c504-9dfa-35d3-c98f": 1,
+      "1e7d-9066-28d2-97a0": 1
+    },
+    "prime": {
+      "linkId": "7455-4f65-7384-7264",
+      "path": "945b-b281-c049-2dfc::7455-4f65-7384-7264::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "945b-b281-c049-2dfc::16b6-a516-622c-62a0"
+      }
+    }
+  },
+  {
+    "name": "Myrmidon Secutor Host",
+    "entryId": "444f-f0b2-7106-e2ce",
+    "path": "444f-f0b2-7106-e2ce::6947-89b1-0c02-fd17",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 150,
+    "baseCost": 60,
+    "models": [
+      {
+        "name": "Secutor",
+        "entryId": "6f53-a341-72bf-aed8",
+        "path": "444f-f0b2-7106-e2ce::6f53-a341-72bf-aed8",
+        "cost": 45,
+        "min": 2,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Twin maxima bolters",
+            "entryId": "1960-3c57-658d-d119",
+            "targetId": "73ca-3919-fc33-5415",
+            "path": "444f-f0b2-7106-e2ce::1960-3c57-658d-d119::73ca-3919-fc33-5415",
+            "groupPath": "444f-f0b2-7106-e2ce::0ffc-aae8-5e77-64f0"
+          }
+        ]
+      },
+      {
+        "name": "Secutor Lord",
+        "entryId": "0e91-f44e-a433-13e2",
+        "path": "444f-f0b2-7106-e2ce::0e91-f44e-a433-13e2",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Twin maxima bolters",
+            "entryId": "761b-f485-2180-1f35",
+            "targetId": "73ca-3919-fc33-5415",
+            "path": "444f-f0b2-7106-e2ce::761b-f485-2180-1f35::73ca-3919-fc33-5415",
+            "groupPath": "444f-f0b2-7106-e2ce::746f-3f13-0b32-bf8f"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "1905-7e32-0655-8033",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "444f-f0b2-7106-e2ce::1905-7e32-0655-8033::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Power axe",
+        "entryId": "2a2b-0ea4-ee3f-8697",
+        "targetId": "4861-b77a-620c-f0d6",
+        "path": "444f-f0b2-7106-e2ce::2a2b-0ea4-ee3f-8697::4861-b77a-620c-f0d6"
+      },
+      {
+        "name": "Myrmidax",
+        "entryId": "a7e9-245d-e331-0d06",
+        "targetId": "20af-27a5-9296-e90f",
+        "path": "444f-f0b2-7106-e2ce::a7e9-245d-e331-0d06::20af-27a5-9296-e90f"
+      }
+    ],
+    "facts": {
+      "6947-89b1-0c02-fd17": 1,
+      "444f-f0b2-7106-e2ce": 1,
+      "9e7d-913d-86f0-e05e": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "6f53-a341-72bf-aed8": 2,
+      "594d-fa82-13cb-a345": 3,
+      "1e7d-9066-28d2-97a0": 3,
+      "1960-3c57-658d-d119": 2,
+      "73ca-3919-fc33-5415": 3,
+      "0e91-f44e-a433-13e2": 1,
+      "5a95-e564-96b2-8dc9": 1,
+      "761b-f485-2180-1f35": 1
+    },
+    "prime": {
+      "linkId": "e239-2ab4-21bc-0172",
+      "path": "444f-f0b2-7106-e2ce::e239-2ab4-21bc-0172::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "444f-f0b2-7106-e2ce::74b8-4066-d2f5-3681"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Elites - Myrmidax Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "primary-catalogue",
+            "field": "selections",
+            "value": 1,
+            "childId": "1db9-6dc0-7da5-e517"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Myrmidon Destructor Host",
+    "entryId": "a105-e91d-fa54-6d05",
+    "path": "a105-e91d-fa54-6d05::229c-7b38-1dac-de3e",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 150,
+    "baseCost": 60,
+    "models": [
+      {
+        "name": "Destructor",
+        "entryId": "afbb-38ce-5512-4539",
+        "path": "a105-e91d-fa54-6d05::afbb-38ce-5512-4539",
+        "cost": 45,
+        "min": 2,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Volkite culverin",
+            "entryId": "8b59-39c2-fb16-2b06",
+            "targetId": "fcf0-9c1b-d51e-6bc7",
+            "path": "a105-e91d-fa54-6d05::8b59-39c2-fb16-2b06::fcf0-9c1b-d51e-6bc7",
+            "groupPath": "a105-e91d-fa54-6d05::4bf5-e835-2c30-e41d"
+          }
+        ]
+      },
+      {
+        "name": "Destructor Lord",
+        "entryId": "39ad-181f-ba5a-c0a6",
+        "path": "a105-e91d-fa54-6d05::39ad-181f-ba5a-c0a6",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Volkite culverin",
+            "entryId": "9e28-75b9-e486-7214",
+            "targetId": "fcf0-9c1b-d51e-6bc7",
+            "path": "a105-e91d-fa54-6d05::9e28-75b9-e486-7214::fcf0-9c1b-d51e-6bc7",
+            "groupPath": "a105-e91d-fa54-6d05::e49f-6da2-416f-56e5"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "dfe0-d517-4349-32f6",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "a105-e91d-fa54-6d05::dfe0-d517-4349-32f6::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Shock chargers",
+        "entryId": "08aa-3dfb-2a75-a5d4",
+        "targetId": "9f0d-5e6b-1a6e-0546",
+        "path": "a105-e91d-fa54-6d05::08aa-3dfb-2a75-a5d4::9f0d-5e6b-1a6e-0546"
+      },
+      {
+        "name": "Myrmidax",
+        "entryId": "e37c-8229-812e-11a1",
+        "targetId": "20af-27a5-9296-e90f",
+        "path": "a105-e91d-fa54-6d05::e37c-8229-812e-11a1::20af-27a5-9296-e90f"
+      }
+    ],
+    "facts": {
+      "229c-7b38-1dac-de3e": 1,
+      "a105-e91d-fa54-6d05": 1,
+      "9e7d-913d-86f0-e05e": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "afbb-38ce-5512-4539": 2,
+      "594d-fa82-13cb-a345": 3,
+      "1e7d-9066-28d2-97a0": 3,
+      "8b59-39c2-fb16-2b06": 2,
+      "fcf0-9c1b-d51e-6bc7": 3,
+      "39ad-181f-ba5a-c0a6": 1,
+      "5a95-e564-96b2-8dc9": 1,
+      "9e28-75b9-e486-7214": 1
+    },
+    "prime": {
+      "linkId": "bfb6-5371-b018-913c",
+      "path": "a105-e91d-fa54-6d05::bfb6-5371-b018-913c::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "a105-e91d-fa54-6d05::a4ff-d32c-f0ff-2482"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Elites - Myrmidax Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "primary-catalogue",
+            "field": "selections",
+            "value": 1,
+            "childId": "1db9-6dc0-7da5-e517"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tech-Thrall Covenant",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "primary-catalogue",
+            "field": "selections",
+            "value": 1,
+            "childId": "dbe3-9946-d4de-dc73"
+          }
+        ]
+      }
+    ],
+    "entryId": "64bb-ed67-2a15-c357",
+    "path": "64bb-ed67-2a15-c357::6369-b3b1-0ce1-64f8",
+    "role": "Support",
+    "primaryCategory": "Support",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Tech-Thrall",
+        "entryId": "c369-c69d-b029-850b",
+        "path": "64bb-ed67-2a15-c357::c369-c69d-b029-850b",
+        "cost": 10,
+        "min": 10,
+        "max": 40,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Las-lock",
+        "entryId": "6197-382e-114e-cdda",
+        "targetId": "26a4-73a4-21de-2734",
+        "path": "64bb-ed67-2a15-c357::6197-382e-114e-cdda::26a4-73a4-21de-2734"
+      },
+      {
+        "name": "Lacrymaerta",
+        "entryId": "a5e0-bc33-638c-a87f",
+        "targetId": "0d7c-dc0a-3942-b4eb",
+        "path": "64bb-ed67-2a15-c357::a5e0-bc33-638c-a87f::0d7c-dc0a-3942-b4eb"
+      }
+    ],
+    "facts": {
+      "6369-b3b1-0ce1-64f8": 1,
+      "64bb-ed67-2a15-c357": 1,
+      "8268-aa48-f4dc-0506": 1,
+      "345f-9ba6-9b02-ed5c": 1,
+      "c369-c69d-b029-850b": 10,
+      "594d-fa82-13cb-a345": 10
+    },
+    "prime": {
+      "linkId": "8c63-7ba2-16d4-7980",
+      "path": "64bb-ed67-2a15-c357::8c63-7ba2-16d4-7980::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "64bb-ed67-2a15-c357::df59-054b-7567-e7c1"
+      }
+    }
+  },
+  {
+    "name": "Castellax Destructor Maniple",
+    "entryId": "3676-9cda-cbb3-0552",
+    "path": "3676-9cda-cbb3-0552::112f-1168-d07c-7f8f",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Castellax",
+        "entryId": "66b7-9883-86f7-a90f",
+        "path": "3676-9cda-cbb3-0552::66b7-9883-86f7-a90f",
+        "cost": 50,
+        "min": 2,
+        "max": 6,
+        "defaultWargear": [
+          {
+            "name": "Shock chargers",
+            "entryId": "407b-457c-8bc4-f296",
+            "targetId": "9f0d-5e6b-1a6e-0546",
+            "path": "3676-9cda-cbb3-0552::407b-457c-8bc4-f296::9f0d-5e6b-1a6e-0546",
+            "groupPath": "3676-9cda-cbb3-0552::1241-6eab-4261-d15a"
+          },
+          {
+            "name": "Bolter",
+            "count": 2,
+            "entryId": "c050-620e-c956-df2c",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "3676-9cda-cbb3-0552::c050-620e-c956-df2c::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "3676-9cda-cbb3-0552::0215-ef86-01e4-0f1f"
+          },
+          {
+            "name": "Mauler bolt cannon",
+            "entryId": "d7ec-04c6-4688-c02e",
+            "targetId": "ec2c-185f-3e9e-7ccd",
+            "path": "3676-9cda-cbb3-0552::d7ec-04c6-4688-c02e::ec2c-185f-3e9e-7ccd",
+            "groupPath": "3676-9cda-cbb3-0552::d5cd-f8b5-86c8-944f"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Cybernetica",
+        "entryId": "a92a-c17d-f444-9e5b",
+        "targetId": "403d-7806-215e-7676",
+        "path": "3676-9cda-cbb3-0552::a92a-c17d-f444-9e5b::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "112f-1168-d07c-7f8f": 1,
+      "3676-9cda-cbb3-0552": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "66b7-9883-86f7-a90f": 2,
+      "5833-5e86-26bc-0916": 2,
+      "407b-457c-8bc4-f296": 2,
+      "9f0d-5e6b-1a6e-0546": 2,
+      "c050-620e-c956-df2c": 2,
+      "d3f9-b9e6-3ea5-cc8e": 2,
+      "d7ec-04c6-4688-c02e": 2,
+      "ec2c-185f-3e9e-7ccd": 2
+    },
+    "prime": {
+      "linkId": "0121-094d-bbac-806b",
+      "path": "3676-9cda-cbb3-0552::0121-094d-bbac-806b::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "3676-9cda-cbb3-0552::2add-3992-0734-9159",
+        "1abc-7dd4-54e7-48e5": "3676-9cda-cbb3-0552::34a0-1bee-1d5f-7758"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Heavy Assault - Castellax Destructor Maniple only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Ursarax Cohort",
+    "entryId": "a8e1-7ca7-b17e-8f51",
+    "path": "a8e1-7ca7-b17e-8f51::4d8f-5e38-5902-0947",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 160,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Ursarax",
+        "entryId": "79a6-6bb0-56e1-daef",
+        "path": "a8e1-7ca7-b17e-8f51::79a6-6bb0-56e1-daef",
+        "cost": 25,
+        "min": 6,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Pair of Ursarax claws",
+            "entryId": "76ae-765a-63ec-2a3b",
+            "path": "a8e1-7ca7-b17e-8f51::76ae-765a-63ec-2a3b",
+            "groupPath": "a8e1-7ca7-b17e-8f51::0fde-8c73-929e-6366"
+          }
+        ]
+      },
+      {
+        "name": "Ursarax Alpha",
+        "entryId": "1d1b-d499-4941-b0ac",
+        "path": "a8e1-7ca7-b17e-8f51::1d1b-d499-4941-b0ac",
+        "cost": 10,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Pair of Ursarax claws",
+            "entryId": "26c9-35fb-4c48-aabf",
+            "path": "a8e1-7ca7-b17e-8f51::26c9-35fb-4c48-aabf",
+            "groupPath": "a8e1-7ca7-b17e-8f51::8da6-9a4a-1fab-0bb8"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "aa81-b6a2-668c-3f32",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "a8e1-7ca7-b17e-8f51::aa81-b6a2-668c-3f32::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Volkite incinerator",
+        "entryId": "8cb6-6e04-1bb7-1207",
+        "targetId": "7d55-4e92-9772-9a5f",
+        "path": "a8e1-7ca7-b17e-8f51::8cb6-6e04-1bb7-1207::7d55-4e92-9772-9a5f"
+      },
+      {
+        "name": "Lacrymaerta",
+        "entryId": "7249-e40e-0ec8-d804",
+        "targetId": "0d7c-dc0a-3942-b4eb",
+        "path": "a8e1-7ca7-b17e-8f51::7249-e40e-0ec8-d804::0d7c-dc0a-3942-b4eb"
+      }
+    ],
+    "facts": {
+      "4d8f-5e38-5902-0947": 1,
+      "a8e1-7ca7-b17e-8f51": 1,
+      "8268-aa48-f4dc-0506": 8,
+      "3235-bd79-e9b1-60fa": 1,
+      "79a6-6bb0-56e1-daef": 6,
+      "594d-fa82-13cb-a345": 7,
+      "c504-9dfa-35d3-c98f": 7,
+      "76ae-765a-63ec-2a3b": 6,
+      "1d1b-d499-4941-b0ac": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "26c9-35fb-4c48-aabf": 1
+    },
+    "prime": {
+      "linkId": "9c31-160e-a770-bd89",
+      "path": "a8e1-7ca7-b17e-8f51::9c31-160e-a770-bd89::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "a8e1-7ca7-b17e-8f51::bd36-4cf3-185d-54b6"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Heavy Assault - Ursurax Cohorts Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "force",
+            "field": "selections",
+            "value": 1,
+            "childId": "d5e2-3162-f591-6a81"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tech-Priest",
+    "entryId": "c778-e1d5-301a-2804",
+    "path": "c778-e1d5-301a-2804::bc86-4606-7fce-1866",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 30,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Tech-Priest",
+        "entryId": "070f-3f50-6fe0-19e6",
+        "path": "c778-e1d5-301a-2804::070f-3f50-6fe0-19e6",
+        "cost": 30,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "ad5e-8491-4b85-de75",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "c778-e1d5-301a-2804::ad5e-8491-4b85-de75::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Archimandrite",
+        "entryId": "6a01-072d-5f2a-deed",
+        "path": "c778-e1d5-301a-2804::884b-f6af-9a40-7ff1::6a01-072d-5f2a-deed",
+        "groupPath": "c778-e1d5-301a-2804::884b-f6af-9a40-7ff1::ce61-2d74-5519-70bf"
+      }
+    ],
+    "facts": {
+      "bc86-4606-7fce-1866": 1,
+      "c778-e1d5-301a-2804": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "070f-3f50-6fe0-19e6": 1,
+      "594d-fa82-13cb-a345": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "af7d-af64-6b7d-da9d": 1
+    },
+    "prime": {
+      "linkId": "5b37-3c5a-052f-f590",
+      "path": "c778-e1d5-301a-2804::5b37-3c5a-052f-f590::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "c778-e1d5-301a-2804::4944-5f01-5980-a80d"
+      }
+    }
+  },
+  {
+    "name": "Thallax Cohort",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "primary-catalogue",
+            "field": "selections",
+            "value": 1,
+            "childId": "dbe3-9946-d4de-dc73"
+          }
+        ]
+      }
+    ],
+    "entryId": "44ac-38f8-633f-9bfd",
+    "path": "44ac-38f8-633f-9bfd::a4ad-1b49-0303-59b3",
+    "role": "Support",
+    "primaryCategory": "Support",
+    "points": 120,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Thallax Praetorian",
+        "entryId": "d694-ed04-e9da-c5a7",
+        "path": "44ac-38f8-633f-9bfd::d694-ed04-e9da-c5a7",
+        "cost": 10,
+        "min": 0,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Lightning gun",
+            "entryId": "3eb6-f604-f513-ecb8",
+            "targetId": "9b86-e05d-8ce5-ab8b",
+            "path": "44ac-38f8-633f-9bfd::3eb6-f604-f513-ecb8::9b86-e05d-8ce5-ab8b",
+            "groupPath": "44ac-38f8-633f-9bfd::c678-ee68-9e90-06da"
+          }
+        ]
+      },
+      {
+        "name": "Thallax",
+        "entryId": "3ae4-8e05-ae1e-3934",
+        "path": "44ac-38f8-633f-9bfd::3ae4-8e05-ae1e-3934",
+        "cost": 20,
+        "min": 6,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Lightning gun",
+            "entryId": "5978-3111-da61-963a",
+            "targetId": "9b86-e05d-8ce5-ab8b",
+            "path": "44ac-38f8-633f-9bfd::5978-3111-da61-963a::9b86-e05d-8ce5-ab8b",
+            "groupPath": "44ac-38f8-633f-9bfd::69f6-c1fb-ecbc-5bb5"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "efc4-34fd-aad1-acf4",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "44ac-38f8-633f-9bfd::efc4-34fd-aad1-acf4::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Reductor",
+        "entryId": "b231-2cf3-d356-d6f1",
+        "targetId": "3f59-64f9-43da-d43e",
+        "path": "44ac-38f8-633f-9bfd::b231-2cf3-d356-d6f1::3f59-64f9-43da-d43e"
+      }
+    ],
+    "facts": {
+      "a4ad-1b49-0303-59b3": 1,
+      "44ac-38f8-633f-9bfd": 1,
+      "345f-9ba6-9b02-ed5c": 1,
+      "3ae4-8e05-ae1e-3934": 6,
+      "c504-9dfa-35d3-c98f": 6,
+      "594d-fa82-13cb-a345": 6,
+      "e76a-e22d-9fc4-dc1f": 6,
+      "5978-3111-da61-963a": 6,
+      "9b86-e05d-8ce5-ab8b": 6
+    },
+    "prime": {
+      "linkId": "15ee-84b3-0c6d-2087",
+      "path": "44ac-38f8-633f-9bfd::15ee-84b3-0c6d-2087::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "44ac-38f8-633f-9bfd::175f-df59-3cbe-ce59"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Support - Thallax Cohort Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "primary-catalogue",
+            "field": "selections",
+            "value": 1,
+            "childId": "7f03-c1a3-d883-8a98"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Armiger Moirax",
+    "entryId": "2646-d42e-7383-0e94",
+    "path": "2646-d42e-7383-0e94::1777-db1a-0cd5-6a89",
+    "role": "War-engine",
+    "primaryCategory": "War-engine",
+    "points": 165,
+    "baseCost": 165,
+    "models": [
+      {
+        "name": "Armiger Moirax",
+        "entryId": "3d84-fd67-3560-2968",
+        "path": "2646-d42e-7383-0e94::3d84-fd67-3560-2968",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Rad furnace",
+            "entryId": "e13a-67fa-d0ce-b439",
+            "targetId": "e269-7996-f41f-b892",
+            "path": "2646-d42e-7383-0e94::e13a-67fa-d0ce-b439::e269-7996-f41f-b892"
+          },
+          {
+            "name": "Gyges siege claw and one Irad-cleanser",
+            "entryId": "7739-8123-d0eb-a8fa",
+            "path": "2646-d42e-7383-0e94::7739-8123-d0eb-a8fa",
+            "groupPath": "2646-d42e-7383-0e94::7d45-d7d2-00ef-6c0f",
+            "children": [
+              {
+                "name": "Irad-cleanser",
+                "entryId": "79e6-e72b-6f3e-2027",
+                "targetId": "910e-3579-4968-44af",
+                "path": "2646-d42e-7383-0e94::79e6-e72b-6f3e-2027::910e-3579-4968-44af"
+              },
+              {
+                "name": "Gyges siege claws",
+                "entryId": "45c1-84e7-1aba-3ade",
+                "targetId": "8026-777a-5e74-7952",
+                "path": "2646-d42e-7383-0e94::45c1-84e7-1aba-3ade::8026-777a-5e74-7952"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Archimandrite",
+        "entryId": "6a01-072d-5f2a-deed",
+        "path": "2646-d42e-7383-0e94::d1c2-ce59-a6f4-9191::6a01-072d-5f2a-deed",
+        "groupPath": "2646-d42e-7383-0e94::d1c2-ce59-a6f4-9191::ce61-2d74-5519-70bf"
+      }
+    ],
+    "facts": {
+      "1777-db1a-0cd5-6a89": 1,
+      "2646-d42e-7383-0e94": 1,
+      "2499-7239-685f-8465": 1,
+      "3d84-fd67-3560-2968": 1,
+      "38d4-d720-8009-acd3": 1,
+      "e13a-67fa-d0ce-b439": 1,
+      "e269-7996-f41f-b892": 1,
+      "7739-8123-d0eb-a8fa": 1
+    },
+    "prime": {
+      "linkId": "5338-ba8d-a3b8-4e94",
+      "path": "2646-d42e-7383-0e94::5338-ba8d-a3b8-4e94::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "2646-d42e-7383-0e94::898b-4591-1759-52e9"
+      }
+    }
+  },
+  {
+    "name": "Thanatar Siege Maniple",
+    "entryId": "d3c4-a71a-85bf-01f2",
+    "path": "d3c4-a71a-85bf-01f2::3833-2f09-7ec7-b5f5",
+    "role": "War-engine",
+    "primaryCategory": "War-engine",
+    "points": 225,
+    "baseCost": 225,
+    "models": [
+      {
+        "name": "Thanatar",
+        "entryId": "f4d8-5c0c-290e-c9f8",
+        "path": "d3c4-a71a-85bf-01f2::f4d8-5c0c-290e-c9f8",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Shock chargers",
+        "entryId": "c940-cbc1-1ebf-ada3",
+        "targetId": "9f0d-5e6b-1a6e-0546",
+        "path": "d3c4-a71a-85bf-01f2::c940-cbc1-1ebf-ada3::9f0d-5e6b-1a6e-0546"
+      },
+      {
+        "name": "Twin mauler bolt cannon",
+        "entryId": "aba3-6a80-765a-2dfe",
+        "targetId": "f55e-5279-ca20-3a9b",
+        "path": "d3c4-a71a-85bf-01f2::aba3-6a80-765a-2dfe::f55e-5279-ca20-3a9b"
+      },
+      {
+        "name": "Cybernetica",
+        "entryId": "60d6-3379-8896-86d8",
+        "targetId": "403d-7806-215e-7676",
+        "path": "d3c4-a71a-85bf-01f2::60d6-3379-8896-86d8::403d-7806-215e-7676"
+      },
+      {
+        "name": "Cavas Configuration",
+        "entryId": "b0c4-16a4-19e9-d90f",
+        "path": "d3c4-a71a-85bf-01f2::b0c4-16a4-19e9-d90f",
+        "groupPath": "d3c4-a71a-85bf-01f2::07a5-b643-1588-1cee",
+        "children": [
+          {
+            "name": "Plasma mortar",
+            "entryId": "4f39-b26f-c2b2-7d98",
+            "targetId": "1b63-cd6f-7762-2fb2",
+            "path": "d3c4-a71a-85bf-01f2::4f39-b26f-c2b2-7d98::1b63-cd6f-7762-2fb2"
+          }
+        ]
+      }
+    ],
+    "facts": {
+      "3833-2f09-7ec7-b5f5": 1,
+      "d3c4-a71a-85bf-01f2": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "2499-7239-685f-8465": 1,
+      "f4d8-5c0c-290e-c9f8": 1,
+      "5833-5e86-26bc-0916": 1,
+      "1e7d-9066-28d2-97a0": 1
+    },
+    "prime": {
+      "linkId": "1cf3-2329-6452-494b",
+      "path": "d3c4-a71a-85bf-01f2::1cf3-2329-6452-494b::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "d3c4-a71a-85bf-01f2::f87b-760f-5b44-e00c",
+        "1abc-7dd4-54e7-48e5": "d3c4-a71a-85bf-01f2::4da8-2deb-a4e7-774e"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "War-Engine - Automata Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "primary-catalogue",
+            "field": "selections",
+            "value": 1,
+            "childId": "dbe3-9946-d4de-dc73"
+          }
+        ]
+      },
+      {
+        "category": "War Engine - Thanatar Siege Maniple only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Triaros Armoured Conveyor",
+    "entryId": "b0a1-0f87-385f-4239",
+    "path": "b0a1-0f87-385f-4239::0896-07f4-8844-9542",
+    "role": "Heavy Transport",
+    "primaryCategory": "Heavy Transport",
+    "points": 200,
+    "baseCost": 200,
+    "models": [
+      {
+        "name": "Triaros",
+        "entryId": "aa34-80c1-e81c-f512",
+        "path": "b0a1-0f87-385f-4239::aa34-80c1-e81c-f512",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Two Centreline Mounted Volkite Calivers",
+        "entryId": "f758-5a2b-e76c-0297",
+        "path": "b0a1-0f87-385f-4239::f758-5a2b-e76c-0297",
+        "children": [
+          {
+            "name": "Centreline Mounted Volkite Caliver",
+            "entryId": "8a32-629c-3be2-3b3e",
+            "targetId": "a042-1a69-9052-c59a",
+            "path": "b0a1-0f87-385f-4239::8a32-629c-3be2-3b3e::a042-1a69-9052-c59a"
+          }
+        ]
+      },
+      {
+        "name": "Pintle Mounted twin mauler bolt cannon",
+        "entryId": "32b5-b2a7-e690-a4bb",
+        "path": "b0a1-0f87-385f-4239::32b5-b2a7-e690-a4bb",
+        "children": [
+          {
+            "name": "Twin mauler bolt cannon",
+            "entryId": "2345-72c6-3307-4614",
+            "targetId": "f55e-5279-ca20-3a9b",
+            "path": "b0a1-0f87-385f-4239::2345-72c6-3307-4614::f55e-5279-ca20-3a9b"
+          }
+        ]
+      },
+      {
+        "name": "Flare Shield",
+        "entryId": "ca2e-618e-faf9-754d",
+        "targetId": "988f-36eb-7aa2-9ef4",
+        "path": "b0a1-0f87-385f-4239::ca2e-618e-faf9-754d::988f-36eb-7aa2-9ef4"
+      },
+      {
+        "name": "Searchlight",
+        "entryId": "9e53-e96f-601f-172e",
+        "targetId": "5a85-bf28-f790-7bf0",
+        "path": "b0a1-0f87-385f-4239::9e53-e96f-601f-172e::5a85-bf28-f790-7bf0"
+      },
+      {
+        "name": "Archimandrite",
+        "entryId": "6a01-072d-5f2a-deed",
+        "path": "b0a1-0f87-385f-4239::6516-bee0-56b2-0965::6a01-072d-5f2a-deed",
+        "groupPath": "b0a1-0f87-385f-4239::6516-bee0-56b2-0965::ce61-2d74-5519-70bf"
+      }
+    ],
+    "facts": {
+      "0896-07f4-8844-9542": 1,
+      "b0a1-0f87-385f-4239": 1,
+      "52d0-8b78-439e-18e5": 1,
+      "8d49-126f-5500-aa28": 1,
+      "aa34-80c1-e81c-f512": 1,
+      "aa5a-c9fd-1eb1-7a45": 1,
+      "2e6d-36f6-eeca-8e0c": 1
+    },
+    "prime": {
+      "linkId": "b4b1-4982-7100-2392",
+      "path": "b0a1-0f87-385f-4239::b4b1-4982-7100-2392::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "b0a1-0f87-385f-4239::ab1b-2965-8fe9-8334"
+      }
+    }
+  },
+  {
+    "name": "Castellax Battle Maniple",
+    "entryId": "0d8a-be54-5bd2-1d5a",
+    "path": "0d8a-be54-5bd2-1d5a::e8d6-2ba5-d10d-d617",
+    "role": "Support",
+    "primaryCategory": "Support",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Castellax (Paragon of Metal)",
+        "entryId": "61ae-2955-4177-a4df",
+        "path": "0d8a-be54-5bd2-1d5a::61ae-2955-4177-a4df",
+        "cost": 50,
+        "min": 0,
+        "max": 0,
+        "defaultWargear": [
+          {
+            "name": "Mauler bolt cannon",
+            "entryId": "ce29-a75b-7037-2623",
+            "targetId": "ec2c-185f-3e9e-7ccd",
+            "path": "0d8a-be54-5bd2-1d5a::ce29-a75b-7037-2623::ec2c-185f-3e9e-7ccd"
+          },
+          {
+            "name": "Shock chargers",
+            "entryId": "d737-d2d2-d671-78ed",
+            "targetId": "9f0d-5e6b-1a6e-0546",
+            "path": "0d8a-be54-5bd2-1d5a::d737-d2d2-d671-78ed::9f0d-5e6b-1a6e-0546",
+            "groupPath": "0d8a-be54-5bd2-1d5a::3d55-db80-0636-342d"
+          },
+          {
+            "name": "Bolter",
+            "count": 2,
+            "entryId": "8606-def5-7473-defb",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "0d8a-be54-5bd2-1d5a::8606-def5-7473-defb::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "0d8a-be54-5bd2-1d5a::ff8a-d46f-b8c8-16a9"
+          }
+        ]
+      },
+      {
+        "name": "Castellax",
+        "entryId": "6d1b-0e66-a950-f0ea",
+        "path": "0d8a-be54-5bd2-1d5a::6d1b-0e66-a950-f0ea",
+        "cost": 50,
+        "min": 2,
+        "max": 10,
+        "defaultWargear": [
+          {
+            "name": "Mauler bolt cannon",
+            "entryId": "27d1-a226-320d-2999",
+            "targetId": "ec2c-185f-3e9e-7ccd",
+            "path": "0d8a-be54-5bd2-1d5a::27d1-a226-320d-2999::ec2c-185f-3e9e-7ccd"
+          },
+          {
+            "name": "Shock chargers",
+            "entryId": "7f17-ee9e-8cfb-4e5e",
+            "targetId": "9f0d-5e6b-1a6e-0546",
+            "path": "0d8a-be54-5bd2-1d5a::7f17-ee9e-8cfb-4e5e::9f0d-5e6b-1a6e-0546",
+            "groupPath": "0d8a-be54-5bd2-1d5a::0f15-ade9-42bf-8eb7"
+          },
+          {
+            "name": "Bolter",
+            "count": 2,
+            "entryId": "94da-d659-4db3-d979",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "0d8a-be54-5bd2-1d5a::94da-d659-4db3-d979::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "0d8a-be54-5bd2-1d5a::762a-0f39-afd1-1f0c"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Cybernetica",
+        "entryId": "2b49-5e7b-9f4b-2f4f",
+        "targetId": "403d-7806-215e-7676",
+        "path": "0d8a-be54-5bd2-1d5a::2b49-5e7b-9f4b-2f4f::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "e8d6-2ba5-d10d-d617": 1,
+      "0d8a-be54-5bd2-1d5a": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "345f-9ba6-9b02-ed5c": 1,
+      "6d1b-0e66-a950-f0ea": 2,
+      "5833-5e86-26bc-0916": 2,
+      "27d1-a226-320d-2999": 2,
+      "ec2c-185f-3e9e-7ccd": 2,
+      "7f17-ee9e-8cfb-4e5e": 2,
+      "9f0d-5e6b-1a6e-0546": 2,
+      "94da-d659-4db3-d979": 2,
+      "d3f9-b9e6-3ea5-cc8e": 2
+    },
+    "prime": {
+      "linkId": "f0bf-fcb1-3cee-5d06",
+      "path": "0d8a-be54-5bd2-1d5a::f0bf-fcb1-3cee-5d06::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "0d8a-be54-5bd2-1d5a::89c3-e386-201c-227b",
+        "1abc-7dd4-54e7-48e5": "0d8a-be54-5bd2-1d5a::ba74-fa42-f195-4dbe"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Support - Automata Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "primary-catalogue",
+            "field": "selections",
+            "value": 1,
+            "childId": "dbe3-9946-d4de-dc73"
+          }
+        ]
+      },
+      {
+        "category": "Support - Castellax Battle Maniple Only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vorax Attack Maniple",
+    "entryId": "3372-0081-54a2-b01d",
+    "path": "3372-0081-54a2-b01d::de2e-f9b5-abe6-b8b5",
+    "role": "Recon",
+    "primaryCategory": "Recon",
+    "points": 90,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Vorax",
+        "entryId": "3fe5-3f4e-c7cb-7ba8",
+        "path": "3372-0081-54a2-b01d::3fe5-3f4e-c7cb-7ba8",
+        "cost": 45,
+        "min": 2,
+        "max": 8,
+        "defaultWargear": [
+          {
+            "name": "Lightning gun",
+            "entryId": "da09-78fe-fc7b-086a",
+            "targetId": "9b86-e05d-8ce5-ab8b",
+            "path": "3372-0081-54a2-b01d::da09-78fe-fc7b-086a::9b86-e05d-8ce5-ab8b",
+            "groupPath": "3372-0081-54a2-b01d::2430-259f-ad59-e794"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Pair of power blades",
+        "entryId": "28ff-37d7-48a8-ae88",
+        "targetId": "b6de-1568-2981-de20",
+        "path": "3372-0081-54a2-b01d::28ff-37d7-48a8-ae88::b6de-1568-2981-de20"
+      },
+      {
+        "name": "Twin rotor cannon",
+        "entryId": "61f2-d958-8936-310e",
+        "targetId": "8346-d5be-e159-326d",
+        "path": "3372-0081-54a2-b01d::61f2-d958-8936-310e::8346-d5be-e159-326d"
+      },
+      {
+        "name": "Cybernetica",
+        "entryId": "9a26-ef5e-552f-8248",
+        "targetId": "403d-7806-215e-7676",
+        "path": "3372-0081-54a2-b01d::9a26-ef5e-552f-8248::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "de2e-f9b5-abe6-b8b5": 1,
+      "3372-0081-54a2-b01d": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "2b65-a3f2-620a-dc58": 1,
+      "3fe5-3f4e-c7cb-7ba8": 2,
+      "5833-5e86-26bc-0916": 2,
+      "da09-78fe-fc7b-086a": 2,
+      "9b86-e05d-8ce5-ab8b": 2
+    },
+    "prime": {
+      "linkId": "74da-ed32-b735-0799",
+      "path": "3372-0081-54a2-b01d::74da-ed32-b735-0799::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "3372-0081-54a2-b01d::440a-bcbb-f6ae-54ab",
+        "1abc-7dd4-54e7-48e5": "3372-0081-54a2-b01d::114c-e998-d5b5-06d6"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Recon - Vorax Attack Maniple Only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vultarax Stratos Squadron",
+    "entryId": "cc63-b49e-c903-0bd4",
+    "path": "cc63-b49e-c903-0bd4::710e-f1ea-0061-d3cb",
+    "role": "Fast Attack",
+    "primaryCategory": "Fast Attack",
+    "points": 100,
+    "baseCost": 100,
+    "models": [
+      {
+        "name": "Vultarax",
+        "entryId": "3583-7243-9323-073e",
+        "path": "cc63-b49e-c903-0bd4::3583-7243-9323-073e",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Vultarax missile-launcher",
+        "entryId": "19db-9500-b308-5593",
+        "path": "cc63-b49e-c903-0bd4::19db-9500-b308-5593",
+        "children": [
+          {
+            "name": "Vultarax missile-launcher - Airburst",
+            "entryId": "ea3b-b3ce-b2b6-54ed",
+            "path": "cc63-b49e-c903-0bd4::ea3b-b3ce-b2b6-54ed"
+          },
+          {
+            "name": "Vultarax missile-launcher - Shaped Charge",
+            "entryId": "f885-a412-8a12-7712",
+            "path": "cc63-b49e-c903-0bd4::f885-a412-8a12-7712"
+          }
+        ]
+      },
+      {
+        "name": "Arc blaster",
+        "entryId": "5c61-5177-9588-c7cb",
+        "targetId": "e8bd-5972-dafc-783e",
+        "path": "cc63-b49e-c903-0bd4::5c61-5177-9588-c7cb::e8bd-5972-dafc-783e"
+      },
+      {
+        "name": "Dendrite talons",
+        "entryId": "6907-7db4-81c8-2581",
+        "targetId": "5a33-b483-64cb-9853",
+        "path": "cc63-b49e-c903-0bd4::6907-7db4-81c8-2581::5a33-b483-64cb-9853"
+      },
+      {
+        "name": "Cybernetica",
+        "entryId": "2406-9718-d72d-0348",
+        "targetId": "403d-7806-215e-7676",
+        "path": "cc63-b49e-c903-0bd4::2406-9718-d72d-0348::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "710e-f1ea-0061-d3cb": 1,
+      "cc63-b49e-c903-0bd4": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "cf96-8891-3f9a-8921": 1,
+      "3583-7243-9323-073e": 1,
+      "5833-5e86-26bc-0916": 1,
+      "c504-9dfa-35d3-c98f": 1
+    },
+    "prime": {
+      "linkId": "d7c8-a204-8c6d-6f67",
+      "path": "cc63-b49e-c903-0bd4::d7c8-a204-8c6d-6f67::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "cc63-b49e-c903-0bd4::6d2f-5545-0f2d-c5d1",
+        "1abc-7dd4-54e7-48e5": "cc63-b49e-c903-0bd4::25b7-ec59-193a-4e62"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Fast Attack - Vultarax Stratos Squadron Only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Blood Slaughterer",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      },
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "primary-catalogue",
+            "field": "selections",
+            "value": 1,
+            "childId": "d5e2-3162-f591-6a81"
+          }
+        ]
+      }
+    ],
+    "entryId": "7639-3262-6b8b-56b5",
+    "path": "7639-3262-6b8b-56b5::a6c8-1404-1b6f-ced9",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Blood Slaughterer",
+        "entryId": "f9cb-9ddf-083b-2a74",
+        "path": "7639-3262-6b8b-56b5::f9cb-9ddf-083b-2a74",
+        "cost": 50,
+        "min": 2,
+        "max": 4,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Slaughterer blades",
+        "entryId": "fc42-a690-b96d-2d8b",
+        "targetId": "a0b4-c592-01f4-c5a7",
+        "path": "7639-3262-6b8b-56b5::fc42-a690-b96d-2d8b::a0b4-c592-01f4-c5a7"
+      },
+      {
+        "name": "Cybernetica",
+        "entryId": "a6a9-a8b8-8e91-7f91",
+        "targetId": "403d-7806-215e-7676",
+        "path": "7639-3262-6b8b-56b5::a6a9-a8b8-8e91-7f91::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "a6c8-1404-1b6f-ced9": 1,
+      "7639-3262-6b8b-56b5": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "f9cb-9ddf-083b-2a74": 2,
+      "5833-5e86-26bc-0916": 2,
+      "2de1-ddd6-ebb4-10df": 2
+    },
+    "prime": {
+      "linkId": "72c7-c9cc-ba49-bab1",
+      "path": "7639-3262-6b8b-56b5::72c7-c9cc-ba49-bab1::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "7639-3262-6b8b-56b5::8a53-b7f2-7e82-040c"
+      }
+    }
+  },
+  {
+    "name": "Karacnos Assault Tank",
+    "entryId": "53b5-c2ff-0816-44b6",
+    "path": "53b5-c2ff-0816-44b6::ce4c-753d-aaf1-b4ab",
+    "role": "Armour",
+    "primaryCategory": "Armour",
+    "points": 235,
+    "baseCost": 235,
+    "models": [
+      {
+        "name": "Karacnos ",
+        "entryId": "bd29-af9c-378e-28dd",
+        "path": "53b5-c2ff-0816-44b6::bd29-af9c-378e-28dd",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Two Sponson Mounted lightning locks",
+        "entryId": "9f66-5262-820f-ec12",
+        "path": "53b5-c2ff-0816-44b6::9f66-5262-820f-ec12",
+        "children": [
+          {
+            "name": "Lightning lock",
+            "count": 2,
+            "entryId": "f053-4b9d-5960-a8e3",
+            "targetId": "d22a-d9bc-ed06-1a7f",
+            "path": "53b5-c2ff-0816-44b6::f053-4b9d-5960-a8e3::d22a-d9bc-ed06-1a7f"
+          }
+        ]
+      },
+      {
+        "name": "Hull (Front) Mounted Karacnos mortar battery",
+        "entryId": "39ff-fda9-96ed-393b",
+        "path": "53b5-c2ff-0816-44b6::39ff-fda9-96ed-393b",
+        "children": [
+          {
+            "name": "Hull (Front) Mounted Karacnos mortar battery",
+            "entryId": "5524-0525-7ebb-d071",
+            "targetId": "df6d-6b6e-feb8-e5f5",
+            "path": "53b5-c2ff-0816-44b6::5524-0525-7ebb-d071::df6d-6b6e-feb8-e5f5"
+          }
+        ]
+      },
+      {
+        "name": "Flare Shield",
+        "entryId": "5ea4-28d0-5af9-5d3b",
+        "targetId": "988f-36eb-7aa2-9ef4",
+        "path": "53b5-c2ff-0816-44b6::5ea4-28d0-5af9-5d3b::988f-36eb-7aa2-9ef4"
+      },
+      {
+        "name": "Searchlight",
+        "entryId": "0359-2d91-5f70-eaf2",
+        "targetId": "5a85-bf28-f790-7bf0",
+        "path": "53b5-c2ff-0816-44b6::0359-2d91-5f70-eaf2::5a85-bf28-f790-7bf0"
+      },
+      {
+        "name": "Macrotek",
+        "entryId": "cf5a-1858-e445-6426",
+        "targetId": "67af-3519-2c95-6da0",
+        "path": "53b5-c2ff-0816-44b6::cf5a-1858-e445-6426::67af-3519-2c95-6da0"
+      }
+    ],
+    "facts": {
+      "ce4c-753d-aaf1-b4ab": 1,
+      "53b5-c2ff-0816-44b6": 1,
+      "1ec3-1433-658a-f04e": 1,
+      "643a-1012-bd51-6537": 1,
+      "8d49-126f-5500-aa28": 1,
+      "bd29-af9c-378e-28dd": 1,
+      "aa5a-c9fd-1eb1-7a45": 1
+    },
+    "prime": {
+      "linkId": "c670-7126-8a54-8325",
+      "path": "53b5-c2ff-0816-44b6::c670-7126-8a54-8325::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "53b5-c2ff-0816-44b6::1be1-f186-85bb-52a0"
+      }
+    }
+  },
+  {
+    "name": "Krios Battle Tank",
+    "entryId": "d8bb-2984-96f9-2b38",
+    "path": "d8bb-2984-96f9-2b38::135f-153c-308a-7a1c",
+    "role": "Armour",
+    "primaryCategory": "Armour",
+    "points": 135,
+    "baseCost": 135,
+    "models": [
+      {
+        "name": "Krios",
+        "entryId": "3044-7727-3906-2385",
+        "path": "d8bb-2984-96f9-2b38::3044-7727-3906-2385",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Macrotek",
+        "entryId": "ec64-ac7e-84e0-56d4",
+        "targetId": "67af-3519-2c95-6da0",
+        "path": "d8bb-2984-96f9-2b38::ec64-ac7e-84e0-56d4::67af-3519-2c95-6da0"
+      },
+      {
+        "name": "Centreline Mounted lightning cannon",
+        "entryId": "9e35-1648-18af-6a7c",
+        "targetId": "fae1-04cd-0971-ee22",
+        "path": "d8bb-2984-96f9-2b38::9e35-1648-18af-6a7c::fae1-04cd-0971-ee22",
+        "groupPath": "d8bb-2984-96f9-2b38::2cff-2fa3-0522-4381"
+      }
+    ],
+    "facts": {
+      "135f-153c-308a-7a1c": 1,
+      "d8bb-2984-96f9-2b38": 1,
+      "1ec3-1433-658a-f04e": 1,
+      "643a-1012-bd51-6537": 1,
+      "8d49-126f-5500-aa28": 1,
+      "3044-7727-3906-2385": 1,
+      "aa5a-c9fd-1eb1-7a45": 1,
+      "a5c6-b359-cecb-e0b1": 1
+    },
+    "prime": {
+      "linkId": "7832-6b3a-bd5a-f9b5",
+      "path": "d8bb-2984-96f9-2b38::7832-6b3a-bd5a-f9b5::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "d8bb-2984-96f9-2b38::dce4-45ed-862f-7b33"
+      }
+    }
+  },
+  {
+    "name": "Decimator",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "4930-9671-b90d-37ac",
+    "path": "4930-9671-b90d-37ac::e60b-8b82-11e8-e59c",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 125,
+    "baseCost": 125,
+    "models": [
+      {
+        "name": "Decimator ",
+        "entryId": "5d38-5ed9-f018-126b",
+        "path": "4930-9671-b90d-37ac::5d38-5ed9-f018-126b",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Cybernetica",
+        "entryId": "a028-e8bf-3866-b4b8",
+        "targetId": "403d-7806-215e-7676",
+        "path": "4930-9671-b90d-37ac::a028-e8bf-3866-b4b8::403d-7806-215e-7676"
+      },
+      {
+        "name": "Decimator claw w/ Heavy Flamer",
+        "entryId": "1d2f-c9ff-ecbd-b1b8",
+        "path": "4930-9671-b90d-37ac::1d2f-c9ff-ecbd-b1b8",
+        "groupPath": "4930-9671-b90d-37ac::2c6f-ec5e-43dc-aa20",
+        "children": [
+          {
+            "name": "Heavy flamer",
+            "entryId": "8894-b144-fb00-d21e",
+            "targetId": "4fa7-ea45-2a89-ad86",
+            "path": "4930-9671-b90d-37ac::8894-b144-fb00-d21e::4fa7-ea45-2a89-ad86"
+          },
+          {
+            "name": "Decimator claw",
+            "entryId": "6d8e-510d-e912-7d5e",
+            "targetId": "711e-da62-be5d-72b5",
+            "path": "4930-9671-b90d-37ac::6d8e-510d-e912-7d5e::711e-da62-be5d-72b5"
+          }
+        ]
+      },
+      {
+        "name": "Decimator claw w/ Heavy Flamer",
+        "entryId": "f167-78ea-bb1e-dc22",
+        "path": "4930-9671-b90d-37ac::f167-78ea-bb1e-dc22",
+        "groupPath": "4930-9671-b90d-37ac::f8e5-7be8-4034-e294",
+        "children": [
+          {
+            "name": "Heavy flamer",
+            "entryId": "4599-e019-fc7b-e056",
+            "targetId": "4fa7-ea45-2a89-ad86",
+            "path": "4930-9671-b90d-37ac::4599-e019-fc7b-e056::4fa7-ea45-2a89-ad86"
+          },
+          {
+            "name": "Decimator claw",
+            "entryId": "66dc-32df-88ee-11be",
+            "targetId": "711e-da62-be5d-72b5",
+            "path": "4930-9671-b90d-37ac::66dc-32df-88ee-11be::711e-da62-be5d-72b5"
+          }
+        ]
+      }
+    ],
+    "facts": {
+      "e60b-8b82-11e8-e59c": 1,
+      "4930-9671-b90d-37ac": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "5d38-5ed9-f018-126b": 1,
+      "5833-5e86-26bc-0916": 1,
+      "2de1-ddd6-ebb4-10df": 1
+    },
+    "prime": {
+      "linkId": "ae13-7a65-99a6-f28e",
+      "path": "4930-9671-b90d-37ac::ae13-7a65-99a6-f28e::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "4930-9671-b90d-37ac::cd3f-f7e0-af84-2110"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Elites - Automata Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "primary-catalogue",
+            "field": "selections",
+            "value": 1,
+            "childId": "dbe3-9946-d4de-dc73"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Krios Venator",
+    "entryId": "310a-fd05-ec2e-3c3e",
+    "path": "310a-fd05-ec2e-3c3e::b444-b85f-85f8-e6f3",
+    "role": "Armour",
+    "primaryCategory": "Armour",
+    "points": 160,
+    "baseCost": 160,
+    "models": [
+      {
+        "name": "Krios",
+        "entryId": "4684-1eb3-81a9-48ba",
+        "path": "310a-fd05-ec2e-3c3e::4684-1eb3-81a9-48ba",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Centreline Mounted pulsar-fusil",
+        "entryId": "d3c5-910d-7de4-44b9",
+        "targetId": "d114-2798-e500-c4a4",
+        "path": "310a-fd05-ec2e-3c3e::d3c5-910d-7de4-44b9::d114-2798-e500-c4a4"
+      },
+      {
+        "name": "Macrotek",
+        "entryId": "93d0-6bd8-0cff-7ead",
+        "targetId": "67af-3519-2c95-6da0",
+        "path": "310a-fd05-ec2e-3c3e::93d0-6bd8-0cff-7ead::67af-3519-2c95-6da0"
+      }
+    ],
+    "facts": {
+      "b444-b85f-85f8-e6f3": 1,
+      "310a-fd05-ec2e-3c3e": 1,
+      "1ec3-1433-658a-f04e": 1,
+      "643a-1012-bd51-6537": 1,
+      "8d49-126f-5500-aa28": 1,
+      "4684-1eb3-81a9-48ba": 1,
+      "aa5a-c9fd-1eb1-7a45": 1,
+      "a5c6-b359-cecb-e0b1": 1
+    },
+    "prime": {
+      "linkId": "c011-9a59-eede-6c1e",
+      "path": "310a-fd05-ec2e-3c3e::c011-9a59-eede-6c1e::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "310a-fd05-ec2e-3c3e::8f56-c7ae-4144-abd5"
+      }
+    }
+  },
+  {
+    "name": "Brass Scorpion",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "c5c6-ce90-401e-c053",
+    "path": "c5c6-ce90-401e-c053::0264-23b6-0e95-8dfa",
+    "role": "Lord of War",
+    "primaryCategory": "Lord of War",
+    "points": 600,
+    "baseCost": 600,
+    "models": [
+      {
+        "name": "Brass Scorpion",
+        "entryId": "675a-e8fa-d577-5f59",
+        "path": "c5c6-ce90-401e-c053::675a-e8fa-d577-5f59",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Hellcrusher claws",
+        "entryId": "c415-d66d-47b9-cf29",
+        "path": "c5c6-ce90-401e-c053::c415-d66d-47b9-cf29"
+      },
+      {
+        "name": "Twin hellmaw cannon",
+        "entryId": "712c-593f-399e-3901",
+        "path": "c5c6-ce90-401e-c053::712c-593f-399e-3901"
+      },
+      {
+        "name": "Scorpion cannon",
+        "entryId": "218b-c73d-a80f-edcc",
+        "path": "c5c6-ce90-401e-c053::218b-c73d-a80f-edcc"
+      },
+      {
+        "name": "Despoiler cannon",
+        "entryId": "0b35-e33f-27b3-6b21",
+        "path": "c5c6-ce90-401e-c053::0b35-e33f-27b3-6b21"
+      },
+      {
+        "name": "Archimandrite",
+        "entryId": "b073-4d6e-ff01-6e49",
+        "targetId": "6a01-072d-5f2a-deed",
+        "path": "c5c6-ce90-401e-c053::b073-4d6e-ff01-6e49::6a01-072d-5f2a-deed"
+      }
+    ],
+    "facts": {
+      "0264-23b6-0e95-8dfa": 1,
+      "c5c6-ce90-401e-c053": 1,
+      "3252-003d-1181-0f99": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "a46f-a465-0ead-d6b8": 1,
+      "675a-e8fa-d577-5f59": 1,
+      "5833-5e86-26bc-0916": 1,
+      "1e7d-9066-28d2-97a0": 1,
+      "5555-f37e-8ad0-20c0": 1,
+      "2de1-ddd6-ebb4-10df": 1
+    }
+  },
+  {
+    "name": "Archmagos Draykavac",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditionGroups": [
+          {
+            "type": "or",
+            "conditions": [
+              {
+                "type": "equalTo",
+                "scope": "roster",
+                "field": "selections",
+                "value": 0,
+                "childId": "597e-83d8-32e1-8eaa"
+              },
+              {
+                "type": "atLeast",
+                "scope": "roster",
+                "field": "selections",
+                "value": 1,
+                "childId": "e1e1-a344-d3e2-0b91"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "adca-83e9-b3ad-36eb",
+    "path": "adca-83e9-b3ad-36eb::3563-badf-5bdb-cdfe",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 200,
+    "baseCost": 200,
+    "models": [
+      {
+        "name": "Archmagos Draykavac",
+        "entryId": "0a50-5745-5db4-64af",
+        "path": "adca-83e9-b3ad-36eb::0a50-5745-5db4-64af",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Liquifractor Onslaught",
+        "entryId": "7446-871b-8a77-9d36",
+        "path": "adca-83e9-b3ad-36eb::7446-871b-8a77-9d36"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "86a2-1446-ace6-439e",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "adca-83e9-b3ad-36eb::86a2-1446-ace6-439e::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Paragon blade",
+        "entryId": "782b-be72-5074-78b8",
+        "targetId": "1881-a2b5-fc58-4270",
+        "path": "adca-83e9-b3ad-36eb::782b-be72-5074-78b8::1881-a2b5-fc58-4270"
+      },
+      {
+        "name": "Graviton gun",
+        "entryId": "8aec-25cd-4de8-b4e7",
+        "targetId": "4a06-c55e-a06f-bd0c",
+        "path": "adca-83e9-b3ad-36eb::8aec-25cd-4de8-b4e7::4a06-c55e-a06f-bd0c"
+      },
+      {
+        "name": "Cortex controller",
+        "entryId": "bcb1-aa18-507b-6eae",
+        "targetId": "e1c7-e5c2-8a4c-1e79",
+        "path": "adca-83e9-b3ad-36eb::bcb1-aa18-507b-6eae::e1c7-e5c2-8a4c-1e79"
+      },
+      {
+        "name": "Machinator array",
+        "entryId": "6659-0e1d-8088-ffcc",
+        "targetId": "4453-7c1d-15ff-f22c",
+        "path": "adca-83e9-b3ad-36eb::6659-0e1d-8088-ffcc::4453-7c1d-15ff-f22c"
+      },
+      {
+        "name": "Theurgika Maximus",
+        "entryId": "3a48-35d3-ec6c-4ba0",
+        "targetId": "aba1-9c44-dd47-d77d",
+        "path": "adca-83e9-b3ad-36eb::3a48-35d3-ec6c-4ba0::aba1-9c44-dd47-d77d"
+      },
+      {
+        "name": "Archimandrite",
+        "entryId": "1c11-617c-2dd3-baa7",
+        "targetId": "6a01-072d-5f2a-deed",
+        "path": "adca-83e9-b3ad-36eb::1c11-617c-2dd3-baa7::6a01-072d-5f2a-deed"
+      },
+      {
+        "name": "Overcharge Reactors",
+        "entryId": "e00b-69ed-8aab-6f70",
+        "targetId": "8509-21c7-f7df-6f81",
+        "path": "adca-83e9-b3ad-36eb::e00b-69ed-8aab-6f70::8509-21c7-f7df-6f81",
+        "groupPath": "adca-83e9-b3ad-36eb::3a31-eec4-2748-92b4"
+      },
+      {
+        "name": "Programming Interrupt",
+        "entryId": "b8c6-9af0-c499-4367",
+        "targetId": "6820-76b3-ae10-23e5",
+        "path": "adca-83e9-b3ad-36eb::b8c6-9af0-c499-4367::6820-76b3-ae10-23e5",
+        "groupPath": "adca-83e9-b3ad-36eb::3a31-eec4-2748-92b4"
+      },
+      {
+        "name": "Scrap-code Infection",
+        "entryId": "7586-d6b1-4e7f-275d",
+        "targetId": "c8fa-a317-bc53-8764",
+        "path": "adca-83e9-b3ad-36eb::7586-d6b1-4e7f-275d::c8fa-a317-bc53-8764",
+        "groupPath": "adca-83e9-b3ad-36eb::3a31-eec4-2748-92b4"
+      }
+    ],
+    "facts": {
+      "3563-badf-5bdb-cdfe": 1,
+      "adca-83e9-b3ad-36eb": 1,
+      "a660-a2a5-eef3-2fbc": 1,
+      "9892-3b91-8a3b-51e8": 1,
+      "3252-003d-1181-0f99": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "0a50-5745-5db4-64af": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "fa49-588e-472c-9168",
+      "path": "adca-83e9-b3ad-36eb::fa49-588e-472c-9168::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "adca-83e9-b3ad-36eb::5f37-2c79-4725-a040"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "adca-83e9-b3ad-36eb::aa31-a3f7-490d-0381",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Kytan Daemon Engine",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "99f8-4aa6-beab-3f30",
+    "path": "99f8-4aa6-beab-3f30::b332-1007-5b23-7467",
+    "role": "Lord of War",
+    "primaryCategory": "Lord of War",
+    "points": 450,
+    "baseCost": 450,
+    "models": [
+      {
+        "name": "Kytan",
+        "entryId": "31e1-e321-9549-de41",
+        "path": "99f8-4aa6-beab-3f30::31e1-e321-9549-de41",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Kytan gatling cannon",
+        "entryId": "71e3-f615-5939-3b75",
+        "path": "99f8-4aa6-beab-3f30::71e3-f615-5939-3b75"
+      },
+      {
+        "name": "Cleaver of Slaughter",
+        "entryId": "fb6f-d3fc-43dd-ee4c",
+        "path": "99f8-4aa6-beab-3f30::fb6f-d3fc-43dd-ee4c"
+      },
+      {
+        "name": "Archimandrite",
+        "entryId": "8051-819e-e4d1-23c3",
+        "targetId": "6a01-072d-5f2a-deed",
+        "path": "99f8-4aa6-beab-3f30::8051-819e-e4d1-23c3::6a01-072d-5f2a-deed"
+      }
+    ],
+    "facts": {
+      "b332-1007-5b23-7467": 1,
+      "99f8-4aa6-beab-3f30": 1,
+      "3252-003d-1181-0f99": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "a46f-a465-0ead-d6b8": 1,
+      "31e1-e321-9549-de41": 1,
+      "5833-5e86-26bc-0916": 1,
+      "2de1-ddd6-ebb4-10df": 1,
+      "5555-f37e-8ad0-20c0": 1
+    }
+  },
+  {
+    "name": "Tech Thrall Defence Covenant",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "primary-catalogue",
+            "field": "selections",
+            "value": 1,
+            "childId": "dbe3-9946-d4de-dc73"
+          }
+        ]
+      }
+    ],
+    "entryId": "da4d-3651-6c7c-c5fa",
+    "path": "da4d-3651-6c7c-c5fa::e8d5-df1b-30f8-8887",
+    "role": "Support",
+    "primaryCategory": "Support",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Tech-Thrall",
+        "entryId": "f3c7-322f-6b46-5960",
+        "path": "da4d-3651-6c7c-c5fa::f3c7-322f-6b46-5960",
+        "cost": 10,
+        "min": 10,
+        "max": 40,
+        "defaultWargear": [
+          {
+            "name": "Mitra-lock",
+            "entryId": "fff3-9650-eca0-1a1c",
+            "path": "da4d-3651-6c7c-c5fa::fff3-9650-eca0-1a1c"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Lacrymaerta",
+        "entryId": "0ce5-6d9e-81ed-5f54",
+        "targetId": "0d7c-dc0a-3942-b4eb",
+        "path": "da4d-3651-6c7c-c5fa::0ce5-6d9e-81ed-5f54::0d7c-dc0a-3942-b4eb"
+      }
+    ],
+    "facts": {
+      "e8d5-df1b-30f8-8887": 1,
+      "da4d-3651-6c7c-c5fa": 1,
+      "8268-aa48-f4dc-0506": 1,
+      "345f-9ba6-9b02-ed5c": 1,
+      "f3c7-322f-6b46-5960": 10,
+      "594d-fa82-13cb-a345": 10,
+      "fff3-9650-eca0-1a1c": 10
+    },
+    "prime": {
+      "linkId": "01c0-5fc6-3c5d-195f",
+      "path": "da4d-3651-6c7c-c5fa::01c0-5fc6-3c5d-195f::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "da4d-3651-6c7c-c5fa::13bf-c814-c9b9-ed1a"
+      }
+    }
+  },
+  {
+    "name": "Arlatax Battle Maniple",
+    "entryId": "559c-8bc6-9f46-c7ad",
+    "path": "559c-8bc6-9f46-c7ad::88e3-4c5f-d4b7-b300",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 120,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Arlatax (Paragon of Metal)",
+        "entryId": "8c96-ac34-ecde-d02e",
+        "path": "559c-8bc6-9f46-c7ad::8c96-ac34-ecde-d02e",
+        "cost": 120,
+        "min": 0,
+        "max": 0,
+        "defaultWargear": [
+          {
+            "name": "Plasma cannon",
+            "entryId": "1d4d-fe18-3cc8-2298",
+            "targetId": "f8b8-96c8-ba31-faf8",
+            "path": "559c-8bc6-9f46-c7ad::1d4d-fe18-3cc8-2298::f8b8-96c8-ba31-faf8"
+          },
+          {
+            "name": "Pair of Power blades and Paired light autocannons ",
+            "entryId": "a840-d54c-cf25-25fc",
+            "path": "559c-8bc6-9f46-c7ad::a840-d54c-cf25-25fc",
+            "groupPath": "559c-8bc6-9f46-c7ad::9eea-ea7c-c577-c55f",
+            "children": [
+              {
+                "name": "Paired light autocannons",
+                "entryId": "453f-9491-f967-cd54",
+                "path": "559c-8bc6-9f46-c7ad::453f-9491-f967-cd54"
+              },
+              {
+                "name": "Pair of power blades",
+                "entryId": "de78-2012-9f46-b574",
+                "targetId": "b6de-1568-2981-de20",
+                "path": "559c-8bc6-9f46-c7ad::de78-2012-9f46-b574::b6de-1568-2981-de20"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "name": "Arlatax",
+        "entryId": "f202-2ad1-7237-0bae",
+        "path": "559c-8bc6-9f46-c7ad::f202-2ad1-7237-0bae",
+        "cost": 120,
+        "min": 1,
+        "max": 4,
+        "defaultWargear": [
+          {
+            "name": "Plasma cannon",
+            "entryId": "51b2-79d6-c366-ab5c",
+            "targetId": "f8b8-96c8-ba31-faf8",
+            "path": "559c-8bc6-9f46-c7ad::51b2-79d6-c366-ab5c::f8b8-96c8-ba31-faf8"
+          },
+          {
+            "name": "Pair of Power blades and Paired light autocannons ",
+            "entryId": "64c9-82fe-cecf-17da",
+            "path": "559c-8bc6-9f46-c7ad::64c9-82fe-cecf-17da",
+            "groupPath": "559c-8bc6-9f46-c7ad::1144-f575-1807-cbec",
+            "children": [
+              {
+                "name": "Paired light autocannons",
+                "entryId": "8180-c7fd-2da9-931b",
+                "path": "559c-8bc6-9f46-c7ad::8180-c7fd-2da9-931b"
+              },
+              {
+                "name": "Pair of power blades",
+                "entryId": "459b-9176-b087-3959",
+                "targetId": "b6de-1568-2981-de20",
+                "path": "559c-8bc6-9f46-c7ad::459b-9176-b087-3959::b6de-1568-2981-de20"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "facts": {
+      "88e3-4c5f-d4b7-b300": 1,
+      "559c-8bc6-9f46-c7ad": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "f202-2ad1-7237-0bae": 1,
+      "5833-5e86-26bc-0916": 1,
+      "c504-9dfa-35d3-c98f": 1,
+      "51b2-79d6-c366-ab5c": 1,
+      "f8b8-96c8-ba31-faf8": 1,
+      "64c9-82fe-cecf-17da": 1
+    },
+    "prime": {
+      "linkId": "a19b-e169-376d-3768",
+      "path": "559c-8bc6-9f46-c7ad::a19b-e169-376d-3768::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "559c-8bc6-9f46-c7ad::14d3-b61f-6f8c-03cd"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Elites - Automata Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "primary-catalogue",
+            "field": "selections",
+            "value": 1,
+            "childId": "dbe3-9946-d4de-dc73"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Mechanicum Termite",
+    "entryId": "5d4e-4320-cb37-0e82",
+    "path": "5d4e-4320-cb37-0e82::2943-f3ad-5b26-1377",
+    "role": "Transport",
+    "primaryCategory": "Transport",
+    "points": 80,
+    "baseCost": 80,
+    "models": [
+      {
+        "name": "Mechanicum Termite",
+        "entryId": "8034-007e-f146-979c",
+        "path": "5d4e-4320-cb37-0e82::8034-007e-f146-979c",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Centreline Mounted melta cutters",
+            "entryId": "b498-baa8-73da-83c1",
+            "targetId": "030a-72a9-a2b0-e92b",
+            "path": "5d4e-4320-cb37-0e82::b498-baa8-73da-83c1::030a-72a9-a2b0-e92b"
+          },
+          {
+            "name": "Two Pintle Mounted combi-bolters",
+            "entryId": "a5e2-23a1-5340-d2c2",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "5d4e-4320-cb37-0e82::a5e2-23a1-5340-d2c2::042d-9e60-db9e-c147",
+            "groupPath": "5d4e-4320-cb37-0e82::84f3-637d-8bdb-3c85"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Archimandrite",
+        "entryId": "6a01-072d-5f2a-deed",
+        "path": "5d4e-4320-cb37-0e82::a7a8-4f12-691a-dc4b::6a01-072d-5f2a-deed",
+        "groupPath": "5d4e-4320-cb37-0e82::a7a8-4f12-691a-dc4b::ce61-2d74-5519-70bf"
+      }
+    ],
+    "facts": {
+      "2943-f3ad-5b26-1377": 1,
+      "5d4e-4320-cb37-0e82": 1,
+      "d162-4711-5d60-0a48": 1,
+      "8d49-126f-5500-aa28": 1,
+      "8034-007e-f146-979c": 1,
+      "aa5a-c9fd-1eb1-7a45": 1,
+      "2e6d-36f6-eeca-8e0c": 1,
+      "b498-baa8-73da-83c1": 1,
+      "030a-72a9-a2b0-e92b": 1,
+      "a5e2-23a1-5340-d2c2": 1,
+      "042d-9e60-db9e-c147": 1
+    },
+    "prime": {
+      "linkId": "0560-cce5-68f9-e68b",
+      "path": "5d4e-4320-cb37-0e82::0560-cce5-68f9-e68b::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "5d4e-4320-cb37-0e82::2377-6f7a-9f19-63aa"
+      }
+    }
+  },
+  {
+    "name": "Mechanicum Tarantula Battery",
+    "entryId": "84c9-6d52-fba4-1508",
+    "path": "84c9-6d52-fba4-1508::02c3-37ea-5d20-8291",
+    "role": "Recon",
+    "primaryCategory": "Recon",
+    "points": 45,
+    "baseCost": 45,
+    "models": [
+      {
+        "name": "Mechanicum Tarantula Sentry Gun",
+        "entryId": "eb78-9d86-2120-9137",
+        "path": "84c9-6d52-fba4-1508::eb78-9d86-2120-9137",
+        "cost": 0,
+        "min": 2,
+        "max": 2,
+        "defaultWargear": [
+          {
+            "name": "Turret Mounted twin heavy bolter",
+            "entryId": "897c-f088-301b-5d87",
+            "targetId": "e0bc-e3e1-54e7-bd75",
+            "path": "84c9-6d52-fba4-1508::897c-f088-301b-5d87::e0bc-e3e1-54e7-bd75",
+            "groupPath": "84c9-6d52-fba4-1508::1dbe-d358-d0d0-3198"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Archimandrite",
+        "entryId": "6a01-072d-5f2a-deed",
+        "path": "84c9-6d52-fba4-1508::f41f-1b33-e5dd-a200::6a01-072d-5f2a-deed",
+        "groupPath": "84c9-6d52-fba4-1508::f41f-1b33-e5dd-a200::ce61-2d74-5519-70bf"
+      }
+    ],
+    "facts": {
+      "02c3-37ea-5d20-8291": 1,
+      "84c9-6d52-fba4-1508": 1,
+      "2b65-a3f2-620a-dc58": 1,
+      "eb78-9d86-2120-9137": 2,
+      "aa5a-c9fd-1eb1-7a45": 2,
+      "897c-f088-301b-5d87": 2,
+      "e0bc-e3e1-54e7-bd75": 2
+    },
+    "prime": {
+      "linkId": "f184-6ba1-813c-f5a3",
+      "path": "84c9-6d52-fba4-1508::f184-6ba1-813c-f5a3::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "84c9-6d52-fba4-1508::9f63-18bb-cfbb-c1b8"
+      }
+    }
+  },
+  {
+    "name": "Mechanicum Macrocarid Explorator",
+    "entryId": "6f44-47e2-8a63-fb5f",
+    "path": "6f44-47e2-8a63-fb5f::360a-d28e-99bb-fae5",
+    "role": "Heavy Transport",
+    "primaryCategory": "Heavy Transport",
+    "points": 200,
+    "baseCost": 200,
+    "models": [
+      {
+        "name": "Macrocarid Explorator",
+        "entryId": "fa83-8f31-56c8-f35d",
+        "path": "6f44-47e2-8a63-fb5f::fa83-8f31-56c8-f35d",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Turret Mounted mauler bolt cannon",
+            "entryId": "555c-1275-87d9-70c4",
+            "targetId": "ec2c-185f-3e9e-7ccd",
+            "path": "6f44-47e2-8a63-fb5f::555c-1275-87d9-70c4::ec2c-185f-3e9e-7ccd",
+            "groupPath": "6f44-47e2-8a63-fb5f::64b8-2e1f-94ce-0b2d"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Macrotek",
+        "entryId": "6acb-c466-36da-9499",
+        "targetId": "67af-3519-2c95-6da0",
+        "path": "6f44-47e2-8a63-fb5f::6acb-c466-36da-9499::67af-3519-2c95-6da0"
+      }
+    ],
+    "facts": {
+      "360a-d28e-99bb-fae5": 1,
+      "6f44-47e2-8a63-fb5f": 1,
+      "1ec3-1433-658a-f04e": 1,
+      "52d0-8b78-439e-18e5": 1,
+      "8d49-126f-5500-aa28": 1,
+      "fa83-8f31-56c8-f35d": 1,
+      "aa5a-c9fd-1eb1-7a45": 1,
+      "2e6d-36f6-eeca-8e0c": 1,
+      "555c-1275-87d9-70c4": 1,
+      "ec2c-185f-3e9e-7ccd": 1
+    },
+    "prime": {
+      "linkId": "1c98-4a83-d6f3-4193",
+      "path": "6f44-47e2-8a63-fb5f::1c98-4a83-d6f3-4193::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "6f44-47e2-8a63-fb5f::897c-4043-668d-27a2"
+      }
+    }
+  },
+  {
+    "name": "Mechanicum Ordinatus Ulator",
+    "entryId": "b034-e2bd-25a8-2c4d",
+    "path": "b034-e2bd-25a8-2c4d::0eec-dfde-0a0f-4440",
+    "role": "Lord of War",
+    "primaryCategory": "Lord of War",
+    "points": 750,
+    "baseCost": 750,
+    "models": [
+      {
+        "name": "Ordinatus Ulator",
+        "entryId": "4b98-9da0-bc0e-74ae",
+        "path": "b034-e2bd-25a8-2c4d::4b98-9da0-bc0e-74ae",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Rear Mounted Ordinatus volkite culverin",
+            "entryId": "daa8-284d-6cda-201d",
+            "targetId": "ee25-2ea5-c44d-2bcd",
+            "path": "b034-e2bd-25a8-2c4d::daa8-284d-6cda-201d::ee25-2ea5-c44d-2bcd"
+          },
+          {
+            "name": "Front Mounted Ordinatus volkite culverin",
+            "count": 2,
+            "entryId": "d7a9-c58d-30dc-f782",
+            "targetId": "ee25-2ea5-c44d-2bcd",
+            "path": "b034-e2bd-25a8-2c4d::d7a9-c58d-30dc-f782::ee25-2ea5-c44d-2bcd"
+          },
+          {
+            "name": "Boresight Mounted sonic destructor",
+            "entryId": "ad59-20cd-87b3-815e",
+            "targetId": "95b7-92a0-cdb9-8ecd",
+            "path": "b034-e2bd-25a8-2c4d::ad59-20cd-87b3-815e::95b7-92a0-cdb9-8ecd"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "facts": {
+      "0eec-dfde-0a0f-4440": 1,
+      "b034-e2bd-25a8-2c4d": 1,
+      "1ec3-1433-658a-f04e": 2,
+      "3420-1652-ccd9-aa8e": 1,
+      "a46f-a465-0ead-d6b8": 1,
+      "8d49-126f-5500-aa28": 1,
+      "4b98-9da0-bc0e-74ae": 1,
+      "aa5a-c9fd-1eb1-7a45": 1,
+      "f7f7-cdd5-a9fd-aa7a": 1,
+      "daa8-284d-6cda-201d": 1,
+      "ee25-2ea5-c44d-2bcd": 2,
+      "d7a9-c58d-30dc-f782": 1,
+      "ad59-20cd-87b3-815e": 1,
+      "95b7-92a0-cdb9-8ecd": 1
+    }
+  },
+  {
+    "name": "Mechanicum Ordinatus Sagittar",
+    "entryId": "6b53-b01e-6a76-760e",
+    "path": "6b53-b01e-6a76-760e::85ac-f5f9-5099-e423",
+    "role": "Lord of War",
+    "primaryCategory": "Lord of War",
+    "points": 800,
+    "baseCost": 800,
+    "models": [
+      {
+        "name": "Ordinatus Sagittar",
+        "entryId": "c66d-b286-67a6-96d5",
+        "path": "6b53-b01e-6a76-760e::c66d-b286-67a6-96d5",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Rear Mounted Ordinatus volkite culverin",
+            "entryId": "66ff-0c4a-d154-2f6b",
+            "targetId": "ee25-2ea5-c44d-2bcd",
+            "path": "6b53-b01e-6a76-760e::66ff-0c4a-d154-2f6b::ee25-2ea5-c44d-2bcd"
+          },
+          {
+            "name": "Front Mounted Ordinatus volkite culverin",
+            "count": 2,
+            "entryId": "3cbe-5a9f-5004-08ac",
+            "targetId": "ee25-2ea5-c44d-2bcd",
+            "path": "6b53-b01e-6a76-760e::3cbe-5a9f-5004-08ac::ee25-2ea5-c44d-2bcd"
+          },
+          {
+            "name": "Boresight Mounted Belicosa volcano cannon",
+            "entryId": "7548-7d92-3542-d3ee",
+            "targetId": "8173-e259-7de6-163b",
+            "path": "6b53-b01e-6a76-760e::7548-7d92-3542-d3ee::8173-e259-7de6-163b"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "facts": {
+      "85ac-f5f9-5099-e423": 1,
+      "6b53-b01e-6a76-760e": 1,
+      "1ec3-1433-658a-f04e": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "a46f-a465-0ead-d6b8": 1,
+      "8d49-126f-5500-aa28": 1,
+      "c66d-b286-67a6-96d5": 1,
+      "aa5a-c9fd-1eb1-7a45": 1,
+      "f7f7-cdd5-a9fd-aa7a": 1,
+      "66ff-0c4a-d154-2f6b": 1,
+      "ee25-2ea5-c44d-2bcd": 2,
+      "3cbe-5a9f-5004-08ac": 1,
+      "7548-7d92-3542-d3ee": 1,
+      "8173-e259-7de6-163b": 1
+    }
+  },
+  {
+    "name": "Mechanicum Ordinatus Aktaeus",
+    "entryId": "429d-4826-3d9b-8673",
+    "path": "429d-4826-3d9b-8673::9111-1de6-ec9d-526a",
+    "role": "Lord of War",
+    "primaryCategory": "Lord of War",
+    "points": 900,
+    "baseCost": 900,
+    "models": [
+      {
+        "name": "Ordinatus Aktaeus",
+        "entryId": "3901-c2dd-012a-9072",
+        "path": "429d-4826-3d9b-8673::3901-c2dd-012a-9072",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Front Mounted Ordinatus volkite culverin",
+            "count": 2,
+            "entryId": "6c2b-a8c4-900f-84aa",
+            "targetId": "ee25-2ea5-c44d-2bcd",
+            "path": "429d-4826-3d9b-8673::6c2b-a8c4-900f-84aa::ee25-2ea5-c44d-2bcd"
+          },
+          {
+            "name": "Boresight Mounted seismic macro-drill",
+            "entryId": "046e-d73c-cd35-dad7",
+            "targetId": "9fff-a0a4-03d0-2777",
+            "path": "429d-4826-3d9b-8673::046e-d73c-cd35-dad7::9fff-a0a4-03d0-2777"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "facts": {
+      "9111-1de6-ec9d-526a": 1,
+      "429d-4826-3d9b-8673": 1,
+      "1ec3-1433-658a-f04e": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "a46f-a465-0ead-d6b8": 1,
+      "8d49-126f-5500-aa28": 1,
+      "3901-c2dd-012a-9072": 1,
+      "aa5a-c9fd-1eb1-7a45": 1,
+      "f7f7-cdd5-a9fd-aa7a": 1,
+      "6c2b-a8c4-900f-84aa": 1,
+      "ee25-2ea5-c44d-2bcd": 1,
+      "046e-d73c-cd35-dad7": 1,
+      "9fff-a0a4-03d0-2777": 1
+    }
+  },
+  {
+    "name": "Castellax Infernus Maniple",
+    "entryId": "bc5e-ce5d-2b7b-3d03",
+    "path": "bc5e-ce5d-2b7b-3d03::22f0-eafe-7bbe-5408",
+    "role": "Support",
+    "primaryCategory": "Support",
+    "points": 110,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Castellax (Paragon of Metal)",
+        "entryId": "85cb-7394-e01d-b6e8",
+        "path": "bc5e-ce5d-2b7b-3d03::85cb-7394-e01d-b6e8",
+        "cost": 55,
+        "min": 0,
+        "max": 0,
+        "defaultWargear": [
+          {
+            "name": "Pair of power blades",
+            "entryId": "0d23-0c26-eaf9-37bb",
+            "targetId": "b6de-1568-2981-de20",
+            "path": "bc5e-ce5d-2b7b-3d03::0d23-0c26-eaf9-37bb::b6de-1568-2981-de20"
+          },
+          {
+            "name": "Purge Incinerator",
+            "entryId": "fb5b-192a-5acb-979e",
+            "targetId": "7c7e-78be-68e5-2e67",
+            "path": "bc5e-ce5d-2b7b-3d03::fb5b-192a-5acb-979e::7c7e-78be-68e5-2e67"
+          },
+          {
+            "name": "Flamer",
+            "count": 2,
+            "entryId": "0999-d12f-0bba-f87f",
+            "targetId": "9a45-35cd-3806-2303",
+            "path": "bc5e-ce5d-2b7b-3d03::0999-d12f-0bba-f87f::9a45-35cd-3806-2303"
+          }
+        ]
+      },
+      {
+        "name": "Castellax",
+        "entryId": "0cb4-9d4a-c898-14e8",
+        "path": "bc5e-ce5d-2b7b-3d03::0cb4-9d4a-c898-14e8",
+        "cost": 55,
+        "min": 2,
+        "max": 6,
+        "defaultWargear": [
+          {
+            "name": "Purge Incinerator",
+            "entryId": "6d03-a94d-4e12-6668",
+            "targetId": "7c7e-78be-68e5-2e67",
+            "path": "bc5e-ce5d-2b7b-3d03::6d03-a94d-4e12-6668::7c7e-78be-68e5-2e67"
+          },
+          {
+            "name": "Flamer",
+            "count": 2,
+            "entryId": "be71-4a96-616b-f8cb",
+            "targetId": "9a45-35cd-3806-2303",
+            "path": "bc5e-ce5d-2b7b-3d03::be71-4a96-616b-f8cb::9a45-35cd-3806-2303"
+          },
+          {
+            "name": "Pair of power blades",
+            "entryId": "27a5-b64f-6213-9b66",
+            "targetId": "b6de-1568-2981-de20",
+            "path": "bc5e-ce5d-2b7b-3d03::27a5-b64f-6213-9b66::b6de-1568-2981-de20"
+          }
+        ]
+      }
+    ],
+    "source": "mechanicum",
+    "unitWargear": [
+      {
+        "name": "Cybernetica",
+        "entryId": "77cb-79e3-2fee-6d1e",
+        "targetId": "403d-7806-215e-7676",
+        "path": "bc5e-ce5d-2b7b-3d03::77cb-79e3-2fee-6d1e::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "22f0-eafe-7bbe-5408": 1,
+      "bc5e-ce5d-2b7b-3d03": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "345f-9ba6-9b02-ed5c": 1,
+      "0cb4-9d4a-c898-14e8": 2,
+      "5833-5e86-26bc-0916": 2,
+      "6d03-a94d-4e12-6668": 2,
+      "7c7e-78be-68e5-2e67": 2,
+      "be71-4a96-616b-f8cb": 2,
+      "9a45-35cd-3806-2303": 2,
+      "27a5-b64f-6213-9b66": 2,
+      "b6de-1568-2981-de20": 2
+    },
+    "prime": {
+      "linkId": "8885-6b10-7a8d-f8d9",
+      "path": "bc5e-ce5d-2b7b-3d03::8885-6b10-7a8d-f8d9::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "bc5e-ce5d-2b7b-3d03::f523-20cb-7b9d-c677",
+        "1abc-7dd4-54e7-48e5": "bc5e-ce5d-2b7b-3d03::a96c-256d-cd24-384f"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Support - Automata Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "primary-catalogue",
+            "field": "selections",
+            "value": 1,
+            "childId": "dbe3-9946-d4de-dc73"
+          }
+        ]
+      }
+    ]
+  }
+]
