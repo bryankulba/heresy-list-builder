@@ -81,6 +81,17 @@ describe.each(files)('%s', (file) => {
     expect(warnings.filter((w) => !w.includes("isn't supported yet"))).toEqual([]);
   });
 
+  test('army configuration selections carry the primary category New Recruit files them under', () => {
+    for (const force of exported.forces?.force ?? []) {
+      const source = (original.forces?.force ?? []).find((f) => f.entryId === force.entryId);
+      for (const sel of kids(force)) {
+        expect(cats(sel).filter((c) => c.startsWith('*')), sel.name).toHaveLength(1);
+        const match = kids(source).find((o) => o.entryId === sel.entryId);
+        if (match) expect(cats(sel).filter((c) => c.startsWith('*')), sel.name).toEqual(cats(match).filter((c) => c.startsWith('*')));
+      }
+    }
+  });
+
   test('exports the same armies, detachments, units, Prime benefits and detachment choices', () => {
     const ours = fingerprint(exported, () => true);
     const theirs = fingerprint(original, (f) => supportedIds.has(f.entryId));

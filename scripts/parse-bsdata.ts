@@ -241,6 +241,8 @@ export interface UnitEntry {
 export interface ArmyConfigEntry {
   name: string;
   category: string;
+  /** Id of the primary category, written on the exported selection */
+  categoryId: string;
   /** Selection entryId path */
   path: string;
   min: number;
@@ -864,6 +866,9 @@ function armyConfigEntry(
   return {
     name: entry.name.trim().replace(/:$/, ''),
     category,
+    // New Recruit files root selections under their primary category; without
+    // it they don't count towards e.g. "Allegiance (1/1)"
+    categoryId: primary!.targetId,
     path: join(memberPath(member)),
     min,
     ...(entry.hidden || target?.hidden ? { hidden: true } : {}),

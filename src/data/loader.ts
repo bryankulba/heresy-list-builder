@@ -33,6 +33,8 @@ export const systemData = systemJson as SystemInfo;
 export interface ArmyConfigEntry {
   name: string;
   category: string;
+  /** Id of the primary category, written on the exported selection */
+  categoryId: string;
   path: string;
   min: number;
   hidden?: boolean;

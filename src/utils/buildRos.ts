@@ -173,7 +173,15 @@ function configSel(entry: ArmyConfigEntry, choiceName: string | undefined): Sel 
   const children = choice
     ? [{ name: choice.name, entryId: choice.path, entryGroupId: choice.groupPath, type: 'upgrade' as const, number: 1 }]
     : entry.defaults.map((w) => wargearSel(w, 1));
-  return { name: entry.name, entryId: entry.path, type: 'upgrade', number: 1, children };
+  return {
+    name: entry.name,
+    entryId: entry.path,
+    type: 'upgrade',
+    number: 1,
+    // Root selections need their primary category for New Recruit to count them
+    ...(entry.categoryId ? { categories: [{ name: entry.category, entryId: entry.categoryId, primary: true }] } : {}),
+    children,
+  };
 }
 
 /**

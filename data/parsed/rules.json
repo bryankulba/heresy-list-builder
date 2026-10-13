@@ -7236,6 +7236,7 @@
       {
         "name": "Allegiance",
         "category": "Allegiance",
+        "categoryId": "c408-52f1-b632-4c82",
         "path": "f775-2f81-bd18-2777",
         "min": 1,
         "choices": [
@@ -7262,6 +7263,7 @@
       {
         "name": "Army Configuration",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "e528-702e-f73e-5890::a827-ee7f-fe7d-9e0e",
         "min": 0,
         "hidden": true,
@@ -7271,6 +7273,7 @@
       {
         "name": "Zone Mortalis",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "ac9b-af12-a761-c3de::8c20-d283-0a02-c2b6",
         "min": 1,
         "hidden": true,
@@ -7315,6 +7318,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "fec9-e222-ccd0-ec7e::cf31-e71a-06a7-7456",
         "min": 1,
         "choices": [
@@ -7355,6 +7359,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "a1ad-b48f-3e35-4b90::7cd4-dbef-72bd-e815",
         "min": 1,
         "choices": [
@@ -7395,6 +7400,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "542a-dde2-5ef4-aca4::91dc-eddc-4090-1d02",
         "min": 1,
         "choices": [
@@ -7435,6 +7441,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "7067-6f8b-8fb6-2938::39cc-48a4-7cfe-44de",
         "min": 1,
         "choices": [
@@ -7475,6 +7482,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "a4a4-1585-1c50-4ccc::8a7c-a3df-7980-55b8",
         "min": 1,
         "choices": [
@@ -7520,6 +7528,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "0a75-1454-70e9-d90b::acd3-6cd6-ffdc-0a18",
         "min": 1,
         "choices": [
@@ -7560,6 +7569,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "fe89-4aba-284d-0f89::6909-3cb7-c511-da4b",
         "min": 1,
         "choices": [
@@ -7600,6 +7610,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "4fc3-9235-e3a7-3be8::9fcb-2b1d-7c9b-806c",
         "min": 1,
         "choices": [
@@ -7640,6 +7651,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "bcae-e46d-5ae7-82de::33f3-b1d3-7b30-e5ea",
         "min": 1,
         "choices": [
@@ -7680,6 +7692,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "3b5e-7b70-7497-f2f8::607a-9b93-c6a8-09a5",
         "min": 1,
         "choices": [
@@ -7720,6 +7733,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "3cb3-5760-3bdc-8870::ad93-f4bc-58d6-8d71",
         "min": 1,
         "choices": [
@@ -7760,6 +7774,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "8b79-9226-d0a8-894d::817a-a3a6-a18f-5fdf",
         "min": 1,
         "choices": [
@@ -7800,6 +7815,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "a040-530c-9f12-0cdd::75c1-69f7-a379-9dff",
         "min": 1,
         "choices": [
@@ -7840,6 +7856,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "a71e-2cb2-9e0f-3d1e::75e6-6851-2416-7c05",
         "min": 1,
         "choices": [
@@ -7880,6 +7897,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "c33a-6350-9da5-99fb::31e6-d7e1-30f6-8b4b",
         "min": 1,
         "choices": [
@@ -7920,6 +7938,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "a4dd-4bc2-7ddd-a456::e4ad-8839-cc53-92e2",
         "min": 1,
         "choices": [
@@ -7960,6 +7979,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "a2ea-e5b2-9780-fd82::0175-852c-b596-ad49",
         "min": 1,
         "choices": [
@@ -8000,6 +8020,7 @@
       {
         "name": "Rite of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "1ce9-43c5-ef27-ef7f::0797-1862-f00c-9f92",
         "min": 1,
         "choices": [
@@ -8045,6 +8066,7 @@
       {
         "name": "Carnage and Pandemonium",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "c318-51aa-9586-a5c1::f750-e8c9-cb56-11d9",
         "min": 0,
         "hidden": true,
@@ -8077,6 +8099,7 @@
       {
         "name": "Reactions",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "1827-1718-c1df-e027::8b83-93d0-a1e1-a05a",
         "min": 1,
         "modifiers": [
@@ -8132,6 +8155,7 @@
       {
         "name": "Legiones Auxilia designation",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "e92d-42e3-d324-f19d::0dd9-0876-e32b-2519",
         "min": 1,
         "modifiers": [
@@ -8247,6 +8271,7 @@
       {
         "name": "Cohort Doctrine",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "5ce4-f5b0-a977-e391::1ec6-21fb-3bb1-5cd1",
         "min": 1,
         "modifiers": [
@@ -8312,6 +8337,7 @@
       {
         "name": "Provenances of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "c6d2-e863-c467-bfc0::4fc7-e43d-4322-5e54",
         "min": 1,
         "hidden": true,
@@ -8435,6 +8461,7 @@
       {
         "name": "Advanced Reaction",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "7cd0-2de4-9d96-f998",
         "min": 1,
         "choices": [],
@@ -8445,6 +8472,7 @@
       {
         "name": "Legio Tactica",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "8f76-26c1-ffbf-9f97::5462-3ea9-6d4b-51e4",
         "min": 1,
         "choices": [
@@ -8490,6 +8518,7 @@
       {
         "name": "Divisio Tactica",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "c52b-6943-1df1-e4da::f978-523b-5ef8-84c1",
         "min": 1,
         "choices": [
@@ -8513,6 +8542,7 @@
       {
         "name": "Household Paradigms",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "c0cd-7f53-2f56-2015::bc35-fa07-3e87-a42c",
         "min": 1,
         "modifiers": [
@@ -8561,6 +8591,7 @@
       {
         "name": "Advanced Reactions",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "98e8-37ee-0754-bb6e::d747-bc59-f614-03b8",
         "min": 1,
         "modifiers": [
@@ -8608,6 +8639,7 @@
       {
         "name": "Provenances of War",
         "category": "Army Configuration",
+        "categoryId": "abfa-86ab-1726-077a",
         "path": "6b88-4e39-ceea-0327::4fc7-e43d-4322-5e54",
         "min": 1,
         "hidden": true,
