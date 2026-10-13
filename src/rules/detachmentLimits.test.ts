@@ -15,6 +15,8 @@ describe('detachment limits from BSData', () => {
   test('an extra Auxiliary detachment shows as over the limit (as New Recruit reported)', () => {
     expect(auxiliary(load('death-guard_v2.ros'))).toMatchObject({ used: 4, max: 3 });
     expect(auxiliary(load('death-guard_v2_fixed.ros'))).toMatchObject({ used: 3, max: 3 });
+    // Two Command units (Siege Breaker, Vigilator) but three Auxiliary detachments — a real list error
+    expect(auxiliary(load('I am Patient I am the End (3500 points no Legion uniques).ros'))).toMatchObject({ used: 3, max: 2 });
   });
 
   test('High Command "One Apex Detachment" raises the Apex limit', () => {
