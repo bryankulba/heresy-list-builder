@@ -270,7 +270,7 @@
               "groupPath": "f613-76c6-e58e-f286::ada7-e558-58a6-8710"
             },
             {
-              "name": "Bolt pistol",
+              "name": "Bolt pistol (default)",
               "entryId": "e97c-8d09-5fd4-3cd0",
               "targetId": "2942-f783-d627-33c5",
               "path": "f613-76c6-e58e-f286::e97c-8d09-5fd4-3cd0::2942-f783-d627-33c5",
@@ -311,8 +311,14 @@
       "alternateLinks": [
         {
           "entryId": "19fd-7251-94f8-5176",
-          "category": "Command - Centurions Only"
+          "category": "Command - Centurions Only",
+          "categoryIds": [
+            "1429-f03a-e8a5-478c"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "6dbf-654a-f06f-2d69"
       ]
     },
     {
@@ -400,6 +406,13 @@
               "targetId": "78f4-4967-2896-c3a5",
               "path": "7726-d0ba-8b71-d890::89ae-0ba9-a9f6-6faf::78f4-4967-2896-c3a5",
               "groupPath": "7726-d0ba-8b71-d890::59b3-1567-c3f2-20dd"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "ddae-79a7-d440-8316",
+              "targetId": "2942-f783-d627-33c5",
+              "path": "7726-d0ba-8b71-d890::ddae-79a7-d440-8316::2942-f783-d627-33c5",
+              "groupPath": "7726-d0ba-8b71-d890::193c-e985-25fe-7c5e"
             }
           ]
         },
@@ -454,10 +467,11 @@
         "c504-9dfa-35d3-c98f": 10,
         "89ae-0ba9-a9f6-6faf": 9,
         "78f4-4967-2896-c3a5": 10,
+        "ddae-79a7-d440-8316": 9,
+        "2942-f783-d627-33c5": 10,
         "956c-75a7-824e-0d9a": 1,
         "8045-89a4-76d4-fcef": 1,
         "29a9-66f3-d0b9-2cfa": 1,
-        "2942-f783-d627-33c5": 1,
         "b947-17f7-71ee-f1f8": 1
       },
       "prime": {
@@ -627,7 +641,7 @@
       "source": "legiones-astartes",
       "unitWargear": [
         {
-          "name": "Quad accelerator autocannon",
+          "name": "Turret Mounted Quad accelerator autocannon",
           "entryId": "e239-524c-c83c-ed06",
           "targetId": "dda7-91e5-90a0-cc4f",
           "path": "d330-10a7-9c5a-37eb::e239-524c-c83c-ed06::dda7-91e5-90a0-cc4f"
@@ -720,6 +734,7 @@
           "children": [
             {
               "name": "Photonic incinerator",
+              "count": 2,
               "entryId": "2d32-b642-f57d-024b",
               "targetId": "51f6-0820-9443-77e0",
               "path": "cf93-8bbf-ceb2-b76a::2d32-b642-f57d-024b::51f6-0820-9443-77e0"
@@ -748,8 +763,14 @@
       "alternateLinks": [
         {
           "entryId": "6a85-018e-2545-3b43",
-          "category": "War-engine - Upgraded by The Iron-clad"
+          "category": "War-engine - Upgraded by The Iron-clad",
+          "categoryIds": [
+            "d00a-e269-2ed3-8fc4"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "2499-7239-685f-8465"
       ]
     },
     {
@@ -776,7 +797,7 @@
               "path": "28b1-8f09-464f-d1d5::9283-5d81-b148-e6b1::7780-6d9e-7c9e-1e29"
             },
             {
-              "name": "Demolisher cannon",
+              "name": "Hull (Front) Mounted Demolisher cannon",
               "entryId": "2d98-ae4f-11eb-ad5f",
               "targetId": "4514-8e18-77b4-a141",
               "path": "28b1-8f09-464f-d1d5::2d98-ae4f-11eb-ad5f::4514-8e18-77b4-a141"
@@ -789,6 +810,7 @@
               "children": [
                 {
                   "name": "Lascannon array",
+                  "count": 2,
                   "entryId": "01ad-4cf9-66ae-5d85",
                   "targetId": "df65-7fb7-d1ff-8486",
                   "path": "28b1-8f09-464f-d1d5::1c77-98a3-763b-0523::01ad-4cf9-66ae-5d85::df65-7fb7-d1ff-8486"
@@ -796,7 +818,7 @@
               ]
             },
             {
-              "name": "Twin heavy bolter",
+              "name": "Hull (Front) Mounted Twin heavy bolter",
               "entryId": "4a9a-cf21-f010-5fdd",
               "targetId": "e0bc-e3e1-54e7-bd75",
               "path": "28b1-8f09-464f-d1d5::4a9a-cf21-f010-5fdd::e0bc-e3e1-54e7-bd75",
@@ -941,14 +963,14 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Bolter",
+              "name": "Pintle Mounted bolter",
               "entryId": "8ea5-3791-a4ab-d0b9",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "a221-5810-8800-1f65::8ea5-3791-a4ab-d0b9::d3f9-b9e6-3ea5-cc8e",
               "groupPath": "a221-5810-8800-1f65::d3be-7f0e-10f8-58cf::d625-37d6-d83a-0de3"
             },
             {
-              "name": "Bolter",
+              "name": "Pintle Mounted Bolter",
               "entryId": "c5e4-6b70-a14b-4ac5",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "a221-5810-8800-1f65::c5e4-6b70-a14b-4ac5::d3f9-b9e6-3ea5-cc8e",
@@ -982,8 +1004,14 @@
       "alternateLinks": [
         {
           "entryId": "9810-0bfe-1ea1-11c4",
-          "category": "Transport - Logisticae"
+          "category": "Transport - Logisticae",
+          "categoryIds": [
+            "f34d-c79d-b3a4-f01c"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "d162-4711-5d60-0a48"
       ]
     },
     {
@@ -1011,6 +1039,7 @@
               "children": [
                 {
                   "name": "Lascannon array",
+                  "count": 2,
                   "entryId": "01ad-4cf9-66ae-5d85",
                   "targetId": "df65-7fb7-d1ff-8486",
                   "path": "408b-aa40-5393-f894::f735-76c3-6518-92d1::01ad-4cf9-66ae-5d85::df65-7fb7-d1ff-8486"
@@ -1066,8 +1095,14 @@
       "alternateLinks": [
         {
           "entryId": "1a22-9259-2ab4-b7a3",
-          "category": "Heavy Transport - Logisticae"
+          "category": "Heavy Transport - Logisticae",
+          "categoryIds": [
+            "6fc0-917e-44a4-a4da"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "52d0-8b78-439e-18e5"
       ]
     },
     {
@@ -1462,8 +1497,14 @@
       "alternateLinks": [
         {
           "entryId": "94c0-c163-06b7-11be",
-          "category": "War-engine - Upgraded by The Iron-clad"
+          "category": "War-engine - Upgraded by The Iron-clad",
+          "categoryIds": [
+            "d00a-e269-2ed3-8fc4"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "2499-7239-685f-8465"
       ]
     },
     {
@@ -1501,6 +1542,7 @@
             },
             {
               "name": "Meltagun",
+              "count": 2,
               "entryId": "270e-0f00-b647-f5dc",
               "targetId": "b1e1-e164-5877-6734",
               "path": "e468-70ee-8012-9b20::270e-0f00-b647-f5dc::b1e1-e164-5877-6734"
@@ -1535,6 +1577,7 @@
           "children": [
             {
               "name": "Heavy flamer",
+              "count": 2,
               "entryId": "ca31-9576-d967-e694",
               "targetId": "4fa7-ea45-2a89-ad86",
               "path": "e468-70ee-8012-9b20::ca31-9576-d967-e694::4fa7-ea45-2a89-ad86"
@@ -1563,8 +1606,14 @@
       "alternateLinks": [
         {
           "entryId": "e81a-462b-1037-010a",
-          "category": "War-engine - Upgraded by The Iron-clad"
+          "category": "War-engine - Upgraded by The Iron-clad",
+          "categoryIds": [
+            "d00a-e269-2ed3-8fc4"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "2499-7239-685f-8465"
       ]
     },
     {
@@ -1604,7 +1653,7 @@
               "groupPath": "26fe-3b8a-0d61-e070::7241-f7af-2c37-bf3b"
             },
             {
-              "name": "Bolt pistol",
+              "name": "Bolt pistol (default)",
               "entryId": "43d6-a430-ef8f-774d",
               "targetId": "2942-f783-d627-33c5",
               "path": "26fe-3b8a-0d61-e070::43d6-a430-ef8f-774d::2942-f783-d627-33c5",
@@ -1811,6 +1860,13 @@
               "groupPath": "5dd5-d00c-b150-34b9::d704-0f74-99e4-dbc7::170b-d9c0-e9d6-b314"
             },
             {
+              "name": "Lightning claw",
+              "entryId": "1b85-899f-5499-4534",
+              "targetId": "cbf0-9b29-9a16-28b2",
+              "path": "5dd5-d00c-b150-34b9::e493-cec5-db91-30a6::1b85-899f-5499-4534::cbf0-9b29-9a16-28b2",
+              "groupPath": "5dd5-d00c-b150-34b9::e493-cec5-db91-30a6::0523-46e6-6df1-a4c0"
+            },
+            {
               "name": "Volkite charger",
               "entryId": "374a-8fe9-c894-73aa",
               "targetId": "93e7-6a83-1e9e-204a",
@@ -1834,6 +1890,8 @@
         "9871-cb62-5283-2216": 1,
         "1e7d-9066-28d2-97a0": 1,
         "38a8-2683-c590-3c4b": 1,
+        "1b85-899f-5499-4534": 1,
+        "cbf0-9b29-9a16-28b2": 1,
         "374a-8fe9-c894-73aa": 1,
         "93e7-6a83-1e9e-204a": 1
       },
@@ -1850,8 +1908,14 @@
       "alternateLinks": [
         {
           "entryId": "f73b-1c98-abfe-2cd3",
-          "category": "Command - Centurions Only"
+          "category": "Command - Centurions Only",
+          "categoryIds": [
+            "1429-f03a-e8a5-478c"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "6dbf-654a-f06f-2d69"
       ]
     },
     {
@@ -1878,14 +1942,14 @@
               "path": "fe78-9671-5656-c304::1092-a0c1-578f-9f11::2012-4b76-43b0-c7dd"
             },
             {
-              "name": "Bolter",
+              "name": "Pintle Mounted bolter",
               "entryId": "3d0e-63be-92c1-f9a1",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "fe78-9671-5656-c304::3d0e-63be-92c1-f9a1::d3f9-b9e6-3ea5-cc8e",
               "groupPath": "fe78-9671-5656-c304::0391-e330-1b9a-b27b::d625-37d6-d83a-0de3"
             },
             {
-              "name": "Bolter",
+              "name": "Pintle Mounted Bolter",
               "entryId": "f112-d472-06f5-083d",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "fe78-9671-5656-c304::f112-d472-06f5-083d::d3f9-b9e6-3ea5-cc8e",
@@ -2441,6 +2505,7 @@
               "children": [
                 {
                   "name": "Overcharged volkite serpenta",
+                  "count": 2,
                   "entryId": "4db9-5306-45be-8065",
                   "targetId": "a3f7-f435-8ad8-05f9",
                   "path": "3624-91d5-28dd-1a9f::4db9-5306-45be-8065::a3f7-f435-8ad8-05f9"
@@ -3943,7 +4008,7 @@
       "source": "legiones-astartes",
       "unitWargear": [
         {
-          "name": "Deathstorm missile launcher",
+          "name": "Turret Mounted Deathstorm missile launcher",
           "entryId": "dc06-2cf1-61e7-7f8f",
           "targetId": "a774-5009-7e45-c9bf",
           "path": "d3f2-e827-f765-e95b::dc06-2cf1-61e7-7f8f::a774-5009-7e45-c9bf"
@@ -4049,8 +4114,14 @@
       "alternateLinks": [
         {
           "entryId": "a171-22b3-803d-10fa",
-          "category": "War-engine - Upgraded by The Iron-clad"
+          "category": "War-engine - Upgraded by The Iron-clad",
+          "categoryIds": [
+            "d00a-e269-2ed3-8fc4"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "2499-7239-685f-8465"
       ]
     },
     {
@@ -4075,7 +4146,7 @@
       "source": "legiones-astartes",
       "unitWargear": [
         {
-          "name": "Melta cutters",
+          "name": "Centreline Mounted Melta cutters",
           "entryId": "05d5-4441-e785-bda0",
           "targetId": "030a-72a9-a2b0-e92b",
           "path": "ea3e-96d6-ba5a-2c6c::05d5-4441-e785-bda0::030a-72a9-a2b0-e92b"
@@ -4088,6 +4159,7 @@
           "children": [
             {
               "name": "Combi-bolter",
+              "count": 2,
               "entryId": "504d-f53b-2f7f-49c4",
               "targetId": "042d-9e60-db9e-c147",
               "path": "ea3e-96d6-ba5a-2c6c::504d-f53b-2f7f-49c4::042d-9e60-db9e-c147"
@@ -4116,8 +4188,14 @@
       "alternateLinks": [
         {
           "entryId": "361d-a25d-61e2-e0d8",
-          "category": "Transport - Logisticae"
+          "category": "Transport - Logisticae",
+          "categoryIds": [
+            "f34d-c79d-b3a4-f01c"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "d162-4711-5d60-0a48"
       ]
     },
     {
@@ -4142,7 +4220,7 @@
       "source": "legiones-astartes",
       "unitWargear": [
         {
-          "name": "Combi-bolter",
+          "name": "Pintle Mounted combi-bolter",
           "entryId": "b26a-8580-ed44-e2e7",
           "targetId": "042d-9e60-db9e-c147",
           "path": "557f-29a5-eadf-1fef::b26a-8580-ed44-e2e7::042d-9e60-db9e-c147"
@@ -4169,8 +4247,14 @@
       "alternateLinks": [
         {
           "entryId": "5f31-154e-0a07-a964",
-          "category": "Transport - Logisticae"
+          "category": "Transport - Logisticae",
+          "categoryIds": [
+            "f34d-c79d-b3a4-f01c"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "d162-4711-5d60-0a48"
       ]
     },
     {
@@ -4197,6 +4281,7 @@
               "children": [
                 {
                   "name": "Twin lascannon",
+                  "count": 2,
                   "entryId": "f01b-a7ea-90bf-12d9",
                   "targetId": "8e62-3fda-37e1-5f0a",
                   "path": "d54f-d8d0-db20-0096::f01b-a7ea-90bf-12d9::8e62-3fda-37e1-5f0a"
@@ -4252,8 +4337,14 @@
       "alternateLinks": [
         {
           "entryId": "a370-655f-c48f-318e",
-          "category": "Heavy Transport - Logisticae"
+          "category": "Heavy Transport - Logisticae",
+          "categoryIds": [
+            "6fc0-917e-44a4-a4da"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "52d0-8b78-439e-18e5"
       ]
     },
     {
@@ -4297,8 +4388,14 @@
       "alternateLinks": [
         {
           "entryId": "e7f9-bca8-8aa6-f2dd",
-          "category": "Heavy Transport - Logisticae"
+          "category": "Heavy Transport - Logisticae",
+          "categoryIds": [
+            "6fc0-917e-44a4-a4da"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "52d0-8b78-439e-18e5"
       ]
     },
     {
@@ -4351,8 +4448,14 @@
       "alternateLinks": [
         {
           "entryId": "5589-1cac-0cfd-410b",
-          "category": "Heavy Transport - Logisticae"
+          "category": "Heavy Transport - Logisticae",
+          "categoryIds": [
+            "6fc0-917e-44a4-a4da"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "52d0-8b78-439e-18e5"
       ]
     },
     {
@@ -4397,8 +4500,14 @@
       "alternateLinks": [
         {
           "entryId": "b501-cf72-ab54-1530",
-          "category": "Heavy Transport - Logisticae"
+          "category": "Heavy Transport - Logisticae",
+          "categoryIds": [
+            "6fc0-917e-44a4-a4da"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "52d0-8b78-439e-18e5"
       ]
     },
     {
@@ -4740,6 +4849,7 @@
               "children": [
                 {
                   "name": "Twin lascannon",
+                  "count": 2,
                   "entryId": "c992-30fe-1192-724c",
                   "targetId": "8e62-3fda-37e1-5f0a",
                   "path": "ea44-b21f-f424-44fd::c992-30fe-1192-724c::8e62-3fda-37e1-5f0a"
@@ -4780,8 +4890,14 @@
       "alternateLinks": [
         {
           "entryId": "4a93-1e5b-2cb0-7875",
-          "category": "Recon - Land Raider Explorator Only"
+          "category": "Recon - Land Raider Explorator Only",
+          "categoryIds": [
+            "1bc1-e6ff-d62e-398e"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "2b65-a3f2-620a-dc58"
       ]
     },
     {
@@ -4802,7 +4918,7 @@
           "max": 2,
           "defaultWargear": [
             {
-              "name": "Twin heavy bolter",
+              "name": "Turret Mounted Twin heavy bolter",
               "entryId": "6902-6ed0-1a78-d0f5",
               "targetId": "e0bc-e3e1-54e7-bd75",
               "path": "461e-1075-6f9a-2208::6902-6ed0-1a78-d0f5::e0bc-e3e1-54e7-bd75",
@@ -4999,13 +5115,13 @@
       "source": "legiones-astartes",
       "unitWargear": [
         {
-          "name": "Rotary missile launcher",
+          "name": "Centreline Mounted Rotary missile launcher",
           "entryId": "a725-6046-98fa-8f09",
           "targetId": "c35d-5122-6487-0063",
           "path": "b1bc-1a7b-5deb-2e6b::a725-6046-98fa-8f09::c35d-5122-6487-0063"
         },
         {
-          "name": "Twin lascannon",
+          "name": "Two Centreline Mounted Twin lascannon",
           "entryId": "9517-d70d-197b-2e59",
           "targetId": "8e62-3fda-37e1-5f0a",
           "path": "b1bc-1a7b-5deb-2e6b::9517-d70d-197b-2e59::8e62-3fda-37e1-5f0a"
@@ -5052,20 +5168,20 @@
       "source": "legiones-astartes",
       "unitWargear": [
         {
-          "name": "Vengeance launcher",
+          "name": "Centreline Mounted Vengeance launcher",
           "entryId": "f01c-40d8-5123-c2bf",
           "targetId": "c575-11c1-0b4d-b01e",
           "path": "6c98-3acf-65bb-99b0::f01c-40d8-5123-c2bf::c575-11c1-0b4d-b01e"
         },
         {
-          "name": "Twin heavy bolter",
+          "name": "Centreline Mounted Twin heavy bolter",
           "entryId": "9a7b-c9aa-1447-5f5f",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "6c98-3acf-65bb-99b0::9a7b-c9aa-1447-5f5f::e0bc-e3e1-54e7-bd75",
           "groupPath": "6c98-3acf-65bb-99b0::43c5-6af3-713a-52ba"
         },
         {
-          "name": "Tempest rocket",
+          "name": "Four Centreline Mounted Tempest rocket",
           "entryId": "61da-4bea-477e-dc0d",
           "targetId": "211b-5ea9-63ac-d161",
           "path": "6c98-3acf-65bb-99b0::61da-4bea-477e-dc0d::211b-5ea9-63ac-d161",
@@ -5115,20 +5231,20 @@
       "source": "legiones-astartes",
       "unitWargear": [
         {
-          "name": "Twin avenger bolt cannon",
+          "name": "Centreline Mounted Twin avenger bolt cannon",
           "entryId": "7f93-9997-96af-e2ce",
           "targetId": "82bb-5456-f6c4-8334",
           "path": "5fad-0c88-5d9f-f48b::7f93-9997-96af-e2ce::82bb-5456-f6c4-8334"
         },
         {
-          "name": "Gravis heavy bolter battery",
+          "name": "Two Sponson Mounted Gravis heavy bolter batteries",
           "entryId": "785e-d41a-2b0b-e9dd",
           "targetId": "5c0e-33c5-afb1-fed5",
           "path": "5fad-0c88-5d9f-f48b::785e-d41a-2b0b-e9dd::5c0e-33c5-afb1-fed5",
           "groupPath": "5fad-0c88-5d9f-f48b::3413-da10-517b-d76d"
         },
         {
-          "name": "Tempest rocket",
+          "name": "Four Centreline Mounted Tempest rockets",
           "entryId": "64a4-6569-559e-eea2",
           "targetId": "211b-5ea9-63ac-d161",
           "path": "5fad-0c88-5d9f-f48b::64a4-6569-559e-eea2::211b-5ea9-63ac-d161",
@@ -5237,7 +5353,8 @@
               "groupPath": "aadc-fe71-f5a1-afcd::a49a-d3d7-7da3-2429::df25-ac22-5bbd-0e44",
               "children": [
                 {
-                  "name": "Heavy bolter",
+                  "name": "Sponson Mounted heavy bolters",
+                  "count": 2,
                   "entryId": "dfde-7237-e188-06e0",
                   "targetId": "bc40-b14a-978e-0232",
                   "path": "aadc-fe71-f5a1-afcd::a49a-d3d7-7da3-2429::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
@@ -5367,7 +5484,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Heavy bolter",
+              "name": "Hull (Front) Mounted heavy bolter",
               "entryId": "e5b1-223c-7cc2-645a",
               "targetId": "bc40-b14a-978e-0232",
               "path": "f28e-ef2e-f28c-5385::e5b1-223c-7cc2-645a::bc40-b14a-978e-0232"
@@ -5379,7 +5496,8 @@
               "groupPath": "f28e-ef2e-f28c-5385::3b88-70bd-772b-32b0::df25-ac22-5bbd-0e44",
               "children": [
                 {
-                  "name": "Heavy bolter",
+                  "name": "Sponson Mounted heavy bolters",
+                  "count": 2,
                   "entryId": "dfde-7237-e188-06e0",
                   "targetId": "bc40-b14a-978e-0232",
                   "path": "f28e-ef2e-f28c-5385::3b88-70bd-772b-32b0::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
@@ -5444,7 +5562,7 @@
               "path": "e782-806b-997d-257d::3afe-1863-a80f-9f04::81f3-6879-257e-6552"
             },
             {
-              "name": "Heavy bolter",
+              "name": "Turret Mounted Heavy bolter",
               "entryId": "c057-fed1-8e5f-18c8",
               "targetId": "bc40-b14a-978e-0232",
               "path": "e782-806b-997d-257d::c057-fed1-8e5f-18c8::bc40-b14a-978e-0232"
@@ -5456,7 +5574,8 @@
               "groupPath": "e782-806b-997d-257d::a62d-2eb6-3b67-2691::df25-ac22-5bbd-0e44",
               "children": [
                 {
-                  "name": "Heavy bolter",
+                  "name": "Sponson Mounted heavy bolters",
+                  "count": 2,
                   "entryId": "dfde-7237-e188-06e0",
                   "targetId": "bc40-b14a-978e-0232",
                   "path": "e782-806b-997d-257d::a62d-2eb6-3b67-2691::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
@@ -5508,7 +5627,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Autocannon",
+              "name": "Co-axial Autocannon",
               "entryId": "7c7f-e369-1fa5-d1de",
               "targetId": "da6e-3b8a-ea61-1e93",
               "path": "82d0-fe0d-f087-3fff::7c7f-e369-1fa5-d1de::da6e-3b8a-ea61-1e93"
@@ -5520,7 +5639,8 @@
               "groupPath": "82d0-fe0d-f087-3fff::e3b6-b7b7-2448-ca57::df25-ac22-5bbd-0e44",
               "children": [
                 {
-                  "name": "Heavy bolter",
+                  "name": "Sponson Mounted heavy bolters",
+                  "count": 2,
                   "entryId": "dfde-7237-e188-06e0",
                   "targetId": "bc40-b14a-978e-0232",
                   "path": "82d0-fe0d-f087-3fff::e3b6-b7b7-2448-ca57::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
@@ -5542,6 +5662,7 @@
               "children": [
                 {
                   "name": "Heavy bolter",
+                  "count": 2,
                   "entryId": "1c38-e1f5-4125-0aa8",
                   "targetId": "bc40-b14a-978e-0232",
                   "path": "82d0-fe0d-f087-3fff::1c38-e1f5-4125-0aa8::bc40-b14a-978e-0232"
@@ -5595,7 +5716,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Combi-bolter",
+              "name": "Hull (Front) Mounted Combi-bolter",
               "entryId": "d659-6d79-cda0-2097",
               "targetId": "042d-9e60-db9e-c147",
               "path": "ffb2-67fc-506a-bd6e::d659-6d79-cda0-2097::042d-9e60-db9e-c147"
@@ -5683,14 +5804,14 @@
               "path": "fd2d-2f7b-803a-c377::4cc7-9ee1-81c4-bcd1::b706-15fa-601e-78b9"
             },
             {
-              "name": "Bolter",
+              "name": "Pintle Mounted bolter",
               "entryId": "1d6f-f394-bd4d-da82",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "fd2d-2f7b-803a-c377::1d6f-f394-bd4d-da82::d3f9-b9e6-3ea5-cc8e",
               "groupPath": "fd2d-2f7b-803a-c377::f129-0760-4473-0fd6::d625-37d6-d83a-0de3"
             },
             {
-              "name": "Bolter",
+              "name": "Pintle Mounted Bolter",
               "entryId": "38c4-6abd-661e-966e",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "fd2d-2f7b-803a-c377::38c4-6abd-661e-966e::d3f9-b9e6-3ea5-cc8e",
@@ -5747,7 +5868,8 @@
               "groupPath": "08db-017f-44c0-51a4::dd0d-8e1f-809f-ee18::df25-ac22-5bbd-0e44",
               "children": [
                 {
-                  "name": "Heavy bolter",
+                  "name": "Sponson Mounted heavy bolters",
+                  "count": 2,
                   "entryId": "dfde-7237-e188-06e0",
                   "targetId": "bc40-b14a-978e-0232",
                   "path": "08db-017f-44c0-51a4::dd0d-8e1f-809f-ee18::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
@@ -5842,7 +5964,8 @@
               "groupPath": "92b5-9340-df96-6375::f355-58ef-9f2d-aaaf::df25-ac22-5bbd-0e44",
               "children": [
                 {
-                  "name": "Heavy bolter",
+                  "name": "Sponson Mounted heavy bolters",
+                  "count": 2,
                   "entryId": "dfde-7237-e188-06e0",
                   "targetId": "bc40-b14a-978e-0232",
                   "path": "92b5-9340-df96-6375::f355-58ef-9f2d-aaaf::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
@@ -5896,7 +6019,8 @@
               "groupPath": "c6aa-db21-1ce7-6b8b::3a0a-63c2-26bf-2f65::df25-ac22-5bbd-0e44",
               "children": [
                 {
-                  "name": "Heavy bolter",
+                  "name": "Sponson Mounted heavy bolters",
+                  "count": 2,
                   "entryId": "dfde-7237-e188-06e0",
                   "targetId": "bc40-b14a-978e-0232",
                   "path": "c6aa-db21-1ce7-6b8b::3a0a-63c2-26bf-2f65::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
@@ -5938,7 +6062,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Volkite carronade",
+              "name": "Turret Mounted Volkite carronade",
               "entryId": "3f3b-29ca-1bb9-5ec0",
               "targetId": "06c7-dd15-f390-c59e",
               "path": "9ec8-017f-36c4-7b82::3f3b-29ca-1bb9-5ec0::06c7-dd15-f390-c59e"
@@ -5951,6 +6075,7 @@
               "children": [
                 {
                   "name": "Lascannon array",
+                  "count": 2,
                   "entryId": "01ad-4cf9-66ae-5d85",
                   "targetId": "df65-7fb7-d1ff-8486",
                   "path": "9ec8-017f-36c4-7b82::94e8-02e3-eea2-c747::01ad-4cf9-66ae-5d85::df65-7fb7-d1ff-8486"
@@ -5958,7 +6083,7 @@
               ]
             },
             {
-              "name": "Twin heavy bolter",
+              "name": "Hull (Front) Mounted Twin heavy bolter",
               "entryId": "13a6-b358-d1a9-9c1e",
               "targetId": "e0bc-e3e1-54e7-bd75",
               "path": "9ec8-017f-36c4-7b82::13a6-b358-d1a9-9c1e::e0bc-e3e1-54e7-bd75",
@@ -6001,7 +6126,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Neutron wave cannon",
+              "name": "Centreline Mounted neutron wave cannon",
               "entryId": "ce92-81a7-fa21-9a8d",
               "targetId": "1eba-7bf7-2cef-541f",
               "path": "8590-270a-1a2a-2739::ce92-81a7-fa21-9a8d::1eba-7bf7-2cef-541f"
@@ -6014,6 +6139,7 @@
               "children": [
                 {
                   "name": "Lascannon array",
+                  "count": 2,
                   "entryId": "01ad-4cf9-66ae-5d85",
                   "targetId": "df65-7fb7-d1ff-8486",
                   "path": "8590-270a-1a2a-2739::9607-20b0-f00c-3d75::01ad-4cf9-66ae-5d85::df65-7fb7-d1ff-8486"
@@ -6059,31 +6185,31 @@
       "source": "legiones-astartes",
       "unitWargear": [
         {
-          "name": "Hellstrike missile",
+          "name": "Six Centreline Mounted Hellstrike missile",
           "entryId": "7668-9d2e-534f-965c",
           "targetId": "f5a3-87a2-b39d-735c",
           "path": "5841-1f7e-c03a-ae33::7668-9d2e-534f-965c::f5a3-87a2-b39d-735c"
         },
         {
-          "name": "Lascannon",
+          "name": "Two hull (Front) Mounted Lascannon",
           "entryId": "3121-440e-c262-699b",
           "targetId": "b6d5-4be2-c37e-2197",
           "path": "5841-1f7e-c03a-ae33::3121-440e-c262-699b::b6d5-4be2-c37e-2197"
         },
         {
-          "name": "Turbo-laser destructor",
+          "name": "Centreline Mounted Turbo-laser destructor",
           "entryId": "65bd-4e36-a19c-00e3",
           "targetId": "aa70-7846-5273-0e2f",
           "path": "5841-1f7e-c03a-ae33::65bd-4e36-a19c-00e3::aa70-7846-5273-0e2f"
         },
         {
-          "name": "Twin heavy bolter",
+          "name": "Two Turret Mounted Twin heavy bolter",
           "entryId": "0ba9-0f3d-4c30-2c66",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "5841-1f7e-c03a-ae33::0ba9-0f3d-4c30-2c66::e0bc-e3e1-54e7-bd75"
         },
         {
-          "name": "Twin heavy bolter",
+          "name": "Two Sponson Mounted Twin heavy bolter",
           "entryId": "fd33-1215-a70f-8a09",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "5841-1f7e-c03a-ae33::fd33-1215-a70f-8a09::e0bc-e3e1-54e7-bd75"
@@ -6119,13 +6245,13 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Siege-melta array",
+              "name": "Centerline Mounted Siege-melta array",
               "entryId": "3dfb-afc2-4b29-051e",
               "targetId": "711a-5744-668b-feb2",
               "path": "0047-b1df-944f-498e::3dfb-afc2-4b29-051e::711a-5744-668b-feb2"
             },
             {
-              "name": "Skyreaper battery",
+              "name": "Turret Mounted Skyreaper battery",
               "entryId": "377c-8098-7dd6-8bb1",
               "targetId": "3763-ca65-098f-97d7",
               "path": "0047-b1df-944f-498e::377c-8098-7dd6-8bb1::3763-ca65-098f-97d7"
@@ -6137,7 +6263,8 @@
               "groupPath": "0047-b1df-944f-498e::e54b-b14e-07bf-4e0e::df25-ac22-5bbd-0e44",
               "children": [
                 {
-                  "name": "Heavy bolter",
+                  "name": "Sponson Mounted heavy bolters",
+                  "count": 2,
                   "entryId": "dfde-7237-e188-06e0",
                   "targetId": "bc40-b14a-978e-0232",
                   "path": "0047-b1df-944f-498e::e54b-b14e-07bf-4e0e::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
@@ -6186,32 +6313,32 @@
       "source": "legiones-astartes",
       "unitWargear": [
         {
-          "name": "Hellstrike missile",
+          "name": "Six Centreline Mounted Hellstrike missile",
           "entryId": "3074-4e39-05c0-ce6d",
           "targetId": "f5a3-87a2-b39d-735c",
           "path": "8edf-e3e1-0a1b-20a9::3074-4e39-05c0-ce6d::f5a3-87a2-b39d-735c"
         },
         {
-          "name": "Twin heavy bolter",
+          "name": "Two Turret Mounted Twin heavy bolter",
           "entryId": "47d7-5bea-e799-18e1",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "8edf-e3e1-0a1b-20a9::47d7-5bea-e799-18e1::e0bc-e3e1-54e7-bd75"
         },
         {
-          "name": "Twin heavy bolter",
+          "name": "Hull (Rear) Mounted Twin heavy bolter",
           "entryId": "e5a7-8160-90d7-a488",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "8edf-e3e1-0a1b-20a9::e5a7-8160-90d7-a488::e0bc-e3e1-54e7-bd75"
         },
         {
-          "name": "Twin lascannon",
+          "name": "Hull (Left) Mounted Twin lascannon",
           "entryId": "1590-79a1-617f-af18",
           "targetId": "8e62-3fda-37e1-5f0a",
           "path": "8edf-e3e1-0a1b-20a9::1590-79a1-617f-af18::8e62-3fda-37e1-5f0a",
           "groupPath": "8edf-e3e1-0a1b-20a9::d832-5f66-f189-5c6a"
         },
         {
-          "name": "Twin lascannon",
+          "name": "Hull (Right) Mounted Twin lascannon",
           "entryId": "7c56-2250-7a45-0082",
           "targetId": "8e62-3fda-37e1-5f0a",
           "path": "8edf-e3e1-0a1b-20a9::7c56-2250-7a45-0082::8e62-3fda-37e1-5f0a",
@@ -6460,20 +6587,20 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Hyperios missile launcher",
+              "name": "Turret Mounted Hyperios missile launcher",
               "entryId": "68fc-0ba5-c404-fc17",
               "targetId": "a4e2-e284-30e1-f05a",
               "path": "001e-35e4-9d3c-4c46::68fc-0ba5-c404-fc17::a4e2-e284-30e1-f05a"
             },
             {
-              "name": "Bolter",
+              "name": "Pintle Mounted bolter",
               "entryId": "5287-5589-cc4c-6296",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "001e-35e4-9d3c-4c46::5287-5589-cc4c-6296::d3f9-b9e6-3ea5-cc8e",
               "groupPath": "001e-35e4-9d3c-4c46::0d3a-f420-76f2-6e5d::d625-37d6-d83a-0de3"
             },
             {
-              "name": "Bolter",
+              "name": "Pintle Mounted Bolter",
               "entryId": "4529-1417-138b-d21c",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "001e-35e4-9d3c-4c46::4529-1417-138b-d21c::d3f9-b9e6-3ea5-cc8e",
@@ -7899,6 +8026,13 @@
               "entryId": "38a8-2683-c590-3c4b",
               "path": "6058-6f09-9050-f72a::6805-d597-d47b-d146::38a8-2683-c590-3c4b",
               "groupPath": "6058-6f09-9050-f72a::6805-d597-d47b-d146::170b-d9c0-e9d6-b314"
+            },
+            {
+              "name": "Lightning claw",
+              "entryId": "1b85-899f-5499-4534",
+              "targetId": "cbf0-9b29-9a16-28b2",
+              "path": "6058-6f09-9050-f72a::1c5f-a8f7-4efb-bf3f::1b85-899f-5499-4534::cbf0-9b29-9a16-28b2",
+              "groupPath": "6058-6f09-9050-f72a::1c5f-a8f7-4efb-bf3f::0523-46e6-6df1-a4c0"
             }
           ]
         }
@@ -7915,7 +8049,9 @@
         "1e7d-9066-28d2-97a0": 1,
         "9030-b997-4b2e-9045": 1,
         "b808-6eaa-6396-6ce3": 1,
-        "38a8-2683-c590-3c4b": 1
+        "38a8-2683-c590-3c4b": 1,
+        "1b85-899f-5499-4534": 1,
+        "cbf0-9b29-9a16-28b2": 1
       },
       "prime": {
         "linkId": "0e6f-d11f-456f-da43",
@@ -8452,6 +8588,7 @@
               "children": [
                 {
                   "name": "Overcharged volkite serpenta",
+                  "count": 2,
                   "entryId": "0a45-b56b-0098-80eb",
                   "targetId": "a3f7-f435-8ad8-05f9",
                   "path": "3d6b-031a-e986-c0ba::0a45-b56b-0098-80eb::a3f7-f435-8ad8-05f9"
@@ -8958,6 +9095,13 @@
               "targetId": "042d-9e60-db9e-c147",
               "path": "4e69-d5f6-81ff-f6fb::555b-9bdc-4414-9b7e::042d-9e60-db9e-c147",
               "groupPath": "4e69-d5f6-81ff-f6fb::24c0-d537-4e7f-86a9"
+            },
+            {
+              "name": "Lightning claw",
+              "entryId": "1b85-899f-5499-4534",
+              "targetId": "cbf0-9b29-9a16-28b2",
+              "path": "4e69-d5f6-81ff-f6fb::6d25-4fde-49ea-9b60::1b85-899f-5499-4534::cbf0-9b29-9a16-28b2",
+              "groupPath": "4e69-d5f6-81ff-f6fb::6d25-4fde-49ea-9b60::0523-46e6-6df1-a4c0"
             }
           ]
         }
@@ -8977,7 +9121,9 @@
         "a7bb-ae7f-3ef2-90d1": 1,
         "38a8-2683-c590-3c4b": 1,
         "555b-9bdc-4414-9b7e": 1,
-        "042d-9e60-db9e-c147": 1
+        "042d-9e60-db9e-c147": 1,
+        "1b85-899f-5499-4534": 1,
+        "cbf0-9b29-9a16-28b2": 1
       },
       "prime": {
         "linkId": "8008-23cc-516c-5df4",
@@ -9193,6 +9339,13 @@
               "targetId": "042d-9e60-db9e-c147",
               "path": "847a-f9d1-0e66-4394::41cd-32e5-4958-a9c6::042d-9e60-db9e-c147",
               "groupPath": "847a-f9d1-0e66-4394::6868-30bd-4963-89b3"
+            },
+            {
+              "name": "Lightning claw",
+              "entryId": "1b85-899f-5499-4534",
+              "targetId": "cbf0-9b29-9a16-28b2",
+              "path": "847a-f9d1-0e66-4394::cd3e-950c-45e7-bbf1::1b85-899f-5499-4534::cbf0-9b29-9a16-28b2",
+              "groupPath": "847a-f9d1-0e66-4394::cd3e-950c-45e7-bbf1::0523-46e6-6df1-a4c0"
             }
           ]
         }
@@ -9211,7 +9364,9 @@
         "1e7d-9066-28d2-97a0": 1,
         "38a8-2683-c590-3c4b": 1,
         "41cd-32e5-4958-a9c6": 1,
-        "042d-9e60-db9e-c147": 1
+        "042d-9e60-db9e-c147": 1,
+        "1b85-899f-5499-4534": 1,
+        "cbf0-9b29-9a16-28b2": 1
       },
       "prime": {
         "linkId": "55a0-17df-333d-0dcc",
@@ -9502,6 +9657,13 @@
               "targetId": "042d-9e60-db9e-c147",
               "path": "d4d5-8d88-5f93-c317::0c4f-6d86-4470-80c7::042d-9e60-db9e-c147",
               "groupPath": "d4d5-8d88-5f93-c317::4ef4-3c8d-4d9d-ac4c"
+            },
+            {
+              "name": "Lightning claw",
+              "entryId": "1b85-899f-5499-4534",
+              "targetId": "cbf0-9b29-9a16-28b2",
+              "path": "d4d5-8d88-5f93-c317::6969-6b3e-41a7-b331::1b85-899f-5499-4534::cbf0-9b29-9a16-28b2",
+              "groupPath": "d4d5-8d88-5f93-c317::6969-6b3e-41a7-b331::0523-46e6-6df1-a4c0"
             }
           ]
         }
@@ -9521,7 +9683,9 @@
         "61b1-747d-d563-d7e8": 1,
         "38a8-2683-c590-3c4b": 1,
         "0c4f-6d86-4470-80c7": 1,
-        "042d-9e60-db9e-c147": 1
+        "042d-9e60-db9e-c147": 1,
+        "1b85-899f-5499-4534": 1,
+        "cbf0-9b29-9a16-28b2": 1
       },
       "prime": {
         "linkId": "dda5-0f1e-3429-3896",
@@ -9650,6 +9814,13 @@
               "entryId": "bf06-0f2e-5c92-270c",
               "targetId": "2942-f783-d627-33c5",
               "path": "6e02-fdff-abe5-cd30::bf06-0f2e-5c92-270c::2942-f783-d627-33c5"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "755d-985b-1f83-800c",
+              "targetId": "bc40-b14a-978e-0232",
+              "path": "6e02-fdff-abe5-cd30::7c53-43a8-63fa-b092::755d-985b-1f83-800c::bc40-b14a-978e-0232",
+              "groupPath": "6e02-fdff-abe5-cd30::7c53-43a8-63fa-b092::9f99-7e2a-4899-4066"
             }
           ]
         }
@@ -9669,7 +9840,9 @@
         "871e-e38f-4f2a-b78d": 1,
         "fede-99f5-4c76-4659": 1,
         "bf06-0f2e-5c92-270c": 1,
-        "2942-f783-d627-33c5": 1
+        "2942-f783-d627-33c5": 1,
+        "755d-985b-1f83-800c": 1,
+        "bc40-b14a-978e-0232": 1
       },
       "prime": {
         "linkId": "0c29-ee78-23d9-0776",
@@ -10555,8 +10728,14 @@
       "alternateLinks": [
         {
           "entryId": "a1fe-2631-a015-5920",
-          "category": "War-engine - Upgraded by The Iron-clad"
+          "category": "War-engine - Upgraded by The Iron-clad",
+          "categoryIds": [
+            "d00a-e269-2ed3-8fc4"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "2499-7239-685f-8465"
       ]
     },
     {
@@ -10577,7 +10756,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Quad launcher",
+              "name": "Hull (Front) Mounted quad launcher",
               "entryId": "c754-bd12-4381-9244",
               "targetId": "feb2-84a7-0b35-8f1b",
               "path": "7833-d40c-ce0b-17aa::c754-bd12-4381-9244::feb2-84a7-0b35-8f1b"
@@ -10590,6 +10769,7 @@
               "children": [
                 {
                   "name": "Twin multi-melta",
+                  "count": 2,
                   "entryId": "5cf6-e097-46d8-add0",
                   "targetId": "0e76-d08b-904e-c8fd",
                   "path": "7833-d40c-ce0b-17aa::5cf6-e097-46d8-add0::0e76-d08b-904e-c8fd"
@@ -10624,8 +10804,14 @@
       "alternateLinks": [
         {
           "entryId": "4e75-4843-f1ee-7899",
-          "category": "Heavy Transport - Logisticae"
+          "category": "Heavy Transport - Logisticae",
+          "categoryIds": [
+            "6fc0-917e-44a4-a4da"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "52d0-8b78-439e-18e5"
       ]
     },
     {
@@ -10646,13 +10832,13 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Magna-melta cannon",
+              "name": "Centreline Mounted magna-melta cannon",
               "entryId": "e808-070d-4d48-bfd9",
               "targetId": "cd2b-e3dd-e31b-73f9",
               "path": "374c-7e82-7f3e-6fec::e808-070d-4d48-bfd9::cd2b-e3dd-e31b-73f9"
             },
             {
-              "name": "Cyclone missile launcher",
+              "name": "Two Centreline Mounted cyclone missile launchers",
               "entryId": "67c3-062f-4893-8fb6",
               "targetId": "b341-159d-9dfb-ff31",
               "path": "374c-7e82-7f3e-6fec::67c3-062f-4893-8fb6::b341-159d-9dfb-ff31"
@@ -10687,8 +10873,14 @@
       "alternateLinks": [
         {
           "entryId": "519e-34ad-bc9e-9bd2",
-          "category": "Heavy Transport - Logisticae"
+          "category": "Heavy Transport - Logisticae",
+          "categoryIds": [
+            "6fc0-917e-44a4-a4da"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "52d0-8b78-439e-18e5"
       ]
     },
     {
@@ -10898,13 +11090,13 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Earthshaker cannon",
+              "name": "Centreline Mounted earthshaker cannon",
               "entryId": "983d-b475-45f9-8a8a",
               "targetId": "8116-4e1b-ccf8-5182",
               "path": "96c2-d6a1-b8ef-8a4b::983d-b475-45f9-8a8a::8116-4e1b-ccf8-5182"
             },
             {
-              "name": "Heavy bolter",
+              "name": "Hull (Front) Mounted heavy bolter",
               "entryId": "27f1-dd71-433e-86de",
               "targetId": "bc40-b14a-978e-0232",
               "path": "96c2-d6a1-b8ef-8a4b::27f1-dd71-433e-86de::bc40-b14a-978e-0232"
@@ -10953,13 +11145,13 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Medusa mortar",
+              "name": "Centreline Mounted Medusa mortar",
               "entryId": "a77e-b536-4827-9f7c",
               "targetId": "5b25-11bf-13b6-173d",
               "path": "38d2-2b6d-003a-c200::a77e-b536-4827-9f7c::5b25-11bf-13b6-173d"
             },
             {
-              "name": "Heavy bolter",
+              "name": "Hull (Front) Mounted heavy bolter",
               "entryId": "dd08-d237-4c37-9ebd",
               "targetId": "bc40-b14a-978e-0232",
               "path": "38d2-2b6d-003a-c200::dd08-d237-4c37-9ebd::bc40-b14a-978e-0232"
@@ -11008,7 +11200,8 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Twin heavy bolter",
+              "name": "Four Turret Mounted twin heavy bolters",
+              "count": 4,
               "entryId": "95bd-7977-741c-ba9b",
               "targetId": "e0bc-e3e1-54e7-bd75",
               "path": "60b1-64f4-16b7-9895::95bd-7977-741c-ba9b::e0bc-e3e1-54e7-bd75"
@@ -11250,7 +11443,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Whirlwind missile launcher",
+              "name": "Turret Mounted Whirlwind missile launcher",
               "entryId": "2039-ec6b-85cc-2478",
               "targetId": "4f69-5473-091b-6331",
               "path": "5b2f-c9e8-cdfa-6c0a::2039-ec6b-85cc-2478::4f69-5473-091b-6331"
@@ -11262,14 +11455,14 @@
               "path": "5b2f-c9e8-cdfa-6c0a::7012-bd1f-b9ef-bdf5::b94f-e829-064a-9d60"
             },
             {
-              "name": "Bolter",
+              "name": "Pintle Mounted bolter",
               "entryId": "16c4-631a-1c1b-f65b",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "5b2f-c9e8-cdfa-6c0a::16c4-631a-1c1b-f65b::d3f9-b9e6-3ea5-cc8e",
               "groupPath": "5b2f-c9e8-cdfa-6c0a::7af6-e703-993e-fd90::d625-37d6-d83a-0de3"
             },
             {
-              "name": "Bolter",
+              "name": "Pintle Mounted Bolter",
               "entryId": "7d36-2dd8-f52e-b544",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "5b2f-c9e8-cdfa-6c0a::7d36-2dd8-f52e-b544::d3f9-b9e6-3ea5-cc8e",
@@ -11322,7 +11515,8 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Gravis heavy bolter battery",
+              "name": "Sponson Mounted Gravis heavy bolter battery",
+              "count": 2,
               "entryId": "ab49-973d-57a4-8423",
               "targetId": "5c0e-33c5-afb1-fed5",
               "path": "08d9-bd44-87bd-671e::ab49-973d-57a4-8423::5c0e-33c5-afb1-fed5"
@@ -11503,6 +11697,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "8606-def5-7473-defb",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "566a-34b5-2a7c-ccd0::8606-def5-7473-defb::d3f9-b9e6-3ea5-cc8e",
@@ -11533,6 +11728,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "566a-34b5-2a7c-ccd0::94da-d659-4db3-d979::d3f9-b9e6-3ea5-cc8e",
@@ -11579,8 +11775,14 @@
       "alternateLinks": [
         {
           "entryId": "fe0c-1a09-c660-c098",
-          "category": "Support - Castellax Battle Maniple Only"
+          "category": "Support - Castellax Battle Maniple Only",
+          "categoryIds": [
+            "61eb-11e2-1592-3161"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "43f5-bc69-29b9-2286"
       ]
     },
     {
@@ -11609,6 +11811,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "c050-620e-c956-df2c",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "7d8b-19ed-f91a-4905::c050-620e-c956-df2c::d3f9-b9e6-3ea5-cc8e",
@@ -11662,8 +11865,14 @@
       "alternateLinks": [
         {
           "entryId": "d5b4-da29-c8a4-f18f",
-          "category": "Heavy Assault - Castellax Destructor Maniple only"
+          "category": "Heavy Assault - Castellax Destructor Maniple only",
+          "categoryIds": [
+            "d49e-048b-a8e2-ba52"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "43f5-bc69-29b9-2286"
       ]
     },
     {
@@ -12410,6 +12619,13 @@
               "entryId": "3f26-d0f9-b949-c5de",
               "targetId": "d8d4-f400-7730-792a",
               "path": "d9c4-2b4e-b466-6a6c::3f26-d0f9-b949-c5de::d8d4-f400-7730-792a"
+            },
+            {
+              "name": "Banestrike combi-bolter",
+              "entryId": "a1af-598e-808f-7222",
+              "targetId": "08db-6d95-f0be-cfe0",
+              "path": "d9c4-2b4e-b466-6a6c::a1af-598e-808f-7222::08db-6d95-f0be-cfe0",
+              "groupPath": "d9c4-2b4e-b466-6a6c::de57-432c-5f16-7df5"
             }
           ]
         }
@@ -12443,10 +12659,11 @@
         "28d3-a2d6-4a96-a347": 1,
         "2942-f783-d627-33c5": 5,
         "76fd-dd8a-e471-943d": 1,
-        "08db-6d95-f0be-cfe0": 1,
+        "08db-6d95-f0be-cfe0": 5,
         "b8ac-3017-94f9-d523": 4,
         "6651-ca56-0914-53f4": 4,
-        "3f26-d0f9-b949-c5de": 4
+        "3f26-d0f9-b949-c5de": 4,
+        "a1af-598e-808f-7222": 4
       },
       "prime": {
         "linkId": "781e-bd61-9fdb-5e93",
@@ -13414,6 +13631,7 @@
             },
             {
               "name": "Reaper autocannon",
+              "count": 2,
               "entryId": "9601-2798-9344-0672",
               "targetId": "196d-a0ea-a851-d09e",
               "path": "d5c4-bc44-b8bc-bd79::9601-2798-9344-0672::196d-a0ea-a851-d09e"
@@ -15645,6 +15863,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "4e79-b93f-6223-7456",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "ea92-2ed1-da76-a859::4e79-b93f-6223-7456::d3f9-b9e6-3ea5-cc8e"
@@ -16316,7 +16535,7 @@
           "max": 9,
           "defaultWargear": [
             {
-              "name": "Volkite serpenta",
+              "name": "Two volkite serpenta",
               "entryId": "dc57-bf10-bfc4-3f09",
               "targetId": "b7c3-1de1-087c-3d6e",
               "path": "a631-3a91-3dbb-0831::dc57-bf10-bfc4-3f09::b7c3-1de1-087c-3d6e",
@@ -16333,7 +16552,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Volkite serpenta",
+              "name": "Two volkite serpenta",
               "entryId": "f365-68e2-511a-c93e",
               "targetId": "b7c3-1de1-087c-3d6e",
               "path": "a631-3a91-3dbb-0831::f365-68e2-511a-c93e::b7c3-1de1-087c-3d6e",
@@ -16418,6 +16637,7 @@
               "children": [
                 {
                   "name": "Heavy flamer",
+                  "count": 2,
                   "entryId": "468c-dafb-74b6-36c9",
                   "targetId": "4fa7-ea45-2a89-ad86",
                   "path": "e204-8dc5-6b36-3bcf::468c-dafb-74b6-36c9::4fa7-ea45-2a89-ad86"
@@ -17343,7 +17563,7 @@
               "groupPath": "cbc6-c7ef-4c1f-d49b::c59f-f6c9-3cab-c141"
             },
             {
-              "name": "Chainsword",
+              "name": "Chainsword (default)",
               "entryId": "8751-a984-278c-fd14",
               "targetId": "78f4-4967-2896-c3a5",
               "path": "cbc6-c7ef-4c1f-d49b::8751-a984-278c-fd14::78f4-4967-2896-c3a5",
@@ -17669,7 +17889,7 @@
               "groupPath": "ec15-7002-1d8a-9534::2cca-3e19-2553-94fd"
             },
             {
-              "name": "Chainglaive",
+              "name": "Nostraman chainglaive ",
               "entryId": "980d-6d03-7960-6e76",
               "targetId": "3708-b181-5f26-4387",
               "path": "ec15-7002-1d8a-9534::980d-6d03-7960-6e76::3708-b181-5f26-4387",
@@ -17693,7 +17913,7 @@
               "groupPath": "ec15-7002-1d8a-9534::4682-9300-f7a1-15bd"
             },
             {
-              "name": "Chainglaive",
+              "name": "Nostraman chainglaive  ",
               "entryId": "5f76-a9fa-42a1-e33c",
               "targetId": "3708-b181-5f26-4387",
               "path": "ec15-7002-1d8a-9534::5f76-a9fa-42a1-e33c::3708-b181-5f26-4387",
@@ -18073,7 +18293,7 @@
           "max": 14,
           "defaultWargear": [
             {
-              "name": "Bolt pistol",
+              "name": "Two bolt pistols",
               "entryId": "ad17-9da2-48cc-a817",
               "targetId": "2942-f783-d627-33c5",
               "path": "5a88-fec4-6d3f-2b6e::ad17-9da2-48cc-a817::2942-f783-d627-33c5"
@@ -18096,7 +18316,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Bolt pistol",
+              "name": "Two bolt pistols",
               "entryId": "5ca2-a6f6-47e4-b247",
               "targetId": "2942-f783-d627-33c5",
               "path": "5a88-fec4-6d3f-2b6e::5ca2-a6f6-47e4-b247::2942-f783-d627-33c5"
@@ -18177,7 +18397,7 @@
           "max": 14,
           "defaultWargear": [
             {
-              "name": "Bolt pistol",
+              "name": "Two bolt pistols",
               "entryId": "7890-90e5-46e8-ad27",
               "targetId": "2942-f783-d627-33c5",
               "path": "0f59-64cc-80c9-0def::7890-90e5-46e8-ad27::2942-f783-d627-33c5"
@@ -18200,7 +18420,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Bolt pistol",
+              "name": "Two bolt pistols",
               "entryId": "0186-4cb3-447d-bd43",
               "targetId": "2942-f783-d627-33c5",
               "path": "0f59-64cc-80c9-0def::0186-4cb3-447d-bd43::2942-f783-d627-33c5"
@@ -19642,7 +19862,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Dark Angels Inductii Squad",
       "entryId": "fc02-9d5c-b052-f837",
       "path": "fc02-9d5c-b052-f837::d6b5-9428-48a9-952f",
       "role": "Rewards of Treachery",
@@ -19704,7 +19924,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Emperor's Children Inductii Squad",
       "entryId": "7371-b8a2-ab17-24e1",
       "path": "7371-b8a2-ab17-24e1::54b6-dc9c-4cd4-884b",
       "role": "Rewards of Treachery",
@@ -19768,7 +19988,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Iron Warriors Inductii Squad",
       "entryId": "a370-590a-d0bc-4037",
       "path": "a370-590a-d0bc-4037::bdb6-1c8f-4c24-a156",
       "role": "Rewards of Treachery",
@@ -19832,7 +20052,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "White Scars Inductii Squad",
       "entryId": "7968-e67b-72b7-2fe9",
       "path": "7968-e67b-72b7-2fe9::5729-fd79-4bf5-a53b",
       "role": "Rewards of Treachery",
@@ -19896,7 +20116,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Space Wolves Inductii Squad",
       "entryId": "9c0d-8e30-40d3-8099",
       "path": "9c0d-8e30-40d3-8099::3ade-f63f-41e2-9a99",
       "role": "Rewards of Treachery",
@@ -19960,7 +20180,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Imperial Fists Inductii Squad",
       "entryId": "5dbe-80dd-317b-695a",
       "path": "5dbe-80dd-317b-695a::ca87-d173-4967-add6",
       "role": "Rewards of Treachery",
@@ -20023,7 +20243,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Night Lords Inductii Squad",
       "entryId": "9ef7-6417-e133-a457",
       "path": "9ef7-6417-e133-a457::a38d-19ab-470a-8e53",
       "role": "Rewards of Treachery",
@@ -20084,7 +20304,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Blood Angels Inductii Squad",
       "entryId": "f18b-b4c3-816d-1d4d",
       "path": "f18b-b4c3-816d-1d4d::d534-5849-4506-b269",
       "role": "Rewards of Treachery",
@@ -20148,7 +20368,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Iron Hands Inductii Squad",
       "entryId": "12cd-6c5c-db53-30f9",
       "path": "12cd-6c5c-db53-30f9::ee40-8340-4718-90ef",
       "role": "Rewards of Treachery",
@@ -20210,7 +20430,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "World Eaters Inductii Squad",
       "entryId": "baca-92d9-df7b-90c0",
       "path": "baca-92d9-df7b-90c0::b725-0c21-4adf-a683",
       "role": "Rewards of Treachery",
@@ -20274,7 +20494,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Ultramarines Inductii Squad",
       "entryId": "6d3e-e343-7794-f6a5",
       "path": "6d3e-e343-7794-f6a5::455f-d06a-45b1-a332",
       "role": "Rewards of Treachery",
@@ -20379,7 +20599,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Death Guard Inductii Squad",
       "entryId": "4a99-eacd-d248-d948",
       "path": "4a99-eacd-d248-d948::8236-95aa-4580-926a",
       "role": "Rewards of Treachery",
@@ -20442,7 +20662,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Thousand Sons Inductii Squad",
       "entryId": "d916-ceb3-eeaa-d447",
       "path": "d916-ceb3-eeaa-d447::8dfd-8240-4e8d-8e0e",
       "role": "Rewards of Treachery",
@@ -20506,7 +20726,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Sons of Horus Inductii Squad",
       "entryId": "ed28-8e47-d346-5d60",
       "path": "ed28-8e47-d346-5d60::e8b7-bff3-4c22-b342",
       "role": "Rewards of Treachery",
@@ -20570,7 +20790,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Word Bearers Inductii Squad",
       "entryId": "12cf-ba0a-9e0f-aae4",
       "path": "12cf-ba0a-9e0f-aae4::4755-69ce-4a81-894c",
       "role": "Rewards of Treachery",
@@ -20634,7 +20854,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Salamanders Inductii Squad",
       "entryId": "dfac-38f8-e37a-294a",
       "path": "dfac-38f8-e37a-294a::1c7f-663a-4039-9d81",
       "role": "Rewards of Treachery",
@@ -20740,7 +20960,7 @@
       }
     },
     {
-      "name": "Inductii Squad",
+      "name": "Raven Guard Inductii Squad",
       "entryId": "0b76-a000-b2d9-1748",
       "path": "0b76-a000-b2d9-1748::a997-c8f0-4906-bf63",
       "role": "Rewards of Treachery",
@@ -21147,7 +21367,8 @@
               "path": "c822-0582-5290-a9d2::2039-f6e8-967f-b15e::fa20-82bc-c7de-9e97"
             },
             {
-              "name": "Hand flamer",
+              "name": "hand flamers",
+              "count": 2,
               "entryId": "ed8f-257b-d5ab-b890",
               "targetId": "9322-09ed-abec-6e13",
               "path": "c822-0582-5290-a9d2::ed8f-257b-d5ab-b890::9322-09ed-abec-6e13"
@@ -21219,6 +21440,7 @@
               "children": [
                 {
                   "name": "Heavy flamer",
+                  "count": 2,
                   "entryId": "468c-dafb-74b6-36c9",
                   "targetId": "4fa7-ea45-2a89-ad86",
                   "path": "5dc8-3fde-9013-ef36::468c-dafb-74b6-36c9::4fa7-ea45-2a89-ad86"
@@ -21450,7 +21672,7 @@
           "max": 9,
           "defaultWargear": [
             {
-              "name": "Volkite serpenta",
+              "name": "Two volkite serpenta",
               "entryId": "dc57-bf10-bfc4-3f09",
               "targetId": "b7c3-1de1-087c-3d6e",
               "path": "edbe-4d87-ab3d-6f1b::dc57-bf10-bfc4-3f09::b7c3-1de1-087c-3d6e",
@@ -21467,7 +21689,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Volkite serpenta",
+              "name": "Two volkite serpenta",
               "entryId": "f365-68e2-511a-c93e",
               "targetId": "b7c3-1de1-087c-3d6e",
               "path": "edbe-4d87-ab3d-6f1b::f365-68e2-511a-c93e::b7c3-1de1-087c-3d6e",
@@ -22639,6 +22861,7 @@
           "children": [
             {
               "name": "Combi-bolter",
+              "count": 2,
               "entryId": "de5f-d9e6-5071-9073",
               "targetId": "042d-9e60-db9e-c147",
               "path": "1649-1108-03b0-aba9::de5f-d9e6-5071-9073::042d-9e60-db9e-c147"
@@ -24957,31 +25180,31 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Turbo-laser destructor",
+              "name": "Centreline Mounted turbo-laser destructor",
               "entryId": "e095-8bef-4ec4-8658",
               "targetId": "aa70-7846-5273-0e2f",
               "path": "5b09-edad-342a-a905::e095-8bef-4ec4-8658::aa70-7846-5273-0e2f"
             },
             {
-              "name": "Twin heavy bolter",
+              "name": "Two Sponson Mounted twin heavy bolters",
               "entryId": "523d-168b-44b8-b94c",
               "targetId": "e0bc-e3e1-54e7-bd75",
               "path": "5b09-edad-342a-a905::523d-168b-44b8-b94c::e0bc-e3e1-54e7-bd75"
             },
             {
-              "name": "Lascannon",
+              "name": "Two Hull (Front) Mounted lascannon",
               "entryId": "e011-cf37-4677-8288",
               "targetId": "b6d5-4be2-c37e-2197",
               "path": "5b09-edad-342a-a905::e011-cf37-4677-8288::b6d5-4be2-c37e-2197"
             },
             {
-              "name": "Hellstrike missile",
+              "name": "Six Centreline Mounted hellstrike missiles",
               "entryId": "7b2a-abeb-52a5-b221",
               "targetId": "f5a3-87a2-b39d-735c",
               "path": "5b09-edad-342a-a905::7b2a-abeb-52a5-b221::f5a3-87a2-b39d-735c"
             },
             {
-              "name": "Twin heavy bolter",
+              "name": "Two Turret Mounted twin heavy bolters",
               "entryId": "3552-e14b-627f-94e1",
               "targetId": "e0bc-e3e1-54e7-bd75",
               "path": "5b09-edad-342a-a905::3552-e14b-627f-94e1::e0bc-e3e1-54e7-bd75"
@@ -25761,6 +25984,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "8606-def5-7473-defb",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "3c19-634b-5bc1-cd24::8606-def5-7473-defb::d3f9-b9e6-3ea5-cc8e",
@@ -25791,6 +26015,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "3c19-634b-5bc1-cd24::94da-d659-4db3-d979::d3f9-b9e6-3ea5-cc8e",
@@ -25861,6 +26086,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "c050-620e-c956-df2c",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "9b65-cb9d-c0ac-33f9::c050-620e-c956-df2c::d3f9-b9e6-3ea5-cc8e",
@@ -26553,13 +26779,13 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Volcano Cannon",
+              "name": "Centreline Mounted volcano cannon",
               "entryId": "0ef6-6fde-4094-bb21",
               "targetId": "c5f4-55af-54bb-2d18",
               "path": "1615-1300-244f-bedf::0ef6-6fde-4094-bb21::c5f4-55af-54bb-2d18"
             },
             {
-              "name": "Twin heavy bolter",
+              "name": "Hull (Front) Mounted twin heavy bolter",
               "entryId": "1df8-4093-4cda-a378",
               "targetId": "e0bc-e3e1-54e7-bd75",
               "path": "1615-1300-244f-bedf::1df8-4093-4cda-a378::e0bc-e3e1-54e7-bd75"
@@ -27089,7 +27315,7 @@
               "groupPath": "3cf5-0b78-6f41-4a8f::2cca-3e19-2553-94fd"
             },
             {
-              "name": "Chainglaive",
+              "name": "Nostraman chainglaive ",
               "entryId": "980d-6d03-7960-6e76",
               "targetId": "3708-b181-5f26-4387",
               "path": "3cf5-0b78-6f41-4a8f::980d-6d03-7960-6e76::3708-b181-5f26-4387",
@@ -27113,7 +27339,7 @@
               "groupPath": "3cf5-0b78-6f41-4a8f::4682-9300-f7a1-15bd"
             },
             {
-              "name": "Chainglaive",
+              "name": "Nostraman chainglaive  ",
               "entryId": "5f76-a9fa-42a1-e33c",
               "targetId": "3708-b181-5f26-4387",
               "path": "3cf5-0b78-6f41-4a8f::5f76-a9fa-42a1-e33c::3708-b181-5f26-4387",
@@ -28033,6 +28259,7 @@
             },
             {
               "name": "Forge-crafted heavy flamer",
+              "count": 2,
               "entryId": "b150-52c0-f429-9c51",
               "targetId": "6d3e-3152-c52f-1d66",
               "path": "e91f-5cc0-d0d7-d6f0::b150-52c0-f429-9c51::6d3e-3152-c52f-1d66"
@@ -29342,6 +29569,13 @@
               "entryId": "38a8-2683-c590-3c4b",
               "path": "bbfe-7605-3627-7ee9::c947-8e11-1f90-e2a8::38a8-2683-c590-3c4b",
               "groupPath": "bbfe-7605-3627-7ee9::c947-8e11-1f90-e2a8::170b-d9c0-e9d6-b314"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "6c5a-095d-1f96-be3b",
+              "targetId": "042d-9e60-db9e-c147",
+              "path": "bbfe-7605-3627-7ee9::6c5a-095d-1f96-be3b::042d-9e60-db9e-c147",
+              "groupPath": "bbfe-7605-3627-7ee9::4b5d-792d-96d0-4462::f335-622e-6b0a-6b08"
             }
           ]
         }
@@ -29357,7 +29591,9 @@
         "b980-187b-2b17-d635": 1,
         "9871-cb62-5283-2216": 1,
         "1e7d-9066-28d2-97a0": 1,
-        "38a8-2683-c590-3c4b": 1
+        "38a8-2683-c590-3c4b": 1,
+        "6c5a-095d-1f96-be3b": 1,
+        "042d-9e60-db9e-c147": 1
       },
       "prime": {
         "linkId": "6e0e-c166-1d39-cf0a",
@@ -30566,6 +30802,13 @@
               "entryId": "38a8-2683-c590-3c4b",
               "path": "14f3-17cf-117e-a255::0b6e-b6c2-f9c0-5798::38a8-2683-c590-3c4b",
               "groupPath": "14f3-17cf-117e-a255::0b6e-b6c2-f9c0-5798::170b-d9c0-e9d6-b314"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "20bd-64b6-08fa-7705",
+              "targetId": "042d-9e60-db9e-c147",
+              "path": "14f3-17cf-117e-a255::20bd-64b6-08fa-7705::042d-9e60-db9e-c147",
+              "groupPath": "14f3-17cf-117e-a255::a35d-6c3d-1934-e1b7::f335-622e-6b0a-6b08"
             }
           ]
         }
@@ -30583,7 +30826,9 @@
         "4da8-c2aa-1380-9825": 1,
         "714c-d6dc-404e-a64f": 1,
         "a7bb-ae7f-3ef2-90d1": 1,
-        "38a8-2683-c590-3c4b": 1
+        "38a8-2683-c590-3c4b": 1,
+        "20bd-64b6-08fa-7705": 1,
+        "042d-9e60-db9e-c147": 1
       },
       "prime": {
         "linkId": "86c3-8c55-031c-b33a",
@@ -31393,6 +31638,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "4e79-b93f-6223-7456",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "4e95-8076-b824-8c02::4e79-b93f-6223-7456::d3f9-b9e6-3ea5-cc8e"
@@ -33208,6 +33454,7 @@
             },
             {
               "name": "Reaper autocannon",
+              "count": 2,
               "entryId": "9601-2798-9344-0672",
               "targetId": "196d-a0ea-a851-d09e",
               "path": "2755-5fcf-4ecd-79e6::9601-2798-9344-0672::196d-a0ea-a851-d09e"
@@ -33631,7 +33878,7 @@
               "groupPath": "ec4e-16b6-8313-4ab3::c59f-f6c9-3cab-c141"
             },
             {
-              "name": "Chainsword",
+              "name": "Chainsword (default)",
               "entryId": "8751-a984-278c-fd14",
               "targetId": "78f4-4967-2896-c3a5",
               "path": "ec4e-16b6-8313-4ab3::8751-a984-278c-fd14::78f4-4967-2896-c3a5",
@@ -35438,7 +35685,7 @@
           "max": 14,
           "defaultWargear": [
             {
-              "name": "Bolt pistol",
+              "name": "Two bolt pistols",
               "entryId": "ad17-9da2-48cc-a817",
               "targetId": "2942-f783-d627-33c5",
               "path": "d805-a058-7b00-528c::ad17-9da2-48cc-a817::2942-f783-d627-33c5"
@@ -35461,7 +35708,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Bolt pistol",
+              "name": "Two bolt pistols",
               "entryId": "5ca2-a6f6-47e4-b247",
               "targetId": "2942-f783-d627-33c5",
               "path": "d805-a058-7b00-528c::5ca2-a6f6-47e4-b247::2942-f783-d627-33c5"
@@ -35541,7 +35788,7 @@
           "max": 14,
           "defaultWargear": [
             {
-              "name": "Bolt pistol",
+              "name": "Two bolt pistols",
               "entryId": "7890-90e5-46e8-ad27",
               "targetId": "2942-f783-d627-33c5",
               "path": "4041-a9f5-7767-1900::7890-90e5-46e8-ad27::2942-f783-d627-33c5"
@@ -35564,7 +35811,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Bolt pistol",
+              "name": "Two bolt pistols",
               "entryId": "0186-4cb3-447d-bd43",
               "targetId": "2942-f783-d627-33c5",
               "path": "4041-a9f5-7767-1900::0186-4cb3-447d-bd43::2942-f783-d627-33c5"
@@ -36640,6 +36887,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "c050-620e-c956-df2c",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "3676-9cda-cbb3-0552::c050-620e-c956-df2c::d3f9-b9e6-3ea5-cc8e",
@@ -37170,7 +37418,7 @@
           "path": "b0a1-0f87-385f-4239::f758-5a2b-e76c-0297",
           "children": [
             {
-              "name": "Volkite caliver",
+              "name": "Centreline Mounted Volkite Caliver",
               "entryId": "8a32-629c-3be2-3b3e",
               "targetId": "a042-1a69-9052-c59a",
               "path": "b0a1-0f87-385f-4239::8a32-629c-3be2-3b3e::a042-1a69-9052-c59a"
@@ -37260,6 +37508,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "8606-def5-7473-defb",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "0d8a-be54-5bd2-1d5a::8606-def5-7473-defb::d3f9-b9e6-3ea5-cc8e",
@@ -37290,6 +37539,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "0d8a-be54-5bd2-1d5a::94da-d659-4db3-d979::d3f9-b9e6-3ea5-cc8e",
@@ -37635,6 +37885,7 @@
           "children": [
             {
               "name": "Lightning lock",
+              "count": 2,
               "entryId": "f053-4b9d-5960-a8e3",
               "targetId": "d22a-d9bc-ed06-1a7f",
               "path": "53b5-c2ff-0816-44b6::f053-4b9d-5960-a8e3::d22a-d9bc-ed06-1a7f"
@@ -37647,7 +37898,7 @@
           "path": "53b5-c2ff-0816-44b6::39ff-fda9-96ed-393b",
           "children": [
             {
-              "name": "Karacnos mortar battery",
+              "name": "Hull (Front) Mounted Karacnos mortar battery",
               "entryId": "5524-0525-7ebb-d071",
               "targetId": "df6d-6b6e-feb8-e5f5",
               "path": "53b5-c2ff-0816-44b6::5524-0525-7ebb-d071::df6d-6b6e-feb8-e5f5"
@@ -37720,7 +37971,7 @@
           "path": "d8bb-2984-96f9-2b38::ec64-ac7e-84e0-56d4::67af-3519-2c95-6da0"
         },
         {
-          "name": "Lightning cannon",
+          "name": "Centreline Mounted lightning cannon",
           "entryId": "9e35-1648-18af-6a7c",
           "targetId": "fae1-04cd-0971-ee22",
           "path": "d8bb-2984-96f9-2b38::9e35-1648-18af-6a7c::fae1-04cd-0971-ee22",
@@ -37871,7 +38122,7 @@
       "source": "mechanicum",
       "unitWargear": [
         {
-          "name": "Pulsar-fusil",
+          "name": "Centreline Mounted pulsar-fusil",
           "entryId": "d3c5-910d-7de4-44b9",
           "targetId": "d114-2798-e500-c4a4",
           "path": "310a-fd05-ec2e-3c3e::d3c5-910d-7de4-44b9::d114-2798-e500-c4a4"
@@ -38321,13 +38572,13 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Melta cutters",
+              "name": "Centreline Mounted melta cutters",
               "entryId": "b498-baa8-73da-83c1",
               "targetId": "030a-72a9-a2b0-e92b",
               "path": "5d4e-4320-cb37-0e82::b498-baa8-73da-83c1::030a-72a9-a2b0-e92b"
             },
             {
-              "name": "Combi-bolter",
+              "name": "Two Pintle Mounted combi-bolters",
               "entryId": "a5e2-23a1-5340-d2c2",
               "targetId": "042d-9e60-db9e-c147",
               "path": "5d4e-4320-cb37-0e82::a5e2-23a1-5340-d2c2::042d-9e60-db9e-c147",
@@ -38386,7 +38637,7 @@
           "max": 2,
           "defaultWargear": [
             {
-              "name": "Twin heavy bolter",
+              "name": "Turret Mounted twin heavy bolter",
               "entryId": "897c-f088-301b-5d87",
               "targetId": "e0bc-e3e1-54e7-bd75",
               "path": "84c9-6d52-fba4-1508::897c-f088-301b-5d87::e0bc-e3e1-54e7-bd75",
@@ -38442,7 +38693,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Mauler bolt cannon",
+              "name": "Turret Mounted mauler bolt cannon",
               "entryId": "555c-1275-87d9-70c4",
               "targetId": "ec2c-185f-3e9e-7ccd",
               "path": "6f44-47e2-8a63-fb5f::555c-1275-87d9-70c4::ec2c-185f-3e9e-7ccd",
@@ -38500,19 +38751,20 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Ordinatus volkite culverin",
+              "name": "Rear Mounted Ordinatus volkite culverin",
               "entryId": "daa8-284d-6cda-201d",
               "targetId": "ee25-2ea5-c44d-2bcd",
               "path": "b034-e2bd-25a8-2c4d::daa8-284d-6cda-201d::ee25-2ea5-c44d-2bcd"
             },
             {
-              "name": "Ordinatus volkite culverin",
+              "name": "Front Mounted Ordinatus volkite culverin",
+              "count": 2,
               "entryId": "d7a9-c58d-30dc-f782",
               "targetId": "ee25-2ea5-c44d-2bcd",
               "path": "b034-e2bd-25a8-2c4d::d7a9-c58d-30dc-f782::ee25-2ea5-c44d-2bcd"
             },
             {
-              "name": "Sonic destructor",
+              "name": "Boresight Mounted sonic destructor",
               "entryId": "ad59-20cd-87b3-815e",
               "targetId": "95b7-92a0-cdb9-8ecd",
               "path": "b034-e2bd-25a8-2c4d::ad59-20cd-87b3-815e::95b7-92a0-cdb9-8ecd"
@@ -38555,19 +38807,20 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Ordinatus volkite culverin",
+              "name": "Rear Mounted Ordinatus volkite culverin",
               "entryId": "66ff-0c4a-d154-2f6b",
               "targetId": "ee25-2ea5-c44d-2bcd",
               "path": "6b53-b01e-6a76-760e::66ff-0c4a-d154-2f6b::ee25-2ea5-c44d-2bcd"
             },
             {
-              "name": "Ordinatus volkite culverin",
+              "name": "Front Mounted Ordinatus volkite culverin",
+              "count": 2,
               "entryId": "3cbe-5a9f-5004-08ac",
               "targetId": "ee25-2ea5-c44d-2bcd",
               "path": "6b53-b01e-6a76-760e::3cbe-5a9f-5004-08ac::ee25-2ea5-c44d-2bcd"
             },
             {
-              "name": "Belicosa volcano cannon",
+              "name": "Boresight Mounted Belicosa volcano cannon",
               "entryId": "7548-7d92-3542-d3ee",
               "targetId": "8173-e259-7de6-163b",
               "path": "6b53-b01e-6a76-760e::7548-7d92-3542-d3ee::8173-e259-7de6-163b"
@@ -38610,13 +38863,14 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Ordinatus volkite culverin",
+              "name": "Front Mounted Ordinatus volkite culverin",
+              "count": 2,
               "entryId": "6c2b-a8c4-900f-84aa",
               "targetId": "ee25-2ea5-c44d-2bcd",
               "path": "429d-4826-3d9b-8673::6c2b-a8c4-900f-84aa::ee25-2ea5-c44d-2bcd"
             },
             {
-              "name": "Seismic macro-drill",
+              "name": "Boresight Mounted seismic macro-drill",
               "entryId": "046e-d73c-cd35-dad7",
               "targetId": "9fff-a0a4-03d0-2777",
               "path": "429d-4826-3d9b-8673::046e-d73c-cd35-dad7::9fff-a0a4-03d0-2777"
@@ -38671,6 +38925,7 @@
             },
             {
               "name": "Flamer",
+              "count": 2,
               "entryId": "0999-d12f-0bba-f87f",
               "targetId": "9a45-35cd-3806-2303",
               "path": "bc5e-ce5d-2b7b-3d03::0999-d12f-0bba-f87f::9a45-35cd-3806-2303"
@@ -38693,6 +38948,7 @@
             },
             {
               "name": "Flamer",
+              "count": 2,
               "entryId": "be71-4a96-616b-f8cb",
               "targetId": "9a45-35cd-3806-2303",
               "path": "bc5e-ce5d-2b7b-3d03::be71-4a96-616b-f8cb::9a45-35cd-3806-2303"
@@ -39247,11 +39503,18 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Battlecannon",
+          "name": "Turret Mounted Battlecannon",
           "entryId": "c510-cc26-bbcc-2191",
           "targetId": "e618-2a7a-e0e0-898f",
           "path": "10aa-c775-8ed3-387b::c510-cc26-bbcc-2191::e618-2a7a-e0e0-898f",
           "groupPath": "10aa-c775-8ed3-387b::f860-1f1a-b824-7266"
+        },
+        {
+          "name": "Hull Mounted (Front) heavy bolter",
+          "entryId": "1888-42bd-6055-9169",
+          "targetId": "bc40-b14a-978e-0232",
+          "path": "10aa-c775-8ed3-387b::8196-2a06-f721-6f6f::1888-42bd-6055-9169::bc40-b14a-978e-0232",
+          "groupPath": "10aa-c775-8ed3-387b::8196-2a06-f721-6f6f::9a19-6f6d-abea-d053"
         }
       ],
       "facts": {
@@ -39622,7 +39885,7 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Earthshaker cannon",
+          "name": "Centerline Mounted earthshaker cannon",
           "entryId": "cdb2-6ad1-72d7-536d",
           "targetId": "8116-4e1b-ccf8-5182",
           "path": "c9f3-c058-0758-2409::cdb2-6ad1-72d7-536d::8116-4e1b-ccf8-5182"
@@ -39682,7 +39945,7 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Medusa mortar",
+          "name": "Centerline Mounted medusa mortar",
           "entryId": "27e0-90ec-78a7-653c",
           "targetId": "5b25-11bf-13b6-173d",
           "path": "2ceb-9daf-1ed7-70e5::27e0-90ec-78a7-653c::5b25-11bf-13b6-173d"
@@ -40035,7 +40298,7 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin lascannon",
+          "name": "Hull (Front) Mounted twin lascannon",
           "entryId": "bd79-fee6-c36d-1399",
           "targetId": "8e62-3fda-37e1-5f0a",
           "path": "c7ef-b809-48ef-3834::bd79-fee6-c36d-1399::8e62-3fda-37e1-5f0a",
@@ -40172,13 +40435,14 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin lascannon",
+          "name": "Centerline Mounted twin lascannon",
           "entryId": "0f35-ba8d-0ae4-4bb2",
           "targetId": "8e62-3fda-37e1-5f0a",
           "path": "b413-02fe-fc6e-e9ba::0f35-ba8d-0ae4-4bb2::8e62-3fda-37e1-5f0a"
         },
         {
-          "name": "Hellstrike missile",
+          "name": "Centerline Mounted hellstrike missiles",
+          "count": 6,
           "entryId": "190c-e74e-6701-05da",
           "targetId": "f5a3-87a2-b39d-735c",
           "path": "b413-02fe-fc6e-e9ba::190c-e74e-6701-05da::f5a3-87a2-b39d-735c"
@@ -40225,13 +40489,14 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin lascannon",
+          "name": "Centerline Mounted twin lascannon",
           "entryId": "0dbc-ed3e-1732-4ac5",
           "targetId": "8e62-3fda-37e1-5f0a",
           "path": "483d-5b80-a2cc-29bd::0dbc-ed3e-1732-4ac5::8e62-3fda-37e1-5f0a"
         },
         {
-          "name": "Gravis autocannon",
+          "name": "Centerline Mounted gravis autocannon",
+          "count": 2,
           "entryId": "e2d2-4b0c-567a-ecf4",
           "targetId": "4e51-460b-4f29-8257",
           "path": "483d-5b80-a2cc-29bd::e2d2-4b0c-567a-ecf4::4e51-460b-4f29-8257"
@@ -40278,13 +40543,13 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Infernus cannon",
+          "name": "Centerline Mounted infernus cannon",
           "entryId": "14b2-b477-a2a1-dcec",
           "targetId": "64fc-2d8f-ff81-83d3",
           "path": "b2da-fd3d-9318-1c94::14b2-b477-a2a1-dcec::64fc-2d8f-ff81-83d3"
         },
         {
-          "name": "Multi-laser",
+          "name": "Two sponson Mounted multi-laser",
           "entryId": "91b2-72e2-0b07-481f",
           "targetId": "247d-a71c-d493-790b",
           "path": "b2da-fd3d-9318-1c94::8ac2-a473-be3d-52b9::91b2-72e2-0b07-481f::247d-a71c-d493-790b",
@@ -40331,11 +40596,18 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Volkite macro saker",
+          "name": "Turret Mounted Volkite macro saker  ",
           "entryId": "5b2b-748b-1d34-b09a",
           "targetId": "7416-5aa2-b1b8-9cbf",
           "path": "9e06-5ed1-969c-0688::5b2b-748b-1d34-b09a::7416-5aa2-b1b8-9cbf",
           "groupPath": "9e06-5ed1-969c-0688::c473-673f-58a7-16b0"
+        },
+        {
+          "name": "Hull Mounted (Front) heavy bolter",
+          "entryId": "1888-42bd-6055-9169",
+          "targetId": "bc40-b14a-978e-0232",
+          "path": "9e06-5ed1-969c-0688::ff5c-bca6-5c4e-ced5::1888-42bd-6055-9169::bc40-b14a-978e-0232",
+          "groupPath": "9e06-5ed1-969c-0688::ff5c-bca6-5c4e-ced5::9a19-6f6d-abea-d053"
         }
       ],
       "facts": {
@@ -40404,11 +40676,18 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Battlecannon",
+          "name": "Turret Mounted Battlecannon",
           "entryId": "d7e7-b3a5-922c-c346",
           "targetId": "e618-2a7a-e0e0-898f",
           "path": "fcb0-c89e-f064-69fa::d7e7-b3a5-922c-c346::e618-2a7a-e0e0-898f",
           "groupPath": "fcb0-c89e-f064-69fa::2873-95c0-58f7-6f86"
+        },
+        {
+          "name": "Hull Mounted (Front) heavy bolter",
+          "entryId": "1888-42bd-6055-9169",
+          "targetId": "bc40-b14a-978e-0232",
+          "path": "fcb0-c89e-f064-69fa::63e8-a085-37d5-0ed6::1888-42bd-6055-9169::bc40-b14a-978e-0232",
+          "groupPath": "fcb0-c89e-f064-69fa::63e8-a085-37d5-0ed6::9a19-6f6d-abea-d053"
         }
       ],
       "facts": {
@@ -40491,7 +40770,7 @@
           "groupPath": "7680-00d3-e468-7439::7964-e7b3-7cfc-ec06"
         },
         {
-          "name": "Multi-laser",
+          "name": "Two sponson Mounted multi-laser",
           "entryId": "91b2-72e2-0b07-481f",
           "targetId": "247d-a71c-d493-790b",
           "path": "7680-00d3-e468-7439::1e78-e9e1-a95a-f817::91b2-72e2-0b07-481f::247d-a71c-d493-790b",
@@ -40564,13 +40843,13 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Neutron beam laser",
+          "name": "Centerline Mounted Neutron beam laser",
           "entryId": "4a0f-560b-3d7d-f317",
           "targetId": "81f3-6879-257e-6552",
           "path": "9b21-31fc-eb20-3001::4a0f-560b-3d7d-f317::81f3-6879-257e-6552"
         },
         {
-          "name": "Multi-laser",
+          "name": "Sponson (Right) Mounted Multi-laser",
           "entryId": "ab14-8758-b895-7795",
           "targetId": "247d-a71c-d493-790b",
           "path": "9b21-31fc-eb20-3001::ab14-8758-b895-7795::247d-a71c-d493-790b",
@@ -40617,13 +40896,13 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Stormhammer cannon",
+          "name": "Turret Mounted Stormhammer cannon",
           "entryId": "2086-5f02-0ac1-2e5e",
           "targetId": "dea2-e2ca-1ffb-a90c",
           "path": "16e9-26b5-8011-0c88::2086-5f02-0ac1-2e5e::dea2-e2ca-1ffb-a90c",
           "children": [
             {
-              "name": "Multi-laser",
+              "name": "Co-axial (Stormhammer cannon) Mounted multi-laser",
               "entryId": "88af-f975-91fd-3682",
               "targetId": "247d-a71c-d493-790b",
               "path": "16e9-26b5-8011-0c88::88af-f975-91fd-3682::247d-a71c-d493-790b"
@@ -40631,7 +40910,7 @@
           ]
         },
         {
-          "name": "Twin Battlecannon",
+          "name": "Hull (Front) Mounted Twin Battlecannon",
           "entryId": "8823-0ff9-ce7b-f038",
           "targetId": "b28b-44d6-5cc0-75fa",
           "path": "16e9-26b5-8011-0c88::8823-0ff9-ce7b-f038::b28b-44d6-5cc0-75fa"
@@ -40644,7 +40923,7 @@
           "groupPath": "16e9-26b5-8011-0c88::4ff8-d21d-8017-de3b"
         },
         {
-          "name": "Multi-laser",
+          "name": "3 Hull (Left) and 3 Hull (Right) multi-lasers",
           "entryId": "250d-a5c4-1b25-998f",
           "targetId": "247d-a71c-d493-790b",
           "path": "16e9-26b5-8011-0c88::250d-a5c4-1b25-998f::247d-a71c-d493-790b",
@@ -40723,19 +41002,19 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin lascannon",
+          "name": "Centerline Mounted  Twin lascannon",
           "entryId": "d266-954c-3758-65d3",
           "targetId": "8e62-3fda-37e1-5f0a",
           "path": "0068-3cbc-cfeb-c5c6::d266-954c-3758-65d3::8e62-3fda-37e1-5f0a"
         },
         {
-          "name": "Avenger Bolt Cannon",
+          "name": "Centerline Mounted Avenger Bolt Cannon",
           "entryId": "a3ba-bcaf-7752-25fd",
           "targetId": "cd85-d512-f025-e680",
           "path": "0068-3cbc-cfeb-c5c6::a3ba-bcaf-7752-25fd::cd85-d512-f025-e680"
         },
         {
-          "name": "Heavy Stubber",
+          "name": "Hull (Rear) Mounted Heavy Stubber",
           "entryId": "7121-e822-b6f4-67cb",
           "targetId": "c53d-622f-fa8a-7570",
           "path": "0068-3cbc-cfeb-c5c6::7121-e822-b6f4-67cb::c53d-622f-fa8a-7570"
@@ -40782,25 +41061,25 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin heavy bolter",
+          "name": "Hull (Front) Mounted Twin heavy bolter",
           "entryId": "e769-5772-e3e9-d3db",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "c699-0002-e9a6-2339::e769-5772-e3e9-d3db::e0bc-e3e1-54e7-bd75"
         },
         {
-          "name": "Autocannon",
+          "name": "Co-axial (Baneblade cannon) Mounted Autocannon",
           "entryId": "211e-3614-67d6-b4ef",
           "targetId": "da6e-3b8a-ea61-1e93",
           "path": "c699-0002-e9a6-2339::211e-3614-67d6-b4ef::da6e-3b8a-ea61-1e93"
         },
         {
-          "name": "Demolisher cannon",
+          "name": "Centreline Mounted Demolisher cannon",
           "entryId": "d6ac-f6bf-96e3-b618",
           "targetId": "4514-8e18-77b4-a141",
           "path": "c699-0002-e9a6-2339::d6ac-f6bf-96e3-b618::4514-8e18-77b4-a141"
         },
         {
-          "name": "Baneblade Cannon",
+          "name": "Turret Mounted Baneblade Cannon",
           "entryId": "9002-1e27-6e28-3a19",
           "targetId": "3eed-87fe-7ab1-6834",
           "path": "c699-0002-e9a6-2339::9002-1e27-6e28-3a19::3eed-87fe-7ab1-6834"
@@ -40838,13 +41117,13 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin heavy bolter",
+          "name": "Hull (Front) Mounted Twin heavy bolter",
           "entryId": "5fc7-8834-ae14-c567",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "8eee-4f72-19c5-6152::5fc7-8834-ae14-c567::e0bc-e3e1-54e7-bd75"
         },
         {
-          "name": "Tremor cannon",
+          "name": "Centreline Mounted Tremor cannon",
           "entryId": "2b8c-823c-542f-a79a",
           "targetId": "e182-6fa3-05c3-7604",
           "path": "8eee-4f72-19c5-6152::2b8c-823c-542f-a79a::e182-6fa3-05c3-7604"
@@ -40888,21 +41167,21 @@
           "path": "2d3f-ec66-8300-3ade::eb05-dc94-e7b6-5f16::5a85-bf28-f790-7bf0"
         },
         {
-          "name": "Volkite caliver",
+          "name": "Two sponson Mounted  Volkite caliver",
           "entryId": "0ad7-9de2-5a43-320d",
           "targetId": "a042-1a69-9052-c59a",
           "path": "2d3f-ec66-8300-3ade::0ad7-9de2-5a43-320d::a042-1a69-9052-c59a",
           "groupPath": "2d3f-ec66-8300-3ade::4924-eddd-2beb-bb9c"
         },
         {
-          "name": "Multi-laser",
+          "name": "Two sponson Mounted multi-laser",
           "entryId": "91b2-72e2-0b07-481f",
           "targetId": "247d-a71c-d493-790b",
           "path": "2d3f-ec66-8300-3ade::7b05-7c3d-c566-fa7d::91b2-72e2-0b07-481f::247d-a71c-d493-790b",
           "groupPath": "2d3f-ec66-8300-3ade::7b05-7c3d-c566-fa7d::605c-71a7-a6b3-2a1e"
         },
         {
-          "name": "Volkite culverin",
+          "name": "Turret Mounted Volkite culverin",
           "entryId": "554e-a7bb-6faa-9423",
           "targetId": "fcf0-9c1b-d51e-6bc7",
           "path": "2d3f-ec66-8300-3ade::554e-a7bb-6faa-9423::fcf0-9c1b-d51e-6bc7",
@@ -41009,13 +41288,13 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Heavy bolter",
+              "name": "Two Hull (Front) Mounted Heavy bolter",
               "entryId": "36dc-f60b-55db-55a1",
               "targetId": "bc40-b14a-978e-0232",
               "path": "5ce2-f2ee-c8dc-14a3::36dc-f60b-55db-55a1::bc40-b14a-978e-0232"
             },
             {
-              "name": "Heavy bolter",
+              "name": "Two Sponson Mounted Heavy bolter",
               "entryId": "020f-ea9d-a6ac-dc42",
               "targetId": "bc40-b14a-978e-0232",
               "path": "5ce2-f2ee-c8dc-14a3::020f-ea9d-a6ac-dc42::bc40-b14a-978e-0232"
@@ -41273,25 +41552,25 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin heavy bolter",
+          "name": "Hull (Front) Mounted Twin heavy bolter",
           "entryId": "d33f-2c15-4ab7-bbcf",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "46ca-3d73-29e7-0ab5::d33f-2c15-4ab7-bbcf::e0bc-e3e1-54e7-bd75"
         },
         {
-          "name": "Autocannon",
+          "name": "Co-axial (Hellhammer cannon) Mounted Autocannon",
           "entryId": "09d1-ffc3-595d-8058",
           "targetId": "da6e-3b8a-ea61-1e93",
           "path": "46ca-3d73-29e7-0ab5::09d1-ffc3-595d-8058::da6e-3b8a-ea61-1e93"
         },
         {
-          "name": "Demolisher cannon",
+          "name": "Centreline Mounted Demolisher cannon",
           "entryId": "14df-a58f-affd-467d",
           "targetId": "4514-8e18-77b4-a141",
           "path": "46ca-3d73-29e7-0ab5::14df-a58f-affd-467d::4514-8e18-77b4-a141"
         },
         {
-          "name": "Hellhammer Cannon",
+          "name": "Turret Mounted Hellhammer Cannon",
           "entryId": "91c2-e61c-ba4e-d8b0",
           "targetId": "35b6-4478-e903-501a",
           "path": "46ca-3d73-29e7-0ab5::91c2-e61c-ba4e-d8b0::35b6-4478-e903-501a"
@@ -41329,7 +41608,7 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin heavy stubber",
+          "name": "Hull (Front) Mounted Twin heavy stubber",
           "entryId": "fbf5-da9d-d698-3c6a",
           "targetId": "61b3-5ea2-e839-03de",
           "path": "df5b-182e-e9f1-92f5::fbf5-da9d-d698-3c6a::61b3-5ea2-e839-03de"
@@ -41376,25 +41655,25 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin heavy bolter",
+          "name": "Turret Mounted Twin heavy bolter",
           "entryId": "bd36-19e5-57e1-7cdd",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "8d99-bf81-d88f-f022::bd36-19e5-57e1-7cdd::e0bc-e3e1-54e7-bd75"
         },
         {
-          "name": "Twin lascannon",
+          "name": "Hull (Front) Mounted Twin lascannon",
           "entryId": "c783-bc8c-8ee8-6c2c",
           "targetId": "8e62-3fda-37e1-5f0a",
           "path": "8d99-bf81-d88f-f022::c783-bc8c-8ee8-6c2c::8e62-3fda-37e1-5f0a"
         },
         {
-          "name": "Twin heavy bolter",
+          "name": "Hull (Rear) Mounted Twin heavy bolter",
           "entryId": "3ad8-7cda-c9f4-2ebd",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "8d99-bf81-d88f-f022::3ad8-7cda-c9f4-2ebd::e0bc-e3e1-54e7-bd75"
         },
         {
-          "name": "Macro-bomb cluster",
+          "name": "One Centreline (Front, Rear) Mounted Macro-bomb cluster",
           "entryId": "3799-627d-3dde-9a1c",
           "targetId": "7174-a5c9-3aa1-8d49",
           "path": "8d99-bf81-d88f-f022::3799-627d-3dde-9a1c::7174-a5c9-3aa1-8d49"
@@ -41433,19 +41712,19 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin heavy bolter",
+          "name": "Turret Mounted Twin heavy bolter",
           "entryId": "7dd8-9ba8-1669-f690",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "fb55-01f8-c7ae-30f3::7dd8-9ba8-1669-f690::e0bc-e3e1-54e7-bd75"
         },
         {
-          "name": "Gravis autocannon array",
+          "name": "Hull (Front) Mounted Gravis autocannon array",
           "entryId": "5b1b-ae2f-03ca-35f8",
           "targetId": "b92a-f7e8-df28-d2a5",
           "path": "fb55-01f8-c7ae-30f3::5b1b-ae2f-03ca-35f8::b92a-f7e8-df28-d2a5"
         },
         {
-          "name": "Twin rotary defence cannon",
+          "name": "Hull (Rear) Mounted Twin rotary defence cannon",
           "entryId": "ec98-7776-24b4-4d8d",
           "targetId": "85e4-6f40-8ac8-20a6",
           "path": "fb55-01f8-c7ae-30f3::ec98-7776-24b4-4d8d::85e4-6f40-8ac8-20a6"
@@ -41546,7 +41825,7 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin Earthshaker Cannon",
+          "name": "Centreline (Rear) Mounted Twin Earthshaker Cannon",
           "entryId": "6601-a6fb-4d6f-dfae",
           "path": "e6e4-9d75-1887-4a5b::6601-a6fb-4d6f-dfae"
         }
@@ -41591,7 +41870,7 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Heavy bolter",
+          "name": "Two Hull (Front) Mounted Heavy bolter",
           "entryId": "ea6c-6f81-a26f-5999",
           "targetId": "bc40-b14a-978e-0232",
           "path": "5e2e-ee35-38f0-68ac::ea6c-6f81-a26f-5999::bc40-b14a-978e-0232"
@@ -41644,7 +41923,7 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin heavy bolter",
+          "name": "Hull (Front) Mounted Twin heavy bolter",
           "entryId": "a8f8-f259-85b1-9c07",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "d152-287b-9141-02f6::a8f8-f259-85b1-9c07::e0bc-e3e1-54e7-bd75"
@@ -41688,13 +41967,13 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin heavy bolter",
+          "name": "Hull (Front) Mounted Twin heavy bolter",
           "entryId": "8f05-520b-b7c7-aa49",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "86ff-9ced-6be4-12bd::8f05-520b-b7c7-aa49::e0bc-e3e1-54e7-bd75"
         },
         {
-          "name": "Plasma blastgun",
+          "name": "Centreline Mounted Plasma blastgun",
           "entryId": "de5f-15ab-f675-cdb6",
           "targetId": "ca1b-d69c-b76b-d148",
           "path": "86ff-9ced-6be4-12bd::de5f-15ab-f675-cdb6::ca1b-d69c-b76b-d148"
@@ -41732,25 +42011,25 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin heavy bolter",
+          "name": "Hull (Front) Mounted Twin heavy bolter",
           "entryId": "c4c0-4a74-4dd1-4770",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "dd79-db04-a0d4-dae2::c4c0-4a74-4dd1-4770::e0bc-e3e1-54e7-bd75"
         },
         {
-          "name": "Vulcan mega-bolter",
+          "name": "Centreline Mounted Vulcan mega-bolter",
           "entryId": "2766-4f94-65a8-30a6",
           "targetId": "ca95-0498-ddc0-3b59",
           "path": "dd79-db04-a0d4-dae2::2766-4f94-65a8-30a6::ca95-0498-ddc0-3b59"
         },
         {
-          "name": "Heavy stubber",
+          "name": "Hull (Left) Mounted Heavy stubber",
           "entryId": "45fb-10da-1cfa-2447",
           "targetId": "51af-9efb-4c72-90be",
           "path": "dd79-db04-a0d4-dae2::45fb-10da-1cfa-2447::51af-9efb-4c72-90be"
         },
         {
-          "name": "Heavy stubber",
+          "name": "Hull (Right) Mounted Heavy stubber",
           "entryId": "9e06-c59d-4897-b48b",
           "targetId": "51af-9efb-4c72-90be",
           "path": "dd79-db04-a0d4-dae2::9e06-c59d-4897-b48b::51af-9efb-4c72-90be"
@@ -41789,13 +42068,13 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Twin heavy bolter",
+          "name": "Hull (Front) Mounted Twin heavy bolter",
           "entryId": "0800-04e9-f277-d46d",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "9f8d-49a0-1dcb-8011::0800-04e9-f277-d46d::e0bc-e3e1-54e7-bd75"
         },
         {
-          "name": "Stormsword siege cannon",
+          "name": "Centreline Mounted Stormsword siege cannon",
           "entryId": "6181-9eb5-7932-367a",
           "targetId": "718e-91ce-e3f6-eb7d",
           "path": "9f8d-49a0-1dcb-8011::6181-9eb5-7932-367a::718e-91ce-e3f6-eb7d"
@@ -41919,7 +42198,7 @@
           "max": 2,
           "defaultWargear": [
             {
-              "name": "Twin heavy bolter",
+              "name": "Turret Mounted Twin heavy bolter",
               "entryId": "fbc1-f448-6821-f6b2",
               "targetId": "e0bc-e3e1-54e7-bd75",
               "path": "bf51-a092-91d2-c27a::fbc1-f448-6821-f6b2::e0bc-e3e1-54e7-bd75",
@@ -41971,7 +42250,7 @@
       "source": "solar-auxilia",
       "unitWargear": [
         {
-          "name": "Demolisher cannon",
+          "name": "Centreline Mounted Demolisher cannon",
           "entryId": "2d65-7d56-8e9d-b966",
           "targetId": "4514-8e18-77b4-a141",
           "path": "9e34-7f6b-8ef0-8333::2d65-7d56-8e9d-b966::4514-8e18-77b4-a141"
@@ -42025,7 +42304,7 @@
               "path": "43d4-03f5-1028-0c3e::a697-7b4c-82a8-8338::b94f-e829-064a-9d60"
             },
             {
-              "name": "Twin lascannon",
+              "name": "Hull (Front) Mounted Twin lascannon",
               "entryId": "1e49-2f38-fc6a-b60b",
               "targetId": "8e62-3fda-37e1-5f0a",
               "path": "43d4-03f5-1028-0c3e::1e49-2f38-fc6a-b60b::8e62-3fda-37e1-5f0a",
@@ -42390,6 +42669,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "8606-def5-7473-defb",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "be59-2c52-e384-dfcd::8606-def5-7473-defb::d3f9-b9e6-3ea5-cc8e",
@@ -42420,6 +42700,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "be59-2c52-e384-dfcd::94da-d659-4db3-d979::d3f9-b9e6-3ea5-cc8e",
@@ -42526,6 +42807,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "c050-620e-c956-df2c",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "5917-83c4-b80a-4b45::c050-620e-c956-df2c::d3f9-b9e6-3ea5-cc8e",
@@ -43883,12 +44165,18 @@
       "alternateLinks": [
         {
           "entryId": "8974-9163-b42c-9015",
-          "category": "Fast Attack - Vultarax Stratos Squadron Only"
+          "category": "Fast Attack - Vultarax Stratos Squadron Only",
+          "categoryIds": [
+            "7db9-74d1-6ba1-061e"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "cf96-8891-3f9a-8921"
       ]
     },
     {
-      "name": "Triaros Armoured Conveyor",
+      "name": "Skitarii Triaros Armoured Conveyor",
       "entryId": "7acc-6115-828f-c94d",
       "path": "7acc-6115-828f-c94d::0896-07f4-8844-9542",
       "role": "Heavy Transport",
@@ -43914,7 +44202,7 @@
           "path": "7acc-6115-828f-c94d::f758-5a2b-e76c-0297",
           "children": [
             {
-              "name": "Volkite caliver",
+              "name": "Centreline Mounted Volkite Caliver",
               "entryId": "8a32-629c-3be2-3b3e",
               "targetId": "a042-1a69-9052-c59a",
               "path": "7acc-6115-828f-c94d::8a32-629c-3be2-3b3e::a042-1a69-9052-c59a"
@@ -43979,7 +44267,7 @@
       }
     },
     {
-      "name": "Karacnos Assault Tank",
+      "name": "Skitarii Karacnos Assault Tank",
       "entryId": "36d4-66e8-efcc-23bd",
       "path": "36d4-66e8-efcc-23bd::ce4c-753d-aaf1-b4ab",
       "role": "Armour",
@@ -44006,6 +44294,7 @@
           "children": [
             {
               "name": "Lightning lock",
+              "count": 2,
               "entryId": "f053-4b9d-5960-a8e3",
               "targetId": "d22a-d9bc-ed06-1a7f",
               "path": "36d4-66e8-efcc-23bd::f053-4b9d-5960-a8e3::d22a-d9bc-ed06-1a7f"
@@ -44018,7 +44307,7 @@
           "path": "36d4-66e8-efcc-23bd::39ff-fda9-96ed-393b",
           "children": [
             {
-              "name": "Karacnos mortar battery",
+              "name": "Hull (Front) Mounted Karacnos mortar battery",
               "entryId": "5524-0525-7ebb-d071",
               "targetId": "df6d-6b6e-feb8-e5f5",
               "path": "36d4-66e8-efcc-23bd::5524-0525-7ebb-d071::df6d-6b6e-feb8-e5f5"
@@ -44064,7 +44353,7 @@
       }
     },
     {
-      "name": "Krios Battle Tank",
+      "name": "Skitarii Krios Battle Tank",
       "entryId": "8480-0708-1019-3c83",
       "path": "8480-0708-1019-3c83::135f-153c-308a-7a1c",
       "role": "Armour",
@@ -44085,7 +44374,7 @@
       "source": "skitarii-conclaves",
       "unitWargear": [
         {
-          "name": "Lightning cannon",
+          "name": "Centreline Mounted lightning cannon",
           "entryId": "9e35-1648-18af-6a7c",
           "targetId": "fae1-04cd-0971-ee22",
           "path": "8480-0708-1019-3c83::9e35-1648-18af-6a7c::fae1-04cd-0971-ee22",
@@ -44119,7 +44408,7 @@
       }
     },
     {
-      "name": "Krios Venator",
+      "name": "Skitarii Krios Venator Tank Destroyer",
       "entryId": "1267-0dec-49c3-5f88",
       "path": "1267-0dec-49c3-5f88::b444-b85f-85f8-e6f3",
       "role": "Armour",
@@ -44140,7 +44429,7 @@
       "source": "skitarii-conclaves",
       "unitWargear": [
         {
-          "name": "Pulsar-fusil",
+          "name": "Centreline Mounted pulsar-fusil",
           "entryId": "d3c5-910d-7de4-44b9",
           "targetId": "d114-2798-e500-c4a4",
           "path": "1267-0dec-49c3-5f88::d3c5-910d-7de4-44b9::d114-2798-e500-c4a4"
@@ -44204,6 +44493,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "8606-def5-7473-defb",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "9568-7307-e33d-4d14::8606-def5-7473-defb::d3f9-b9e6-3ea5-cc8e",
@@ -44234,6 +44524,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "9568-7307-e33d-4d14::94da-d659-4db3-d979::d3f9-b9e6-3ea5-cc8e",
@@ -44323,6 +44614,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "c050-620e-c956-df2c",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "caca-e904-836d-952a::c050-620e-c956-df2c::d3f9-b9e6-3ea5-cc8e",
@@ -45294,13 +45586,13 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Twin Arachnus blaze cannon",
+              "name": "Turret Mounted Twin Arachnus blaze cannon",
               "entryId": "d677-1a43-2b35-b7f2",
               "targetId": "0a09-48e6-5e80-519d",
               "path": "8181-60fd-d6eb-3a92::d677-1a43-2b35-b7f2::0a09-48e6-5e80-519d"
             },
             {
-              "name": "Twin Lastrum bolt cannon",
+              "name": "Hull (Front) Mounted Twin Lastrum bolt cannon",
               "entryId": "872b-3c4b-0556-2c11",
               "targetId": "41e7-8ad3-5676-e8fc",
               "path": "8181-60fd-d6eb-3a92::872b-3c4b-0556-2c11::41e7-8ad3-5676-e8fc",
@@ -45486,7 +45778,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Twin Iliastus accelerator fusil",
+              "name": "Centreline Mounted Twin Iliastus accelerator fusil",
               "entryId": "d879-7610-cb86-3d59",
               "targetId": "4cfd-56d5-d924-1b1b",
               "path": "044d-bbe4-377b-2684::d879-7610-cb86-3d59::4cfd-56d5-d924-1b1b",
@@ -45536,13 +45828,13 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Twin Iliastus accelerator cannon",
+              "name": "Turret Mounted Twin Iliastus accelerator cannon",
               "entryId": "55de-f215-7864-9d6a",
               "targetId": "5e1d-d2cf-aa7d-77da",
               "path": "2a34-6b03-52f0-4452::55de-f215-7864-9d6a::5e1d-d2cf-aa7d-77da"
             },
             {
-              "name": "Twin Lastrum bolt cannon",
+              "name": "Hull (Front) Mounted Twin Lastrum bolt cannon",
               "entryId": "9ae5-3bc8-f0d6-6eb0",
               "targetId": "41e7-8ad3-5676-e8fc",
               "path": "2a34-6b03-52f0-4452::9ae5-3bc8-f0d6-6eb0::41e7-8ad3-5676-e8fc",
@@ -45560,13 +45852,13 @@
           "groupPath": "2a34-6b03-52f0-4452::2ad9-4de8-e42d-3b71",
           "children": [
             {
-              "name": "Twin Iliastus accelerator cannon",
+              "name": "Turret Mounted Twin Iliastus accelerator cannon",
               "entryId": "55de-f215-7864-9d6a",
               "targetId": "5e1d-d2cf-aa7d-77da",
               "path": "2a34-6b03-52f0-4452::55de-f215-7864-9d6a::5e1d-d2cf-aa7d-77da"
             },
             {
-              "name": "Twin Lastrum bolt cannon",
+              "name": "Hull (Front) Mounted Twin Lastrum bolt cannon",
               "entryId": "9ae5-3bc8-f0d6-6eb0",
               "targetId": "41e7-8ad3-5676-e8fc",
               "path": "2a34-6b03-52f0-4452::9ae5-3bc8-f0d6-6eb0::41e7-8ad3-5676-e8fc",
@@ -45617,19 +45909,21 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Twin Lastrum bolt cannon",
+              "name": "Hull (Front) Mounted Twin Lastrum bolt cannon",
+              "count": 2,
               "entryId": "89c6-7d09-9027-d686",
               "targetId": "41e7-8ad3-5676-e8fc",
               "path": "baae-c2d4-3028-7c1c::89c6-7d09-9027-d686::41e7-8ad3-5676-e8fc"
             },
             {
-              "name": "Twin Arachnus blaze carronade",
+              "name": "Centreline Mounted Twin Arachnus blaze carronade",
               "entryId": "e212-822a-acd8-1c3e",
               "targetId": "04a1-a76a-7aa8-e604",
               "path": "baae-c2d4-3028-7c1c::e212-822a-acd8-1c3e::04a1-a76a-7aa8-e604"
             },
             {
-              "name": "Spiculus heavy missile pod",
+              "name": "Hull (Front) Mounted Spiculus heavy missile pod",
+              "count": 2,
               "entryId": "2a3c-c532-af99-cc7d",
               "targetId": "1859-643e-e1fa-7fa4",
               "path": "baae-c2d4-3028-7c1c::2a3c-c532-af99-cc7d::1859-643e-e1fa-7fa4"
@@ -45682,19 +45976,20 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Neutronium magna-cascade cannon",
+              "name": "Hull (Front) Mounted Neutronium magna-cascade cannon",
               "entryId": "fb4e-055f-f689-81ab",
               "targetId": "47a8-e441-c1b5-eae4",
               "path": "c5e2-c9ab-a62d-2c5f::fb4e-055f-f689-81ab::47a8-e441-c1b5-eae4"
             },
             {
-              "name": "Twin Arachnus storm carronade",
+              "name": "Centreline Mounted Twin Arachnus storm carronade",
               "entryId": "4e0e-d26d-2dce-add7",
               "targetId": "e836-2eb6-8a77-ced2",
               "path": "c5e2-c9ab-a62d-2c5f::4e0e-d26d-2dce-add7::e836-2eb6-8a77-ced2"
             },
             {
-              "name": "Infernus firebomb clusters",
+              "name": "Centreline (Front, Rear) Mounted Infernus firebomb clusters",
+              "count": 2,
               "entryId": "c7f1-54c6-c930-55e5",
               "targetId": "ecac-ed33-b524-0aca",
               "path": "c5e2-c9ab-a62d-2c5f::c7f1-54c6-c930-55e5::ecac-ed33-b524-0aca"
@@ -46041,6 +46336,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "8606-def5-7473-defb",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "eedc-c9be-7a66-50f6::8606-def5-7473-defb::d3f9-b9e6-3ea5-cc8e",
@@ -46071,6 +46367,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "eedc-c9be-7a66-50f6::94da-d659-4db3-d979::d3f9-b9e6-3ea5-cc8e",
@@ -46160,6 +46457,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "c050-620e-c956-df2c",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "3b72-ccd0-67bb-7805::c050-620e-c956-df2c::d3f9-b9e6-3ea5-cc8e",
@@ -46800,12 +47098,13 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Hellion heavy cannon array",
+              "name": "Hull (Front) Mounted Hellion heavy cannon array",
               "entryId": "f2d5-5e8a-d04e-cc96",
               "path": "a938-2983-d059-4b19::f2d5-5e8a-d04e-cc96"
             },
             {
-              "name": "Vratine heavy missiles",
+              "name": "Centreline Mounted Vratine heavy missiles",
+              "count": 2,
               "entryId": "51ad-60ff-8054-9b14",
               "targetId": "efef-9b82-8679-f9fa",
               "path": "a938-2983-d059-4b19::51ad-60ff-8054-9b14::efef-9b82-8679-f9fa"
@@ -46872,6 +47171,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "8606-def5-7473-defb",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "01c9-68cf-adb6-ace6::8606-def5-7473-defb::d3f9-b9e6-3ea5-cc8e",
@@ -46902,6 +47202,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "01c9-68cf-adb6-ace6::94da-d659-4db3-d979::d3f9-b9e6-3ea5-cc8e",
@@ -46991,6 +47292,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "c050-620e-c956-df2c",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "7cc7-11aa-59ab-1013::c050-620e-c956-df2c::d3f9-b9e6-3ea5-cc8e",
@@ -47469,7 +47771,7 @@
           "groupPath": "6fec-85db-da98-e18c::eaa5-8127-a44e-aea2"
         },
         {
-          "name": "Heavy stubber",
+          "name": "Hull (Front) Mounted heavy stubber",
           "entryId": "87fe-2c32-9a72-dbd6",
           "targetId": "f0b3-29e2-c35f-0109",
           "path": "6fec-85db-da98-e18c::87fe-2c32-9a72-dbd6::f0b3-29e2-c35f-0109",
@@ -47519,6 +47821,7 @@
       "unitWargear": [
         {
           "name": "Phaeton autocannon",
+          "count": 2,
           "entryId": "c88a-96eb-029a-04d1",
           "targetId": "5679-bfa1-46a1-aa19",
           "path": "c422-2eeb-ba95-e6ef::c88a-96eb-029a-04d1::5679-bfa1-46a1-aa19"
@@ -47668,19 +47971,19 @@
       "source": "questoris-familia",
       "unitWargear": [
         {
-          "name": "Lightning cannon",
+          "name": "Hull (Front) Mounted lightning cannon",
           "entryId": "b073-d0f5-41b5-27e6",
           "targetId": "cb5b-0af3-b5a9-c41e",
           "path": "45b4-b1ab-7806-d48e::b073-d0f5-41b5-27e6::cb5b-0af3-b5a9-c41e"
         },
         {
-          "name": "Phased plasma fusil",
+          "name": "Hull (Front) Mounted phased plasma fusil",
           "entryId": "8b77-676f-1083-f9e1",
           "targetId": "f57c-d7e6-45a0-91be",
           "path": "45b4-b1ab-7806-d48e::8b77-676f-1083-f9e1::f57c-d7e6-45a0-91be"
         },
         {
-          "name": "Irad-scourer",
+          "name": "Hull (Front) Mounted irad-scourer",
           "entryId": "5d1b-305f-74d2-e33e",
           "targetId": "21b1-b639-4503-5cfe",
           "path": "45b4-b1ab-7806-d48e::5d1b-305f-74d2-e33e::21b1-b639-4503-5cfe"
@@ -47740,7 +48043,7 @@
       "source": "questoris-familia",
       "unitWargear": [
         {
-          "name": "Irad-scourer",
+          "name": "Hull (Front) Mounted irad-scourer",
           "entryId": "3af9-bb60-f5a1-536c",
           "targetId": "21b1-b639-4503-5cfe",
           "path": "3faf-16fa-cef5-dbd7::3af9-bb60-f5a1-536c::21b1-b639-4503-5cfe"
@@ -47758,13 +48061,13 @@
           "path": "3faf-16fa-cef5-dbd7::9259-8ac7-5a70-b803::8e65-c8a3-bc6c-c559"
         },
         {
-          "name": "Volkite chierovile",
+          "name": "Hull (Front) Mounted volkite chierovile",
           "entryId": "cf20-e0fa-6cfe-001c",
           "targetId": "a8c4-0cf8-3f88-4828",
           "path": "3faf-16fa-cef5-dbd7::cf20-e0fa-6cfe-001c::a8c4-0cf8-3f88-4828"
         },
         {
-          "name": "Graviton gun",
+          "name": "Hull (Front) Mounted graviton gun",
           "entryId": "c0b0-6d2f-afcb-8742",
           "targetId": "4a06-c55e-a06f-bd0c",
           "path": "3faf-16fa-cef5-dbd7::c0b0-6d2f-afcb-8742::4a06-c55e-a06f-bd0c"
@@ -47818,7 +48121,7 @@
           "path": "bd7e-eb79-5c37-7ef4::d391-06cd-4951-150a::b6e2-d84c-ca4a-c4db"
         },
         {
-          "name": "Twin castigator bolt cannon",
+          "name": "Hull (Front) Mounted twin castigator bolt cannon",
           "entryId": "ac79-51a0-b43f-9976",
           "targetId": "93e0-b9f1-97fb-4992",
           "path": "bd7e-eb79-5c37-7ef4::ac79-51a0-b43f-9976::93e0-b9f1-97fb-4992"
@@ -47878,13 +48181,13 @@
           "path": "663f-1feb-79aa-58e3::f75c-4097-c33b-aaee::b6e2-d84c-ca4a-c4db"
         },
         {
-          "name": "Acheron infernus cannon",
+          "name": "Hull (Front) Mounted acheron infernus cannon",
           "entryId": "aada-99f2-aa7f-1c7c",
           "targetId": "4689-a397-1e61-3964",
           "path": "663f-1feb-79aa-58e3::aada-99f2-aa7f-1c7c::4689-a397-1e61-3964"
         },
         {
-          "name": "Twin heavy bolter",
+          "name": "Hull (Front) Mounted twin heavy bolter",
           "entryId": "0660-fee0-f28b-4c78",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "663f-1feb-79aa-58e3::0660-fee0-f28b-4c78::e0bc-e3e1-54e7-bd75"
@@ -47944,7 +48247,7 @@
           "path": "1dd6-ca7d-f5b6-f2f3::94c6-0c2f-60fa-33bb::b6e2-d84c-ca4a-c4db"
         },
         {
-          "name": "Shock lance",
+          "name": "Hull (Front) Mounted shock lance",
           "entryId": "4ca3-ac42-5ff2-f3e9",
           "targetId": "56a9-55b9-4ae2-94a9",
           "path": "1dd6-ca7d-f5b6-f2f3::4ca3-ac42-5ff2-f3e9::56a9-55b9-4ae2-94a9"
@@ -48004,13 +48307,13 @@
           "path": "d966-b2c4-49ad-9d02::5fce-0fd1-f6ac-391c::8e65-c8a3-bc6c-c559"
         },
         {
-          "name": "Graviton singularity cannon",
+          "name": "Hull (Front) Mounted graviton singularity cannon",
           "entryId": "c78b-0777-7039-f655",
           "targetId": "7119-37d2-cbdf-f682",
           "path": "d966-b2c4-49ad-9d02::c78b-0777-7039-f655::7119-37d2-cbdf-f682"
         },
         {
-          "name": "Atrapos phasecutter",
+          "name": "Hull (Front) Mounted atropos phasecutter",
           "entryId": "db87-16d0-9763-3ba7",
           "targetId": "e920-dbb1-c371-64c8",
           "path": "d966-b2c4-49ad-9d02::db87-16d0-9763-3ba7::e920-dbb1-c371-64c8"
@@ -48064,7 +48367,7 @@
           "path": "d029-0d4c-daf6-9581::84bd-4b98-b277-3f55::b6e2-d84c-ca4a-c4db"
         },
         {
-          "name": "Neutron wave battery",
+          "name": "Hull (Front) Mounted neutron wave battery",
           "entryId": "875b-000d-6bca-45c3",
           "targetId": "6698-5722-0a4c-4191",
           "path": "d029-0d4c-daf6-9581::875b-000d-6bca-45c3::6698-5722-0a4c-4191"
@@ -48076,7 +48379,8 @@
           "groupPath": "d029-0d4c-daf6-9581::c6ec-8be8-a8b2-8584",
           "children": [
             {
-              "name": "Autocannon",
+              "name": "Hull (Front) Mounted autocannon",
+              "count": 2,
               "entryId": "36ca-3e21-1d62-e82f",
               "targetId": "da6e-3b8a-ea61-1e93",
               "path": "d029-0d4c-daf6-9581::36ca-3e21-1d62-e82f::da6e-3b8a-ea61-1e93"
@@ -48084,7 +48388,7 @@
           ]
         },
         {
-          "name": "Ironstorm missile battery",
+          "name": "Dorsal (Front) Mounted ironstorm missile battery",
           "entryId": "8949-05e3-1c93-3906",
           "targetId": "b608-8c2c-852f-5a51",
           "path": "d029-0d4c-daf6-9581::8949-05e3-1c93-3906::b608-8c2c-852f-5a51",
@@ -48139,7 +48443,8 @@
           "path": "fa4e-a706-2a97-dbc5::6b86-97e7-43aa-62c9",
           "children": [
             {
-              "name": "Volkite culverin",
+              "name": "Hull (Front) Mounted volkite culverin",
+              "count": 2,
               "entryId": "a6c0-7bfe-b9b4-1a42",
               "targetId": "fcf0-9c1b-d51e-6bc7",
               "path": "fa4e-a706-2a97-dbc5::a6c0-7bfe-b9b4-1a42::fcf0-9c1b-d51e-6bc7"
@@ -48153,13 +48458,13 @@
           "path": "fa4e-a706-2a97-dbc5::e064-daef-5d51-b7e8::8e65-c8a3-bc6c-c559"
         },
         {
-          "name": "Conversion beam desolator array",
+          "name": "Hull (Front) Mounted conversion beam desolator array",
           "entryId": "1d2d-93a7-e85a-6642",
           "targetId": "c6aa-9161-8e3d-a4c1",
           "path": "fa4e-a706-2a97-dbc5::1d2d-93a7-e85a-6642::c6aa-9161-8e3d-a4c1"
         },
         {
-          "name": "Karacnos mortar",
+          "name": "Dorsal (Front) Mounted Karacnos mortar",
           "entryId": "3bf0-dfa1-9ccd-fbd2",
           "targetId": "2c26-79d9-f2ff-db0e",
           "path": "fa4e-a706-2a97-dbc5::3bf0-dfa1-9ccd-fbd2::2c26-79d9-f2ff-db0e"
@@ -48277,8 +48582,14 @@
       "alternateLinks": [
         {
           "entryId": "3a8d-8afa-4b3e-2ade",
-          "category": "Elites"
+          "category": "Elites",
+          "categoryIds": [
+            "5d5e-958f-e388-50b5"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "5d5e-958f-e388-50b5"
       ]
     },
     {
@@ -48313,6 +48624,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "8606-def5-7473-defb",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "ce0e-2124-78c2-b1c0::8606-def5-7473-defb::d3f9-b9e6-3ea5-cc8e",
@@ -48343,6 +48655,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "ce0e-2124-78c2-b1c0::94da-d659-4db3-d979::d3f9-b9e6-3ea5-cc8e",
@@ -48403,8 +48716,14 @@
       "alternateLinks": [
         {
           "entryId": "6b41-366e-b332-6865",
-          "category": "Support"
+          "category": "Support",
+          "categoryIds": [
+            "345f-9ba6-9b02-ed5c"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "345f-9ba6-9b02-ed5c"
       ]
     },
     {
@@ -48494,8 +48813,14 @@
       "alternateLinks": [
         {
           "entryId": "6b50-27ae-5b63-fc55",
-          "category": "Recon"
+          "category": "Recon",
+          "categoryIds": [
+            "2b65-a3f2-620a-dc58"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "2b65-a3f2-620a-dc58"
       ]
     },
     {
@@ -48587,8 +48912,14 @@
       "alternateLinks": [
         {
           "entryId": "29e9-d2aa-99ca-6fca",
-          "category": "Fast Attack"
+          "category": "Fast Attack",
+          "categoryIds": [
+            "cf96-8891-3f9a-8921"
+          ]
         }
+      ],
+      "linkCategoryIds": [
+        "cf96-8891-3f9a-8921"
       ]
     },
     {
@@ -48908,7 +49239,7 @@
           "max": 2,
           "defaultWargear": [
             {
-              "name": "Twin heavy bolter",
+              "name": "Turret Mounted Twin heavy bolter",
               "entryId": "fbc1-f448-6821-f6b2",
               "targetId": "e0bc-e3e1-54e7-bd75",
               "path": "bd77-c561-22f5-23a3::fbc1-f448-6821-f6b2::e0bc-e3e1-54e7-bd75",
@@ -48960,7 +49291,7 @@
       "source": "questoris-familia",
       "unitWargear": [
         {
-          "name": "Twin lascannon",
+          "name": "Hull (Front) Mounted twin lascannon",
           "entryId": "bd79-fee6-c36d-1399",
           "targetId": "8e62-3fda-37e1-5f0a",
           "path": "8e69-7e7b-4b35-5c11::bd79-fee6-c36d-1399::8e62-3fda-37e1-5f0a",
@@ -49450,7 +49781,7 @@
           "max": 1,
           "defaultWargear": [
             {
-              "name": "Twin heavy stubber",
+              "name": "Two Pintle Mounted twin heavy stubbers",
               "entryId": "9b49-3d24-4fd5-ae25",
               "targetId": "9027-63f4-4780-b5b1",
               "path": "259d-ab09-5392-b0ce::9b49-3d24-4fd5-ae25::9027-63f4-4780-b5b1"
@@ -49515,6 +49846,7 @@
             },
             {
               "name": "Bolter",
+              "count": 2,
               "entryId": "c050-620e-c956-df2c",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "2468-6b37-e1d7-0eda::c050-620e-c956-df2c::d3f9-b9e6-3ea5-cc8e",

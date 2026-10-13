@@ -45,7 +45,10 @@ export interface ArmyConfigEntry {
 
 export const rulesData = rulesJson as unknown as {
   primeGroups: Record<string, PrimeNode>;
-  detachmentChoice: { apex?: { id: string; name: string }; auxiliary?: { id: string; name: string } };
+  detachmentChoice: {
+    apex?: { id: string; name: string; categoryIds?: string[] };
+    auxiliary?: { id: string; name: string; categoryIds?: string[] };
+  };
   /** Army configuration entries by catalogue key ('game-system' for the game system's own) */
   armyConfig: Record<string, ArmyConfigEntry[]>;
   /** Per-unit choices made once for the army (sub-factions), by shared group id */
@@ -65,6 +68,8 @@ export interface ForceChartDef {
   name: string;
   catalogue: string | null;
   detachments: DetachmentDef[];
+  /** Caps on the chart's detachments (Auxiliary/Apex Detachment(s)) — see rules/detachmentLimits.ts */
+  limits?: Array<{ costTypeId: string; name: string; max: number; modifiers: RuleModifier[] }>;
 }
 
 const charts = (detachmentsJson as unknown as { charts: ForceChartDef[] }).charts;
@@ -117,7 +122,10 @@ export function getAdditionalDetachments(chartName: string, faction: string): De
  * The unit as placed via one of its alternate root links (e.g. Centurion as
  * "Command - Centurions Only"): same unit, that link's id and category.
  */
-export function unitVariant(unit: UnitEntry, link: { entryId: string; category: string }): UnitEntry {
+export function unitVariant(
+  unit: UnitEntry,
+  link: { entryId: string; category: string; categoryIds?: string[] }
+): UnitEntry {
   // Every .ros path in the unit starts at its root link — re-root them on the alternate link
   const reroot = (path: string | undefined) =>
     path && unit.entryId && path.startsWith(`${unit.entryId}::`) ? `${link.entryId}${path.slice(unit.entryId.length)}` : path;
@@ -153,7 +161,25 @@ export function unitVariant(unit: UnitEntry, link: { entryId: string; category: 
     primaryCategory: link.category,
     role: getBaseRole(link.category),
     primaryCategoryRules: undefined,
+    // The link's own categories replace the main link's (a Centurion fielded as
+    // "Command - Centurions Only" isn't in the Command category)
+    facts: variantFacts(unit, link),
   };
+}
+
+function variantFacts(unit: UnitEntry, link: { entryId: string; categoryIds?: string[] }): UnitEntry['facts'] {
+  if (!unit.facts) return unit.facts;
+  const facts = { ...unit.facts };
+  const drop = (id: string | undefined) => {
+    if (id && facts[id] !== undefined) {
+      facts[id] -= 1;
+      if (facts[id] <= 0) delete facts[id];
+    }
+  };
+  drop(unit.entryId);
+  for (const id of unit.linkCategoryIds ?? []) drop(id);
+  for (const id of [link.entryId, ...(link.categoryIds ?? [])]) facts[id] = (facts[id] ?? 0) + 1;
+  return facts;
 }
 
 /** Strips " - qualifier" suffix: "Command - Centurions Only" → "Command" */

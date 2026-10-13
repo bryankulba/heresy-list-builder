@@ -28,6 +28,7 @@ import AllySelectorModal from '../modals/AllySelectorModal';
 import { unitContext } from '../../rules/context';
 import { getPrimeOptions, isLogisticalBenefit, logisticalBenefitRoles } from '../../rules/primeBenefits';
 import { unitsForSlot, withEffectiveSlots } from '../../rules/slots';
+import { auxiliaryUnlocks, detachmentAllowances } from '../../rules/detachmentLimits';
 import ConfirmModal from '../modals/ConfirmModal';
 import ExportModal from '../modals/ExportModal';
 import SavedListsModal from '../modals/SavedListsModal';
@@ -189,8 +190,8 @@ export default function Canvas() {
 
   // ── Modal state ──
   const [modal, setModal] = useState<ModalState>({ type: 'none' });
-  // Tracks if we need a second detachment selector (Officer of the Line)
-  const pendingDoubleUnlock = useRef<string | null>(null);
+  // Further Auxiliary selectors still owed to a slot (e.g. Officer of the Line's second)
+  const pendingUnlocks = useRef<{ unlockedBy: string; remaining: number; total: number } | null>(null);
   // Tracks when we're in edit mode so handlers return to slotEdit instead of chaining
   const isEditingSlot = useRef<{ detachmentId: string; slotKey: string } | null>(null);
 
@@ -460,24 +461,36 @@ export default function Canvas() {
     benefit?: Parameters<typeof fillSlot>[3]
   ) {
     fillSlot(detachmentId, slotKey, unit, benefit);
-
-    let trigger: 'highCommand' | 'command' | null = null;
-    if (role === 'High Command') trigger = 'highCommand';
-    else if (role === 'Command') trigger = 'command';
-
+    // Replace any detachments it unlocked before (changing a unit should swap, not stack)
     const unlockedBy = `${detachmentId}::${slotKey}`;
+    for (const det of detachments.filter((d) => d.unlockedBy === unlockedBy)) removeDetachment(det.id);
+    startUnlocks(detachmentId, slotKey, role);
+  }
 
-    if (trigger) {
-      // Replace any existing unlocked detachment (changing a unit should swap, not stack)
-      const existing = detachments.filter((d) => d.unlockedBy === unlockedBy);
-      for (const det of existing) removeDetachment(det.id);
-
-      const isDouble = (unit.officerOfTheLine ?? 1) > 1;
-      if (isDouble) pendingDoubleUnlock.current = unlockedBy;
-      setModal({ type: 'detachmentSelector', trigger, unlockedBy });
-    } else {
-      setModal({ type: 'none' });
+  /**
+   * Opens the detachment selectors a newly placed unit earns: a High Command
+   * unit picks an Apex or Auxiliary detachment; any other unit as many
+   * Auxiliary detachments as it adds to the army's BSData allowance (1 per
+   * Command unit, +1 for Officer of the Line (2)…).
+   */
+  function startUnlocks(detachmentId: string, slotKey: string, role: string) {
+    const unlockedBy = `${detachmentId}::${slotKey}`;
+    if (role === 'High Command') {
+      setModal({ type: 'detachmentSelector', trigger: 'highCommand', unlockedBy });
+      return;
     }
+    const count = auxiliaryUnlocks(useRosterStore.getState().forces, detachmentId, slotKey);
+    if (count === 0) {
+      setModal({ type: 'none' });
+      return;
+    }
+    pendingUnlocks.current = count > 1 ? { unlockedBy, remaining: count - 1, total: count } : null;
+    setModal({
+      type: 'detachmentSelector',
+      trigger: 'command',
+      unlockedBy,
+      ...(count > 1 ? { title: `Choose Auxiliary Detachment (1 of ${count})` } : {}),
+    });
   }
 
   function handleUnitConfirmed(unit: Parameters<typeof fillSlot>[2]) {
@@ -516,19 +529,8 @@ export default function Canvas() {
         setModal({ type: 'none' });
       }
     } else {
-      // Fresh fill: trigger the detachment unlock if this is a Command/HC slot
-      const unlockedBy = `${detachmentId}::${slotKey}`;
-      let trigger: 'highCommand' | 'command' | null = null;
-      if (role === 'High Command') trigger = 'highCommand';
-      else if (role === 'Command') trigger = 'command';
-
-      if (trigger) {
-        const isDouble = (unit.officerOfTheLine ?? 1) > 1;
-        if (isDouble) pendingDoubleUnlock.current = unlockedBy;
-        setModal({ type: 'detachmentSelector', trigger, unlockedBy });
-      } else {
-        setModal({ type: 'none' });
-      }
+      // Fresh fill: open the detachment selectors the unit earns
+      startUnlocks(detachmentId, slotKey, role);
     }
   }
 
@@ -537,10 +539,17 @@ export default function Canvas() {
     const { unlockedBy } = modal;
     addDetachment(def, { unlockedBy });
 
-    // If Officer of the Line: open a second selector
-    if (pendingDoubleUnlock.current === unlockedBy) {
-      pendingDoubleUnlock.current = null;
-      setModal({ type: 'detachmentSelector', trigger: 'command', unlockedBy, title: 'Choose Second Auxiliary Detachment (Officer of the Line)' });
+    // More Auxiliary detachments owed to this slot (e.g. Officer of the Line)
+    const pending = pendingUnlocks.current;
+    if (pending?.unlockedBy === unlockedBy && pending.remaining > 0) {
+      pending.remaining -= 1;
+      if (pending.remaining === 0) pendingUnlocks.current = null;
+      setModal({
+        type: 'detachmentSelector',
+        trigger: 'command',
+        unlockedBy,
+        title: `Choose Auxiliary Detachment (${pending.total - pending.remaining} of ${pending.total})`,
+      });
       return;
     }
 
@@ -739,13 +748,23 @@ export default function Canvas() {
       </div>
 
       {/* Points card */}
-      <PointsCard current={totalPoints} limit={pointsLimit} />
+      <PointsCard
+        current={totalPoints}
+        limit={pointsLimit}
+        allowances={
+          primary
+            ? detachmentAllowances(forces, primary)
+                .filter((a) => a.max > 0 || a.used > 0)
+                .map((a) => ({ label: a.name.replace(/ Detachment\(s\)$|s$/, ''), used: a.used, max: a.max }))
+            : []
+        }
+      />
 
       {/* Modals */}
       {modal.type === 'slotEdit' && (() => {
         const { detachmentId, slotKey, slotDef, filled } = modal;
         const role = getBaseRole(stripPrimePrefix(slotDef.role));
-        const isCommandSlot = role === 'High Command' || role === 'Command';
+        const isCommandSlot = role === 'High Command' || auxiliaryUnlocks(forces, detachmentId, slotKey) > 0;
         const unlockedBy = `${detachmentId}::${slotKey}`;
         const unlockedDets = detachments.filter((d) => d.unlockedBy === unlockedBy);
         const trigger = role === 'High Command' ? 'highCommand' : 'command';

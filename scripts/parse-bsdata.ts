@@ -115,6 +115,8 @@ export interface BsForceEntry {
   modifiers?: BsModifier[];
   modifierGroups?: BsModifierGroup[];
   forceEntries?: BsForceEntry[];
+  constraints?: BsConstraint[];
+  costs?: BsCost[];
 }
 
 export interface BsCategoryEntry {
@@ -134,6 +136,7 @@ interface BsRoot {
   sharedSelectionEntries?: BsEntry[];
   sharedSelectionEntryGroups?: BsEntry[];
   sharedRules?: BsRule[];
+  costTypes?: Array<{ id: string; name: string }>;
 }
 
 export interface BsGameSystemFile {
@@ -160,6 +163,8 @@ export interface WargearEntry {
   name: string;
   /** The entry's own id (link or inline entry) */
   entryId: string;
+  /** How many come per parent selection, when more than one (a pair of sponson weapons) */
+  count?: number;
   /** Linked shared entry, when entryId is a link */
   targetId?: string;
   /** Selection entryId path for .ros export */
@@ -226,7 +231,9 @@ export interface UnitEntry {
    * Centurion as "Command - Centurions Only"). A unit placed via one of these
    * exports with that link's id.
    */
-  alternateLinks?: Array<{ entryId: string; category: string }>;
+  alternateLinks?: Array<{ entryId: string; category: string; categoryIds?: string[] }>;
+  /** Categories the unit's root link gives it (replaced when it's fielded through an alternate link) */
+  linkCategoryIds?: string[];
   /**
    * High Command units carry a choice of detachment they unlock ("One Apex /
    * One Auxiliary Detachment"); paths are prefix::choiceId, group prefix::groupId.
@@ -306,7 +313,10 @@ export interface RulesData {
    * Upgrades a High Command/Command unit carries to record which kind of
    * detachment it unlocked ("One Apex Detachment" / "One Auxiliary Detachment").
    */
-  detachmentChoice: { apex?: { id: string; name: string }; auxiliary?: { id: string; name: string } };
+  detachmentChoice: {
+    apex?: { id: string; name: string; categoryIds?: string[] };
+    auxiliary?: { id: string; name: string; categoryIds?: string[] };
+  };
   /** Army configuration entries by catalogue key ('game-system' for the game system's own) */
   armyConfig: Record<string, ArmyConfigEntry[]>;
   /**
@@ -344,6 +354,21 @@ export interface Detachment {
   slots: DetachmentSlot[];
   /** Faction keys whose primary catalogue can field this detachment (empty = all) */
   sources: string[];
+  /** What it uses of its chart's detachment limits, by cost type id (e.g. 1 "Auxiliary Detachment(s)") */
+  costs?: Record<string, number>;
+}
+
+/**
+ * A cap on a chart's detachments, as BSData encodes it: each detachment "costs"
+ * 1 of a cost type (Auxiliary/Apex Detachment(s)) and the chart limits that
+ * cost to 0, raised by modifiers per selection (+1 per Command unit, +1 per
+ * Officer of the Line (2), +1 per High Command "One Apex Detachment"…).
+ */
+export interface DetachmentLimit {
+  costTypeId: string;
+  name: string;
+  max: number;
+  modifiers: RuleModifier[];
 }
 
 /**
@@ -357,6 +382,7 @@ export interface ForceChart {
   /** Faction key of the catalogue that defines the chart; null for game-system charts */
   catalogue: string | null;
   detachments: Detachment[];
+  limits?: DetachmentLimit[];
 }
 
 export interface SystemInfo {
@@ -524,15 +550,27 @@ function hasMinAtLeastOne(entry: BsEntry): boolean {
   return entry.constraints?.some((c) => c.type === 'min' && constraintValue(entry, c) >= 1) ?? false;
 }
 
-/** Display name after unconditional "set name" modifiers (e.g. a linked unit renamed for its catalogue). */
-function displayName(...holders: BsEntry[]): string | undefined {
-  let name: string | undefined;
+/**
+ * Display name after unconditional name modifiers ("set", "prepend", "append"
+ * — e.g. a linked unit renamed for its catalogue, "Pintle Mounted" + "Bolter").
+ * Holders' modifiers apply in order (target, then the link); undefined if none apply.
+ */
+function displayName(base: string, ...holders: BsEntry[]): string | undefined {
+  let name = base;
+  let changed = false;
   for (const h of holders) {
     for (const mod of allModifiers(h)) {
-      if (mod.field === 'name' && mod.type === 'set' && allConditions(mod).length === 0) name = String(mod.value);
+      if (mod.field !== 'name' || allConditions(mod).length > 0) continue;
+      const value = String(mod.value);
+      const join = (mod as BsModifier & { join?: string }).join ?? ' ';
+      if (mod.type === 'set') name = value;
+      else if (mod.type === 'prepend') name = `${value}${join}${name}`;
+      else if (mod.type === 'append') name = `${name}${join}${value}`;
+      else continue;
+      changed = true;
     }
   }
-  return name;
+  return changed ? name : undefined;
 }
 
 /** Options in the order BattleScribe / New Recruit list them: sortIndex, then name. */
@@ -691,8 +729,13 @@ function mandatoryIn(
   const add = (m: Member) => {
     if (wargear.some((w) => w.entryId === m.entry.id)) return;
     const children = depth < 4 ? mandatoryIn(optionContents(m, index, depth), index, depth + 1) : [];
+    // How many come with it (e.g. "Two Sponson Mounted" heavy bolters: min 2)
+    const min = Math.max(0, ...(m.entry.constraints ?? []).filter((c) => c.type === 'min' && c.field === 'selections').map((c) => constraintValue(m.entry, c)));
+    const target = m.entry.targetId ? index.get(m.entry.targetId) : undefined;
     wargear.push({
-      name: m.entry.name,
+      // The name New Recruit shows ("Hull (Front) Mounted heavy bolter")
+      name: displayName(m.entry.name, ...(target ? [target] : []), m.entry) ?? m.entry.name,
+      ...(min > 1 ? { count: min } : {}),
       entryId: m.entry.id,
       ...(m.entry.targetId ? { targetId: m.entry.targetId } : {}),
       path: join(memberPath(m)),
@@ -720,11 +763,27 @@ function mandatoryIn(
         // hide are taken only if nothing else is left.
         // Free options first, so the unit's points stay as the app shows them
         const cost = (o: Member) => pointsOf(o.entry) + (o.entry.targetId ? pointsOf(index.get(o.entry.targetId) ?? {}) : 0);
-        const visible = g.options
-          .filter((o) => !o.entry.hidden && !isDisabled(o.entry))
-          .sort((a, b) => Number(cost(a) > 0) - Number(cost(b) > 0) || byListOrder(a, b));
-        const steady = visible.filter((o) => !allModifiers(o.entry).some((m) => m.field === 'hidden'));
-        const choice = g.options.find((o) => o.entry.id === g.defaultId) ?? steady[0] ?? visible[0];
+        const pick = (grp: GroupView): Member | undefined => {
+          const visible = grp.options
+            .filter((o) => !o.entry.hidden && !isDisabled(o.entry))
+            .sort((a, b) => Number(cost(a) > 0) - Number(cost(b) > 0) || byListOrder(a, b));
+          const steady = visible.filter((o) => !allModifiers(o.entry).some((m) => m.field === 'hidden'));
+          const subgroups = grp.groups.filter((sg) => !sg.hidden && !isGroupDisabled(sg));
+          // A group of sub-groups (an Assault Squad's "Pistol") takes a sub-group's default
+          const fromSubgroups = () => {
+            for (const sg of subgroups) {
+              const d = sg.options.find((o) => o.entry.id === sg.defaultId);
+              if (d) return d;
+            }
+            for (const sg of subgroups) {
+              const p = pick(sg);
+              if (p) return p;
+            }
+            return undefined;
+          };
+          return grp.options.find((o) => o.entry.id === grp.defaultId) ?? steady[0] ?? visible[0] ?? fromSubgroups();
+        };
+        const choice = pick(g);
         if (choice) add(choice);
       }
       visit(g);
@@ -799,8 +858,10 @@ function detachmentChoiceIds(index: SharedIndex): RulesData['detachmentChoice'] 
   for (const groupId of FORCE_ORG_CHOICE_GROUP_IDS) {
     const group = index.get(groupId);
     for (const e of [...(group?.selectionEntries ?? []), ...(group?.entryLinks ?? [])]) {
-      if (/^One Apex Detachment/i.test(e.name)) choices.apex = { id: e.id, name: e.name };
-      if (/^One Auxiliary Detachment/i.test(e.name)) choices.auxiliary = { id: e.id, name: e.name };
+      // Its categories ("+1 Apex from High Command") are what the chart limits count
+      const categoryIds = (e.categoryLinks ?? []).map((c) => c.targetId);
+      if (/^One Apex Detachment/i.test(e.name)) choices.apex = { id: e.id, name: e.name, categoryIds };
+      if (/^One Auxiliary Detachment/i.test(e.name)) choices.auxiliary = { id: e.id, name: e.name, categoryIds };
     }
   }
   return choices;
@@ -1119,14 +1180,17 @@ function extractUnitsFromCatalogue(
   // "Support - Castellax Battle Maniple Only". Prefer the plain battlefield-role
   // link; otherwise fall back to the first link.
   const rootLinks = new Map<string, { linkId: string; role: string; link: BsEntry }>();
-  const allRootLinks = new Map<string, Array<{ entryId: string; category: string }>>();
+  const allRootLinks = new Map<string, Array<{ entryId: string; category: string; categoryIds: string[] }>>();
   const isPlainSlotRole = (role: string) => slotRoles.has(role);
   for (const link of cat.entryLinks ?? []) {
     if (!link.targetId) continue;
     if (link.hidden && !allModifiers(link).some((m) => m.field === 'hidden')) continue; // never shown
     const role = effectivePrimaryCategory(link, categoryNames);
     if (!role) continue;
-    allRootLinks.set(link.targetId, [...(allRootLinks.get(link.targetId) ?? []), { entryId: link.id, category: role }]);
+    allRootLinks.set(link.targetId, [
+      ...(allRootLinks.get(link.targetId) ?? []),
+      { entryId: link.id, category: role, categoryIds: (link.categoryLinks ?? []).map((c) => c.targetId) },
+    ]);
     const existing = rootLinks.get(link.targetId);
     if (!existing || (!isPlainSlotRole(existing.role) && isPlainSlotRole(role))) {
       rootLinks.set(link.targetId, { linkId: link.id, role, link });
@@ -1165,7 +1229,7 @@ function extractUnitsFromCatalogue(
     const officerOfTheLine = officerOfTheLineFor(entry, ootlMap);
 
     units.push({
-      name: displayName(entry, link.link) ?? entry.name,
+      name: displayName(entry.name, entry, link.link) ?? entry.name,
       entryId: link.linkId,
       path: join([link.linkId, entry.id]),
       role: normalizeRole(link.role),
@@ -1179,7 +1243,9 @@ function extractUnitsFromCatalogue(
       facts: unitFacts(entry, link.link, breakdown?.models ?? []),
       ...(prime ? { prime } : {}),
       ...(categoryRules ? { primaryCategoryRules: categoryRules } : {}),
-      ...(alternateLinks.length > 0 ? { alternateLinks } : {}),
+      ...(alternateLinks.length > 0
+        ? { alternateLinks, linkCategoryIds: (link.link.categoryLinks ?? []).map((c) => c.targetId) }
+        : {}),
       ...(choiceLink
         ? { detachmentChoice: { prefix: join([link.linkId, choiceLink.id]), groupId: choiceLink.targetId as string } }
         : {}),
@@ -1298,13 +1364,31 @@ function detachmentType(name: string): Detachment['type'] {
 function parseDetachment(fe: BsForceEntry, catalogueKeyById: Map<string, string>): Detachment | null {
   const slots = extractSlots(fe);
   if (slots.length === 0) return null;
+  const costs: Record<string, number> = {};
+  for (const c of fe.costs ?? []) {
+    if (c.typeId !== POINTS_TYPE_ID && c.value > 0) costs[c.typeId] = c.value;
+  }
   return {
     name: fe.name,
     entryId: fe.id,
     type: detachmentType(fe.name),
     slots,
     sources: extractFactionSources(fe, catalogueKeyById),
+    ...(Object.keys(costs).length > 0 ? { costs } : {}),
   };
+}
+
+/** Chart-level caps on detachments: `max` constraints on non-points cost types, with their modifiers. */
+function extractLimits(fe: BsForceEntry, costTypeNames: Map<string, string>): DetachmentLimit[] {
+  const modifiers = allModifiers(fe);
+  return (fe.constraints ?? [])
+    .filter((c) => c.type === 'max' && c.scope === 'self' && costTypeNames.has(c.field) && c.field !== POINTS_TYPE_ID)
+    .map((c) => ({
+      costTypeId: c.field,
+      name: costTypeNames.get(c.field) as string,
+      max: c.value,
+      modifiers: modifiers.filter((m) => m.field === c.id && c.id).map(slimModifier),
+    }));
 }
 
 /** Game-system charts the app supports, by root force entry name. */
@@ -1315,14 +1399,19 @@ function parseCharts(
   catalogues: Array<{ key: string; root: BsRoot }>,
   catalogueKeyById: Map<string, string>
 ): ForceChart[] {
-  const toChart = (fe: BsForceEntry, catalogue: string | null): ForceChart => ({
-    id: fe.id,
-    name: fe.name,
-    catalogue,
-    detachments: (fe.forceEntries ?? [])
-      .map((child) => parseDetachment(child, catalogueKeyById))
-      .filter((d): d is Detachment => d !== null),
-  });
+  const costTypeNames = new Map((gst.costTypes ?? []).map((t) => [t.id, t.name]));
+  const toChart = (fe: BsForceEntry, catalogue: string | null): ForceChart => {
+    const limits = extractLimits(fe, costTypeNames);
+    return {
+      id: fe.id,
+      name: fe.name,
+      catalogue,
+      detachments: (fe.forceEntries ?? [])
+        .map((child) => parseDetachment(child, catalogueKeyById))
+        .filter((d): d is Detachment => d !== null),
+      ...(limits.length > 0 ? { limits } : {}),
+    };
+  };
   return [
     ...(gst.forceEntries ?? []).filter((fe) => GAME_SYSTEM_CHARTS.includes(fe.name)).map((fe) => toChart(fe, null)),
     ...catalogues.flatMap(({ key, root }) => (root.forceEntries ?? []).map((fe) => toChart(fe, key))),

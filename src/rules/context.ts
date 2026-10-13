@@ -4,7 +4,7 @@
  */
 
 import type { Force, PlacedDetachment, UnitEntry } from '../types';
-import { cataloguesData, getChart } from '../data/loader';
+import { cataloguesData, getChart, rulesData } from '../data/loader';
 import type { RuleContext } from './evaluate';
 
 type Counts = Record<string, number>;
@@ -20,10 +20,38 @@ function slotCounts(unit: UnitEntry, primeBenefitId?: string): Counts {
   return counts;
 }
 
-function detachmentCounts(det: PlacedDetachment): Counts {
+/**
+ * The kind of detachment each High Command slot chose to unlock ("One Apex /
+ * One Auxiliary Detachment"), by "detId::slotKey": from the detachments it
+ * unlocked, else from choices carried over by an import.
+ */
+function detachmentChoicesBySlot(forces: Force[]): Map<string, Array<'apex' | 'auxiliary'>> {
+  const out = new Map<string, Array<'apex' | 'auxiliary'>>();
+  for (const det of forces.flatMap((f) => f.detachments)) {
+    if (!det.unlockedBy || (det.def.type !== 'apex' && det.def.type !== 'auxiliary')) continue;
+    out.set(det.unlockedBy, [...(out.get(det.unlockedBy) ?? []), det.def.type]);
+  }
+  for (const det of forces.flatMap((f) => f.detachments)) {
+    for (const [key, fs] of Object.entries(det.slots)) {
+      const ref = `${det.id}::${key}`;
+      if (fs?.detachmentChoices?.length && !out.has(ref)) out.set(ref, fs.detachmentChoices);
+    }
+  }
+  return out;
+}
+
+function detachmentCounts(det: PlacedDetachment, choices: Map<string, Array<'apex' | 'auxiliary'>>): Counts {
   const counts: Counts = {};
-  for (const fs of Object.values(det.slots)) {
-    if (fs) addCounts(counts, slotCounts(fs.unit, fs.primeBenefit?.id));
+  for (const [key, fs] of Object.entries(det.slots)) {
+    if (!fs) continue;
+    addCounts(counts, slotCounts(fs.unit, fs.primeBenefit?.id));
+    // A High Command unit's detachment choice (and its "+1 Apex from High Command" category)
+    if (fs.unit.detachmentChoice) {
+      for (const kind of choices.get(`${det.id}::${key}`) ?? []) {
+        const choice = rulesData.detachmentChoice[kind];
+        for (const id of [choice?.id, ...(choice?.categoryIds ?? [])]) if (id) counts[id] = (counts[id] ?? 0) + 1;
+      }
+    }
   }
   for (const bs of det.bonusSlots ?? []) {
     if (bs.unit) addCounts(counts, slotCounts(bs.unit));
@@ -41,12 +69,13 @@ export function rosterCounts(forces: Force[]): RosterCounts {
   const roster: Counts = {};
   const rosterForces: Counts = {};
   const byDetachment = new Map<string, Counts>();
+  const choices = detachmentChoicesBySlot(forces);
   for (const force of forces) {
     const chartId = getChart(force.chart).id;
     rosterForces[chartId] = (rosterForces[chartId] ?? 0) + 1;
     for (const det of force.detachments) {
       if (det.def.entryId) rosterForces[det.def.entryId] = (rosterForces[det.def.entryId] ?? 0) + 1;
-      const counts = detachmentCounts(det);
+      const counts = detachmentCounts(det, choices);
       byDetachment.set(det.id, counts);
       addCounts(roster, counts);
     }

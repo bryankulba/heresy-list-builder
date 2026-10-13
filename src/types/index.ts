@@ -8,6 +8,8 @@ export type DetachmentType = 'core' | 'auxiliary' | 'apex' | 'allied' | 'additio
 export interface WargearEntry {
   name: string;
   entryId: string;
+  /** How many come per parent selection, when more than one (a pair of sponson weapons) */
+  count?: number;
   targetId?: string;
   path?: string;
   groupPath?: string;
@@ -53,7 +55,9 @@ export interface UnitEntry {
   /** Conditional re-filings of the primary category (e.g. "Heavy Assault - Tartaros Only" in a Linebreaker) */
   primaryCategoryRules?: Array<{ category: string } & Pick<RuleModifier, 'conditions' | 'conditionGroups'>>;
   /** Other root links to the same unit under different primary categories (see unitVariant) */
-  alternateLinks?: Array<{ entryId: string; category: string }>;
+  alternateLinks?: Array<{ entryId: string; category: string; categoryIds?: string[] }>;
+  /** Categories the unit's root link gives it (swapped for an alternate link's in unitVariant) */
+  linkCategoryIds?: string[];
 }
 
 export interface SlotDef {
@@ -73,6 +77,8 @@ export interface DetachmentDef {
   slots: SlotDef[];
   /** Faction keys that can field this detachment (empty = available to all / unknown) */
   sources?: string[];
+  /** What it uses of its chart's detachment limits, by cost type id — see rules/detachmentLimits.ts */
+  costs?: Record<string, number>;
 }
 
 export interface PrimeBenefit {

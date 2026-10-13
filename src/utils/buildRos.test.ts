@@ -155,3 +155,24 @@ describe('buildRosXml', () => {
     }
   });
 });
+
+describe('default wargear as New Recruit fills it', () => {
+  const units = getUnitsForFaction('death-guard');
+  const names = (ws: Array<{ name: string; count?: number; children?: unknown[] }> | undefined) =>
+    (ws ?? []).map((w) => (w.count ? `${w.name} x${w.count}` : w.name));
+
+  test("a required group of sub-groups takes a sub-group's default (Assault Squad bolt pistol)", () => {
+    const assault = units.find((u) => u.name === 'Assault Squad')!;
+    expect(names(assault.models.find((m) => m.name === 'Legionary')!.defaultWargear)).toContain('Bolt pistol');
+  });
+
+  test('pairs and mount names (Sicaran sponsons x2, hull and pintle names)', () => {
+    const sicaran = units.find((u) => u.name === 'Sicaran')!;
+    const wargear = sicaran.models[0].defaultWargear;
+    expect(names(wargear)).toContain('Hull (Front) Mounted heavy bolter');
+    const sponsons = wargear.find((w) => w.name === 'Heavy Bolters')!;
+    expect(names(sponsons.children)).toEqual(['Sponson Mounted heavy bolters x2']);
+    const rhino = units.find((u) => u.name === 'Rhino')!;
+    expect(names(rhino.models[0].defaultWargear)).toEqual(['Pintle Mounted bolter', 'Pintle Mounted Bolter']);
+  });
+});

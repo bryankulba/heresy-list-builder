@@ -109,8 +109,8 @@ function wargearSel(entry: WargearEntry, number: number, choices?: ArmyChoices):
     entryId: w.path ?? w.entryId,
     ...(w.groupPath ? { entryGroupId: w.groupPath } : {}),
     type: 'upgrade',
-    number,
-    children: (w.children ?? []).map((c) => wargearSel(c, number, choices)),
+    number: number * (w.count ?? 1),
+    children: (w.children ?? []).map((c) => wargearSel(c, number * (w.count ?? 1), choices)),
   };
 }
 

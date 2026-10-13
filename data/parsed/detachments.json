@@ -3602,7 +3602,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Tactical Support",
@@ -3780,7 +3783,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Armoured Support",
@@ -3876,7 +3882,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Heavy Support",
@@ -3972,7 +3981,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Combat Pioneer",
@@ -4068,7 +4080,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Shock Assault",
@@ -4164,7 +4179,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - First Strike",
@@ -4260,7 +4278,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Apex - Combat Retinue",
@@ -4556,7 +4577,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Officer Cadre",
@@ -5402,7 +5426,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Army Vanguard",
@@ -5698,7 +5725,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Auxiliary - Primacy Wing",
@@ -5729,7 +5759,10 @@
           ],
           "sources": [
             "emperors-children"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Taghmata Cohort",
@@ -5746,7 +5779,10 @@
           ],
           "sources": [
             "mechanicum"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Apprentice Cadre",
@@ -6016,7 +6052,10 @@
           ],
           "sources": [
             "mechanicum"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Apex - The Heart of Power",
@@ -6261,7 +6300,10 @@
           ],
           "sources": [
             "mechanicum"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Command Maniple",
@@ -6545,7 +6587,10 @@
           ],
           "sources": [
             "mechanicum"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - The Panoply of Cruelty",
@@ -6815,7 +6860,10 @@
           ],
           "sources": [
             "mechanicum"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - The Host of Destruction",
@@ -7085,7 +7133,10 @@
           ],
           "sources": [
             "mechanicum"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Crux of Judgement",
@@ -7102,7 +7153,10 @@
           ],
           "sources": [
             "mechanicum"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Iron Phalanx",
@@ -7347,7 +7401,10 @@
           ],
           "sources": [
             "mechanicum"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Thallax Command Cohort",
@@ -7624,7 +7681,10 @@
           ],
           "sources": [
             "mechanicum"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - The Hammer of Olympia",
@@ -7901,7 +7961,10 @@
           ],
           "sources": [
             "iron-warriors"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Auxiliary - The Ironfire Cohort",
@@ -8171,7 +8234,10 @@
           ],
           "sources": [
             "iron-warriors"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Reaping Host",
@@ -8441,7 +8507,10 @@
           ],
           "sources": [
             "death-guard"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Primus Demi-Company",
@@ -8787,7 +8856,10 @@
           ],
           "sources": [
             "ultramarines"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Veletaris Tercio",
@@ -9057,7 +9129,10 @@
           ],
           "sources": [
             "solar-auxilia"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Armour Tercio",
@@ -9074,7 +9149,10 @@
           ],
           "sources": [
             "solar-auxilia"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Artillery Tercio",
@@ -9091,7 +9169,10 @@
           ],
           "sources": [
             "solar-auxilia"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Infantry Tercio",
@@ -9368,7 +9449,10 @@
           ],
           "sources": [
             "solar-auxilia"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Scout Tercio",
@@ -9392,7 +9476,10 @@
           ],
           "sources": [
             "solar-auxilia"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Chogorian Warband",
@@ -9685,7 +9772,10 @@
           ],
           "sources": [
             "white-scars"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Apex - Medusan Vanguard",
@@ -9962,7 +10052,10 @@
           ],
           "sources": [
             "iron-hands"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Auxiliary - Terror Assault",
@@ -10232,7 +10325,10 @@
           ],
           "sources": [
             "night-lords"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Apex - Atramentar Hunt",
@@ -10270,7 +10366,10 @@
           ],
           "sources": [
             "night-lords"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Auxiliary - Berserker Cadre",
@@ -10540,7 +10639,10 @@
           ],
           "sources": [
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Bloodied Claw",
@@ -10810,7 +10912,10 @@
           ],
           "sources": [
             "space-wolves"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Revelation Host",
@@ -11080,7 +11185,10 @@
           ],
           "sources": [
             "blood-angels"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Sons of Bodt",
@@ -11350,7 +11458,10 @@
           ],
           "sources": [
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Spearhead Phalanx",
@@ -11381,7 +11492,10 @@
           ],
           "sources": [
             "iron-hands"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Supremacy Cadre",
@@ -11651,7 +11765,10 @@
           ],
           "sources": [
             "sons-of-horus"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Stormwing Muster",
@@ -11921,7 +12038,10 @@
           ],
           "sources": [
             "dark-angels"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Deathwing Conclave",
@@ -12191,7 +12311,10 @@
           ],
           "sources": [
             "dark-angels"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Ravenwing Lance",
@@ -12461,7 +12584,10 @@
           ],
           "sources": [
             "dark-angels"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Firewing Echelon",
@@ -12731,7 +12857,10 @@
           ],
           "sources": [
             "dark-angels"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Ironwing Gauntlet",
@@ -12755,7 +12884,10 @@
           ],
           "sources": [
             "dark-angels"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Dreadwing Cadre",
@@ -13025,7 +13157,10 @@
           ],
           "sources": [
             "dark-angels"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Siege Gauntlet",
@@ -13295,7 +13430,10 @@
           ],
           "sources": [
             "imperial-fists"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Immolation Covenant",
@@ -13565,7 +13703,10 @@
           ],
           "sources": [
             "salamanders"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Decapitation Cadre",
@@ -13589,7 +13730,10 @@
           ],
           "sources": [
             "raven-guard"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Prosperine Convocation",
@@ -13859,7 +14003,10 @@
           ],
           "sources": [
             "thousand-sons"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Apex - Exalted Conclave",
@@ -14097,7 +14244,10 @@
           ],
           "sources": [
             "word-bearers"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Auxiliary - Headhunter Leviathal",
@@ -14367,7 +14517,10 @@
           ],
           "sources": [
             "alpha-legion"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Daemonic Manifestation",
@@ -14433,7 +14586,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Veteran Cadre",
@@ -14573,7 +14729,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Apothecarion Delegation",
@@ -14906,7 +15065,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Techmarine Covenant",
@@ -15239,7 +15401,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Storm Battery",
@@ -15388,7 +15553,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Recon Demi-Company",
@@ -15700,7 +15868,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Iron Tercio",
@@ -15731,7 +15902,10 @@
           ],
           "sources": [
             "solar-auxilia"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Planetfall Speartip",
@@ -16050,7 +16224,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Mech - Logistical Benefits Detachment",
@@ -17196,7 +17373,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Apex - Grenadier Muster",
@@ -17466,7 +17646,10 @@
           ],
           "sources": [
             "imperialis-militia"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Ogryn Auxilia",
@@ -17736,7 +17919,10 @@
           ],
           "sources": [
             "imperialis-militia"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Infantry Cohort",
@@ -17990,7 +18176,10 @@
           ],
           "sources": [
             "imperialis-militia"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Artillery Division",
@@ -18260,7 +18449,10 @@
           ],
           "sources": [
             "imperialis-militia"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Cavalry Wing",
@@ -18530,7 +18722,10 @@
           ],
           "sources": [
             "imperialis-militia"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Armoured Phalanx",
@@ -18554,7 +18749,10 @@
           ],
           "sources": [
             "imperialis-militia"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Auxiliary - Oversight Delegation",
@@ -18578,7 +18776,10 @@
           ],
           "sources": [
             "imperialis-militia"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Storm Cadre",
@@ -18611,7 +18812,10 @@
           ],
           "sources": [
             "imperialis-militia"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Daemonic Manifestation",
@@ -18628,7 +18832,10 @@
           ],
           "sources": [
             "imperialis-militia"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Apex - Linebreaker Echelon (Saturnine)",
@@ -19033,7 +19240,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Linebreaker Echelon (Cataphractii)",
@@ -19461,7 +19671,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Linebreaker Echelon (Tartaros)",
@@ -19866,7 +20079,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Auxiliary - Maelstrom Sentry Battery",
@@ -20185,7 +20401,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Apex - Moritoi Convocation",
@@ -20455,7 +20674,10 @@
           ],
           "sources": [
             "legio-custodes"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Auxiliary - Hykanatoi Convocation",
@@ -20725,7 +20947,10 @@
           ],
           "sources": [
             "legio-custodes"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Tharanatoi Convocation",
@@ -20995,7 +21220,10 @@
           ],
           "sources": [
             "legio-custodes"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Ephoroi Convocation",
@@ -21265,7 +21493,10 @@
           ],
           "sources": [
             "legio-custodes"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Auxiliary - Kataphractoi Convocation",
@@ -21535,7 +21766,10 @@
           ],
           "sources": [
             "legio-custodes"
-          ]
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
         },
         {
           "name": "Apex - Leviathan Armoured Fist",
@@ -21578,7 +21812,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Leviathan Bastion of Fire",
@@ -21895,7 +22132,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Apex - Armoured Command Squadron Detachment",
@@ -21946,7 +22186,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "159d-855c-533d-f592": 1
+          }
         },
         {
           "name": "Auxiliary - Tank Commander Armoured Support",
@@ -22042,7 +22285,10 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "costs": {
+            "2cdf-186c-a655-d907": 1
+          }
         },
         {
           "name": "Auxiliary - Tank Commander Armour Tercio",
@@ -22059,7 +22305,10 @@
           ],
           "sources": [
             "solar-auxilia"
-          ]
+          ],
+          "costs": {
+            "2cdf-186c-a655-d907": 1
+          }
         },
         {
           "name": "Auxiliary - Helot Tercio",
@@ -22166,6 +22415,200 @@
           ],
           "sources": [
             "thousand-sons"
+          ],
+          "costs": {
+            "3e8e-05ee-be52-12d6": 1
+          }
+        }
+      ],
+      "limits": [
+        {
+          "costTypeId": "3e8e-05ee-be52-12d6",
+          "name": "Auxiliary Detachment(s)",
+          "max": 0,
+          "modifiers": [
+            {
+              "type": "decrement",
+              "field": "0ab6-91a0-792e-4068",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "c857-47bd-6a4f-fcf8"
+                }
+              ]
+            },
+            {
+              "type": "decrement",
+              "field": "0ab6-91a0-792e-4068",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "9501-add0-621d-f40f"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "0ab6-91a0-792e-4068",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "6dbf-654a-f06f-2d69"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "0ab6-91a0-792e-4068",
+              "value": 2,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "901a-6b71-7a29-4597"
+                }
+              ]
+            },
+            {
+              "type": "decrement",
+              "field": "0ab6-91a0-792e-4068",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "901a-6b71-7a29-4597"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "0ab6-91a0-792e-4068",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "ff44-f49f-732b-c3a7"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "0ab6-91a0-792e-4068",
+              "value": 3,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "9f28-9714-ad10-960a"
+                }
+              ]
+            },
+            {
+              "type": "decrement",
+              "field": "0ab6-91a0-792e-4068",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "9f28-9714-ad10-960a"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "0ab6-91a0-792e-4068",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "3553-322a-f1b2-5257"
+                }
+              ]
+            },
+            {
+              "type": "decrement",
+              "field": "0ab6-91a0-792e-4068",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "a12c-94d0-efed-ea60"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "costTypeId": "159d-855c-533d-f592",
+          "name": "Apex Detachment(s)",
+          "max": 0,
+          "modifiers": [
+            {
+              "type": "increment",
+              "field": "22e2-3454-8828-04e6",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "8a97-1585-93e7-c561"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "costTypeId": "2cdf-186c-a655-d907",
+          "name": "Tank Detachments",
+          "max": 0,
+          "modifiers": [
+            {
+              "type": "increment",
+              "field": "df47-2986-0512-8389",
+              "value": 2,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "parent",
+                  "childId": "3134-c5e1-b266-d2e0"
+                }
+              ]
+            }
           ]
         }
       ]
@@ -24289,6 +24732,176 @@
             "mechanicum"
           ]
         }
+      ],
+      "limits": [
+        {
+          "costTypeId": "3e8e-05ee-be52-12d6",
+          "name": "Auxiliary Detachment(s)",
+          "max": 0,
+          "modifiers": [
+            {
+              "type": "decrement",
+              "field": "4823-b27b-f750-5a63",
+              "value": 1,
+              "conditions": [
+                {
+                  "type": "atLeast",
+                  "scope": "force",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "c857-47bd-6a4f-fcf8"
+                }
+              ]
+            },
+            {
+              "type": "decrement",
+              "field": "4823-b27b-f750-5a63",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "9501-add0-621d-f40f"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "4823-b27b-f750-5a63",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "6dbf-654a-f06f-2d69"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "4823-b27b-f750-5a63",
+              "value": 2,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "901a-6b71-7a29-4597"
+                }
+              ]
+            },
+            {
+              "type": "decrement",
+              "field": "4823-b27b-f750-5a63",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "901a-6b71-7a29-4597"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "4823-b27b-f750-5a63",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "ff44-f49f-732b-c3a7"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "4823-b27b-f750-5a63",
+              "value": 3,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "9f28-9714-ad10-960a"
+                }
+              ]
+            },
+            {
+              "type": "decrement",
+              "field": "4823-b27b-f750-5a63",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "9f28-9714-ad10-960a"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "4823-b27b-f750-5a63",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "3553-322a-f1b2-5257"
+                }
+              ]
+            },
+            {
+              "type": "decrement",
+              "field": "4823-b27b-f750-5a63",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "a12c-94d0-efed-ea60"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "costTypeId": "159d-855c-533d-f592",
+          "name": "Apex Detachment(s)",
+          "max": 0,
+          "modifiers": [
+            {
+              "type": "increment",
+              "field": "edd7-83f8-6c5d-15ba",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "8a97-1585-93e7-c561"
+                }
+              ]
+            }
+          ]
+        }
       ]
     },
     {
@@ -26408,6 +27021,134 @@
           ],
           "sources": [
             "mechanicum"
+          ]
+        }
+      ],
+      "limits": [
+        {
+          "costTypeId": "3e8e-05ee-be52-12d6",
+          "name": "Auxiliary Detachment(s)",
+          "max": 0,
+          "modifiers": [
+            {
+              "type": "decrement",
+              "field": "3597-39a8-d2ed-285d",
+              "value": 1,
+              "conditions": [
+                {
+                  "type": "atLeast",
+                  "scope": "force",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "c857-47bd-6a4f-fcf8"
+                }
+              ]
+            },
+            {
+              "type": "decrement",
+              "field": "3597-39a8-d2ed-285d",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "9501-add0-621d-f40f"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "3597-39a8-d2ed-285d",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "6dbf-654a-f06f-2d69"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "3597-39a8-d2ed-285d",
+              "value": 2,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "901a-6b71-7a29-4597"
+                }
+              ]
+            },
+            {
+              "type": "decrement",
+              "field": "3597-39a8-d2ed-285d",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "901a-6b71-7a29-4597"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "3597-39a8-d2ed-285d",
+              "value": 3,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "9f28-9714-ad10-960a"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "3597-39a8-d2ed-285d",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "3553-322a-f1b2-5257"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "costTypeId": "159d-855c-533d-f592",
+          "name": "Apex Detachment(s)",
+          "max": 0,
+          "modifiers": [
+            {
+              "type": "increment",
+              "field": "3b8b-4f4c-e853-76b9",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "selections",
+                  "scope": "force",
+                  "childId": "8a97-1585-93e7-c561"
+                }
+              ]
+            }
           ]
         }
       ]

@@ -40,6 +40,7 @@ BSData conditions/modifiers are kept (slimmed) in the parsed data and evaluated 
 - `evaluate.ts` — conditions (`instanceOf`, `atLeast`, `equalTo`… over scopes unit/force/roster/primary-catalogue/ancestor), `effectiveHidden`, `applyNumericModifiers` (incl. `repeats`). Anything the roster doesn't contain counts as 0 — accurate here since the app can't create those selections.
 - `context.ts` — builds a `RuleContext` for a unit in a slot (`unitContext`) or a detachment's own slots (`detachmentContext`) from roster counts (unit `facts` + chosen Prime benefit ids).
 - `primeBenefits.ts` — a unit's Prime benefits in its slot (from its catalogue's benefit tree); Logistical Benefit roles; lookups for export.
+- `detachmentLimits.ts` — how many Auxiliary/Apex detachments an army may take: each detachment "costs" 1 of a BSData cost type and the chart caps it, raised per selection (+1 per Command unit, +1 per Officer of the Line (2), +1 per High Command "One Apex/Auxiliary Detachment" choice…). Shown on the points card (over = red warning) and used for unlock prompts. An alternate link swaps the unit's link categories (`unitVariant` facts)
 - `slots.ts` — `unitsForSlot` (effective primary category in that detachment via `primaryCategoryRules`, plus `alternateLinks` variants like "Command - Centurions Only") and `effectiveSlots`/`withEffectiveSlots` (slot maxes from `maxModifiers`, e.g. a legion rule making all Troops Prime). The canvas renders the effective view; `slotLayout.ts` `cardSlots` treats "Troops-N"/"Prime Troops-N" as the same position so units follow when prime-ness changes.
 
 Known gap: Logistical Benefit still uses the app's own `bonusSlots`; its BSData slot increments aren't evaluated (the chosen "LB - Role" isn't counted) to avoid double slots.
@@ -78,9 +79,8 @@ Persistence: session state is persisted with `version: 2` (v1 `{ faction, detach
 All modals are coordinated by a `ModalState` discriminated union (defined in `src/types/index.ts`). Canvas.tsx is the sole owner — it reads modal state, renders the correct modal, and handles transitions between modal types.
 
 Slot interaction chains:
-1. **Prime slot**: `unitPicker` → user picks unit → `primeBenefit` → user picks benefit → if logistical: `bonusSlotRoleSelector` → `detachmentSelector`; otherwise if HC/Command: `detachmentSelector`
-2. **Regular HC/Command slot**: `unitPicker` → `detachmentSelector` (opens the Apex/Aux selector)
-3. **Officer of the Line**: triggers `detachmentSelector` twice (double unlock)
+1. **Prime slot**: `unitPicker` → user picks unit → `primeBenefit` → user picks benefit → if logistical: `bonusSlotRoleSelector` → then the unlocks below
+2. **Unlocks** (`startUnlocks`): a High Command unit opens one `detachmentSelector` (Apex or Auxiliary); any other unit opens as many Auxiliary selectors as it adds to the army's BSData allowance (`rules/detachmentLimits.ts` `auxiliaryUnlocks`: 2 for a Centurion as Command — Command + Officer of the Line (2) — but 1 in a "Command - Centurions Only" slot)
 4. **Edit existing slot**: opens `slotEdit` first; all subsequent handlers check `isEditingSlot.current` ref and return to `slotEdit` instead of chaining unlocks
 5. **Allies**: header "Add Allies" → `allySelector` → `addAlliedForce`; the allied army's Command slots unlock Auxiliary detachments from the ally's own faction (pickers/selectors resolve faction via `factionOfDetachment`)
 

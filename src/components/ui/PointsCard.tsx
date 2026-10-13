@@ -3,9 +3,11 @@ import React from 'react';
 interface PointsCardProps {
   current: number;
   limit: number;
+  /** Detachment limits of the primary army, e.g. "Auxiliary" 3 of 3 (from BSData) */
+  allowances?: Array<{ label: string; used: number; max: number }>;
 }
 
-export default function PointsCard({ current, limit }: PointsCardProps) {
+export default function PointsCard({ current, limit, allowances = [] }: PointsCardProps) {
   const pct = Math.min(current / limit, 1);
   const isOver = current > limit;
   const barColor = isOver ? 'var(--cds-support-error)' : 'var(--cds-interactive)';
@@ -76,6 +78,27 @@ export default function PointsCard({ current, limit }: PointsCardProps) {
           Over by {(current - limit).toLocaleString()}pts
         </div>
       )}
+
+      {/* Detachments used / allowed — over the limit is a warning, never a block */}
+      {allowances.map((a) => (
+        <div
+          key={a.label}
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            gap: 12,
+            marginTop: 6,
+            fontSize: 11,
+            color: a.used > a.max ? 'var(--cds-support-error)' : 'var(--cds-text-secondary)',
+          }}
+          title={a.used > a.max ? `${a.used - a.max} more ${a.label} detachment(s) than the army allows` : undefined}
+        >
+          <span>{a.label}</span>
+          <span>
+            {a.used} / {a.max}
+          </span>
+        </div>
+      ))}
     </div>
   );
 }
