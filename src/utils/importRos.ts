@@ -12,7 +12,6 @@ import { v4 as uuidv4 } from 'uuid';
 import type { Allegiance, Force, PlacedDetachment, PrimeBenefit, RosterSnapshot, UnitEntry } from '../types';
 import { cataloguesData, detachmentsData, getBaseRole, getUnitsForFaction, rulesData, unitVariant } from '../data/loader';
 import { ALLIED_CHART, ALLIED_DETACHMENT, FACTION_BY_ID } from '../data/factions';
-import { COHORT_DOCTRINES } from '../constants/cohortDoctrines';
 import type { PrimeNode } from '../rules/primeBenefits';
 import { categoryFitsSlot, withEffectiveSlots } from '../rules/slots';
 import { cardSlots } from '../components/canvas/slotLayout';
@@ -109,7 +108,7 @@ function pendingUnit(faction: string, sel: RosNode, warnings: string[]): Pending
   };
 }
 
-/** Puts a unit into the first free slot of the detachment that fits it, or a matching Logistical Benefit bonus slot. */
+/** Puts a unit into the first free slot of the detachment that fits it (a Logistical Benefit's slot included, once its role is set). */
 function place(forces: Force[], det: PlacedDetachment, p: PendingUnit, warnings: string[]): string | undefined {
   const view = withEffectiveSlots(forces).flatMap((f) => f.detachments).find((d) => d.id === det.id)!;
   const roles = view.def.slots.map((s) => s.role);
@@ -128,13 +127,8 @@ function place(forces: Force[], det: PlacedDetachment, p: PendingUnit, warnings:
       ...(p.benefit ? { primeBenefit: p.benefit } : {}),
       ...(p.unit.detachmentChoice ? { detachmentChoices: choices } : {}),
     };
-    if (p.lbRole) det.bonusSlots = [...(det.bonusSlots ?? []), { id: uuidv4(), sourceSlotKey: slot.key, role: p.lbRole, unit: null }];
+    if (p.lbRole) det.slots[slot.key] = { ...det.slots[slot.key]!, lbRole: p.lbRole };
     return slot.key;
-  }
-  const bonus = det.bonusSlots?.find((b) => !b.unit && b.role === getBaseRole(p.category));
-  if (bonus) {
-    bonus.unit = p.unit;
-    return undefined;
   }
   // No slot fits — keep the unit as overflow so it isn't lost (the card shows it)
   const key = `${p.category}-${Object.keys(det.slots).length + 100}`;
@@ -206,7 +200,7 @@ export function importRos(xml: string): ImportResult {
       const choice = children(sel)[0]?.name ?? '';
       if (sel.name === 'Allegiance' && (choice === 'Loyalist' || choice === 'Traitor')) allegiance = choice;
       if (sel.name === 'Cohort Doctrine') {
-        cohortDoctrine = COHORT_DOCTRINES.find((d) => `Cohort Doctrine: ${d.name}` === choice)?.id ?? cohortDoctrine;
+        cohortDoctrine = choice || cohortDoctrine;
       }
     }
 

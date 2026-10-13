@@ -3,7 +3,7 @@ import { Button, NumberInput, Select, SelectItem, SelectItemGroup } from '@carbo
 import type { Allegiance } from '../types';
 import { useRosterStore } from '../store/rosterStore';
 import { FACTIONS, FACTION_GROUPS, factionLabel } from '../data/factions';
-import { COHORT_DOCTRINES } from '../constants/cohortDoctrines';
+import { doctrineLabel, doctrineOptions } from '../rules/armyConfig';
 import { armyChoiceGroups, armyChoiceLabel, defaultArmyChoices } from '../rules/armyChoices';
 import SavedListsModal from './modals/SavedListsModal';
 
@@ -21,7 +21,7 @@ export default function StartScreen() {
   function handleFactionChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const next = e.target.value;
     setFaction(next);
-    if (next !== 'solar-auxilia') setCohortDoctrine('');
+    if (!doctrineOptions(next).includes(cohortDoctrine)) setCohortDoctrine('');
     setArmyChoices(defaultArmyChoices(next));
   }
 
@@ -99,8 +99,8 @@ export default function StartScreen() {
           </div>
         </div>
 
-        {/* Cohort Doctrine (Solar Auxilia only) */}
-        {faction === 'solar-auxilia' && (
+        {/* Cohort Doctrine (Solar Auxilia), from BSData */}
+        {doctrineOptions(faction).length > 0 && (
           <div className="mb-6">
             <Select
               id="cohort-doctrine-select"
@@ -109,8 +109,8 @@ export default function StartScreen() {
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setCohortDoctrine(e.target.value)}
             >
               <SelectItem value="" text="— Select Cohort Doctrine —" />
-              {COHORT_DOCTRINES.map((d) => (
-                <SelectItem key={d.id} value={d.id} text={d.name} />
+              {doctrineOptions(faction).map((d) => (
+                <SelectItem key={d} value={d} text={doctrineLabel(d)} />
               ))}
             </Select>
           </div>

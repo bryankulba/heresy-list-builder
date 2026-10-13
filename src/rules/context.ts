@@ -5,6 +5,8 @@
 
 import type { Allegiance, Force, PlacedDetachment, UnitEntry } from '../types';
 import { cataloguesData, getChart, rulesData } from '../data/loader';
+import { configCounts } from './armyConfig';
+import { logisticalBenefitChoice } from './primeBenefits';
 import type { RuleContext } from './evaluate';
 
 type Counts = Record<string, number>;
@@ -45,6 +47,11 @@ function detachmentCounts(det: PlacedDetachment, choices: Map<string, Array<'ape
   for (const [key, fs] of Object.entries(det.slots)) {
     if (!fs) continue;
     addCounts(counts, slotCounts(fs.unit, fs.primeBenefit?.id));
+    // A Logistical Benefit's chosen role ("LB - Armour"), which BSData counts to add that slot
+    if (fs.lbRole && fs.primeBenefit) {
+      const choice = logisticalBenefitChoice(fs.unit, fs.primeBenefit, fs.lbRole);
+      if (choice) counts[choice.id] = (counts[choice.id] ?? 0) + 1;
+    }
     // A High Command unit's detachment choice (and its "+1 Apex from High Command" category)
     if (fs.unit.detachmentChoice) {
       for (const kind of choices.get(`${det.id}::${key}`) ?? []) {
@@ -52,9 +59,6 @@ function detachmentCounts(det: PlacedDetachment, choices: Map<string, Array<'ape
         for (const id of [choice?.id, ...(choice?.categoryIds ?? [])]) if (id) counts[id] = (counts[id] ?? 0) + 1;
       }
     }
-  }
-  for (const bs of det.bonusSlots ?? []) {
-    if (bs.unit) addCounts(counts, slotCounts(bs.unit));
   }
   return counts;
 }
@@ -68,17 +72,15 @@ export interface RosterCounts {
   pointsLimit?: number;
 }
 
-/** The allegiance choice's id ("Loyalist"/"Traitor"), which BSData conditions count in the roster. */
-function allegianceId(allegiance: Allegiance | undefined): string | undefined {
-  if (!allegiance) return undefined;
-  const entry = rulesData.armyConfig['game-system']?.find((e) => e.category === 'Allegiance');
-  return entry?.choices.find((c) => c.name === allegiance)?.path.split('::').pop();
+/** Army-level choices that BSData conditions count in the roster. */
+export interface RosterOptions {
+  allegiance?: Allegiance;
+  pointsLimit?: number;
+  /** BSData choice name, e.g. "Cohort Doctrine: Mechanised Pattern Cohort" */
+  cohortDoctrine?: string;
 }
 
-export function rosterCounts(
-  forces: Force[],
-  opts: { allegiance?: Allegiance; pointsLimit?: number } = {}
-): RosterCounts {
+export function rosterCounts(forces: Force[], opts: RosterOptions = {}): RosterCounts {
   const roster: Counts = {};
   const rosterCosts: Counts = {};
   const rosterForces: Counts = {};
@@ -92,10 +94,7 @@ export function rosterCounts(
       const counts = detachmentCounts(det, choices);
       byDetachment.set(det.id, counts);
       addCounts(roster, counts);
-      const units = [
-        ...Object.values(det.slots).flatMap((fs) => (fs ? [{ unit: fs.unit, extra: fs.extraPoints ?? 0 }] : [])),
-        ...(det.bonusSlots ?? []).flatMap((bs) => (bs.unit ? [{ unit: bs.unit, extra: bs.extraPoints ?? 0 }] : [])),
-      ];
+      const units = Object.values(det.slots).flatMap((fs) => (fs ? [{ unit: fs.unit, extra: fs.extraPoints ?? 0 }] : []));
       for (const { unit, extra } of units) {
         const points = unit.points + extra;
         rosterCosts.any = (rosterCosts.any ?? 0) + points;
@@ -103,8 +102,8 @@ export function rosterCounts(
       }
     }
   }
-  const allegiance = allegianceId(opts.allegiance);
-  if (allegiance) roster[allegiance] = (roster[allegiance] ?? 0) + 1;
+  // The army's configuration (allegiance, cohort doctrine) — chosen in the app, not placed as units
+  addCounts(roster, configCounts(forces.find((f) => f.kind === 'primary')?.faction, opts));
   return { roster, rosterForces, byDetachment, rosterCosts, pointsLimit: opts.pointsLimit };
 }
 

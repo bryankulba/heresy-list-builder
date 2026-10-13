@@ -134,6 +134,7 @@ export default function SlotEditModal({
                 </div>
                 <div style={{ fontSize: 14, fontWeight: 500, color: 'var(--cds-text-primary)' }}>
                   {filled.primeBenefit?.name ?? '—'}
+                  {filled.lbRole ? ` — ${filled.lbRole}` : ''}
                 </div>
               </div>
               <Button kind="ghost" size="sm" onClick={onChangeBenefit}>

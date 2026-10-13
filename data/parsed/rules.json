@@ -7249,12 +7249,18 @@
           {
             "name": "Loyalist",
             "path": "b7d2-7697-3dc2-210c::e1e1-a344-d3e2-0b91",
-            "groupPath": "b7d2-7697-3dc2-210c::9fa8-cbae-ef5e-4b7c"
+            "groupPath": "b7d2-7697-3dc2-210c::9fa8-cbae-ef5e-4b7c",
+            "ids": [
+              "e1e1-a344-d3e2-0b91"
+            ]
           },
           {
             "name": "Traitor",
             "path": "b7d2-7697-3dc2-210c::597e-83d8-32e1-8eaa",
-            "groupPath": "b7d2-7697-3dc2-210c::9fa8-cbae-ef5e-4b7c"
+            "groupPath": "b7d2-7697-3dc2-210c::9fa8-cbae-ef5e-4b7c",
+            "ids": [
+              "597e-83d8-32e1-8eaa"
+            ]
           }
         ],
         "defaults": [
@@ -7303,17 +7309,29 @@
           {
             "name": "Zone Mortalis Advanced Reactions",
             "path": "ac9b-af12-a761-c3de::8ebb-fc6b-5dcd-0aee::210d-9042-89be-0d53::3ffa-9d93-cc2f-b6c4",
-            "groupPath": "ac9b-af12-a761-c3de::8ebb-fc6b-5dcd-0aee::a6ea-f57c-7bca-f91b"
+            "groupPath": "ac9b-af12-a761-c3de::8ebb-fc6b-5dcd-0aee::a6ea-f57c-7bca-f91b",
+            "ids": [
+              "210d-9042-89be-0d53",
+              "3ffa-9d93-cc2f-b6c4"
+            ]
           },
           {
             "name": "Zone Mortalis Special Rules",
             "path": "ac9b-af12-a761-c3de::d1cc-df97-0c20-1e4f::f4fc-4333-7894-6c2a::a7b6-aa43-6e89-1a4e",
-            "groupPath": "ac9b-af12-a761-c3de::d1cc-df97-0c20-1e4f::7276-2485-cf2e-b68f"
+            "groupPath": "ac9b-af12-a761-c3de::d1cc-df97-0c20-1e4f::7276-2485-cf2e-b68f",
+            "ids": [
+              "f4fc-4333-7894-6c2a",
+              "a7b6-aa43-6e89-1a4e"
+            ]
           },
           {
             "name": "Zone Mortalis Terrain",
             "path": "ac9b-af12-a761-c3de::9182-ff12-a3b0-2eb4::8899-257f-4776-40ed::a017-5adc-fa89-dd16",
-            "groupPath": "ac9b-af12-a761-c3de::9182-ff12-a3b0-2eb4::cde6-2c4b-1fce-6c0c"
+            "groupPath": "ac9b-af12-a761-c3de::9182-ff12-a3b0-2eb4::cde6-2c4b-1fce-6c0c",
+            "ids": [
+              "8899-257f-4776-40ed",
+              "a017-5adc-fa89-dd16"
+            ]
           }
         ],
         "defaults": []
@@ -7331,7 +7349,10 @@
           {
             "name": "Legiones Astartes Alpha Legion",
             "path": "fec9-e222-ccd0-ec7e::ac5b-794d-af2a-38bf::0191-8ef5-3db0-79fe",
-            "groupPath": "fec9-e222-ccd0-ec7e::ac5b-794d-af2a-38bf::90fd-1ed0-7954-ca73"
+            "groupPath": "fec9-e222-ccd0-ec7e::ac5b-794d-af2a-38bf::90fd-1ed0-7954-ca73",
+            "ids": [
+              "0191-8ef5-3db0-79fe"
+            ]
           }
         ],
         "defaults": [
@@ -7372,7 +7393,10 @@
           {
             "name": "Legiones Astartes Blood Angels",
             "path": "a1ad-b48f-3e35-4b90::a85d-c12e-e5f3-7d1c::28f0-0677-9a64-92de",
-            "groupPath": "a1ad-b48f-3e35-4b90::a85d-c12e-e5f3-7d1c::80cd-db83-44e2-2d3d"
+            "groupPath": "a1ad-b48f-3e35-4b90::a85d-c12e-e5f3-7d1c::80cd-db83-44e2-2d3d",
+            "ids": [
+              "28f0-0677-9a64-92de"
+            ]
           }
         ],
         "defaults": [
@@ -7413,7 +7437,10 @@
           {
             "name": "Legiones Astartes Dark Angels",
             "path": "542a-dde2-5ef4-aca4::bc49-c217-02cb-236c::6b77-3948-b9f0-d340",
-            "groupPath": "542a-dde2-5ef4-aca4::bc49-c217-02cb-236c::f49e-6e7b-7b74-252d"
+            "groupPath": "542a-dde2-5ef4-aca4::bc49-c217-02cb-236c::f49e-6e7b-7b74-252d",
+            "ids": [
+              "6b77-3948-b9f0-d340"
+            ]
           }
         ],
         "defaults": [
@@ -7454,7 +7481,10 @@
           {
             "name": "Legiones Astartes Death Guard",
             "path": "7067-6f8b-8fb6-2938::de78-b703-04ee-331e::6cec-3a8b-3f33-7da7",
-            "groupPath": "7067-6f8b-8fb6-2938::de78-b703-04ee-331e::1665-1055-c6b4-1f91"
+            "groupPath": "7067-6f8b-8fb6-2938::de78-b703-04ee-331e::1665-1055-c6b4-1f91",
+            "ids": [
+              "6cec-3a8b-3f33-7da7"
+            ]
           }
         ],
         "defaults": [
@@ -7495,12 +7525,20 @@
           {
             "name": "Legiones Astartes Emperor's Children",
             "path": "a4a4-1585-1c50-4ccc::73a3-ded4-7d09-5204::6666-33b0-8206-5094",
-            "groupPath": "a4a4-1585-1c50-4ccc::73a3-ded4-7d09-5204::67f2-6d7f-9c35-9774"
+            "groupPath": "a4a4-1585-1c50-4ccc::73a3-ded4-7d09-5204::67f2-6d7f-9c35-9774",
+            "ids": [
+              "6666-33b0-8206-5094",
+              "fbf2-aba8-7792-2f7f"
+            ]
           },
           {
             "name": "Legiones Hereticus Emperor's Children",
             "path": "a4a4-1585-1c50-4ccc::73a3-ded4-7d09-5204::51f4-9244-2a1c-2d7e",
-            "groupPath": "a4a4-1585-1c50-4ccc::73a3-ded4-7d09-5204::67f2-6d7f-9c35-9774"
+            "groupPath": "a4a4-1585-1c50-4ccc::73a3-ded4-7d09-5204::67f2-6d7f-9c35-9774",
+            "ids": [
+              "51f4-9244-2a1c-2d7e",
+              "b684-d314-f80b-ee73"
+            ]
           }
         ],
         "defaults": [
@@ -7541,7 +7579,10 @@
           {
             "name": "Legiones Astartes Imperial Fists",
             "path": "0a75-1454-70e9-d90b::280e-aee9-f41c-f7d1::ebdf-ff35-b8d9-77ed",
-            "groupPath": "0a75-1454-70e9-d90b::280e-aee9-f41c-f7d1::3cc5-b46a-1d71-f54b"
+            "groupPath": "0a75-1454-70e9-d90b::280e-aee9-f41c-f7d1::3cc5-b46a-1d71-f54b",
+            "ids": [
+              "ebdf-ff35-b8d9-77ed"
+            ]
           }
         ],
         "defaults": [
@@ -7582,7 +7623,10 @@
           {
             "name": "Legiones Astartes Iron Hands",
             "path": "fe89-4aba-284d-0f89::fc8c-ebd6-77a5-94fb::b962-fb13-65d7-d36e",
-            "groupPath": "fe89-4aba-284d-0f89::fc8c-ebd6-77a5-94fb::58e9-c71e-5eda-85d1"
+            "groupPath": "fe89-4aba-284d-0f89::fc8c-ebd6-77a5-94fb::58e9-c71e-5eda-85d1",
+            "ids": [
+              "b962-fb13-65d7-d36e"
+            ]
           }
         ],
         "defaults": [
@@ -7623,7 +7667,10 @@
           {
             "name": "Legiones Astartes Iron Warriors",
             "path": "4fc3-9235-e3a7-3be8::ac71-6e54-438b-efd3::2fae-701b-88af-bac8",
-            "groupPath": "4fc3-9235-e3a7-3be8::ac71-6e54-438b-efd3::d5a2-4d02-8b56-4e9d"
+            "groupPath": "4fc3-9235-e3a7-3be8::ac71-6e54-438b-efd3::d5a2-4d02-8b56-4e9d",
+            "ids": [
+              "2fae-701b-88af-bac8"
+            ]
           }
         ],
         "defaults": [
@@ -7664,7 +7711,10 @@
           {
             "name": "Legiones Astartes Night Lords",
             "path": "bcae-e46d-5ae7-82de::41e4-46b3-3056-7517::6355-8b46-f913-f808",
-            "groupPath": "bcae-e46d-5ae7-82de::41e4-46b3-3056-7517::c77a-0590-5795-58a6"
+            "groupPath": "bcae-e46d-5ae7-82de::41e4-46b3-3056-7517::c77a-0590-5795-58a6",
+            "ids": [
+              "6355-8b46-f913-f808"
+            ]
           }
         ],
         "defaults": [
@@ -7705,7 +7755,10 @@
           {
             "name": "Legiones Astartes Raven Guard",
             "path": "3b5e-7b70-7497-f2f8::cf06-3cc8-19f1-0a35::7b75-66f6-5a37-ca9a",
-            "groupPath": "3b5e-7b70-7497-f2f8::cf06-3cc8-19f1-0a35::6f15-ea9f-a9ea-1e64"
+            "groupPath": "3b5e-7b70-7497-f2f8::cf06-3cc8-19f1-0a35::6f15-ea9f-a9ea-1e64",
+            "ids": [
+              "7b75-66f6-5a37-ca9a"
+            ]
           }
         ],
         "defaults": [
@@ -7746,7 +7799,10 @@
           {
             "name": "Legiones Astartes Salamanders",
             "path": "3cb3-5760-3bdc-8870::ae5b-5206-47b4-025b::62ac-be20-2255-ef36",
-            "groupPath": "3cb3-5760-3bdc-8870::ae5b-5206-47b4-025b::b72b-c623-c592-0128"
+            "groupPath": "3cb3-5760-3bdc-8870::ae5b-5206-47b4-025b::b72b-c623-c592-0128",
+            "ids": [
+              "62ac-be20-2255-ef36"
+            ]
           }
         ],
         "defaults": [
@@ -7787,7 +7843,10 @@
           {
             "name": "Legiones Astartes Sons of Horus",
             "path": "8b79-9226-d0a8-894d::a030-09b2-826e-7579::90e3-24ff-0619-e021",
-            "groupPath": "8b79-9226-d0a8-894d::a030-09b2-826e-7579::ebd5-242a-8c7c-be02"
+            "groupPath": "8b79-9226-d0a8-894d::a030-09b2-826e-7579::ebd5-242a-8c7c-be02",
+            "ids": [
+              "90e3-24ff-0619-e021"
+            ]
           }
         ],
         "defaults": [
@@ -7828,7 +7887,10 @@
           {
             "name": "Legiones Astartes Space Wolves",
             "path": "a040-530c-9f12-0cdd::ab3b-5376-ecf1-8e16::badf-1b55-f615-4eb3",
-            "groupPath": "a040-530c-9f12-0cdd::ab3b-5376-ecf1-8e16::eb72-32e7-98d3-32fc"
+            "groupPath": "a040-530c-9f12-0cdd::ab3b-5376-ecf1-8e16::eb72-32e7-98d3-32fc",
+            "ids": [
+              "badf-1b55-f615-4eb3"
+            ]
           }
         ],
         "defaults": [
@@ -7869,7 +7931,10 @@
           {
             "name": "Legiones Astartes Thousand Sons",
             "path": "a71e-2cb2-9e0f-3d1e::0af7-e22a-5107-b1dd::6087-6962-9b40-3833",
-            "groupPath": "a71e-2cb2-9e0f-3d1e::0af7-e22a-5107-b1dd::faed-3ec2-54ec-118c"
+            "groupPath": "a71e-2cb2-9e0f-3d1e::0af7-e22a-5107-b1dd::faed-3ec2-54ec-118c",
+            "ids": [
+              "6087-6962-9b40-3833"
+            ]
           }
         ],
         "defaults": [
@@ -7910,7 +7975,10 @@
           {
             "name": "Legiones Astartes Ultramarines",
             "path": "c33a-6350-9da5-99fb::7fad-eecc-2a9b-3fed::bc38-27b3-022c-768e",
-            "groupPath": "c33a-6350-9da5-99fb::7fad-eecc-2a9b-3fed::ec51-3014-91b3-8bd9"
+            "groupPath": "c33a-6350-9da5-99fb::7fad-eecc-2a9b-3fed::ec51-3014-91b3-8bd9",
+            "ids": [
+              "bc38-27b3-022c-768e"
+            ]
           }
         ],
         "defaults": [
@@ -7951,7 +8019,10 @@
           {
             "name": "Legiones Astartes White Scars",
             "path": "a4dd-4bc2-7ddd-a456::1923-c19f-6a0c-7add::1ae5-afc0-ebb1-7fa8",
-            "groupPath": "a4dd-4bc2-7ddd-a456::1923-c19f-6a0c-7add::ab39-74a9-cbc7-dcf5"
+            "groupPath": "a4dd-4bc2-7ddd-a456::1923-c19f-6a0c-7add::ab39-74a9-cbc7-dcf5",
+            "ids": [
+              "1ae5-afc0-ebb1-7fa8"
+            ]
           }
         ],
         "defaults": [
@@ -7992,7 +8063,10 @@
           {
             "name": "Legiones Astartes Word Bearers",
             "path": "a2ea-e5b2-9780-fd82::16d1-1348-44a7-916c::b3f0-12f6-4f7f-731d",
-            "groupPath": "a2ea-e5b2-9780-fd82::16d1-1348-44a7-916c::b1a8-3e12-0130-3dc5"
+            "groupPath": "a2ea-e5b2-9780-fd82::16d1-1348-44a7-916c::b1a8-3e12-0130-3dc5",
+            "ids": [
+              "b3f0-12f6-4f7f-731d"
+            ]
           }
         ],
         "defaults": [
@@ -8033,12 +8107,20 @@
           {
             "name": "Legiones Hereticus World Eaters",
             "path": "1ce9-43c5-ef27-ef7f::cf3f-3fb5-2d7a-f3d6::a095-2238-5c9e-0576",
-            "groupPath": "1ce9-43c5-ef27-ef7f::cf3f-3fb5-2d7a-f3d6::1455-b8d9-311a-e3f6"
+            "groupPath": "1ce9-43c5-ef27-ef7f::cf3f-3fb5-2d7a-f3d6::1455-b8d9-311a-e3f6",
+            "ids": [
+              "a095-2238-5c9e-0576",
+              "b684-d314-f80b-ee73"
+            ]
           },
           {
             "name": "Legiones Astartes World Eaters",
             "path": "1ce9-43c5-ef27-ef7f::cf3f-3fb5-2d7a-f3d6::c119-d969-8ad8-a54a",
-            "groupPath": "1ce9-43c5-ef27-ef7f::cf3f-3fb5-2d7a-f3d6::1455-b8d9-311a-e3f6"
+            "groupPath": "1ce9-43c5-ef27-ef7f::cf3f-3fb5-2d7a-f3d6::1455-b8d9-311a-e3f6",
+            "ids": [
+              "c119-d969-8ad8-a54a",
+              "fbf2-aba8-7792-2f7f"
+            ]
           }
         ],
         "defaults": [
@@ -8128,32 +8210,50 @@
           {
             "name": "Fire Support!",
             "path": "1827-1718-c1df-e027::1a74-56e9-3b21-5d4d",
-            "groupPath": "1827-1718-c1df-e027::45d0-a172-d3b7-8b5c"
+            "groupPath": "1827-1718-c1df-e027::45d0-a172-d3b7-8b5c",
+            "ids": [
+              "1a74-56e9-3b21-5d4d"
+            ]
           },
           {
             "name": "Fix Bayonets!",
             "path": "1827-1718-c1df-e027::1a61-6db8-fdb8-c89a",
-            "groupPath": "1827-1718-c1df-e027::45d0-a172-d3b7-8b5c"
+            "groupPath": "1827-1718-c1df-e027::45d0-a172-d3b7-8b5c",
+            "ids": [
+              "1a61-6db8-fdb8-c89a"
+            ]
           },
           {
             "name": "Form Ranks!",
             "path": "1827-1718-c1df-e027::0921-f29f-eba5-a0b7",
-            "groupPath": "1827-1718-c1df-e027::45d0-a172-d3b7-8b5c"
+            "groupPath": "1827-1718-c1df-e027::45d0-a172-d3b7-8b5c",
+            "ids": [
+              "0921-f29f-eba5-a0b7"
+            ]
           },
           {
             "name": "Smokescreen",
             "path": "1827-1718-c1df-e027::07dc-9352-654a-add1",
-            "groupPath": "1827-1718-c1df-e027::45d0-a172-d3b7-8b5c"
+            "groupPath": "1827-1718-c1df-e027::45d0-a172-d3b7-8b5c",
+            "ids": [
+              "07dc-9352-654a-add1"
+            ]
           },
           {
             "name": "Evade",
             "path": "1827-1718-c1df-e027::f9bf-3736-6bbd-bd6e",
-            "groupPath": "1827-1718-c1df-e027::45d0-a172-d3b7-8b5c"
+            "groupPath": "1827-1718-c1df-e027::45d0-a172-d3b7-8b5c",
+            "ids": [
+              "f9bf-3736-6bbd-bd6e"
+            ]
           },
           {
             "name": "Reposition",
             "path": "1827-1718-c1df-e027::7afd-b21b-4b85-c87e",
-            "groupPath": "1827-1718-c1df-e027::45d0-a172-d3b7-8b5c"
+            "groupPath": "1827-1718-c1df-e027::45d0-a172-d3b7-8b5c",
+            "ids": [
+              "7afd-b21b-4b85-c87e"
+            ]
           }
         ],
         "defaults": []
@@ -8184,92 +8284,146 @@
           {
             "name": "Calibanite Jaegers",
             "path": "e92d-42e3-d324-f19d::ae6e-6833-8a60-b503",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "ae6e-6833-8a60-b503"
+            ]
           },
           {
             "name": "Archite Palatines",
             "path": "e92d-42e3-d324-f19d::e5dc-bd5b-1dea-9416",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "e5dc-bd5b-1dea-9416"
+            ]
           },
           {
             "name": "Seleucid Thorakites",
             "path": "e92d-42e3-d324-f19d::f249-a9d9-ddc3-a024",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "f249-a9d9-ddc3-a024"
+            ]
           },
           {
             "name": "Chogorian Limitanei",
             "path": "e92d-42e3-d324-f19d::b1ee-f904-ccb0-21cc",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "b1ee-f904-ccb0-21cc"
+            ]
           },
           {
             "name": "Fenrisian Kaerls",
             "path": "e92d-42e3-d324-f19d::4120-0736-0044-f09b",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "4120-0736-0044-f09b"
+            ]
           },
           {
             "name": "Inwit Phalangites",
             "path": "e92d-42e3-d324-f19d::77e6-5303-17bd-9571",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "77e6-5303-17bd-9571"
+            ]
           },
           {
             "name": "Nostraman Damnatil",
             "path": "e92d-42e3-d324-f19d::6f81-3f04-e67c-4495",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "6f81-3f04-e67c-4495"
+            ]
           },
           {
             "name": "Saiphan Elevatii",
             "path": "e92d-42e3-d324-f19d::34b5-8f79-e29f-4f1b",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "34b5-8f79-e29f-4f1b"
+            ]
           },
           {
             "name": "Medusan Chainshroud",
             "path": "e92d-42e3-d324-f19d::1219-2002-a8e8-ed27",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "1219-2002-a8e8-ed27"
+            ]
           },
           {
             "name": "Nagrakal Thraexii",
             "path": "e92d-42e3-d324-f19d::390c-8dde-6001-d60d",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "390c-8dde-6001-d60d"
+            ]
           },
           {
             "name": "Ultramar High Guard",
             "path": "e92d-42e3-d324-f19d::1a7b-25aa-9434-99ec",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "1a7b-25aa-9434-99ec"
+            ]
           },
           {
             "name": "Barbaran Ambaxtoi",
             "path": "e92d-42e3-d324-f19d::50f1-475d-c1e7-d9ac",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "50f1-475d-c1e7-d9ac"
+            ]
           },
           {
             "name": "Prosperine Spireguard",
             "path": "e92d-42e3-d324-f19d::2d16-3107-80e2-93c6",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "2d16-3107-80e2-93c6"
+            ]
           },
           {
             "name": "Cthonian Headhunters",
             "path": "e92d-42e3-d324-f19d::249d-e9e0-0f80-e72c",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "249d-e9e0-0f80-e72c"
+            ]
           },
           {
             "name": "Colchisian Torquatii",
             "path": "e92d-42e3-d324-f19d::8da3-8528-5726-95ac",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "8da3-8528-5726-95ac"
+            ]
           },
           {
             "name": "Proximan Sacramentii",
             "path": "e92d-42e3-d324-f19d::3f61-6814-7ce9-1e50",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "3f61-6814-7ce9-1e50"
+            ]
           },
           {
             "name": "Therion Velites",
             "path": "e92d-42e3-d324-f19d::90b5-0db8-22ee-4cc5",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "90b5-0db8-22ee-4cc5"
+            ]
           },
           {
             "name": "Sparatoi Vindicta",
             "path": "e92d-42e3-d324-f19d::cb2b-2fd5-dccc-f12c",
-            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b"
+            "groupPath": "e92d-42e3-d324-f19d::c16b-e85a-dafd-7f4b",
+            "ids": [
+              "cb2b-2fd5-dccc-f12c"
+            ]
           }
         ],
         "defaults": []
@@ -8300,42 +8454,74 @@
           {
             "name": "Cohort Doctrine: Ultima Pattern Cohort",
             "path": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cc7a-b052-c052-32b2",
-            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4"
+            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4",
+            "ids": [
+              "cc7a-b052-c052-32b2",
+              "1241-4ccd-80b8-8ff2"
+            ]
           },
           {
             "name": "Cohort Doctrine: Solar Pattern Cohort",
             "path": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::0834-796d-85a8-9cc9",
-            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4"
+            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4",
+            "ids": [
+              "0834-796d-85a8-9cc9",
+              "f2be-abfe-311c-afe2"
+            ]
           },
           {
             "name": "Cohort Doctrine: Reconnaissance Pattern Cohort",
             "path": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::d88c-fb41-a1bc-bf88",
-            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4"
+            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4",
+            "ids": [
+              "d88c-fb41-a1bc-bf88",
+              "7f98-e8eb-f86e-180d"
+            ]
           },
           {
             "name": "Cohort Doctrine: Mechanised Pattern Cohort",
             "path": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::33d5-12d4-683a-c051",
-            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4"
+            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4",
+            "ids": [
+              "33d5-12d4-683a-c051",
+              "1d7a-eb2d-5d0f-0fa4"
+            ]
           },
           {
             "name": "Cohort Doctrine: Iron Pattern Cohort",
             "path": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::ae7f-98e2-62de-05b3",
-            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4"
+            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4",
+            "ids": [
+              "ae7f-98e2-62de-05b3",
+              "28ba-8660-5266-8674"
+            ]
           },
           {
             "name": "Cohort Doctrine: Siege Pattern Cohort",
             "path": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::3579-30ed-c676-40af",
-            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4"
+            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4",
+            "ids": [
+              "3579-30ed-c676-40af",
+              "c9ef-b204-e951-6b7e"
+            ]
           },
           {
             "name": "Cohort Doctrine: Oblitum Pattern Cohort",
             "path": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::6e7b-7d2b-de08-5f48",
-            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4"
+            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4",
+            "ids": [
+              "6e7b-7d2b-de08-5f48",
+              "4924-9c5d-9d41-1211"
+            ]
           },
           {
             "name": "Cohort Doctrine: Fateweaver Cohort",
             "path": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::88af-1dcd-1e95-1f6e",
-            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4"
+            "groupPath": "5ce4-f5b0-a977-e391::8acf-d130-480c-2ed6::cacc-ab7b-f2b1-d1c4",
+            "ids": [
+              "88af-1dcd-1e95-1f6e",
+              "cb73-8d71-1d7a-cb1a"
+            ]
           }
         ],
         "defaults": []
@@ -8367,97 +8553,154 @@
           {
             "name": "Abhuman Muster",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::36e7-0899-8689-0228",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "36e7-0899-8689-0228"
+            ]
           },
           {
             "name": "Alchem-jackers",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::810c-f72a-e8d5-c6dd",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "810c-f72a-e8d5-c6dd"
+            ]
           },
           {
             "name": "Armoury of Old Night",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::8cfa-d603-c5e3-995c",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "8cfa-d603-c5e3-995c"
+            ]
           },
           {
             "name": "Arms of the Omnissiah",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::20bb-9821-a3aa-3ef7",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "20bb-9821-a3aa-3ef7"
+            ]
           },
           {
             "name": "Augmented Levy",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::a467-44e7-37b7-9bdd",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "a467-44e7-37b7-9bdd"
+            ]
           },
           {
             "name": "Cyber-augmetics",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::a3c5-5465-34f7-4060",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "a3c5-5465-34f7-4060"
+            ]
           },
           {
             "name": "Debased Rabble",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::ed09-ec30-25ed-8f0f",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "ed09-ec30-25ed-8f0f"
+            ]
           },
           {
             "name": "Feral Warriors",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::e929-db18-5490-2c13",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "e929-db18-5490-2c13"
+            ]
           },
           {
             "name": "Gene-crafted",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::b522-3ee5-c591-5ff6",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "b522-3ee5-c591-5ff6"
+            ]
           },
           {
             "name": "Imperialis Provosts",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::039c-e091-fc12-b5f1",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "039c-e091-fc12-b5f1"
+            ]
           },
           {
             "name": "Industrial Levy",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::55a4-b751-72fe-9bae",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "55a4-b751-72fe-9bae"
+            ]
           },
           {
             "name": "Kinfolk Helots",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::baca-1393-31e5-6d2b",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "baca-1393-31e5-6d2b"
+            ]
           },
           {
             "name": "Legacy of the Great Crusade",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7665-bd37-c552-1876",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "7665-bd37-c552-1876"
+            ]
           },
           {
             "name": "Ogryn Conscripts",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::c54e-7306-cb84-5868",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "c54e-7306-cb84-5868"
+            ]
           },
           {
             "name": "Survivors of the Dark Age",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::2713-f747-17f5-8eb9",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "2713-f747-17f5-8eb9"
+            ]
           },
           {
             "name": "Tainted Flesh",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::2123-5a03-d59f-61b8",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "2123-5a03-d59f-61b8"
+            ]
           },
           {
             "name": "Unending Horde",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::602b-b6dd-5e95-99ed",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "602b-b6dd-5e95-99ed"
+            ]
           },
           {
             "name": "Voidbourne",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::40a2-323e-e661-d08d",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "40a2-323e-e661-d08d"
+            ]
           },
           {
             "name": "Warrior Elite",
             "path": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::fbc6-d055-654b-5241",
-            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "c6d2-e863-c467-bfc0::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "fbc6-d055-654b-5241"
+            ]
           }
         ],
         "defaults": []
@@ -8485,17 +8728,26 @@
           {
             "name": "Legio Tactica",
             "path": "8f76-26c1-ffbf-9f97::de22-dfd7-ad96-5c91::6bc3-e10d-ccec-d76d",
-            "groupPath": "8f76-26c1-ffbf-9f97::de22-dfd7-ad96-5c91::05d6-c214-1c60-331b"
+            "groupPath": "8f76-26c1-ffbf-9f97::de22-dfd7-ad96-5c91::05d6-c214-1c60-331b",
+            "ids": [
+              "6bc3-e10d-ccec-d76d"
+            ]
           },
           {
             "name": "Gambits",
             "path": "8f76-26c1-ffbf-9f97::de22-dfd7-ad96-5c91::a986-2fd8-5d69-16db",
-            "groupPath": "8f76-26c1-ffbf-9f97::de22-dfd7-ad96-5c91::05d6-c214-1c60-331b"
+            "groupPath": "8f76-26c1-ffbf-9f97::de22-dfd7-ad96-5c91::05d6-c214-1c60-331b",
+            "ids": [
+              "a986-2fd8-5d69-16db"
+            ]
           },
           {
             "name": "Advanced Reaction",
             "path": "8f76-26c1-ffbf-9f97::de22-dfd7-ad96-5c91::1ddb-a139-4402-a101",
-            "groupPath": "8f76-26c1-ffbf-9f97::de22-dfd7-ad96-5c91::05d6-c214-1c60-331b"
+            "groupPath": "8f76-26c1-ffbf-9f97::de22-dfd7-ad96-5c91::05d6-c214-1c60-331b",
+            "ids": [
+              "1ddb-a139-4402-a101"
+            ]
           }
         ],
         "defaults": [
@@ -8531,7 +8783,10 @@
           {
             "name": "Divisio Tactica",
             "path": "c52b-6943-1df1-e4da::0116-cbbf-9757-81c6::5b7b-6d2d-c058-56aa",
-            "groupPath": "c52b-6943-1df1-e4da::0116-cbbf-9757-81c6::8d70-b556-14f6-3d27"
+            "groupPath": "c52b-6943-1df1-e4da::0116-cbbf-9757-81c6::8d70-b556-14f6-3d27",
+            "ids": [
+              "5b7b-6d2d-c058-56aa"
+            ]
           }
         ],
         "defaults": [
@@ -8571,17 +8826,30 @@
           {
             "name": "Questoris Imperialis",
             "path": "c0cd-7f53-2f56-2015::4a41-6ef3-9edb-6b71::1d9a-6b1a-d70b-63ac::0544-8dce-3f8a-245d",
-            "groupPath": "c0cd-7f53-2f56-2015::4a41-6ef3-9edb-6b71::5a46-d9a6-d191-6441"
+            "groupPath": "c0cd-7f53-2f56-2015::4a41-6ef3-9edb-6b71::5a46-d9a6-d191-6441",
+            "ids": [
+              "1d9a-6b1a-d70b-63ac",
+              "0544-8dce-3f8a-245d"
+            ]
           },
           {
             "name": "Questoris Mechanicum",
             "path": "c0cd-7f53-2f56-2015::4a41-6ef3-9edb-6b71::efcf-d588-f077-98e4::2692-0ac9-5eef-5e9f",
-            "groupPath": "c0cd-7f53-2f56-2015::4a41-6ef3-9edb-6b71::5a46-d9a6-d191-6441"
+            "groupPath": "c0cd-7f53-2f56-2015::4a41-6ef3-9edb-6b71::5a46-d9a6-d191-6441",
+            "ids": [
+              "efcf-d588-f077-98e4",
+              "2692-0ac9-5eef-5e9f",
+              "14f8-2fe6-3bde-b735"
+            ]
           },
           {
             "name": "Questoris Mendicant",
             "path": "c0cd-7f53-2f56-2015::4a41-6ef3-9edb-6b71::5c26-801a-709b-f6c8::89ae-ac36-aef1-5024",
-            "groupPath": "c0cd-7f53-2f56-2015::4a41-6ef3-9edb-6b71::5a46-d9a6-d191-6441"
+            "groupPath": "c0cd-7f53-2f56-2015::4a41-6ef3-9edb-6b71::5a46-d9a6-d191-6441",
+            "ids": [
+              "5c26-801a-709b-f6c8",
+              "89ae-ac36-aef1-5024"
+            ]
           }
         ],
         "defaults": [
@@ -8620,17 +8888,26 @@
           {
             "name": "Stomp",
             "path": "98e8-37ee-0754-bb6e::81a7-40bd-749f-ac6b::bfd7-9c54-7ea6-13d0",
-            "groupPath": "98e8-37ee-0754-bb6e::81a7-40bd-749f-ac6b::3f02-d062-0d02-f83d"
+            "groupPath": "98e8-37ee-0754-bb6e::81a7-40bd-749f-ac6b::3f02-d062-0d02-f83d",
+            "ids": [
+              "bfd7-9c54-7ea6-13d0"
+            ]
           },
           {
             "name": "Joust!",
             "path": "98e8-37ee-0754-bb6e::81a7-40bd-749f-ac6b::06ab-0a93-1765-ec55",
-            "groupPath": "98e8-37ee-0754-bb6e::81a7-40bd-749f-ac6b::3f02-d062-0d02-f83d"
+            "groupPath": "98e8-37ee-0754-bb6e::81a7-40bd-749f-ac6b::3f02-d062-0d02-f83d",
+            "ids": [
+              "06ab-0a93-1765-ec55"
+            ]
           },
           {
             "name": "Rotate Ion Shields",
             "path": "98e8-37ee-0754-bb6e::81a7-40bd-749f-ac6b::353a-1c27-e16e-2308",
-            "groupPath": "98e8-37ee-0754-bb6e::81a7-40bd-749f-ac6b::3f02-d062-0d02-f83d"
+            "groupPath": "98e8-37ee-0754-bb6e::81a7-40bd-749f-ac6b::3f02-d062-0d02-f83d",
+            "ids": [
+              "353a-1c27-e16e-2308"
+            ]
           }
         ],
         "defaults": [
@@ -8669,97 +8946,154 @@
           {
             "name": "Abhuman Muster",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::36e7-0899-8689-0228",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "36e7-0899-8689-0228"
+            ]
           },
           {
             "name": "Alchem-jackers",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::810c-f72a-e8d5-c6dd",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "810c-f72a-e8d5-c6dd"
+            ]
           },
           {
             "name": "Armoury of Old Night",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::8cfa-d603-c5e3-995c",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "8cfa-d603-c5e3-995c"
+            ]
           },
           {
             "name": "Arms of the Omnissiah",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::20bb-9821-a3aa-3ef7",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "20bb-9821-a3aa-3ef7"
+            ]
           },
           {
             "name": "Augmented Levy",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::a467-44e7-37b7-9bdd",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "a467-44e7-37b7-9bdd"
+            ]
           },
           {
             "name": "Cyber-augmetics",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::a3c5-5465-34f7-4060",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "a3c5-5465-34f7-4060"
+            ]
           },
           {
             "name": "Debased Rabble",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::ed09-ec30-25ed-8f0f",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "ed09-ec30-25ed-8f0f"
+            ]
           },
           {
             "name": "Feral Warriors",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::e929-db18-5490-2c13",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "e929-db18-5490-2c13"
+            ]
           },
           {
             "name": "Gene-crafted",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::b522-3ee5-c591-5ff6",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "b522-3ee5-c591-5ff6"
+            ]
           },
           {
             "name": "Imperialis Provosts",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::039c-e091-fc12-b5f1",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "039c-e091-fc12-b5f1"
+            ]
           },
           {
             "name": "Industrial Levy",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::55a4-b751-72fe-9bae",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "55a4-b751-72fe-9bae"
+            ]
           },
           {
             "name": "Kinfolk Helots",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::baca-1393-31e5-6d2b",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "baca-1393-31e5-6d2b"
+            ]
           },
           {
             "name": "Legacy of the Great Crusade",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7665-bd37-c552-1876",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "7665-bd37-c552-1876"
+            ]
           },
           {
             "name": "Ogryn Conscripts",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::c54e-7306-cb84-5868",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "c54e-7306-cb84-5868"
+            ]
           },
           {
             "name": "Survivors of the Dark Age",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::2713-f747-17f5-8eb9",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "2713-f747-17f5-8eb9"
+            ]
           },
           {
             "name": "Tainted Flesh",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::2123-5a03-d59f-61b8",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "2123-5a03-d59f-61b8"
+            ]
           },
           {
             "name": "Unending Horde",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::602b-b6dd-5e95-99ed",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "602b-b6dd-5e95-99ed"
+            ]
           },
           {
             "name": "Voidbourne",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::40a2-323e-e661-d08d",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "40a2-323e-e661-d08d"
+            ]
           },
           {
             "name": "Warrior Elite",
             "path": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::fbc6-d055-654b-5241",
-            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4"
+            "groupPath": "6b88-4e39-ceea-0327::4ae6-ff63-c9c2-33a2::7d36-14b2-e51d-37f4",
+            "ids": [
+              "fbc6-d055-654b-5241"
+            ]
           }
         ],
         "defaults": []

@@ -9,7 +9,7 @@ import {
 import { Export, Reset, Add, Save } from '@carbon/icons-react';
 import { useRosterStore, selectPrimaryFaction } from '../../store/rosterStore';
 import { factionLabel } from '../../data/factions';
-import { COHORT_DOCTRINE_BY_ID } from '../../constants/cohortDoctrines';
+import { doctrineLabel as labelOfDoctrine, normalizeDoctrine } from '../../rules/armyConfig';
 import { armyChoiceLabel, rosterArmyChoiceGroups } from '../../rules/armyChoices';
 
 interface AppHeaderProps {
@@ -43,7 +43,7 @@ export default function AppHeader({
   const setArmyChoice = useRosterStore((s) => s.setArmyChoice);
   const choiceGroups = rosterArmyChoiceGroups([faction, ...allies]);
 
-  const doctrineLabel = cohortDoctrine ? COHORT_DOCTRINE_BY_ID[cohortDoctrine]?.name : null;
+  const doctrineLabel = cohortDoctrine ? labelOfDoctrine(normalizeDoctrine(cohortDoctrine)) || null : null;
 
   return (
     <Header aria-label="Heresy List Builder">

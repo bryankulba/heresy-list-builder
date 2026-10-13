@@ -44,9 +44,12 @@ BSData conditions/modifiers are kept (slimmed) in the parsed data and evaluated 
 - `validate.ts` — roster warnings (never blocking): points over the limit, detachment allowances and per-detachment roster caps (Knight Additional detachments, faction detachments unlocked by a unit), the Lord of War / Allied points share, empty compulsory slots, units outside their detachment's slots, Prime units without a benefit, unique units (`rosterMax`) taken twice, and allegiance-locked units (`availability.ts`: hidden under this allegiance but not the other, so units hidden for reasons the builder doesn't model are left alone; the unit picker leaves them out too). Shown as card badges, red slot outlines and a list on the points card
 - `slots.ts` — `unitsForSlot` (effective primary category in that detachment via `primaryCategoryRules`, plus `alternateLinks` variants like "Command - Centurions Only") and `effectiveSlots`/`withEffectiveSlots` (slot maxes from `maxModifiers`, e.g. a legion rule making all Troops Prime). The canvas renders the effective view; `slotLayout.ts` `cardSlots` treats "Troops-N"/"Prime Troops-N" as the same position so units follow when prime-ness changes.
 
-Counts (`context.ts` `rosterCounts`) include the roster's allegiance choice id and points spent per id/category (`rosterCosts`), with the points limit — BSData's `limit::<points>` fields (the Lord of War Detachment may hold a quarter of the points limit, less Warlord points).
+Counts (`context.ts` `rosterCounts(forces, { allegiance, pointsLimit, cohortDoctrine })`) include the army configuration's choice ids and points spent per id/category (`rosterCosts`), with the points limit — BSData's `limit::<points>` fields (the Lord of War Detachment may hold a quarter of the points limit, less Warlord points).
 
-Known gap: Logistical Benefit still uses the app's own `bonusSlots`; its BSData slot increments aren't evaluated (the chosen "LB - Role" isn't counted) to avoid double slots.
+- `options.ts` — which choices to offer: the detachment picker hides detachments no unit of the army can fill or that only its configuration could unlock, and dims ones a unit would unlock with BSData's error text (or "Unlocked by <units / Prime benefit>"); `fillableSlots` drops slot roles no unit of the army can fill from cards (the canvas view). Logistical Benefit roles are limited to roles the army has units for.
+- `armyConfig.ts` — army configuration from BSData: cohort doctrines (choice names, e.g. "Cohort Doctrine: Mechanised Pattern Cohort"; old slugs normalised), and `configCounts` — the ids the chosen allegiance and doctrine put in the roster.
+
+Logistical Benefit: the chosen role is `FilledSlot.lbRole`; counting its "LB - <role>" choice makes BSData add that slot (`maxModifiers`), so it's an ordinary slot on the card. Lists saved with the old app-managed `bonusSlots` are migrated on load (`migrateBonusSlots`).
 
 ### .ros Export & Import (`src/utils/buildRos.ts`, `importRos.ts`)
 
@@ -73,7 +76,7 @@ The roster mirrors a .ros file: `forces: Force[]` — the primary army first, th
 
 All force logic lives as pure functions in `rosterModel.ts` (tested in `rosterModel.test.ts`); the store is a thin wrapper. Detachment ids are globally unique, so slot actions stay keyed by detachment id.
 
-Key store actions: `startBuild` (creates the primary force with its chart's primary detachment), `addDetachment(def, { unlockedBy?, forceId? })` (an unlocked detachment joins the force of the slot that unlocked it), `addAlliedForce`, `removeForce`, `fillSlot`, `clearSlot`, `addBonusSlot`, `fillBonusSlot`, `removeDetachment` (cascades — removes all detachments whose `unlockedBy` starts with the removed detachment's id).
+Key store actions: `startBuild` (creates the primary force with its chart's primary detachment), `addDetachment(def, { unlockedBy?, forceId? })` (an unlocked detachment joins the force of the slot that unlocked it), `addAlliedForce`, `removeForce`, `addLordOfWar`, `fillSlot`, `clearSlot`, `setLogisticalRole`, `setArmyChoice`, `removeDetachment` (cascades — removes all detachments whose `unlockedBy` starts with the removed detachment's id).
 
 Persistence: session state is persisted with `version: 2` (v1 `{ faction, detachments }` is migrated). Saved lists use `ROSTER_SCHEMA_VERSION` 2; `migrateSnapshot` upgrades older saves. On every load `refreshUnits` replaces stored unit snapshots with current data (by entryId, then name + role), so saved lists pick up points fixes from new BSData syncs.
 
@@ -82,7 +85,7 @@ Persistence: session state is persisted with `version: 2` (v1 `{ faction, detach
 All modals are coordinated by a `ModalState` discriminated union (defined in `src/types/index.ts`). Canvas.tsx is the sole owner — it reads modal state, renders the correct modal, and handles transitions between modal types.
 
 Slot interaction chains:
-1. **Prime slot**: `unitPicker` → user picks unit → `primeBenefit` → user picks benefit → if logistical: `bonusSlotRoleSelector` → then the unlocks below
+1. **Prime slot**: `unitPicker` → user picks unit → `primeBenefit` → user picks benefit → if logistical: `bonusSlotRoleSelector` (sets `lbRole`) → then the unlocks below
 2. **Unlocks** (`startUnlocks`): a High Command unit opens one `detachmentSelector` (Apex or Auxiliary); any other unit opens as many Auxiliary selectors as it adds to the army's BSData allowance (`rules/detachmentLimits.ts` `auxiliaryUnlocks`: 2 for a Centurion as Command — Command + Officer of the Line (2) — but 1 in a "Command - Centurions Only" slot)
 4. **Edit existing slot**: opens `slotEdit` first; all subsequent handlers check `isEditingSlot.current` ref and return to `slotEdit` instead of chaining unlocks
 5. **Allies**: header "Add Allies" → `allySelector` → `addAlliedForce`; the allied army's Command slots unlock Auxiliary detachments from the ally's own faction (pickers/selectors resolve faction via `factionOfDetachment`)

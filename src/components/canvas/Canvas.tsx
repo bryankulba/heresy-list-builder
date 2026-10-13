@@ -30,7 +30,8 @@ import AllySelectorModal from '../modals/AllySelectorModal';
 import { unitContext } from '../../rules/context';
 import { getPrimeOptions, isLogisticalBenefit, logisticalBenefitRoles } from '../../rules/primeBenefits';
 import { unitsForSlot, withEffectiveSlots } from '../../rules/slots';
-import { auxiliaryUnlocks, detachmentAllowances, isDetachmentLocked } from '../../rules/detachmentLimits';
+import { auxiliaryUnlocks, detachmentAllowances } from '../../rules/detachmentLimits';
+import { detachmentAvailability, fillableSlots } from '../../rules/options';
 import { allegianceCounts, isAllegianceLocked } from '../../rules/availability';
 import { validateRoster, type RosterWarning } from '../../rules/validate';
 import { rosterCounts } from '../../rules/context';
@@ -170,29 +171,41 @@ export default function Canvas() {
   const forces = useRosterStore((s) => s.forces);
   // Memoized: the connector-line layout effect depends on this array's identity
   const detachments = useMemo(() => allDetachments(forces), [forces]);
-  // What the canvas shows: detachments with slot counts evaluated from their contents
-  const view = useMemo(() => withEffectiveSlots(forces), [forces]);
-  const viewDetachments = useMemo(() => allDetachments(view), [view]);
   const primary = primaryForce(forces);
   const allegiance = useRosterStore((s) => s.allegiance);
   const pointsLimit = useRosterStore((s) => s.pointsLimit);
   const addDetachment = useRosterStore((s) => s.addDetachment);
   const fillSlot = useRosterStore((s) => s.fillSlot);
   const clearSlot = useRosterStore((s) => s.clearSlot);
-  const addBonusSlot = useRosterStore((s) => s.addBonusSlot);
-  const fillBonusSlot = useRosterStore((s) => s.fillBonusSlot);
-  const clearBonusSlot = useRosterStore((s) => s.clearBonusSlot);
+  const setLogisticalRole = useRosterStore((s) => s.setLogisticalRole);
   const removeDetachment = useRosterStore((s) => s.removeDetachment);
   const addAlliedForce = useRosterStore((s) => s.addAlliedForce);
   const addLordOfWar = useRosterStore((s) => s.addLordOfWar);
   const removeForce = useRosterStore((s) => s.removeForce);
-  const clearBonusSlotsForSlot = useRosterStore((s) => s.clearBonusSlotsForSlot);
   const updateSlotAnnotations = useRosterStore((s) => s.updateSlotAnnotations);
   const reset = useRosterStore((s) => s.reset);
 
+  const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
   const totalPoints = computeTotalPoints(forces);
+  // What the army's configuration contributes to every BSData rule check
+  const rosterOpts = useMemo(() => ({ allegiance, pointsLimit, cohortDoctrine }), [allegiance, pointsLimit, cohortDoctrine]);
+  const counts = useMemo(() => rosterCounts(forces, rosterOpts), [forces, rosterOpts]);
+  // What the canvas shows: detachments with slot counts evaluated from their contents
+  // (without slot roles no unit of the army can fill, e.g. Skitarii Transport)
+  const view = useMemo(
+    () =>
+      withEffectiveSlots(forces, counts).map((force) => ({
+        ...force,
+        detachments: force.detachments.map((det) => ({
+          ...det,
+          def: { ...det.def, slots: fillableSlots(forces, force, det, counts) },
+        })),
+      })),
+    [forces, counts]
+  );
+  const viewDetachments = useMemo(() => allDetachments(view), [view]);
   // Roster warnings (never blocking), by detachment for the cards' badges
-  const warnings = useMemo(() => validateRoster({ forces, allegiance, pointsLimit }), [forces, allegiance, pointsLimit]);
+  const warnings = useMemo(() => validateRoster({ forces, ...rosterOpts }), [forces, rosterOpts]);
   const warningsByDetachment = useMemo(() => {
     const map = new Map<string, RosterWarning[]>();
     for (const w of warnings) if (w.detachmentId) map.set(w.detachmentId, [...(map.get(w.detachmentId) ?? []), w]);
@@ -224,8 +237,8 @@ export default function Canvas() {
     const force = forces.find((f) => f.detachments.some((d) => d.id === detachmentId));
     const det = force?.detachments.find((d) => d.id === detachmentId);
     if (!force || !det || !slot) return [];
-    const counts = allegianceCounts(forces, allegiance);
-    return unitsForSlot(forces, force, det, slot).filter((u) => !isAllegianceLocked(forces, force, det, u, counts));
+    const locked = allegianceCounts(forces, allegiance);
+    return unitsForSlot(forces, force, det, slot, counts).filter((u) => !isAllegianceLocked(forces, force, det, u, locked));
   }
 
   /** Prime benefits a unit may take in a given slot, evaluated from BSData. */
@@ -233,7 +246,7 @@ export default function Canvas() {
     const force = forces.find((f) => f.detachments.some((d) => d.id === detachmentId));
     const det = force?.detachments.find((d) => d.id === detachmentId);
     if (!force || !det) return [];
-    return getPrimeOptions(unit, unitContext(forces, force, det, unit, findSlotDef(detachmentId, slotKey)?.categoryId));
+    return getPrimeOptions(unit, unitContext(forces, force, det, unit, findSlotDef(detachmentId, slotKey)?.categoryId, counts));
   }
 
   /** After an edit action, return to the slotEdit modal with updated filled data. */
@@ -439,12 +452,7 @@ export default function Canvas() {
     const unlocked = detachments.filter((d) => d.unlockedBy === qualifiedKey);
     const anyUnlockedFilled = unlocked.some((d) => Object.values(d.slots).some(Boolean));
 
-    const det = detachments.find((d) => d.id === detachmentId);
-    const anyBonusFilled = (det?.bonusSlots ?? []).some(
-      (b) => b.sourceSlotKey === slotKey && b.unit !== null
-    );
-
-    if (anyUnlockedFilled || anyBonusFilled) {
+    if (anyUnlockedFilled) {
       setModal({
         type: 'confirmClear',
         detachmentId,
@@ -454,14 +462,6 @@ export default function Canvas() {
     } else {
       doClear(detachmentId, slotKey, unlocked.map((d) => d.id));
     }
-  }
-
-  function handleBonusSlotClick(detachmentId: string, bonusSlotId: string, role: string) {
-    setModal({ type: 'bonusUnitPicker', detachmentId, bonusSlotId, role });
-  }
-
-  function handleBonusSlotClear(detachmentId: string, bonusSlotId: string) {
-    clearBonusSlot(detachmentId, bonusSlotId);
   }
 
   function doClear(detachmentId: string, slotKey: string, affectedIds: string[]) {
@@ -534,10 +534,11 @@ export default function Canvas() {
   function handleBonusSlotRoleSelected(bonusRole: string) {
     if (modal.type !== 'bonusSlotRoleSelector') return;
     const { detachmentId, slotKey, role, unit } = modal;
-    addBonusSlot(detachmentId, slotKey, bonusRole);
+    // BSData adds the slot for the chosen "LB - <role>"
+    setLogisticalRole(detachmentId, slotKey, bonusRole);
 
     if (isEditingSlot.current) {
-      // Return to slotEdit after adding the bonus slot role
+      // Return to slotEdit after choosing the role
       const det = detachments.find((d) => d.id === detachmentId);
       const filled = det?.slots[slotKey];
       if (filled) {
@@ -612,7 +613,7 @@ export default function Canvas() {
    */
   function removeActionFor(force: Force, det: PlacedDetachment): (() => void) | undefined {
     const hasUnits = (dets: PlacedDetachment[]) =>
-      dets.some((d) => Object.values(d.slots).some(Boolean) || (d.bonusSlots ?? []).some((b) => b.unit));
+      dets.some((d) => Object.values(d.slots).some(Boolean));
     if (force.kind !== 'primary' && det.id === force.detachments[0]?.id) {
       return () =>
         hasUnits(force.detachments) ? setModal({ type: 'confirmRemoveForce', forceId: force.id }) : removeForce(force.id);
@@ -746,10 +747,6 @@ export default function Canvas() {
                     handleSlotClick(det.id, slotKey, slotDef)
                   }
                   onSlotClear={(slotKey) => handleSlotClear(det.id, slotKey)}
-                  onBonusSlotClick={(bonusSlotId, role) =>
-                    handleBonusSlotClick(det.id, bonusSlotId, role)
-                  }
-                  onBonusSlotClear={(bonusSlotId) => handleBonusSlotClear(det.id, bonusSlotId)}
                   cardRef={cardRefCallback(det.id)}
                   slotRefCallback={(slotKey) => slotRefCallback(det.id)(slotKey)}
                 />
@@ -790,7 +787,7 @@ export default function Canvas() {
         warnings={warnings}
         allowances={
           primary
-            ? detachmentAllowances(forces, primary, rosterCounts(forces, { allegiance, pointsLimit }))
+            ? detachmentAllowances(forces, primary, counts)
                 .filter((a) => a.max > 0 || a.used > 0)
                 .map((a) => ({ label: a.name.replace(/ Detachment\(s\)$|s$/, ''), used: a.used, max: a.max }))
             : []
@@ -864,9 +861,9 @@ export default function Canvas() {
             const benefit = { id: option.id, name: option.name, description: option.description };
 
             if (isLogisticalBenefit(benefit)) {
-              // Clear any existing bonus slots for this slot (avoids duplicates on change)
-              clearBonusSlotsForSlot(detachmentId, slotKey);
+              // A fresh role choice follows (its slot is added by BSData once chosen)
               fillSlot(detachmentId, slotKey, unit, benefit);
+              setLogisticalRole(detachmentId, slotKey, undefined);
               // bonusSlotRoleSelector will return to slotEdit (edit mode) or trigger unlock (fresh fill)
               setModal({
                 type: 'bonusSlotRoleSelector',
@@ -874,13 +871,16 @@ export default function Canvas() {
                 slotKey,
                 role,
                 unit,
-                roles: logisticalBenefitRoles(option),
+                // Only roles the army has units for
+                roles: logisticalBenefitRoles(option).filter(
+                  (r) => slotUnits(detachmentId, { role: r, min: 0, max: 1, prime: false }).length > 0
+                ),
               });
             } else {
               if (isEditingSlot.current) {
-                // Changing benefit only — clear any old bonus slots, fill, return to slotEdit
-                clearBonusSlotsForSlot(detachmentId, slotKey);
+                // Changing benefit only — drops a Logistical Benefit role, returns to slotEdit
                 fillSlot(detachmentId, slotKey, unit, benefit);
+                setLogisticalRole(detachmentId, slotKey, undefined);
                 goBackToSlotEdit(detachmentId, slotKey, { unit, primeBenefit: benefit });
               } else {
                 fillAndUnlock(detachmentId, slotKey, role, unit, benefit);
@@ -899,29 +899,14 @@ export default function Canvas() {
         />
       )}
 
-      {modal.type === 'bonusUnitPicker' && (
-        <UnitPickerModal
-          role={modal.role}
-          units={slotUnits(modal.detachmentId, { role: modal.role, min: 0, max: 1, prime: false })}
-          faction={factionFor(modal.detachmentId)}
-          onConfirm={(unit) => {
-            if (modal.type !== 'bonusUnitPicker') return;
-            fillBonusSlot(modal.detachmentId, modal.bonusSlotId, unit);
-            setModal({ type: 'none' });
-          }}
-          onClose={() => setModal({ type: 'none' })}
-        />
-      )}
-
       {modal.type === 'detachmentSelector' && (
         <DetachmentSelectorModal
           trigger={modal.trigger}
           title={modal.title}
           faction={factionFor(modal.unlockedBy)}
-          showDoctrine={factionFor(modal.unlockedBy) === primary?.faction}
-          isLocked={(def) => {
+          availability={(def) => {
             const force = forces.find((f) => f.detachments.some((d) => d.id === modal.unlockedBy.split('::')[0]));
-            return !!force && isDetachmentLocked(forces, force, def, rosterCounts(forces, { allegiance, pointsLimit }));
+            return force ? detachmentAvailability(forces, force, def, counts) : { status: 'ok' };
           }}
           onConfirm={handleDetachmentSelected}
           onClose={() => setModal({ type: 'none' })}
@@ -945,6 +930,7 @@ export default function Canvas() {
           title="Add Detachment"
           faction={primary.faction}
           options={additionalDetachments}
+          availability={(def) => detachmentAvailability(forces, primary, def, counts)}
           onConfirm={(def) => {
             addDetachment(def, { forceId: primary.id });
             setModal({ type: 'none' });

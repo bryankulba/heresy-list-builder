@@ -262,7 +262,8 @@ export interface ArmyConfigEntry {
   hidden?: boolean;
   modifiers?: RuleModifier[];
   /** Choices in its first-level groups (e.g. Loyalist/Traitor, each Cohort Doctrine) */
-  choices: Array<{ name: string; path: string; groupPath?: string }>;
+  /** `ids`: what choosing it puts in the roster (its entry, link target and categories) for BSData conditions */
+  choices: Array<{ name: string; path: string; groupPath?: string; ids?: string[] }>;
   /** Mandatory/default sub-selections */
   defaults: WargearEntry[];
 }
@@ -364,6 +365,8 @@ export interface Detachment {
   costs?: Record<string, number>;
   /** How many the roster may contain, raised by modifiers (Knight Additional detachments: +1 per …) */
   rosterMax?: { max: number; modifiers: RuleModifier[] };
+  /** BSData error messages and when they apply ("Storm Battery Detachment requires a Siege Breaker") */
+  errors?: Array<{ message: string } & Pick<RuleModifier, 'conditions' | 'conditionGroups'>>;
 }
 
 /**
@@ -927,11 +930,20 @@ function armyConfigEntry(
   const member: Member = { entry, prefix: [] };
   const inner = optionContents(member, index, 0);
   const choices = inner.groups.flatMap((g) =>
-    g.options.map((o) => ({
-      name: o.entry.name,
-      path: join(memberPath(o)),
-      ...(o.groupPath ? { groupPath: join(o.groupPath) } : {}),
-    }))
+    g.options.map((o) => {
+      const target = o.entry.targetId ? index.get(o.entry.targetId) : undefined;
+      const ids = [
+        o.entry.id,
+        ...(target ? [target.id] : []),
+        ...[...(o.entry.categoryLinks ?? []), ...(target?.categoryLinks ?? [])].map((c) => c.targetId),
+      ];
+      return {
+        name: o.entry.name,
+        path: join(memberPath(o)),
+        ...(o.groupPath ? { groupPath: join(o.groupPath) } : {}),
+        ids,
+      };
+    })
   );
   const constraints = [...(entry.constraints ?? []), ...(target?.constraints ?? [])];
   const min = Math.max(0, ...constraints.filter((c) => c.type === 'min' && c.field === 'selections').map((c) => c.value));
@@ -1394,6 +1406,12 @@ function parseDetachment(fe: BsForceEntry, catalogueKeyById: Map<string, string>
   const rosterMax = cap
     ? { max: cap.value, modifiers: allModifiers(fe).filter((m) => cap.id && m.field === cap.id).map(slimModifier) }
     : undefined;
+  const errors = allModifiers(fe)
+    .filter((m) => m.field === 'error' && m.type === 'add')
+    .map((m) => {
+      const { conditions, conditionGroups } = slimModifier(m);
+      return { message: String(m.value), ...(conditions ? { conditions } : {}), ...(conditionGroups ? { conditionGroups } : {}) };
+    });
   return {
     name: fe.name,
     entryId: fe.id,
@@ -1402,6 +1420,7 @@ function parseDetachment(fe: BsForceEntry, catalogueKeyById: Map<string, string>
     sources: extractFactionSources(fe, catalogueKeyById),
     ...(Object.keys(costs).length > 0 ? { costs } : {}),
     ...(rosterMax ? { rosterMax } : {}),
+    ...(errors.length > 0 ? { errors } : {}),
   };
 }
 

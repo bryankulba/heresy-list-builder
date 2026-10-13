@@ -130,6 +130,7 @@ export default function Slot({ slotDef, filled, onClick, onClear, slotRef, isDas
           }}
         >
           {filled.primeBenefit.name}
+          {filled.lbRole ? `: ${filled.lbRole}` : ''}
         </span>
       )}
     </div>

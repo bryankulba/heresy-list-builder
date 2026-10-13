@@ -76,8 +76,7 @@ export function effectiveSlots(
 }
 
 /** Forces whose placed detachments carry their effective slots (for rendering and layout). */
-export function withEffectiveSlots(forces: Force[]): Force[] {
-  const counts = rosterCounts(forces);
+export function withEffectiveSlots(forces: Force[], counts: RosterCounts = rosterCounts(forces)): Force[] {
   return forces.map((force) => ({
     ...force,
     detachments: force.detachments.map((det) => ({

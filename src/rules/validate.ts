@@ -28,6 +28,8 @@ export interface ValidationInput {
   forces: Force[];
   allegiance: Allegiance;
   pointsLimit: number;
+  /** BSData choice name ("Cohort Doctrine: …") */
+  cohortDoctrine?: string;
 }
 
 const POINTS_TYPE_ID = '9893-c379-920b-8982';
@@ -40,9 +42,6 @@ function placedUnits(forces: Force[]) {
     force.detachments.flatMap((det) => [
       ...Object.entries(det.slots).flatMap(([slotKey, fs]) =>
         fs ? [{ force, det, slotKey, unit: fs.unit, filled: fs }] : []
-      ),
-      ...(det.bonusSlots ?? []).flatMap((bs) =>
-        bs.unit ? [{ force, det, slotKey: undefined as string | undefined, unit: bs.unit, filled: undefined }] : []
       ),
     ])
   );
@@ -186,9 +185,9 @@ function availabilityWarnings(forces: Force[], allegiance: Allegiance): RosterWa
 }
 
 export function validateRoster(input: ValidationInput): RosterWarning[] {
-  const { forces, allegiance, pointsLimit } = input;
-  const counts = rosterCounts(forces, { allegiance, pointsLimit });
-  const view = withEffectiveSlots(forces);
+  const { forces, allegiance, pointsLimit, cohortDoctrine } = input;
+  const counts = rosterCounts(forces, { allegiance, pointsLimit, cohortDoctrine });
+  const view = withEffectiveSlots(forces, counts);
   return [
     ...pointsWarnings(input),
     ...allowanceWarnings(forces, counts),
