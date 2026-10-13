@@ -13,6 +13,7 @@ npm run sync-data -- --offline   # Re-parse data/raw/ without fetching
 npm test             # Run tests in watch mode
 npm test -- --run    # Run tests once (CI mode)
 npm test:ui          # Open Vitest UI dashboard
+npm run samples      # Write ten generated test armies to sample_exports/*.ros (src/tools/sampleArmies.ts)
 ```
 
 `sync-data` downloads every root-level `.json` file from the BSData GitHub repo (BSData switched from `.cat`/`.gst` XML to JSON on 2026-07-14) into `data/raw/` (gitignored), then parses them into `data/parsed/`. Set `BSDATA_REF=<sha|branch>` to pin an upstream version; the commit used is recorded in `system.json`. Run this when BSData upstream changes or when editing `scripts/parse-bsdata.ts` (use `--offline` to iterate on the parser).
