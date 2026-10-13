@@ -9,6 +9,7 @@ import {
 import type { DetachmentDef } from '../../types';
 import type { DetachmentAvailability } from '../../rules/options';
 import { getDetachmentsForFaction, getDetachmentDisplayName } from '../../data/loader';
+import { noFocusScroll } from './noFocusScroll';
 
 interface DetachmentSelectorModalProps {
   trigger: 'highCommand' | 'command';
@@ -54,8 +55,6 @@ export default function DetachmentSelectorModal({
       <ModalBody hasForm>
         <div
           style={{
-            maxHeight: 440,
-            overflowY: 'auto',
             display: 'flex',
             flexDirection: 'column',
             gap: 4,
@@ -77,6 +76,7 @@ export default function DetachmentSelectorModal({
                 </div>
               )}
               <button
+                onMouseDown={noFocusScroll}
                 onClick={() => onConfirm(def)}
                 style={{
                   display: 'block',

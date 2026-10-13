@@ -1,5 +1,6 @@
 import React from 'react';
 import { ComposedModal, ModalHeader, ModalBody, ModalFooter, Button } from '@carbon/react';
+import { noFocusScroll } from './noFocusScroll';
 
 const VALID_ROLES = [
   'Troops',
@@ -35,6 +36,7 @@ export default function BonusSlotRoleSelectorModal({
           {(roles && roles.length > 0 ? roles : VALID_ROLES).map((role) => (
             <button
               key={role}
+              onMouseDown={noFocusScroll}
               onClick={() => onConfirm(role)}
               style={{
                 textAlign: 'left',
