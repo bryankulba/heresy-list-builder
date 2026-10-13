@@ -20,6 +20,8 @@ export interface UnitEntry {
   name: string;
   entryId?: string;
   role: string;
+  /** Full primary category incl. any qualifier, e.g. "Support - Castellax Battle Maniple Only". Absent on units saved before 2026-10. */
+  primaryCategory?: string;
   points: number;
   baseCost: number;
   models: ModelEntry[];
