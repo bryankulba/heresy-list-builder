@@ -190,6 +190,7 @@ function configSel(entry: ArmyConfigEntry, choiceName: string | undefined): Sel 
  * defaults — remaining choices are finished in New Recruit.
  */
 function armyConfigSelections(force: Force, ctx: RuleContext, opts: RosOptions): Sel[] {
+  if (force.kind === 'lordOfWar') return []; // configured by the army it belongs to
   const doctrine = opts.cohortDoctrine ? COHORT_DOCTRINE_BY_ID[opts.cohortDoctrine]?.name : undefined;
   return armyConfigFor(force)
     .filter((e) => e.min >= 1 && !effectiveHidden(e.hidden ?? false, e.modifiers, ctx))
@@ -260,19 +261,10 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
       `    <force id="${uuid()}" name="${escapeXml(chart.name)}" entryId="${escapeXml(chart.id)}"${catalogueAttrs}>`
     );
     const config = armyConfigSelections(force, rootCtx, opts);
-    if (config.length > 0) {
-      lines.push('      <selections>');
-      for (const sel of config) emitSelection(lines, sel, '        ');
-      lines.push('      </selections>');
-    }
-    lines.push('      <forces>');
 
-    for (const det of force.detachments) {
-      lines.push(
-        `        <force id="${uuid()}" name="${escapeXml(det.def.name)}" entryId="${escapeXml(det.def.entryId ?? '')}"${catalogueAttrs}>`
-      );
-      lines.push('          <selections>');
-
+    /** A detachment's units as selections. */
+    const unitSelections = (det: (typeof force.detachments)[number]): Sel[] => {
+      const sels: Sel[] = [];
       // All regular + prime slots — iterate directly to capture Apex prime-only slots
       for (const [key, filled] of Object.entries(det.slots)) {
         if (!filled) continue;
@@ -349,7 +341,7 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
           }
         }
 
-        emitSelection(lines, unitSel(unit, primaryCategory(unitRole, unitCategoryId), filled.extraPoints ?? 0, extras, opts.armyChoices), '            ');
+        sels.push(unitSel(unit, primaryCategory(unitRole, unitCategoryId), filled.extraPoints ?? 0, extras, opts.armyChoices));
       }
 
       // Bonus slots (Logistical Benefit)
@@ -357,14 +349,33 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
         if (!bs.unit) continue;
         const bonusSlotDef = det.def.slots.find((s) => s.role === bs.role);
         const categoryId = bonusSlotDef?.categoryId ?? ROLE_CATEGORY_MAP[bs.role];
-        emitSelection(lines, unitSel(bs.unit, primaryCategory(bs.role, categoryId), bs.extraPoints ?? 0, [], opts.armyChoices), '            ');
+        sels.push(unitSel(bs.unit, primaryCategory(bs.role, categoryId), bs.extraPoints ?? 0, [], opts.armyChoices));
       }
 
-      lines.push('          </selections>');
-      lines.push('        </force>');
-    }
+      return sels;
+    };
 
-    lines.push('      </forces>');
+    // A chart without child forces (Lord of War Detachment) holds its units itself
+    const rootLevel = chart.detachments.length === 1 && chart.detachments[0].entryId === chart.id;
+    const rootSels = [...config, ...(rootLevel ? force.detachments.flatMap(unitSelections) : [])];
+    if (rootSels.length > 0) {
+      lines.push('      <selections>');
+      for (const sel of rootSels) emitSelection(lines, sel, '        ');
+      lines.push('      </selections>');
+    }
+    if (!rootLevel) {
+      lines.push('      <forces>');
+      for (const det of force.detachments) {
+        lines.push(
+          `        <force id="${uuid()}" name="${escapeXml(det.def.name)}" entryId="${escapeXml(det.def.entryId ?? '')}"${catalogueAttrs}>`
+        );
+        lines.push('          <selections>');
+        for (const sel of unitSelections(det)) emitSelection(lines, sel, '            ');
+        lines.push('          </selections>');
+        lines.push('        </force>');
+      }
+      lines.push('      </forces>');
+    }
     lines.push('    </force>');
   }
   lines.push('  </forces>');

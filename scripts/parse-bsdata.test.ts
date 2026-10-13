@@ -220,6 +220,8 @@ const legion: BsCatalogueFile = {
       { id: 'link-squad', name: 'TSS', type: 'selectionEntry', targetId: 'u-squad', categoryLinks: [{ id: 'x3', name: 'Troops', targetId: 'cat-troops', primary: true }] },
       { id: 'link-cent', name: 'Centurion', type: 'selectionEntry', targetId: 'u-centurion', categoryLinks: [{ id: 'x4', name: 'Command', targetId: 'cmd', primary: true }] },
       { id: 'link-grav', name: 'Grav-Tank', type: 'selectionEntry', targetId: 'u-grav', categoryLinks: [{ id: 'x5', name: 'Armour', targetId: 'arm', primary: true }] },
+      // A Retinue unit, so the detachment's raisable Retinue slot is one a unit can fill
+      { id: 'link-retinue', name: 'Command Squad', type: 'selectionEntry', targetId: 'u-primarch', categoryLinks: [{ id: 'x6', name: 'Retinue', targetId: 'ret', primary: true }] },
     ],
   },
 };

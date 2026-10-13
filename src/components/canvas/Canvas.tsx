@@ -14,6 +14,7 @@ import {
   getAllyFactions,
   getBaseRole,
   getChart,
+  lordOfWarChartFor,
   stripPrimePrefix,
 } from '../../data/loader';
 import { CRUSADE_CHART, factionLabel } from '../../data/factions';
@@ -29,6 +30,9 @@ import { unitContext } from '../../rules/context';
 import { getPrimeOptions, isLogisticalBenefit, logisticalBenefitRoles } from '../../rules/primeBenefits';
 import { unitsForSlot, withEffectiveSlots } from '../../rules/slots';
 import { auxiliaryUnlocks, detachmentAllowances } from '../../rules/detachmentLimits';
+import { allegianceCounts, isAllegianceLocked } from '../../rules/availability';
+import { validateRoster, type RosterWarning } from '../../rules/validate';
+import { rosterCounts } from '../../rules/context';
 import ConfirmModal from '../modals/ConfirmModal';
 import ExportModal from '../modals/ExportModal';
 import SavedListsModal from '../modals/SavedListsModal';
@@ -114,8 +118,9 @@ function computeCardPositions(forces: Force[]): {
   const labels: Array<{ forceId: string; text: string; x: number; y: number }> = [];
   let y = CANVAS_ORIGIN_Y;
   for (const force of forces) {
-    if (force.kind === 'allied') {
-      labels.push({ forceId: force.id, text: `Allies — ${factionLabel(force.faction)}`, x: PRIMARY_X, y });
+    if (force.kind !== 'primary') {
+      const text = force.kind === 'allied' ? `Allies — ${factionLabel(force.faction)}` : 'Lord of War';
+      labels.push({ forceId: force.id, text, x: PRIMARY_X, y });
       y += FORCE_LABEL_H;
     }
     const laid = layoutForce(force, y);
@@ -178,12 +183,20 @@ export default function Canvas() {
   const clearBonusSlot = useRosterStore((s) => s.clearBonusSlot);
   const removeDetachment = useRosterStore((s) => s.removeDetachment);
   const addAlliedForce = useRosterStore((s) => s.addAlliedForce);
+  const addLordOfWar = useRosterStore((s) => s.addLordOfWar);
   const removeForce = useRosterStore((s) => s.removeForce);
   const clearBonusSlotsForSlot = useRosterStore((s) => s.clearBonusSlotsForSlot);
   const updateSlotAnnotations = useRosterStore((s) => s.updateSlotAnnotations);
   const reset = useRosterStore((s) => s.reset);
 
   const totalPoints = computeTotalPoints(forces);
+  // Roster warnings (never blocking), by detachment for the cards' badges
+  const warnings = useMemo(() => validateRoster({ forces, allegiance, pointsLimit }), [forces, allegiance, pointsLimit]);
+  const warningsByDetachment = useMemo(() => {
+    const map = new Map<string, RosterWarning[]>();
+    for (const w of warnings) if (w.detachmentId) map.set(w.detachmentId, [...(map.get(w.detachmentId) ?? []), w]);
+    return map;
+  }, [warnings]);
 
   /** Faction of the army a detachment (or "detId::slotKey" reference) belongs to. */
   const factionFor = (detachmentIdOrRef: string) => factionOfDetachment(forces, detachmentIdOrRef);
@@ -202,12 +215,13 @@ export default function Canvas() {
     return cardSlots(det).find((s) => s.key === slotKey)?.slotDef;
   }
 
-  /** Units that can fill a slot (or a Logistical Benefit bonus slot of `role`). */
+  /** Units that can fill a slot (or a Logistical Benefit bonus slot of `role`), less those the allegiance can't field. */
   function slotUnits(detachmentId: string, slot: SlotDef | undefined) {
     const force = forces.find((f) => f.detachments.some((d) => d.id === detachmentId));
     const det = force?.detachments.find((d) => d.id === detachmentId);
     if (!force || !det || !slot) return [];
-    return unitsForSlot(forces, force, det, slot);
+    const counts = allegianceCounts(forces, allegiance);
+    return unitsForSlot(forces, force, det, slot).filter((u) => !isAllegianceLocked(forces, force, det, u, counts));
   }
 
   /** Prime benefits a unit may take in a given slot, evaluated from BSData. */
@@ -578,6 +592,9 @@ export default function Canvas() {
       : undefined;
   const additionalDetachments = primary ? getAdditionalDetachments(primary.chart, primary.faction) : [];
   const allyFactions = primary ? getAllyFactions(primary.faction) : [];
+  // Crusade armies may add one Lord of War Detachment (Knights use their own chart)
+  // One Lord of War Detachment per army (Knights use their own "Knight Lord of War" chart)
+  const canAddLordOfWar = !!primary && !forces.some((f) => f.kind === 'lordOfWar') && !!lordOfWarChartFor(primary.faction);
 
   function handleAddWarlord() {
     if (warlordDef && primary) addDetachment(warlordDef, { forceId: primary.id });
@@ -585,7 +602,7 @@ export default function Canvas() {
 
   /** Remove action for a card, if it can be removed on its own. */
   function removeActionFor(force: Force, det: PlacedDetachment): (() => void) | undefined {
-    if (force.kind === 'allied' && det.id === force.detachments[0]?.id) {
+    if (force.kind !== 'primary' && det.id === force.detachments[0]?.id) {
       return () => setModal({ type: 'confirmRemoveForce', forceId: force.id });
     }
     if (det.def.type === 'additional') return () => removeDetachment(det.id);
@@ -609,6 +626,7 @@ export default function Canvas() {
         onNewList={() => setModal({ type: 'confirmReset' })}
         onAddWarlord={warlordDef ? handleAddWarlord : undefined}
         onAddAllies={allyFactions.length > 0 ? () => setModal({ type: 'allySelector' }) : undefined}
+        onAddLordOfWar={canAddLordOfWar ? addLordOfWar : undefined}
         onAddDetachment={
           additionalDetachments.length > 0 ? () => setModal({ type: 'additionalDetachmentSelector' }) : undefined
         }
@@ -705,6 +723,7 @@ export default function Canvas() {
                   detachment={det}
                   instanceNumber={instanceNumbers.get(det.id)}
                   allyFaction={force.kind === 'allied' ? factionLabel(force.faction) : undefined}
+                  warnings={warningsByDetachment.get(det.id)}
                   onRemove={removeActionFor(force, det)}
                   onSlotClick={(slotKey, slotDef) =>
                     handleSlotClick(det.id, slotKey, slotDef)
@@ -751,9 +770,10 @@ export default function Canvas() {
       <PointsCard
         current={totalPoints}
         limit={pointsLimit}
+        warnings={warnings}
         allowances={
           primary
-            ? detachmentAllowances(forces, primary)
+            ? detachmentAllowances(forces, primary, rosterCounts(forces, { allegiance, pointsLimit }))
                 .filter((a) => a.max > 0 || a.used > 0)
                 .map((a) => ({ label: a.name.replace(/ Detachment\(s\)$|s$/, ''), used: a.used, max: a.max }))
             : []
@@ -923,8 +943,12 @@ export default function Canvas() {
 
       {modal.type === 'confirmRemoveForce' && (
         <ConfirmModal
-          message={`Remove the ${factionLabel(forces.find((f) => f.id === modal.forceId)?.faction ?? '')} allies and every detachment they unlocked?`}
-          primaryButtonText="Remove Allies"
+          message={
+            forces.find((f) => f.id === modal.forceId)?.kind === 'lordOfWar'
+              ? 'Remove the Lord of War Detachment and its units?'
+              : `Remove the ${factionLabel(forces.find((f) => f.id === modal.forceId)?.faction ?? '')} allies and every detachment they unlocked?`
+          }
+          primaryButtonText="Remove"
           onConfirm={() => {
             if (modal.type === 'confirmRemoveForce') removeForce(modal.forceId);
             setModal({ type: 'none' });

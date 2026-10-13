@@ -20,11 +20,21 @@ interface AppHeaderProps {
   onAddWarlord?: () => void;
   /** Shown when the army may take Allied Detachments */
   onAddAllies?: () => void;
+  /** Shown when the army may add a Lord of War Detachment and hasn't yet */
+  onAddLordOfWar?: () => void;
   /** Shown when the army's chart has freely-added detachments (e.g. Knight talons) */
   onAddDetachment?: () => void;
 }
 
-export default function AppHeader({ onExport, onSaveLoad, onNewList, onAddWarlord, onAddAllies, onAddDetachment }: AppHeaderProps) {
+export default function AppHeader({
+  onExport,
+  onSaveLoad,
+  onNewList,
+  onAddWarlord,
+  onAddAllies,
+  onAddLordOfWar,
+  onAddDetachment,
+}: AppHeaderProps) {
   const faction = useRosterStore(selectPrimaryFaction);
   const allies = useRosterStore((s) => s.forces.filter((f) => f.kind === 'allied').map((f) => f.faction));
   const allegiance = useRosterStore((s) => s.allegiance);
@@ -100,6 +110,11 @@ export default function AppHeader({ onExport, onSaveLoad, onNewList, onAddWarlor
         {onAddWarlord && (
           <Button kind="ghost" size="sm" renderIcon={Add} onClick={onAddWarlord}>
             Add Warlord
+          </Button>
+        )}
+        {onAddLordOfWar && (
+          <Button kind="ghost" size="sm" renderIcon={Add} onClick={onAddLordOfWar}>
+            Add Lord of War
           </Button>
         )}
         {onAddDetachment && (

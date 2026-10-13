@@ -1,6 +1,6 @@
 import React from 'react';
 import { Tag } from '@carbon/react';
-import { Close } from '@carbon/icons-react';
+import { Close, WarningAltFilled } from '@carbon/icons-react';
 import type { BonusSlot, FilledSlot, PlacedDetachment, SlotDef } from '../../types';
 import { getDetachmentDisplayName } from '../../data/loader';
 import { cardSlots, groupByRole } from './slotLayout';
@@ -15,6 +15,7 @@ function detachmentTagType(type: string): string {
     case 'apex': return 'purple';
     case 'allied': return 'cyan';
     case 'additional': return 'teal';
+    case 'lordOfWar': return 'magenta';
     default: return 'gray';
   }
 }
@@ -26,6 +27,7 @@ function detachmentTypeLabel(type: string): string {
     case 'apex': return 'Apex';
     case 'allied': return 'Allied';
     case 'additional': return 'Additional';
+    case 'lordOfWar': return 'Lord of War';
     default: return type;
   }
 }
@@ -37,6 +39,8 @@ interface DetachmentCardProps {
   allyFaction?: string;
   /** When set, the card shows a remove button */
   onRemove?: () => void;
+  /** Roster warnings about this detachment (a badge on the card; slot warnings outline their slot) */
+  warnings?: Array<{ message: string; slotKey?: string }>;
   onSlotClick: (slotKey: string, slotDef: SlotDef) => void;
   onSlotClear: (slotKey: string) => void;
   onBonusSlotClick: (bonusSlotId: string, role: string) => void;
@@ -50,6 +54,7 @@ export default function DetachmentCard({
   instanceNumber,
   allyFaction,
   onRemove,
+  warnings = [],
   onSlotClick,
   onSlotClear,
   onBonusSlotClick,
@@ -65,6 +70,7 @@ export default function DetachmentCard({
     | 'teal'
     | 'purple'
     | 'cyan'
+    | 'magenta'
     | 'gray';
 
   // Points on this card
@@ -107,6 +113,16 @@ export default function DetachmentCard({
           )}
         </div>
         <div className="flex items-center gap-2 shrink-0">
+          {warnings.length > 0 && (
+            <span
+              title={warnings.map((w) => w.message).join('\n')}
+              aria-label={`${warnings.length} warning${warnings.length > 1 ? 's' : ''}`}
+              style={{ display: 'flex', alignItems: 'center', gap: 2, color: 'var(--cds-support-error)', fontSize: 12 }}
+            >
+              <WarningAltFilled size={16} />
+              {warnings.length > 1 && warnings.length}
+            </span>
+          )}
           {cardPoints > 0 && (
             <span className="text-xs" style={{ color: 'var(--cds-text-secondary)' }}>
               {cardPoints}pts
@@ -162,6 +178,7 @@ export default function DetachmentCard({
                   onClick={() => onSlotClick(key, slotDef)}
                   onClear={() => onSlotClear(key)}
                   slotRef={slotRefCallback ? slotRefCallback(key) : undefined}
+                  warnings={warnings.filter((w) => w.slotKey === key).map((w) => w.message)}
                 />
               ))}
             </div>

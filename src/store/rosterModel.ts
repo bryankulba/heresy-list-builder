@@ -16,7 +16,7 @@ import type {
   UnitEntry,
 } from '../types';
 import { ALLIED_CHART, ALLIED_DETACHMENT, CRUSADE_CHART, FACTION_BY_ID } from '../data/factions';
-import { detachmentsData, getChartDetachment, getUnitsForFaction, unitVariant } from '../data/loader';
+import { detachmentsData, getChartDetachment, getUnitsForFaction, lordOfWarChartFor, unitVariant } from '../data/loader';
 
 // ---------------------------------------------------------------------------
 // Construction
@@ -30,6 +30,12 @@ export function makePlacedDetachment(def: DetachmentDef, unlockedBy?: string): P
 export function createForce(faction: string, kind: ForceKind): Force {
   const factionDef = FACTION_BY_ID[faction];
   if (!factionDef) throw new Error(`Unknown faction "${faction}"`);
+  if (kind === 'lordOfWar') {
+    // The army's own Lord of War chart (Knights) or the game system's
+    const lowChart = lordOfWarChartFor(faction);
+    if (!lowChart) throw new Error(`No Lord of War chart for "${faction}"`);
+    return { id: uuidv4(), faction, kind, chart: lowChart.name, detachments: [makePlacedDetachment(lowChart.detachments[0])] };
+  }
   const chart = kind === 'allied' ? ALLIED_CHART : factionDef.chart;
   const rootName = kind === 'allied' ? ALLIED_DETACHMENT : factionDef.primaryDetachment;
   return {

@@ -32,6 +32,8 @@ export interface FactionDef {
 export const CRUSADE_CHART = 'Crusade Force Organization Chart';
 export const ALLIED_CHART = 'Allied Detachment and its Auxiliary';
 export const ALLIED_DETACHMENT = 'Allied Detachment';
+/** The Lord of War Detachment: a root force holding its Lords of War itself */
+export const LORD_OF_WAR_CHART = 'Lord of War Detachment';
 const KNIGHT_CHART = 'Knight Households Crusade';
 
 function crusade(id: string, label: string, group: FactionGroup, unitSources: string[] = [id]): FactionDef {

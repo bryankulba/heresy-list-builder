@@ -11,6 +11,9 @@ import type { Force } from '../types';
 import { cataloguesData, getChart } from '../data/loader';
 import { applyNumericModifiers, type RuleContext } from './evaluate';
 import { rosterCounts, type RosterCounts } from './context';
+import { detachmentPoints } from '../store/rosterModel';
+
+const POINTS_TYPE_ID = '9893-c379-920b-8982';
 
 export interface DetachmentAllowance {
   costTypeId: string;
@@ -33,6 +36,8 @@ function armyContext(forces: Force[], force: Force, counts: RosterCounts): RuleC
     force: army,
     roster: counts.roster,
     rosterForces: counts.rosterForces,
+    rosterCosts: counts.rosterCosts,
+    pointsLimit: counts.pointsLimit,
     level: 'detachment',
   };
 }
@@ -48,7 +53,11 @@ export function detachmentAllowances(
     costTypeId: limit.costTypeId,
     name: limit.name,
     max: applyNumericModifiers(limit.max, limit.modifiers, ctx),
-    used: force.detachments.reduce((n, d) => n + (d.def.costs?.[limit.costTypeId] ?? 0), 0),
+    // Points (a Lord of War Detachment's share of the army) or detachments used
+    used:
+      limit.costTypeId === POINTS_TYPE_ID
+        ? force.detachments.reduce((n, d) => n + detachmentPoints(d), 0)
+        : force.detachments.reduce((n, d) => n + (d.def.costs?.[limit.costTypeId] ?? 0), 0),
   }));
 }
 
@@ -62,6 +71,27 @@ export function allowanceFor(
   const costs = getChart(force.chart).detachments.find((d) => d.type === type && d.costs)?.costs;
   const id = costs ? Object.keys(costs)[0] : undefined;
   return detachmentAllowances(forces, force, counts).find((a) => a.costTypeId === id);
+}
+
+/** Detachments taken more often than BSData allows them in the roster (e.g. Knight Additional detachments). */
+export function detachmentCaps(
+  forces: Force[],
+  counts: RosterCounts = rosterCounts(forces)
+): Array<{ name: string; force: Force; used: number; max: number }> {
+  const out: Array<{ name: string; force: Force; used: number; max: number }> = [];
+  const seen = new Set<string>();
+  for (const force of forces) {
+    const ctx = armyContext(forces, force, counts);
+    for (const det of force.detachments) {
+      const cap = det.def.rosterMax;
+      const key = det.def.entryId ?? det.def.name;
+      if (!cap || seen.has(key)) continue;
+      seen.add(key);
+      const used = forces.flatMap((f) => f.detachments).filter((d) => (d.def.entryId ?? d.def.name) === key).length;
+      out.push({ name: det.def.name, force, used, max: applyNumericModifiers(cap.max, cap.modifiers, ctx) });
+    }
+  }
+  return out;
 }
 
 /**

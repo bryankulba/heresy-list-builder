@@ -54,6 +54,10 @@ function buildExportText(
       lines.push(`=== ALLIES: ${factionLabel(force.faction).toUpperCase()} ===`);
       lines.push('');
     }
+    if (force.kind === 'lordOfWar') {
+      lines.push('=== LORD OF WAR ===');
+      lines.push('');
+    }
     for (const det of force.detachments) {
       lines.push(...detachmentLines(det), '');
     }

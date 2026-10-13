@@ -2920,420 +2920,6 @@
               ]
             },
             {
-              "role": "Exemplars of the Legion - Dark Angels",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "6c4f-19ae-d41f-377b",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "cb01-9383-62ee-5264",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "69dd-9a79-6562-14a1"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Alpha Legion",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "1252-6dc4-22d7-4a8f",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "45e0-4d87-82c2-ccc7",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "7cb8-1117-ebad-69ca"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Blood Angels",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "d819-0c9d-aad2-4238",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "3aed-89c6-3325-c78b",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "5f71-ed32-cb07-a7e3"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Death Guard",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "f6a9-02e2-ff4f-9583",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "5c7d-4698-d50f-4280",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "c494-2873-82da-79f3"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Emperor's Children",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "5e33-e0a2-afb4-6fa7",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "3e3b-d9b3-8737-e923",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "1b2e-0c8f-a347-14dd"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Imperial Fists",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "6d50-f0f1-4c81-4fa5",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "206a-f2e9-9a9a-5f69",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "165b-c1bf-70d0-1614"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Iron Hands",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "b8f3-a8cc-4b5f-38c7",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "1506-64a5-4995-dc3a",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "4559-bedc-9940-5865"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Iron Warriors",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "d190-a268-afdd-6e11",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "e917-cd03-6940-ba64",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "5721-3879-8932-15f3"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Night Lords",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "72cb-1cf8-0e7d-51d2",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "7540-303a-7f86-dec9",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "af2c-9f21-ea3d-9bcf"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Raven Guard",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "8fed-36a4-10bd-3fa5",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "82f1-90bb-2129-7599",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "87f5-76a6-3a9a-2579"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Salamanders",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "acc7-7ab0-1b70-15c2",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "20cf-b11c-3f51-fc95",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "5b8b-422a-ca19-dd30"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Sons of Horus",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "20ba-2d32-325b-0f43",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "2b0c-d875-db6e-8361",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "b7fc-56f9-579e-0030"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Space Wolves",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "34b6-2cfd-313a-0eff",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "8aa1-35c8-99cc-5929",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "7f85-b2b1-29bd-b5a2"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Thousand Sons",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "1992-9042-5894-f2dc",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "3153-7dfa-b4c9-a44c",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "484e-033c-00d8-9715"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Ultramarines",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "bc4d-0973-2772-9330",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "9f5d-dbe3-c8de-d452",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "8427-5777-8664-083e"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - White Scars",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "c89e-a6a3-9ac6-1283",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "a766-191c-e25e-2f8e",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "73f7-0054-e5d7-8efb"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Word Bearers",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "7712-7d17-1f9e-bf1f",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "5faf-907d-4629-9f50",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "b1f7-02a0-e90d-15c7"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - World Eaters",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "d877-8b72-fd0b-1e4a",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "6a9b-0b3a-c75c-0863",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "67b4-0b06-af17-1321"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
               "role": "Prime Command - Centurions Only",
               "min": 0,
               "max": 0,
@@ -3393,7 +2979,11 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "rosterMax": {
+            "max": 1,
+            "modifiers": []
+          }
         },
         {
           "name": "Warlord Detachment",
@@ -3446,7 +3036,45 @@
             "white-scars",
             "word-bearers",
             "world-eaters"
-          ]
+          ],
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "set",
+                "field": "63d0-2300-c551-7797",
+                "value": 1,
+                "conditionGroups": [
+                  {
+                    "type": "or",
+                    "conditions": [
+                      {
+                        "type": "atLeast",
+                        "scope": "roster",
+                        "field": "limit::9893-c379-920b-8982",
+                        "value": 3000,
+                        "childId": "any"
+                      },
+                      {
+                        "type": "atLeast",
+                        "scope": "roster",
+                        "field": "9893-c379-920b-8982",
+                        "value": 3000,
+                        "childId": "any"
+                      },
+                      {
+                        "type": "equalTo",
+                        "scope": "roster",
+                        "field": "limit::9893-c379-920b-8982",
+                        "value": -1,
+                        "childId": "any"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "Auxiliary - Armoured Fist",
@@ -4982,420 +4610,6 @@
                   ]
                 }
               ]
-            },
-            {
-              "role": "Exemplars of the Legion - Dark Angels",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "6c4f-19ae-d41f-377b",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "c894-652d-111e-f4e7",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "69dd-9a79-6562-14a1"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Alpha Legion",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "1252-6dc4-22d7-4a8f",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "fb11-7166-040c-75a9",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "7cb8-1117-ebad-69ca"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Blood Angels",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "d819-0c9d-aad2-4238",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "a790-074e-02f0-43b2",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "5f71-ed32-cb07-a7e3"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Death Guard",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "f6a9-02e2-ff4f-9583",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "ffef-e350-32f9-27c4",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "c494-2873-82da-79f3"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Emperor's Children",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "5e33-e0a2-afb4-6fa7",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "dc7b-de18-9278-bf1b",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "1b2e-0c8f-a347-14dd"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Imperial Fists",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "6d50-f0f1-4c81-4fa5",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "b711-084b-2af6-b257",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "165b-c1bf-70d0-1614"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Iron Hands",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "b8f3-a8cc-4b5f-38c7",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "e1be-7c5f-9c0a-2ade",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "4559-bedc-9940-5865"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Iron Warriors",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "d190-a268-afdd-6e11",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "a919-dbb4-cdb5-3d26",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "5721-3879-8932-15f3"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Night Lords",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "72cb-1cf8-0e7d-51d2",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "f299-68cb-94bb-bbd2",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "af2c-9f21-ea3d-9bcf"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Raven Guard",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "8fed-36a4-10bd-3fa5",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "7028-0161-dde9-1e07",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "87f5-76a6-3a9a-2579"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Salamanders",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "acc7-7ab0-1b70-15c2",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "60c4-435c-6971-04ce",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "5b8b-422a-ca19-dd30"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Sons of Horus",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "20ba-2d32-325b-0f43",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "37c2-66d3-6de4-5543",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "b7fc-56f9-579e-0030"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Space Wolves",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "34b6-2cfd-313a-0eff",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "173b-364e-e82e-53c8",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "7f85-b2b1-29bd-b5a2"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Thousand Sons",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "1992-9042-5894-f2dc",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "8179-a35e-521e-2e44",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "484e-033c-00d8-9715"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Ultramarines",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "bc4d-0973-2772-9330",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "bfb2-667b-a3ae-794a",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "8427-5777-8664-083e"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - White Scars",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "c89e-a6a3-9ac6-1283",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "c1f0-00e0-0e1b-6f23",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "73f7-0054-e5d7-8efb"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Word Bearers",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "7712-7d17-1f9e-bf1f",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "050b-b62a-6bc2-949d",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "b1f7-02a0-e90d-15c7"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - World Eaters",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "d877-8b72-fd0b-1e4a",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "2a95-09be-cfc4-561a",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "67b4-0b06-af17-1321"
-                    }
-                  ]
-                }
-              ]
             }
           ],
           "sources": [
@@ -6303,6 +5517,25 @@
           ],
           "costs": {
             "159d-855c-533d-f592": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "0f60-047c-d69a-97c5",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "9892-3b91-8a3b-51e8"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -6590,6 +5823,25 @@
           ],
           "costs": {
             "159d-855c-533d-f592": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "8d5e-1a62-6534-eac1",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "6669-ac09-e41b-f204"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -6863,6 +6115,25 @@
           ],
           "costs": {
             "159d-855c-533d-f592": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "b044-93f4-2679-4153",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "bbfe-ac5d-a09c-a772"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -7136,6 +6407,25 @@
           ],
           "costs": {
             "159d-855c-533d-f592": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "d57e-0001-04ea-abce",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "8210-dd15-d42a-aa43"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -7156,6 +6446,25 @@
           ],
           "costs": {
             "159d-855c-533d-f592": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "12e5-e7de-ac6c-c134",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "3006-172b-ba54-4d75"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -7404,6 +6713,25 @@
           ],
           "costs": {
             "159d-855c-533d-f592": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "9a3b-a164-4fb8-a93f",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "b25e-e5d1-1044-ea7c"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -7684,6 +7012,25 @@
           ],
           "costs": {
             "159d-855c-533d-f592": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "cce8-b39c-1cff-56ea",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "be35-75c1-1217-2fdb"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -7964,6 +7311,44 @@
           ],
           "costs": {
             "159d-855c-533d-f592": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "cbbf-a5c7-0527-b306",
+                "value": 1,
+                "conditionGroups": [
+                  {
+                    "type": "and",
+                    "conditions": [
+                      {
+                        "type": "instanceOf",
+                        "scope": "primary-catalogue",
+                        "field": "selections",
+                        "value": 1,
+                        "childId": "21c0-18db-03dd-ae07"
+                      },
+                      {
+                        "type": "instanceOf",
+                        "scope": "parent",
+                        "field": "selections",
+                        "value": 1,
+                        "childId": "21c0-18db-03dd-ae07"
+                      },
+                      {
+                        "type": "atLeast",
+                        "scope": "roster",
+                        "field": "selections",
+                        "value": 1,
+                        "childId": "b7c9-7d2d-fb56-5486"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -9132,6 +8517,57 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "0cdf-ec44-4886-b292",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "lessThan",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "f2be-abfe-311c-afe2"
+                  }
+                ],
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "67d3-556b-b619-28e2"
+                  }
+                ]
+              },
+              {
+                "type": "increment",
+                "field": "0cdf-ec44-4886-b292",
+                "value": 2,
+                "conditions": [
+                  {
+                    "type": "equalTo",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "f2be-abfe-311c-afe2"
+                  }
+                ],
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "67d3-556b-b619-28e2"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -9152,6 +8588,57 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "b12c-e160-7e18-6447",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "lessThan",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "1d7a-eb2d-5d0f-0fa4"
+                  }
+                ],
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "390f-d9dc-10d8-56aa"
+                  }
+                ]
+              },
+              {
+                "type": "increment",
+                "field": "b12c-e160-7e18-6447",
+                "value": 2,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "1d7a-eb2d-5d0f-0fa4"
+                  }
+                ],
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "390f-d9dc-10d8-56aa"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -9172,6 +8659,57 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "ab5c-eef0-021a-f3d7",
+                "value": 2,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "c9ef-b204-e951-6b7e"
+                  }
+                ],
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "2a0c-b2b2-0f48-2e90"
+                  }
+                ]
+              },
+              {
+                "type": "increment",
+                "field": "ab5c-eef0-021a-f3d7",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "lessThan",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "c9ef-b204-e951-6b7e"
+                  }
+                ],
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "2a0c-b2b2-0f48-2e90"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -9452,6 +8990,57 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "27bb-2701-02d4-1c6f",
+                "value": 2,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "1241-4ccd-80b8-8ff2"
+                  }
+                ],
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "847c-d351-32a7-cc2a"
+                  }
+                ]
+              },
+              {
+                "type": "increment",
+                "field": "27bb-2701-02d4-1c6f",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "lessThan",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "1241-4ccd-80b8-8ff2"
+                  }
+                ],
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "847c-d351-32a7-cc2a"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -9479,6 +9068,57 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "09ef-6880-510a-852b",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "lessThan",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "7f98-e8eb-f86e-180d"
+                  }
+                ],
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "3bba-e8bb-7463-b0b2"
+                  }
+                ]
+              },
+              {
+                "type": "increment",
+                "field": "09ef-6880-510a-852b",
+                "value": 2,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "7f98-e8eb-f86e-180d"
+                  }
+                ],
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "3bba-e8bb-7463-b0b2"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -10055,6 +9695,44 @@
           ],
           "costs": {
             "159d-855c-533d-f592": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "06ca-d5c5-58f1-f184",
+                "value": 2,
+                "conditionGroups": [
+                  {
+                    "type": "and",
+                    "conditions": [
+                      {
+                        "type": "instanceOf",
+                        "scope": "primary-catalogue",
+                        "field": "selections",
+                        "value": 1,
+                        "childId": "736e-3967-e72b-e3ac"
+                      },
+                      {
+                        "type": "instanceOf",
+                        "scope": "parent",
+                        "field": "selections",
+                        "value": 1,
+                        "childId": "736e-3967-e72b-e3ac"
+                      },
+                      {
+                        "type": "atLeast",
+                        "scope": "roster",
+                        "field": "selections",
+                        "value": 1,
+                        "childId": "fc09-911b-ee8c-7967"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -14589,6 +14267,39 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "b033-24cc-c28a-c279",
+                "value": 1,
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "e835-f513-2c3c-9697"
+                  }
+                ]
+              },
+              {
+                "type": "set",
+                "field": "b033-24cc-c28a-c279",
+                "value": 666,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "ed12-2e38-312e-83e6"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -14732,6 +14443,25 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "6f31-a14e-e22b-ad94",
+                "value": 1,
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "1baf-b200-9e02-844d"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -15556,6 +15286,25 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "900f-15de-561e-02ce",
+                "value": 1,
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "25ad-fbd9-d161-8fd1"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -15871,6 +15620,25 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "a910-5bd9-fd64-fa91",
+                "value": 1,
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "694e-f646-5935-6e36"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -15905,6 +15673,25 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "f66f-803d-5433-bb35",
+                "value": 10,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "28ba-8660-5266-8674"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -16227,6 +16014,25 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "efbe-2e41-bb69-262a",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "ea11-0241-9a96-06a5"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -17337,7 +17143,11 @@
           ],
           "sources": [
             "mechanicum"
-          ]
+          ],
+          "rosterMax": {
+            "max": 1,
+            "modifiers": []
+          }
         },
         {
           "name": "Auxiliary - Dreadnought Talon",
@@ -17376,6 +17186,25 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "4256-c6d3-a3ce-63c8",
+                "value": 1,
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "4e4f-ab55-68ef-ad63"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -20404,6 +20233,25 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "b4e7-0ef3-6816-22ae",
+                "value": 1,
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "984c-7429-a450-2e1a"
+                  }
+                ]
+              }
+            ]
           }
         },
         {
@@ -22339,7 +22187,35 @@
           ],
           "sources": [
             "solar-auxilia"
-          ]
+          ],
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "1837-2d3f-e2c0-9a79",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "4924-9c5d-9d41-1211"
+                  }
+                ],
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "forces",
+                    "scope": "roster",
+                    "childId": "e1a1-2699-4681-47ab"
+                  }
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "Auxiliary - Ætheric Incursion Detachment",
@@ -22377,7 +22253,35 @@
           ],
           "sources": [
             "solar-auxilia"
-          ]
+          ],
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "dd1b-c95d-52d3-d06d",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "cb73-8d71-1d7a-cb1a"
+                  }
+                ],
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "forces",
+                    "scope": "roster",
+                    "childId": "243b-4ffd-9808-11d8"
+                  }
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "Auxiliary - Ætheric Incursion",
@@ -22418,6 +22322,39 @@
           ],
           "costs": {
             "3e8e-05ee-be52-12d6": 1
+          },
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "a5fd-9f7e-7308-3285",
+                "value": 1,
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "e835-f513-2c3c-9697"
+                  }
+                ]
+              },
+              {
+                "type": "increment",
+                "field": "a5fd-9f7e-7308-3285",
+                "value": 1,
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "04b3-9ebe-bf51-20f2"
+                  }
+                ]
+              }
+            ]
           }
         }
       ],
@@ -23163,420 +23100,6 @@
                       "field": "selections",
                       "value": 1,
                       "childId": "fac3-0af2-8be3-20dc"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - World Eaters",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "d877-8b72-fd0b-1e4a",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "71f7-3722-92ab-91b1",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "67b4-0b06-af17-1321"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Dark Angels",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "6c4f-19ae-d41f-377b",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "b935-8d98-5396-eab9",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "69dd-9a79-6562-14a1"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Alpha Legion",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "1252-6dc4-22d7-4a8f",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "3847-7f36-49be-38e1",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "7cb8-1117-ebad-69ca"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Blood Angels",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "d819-0c9d-aad2-4238",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "8816-82cf-919b-f90c",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "5f71-ed32-cb07-a7e3"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Death Guard",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "f6a9-02e2-ff4f-9583",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "5a85-5961-ac76-b2b3",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "c494-2873-82da-79f3"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Emperor's Children",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "5e33-e0a2-afb4-6fa7",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "f33e-b6a2-240b-747a",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "1b2e-0c8f-a347-14dd"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Imperial Fists",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "6d50-f0f1-4c81-4fa5",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "bb37-99b5-6522-f7c9",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "165b-c1bf-70d0-1614"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Iron Hands",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "b8f3-a8cc-4b5f-38c7",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "dfdd-887a-c318-4cc8",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "4559-bedc-9940-5865"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Iron Warriors",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "d190-a268-afdd-6e11",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "b34d-535f-880b-8063",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "5721-3879-8932-15f3"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Night Lords",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "72cb-1cf8-0e7d-51d2",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "163d-6be4-66f8-c927",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "af2c-9f21-ea3d-9bcf"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Raven Guard",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "8fed-36a4-10bd-3fa5",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "8597-c5e5-b737-bec0",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "87f5-76a6-3a9a-2579"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Salamanders",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "acc7-7ab0-1b70-15c2",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "1bbc-6f8e-a5be-e51b",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "5b8b-422a-ca19-dd30"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Sons of Horus",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "20ba-2d32-325b-0f43",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "a9cb-e561-a0fc-283e",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "b7fc-56f9-579e-0030"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Space Wolves",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "34b6-2cfd-313a-0eff",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "d0a2-2d30-c6a2-93d5",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "7f85-b2b1-29bd-b5a2"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Thousand Sons",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "1992-9042-5894-f2dc",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "8a0d-ae1e-182a-76a4",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "484e-033c-00d8-9715"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Ultramarines",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "bc4d-0973-2772-9330",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "d049-4eb8-76c8-9e4c",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "8427-5777-8664-083e"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - White Scars",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "c89e-a6a3-9ac6-1283",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "b88d-a3b3-b716-e6e0",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "73f7-0054-e5d7-8efb"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Word Bearers",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "7712-7d17-1f9e-bf1f",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "1392-e759-9bac-867d",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "b1f7-02a0-e90d-15c7"
                     }
                   ]
                 }
@@ -24730,7 +24253,11 @@
           ],
           "sources": [
             "mechanicum"
-          ]
+          ],
+          "rosterMax": {
+            "max": 1,
+            "modifiers": []
+          }
         }
       ],
       "limits": [
@@ -24901,6 +24428,241 @@
               ]
             }
           ]
+        },
+        {
+          "costTypeId": "9893-c379-920b-8982",
+          "name": "Point(s)",
+          "max": 0,
+          "modifiers": [
+            {
+              "type": "increment",
+              "field": "3fef-ac67-de89-249f",
+              "value": 1,
+              "conditions": [
+                {
+                  "type": "notEqualTo",
+                  "scope": "roster",
+                  "field": "limit::9893-c379-920b-8982",
+                  "value": -1,
+                  "childId": "any"
+                }
+              ],
+              "repeats": [
+                {
+                  "value": 2,
+                  "repeats": 1,
+                  "field": "limit::9893-c379-920b-8982",
+                  "scope": "roster",
+                  "childId": "any"
+                }
+              ]
+            },
+            {
+              "type": "increment",
+              "field": "3fef-ac67-de89-249f",
+              "value": 1,
+              "conditions": [
+                {
+                  "type": "equalTo",
+                  "scope": "roster",
+                  "field": "limit::9893-c379-920b-8982",
+                  "value": -1,
+                  "childId": "any"
+                }
+              ],
+              "repeats": [
+                {
+                  "value": 2,
+                  "repeats": 1,
+                  "field": "9893-c379-920b-8982",
+                  "scope": "roster",
+                  "childId": "any"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "b7a1-629f-9d60-c2a9",
+      "name": "Lord of War Detachment",
+      "catalogue": null,
+      "detachments": [
+        {
+          "name": "Lord of War Detachment",
+          "entryId": "b7a1-629f-9d60-c2a9",
+          "type": "lordOfWar",
+          "slots": [
+            {
+              "role": "Lord of War",
+              "min": 0,
+              "max": 2,
+              "prime": false,
+              "categoryId": "a46f-a465-0ead-d6b8"
+            }
+          ],
+          "sources": [],
+          "rosterMax": {
+            "max": 1,
+            "modifiers": [
+              {
+                "type": "set",
+                "field": "9507-42c6-32f3-dacf",
+                "value": 0,
+                "conditions": [
+                  {
+                    "type": "instanceOf",
+                    "scope": "primary-catalogue",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "fd9b-d04e-362d-8e5d"
+                  }
+                ]
+              }
+            ]
+          }
+        }
+      ],
+      "limits": [
+        {
+          "costTypeId": "9893-c379-920b-8982",
+          "name": "Point(s)",
+          "max": 0,
+          "modifiers": [
+            {
+              "type": "increment",
+              "field": "44b5-c573-a90a-3324",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 4,
+                  "repeats": 1,
+                  "field": "limit::9893-c379-920b-8982",
+                  "scope": "roster",
+                  "childId": "any"
+                }
+              ]
+            },
+            {
+              "type": "decrement",
+              "field": "44b5-c573-a90a-3324",
+              "value": 1,
+              "conditions": [
+                {
+                  "type": "notEqualTo",
+                  "scope": "roster",
+                  "field": "limit::9893-c379-920b-8982",
+                  "value": -1,
+                  "childId": "any"
+                }
+              ],
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "9893-c379-920b-8982",
+                  "scope": "roster",
+                  "childId": "22ee-7208-4089-b005"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "cca7-b054-62dc-bec9",
+      "name": "Brotherhood of the Phoenix (Replaces Warlord)",
+      "catalogue": "emperors-children",
+      "detachments": [
+        {
+          "name": "Brotherhood of the Phoenix (Replaces Warlord)",
+          "entryId": "cca7-b054-62dc-bec9",
+          "type": "other",
+          "slots": [
+            {
+              "role": "Warlord",
+              "min": 0,
+              "max": 1,
+              "prime": false,
+              "categoryId": "22ee-7208-4089-b005"
+            },
+            {
+              "role": "High Command",
+              "min": 0,
+              "max": 3,
+              "prime": false,
+              "categoryId": "d9a6-9b5f-b18a-4d63"
+            },
+            {
+              "role": "Command",
+              "min": 0,
+              "max": 1,
+              "prime": false,
+              "categoryId": "6dbf-654a-f06f-2d69"
+            },
+            {
+              "role": "Prime High Command",
+              "min": 0,
+              "max": 1,
+              "prime": true,
+              "categoryId": "3568-ad75-b452-3137"
+            },
+            {
+              "role": "Required Fulgrim Transformed",
+              "min": 1,
+              "max": 1,
+              "prime": false,
+              "categoryId": "634b-596b-118f-80b6"
+            }
+          ],
+          "sources": [],
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "set",
+                "field": "2421-aa0b-4f10-6f1a",
+                "value": 1,
+                "conditionGroups": [
+                  {
+                    "type": "and",
+                    "conditions": [
+                      {
+                        "type": "equalTo",
+                        "scope": "roster",
+                        "field": "forces",
+                        "value": 0,
+                        "childId": "50c3-ba24-7471-3d32"
+                      }
+                    ],
+                    "conditionGroups": [
+                      {
+                        "type": "or",
+                        "conditions": [
+                          {
+                            "type": "atLeast",
+                            "scope": "roster",
+                            "field": "limit::9893-c379-920b-8982",
+                            "value": 3000,
+                            "childId": "any"
+                          },
+                          {
+                            "type": "atLeast",
+                            "scope": "roster",
+                            "field": "9893-c379-920b-8982",
+                            "value": 3000,
+                            "childId": "any"
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          }
         }
       ]
     },
@@ -25454,420 +25216,6 @@
                       "field": "selections",
                       "value": 1,
                       "childId": "fac3-0af2-8be3-20dc"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - World Eaters",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "d877-8b72-fd0b-1e4a",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "19d0-043a-ec44-18d0",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "67b4-0b06-af17-1321"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Dark Angels",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "6c4f-19ae-d41f-377b",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "7b28-68ce-d863-3b9b",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "69dd-9a79-6562-14a1"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Alpha Legion",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "1252-6dc4-22d7-4a8f",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "93bd-ff22-4b4b-a4da",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "7cb8-1117-ebad-69ca"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Blood Angels",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "d819-0c9d-aad2-4238",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "99e0-7846-53ff-72cb",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "5f71-ed32-cb07-a7e3"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Death Guard",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "f6a9-02e2-ff4f-9583",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "cee1-a652-d19d-7d85",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "c494-2873-82da-79f3"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Emperor's Children",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "5e33-e0a2-afb4-6fa7",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "e9d6-75a0-b78e-8007",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "1b2e-0c8f-a347-14dd"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Imperial Fists",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "6d50-f0f1-4c81-4fa5",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "f96a-f0e6-4529-ca76",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "165b-c1bf-70d0-1614"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Iron Hands",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "b8f3-a8cc-4b5f-38c7",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "05b1-c591-d14e-9a59",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "4559-bedc-9940-5865"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Iron Warriors",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "d190-a268-afdd-6e11",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "3262-f7a1-a62c-6eba",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "5721-3879-8932-15f3"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Night Lords",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "72cb-1cf8-0e7d-51d2",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "029e-2d82-3326-44cb",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "af2c-9f21-ea3d-9bcf"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Raven Guard",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "8fed-36a4-10bd-3fa5",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "a323-809c-7987-60f3",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "87f5-76a6-3a9a-2579"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Salamanders",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "acc7-7ab0-1b70-15c2",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "1bbb-e5e0-1abc-59c0",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "5b8b-422a-ca19-dd30"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Sons of Horus",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "20ba-2d32-325b-0f43",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "8781-5f5e-17ef-c538",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "b7fc-56f9-579e-0030"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Space Wolves",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "34b6-2cfd-313a-0eff",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "047e-a4ab-7d9d-be2b",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "7f85-b2b1-29bd-b5a2"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Thousand Sons",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "1992-9042-5894-f2dc",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "7738-86ed-ab1f-e15a",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "484e-033c-00d8-9715"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Ultramarines",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "bc4d-0973-2772-9330",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "8c48-960c-4bea-cc2b",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "8427-5777-8664-083e"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - White Scars",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "c89e-a6a3-9ac6-1283",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "e57b-f1f6-5e7c-06c0",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "73f7-0054-e5d7-8efb"
-                    }
-                  ]
-                }
-              ]
-            },
-            {
-              "role": "Exemplars of the Legion - Word Bearers",
-              "min": 0,
-              "max": 0,
-              "prime": false,
-              "categoryId": "7712-7d17-1f9e-bf1f",
-              "maxModifiers": [
-                {
-                  "type": "increment",
-                  "field": "01e4-cbab-08e9-7485",
-                  "value": 1,
-                  "repeats": [
-                    {
-                      "value": 1,
-                      "repeats": 1,
-                      "field": "selections",
-                      "scope": "force",
-                      "childId": "b1f7-02a0-e90d-15c7"
                     }
                   ]
                 }
@@ -27021,7 +26369,11 @@
           ],
           "sources": [
             "mechanicum"
-          ]
+          ],
+          "rosterMax": {
+            "max": 1,
+            "modifiers": []
+          }
         }
       ],
       "limits": [
@@ -27173,7 +26525,40 @@
           ],
           "sources": [
             "questoris-familia"
-          ]
+          ],
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "6465-1296-c54b-3c7a",
+                "value": 1,
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "df1c-c761-9a63-9e61"
+                  }
+                ]
+              },
+              {
+                "type": "increment",
+                "field": "6465-1296-c54b-3c7a",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "89ae-ac36-aef1-5024"
+                  }
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "Additional - Automata Talon",
@@ -27211,7 +26596,40 @@
           ],
           "sources": [
             "questoris-familia"
-          ]
+          ],
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "aeb6-37bc-34e4-5636",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "14f8-2fe6-3bde-b735"
+                  }
+                ]
+              },
+              {
+                "type": "increment",
+                "field": "aeb6-37bc-34e4-5636",
+                "value": 1,
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "f601-43c9-4fe5-b455"
+                  }
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "Additional - Support Banner",
@@ -27235,7 +26653,26 @@
           ],
           "sources": [
             "questoris-familia"
-          ]
+          ],
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "1e66-77ca-ba4c-d36d",
+                "value": 1,
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "8e45-8d74-1c77-2511"
+                  }
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "Additional - Yeomanry Mesnie",
@@ -27273,7 +26710,40 @@
           ],
           "sources": [
             "questoris-familia"
-          ]
+          ],
+          "rosterMax": {
+            "max": 0,
+            "modifiers": [
+              {
+                "type": "increment",
+                "field": "2599-e633-63e2-7803",
+                "value": 1,
+                "conditions": [
+                  {
+                    "type": "atLeast",
+                    "scope": "roster",
+                    "field": "selections",
+                    "value": 1,
+                    "childId": "0544-8dce-3f8a-245d"
+                  }
+                ]
+              },
+              {
+                "type": "increment",
+                "field": "2599-e633-63e2-7803",
+                "value": 1,
+                "repeats": [
+                  {
+                    "value": 1,
+                    "repeats": 1,
+                    "field": "selections",
+                    "scope": "roster",
+                    "childId": "69db-05e6-85a5-e676"
+                  }
+                ]
+              }
+            ]
+          }
         },
         {
           "name": "Knight Households Primary Detachment",
@@ -27309,7 +26779,7 @@
         {
           "name": "Lord of War Detachment",
           "entryId": "3cb9-35bf-4fac-61c0",
-          "type": "other",
+          "type": "lordOfWar",
           "slots": [
             {
               "role": "Lord of War",
@@ -27344,6 +26814,47 @@
           ],
           "sources": [
             "questoris-familia"
+          ],
+          "rosterMax": {
+            "max": 1,
+            "modifiers": []
+          }
+        }
+      ],
+      "limits": [
+        {
+          "costTypeId": "9893-c379-920b-8982",
+          "name": "Point(s)",
+          "max": 0,
+          "modifiers": [
+            {
+              "type": "increment",
+              "field": "f23e-0055-7aba-293f",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 4,
+                  "repeats": 1,
+                  "field": "limit::9893-c379-920b-8982",
+                  "scope": "roster",
+                  "childId": "any"
+                }
+              ]
+            },
+            {
+              "type": "decrement",
+              "field": "f23e-0055-7aba-293f",
+              "value": 1,
+              "repeats": [
+                {
+                  "value": 1,
+                  "repeats": 1,
+                  "field": "9893-c379-920b-8982",
+                  "scope": "roster",
+                  "childId": "22ee-7208-4089-b005"
+                }
+              ]
+            }
           ]
         }
       ]

@@ -197,7 +197,9 @@ export function importRos(xml: string): ImportResult {
       warnings.push(`"${rootForce.name}" (${faction ?? 'unknown catalogue'}) isn't supported yet — skipped`);
       continue;
     }
-    const kind = chart.name === ALLIED_CHART ? 'allied' : 'primary';
+    const kind = chart.name === ALLIED_CHART ? 'allied' : /Lord of War/i.test(chart.name) ? 'lordOfWar' : 'primary';
+    // A chart without child forces (Lord of War Detachment) holds its units itself
+    const rootLevel = chart.detachments.length === 1 && chart.detachments[0].entryId === chart.id;
 
     // Army configuration
     for (const sel of children(rootForce)) {
@@ -211,7 +213,7 @@ export function importRos(xml: string): ImportResult {
     const force: Force = { id: uuidv4(), faction, kind, chart: chart.name, detachments: [] };
     forces.push(force);
     const pending: Array<{ det: PlacedDetachment; units: PendingUnit[] }> = [];
-    for (const childForce of rootForce.forces?.force ?? []) {
+    for (const childForce of rootLevel ? [rootForce] : rootForce.forces?.force ?? []) {
       const def = chart.detachments.find((d) => d.entryId === childForce.entryId);
       if (!def) {
         warnings.push(`Detachment "${childForce.name}" isn't supported yet — skipped`);
@@ -228,7 +230,8 @@ export function importRos(xml: string): ImportResult {
     }
 
     // The army's root detachment (primary / allied) first, as the canvas expects
-    const rootName = kind === 'allied' ? ALLIED_DETACHMENT : FACTION_BY_ID[faction].primaryDetachment;
+    const rootName =
+      kind === 'allied' ? ALLIED_DETACHMENT : kind === 'lordOfWar' ? chart.detachments[0].name : FACTION_BY_ID[faction].primaryDetachment;
     force.detachments.sort((a, b) => Number(b.def.name === rootName) - Number(a.def.name === rootName));
 
     // Prime units first, so prime positions go to the units that are Prime

@@ -58,6 +58,12 @@ export interface UnitEntry {
   alternateLinks?: Array<{ entryId: string; category: string; categoryIds?: string[] }>;
   /** Categories the unit's root link gives it (swapped for an alternate link's in unitVariant) */
   linkCategoryIds?: string[];
+  /** Hidden in BSData unless modifiers show it */
+  hidden?: boolean;
+  /** Its (and its root link's) hidden modifiers — e.g. Sevatar is hidden when the roster is Loyalist */
+  visibility?: RuleModifier[];
+  /** At most this many in the whole roster (unique characters: 1) */
+  rosterMax?: number;
 }
 
 export interface SlotDef {
@@ -79,6 +85,8 @@ export interface DetachmentDef {
   sources?: string[];
   /** What it uses of its chart's detachment limits, by cost type id — see rules/detachmentLimits.ts */
   costs?: Record<string, number>;
+  /** How many the roster may contain, raised by modifiers (Knight Additional detachments) */
+  rosterMax?: { max: number; modifiers: RuleModifier[] };
 }
 
 export interface PrimeBenefit {
@@ -122,7 +130,8 @@ export interface PlacedDetachment {
   bonusSlots?: BonusSlot[];
 }
 
-export type ForceKind = 'primary' | 'allied';
+/** primary army, an allied army, or a Lord of War Detachment (its own root force in a .ros) */
+export type ForceKind = 'primary' | 'allied' | 'lordOfWar';
 
 /**
  * One army within the roster — mirrors a root <force> in a .ros file: a

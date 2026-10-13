@@ -1,0 +1,635 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<roster xmlns="http://www.battlescribe.net/schema/rosterSchema" id="91113fd8-9d3d-41eb-bb98-d22713619bc4" name="XIV — Death Guard" battleScribeVersion="2.03" gameSystemId="sys-9fe4-1dc3-b7c2-73cf" gameSystemName="Horus Heresy 3rd Edition" gameSystemRevision="55">
+  <costs>
+    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="1505"/>
+  </costs>
+  <costLimits>
+    <costLimit name="Point(s)" typeId="9893-c379-920b-8982" value="3000"/>
+  </costLimits>
+  <forces>
+    <force id="0bd3c430-1c56-4058-ac11-edf034d8e58c" name="Crusade Force Organization Chart" entryId="8562-592c-8d4b-a1f0" catalogueId="be98-aa9d-64ef-f62c" catalogueName="Death Guard" catalogueRevision="9">
+      <selections>
+        <selection id="f0c36f1f-ab81-41f4-8012-897a8faf22dc" name="Allegiance" entryId="f775-2f81-bd18-2777" number="1" type="upgrade" from="entry">
+          <selections>
+            <selection id="276c1da1-8471-41ea-9016-977fdcb41677" name="Loyalist" entryId="b7d2-7697-3dc2-210c::e1e1-a344-d3e2-0b91" entryGroupId="b7d2-7697-3dc2-210c::9fa8-cbae-ef5e-4b7c" number="1" type="upgrade" from="group">
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+              </costs>
+            </selection>
+          </selections>
+          <categories>
+            <category id="37650cb9-2f4d-4166-9cf3-cf090d2d4cea" name="Allegiance" entryId="c408-52f1-b632-4c82" primary="true"/>
+          </categories>
+          <costs>
+            <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+          </costs>
+        </selection>
+        <selection id="71acbcf1-23d5-4a4a-bb62-7792400813c7" name="Rite of War" entryId="7067-6f8b-8fb6-2938::39cc-48a4-7cfe-44de" number="1" type="upgrade" from="entry">
+          <selections>
+            <selection id="5fca510e-18cd-4b18-b8d8-47bc6142d7ce" name="Legiones Astartes Death Guard" entryId="7067-6f8b-8fb6-2938::de78-b703-04ee-331e::6cec-3a8b-3f33-7da7" entryGroupId="7067-6f8b-8fb6-2938::de78-b703-04ee-331e::1665-1055-c6b4-1f91" number="1" type="upgrade" from="group">
+              <selections>
+                <selection id="5710139c-5344-4330-863a-6c2bc905ff85" name="Legion Tactica" entryId="7067-6f8b-8fb6-2938::de78-b703-04ee-331e::2c39-d31a-4833-c182" number="1" type="upgrade" from="entry">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="b88ec600-33dd-443b-b122-17d4cd149ac5" name="Gambit" entryId="7067-6f8b-8fb6-2938::de78-b703-04ee-331e::a031-64f8-660e-a131" number="1" type="upgrade" from="entry">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="d179ac7c-8447-4d66-aa7c-3bf92690e4ab" name="Advanced Reaction" entryId="7067-6f8b-8fb6-2938::de78-b703-04ee-331e::64f6-01f1-1c07-9fff" number="1" type="upgrade" from="entry">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+              </selections>
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+              </costs>
+            </selection>
+          </selections>
+          <categories>
+            <category id="7f0c60e8-ee1f-4a15-b5b0-f694d7c61d19" name="Army Configuration" entryId="abfa-86ab-1726-077a" primary="true"/>
+          </categories>
+          <costs>
+            <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+          </costs>
+        </selection>
+      </selections>
+      <forces>
+        <force id="c50a6625-0e9e-4485-bf51-f9e6757346f5" name="Crusade Primary Detachment" entryId="8f12-c30a-6c20-6296" catalogueId="be98-aa9d-64ef-f62c" catalogueName="Death Guard" catalogueRevision="9">
+          <selections>
+            <selection id="11ff9e3b-87a6-4545-8722-45d45951aaa7" name="Praetor in Terminator Armour" entryId="e5b5-5476-3c88-141b::23ee-bc64-aea6-5272" number="1" type="unit" from="entry">
+              <selections>
+                <selection id="2c0384f8-eaa2-46ba-b77b-5d2a132686e3" name="Cataphractii Praetor" entryId="e5b5-5476-3c88-141b::925e-21ea-5ece-c5ce" number="1" type="model" from="entry">
+                  <selections>
+                    <selection id="42f20188-6984-413d-b238-4f1d8e592718" name="Cataphractii" entryId="e5b5-5476-3c88-141b::4c90-f075-aea1-340e::38a8-2683-c590-3c4b" entryGroupId="e5b5-5476-3c88-141b::4c90-f075-aea1-340e::170b-d9c0-e9d6-b314" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="eec60461-d93a-4c97-be81-351342469b8d" name="Paragon blade" entryId="e5b5-5476-3c88-141b::de2e-168d-fb17-f498::1881-a2b5-fc58-4270" entryGroupId="e5b5-5476-3c88-141b::6b11-ddfd-7cac-077b" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="ce2a5abe-53c3-4333-a3a4-baa81bbe9f64" name="Combi-bolter" entryId="e5b5-5476-3c88-141b::9268-f724-d807-d41f::042d-9e60-db9e-c147" entryGroupId="e5b5-5476-3c88-141b::e4e4-c969-42be-023f" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="0f02216e-651d-401f-92c6-c2842ff85d59" name="One Apex Detachment" entryId="e5b5-5476-3c88-141b::be9d-d140-21d1-0f59::0889-888b-e3fe-1d5b" entryGroupId="e5b5-5476-3c88-141b::be9d-d140-21d1-0f59::969e-8b5b-1410-cfc6" number="1" type="upgrade" from="group">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+              </selections>
+              <categories>
+                <category id="7c1e7524-f85b-4f15-9250-024c6a7f6e24" name="High Command" entryId="d9a6-9b5f-b18a-4d63" primary="true"/>
+              </categories>
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="145"/>
+              </costs>
+            </selection>
+            <selection id="b40d450d-f54c-4317-bc91-5f18a6396665" name="Herald" entryId="93d9-93b5-0c39-0fde::388f-1220-df0b-fcc6" number="1" type="unit" from="entry">
+              <selections>
+                <selection id="d958748c-cb8f-44db-a78f-6aec3d381dac" name="Herald" entryId="93d9-93b5-0c39-0fde::5a0a-4cf9-07bb-cf1c" number="1" type="model" from="entry">
+                  <selections>
+                    <selection id="e92c4e11-dd77-4471-b003-664094c1f03a" name="Frag grenades" entryId="93d9-93b5-0c39-0fde::d082-01a0-f738-4daa::60e4-ca33-2e68-9afc" number="1" type="upgrade" from="entry">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="5bdb463d-4053-42a5-b0a5-452a1c1e583b" name="Krak grenades" entryId="93d9-93b5-0c39-0fde::bb55-71a7-08df-dc47::fa20-82bc-c7de-9e97" number="1" type="upgrade" from="entry">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="d7726b2c-9d69-486a-8b44-40dbdc007018" name="Icon of Allegiance" entryId="93d9-93b5-0c39-0fde::c935-6837-4d05-e7f6::b808-6eaa-6396-6ce3" number="1" type="upgrade" from="entry">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="a49f60aa-6682-4fea-8d6d-5e51c253cc88" name="Bolt pistol" entryId="93d9-93b5-0c39-0fde::e731-8ddf-c7a3-73e7::2942-f783-d627-33c5" number="1" type="upgrade" from="entry">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="5bdb4f6f-7bc1-4b1a-965b-6a86f38f0517" name="Prime Unit" entryId="93d9-93b5-0c39-0fde::7d4d-86a8-6b15-07fe::3fa2-78b1-637f-7fb2" number="1" type="upgrade" from="entry">
+                  <selections>
+                    <selection id="acd7d1e9-ce1f-4a4a-97d7-56e260352a5e" name="Paragon of Battle" entryId="93d9-93b5-0c39-0fde::d7f7-f676-e0e9-a950::c115-438b-4395-1eb7::20cb-4eec-0844-8a97" entryGroupId="93d9-93b5-0c39-0fde::d7f7-f676-e0e9-a950::c115-438b-4395-1eb7::93f7-d7db-d7f0-2146" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <categories>
+                    <category id="56c2ea86-6d86-4226-8f6d-57ff8dfedf63" name="Prime Command" entryId="c85c-2963-658f-1bb9" primary="false"/>
+                  </categories>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+              </selections>
+              <categories>
+                <category id="8aa93631-b791-49f0-9ef5-c9bd3a807570" name="Command" entryId="6dbf-654a-f06f-2d69" primary="true"/>
+              </categories>
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="100"/>
+              </costs>
+            </selection>
+            <selection id="791bc12b-59c5-43f1-bee4-b084f528ec9f" name="Siege Breaker" entryId="bd9b-8e97-b137-105d::8128-2ba6-b677-eb81" number="1" type="unit" from="entry">
+              <selections>
+                <selection id="984c3651-b00a-4925-8629-42ef4ee0947f" name="Siege Breaker" entryId="bd9b-8e97-b137-105d::6997-2688-bee2-f24b" number="1" type="model" from="entry">
+                  <selections>
+                    <selection id="e90d7439-81ab-4695-92f9-f1c4228c7b84" name="Frag grenades" entryId="bd9b-8e97-b137-105d::445f-bd88-2761-26a1::60e4-ca33-2e68-9afc" number="1" type="upgrade" from="entry">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="d1d55a42-eb0c-4067-abc8-0e9fd23f4055" name="Krak grenades" entryId="bd9b-8e97-b137-105d::68fb-2a9a-eba4-4a09::fa20-82bc-c7de-9e97" number="1" type="upgrade" from="entry">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="34974167-cc7e-484b-97cb-7250394f1c8b" name="Phosphex bombs" entryId="bd9b-8e97-b137-105d::4c05-adc6-93c2-d4ad::5ad2-c3b4-f5eb-5b10" number="1" type="upgrade" from="entry">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="1ba8064e-3f4a-4e33-bb84-0eaa3c1c60e8" name="Augury scanner" entryId="bd9b-8e97-b137-105d::ac3b-07f4-cf33-9a78::fede-99f5-4c76-4659" number="1" type="upgrade" from="entry">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="39d1ad81-be32-4811-ab00-91d6dc7265f1" name="Cognis-signum" entryId="bd9b-8e97-b137-105d::d2ef-9042-b306-0cf3::268f-5e98-166a-6f01" number="1" type="upgrade" from="entry">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="2c94b2ba-67dc-49c5-a66b-116b59097d0f" name="Bolt pistol" entryId="bd9b-8e97-b137-105d::20b3-3f38-2825-efa7::2942-f783-d627-33c5" entryGroupId="bd9b-8e97-b137-105d::936d-ae02-5b4c-fb2b" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="bb680f88-3fc6-4523-827b-242e4e70cc63" name="Thunder hammer" entryId="bd9b-8e97-b137-105d::0d92-b5f0-b320-24d6::4338-dbe9-1e94-7e6d" entryGroupId="bd9b-8e97-b137-105d::a7a1-50ed-edf2-8765" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+              </selections>
+              <categories>
+                <category id="63f39a7d-3d48-451f-834a-e1b8aa38c2e0" name="Command" entryId="6dbf-654a-f06f-2d69" primary="true"/>
+              </categories>
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="115"/>
+              </costs>
+            </selection>
+            <selection id="a6a329c9-9b9c-4b0c-9b5c-5eabc92f0e78" name="Herald In Terminator Armour" entryId="6058-6f09-9050-f72a::f0ed-1a89-45ad-8530" number="1" type="unit" from="entry">
+              <selections>
+                <selection id="4327dfb4-f8e0-466c-b007-109d914e7cc1" name="Cataphractii Herald" entryId="6058-6f09-9050-f72a::7a99-e467-4c2b-955f" number="1" type="model" from="entry">
+                  <selections>
+                    <selection id="e0e1d439-062d-4f27-a06a-dd39032bcceb" name="Icon of Allegiance" entryId="6058-6f09-9050-f72a::9030-b997-4b2e-9045::b808-6eaa-6396-6ce3" number="1" type="upgrade" from="entry">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="095a80d8-26b6-428c-acd8-2d71f5e59b05" name="Cataphractii" entryId="6058-6f09-9050-f72a::6805-d597-d47b-d146::38a8-2683-c590-3c4b" entryGroupId="6058-6f09-9050-f72a::6805-d597-d47b-d146::170b-d9c0-e9d6-b314" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="804ca89d-5c47-4411-98dd-7d2c05310c09" name="Lightning claw" entryId="6058-6f09-9050-f72a::1c5f-a8f7-4efb-bf3f::1b85-899f-5499-4534::cbf0-9b29-9a16-28b2" entryGroupId="6058-6f09-9050-f72a::1c5f-a8f7-4efb-bf3f::0523-46e6-6df1-a4c0" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+              </selections>
+              <categories>
+                <category id="a1a0fb79-80cd-4131-9f9b-32a47103cc65" name="Command" entryId="6dbf-654a-f06f-2d69" primary="true"/>
+              </categories>
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="130"/>
+              </costs>
+            </selection>
+            <selection id="89c79bea-b2d3-48fe-a50f-5c226172df4b" name="Tactical Squad" entryId="e7dd-3f2d-ab65-9c65::7b69-a372-a803-9c6f" number="1" type="unit" from="entry">
+              <selections>
+                <selection id="081aa45f-1ce0-4ef4-bc03-f91660ba14e6" name="Legionary" entryId="e7dd-3f2d-ab65-9c65::7ea7-4722-7936-df4a" number="9" type="model" from="entry">
+                  <selections>
+                    <selection id="6767a689-f1fc-4b49-8e1d-fa2181253694" name="Bolt pistol" entryId="e7dd-3f2d-ab65-9c65::4b28-2db5-aa67-e1fa::2942-f783-d627-33c5" entryGroupId="e7dd-3f2d-ab65-9c65::4d5a-3df9-a1ec-889d" number="9" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="73bb7fc5-3852-44fc-83df-b7b9e9b19906" name="Bolter" entryId="e7dd-3f2d-ab65-9c65::a8b1-2d8a-04b4-6351::d3f9-b9e6-3ea5-cc8e" entryGroupId="e7dd-3f2d-ab65-9c65::2b57-f7bb-a6a3-3251" number="9" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="90"/>
+                  </costs>
+                </selection>
+                <selection id="d9e1a877-d495-4ddf-a779-19093d829554" name="Sergeant" entryId="e7dd-3f2d-ab65-9c65::ceed-0f03-41ba-081a" number="1" type="model" from="entry">
+                  <selections>
+                    <selection id="2d4874fb-506a-4ba1-8531-5acae572756f" name="Bolter" entryId="e7dd-3f2d-ab65-9c65::7955-eaf8-6193-7d93::d3f9-b9e6-3ea5-cc8e" entryGroupId="e7dd-3f2d-ab65-9c65::5e4b-3fd5-dfde-e23c" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="2a6259fe-304d-43cb-a418-d1c186d997db" name="Bolt pistol" entryId="e7dd-3f2d-ab65-9c65::d6ef-e031-d18f-df93::2942-f783-d627-33c5" entryGroupId="e7dd-3f2d-ab65-9c65::15a8-78ec-6f96-3f4b" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="4370d914-045b-43c3-9a68-21d1c32f6f6c" name="Krak grenades" entryId="e7dd-3f2d-ab65-9c65::3afd-76fd-252b-a8e0::fa20-82bc-c7de-9e97" number="1" type="upgrade" from="entry">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="e71cc431-13bb-4283-a057-bb253e09e505" name="Frag grenades" entryId="e7dd-3f2d-ab65-9c65::6ed9-6e42-b794-d419::60e4-ca33-2e68-9afc" number="1" type="upgrade" from="entry">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="6285af6b-e95a-4d6b-bd7e-bed6a85a9181" name="Prime Unit" entryId="e7dd-3f2d-ab65-9c65::86a4-05f2-7f82-f7e6::3fa2-78b1-637f-7fb2" number="1" type="upgrade" from="entry">
+                  <selections>
+                    <selection id="558253ed-2662-4df1-b080-969ddaa07729" name="Combat Veterans" entryId="e7dd-3f2d-ab65-9c65::a98f-89df-6c9f-1f17::c115-438b-4395-1eb7::8cf8-9be5-91d6-c96d" entryGroupId="e7dd-3f2d-ab65-9c65::a98f-89df-6c9f-1f17::c115-438b-4395-1eb7::93f7-d7db-d7f0-2146" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <categories>
+                    <category id="ce33ce02-4992-4c95-a1d9-4691692cd09f" name="Prime Troops" entryId="c3f9-a7f3-984b-3fda" primary="false"/>
+                  </categories>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+              </selections>
+              <categories>
+                <category id="a7faf15e-b97e-4a72-be43-637938a5aa07" name="Troops" entryId="88e6-d373-4152-0dd8" primary="true"/>
+              </categories>
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="10"/>
+              </costs>
+            </selection>
+            <selection id="1512ae5b-eb28-4db8-adbc-bdcb50a287f1" name="Tactical Squad" entryId="e7dd-3f2d-ab65-9c65::7b69-a372-a803-9c6f" number="1" type="unit" from="entry">
+              <selections>
+                <selection id="2e7e653c-0f81-4df9-8410-84800f9abcc3" name="Legionary" entryId="e7dd-3f2d-ab65-9c65::7ea7-4722-7936-df4a" number="9" type="model" from="entry">
+                  <selections>
+                    <selection id="e2de6db2-5414-4fa5-85a5-e49ba4190c28" name="Bolt pistol" entryId="e7dd-3f2d-ab65-9c65::4b28-2db5-aa67-e1fa::2942-f783-d627-33c5" entryGroupId="e7dd-3f2d-ab65-9c65::4d5a-3df9-a1ec-889d" number="9" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="64a6676d-f6f5-4b8a-86b4-3099d496847a" name="Bolter" entryId="e7dd-3f2d-ab65-9c65::a8b1-2d8a-04b4-6351::d3f9-b9e6-3ea5-cc8e" entryGroupId="e7dd-3f2d-ab65-9c65::2b57-f7bb-a6a3-3251" number="9" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="90"/>
+                  </costs>
+                </selection>
+                <selection id="187103ff-aecc-4ee2-8bac-94207142df79" name="Sergeant" entryId="e7dd-3f2d-ab65-9c65::ceed-0f03-41ba-081a" number="1" type="model" from="entry">
+                  <selections>
+                    <selection id="618f467d-8c35-4732-9a3a-c6782fdc2dfe" name="Bolter" entryId="e7dd-3f2d-ab65-9c65::7955-eaf8-6193-7d93::d3f9-b9e6-3ea5-cc8e" entryGroupId="e7dd-3f2d-ab65-9c65::5e4b-3fd5-dfde-e23c" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="4b62e65c-b12c-4634-9fc2-185fead243f3" name="Bolt pistol" entryId="e7dd-3f2d-ab65-9c65::d6ef-e031-d18f-df93::2942-f783-d627-33c5" entryGroupId="e7dd-3f2d-ab65-9c65::15a8-78ec-6f96-3f4b" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="a4e14067-66a0-49d3-a398-df8ead52c062" name="Krak grenades" entryId="e7dd-3f2d-ab65-9c65::3afd-76fd-252b-a8e0::fa20-82bc-c7de-9e97" number="1" type="upgrade" from="entry">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="bb794c7c-baee-4efd-86b3-ad1dc6101674" name="Frag grenades" entryId="e7dd-3f2d-ab65-9c65::6ed9-6e42-b794-d419::60e4-ca33-2e68-9afc" number="1" type="upgrade" from="entry">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+              </selections>
+              <categories>
+                <category id="a3b67d76-a58f-4e98-aff1-0e390f116e7a" name="Troops" entryId="88e6-d373-4152-0dd8" primary="true"/>
+              </categories>
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="10"/>
+              </costs>
+            </selection>
+            <selection id="7225f553-100d-44a6-94f0-ba1e29b94b0d" name="Tactical Squad" entryId="e7dd-3f2d-ab65-9c65::7b69-a372-a803-9c6f" number="1" type="unit" from="entry">
+              <selections>
+                <selection id="16ca620a-b507-4066-b4fe-b7c4122297fd" name="Legionary" entryId="e7dd-3f2d-ab65-9c65::7ea7-4722-7936-df4a" number="9" type="model" from="entry">
+                  <selections>
+                    <selection id="9bc08c65-7306-4e86-acc3-e6af350faafe" name="Bolt pistol" entryId="e7dd-3f2d-ab65-9c65::4b28-2db5-aa67-e1fa::2942-f783-d627-33c5" entryGroupId="e7dd-3f2d-ab65-9c65::4d5a-3df9-a1ec-889d" number="9" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="4ecf1d3e-57fe-48a9-bdb6-4850031e4422" name="Bolter" entryId="e7dd-3f2d-ab65-9c65::a8b1-2d8a-04b4-6351::d3f9-b9e6-3ea5-cc8e" entryGroupId="e7dd-3f2d-ab65-9c65::2b57-f7bb-a6a3-3251" number="9" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="90"/>
+                  </costs>
+                </selection>
+                <selection id="a6998d0d-8539-41a1-bf72-d9cd43af6ca3" name="Sergeant" entryId="e7dd-3f2d-ab65-9c65::ceed-0f03-41ba-081a" number="1" type="model" from="entry">
+                  <selections>
+                    <selection id="e346d7ac-ea8b-40c5-87b3-9e43e4e40475" name="Bolter" entryId="e7dd-3f2d-ab65-9c65::7955-eaf8-6193-7d93::d3f9-b9e6-3ea5-cc8e" entryGroupId="e7dd-3f2d-ab65-9c65::5e4b-3fd5-dfde-e23c" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="f9b8cb8e-9eec-490d-b396-7bb7024af7ea" name="Bolt pistol" entryId="e7dd-3f2d-ab65-9c65::d6ef-e031-d18f-df93::2942-f783-d627-33c5" entryGroupId="e7dd-3f2d-ab65-9c65::15a8-78ec-6f96-3f4b" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="1edbc8a2-9035-4d74-a14d-4c9dcf3ff1a0" name="Krak grenades" entryId="e7dd-3f2d-ab65-9c65::3afd-76fd-252b-a8e0::fa20-82bc-c7de-9e97" number="1" type="upgrade" from="entry">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="098ecb55-3d0b-4c9b-9a5a-92f2a5e266a9" name="Frag grenades" entryId="e7dd-3f2d-ab65-9c65::6ed9-6e42-b794-d419::60e4-ca33-2e68-9afc" number="1" type="upgrade" from="entry">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+              </selections>
+              <categories>
+                <category id="33369670-5762-4c50-8acb-51045dfd529d" name="Troops" entryId="88e6-d373-4152-0dd8" primary="true"/>
+              </categories>
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="10"/>
+              </costs>
+            </selection>
+          </selections>
+        </force>
+        <force id="32eeeee8-fadb-4f78-ad93-9335e28c2513" name="Apex - Combat Retinue" entryId="7203-426e-7a82-0b01" catalogueId="be98-aa9d-64ef-f62c" catalogueName="Death Guard" catalogueRevision="9">
+          <selections>
+            <selection id="f4176b9a-1637-4e8c-a569-f8b32c648277" name="Cataphractii Terminator Command Squad" entryId="c795-6de9-030e-e480::b703-f7ab-dac5-0ae4" number="1" type="unit" from="entry">
+              <selections>
+                <selection id="4c195028-1504-4345-864b-1caefe72899b" name="Cataphractii Chosen" entryId="c795-6de9-030e-e480::c9b7-8b3e-ccbb-35d8" number="2" type="model" from="entry">
+                  <selections>
+                    <selection id="234e15d7-bccd-411e-af30-339363fe29f4" name="Pair of lightning claws" entryId="c795-6de9-030e-e480::af0b-ab84-12ec-6f97::6754-24dd-5be0-26ff" entryGroupId="c795-6de9-030e-e480::6210-98ff-4eb8-9f05" number="2" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="80"/>
+                  </costs>
+                </selection>
+                <selection id="aab0ebc4-20db-45cc-856c-34194b8cdcae" name="Cataphractii Chosen Champion" entryId="c795-6de9-030e-e480::1d44-751a-89a8-b979" number="1" type="model" from="entry">
+                  <selections>
+                    <selection id="e8ef77b8-b901-4c00-82b0-9798b78411ec" name="Pair of lightning claws" entryId="c795-6de9-030e-e480::333b-8d64-2373-6aa3::6754-24dd-5be0-26ff" entryGroupId="c795-6de9-030e-e480::61a9-22f2-c6d7-10f2" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="b472b275-915e-4f92-8cd4-76f5c7842c75" name="Prime Unit" entryId="c795-6de9-030e-e480::7be1-0239-00b8-c84b::3fa2-78b1-637f-7fb2" number="1" type="upgrade" from="entry">
+                  <selections>
+                    <selection id="0dca9cb4-16d2-4d63-9a49-70ddcb4df278" name="Combat Veterans" entryId="c795-6de9-030e-e480::2b49-57e4-2175-f6f5::c115-438b-4395-1eb7::8cf8-9be5-91d6-c96d" entryGroupId="c795-6de9-030e-e480::2b49-57e4-2175-f6f5::c115-438b-4395-1eb7::93f7-d7db-d7f0-2146" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <categories>
+                    <category id="10351172-28c9-4da4-ba75-d5166e16fd89" name="Prime Retinue" entryId="c66b-ef39-b20f-725b" primary="false"/>
+                  </categories>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+              </selections>
+              <categories>
+                <category id="dcefbb3e-a6d9-44ad-829d-a6f895d640b3" name="Retinue" entryId="a38e-50ff-310f-f19e" primary="true"/>
+              </categories>
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="60"/>
+              </costs>
+            </selection>
+            <selection id="c3550e17-928e-4dca-afb6-91962b5b664f" name="Centurion Command Squad" entryId="7966-ca20-b5f1-218d::4985-94a1-4448-a9ff" number="1" type="unit" from="entry">
+              <selections>
+                <selection id="a0298a88-59c3-4af7-acc9-a2b05d0bdaf0" name="Veteran Champion" entryId="7966-ca20-b5f1-218d::3dc3-9ea3-a9de-6f25" number="1" type="model" from="entry">
+                  <selections>
+                    <selection id="b519349a-ceeb-43b4-bdb0-5018422a6c2f" name="Bolter" entryId="7966-ca20-b5f1-218d::c631-9211-8f06-4a9a::d3f9-b9e6-3ea5-cc8e" entryGroupId="7966-ca20-b5f1-218d::3480-5657-681e-dab3" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="e38535a8-6dc3-45fd-98a1-c564cd8295f7" name="Bolt pistol" entryId="7966-ca20-b5f1-218d::1dfd-4e3c-7feb-af5e::2942-f783-d627-33c5" entryGroupId="7966-ca20-b5f1-218d::7d3b-d985-b935-e5cd" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="3fd78d5c-cfcf-4f77-9697-eb3df5c779d6" name="Veteran" entryId="7966-ca20-b5f1-218d::d6b9-4937-3679-0529" number="4" type="model" from="entry">
+                  <selections>
+                    <selection id="a6f6dd84-b9bf-48e4-9f02-6f7f697df60b" name="Bolter" entryId="7966-ca20-b5f1-218d::eeee-77d3-3434-11fc::d3f9-b9e6-3ea5-cc8e" entryGroupId="7966-ca20-b5f1-218d::12c3-1348-b11e-45a7" number="4" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                    <selection id="ff5cc663-0ee5-4484-8078-fab6b9e1ce18" name="Bolt pistol" entryId="7966-ca20-b5f1-218d::3af5-c7ec-4f5b-2623::2942-f783-d627-33c5" entryGroupId="7966-ca20-b5f1-218d::2165-d92b-2a75-975c" number="4" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="60"/>
+                  </costs>
+                </selection>
+                <selection id="b6f643d0-586a-43fa-8849-2109d9c8fde7" name="Frag grenades" entryId="7966-ca20-b5f1-218d::525b-ca44-66e6-f345::60e4-ca33-2e68-9afc" number="1" type="upgrade" from="entry">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="8c6fcc8f-9de9-4512-97b7-94da8985545a" name="Krak grenades" entryId="7966-ca20-b5f1-218d::cd66-6394-4194-671b::fa20-82bc-c7de-9e97" number="1" type="upgrade" from="entry">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+              </selections>
+              <categories>
+                <category id="5c60995e-a600-4e14-aeb8-7610fb91cad9" name="Retinue" entryId="a38e-50ff-310f-f19e" primary="true"/>
+              </categories>
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="25"/>
+              </costs>
+            </selection>
+          </selections>
+        </force>
+        <force id="e9892d38-fab3-40b9-be5a-5684b5638387" name="Auxiliary - Shock Assault" entryId="c9a5-3069-920b-32f1" catalogueId="be98-aa9d-64ef-f62c" catalogueName="Death Guard" catalogueRevision="9">
+          <selections>
+            <selection id="d9206e4f-e32e-4758-bb4e-6b90447bc561" name="Cataphractii Terminator Squad" entryId="bcb4-ccd6-7eb6-0afb::e9a1-490f-8679-fc4e" number="1" type="unit" from="entry">
+              <selections>
+                <selection id="f7d22c1c-9ed7-4dee-9a8e-fb948cd67774" name="Cataphractii Terminator" entryId="bcb4-ccd6-7eb6-0afb::f106-8e40-a38f-427c" number="4" type="model" from="entry">
+                  <selections>
+                    <selection id="6b33c900-c075-42a6-a1d3-4282269df9f0" name="Pair of lightning claws" entryId="bcb4-ccd6-7eb6-0afb::46ff-7c3c-4404-a056::6754-24dd-5be0-26ff" entryGroupId="bcb4-ccd6-7eb6-0afb::adb2-5d4e-dbb0-d36b" number="4" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="120"/>
+                  </costs>
+                </selection>
+                <selection id="26f9c300-5bc2-4d3a-9084-e9d4034cb22b" name="Cataphractii Terminator Sergeant" entryId="bcb4-ccd6-7eb6-0afb::cf56-d50e-63b3-37cd" number="1" type="model" from="entry">
+                  <selections>
+                    <selection id="0f5cc361-827a-4bb1-a011-da54ed7c0838" name="Pair of lightning claws" entryId="bcb4-ccd6-7eb6-0afb::616b-d3f5-6dd5-8bc1::6754-24dd-5be0-26ff" entryGroupId="bcb4-ccd6-7eb6-0afb::0018-1fcb-fb89-6eaf" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+              </selections>
+              <categories>
+                <category id="b6fa6a64-932e-4e6f-8f2a-45e100a3c84a" name="Heavy Assault" entryId="3235-bd79-e9b1-60fa" primary="true"/>
+              </categories>
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="30"/>
+              </costs>
+            </selection>
+            <selection id="eddfdced-8ec3-483c-9bc6-fdb6edf75c11" name="Cataphractii Terminator Squad" entryId="bcb4-ccd6-7eb6-0afb::e9a1-490f-8679-fc4e" number="1" type="unit" from="entry">
+              <selections>
+                <selection id="5935abe6-ceec-4fd2-9757-42a656a43657" name="Cataphractii Terminator" entryId="bcb4-ccd6-7eb6-0afb::f106-8e40-a38f-427c" number="4" type="model" from="entry">
+                  <selections>
+                    <selection id="53345ef6-fedf-40d7-8959-09a9b9a55f3c" name="Pair of lightning claws" entryId="bcb4-ccd6-7eb6-0afb::46ff-7c3c-4404-a056::6754-24dd-5be0-26ff" entryGroupId="bcb4-ccd6-7eb6-0afb::adb2-5d4e-dbb0-d36b" number="4" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="120"/>
+                  </costs>
+                </selection>
+                <selection id="b47110cf-1284-4790-866f-130a2b41658c" name="Cataphractii Terminator Sergeant" entryId="bcb4-ccd6-7eb6-0afb::cf56-d50e-63b3-37cd" number="1" type="model" from="entry">
+                  <selections>
+                    <selection id="71fcebab-f520-4bbf-9cd0-af5f079d56b7" name="Pair of lightning claws" entryId="bcb4-ccd6-7eb6-0afb::616b-d3f5-6dd5-8bc1::6754-24dd-5be0-26ff" entryGroupId="bcb4-ccd6-7eb6-0afb::0018-1fcb-fb89-6eaf" number="1" type="upgrade" from="group">
+                      <costs>
+                        <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                      </costs>
+                    </selection>
+                  </selections>
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+              </selections>
+              <categories>
+                <category id="9167ae79-87b5-44cb-8fa4-135b9289b19b" name="Heavy Assault" entryId="3235-bd79-e9b1-60fa" primary="true"/>
+              </categories>
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="30"/>
+              </costs>
+            </selection>
+          </selections>
+        </force>
+        <force id="51225a77-f1ad-49f2-ad7e-3e35d7aa35f9" name="Auxiliary - Heavy Support" entryId="bd1f-82a0-abd4-cd56" catalogueId="be98-aa9d-64ef-f62c" catalogueName="Death Guard" catalogueRevision="9">
+          <selections>
+            <selection id="c1450808-8d8c-4337-881e-04a14eba0726" name="Deredeo Dreadnought" entryId="ed8e-f983-51e3-15ce::10ad-8abc-c6ef-97ad" number="1" type="unit" from="entry">
+              <selections>
+                <selection id="28cfa3f9-066f-403c-8f54-72135ad38c87" name="Deredeo Dreadnought" entryId="ed8e-f983-51e3-15ce::2a07-73f2-b745-9848" number="1" type="model" from="entry">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="9dd2a93c-8fc0-4972-967a-030020c57053" name="Anvillus autocannon battery" entryId="ed8e-f983-51e3-15ce::5f77-6850-58d7-65c2::648f-67eb-0d0a-ba47" entryGroupId="ed8e-f983-51e3-15ce::c6c1-d3eb-7bdf-0e58" number="1" type="upgrade" from="group">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="cffab361-7fc4-483d-b55b-6c1886c02887" name="Twin heavy bolter" entryId="ed8e-f983-51e3-15ce::e531-6f2b-7e6a-533e::e0bc-e3e1-54e7-bd75" entryGroupId="ed8e-f983-51e3-15ce::a569-a6ad-9998-900b" number="1" type="upgrade" from="group">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+                <selection id="3499421d-6f99-4bf8-bf76-3f9e2f29ecd4" name="Aiolos missile launcher" entryId="ed8e-f983-51e3-15ce::d344-da8e-a63b-f5e0::8ae6-6cc4-f663-18de" entryGroupId="ed8e-f983-51e3-15ce::2eee-8729-daf7-60a6" number="1" type="upgrade" from="group">
+                  <costs>
+                    <cost name="Point(s)" typeId="9893-c379-920b-8982" value="0"/>
+                  </costs>
+                </selection>
+              </selections>
+              <categories>
+                <category id="fee2e514-bf7b-4824-ba87-53ccfd1d2312" name="War-engine" entryId="2499-7239-685f-8465" primary="true"/>
+              </categories>
+              <costs>
+                <cost name="Point(s)" typeId="9893-c379-920b-8982" value="190"/>
+              </costs>
+            </selection>
+          </selections>
+        </force>
+        <force id="27bc76b7-7f72-4ed7-b495-e211a55c2d93" name="Auxiliary - First Strike" entryId="c444-8242-d3fc-b5b0" catalogueId="be98-aa9d-64ef-f62c" catalogueName="Death Guard" catalogueRevision="9">
+          <selections>
+          </selections>
+        </force>
+      </forces>
+    </force>
+  </forces>
+</roster>

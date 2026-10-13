@@ -234,6 +234,12 @@ export interface UnitEntry {
   alternateLinks?: Array<{ entryId: string; category: string; categoryIds?: string[] }>;
   /** Categories the unit's root link gives it (replaced when it's fielded through an alternate link) */
   linkCategoryIds?: string[];
+  /** Hidden in BSData unless modifiers show it */
+  hidden?: boolean;
+  /** Its (and its root link's) hidden modifiers — e.g. Sevatar is hidden when the roster is Loyalist */
+  visibility?: RuleModifier[];
+  /** At most this many in the whole roster (unique characters: 1) */
+  rosterMax?: number;
   /**
    * High Command units carry a choice of detachment they unlock ("One Apex /
    * One Auxiliary Detachment"); paths are prefix::choiceId, group prefix::groupId.
@@ -350,12 +356,14 @@ export interface DetachmentSlot {
 export interface Detachment {
   name: string;
   entryId: string;
-  type: 'core' | 'auxiliary' | 'apex' | 'allied' | 'additional' | 'other';
+  type: 'core' | 'auxiliary' | 'apex' | 'allied' | 'additional' | 'lordOfWar' | 'other';
   slots: DetachmentSlot[];
   /** Faction keys whose primary catalogue can field this detachment (empty = all) */
   sources: string[];
   /** What it uses of its chart's detachment limits, by cost type id (e.g. 1 "Auxiliary Detachment(s)") */
   costs?: Record<string, number>;
+  /** How many the roster may contain, raised by modifiers (Knight Additional detachments: +1 per …) */
+  rosterMax?: { max: number; modifiers: RuleModifier[] };
 }
 
 /**
@@ -836,6 +844,10 @@ function unitFacts(unit: BsEntry, rootLink: BsEntry, models: ModelEntry[]): Reco
   add(unit.id, 1);
   add(rootLink.id, 1);
   for (const c of [...(unit.categoryLinks ?? []), ...(rootLink.categoryLinks ?? [])]) add(c.targetId, 1);
+  // Categories added unconditionally (a Siege Breaker's "Siege Breaker", which unlocks a Storm Battery)
+  for (const m of [...allModifiers(unit), ...allModifiers(rootLink)]) {
+    if (m.field === 'category' && m.type === 'add' && allConditions(m).length === 0) add(String(m.value), 1);
+  }
   const modelDefs = new Map(
     [...(unit.selectionEntries ?? []), ...(unit.selectionEntryGroups ?? []).flatMap((g) => g.selectionEntries ?? [])].map(
       (e) => [e.id, e]
@@ -1228,8 +1240,16 @@ function extractUnitsFromCatalogue(
     const choiceLink = (entry.entryLinks ?? []).find((l) => FORCE_ORG_CHOICE_GROUP_IDS.has(l.targetId ?? ''));
     const officerOfTheLine = officerOfTheLineFor(entry, ootlMap);
 
+    const visibility = hiddenModifiers([...allModifiers(entry), ...allModifiers(link.link)]);
+    const rosterMax = [...(entry.constraints ?? []), ...(link.link.constraints ?? [])]
+      .filter((c) => c.type === 'max' && c.field === 'selections' && c.scope === 'roster')
+      .map((c) => c.value)
+      .sort((a, b) => a - b)[0];
     units.push({
       name: displayName(entry.name, entry, link.link) ?? entry.name,
+      ...(entry.hidden || link.link.hidden ? { hidden: true } : {}),
+      ...(visibility.length > 0 ? { visibility } : {}),
+      ...(rosterMax !== undefined ? { rosterMax } : {}),
       entryId: link.linkId,
       path: join([link.linkId, entry.id]),
       role: normalizeRole(link.role),
@@ -1358,6 +1378,7 @@ function detachmentType(name: string): Detachment['type'] {
   if (/^Apex [-–] /.test(name)) return 'apex';
   if (/^Additional [-–] /.test(name)) return 'additional';
   if (name === 'Allied Detachment') return 'allied';
+  if (name === 'Lord of War Detachment') return 'lordOfWar';
   return 'other';
 }
 
@@ -1368,6 +1389,11 @@ function parseDetachment(fe: BsForceEntry, catalogueKeyById: Map<string, string>
   for (const c of fe.costs ?? []) {
     if (c.typeId !== POINTS_TYPE_ID && c.value > 0) costs[c.typeId] = c.value;
   }
+  // A roster-wide cap on this detachment, with the modifiers that raise it
+  const cap = (fe.constraints ?? []).find((c) => c.type === 'max' && c.field === 'forces' && c.scope === 'roster');
+  const rosterMax = cap
+    ? { max: cap.value, modifiers: allModifiers(fe).filter((m) => cap.id && m.field === cap.id).map(slimModifier) }
+    : undefined;
   return {
     name: fe.name,
     entryId: fe.id,
@@ -1375,6 +1401,7 @@ function parseDetachment(fe: BsForceEntry, catalogueKeyById: Map<string, string>
     slots,
     sources: extractFactionSources(fe, catalogueKeyById),
     ...(Object.keys(costs).length > 0 ? { costs } : {}),
+    ...(rosterMax ? { rosterMax } : {}),
   };
 }
 
@@ -1382,7 +1409,14 @@ function parseDetachment(fe: BsForceEntry, catalogueKeyById: Map<string, string>
 function extractLimits(fe: BsForceEntry, costTypeNames: Map<string, string>): DetachmentLimit[] {
   const modifiers = allModifiers(fe);
   return (fe.constraints ?? [])
-    .filter((c) => c.type === 'max' && c.scope === 'self' && costTypeNames.has(c.field) && c.field !== POINTS_TYPE_ID)
+    // Detachment counts (scope self) and the army's points share (Lord of War: a
+    // quarter of the points limit, scope roster)
+    .filter(
+      (c) =>
+        c.type === 'max' &&
+        costTypeNames.has(c.field) &&
+        (c.field === POINTS_TYPE_ID ? c.scope === 'roster' : c.scope === 'self')
+    )
     .map((c) => ({
       costTypeId: c.field,
       name: costTypeNames.get(c.field) as string,
@@ -1392,7 +1426,7 @@ function extractLimits(fe: BsForceEntry, costTypeNames: Map<string, string>): De
 }
 
 /** Game-system charts the app supports, by root force entry name. */
-const GAME_SYSTEM_CHARTS = [CRUSADE_FORCE_ORG_NAME, 'Allied Detachment and its Auxiliary'];
+const GAME_SYSTEM_CHARTS = [CRUSADE_FORCE_ORG_NAME, 'Allied Detachment and its Auxiliary', 'Lord of War Detachment'];
 
 function parseCharts(
   gst: BsRoot,
@@ -1401,12 +1435,20 @@ function parseCharts(
 ): ForceChart[] {
   const costTypeNames = new Map((gst.costTypes ?? []).map((t) => [t.id, t.name]));
   const toChart = (fe: BsForceEntry, catalogue: string | null): ForceChart => {
-    const limits = extractLimits(fe, costTypeNames);
+    // The chart's caps, plus a points share set on its detachment (Knight Lord of War)
+    const limits = [
+      ...extractLimits(fe, costTypeNames),
+      ...(fe.forceEntries ?? []).flatMap((child) =>
+        extractLimits(child, costTypeNames).filter((l) => l.costTypeId === POINTS_TYPE_ID)
+      ),
+    ];
     return {
       id: fe.id,
       name: fe.name,
       catalogue,
-      detachments: (fe.forceEntries ?? [])
+      // A chart without child forces (Lord of War Detachment) holds its units
+      // itself: it is its own single detachment
+      detachments: (fe.forceEntries?.length ? fe.forceEntries : [fe])
         .map((child) => parseDetachment(child, catalogueKeyById))
         .filter((d): d is Detachment => d !== null),
       ...(limits.length > 0 ? { limits } : {}),
@@ -1484,6 +1526,23 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
       catalogueName: normalizeCatalogueName(cat.name),
       revision: cat.revision,
     };
+  }
+
+  // Drop slots no unit can be filed under — BSData markers such as the Lord of
+  // War Detachment's "Use a Knight Lord of War force instead"
+  const fillable = new Set<string>();
+  for (const u of Object.values(units).flat()) {
+    for (const c of [u.primaryCategory, ...(u.alternateLinks ?? []).map((l) => l.category), ...(u.primaryCategoryRules ?? []).map((r) => r.category)]) {
+      if (c) fillable.add(c);
+    }
+  }
+  for (const chart of detachments.charts) {
+    for (const det of chart.detachments) {
+      det.slots = det.slots.filter((s) => {
+        const role = s.role.replace(/^Prime /, '');
+        return fillable.has(role) || fillable.has(role.split(' - ')[0]) || s.min > 0;
+      });
+    }
   }
 
   const crusade = gst.forceEntries?.find((fe) => fe.name === CRUSADE_FORCE_ORG_NAME);

@@ -6,7 +6,7 @@ import rulesJson from '../../data/parsed/rules.json';
 import type { UnitEntry, DetachmentDef, ModelEntry, WargearEntry } from '../types';
 import type { PrimeNode } from '../rules/primeBenefits';
 import type { RuleModifier } from '../rules/evaluate';
-import { ALLIED_CHART, ALLIED_DETACHMENT, CRUSADE_CHART, FACTIONS, FACTION_BY_ID } from './factions';
+import { ALLIED_CHART, ALLIED_DETACHMENT, CRUSADE_CHART, FACTIONS, FACTION_BY_ID, LORD_OF_WAR_CHART } from './factions';
 
 export const unitsData = unitsJson as unknown as Record<string, UnitEntry[]>;
 
@@ -82,6 +82,22 @@ export const detachmentsData = {
   apex: crusadeDetachments.filter((d) => d.type === 'apex'),
   auxiliary: crusadeDetachments.filter((d) => d.type !== 'core' && d.type !== 'apex'),
 };
+
+/**
+ * The Lord of War chart an army uses: its own catalogue's (Knights' "Knight
+ * Lord of War"), else the game system's "Lord of War Detachment".
+ */
+export function lordOfWarChartFor(faction: string): ForceChartDef | undefined {
+  const sources = FACTION_BY_ID[faction]?.unitSources ?? [faction];
+  return (
+    charts.find((c) => c.catalogue && sources.includes(c.catalogue) && /Lord of War/i.test(c.name)) ??
+    charts.find((c) => c.name === LORD_OF_WAR_CHART)
+  );
+}
+
+export function hasChart(name: string): boolean {
+  return charts.some((c) => c.name === name);
+}
 
 export function getChart(name: string): ForceChartDef {
   const chart = detachmentsData.charts.find((c) => c.name === name);

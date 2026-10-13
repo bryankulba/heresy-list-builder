@@ -55,12 +55,18 @@ export interface RuleContext {
   roster: Record<string, number>;
   /** Detachments/charts in the roster, by force entry id */
   rosterForces: Record<string, number>;
+  /** The roster's points limit (BSData "limit::<points>" fields) */
+  pointsLimit?: number;
+  /** Points spent in the roster on selections of each id/category ("any" = all) */
+  rosterCosts?: Record<string, number>;
   /**
    * What "self"/"parent" refer to: entries inside a unit (default) or a
    * detachment's own slots, whose parent is the detachment itself.
    */
   level?: 'unit' | 'detachment';
 }
+
+const POINTS_TYPE_ID = '9893-c379-920b-8982';
 
 function isInForce(ctx: RuleContext, id: string): boolean {
   return id === ctx.catalogueId || ctx.forceEntryIds.includes(id);
@@ -89,7 +95,10 @@ function instanceOf(c: RuleCondition, ctx: RuleContext): boolean {
 function count(c: Pick<RuleCondition, 'field' | 'scope' | 'childId'>, ctx: RuleContext): number {
   const id = c.childId ?? '';
   if (c.field === 'forces') return ctx.rosterForces[id] ?? 0;
-  if (c.field !== 'selections') return 0; // cost/limit fields aren't modelled
+  // The roster's points limit, and points spent on selections of an id/category
+  if (c.field.startsWith('limit::')) return ctx.pointsLimit ?? 0;
+  if (c.field === POINTS_TYPE_ID) return ctx.rosterCosts?.[id] ?? 0;
+  if (c.field !== 'selections') return 0; // other cost fields aren't modelled
   if (ctx.level === 'detachment' && (c.scope === 'self' || c.scope === 'parent' || c.scope === 'unit')) {
     return ctx.force[id] ?? 0;
   }

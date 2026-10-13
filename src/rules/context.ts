@@ -3,7 +3,7 @@
  * Builds RuleContexts (see evaluate.ts) from the roster.
  */
 
-import type { Force, PlacedDetachment, UnitEntry } from '../types';
+import type { Allegiance, Force, PlacedDetachment, UnitEntry } from '../types';
 import { cataloguesData, getChart, rulesData } from '../data/loader';
 import type { RuleContext } from './evaluate';
 
@@ -63,10 +63,24 @@ export interface RosterCounts {
   roster: Counts;
   rosterForces: Counts;
   byDetachment: Map<string, Counts>;
+  /** Points spent on selections of each id/category ("any" = everything) */
+  rosterCosts: Counts;
+  pointsLimit?: number;
 }
 
-export function rosterCounts(forces: Force[]): RosterCounts {
+/** The allegiance choice's id ("Loyalist"/"Traitor"), which BSData conditions count in the roster. */
+function allegianceId(allegiance: Allegiance | undefined): string | undefined {
+  if (!allegiance) return undefined;
+  const entry = rulesData.armyConfig['game-system']?.find((e) => e.category === 'Allegiance');
+  return entry?.choices.find((c) => c.name === allegiance)?.path.split('::').pop();
+}
+
+export function rosterCounts(
+  forces: Force[],
+  opts: { allegiance?: Allegiance; pointsLimit?: number } = {}
+): RosterCounts {
   const roster: Counts = {};
+  const rosterCosts: Counts = {};
   const rosterForces: Counts = {};
   const byDetachment = new Map<string, Counts>();
   const choices = detachmentChoicesBySlot(forces);
@@ -78,9 +92,20 @@ export function rosterCounts(forces: Force[]): RosterCounts {
       const counts = detachmentCounts(det, choices);
       byDetachment.set(det.id, counts);
       addCounts(roster, counts);
+      const units = [
+        ...Object.values(det.slots).flatMap((fs) => (fs ? [{ unit: fs.unit, extra: fs.extraPoints ?? 0 }] : [])),
+        ...(det.bonusSlots ?? []).flatMap((bs) => (bs.unit ? [{ unit: bs.unit, extra: bs.extraPoints ?? 0 }] : [])),
+      ];
+      for (const { unit, extra } of units) {
+        const points = unit.points + extra;
+        rosterCosts.any = (rosterCosts.any ?? 0) + points;
+        for (const id of Object.keys(unit.facts ?? {})) rosterCosts[id] = (rosterCosts[id] ?? 0) + points;
+      }
     }
   }
-  return { roster, rosterForces, byDetachment };
+  const allegiance = allegianceId(opts.allegiance);
+  if (allegiance) roster[allegiance] = (roster[allegiance] ?? 0) + 1;
+  return { roster, rosterForces, byDetachment, rosterCosts, pointsLimit: opts.pointsLimit };
 }
 
 /** Context for a detachment's own slots (their max modifiers). */
@@ -97,6 +122,8 @@ export function detachmentContext(
     force: counts.byDetachment.get(detachment.id) ?? {},
     roster: counts.roster,
     rosterForces: counts.rosterForces,
+    rosterCosts: counts.rosterCosts,
+    pointsLimit: counts.pointsLimit,
     level: 'detachment',
   };
 }
@@ -123,5 +150,7 @@ export function unitContext(
     force: counts.byDetachment.get(detachment.id) ?? {},
     roster: counts.roster,
     rosterForces: counts.rosterForces,
+    rosterCosts: counts.rosterCosts,
+    pointsLimit: counts.pointsLimit,
   };
 }

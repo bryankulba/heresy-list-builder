@@ -41,7 +41,10 @@ BSData conditions/modifiers are kept (slimmed) in the parsed data and evaluated 
 - `context.ts` — builds a `RuleContext` for a unit in a slot (`unitContext`) or a detachment's own slots (`detachmentContext`) from roster counts (unit `facts` + chosen Prime benefit ids).
 - `primeBenefits.ts` — a unit's Prime benefits in its slot (from its catalogue's benefit tree); Logistical Benefit roles; lookups for export.
 - `detachmentLimits.ts` — how many Auxiliary/Apex detachments an army may take: each detachment "costs" 1 of a BSData cost type and the chart caps it, raised per selection (+1 per Command unit, +1 per Officer of the Line (2), +1 per High Command "One Apex/Auxiliary Detachment" choice…). Shown on the points card (over = red warning) and used for unlock prompts. An alternate link swaps the unit's link categories (`unitVariant` facts)
+- `validate.ts` — roster warnings (never blocking): points over the limit, detachment allowances and per-detachment roster caps (Knight Additional detachments, faction detachments unlocked by a unit), the Lord of War / Allied points share, empty compulsory slots, units outside their detachment's slots, Prime units without a benefit, unique units (`rosterMax`) taken twice, and allegiance-locked units (`availability.ts`: hidden under this allegiance but not the other, so units hidden for reasons the builder doesn't model are left alone; the unit picker leaves them out too). Shown as card badges, red slot outlines and a list on the points card
 - `slots.ts` — `unitsForSlot` (effective primary category in that detachment via `primaryCategoryRules`, plus `alternateLinks` variants like "Command - Centurions Only") and `effectiveSlots`/`withEffectiveSlots` (slot maxes from `maxModifiers`, e.g. a legion rule making all Troops Prime). The canvas renders the effective view; `slotLayout.ts` `cardSlots` treats "Troops-N"/"Prime Troops-N" as the same position so units follow when prime-ness changes.
+
+Counts (`context.ts` `rosterCounts`) include the roster's allegiance choice id and points spent per id/category (`rosterCosts`), with the points limit — BSData's `limit::<points>` fields (the Lord of War Detachment may hold a quarter of the points limit, less Warlord points).
 
 Known gap: Logistical Benefit still uses the app's own `bonusSlots`; its BSData slot increments aren't evaluated (the chosen "LB - Role" isn't counted) to avoid double slots.
 
@@ -56,7 +59,7 @@ The export writes rosters the way New Recruit does (verified against `reference_
 - Army-wide choices (`rules/armyChoices.ts`): BSData asks Skitarii/Mechanicum units for a sub-faction one unit at a time; the builder picks once per army (start screen, changeable in the header) and the export writes that pick on every unit carrying the group. Groups come from `rules.json` `armyChoices` (shared groups named "…Sub-faction(s)"); the roster stores `armyChoices: groupId → optionId`, and import reads the most common pick back.
 - High Command units with a detachment choice emit "One Apex / One Auxiliary Detachment".
 
-`importRos` reads a .ros back into forces (detachments, units in slots, Prime benefits, LB bonus slots, allegiance, doctrine; unlock links are inferred). `referenceRosters.test.ts` round-trips every file in `reference_armies/` (import → export → compare) — add New Recruit exports there to extend coverage. Unsupported root forces (e.g. Lord of War Detachment) are skipped with a warning.
+`importRos` reads a .ros back into forces (detachments, units in slots, Prime benefits, LB bonus slots, allegiance, doctrine; unlock links are inferred). `referenceRosters.test.ts` round-trips every file in `reference_armies/` (import → export → compare) — add New Recruit exports there to extend coverage. Unsupported root forces are skipped with a warning.
 
 ### Faction Registry & Unit Loading
 
@@ -66,7 +69,7 @@ Slot matching follows BattleScribe: a slot takes units whose effective primary c
 
 ### State: Zustand Store (`src/store/rosterStore.ts` + `rosterModel.ts`)
 
-The roster mirrors a .ros file: `forces: Force[]` — the primary army first, then any allied armies. Each `Force` has a `faction`, `kind` (`primary` | `allied`), the `chart` it's built on, and its `detachments: PlacedDetachment[]`. Store state: `phase`, `allegiance`, `pointsLimit`, `cohortDoctrine`, `forces`; `selectPrimaryFaction` derives the army's faction.
+The roster mirrors a .ros file: `forces: Force[]` — the primary army first, then any allied armies. Each `Force` has a `faction`, `kind` (`primary` | `allied`), the `chart` it's built on, and its `detachments: PlacedDetachment[]`. `kind` `lordOfWar` is a Lord of War Detachment — its own root force (the game system's chart, or the army's catalogue chart for Knights), whose single detachment holds the units directly in the .ros. Store state: `phase`, `allegiance`, `pointsLimit`, `cohortDoctrine`, `forces`; `selectPrimaryFaction` derives the army's faction.
 
 All force logic lives as pure functions in `rosterModel.ts` (tested in `rosterModel.test.ts`); the store is a thin wrapper. Detachment ids are globally unique, so slot actions stay keyed by detachment id.
 
@@ -128,4 +131,4 @@ The canvas is a large `4000×3000px` div inside an `overflow: hidden` viewport c
 - `"type": "module"` must NOT be in `package.json` — ts-node (sync-data) needs CJS
 - Carbon SCSS uses legacy `@import` — `silenceDeprecations: ['import']` is set in `vite.config.ts`
 - Warlord Detachment is in `detachments.json` as a core detachment but is NOT auto-added on `startBuild` — it's only added when the user explicitly clicks "Add Warlord" (Crusade-chart armies only)
-- Knight Households' "Additional" detachments are added freely via "Add Detachment"; their limits (BSData counting modifiers) await the Phase 3 rules evaluator
+- Knight Households' "Additional" detachments are added freely via "Add Detachment"; going past their BSData limits shows a warning

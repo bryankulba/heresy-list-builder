@@ -19,7 +19,8 @@ interface SavedListsModalProps {
 
 /** "Death Guard + Mechanicum" — primary army first, then allies. */
 function describeForces(factions: string[]): string {
-  return factions.map(factionLabel).join(' + ');
+  // A Lord of War Detachment is the same faction as the army
+  return [...new Set(factions)].map(factionLabel).join(' + ');
 }
 
 function formatDate(ts: number): string {

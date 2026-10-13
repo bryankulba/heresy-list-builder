@@ -49,6 +49,8 @@ interface RosterStore {
   loadSave: (saved: RosterSnapshot) => void;
   addDetachment: (def: DetachmentDef, opts?: { unlockedBy?: string; forceId?: string }) => void;
   addAlliedForce: (faction: string) => void;
+  /** Adds a Lord of War Detachment for the primary army (right after it) */
+  addLordOfWar: () => void;
   removeForce: (forceId: string) => void;
   fillSlot: (detachmentId: string, slotKey: string, unit: UnitEntry, primeBenefit?: PrimeBenefit) => void;
   updateSlotAnnotations: (detachmentId: string, slotKey: string, notes: string, extraPoints: number) => void;
@@ -102,6 +104,15 @@ export const useRosterStore = create<RosterStore>()(
 
       addDetachment(def, opts) {
         set((s) => ({ forces: addDetachment(s.forces, def, opts) }));
+      },
+
+      addLordOfWar() {
+        set((s) => {
+          const primary = s.forces.find((f) => f.kind === 'primary');
+          if (!primary || s.forces.some((f) => f.kind === 'lordOfWar')) return {};
+          const [first, ...rest] = s.forces;
+          return { forces: [first, createForce(primary.faction, 'lordOfWar'), ...rest] };
+        });
       },
 
       addAlliedForce(faction) {
