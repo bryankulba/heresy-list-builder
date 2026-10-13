@@ -19,6 +19,8 @@ interface DetachmentSelectorModalProps {
   options?: DetachmentDef[];
   /** Highlight the cohort doctrine's boosted Tercio (primary army only) */
   showDoctrine?: boolean;
+  /** Detachments the army hasn't unlocked yet — listed last and marked, but still selectable */
+  isLocked?: (def: DetachmentDef) => boolean;
   onConfirm: (def: DetachmentDef) => void;
   onClose: () => void;
 }
@@ -29,6 +31,7 @@ export default function DetachmentSelectorModal({
   title: titleProp,
   options: optionsProp,
   showDoctrine = true,
+  isLocked = () => false,
   onConfirm,
   onClose,
 }: DetachmentSelectorModalProps) {
@@ -36,8 +39,11 @@ export default function DetachmentSelectorModal({
   const boostedTercio =
     showDoctrine && cohortDoctrine ? COHORT_DOCTRINE_BY_ID[cohortDoctrine]?.boostedTercio ?? null : null;
 
-  const options =
+  const allOptions =
     optionsProp ?? getDetachmentsForFaction(trigger === 'highCommand' ? 'apex' : 'auxiliary', faction);
+  const locked = new Set(allOptions.filter(isLocked));
+  const options = [...allOptions.filter((d) => !locked.has(d)), ...allOptions.filter((d) => locked.has(d))];
+  const firstLocked = options.find((d) => locked.has(d));
 
   const title =
     titleProp ??
@@ -63,10 +69,16 @@ export default function DetachmentSelectorModal({
               .map((s) => `${s.max}× ${s.role.replace('Prime ', '★ ')}`)
               .join('  ·  ');
             const isDoctrineBoost = boostedTercio !== null && displayName === boostedTercio;
+            const isLockedDef = locked.has(def);
 
             return (
+              <React.Fragment key={def.name}>
+              {def === firstLocked && (
+                <div style={{ fontSize: 11, color: 'var(--cds-text-secondary)', margin: '10px 2px 2px' }}>
+                  Not unlocked by this army yet — taking one shows a warning
+                </div>
+              )}
               <button
-                key={def.name}
                 onClick={() => onConfirm(def)}
                 style={{
                   display: 'block',
@@ -77,6 +89,7 @@ export default function DetachmentSelectorModal({
                   border: `1px solid ${isDoctrineBoost ? 'var(--cds-interactive)' : 'transparent'}`,
                   background: 'var(--cds-layer-02)',
                   cursor: 'pointer',
+                  opacity: isLockedDef ? 0.55 : 1,
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLButtonElement).style.background = 'var(--cds-layer-hover-02)';
@@ -110,6 +123,7 @@ export default function DetachmentSelectorModal({
                   {slotSummary}
                 </div>
               </button>
+              </React.Fragment>
             );
           })}
         </div>

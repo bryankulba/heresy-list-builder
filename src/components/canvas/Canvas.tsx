@@ -30,7 +30,7 @@ import AllySelectorModal from '../modals/AllySelectorModal';
 import { unitContext } from '../../rules/context';
 import { getPrimeOptions, isLogisticalBenefit, logisticalBenefitRoles } from '../../rules/primeBenefits';
 import { unitsForSlot, withEffectiveSlots } from '../../rules/slots';
-import { auxiliaryUnlocks, detachmentAllowances } from '../../rules/detachmentLimits';
+import { auxiliaryUnlocks, detachmentAllowances, isDetachmentLocked } from '../../rules/detachmentLimits';
 import { allegianceCounts, isAllegianceLocked } from '../../rules/availability';
 import { validateRoster, type RosterWarning } from '../../rules/validate';
 import { rosterCounts } from '../../rules/context';
@@ -919,6 +919,10 @@ export default function Canvas() {
           title={modal.title}
           faction={factionFor(modal.unlockedBy)}
           showDoctrine={factionFor(modal.unlockedBy) === primary?.faction}
+          isLocked={(def) => {
+            const force = forces.find((f) => f.detachments.some((d) => d.id === modal.unlockedBy.split('::')[0]));
+            return !!force && isDetachmentLocked(forces, force, def, rosterCounts(forces, { allegiance, pointsLimit }));
+          }}
           onConfirm={handleDetachmentSelected}
           onClose={() => setModal({ type: 'none' })}
         />

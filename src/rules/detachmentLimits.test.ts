@@ -2,8 +2,8 @@ import { describe, test, expect } from 'vitest';
 import { readFileSync } from 'fs';
 import { join } from 'path';
 import { importRos } from '../utils/importRos';
-import { auxiliaryUnlocks, detachmentAllowances } from './detachmentLimits';
-import { getUnitsForFaction, unitVariant } from '../data/loader';
+import { auxiliaryUnlocks, detachmentAllowances, isDetachmentLocked } from './detachmentLimits';
+import { getChart, getUnitsForFaction, unitVariant } from '../data/loader';
 
 const load = (file: string) =>
   importRos(readFileSync(join(__dirname, '../../reference_armies', file), 'utf-8')).snapshot.forces;
@@ -44,5 +44,15 @@ describe('detachment limits from BSData', () => {
     expect(centurion.facts?.['6dbf-654a-f06f-2d69']).toBe(1); // Command
     expect(variant.facts?.['6dbf-654a-f06f-2d69']).toBeUndefined();
     expect(variant.facts?.['901a-6b71-7a29-4597']).toBe(1); // Officer of the Line (2) stays
+  });
+
+  test("detachments the army hasn't unlocked (Storm Battery needs a Siege Breaker; one per Siege Breaker)", () => {
+    const stormBattery = getChart('Crusade Force Organization Chart').detachments.find((d) => d.name === 'Auxiliary - Storm Battery')!;
+    const deathGuard = load('death-guard_v1.ros');
+    expect(isDetachmentLocked(deathGuard, deathGuard[0], stormBattery)).toBe(true);
+    const nightLords = load('The Ashen Hour is upon you.ros'); // one Siege Breaker, one Storm Battery taken
+    expect(isDetachmentLocked(nightLords, nightLords[0], stormBattery)).toBe(true);
+    const armouredSupport = getChart('Crusade Force Organization Chart').detachments.find((d) => d.name === 'Auxiliary - Armoured Support')!;
+    expect(isDetachmentLocked(deathGuard, deathGuard[0], armouredSupport)).toBe(false);
   });
 });
