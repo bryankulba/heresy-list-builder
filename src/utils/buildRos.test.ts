@@ -179,3 +179,12 @@ describe('default wargear as New Recruit fills it', () => {
     expect(names(rhino.models[0].defaultWargear)).toEqual(['Pintle Mounted bolter', 'Pintle Mounted Bolter']);
   });
 });
+
+describe('a unit with the same option group twice', () => {
+  test("a Mastodon exports both sponsons (New Recruit: \"Sponsons #2 requires 1 selections more\")", () => {
+    const mastodon = getUnitsForFaction('death-guard').find((u) => u.name.startsWith('Mastodon'))!;
+    const sponsons = mastodon.models[0].defaultWargear.filter((w) => w.name === 'Heavy Bolters');
+    expect(sponsons).toHaveLength(2);
+    expect(new Set(sponsons.map((w) => w.groupPath)).size).toBe(2); // one per sponson group link
+  });
+});

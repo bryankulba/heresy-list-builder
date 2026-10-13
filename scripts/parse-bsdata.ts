@@ -751,7 +751,8 @@ function mandatoryIn(
 ): WargearEntry[] {
   const wargear: WargearEntry[] = [];
   const add = (m: Member) => {
-    if (wargear.some((w) => w.entryId === m.entry.id)) return;
+    // The same entry reached through two links is two selections (a Mastodon's two sponsons)
+    if (wargear.some((w) => w.path === join(memberPath(m)))) return;
     const children = depth < 4 ? mandatoryIn(optionContents(m, index, depth), index, depth + 1) : [];
     // How many come with it (e.g. "Two Sponson Mounted" heavy bolters: min 2)
     const min = Math.max(0, ...(m.entry.constraints ?? []).filter((c) => c.type === 'min' && c.field === 'selections').map((c) => constraintValue(m.entry, c)));

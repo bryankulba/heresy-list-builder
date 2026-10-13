@@ -6412,6 +6412,21 @@
                   "path": "0047-b1df-944f-498e::e54b-b14e-07bf-4e0e::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
                 }
               ]
+            },
+            {
+              "name": "Heavy Bolters",
+              "entryId": "5a3c-9f07-2ef6-a37a",
+              "path": "0047-b1df-944f-498e::c603-e81e-81e1-6a9e::5a3c-9f07-2ef6-a37a",
+              "groupPath": "0047-b1df-944f-498e::c603-e81e-81e1-6a9e::df25-ac22-5bbd-0e44",
+              "children": [
+                {
+                  "name": "Sponson Mounted heavy bolters",
+                  "count": 2,
+                  "entryId": "dfde-7237-e188-06e0",
+                  "targetId": "bc40-b14a-978e-0232",
+                  "path": "0047-b1df-944f-498e::c603-e81e-81e1-6a9e::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
+                }
+              ]
             }
           ]
         }
@@ -6431,7 +6446,7 @@
         "711a-5744-668b-feb2": 1,
         "377c-8098-7dd6-8bb1": 1,
         "3763-ca65-098f-97d7": 1,
-        "5a3c-9f07-2ef6-a37a": 1
+        "5a3c-9f07-2ef6-a37a": 2
       }
     },
     {
