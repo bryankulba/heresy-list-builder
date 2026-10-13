@@ -72,6 +72,7 @@ describe.each(files)('%s', (file) => {
     buildRosXml(snapshot.forces, snapshot.pointsLimit, computeTotalPoints(snapshot.forces), {
       allegiance: snapshot.allegiance,
       cohortDoctrine: snapshot.cohortDoctrine,
+      armyChoices: snapshot.armyChoices,
     })
   );
   const supportedIds = new Set((exported.forces?.force ?? []).map((f) => f.entryId));

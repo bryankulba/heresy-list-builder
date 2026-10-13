@@ -137,6 +137,11 @@ export interface RosterSnapshot {
   allegiance: Allegiance;
   pointsLimit: number;
   cohortDoctrine: string;
+  /**
+   * Per-unit BSData choices made once for the army (a Skitarii/Mechanicum
+   * unit's sub-faction): choice group id → option id. See rules/armyChoices.ts
+   */
+  armyChoices?: Record<string, string>;
   forces: Force[];
 }
 

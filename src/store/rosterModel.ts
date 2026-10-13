@@ -157,6 +157,7 @@ export function migrateSnapshot(raw: unknown): RosterSnapshot {
       allegiance: r.allegiance ?? 'Loyalist',
       pointsLimit: r.pointsLimit ?? 3000,
       cohortDoctrine: r.cohortDoctrine ?? '',
+      armyChoices: r.armyChoices ?? {},
       forces: r.forces,
     };
   }

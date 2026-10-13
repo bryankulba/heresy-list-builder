@@ -46,7 +46,15 @@ export const rulesData = rulesJson as unknown as {
   detachmentChoice: { apex?: { id: string; name: string }; auxiliary?: { id: string; name: string } };
   /** Army configuration entries by catalogue key ('game-system' for the game system's own) */
   armyConfig: Record<string, ArmyConfigEntry[]>;
+  /** Per-unit choices made once for the army (sub-factions), by shared group id */
+  armyChoices: Record<string, ArmyChoiceGroup>;
 };
+
+/** A per-unit BSData choice the builder makes once for the whole army — see scripts/parse-bsdata.ts */
+export interface ArmyChoiceGroup {
+  name: string;
+  options: Array<{ id: string; name: string; path: string; hidden?: boolean; modifiers?: RuleModifier[] }>;
+}
 export const cataloguesData = cataloguesJson as Record<string, CatalogueInfo>;
 
 /** A root force entry and the detachments it may contain (mirrors a .ros root <force>). */

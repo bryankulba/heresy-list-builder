@@ -26,6 +26,7 @@ export interface ImportResult {
 interface RosNode {
   name?: string;
   entryId?: string;
+  entryGroupId?: string;
   type?: string;
   catalogueId?: string;
   selections?: { selection?: RosNode[] };
@@ -164,6 +165,19 @@ function linkUnlocks(force: Force, unlockers: Array<{ detId: string; key: string
   }
 }
 
+/** Tallies a unit's picks from army-wide choice groups (sub-faction), by group id → option id. */
+function countArmyChoices(n: RosNode, votes: Record<string, Record<string, number>>): void {
+  for (const c of children(n)) {
+    const groupId = c.entryGroupId?.split('::').pop();
+    const option = groupId ? rulesData.armyChoices[groupId]?.options.find((o) => c.entryId?.endsWith(o.path)) : undefined;
+    if (groupId && option) {
+      votes[groupId] = votes[groupId] ?? {};
+      votes[groupId][option.id] = (votes[groupId][option.id] ?? 0) + 1;
+    }
+    countArmyChoices(c, votes);
+  }
+}
+
 export function importRos(xml: string): ImportResult {
   const warnings: string[] = [];
   const parser = new XMLParser({ ignoreAttributes: false, attributeNamePrefix: '', isArray: (name) => ARRAYS.has(name) });
@@ -173,6 +187,7 @@ export function importRos(xml: string): ImportResult {
   const factionByCatalogue = new Map(Object.entries(cataloguesData).map(([key, c]) => [c.catalogueId, key]));
   let allegiance: Allegiance = 'Loyalist';
   let cohortDoctrine = '';
+  const armyChoiceVotes: Record<string, Record<string, number>> = {};
   const forces: Force[] = [];
 
   for (const rootForce of roster.forces?.force ?? []) {
@@ -204,6 +219,7 @@ export function importRos(xml: string): ImportResult {
       }
       const det: PlacedDetachment = { id: uuidv4(), def, slots: {} };
       force.detachments.push(det);
+      for (const s of children(childForce).filter((s) => s.type === 'unit')) countArmyChoices(s, armyChoiceVotes);
       const units = children(childForce)
         .filter((s) => s.type === 'unit')
         .map((s) => pendingUnit(faction, s, warnings))
@@ -234,6 +250,10 @@ export function importRos(xml: string): ImportResult {
       allegiance,
       pointsLimit: limit > 0 ? limit : Math.max(1000, Math.ceil(total / 500) * 500),
       cohortDoctrine,
+      // The most common pick for each army-wide choice (New Recruit stores one per unit)
+      armyChoices: Object.fromEntries(
+        Object.entries(armyChoiceVotes).map(([g, votes]) => [g, Object.entries(votes).sort((a, b) => b[1] - a[1])[0][0]])
+      ),
       forces,
     },
     warnings,

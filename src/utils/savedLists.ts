@@ -48,6 +48,7 @@ export function saveList(snapshot: RosterSnapshot, name: string): SavedList {
     allegiance: snapshot.allegiance,
     pointsLimit: snapshot.pointsLimit,
     cohortDoctrine: snapshot.cohortDoctrine,
+    armyChoices: snapshot.armyChoices ?? {},
     forces: snapshot.forces,
   };
   saves[entry.id] = entry;

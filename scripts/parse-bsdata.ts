@@ -307,6 +307,17 @@ export interface RulesData {
   detachmentChoice: { apex?: { id: string; name: string }; auxiliary?: { id: string; name: string } };
   /** Army configuration entries by catalogue key ('game-system' for the game system's own) */
   armyConfig: Record<string, ArmyConfigEntry[]>;
+  /**
+   * Per-unit choices the builder makes once for the whole army (a Skitarii or
+   * Mechanicum unit's sub-faction), keyed by the shared group id that ends the
+   * wargear entries' groupPath. Option paths are relative to that group's prefix.
+   */
+  armyChoices: Record<string, ArmyChoiceGroup>;
+}
+
+export interface ArmyChoiceGroup {
+  name: string;
+  options: Array<{ id: string; name: string; path: string; hidden?: boolean; modifiers?: RuleModifier[] }>;
 }
 
 export interface DetachmentSlot {
@@ -1174,6 +1185,52 @@ function extractUnitsFromCatalogue(
 }
 
 // ---------------------------------------------------------------------------
+// Army-wide unit choices
+// ---------------------------------------------------------------------------
+
+/** Shared groups chosen per unit in BSData that the builder picks once per army. */
+const ARMY_CHOICE_GROUP_NAME = /sub[\s-]?factions?$/i;
+
+/** Groups the extracted units take a choice from (their wargear's last groupPath segment). */
+function usedGroupIds(units: UnitEntry[]): Set<string> {
+  const ids = new Set<string>();
+  const visit = (ws: WargearEntry[] | undefined) => {
+    for (const w of ws ?? []) {
+      if (w.groupPath) ids.add(w.groupPath.split('::').pop() as string);
+      visit(w.children);
+    }
+  };
+  for (const u of units) {
+    visit(u.unitWargear);
+    for (const m of u.models) visit(m.defaultWargear);
+  }
+  return ids;
+}
+
+function extractArmyChoices(units: UnitEntry[], index: SharedIndex): Record<string, ArmyChoiceGroup> {
+  const out: Record<string, ArmyChoiceGroup> = {};
+  for (const id of usedGroupIds(units)) {
+    const group = index.get(id);
+    if (!group || !ARMY_CHOICE_GROUP_NAME.test(group.name)) continue;
+    const members = contents(group, [], undefined, index, 0).options.sort(byListOrder);
+    out[id] = {
+      name: group.name,
+      options: members.map((m) => {
+        const mods = hiddenModifiers(allModifiers(m.entry));
+        return {
+          id: m.entry.id,
+          name: m.entry.name,
+          path: join(memberPath(m)),
+          ...(m.entry.hidden ? { hidden: true } : {}),
+          ...(mods.length > 0 ? { modifiers: mods } : {}),
+        };
+      }),
+    };
+  }
+  return out;
+}
+
+// ---------------------------------------------------------------------------
 // Detachments
 // ---------------------------------------------------------------------------
 
@@ -1361,6 +1418,7 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
     rules: {
       primeGroups,
       detachmentChoice: detachmentChoiceIds(index),
+      armyChoices: extractArmyChoices(Object.values(units).flat(), index),
       armyConfig: {
         'game-system': extractArmyConfig(gst, index, categoryNames),
         ...Object.fromEntries(

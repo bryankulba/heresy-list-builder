@@ -7051,6 +7051,186 @@
       "name": "One Auxiliary Detachment"
     }
   },
+  "armyChoices": {
+    "ce61-2d74-5519-70bf": {
+      "name": "Mechanicum - Sub-faction",
+      "options": [
+        {
+          "id": "6a01-072d-5f2a-deed",
+          "name": "Archimandrite",
+          "path": "6a01-072d-5f2a-deed"
+        },
+        {
+          "id": "403d-7806-215e-7676",
+          "name": "Cybernetica",
+          "path": "403d-7806-215e-7676",
+          "modifiers": [
+            {
+              "type": "set",
+              "field": "hidden",
+              "value": true,
+              "conditionGroups": [
+                {
+                  "type": "or",
+                  "conditions": [
+                    {
+                      "type": "instanceOf",
+                      "scope": "force",
+                      "field": "forces",
+                      "value": 1,
+                      "childId": "2dfc-259d-d11b-dc8b"
+                    },
+                    {
+                      "type": "instanceOf",
+                      "scope": "force",
+                      "field": "forces",
+                      "value": 1,
+                      "childId": "9a10-a2d9-5a87-a5a9"
+                    }
+                  ],
+                  "conditionGroups": [
+                    {
+                      "type": "and",
+                      "conditions": [
+                        {
+                          "type": "notInstanceOf",
+                          "scope": "primary-catalogue",
+                          "field": "selections",
+                          "value": 1,
+                          "childId": "2f57-6e9d-8a7b-5c2e"
+                        },
+                        {
+                          "type": "notInstanceOf",
+                          "scope": "primary-catalogue",
+                          "field": "selections",
+                          "value": 1,
+                          "childId": "fd9b-d04e-362d-8e5d"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "0d7c-dc0a-3942-b4eb",
+          "name": "Lacrymaerta",
+          "path": "0d7c-dc0a-3942-b4eb"
+        },
+        {
+          "id": "67af-3519-2c95-6da0",
+          "name": "Macrotek",
+          "path": "67af-3519-2c95-6da0",
+          "modifiers": [
+            {
+              "type": "set",
+              "field": "hidden",
+              "value": true,
+              "conditions": [
+                {
+                  "type": "notInstanceOf",
+                  "scope": "primary-catalogue",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "2f57-6e9d-8a7b-5c2e"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "7560-ba42-5273-27fd",
+          "name": "Malagra",
+          "path": "7560-ba42-5273-27fd"
+        },
+        {
+          "id": "20af-27a5-9296-e90f",
+          "name": "Myrmidax",
+          "path": "20af-27a5-9296-e90f"
+        },
+        {
+          "id": "3f59-64f9-43da-d43e",
+          "name": "Reductor",
+          "path": "3f59-64f9-43da-d43e",
+          "modifiers": [
+            {
+              "type": "set",
+              "field": "hidden",
+              "value": true,
+              "conditions": [
+                {
+                  "type": "notInstanceOf",
+                  "scope": "primary-catalogue",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "2f57-6e9d-8a7b-5c2e"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "cdc4-0bc4-89cb-3689": {
+      "name": "Skitarii Sub Factions",
+      "options": [
+        {
+          "id": "637f-8850-f6f5-6f6a",
+          "name": "Acquisitor",
+          "path": "637f-8850-f6f5-6f6a"
+        },
+        {
+          "id": "ac1d-bf09-c84a-fce3",
+          "name": "Expurgator",
+          "path": "ac1d-bf09-c84a-fce3"
+        },
+        {
+          "id": "70fa-cb14-19c6-a11d",
+          "name": "Vindictor",
+          "path": "70fa-cb14-19c6-a11d",
+          "modifiers": [
+            {
+              "type": "set",
+              "field": "hidden",
+              "value": true,
+              "conditions": [
+                {
+                  "type": "atLeast",
+                  "scope": "roster",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "597e-83d8-32e1-8eaa"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "979d-4792-94a6-d6b8",
+          "name": "Scourger",
+          "path": "979d-4792-94a6-d6b8",
+          "modifiers": [
+            {
+              "type": "set",
+              "field": "hidden",
+              "value": true,
+              "conditions": [
+                {
+                  "type": "atLeast",
+                  "scope": "roster",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "e1e1-a344-d3e2-0b91"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  },
   "armyConfig": {
     "game-system": [
       {

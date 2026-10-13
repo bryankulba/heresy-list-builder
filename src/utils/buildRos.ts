@@ -19,6 +19,7 @@ import { effectivePrimaryCategory, withEffectiveSlots } from '../rules/slots';
 import { rosterCounts, unitContext } from '../rules/context';
 import { effectiveHidden, type RuleContext } from '../rules/evaluate';
 import { cardSlots } from '../components/canvas/slotLayout';
+import { applyArmyChoice, type ArmyChoices } from '../rules/armyChoices';
 
 // Points cost type — consistent across all HH3 BSData files
 const POINTS_TYPE_ID = '9893-c379-920b-8982';
@@ -28,6 +29,8 @@ export interface RosOptions {
   allegiance: Allegiance;
   /** Cohort doctrine id (Solar Auxilia primary army) */
   cohortDoctrine?: string;
+  /** Army-wide picks for per-unit choices (sub-faction) — see rules/armyChoices.ts */
+  armyChoices?: ArmyChoices;
 }
 
 /** A selection to emit. */
@@ -99,25 +102,29 @@ function emitSelection(lines: string[], sel: Sel, i: string): void {
 // Units
 // ---------------------------------------------------------------------------
 
-function wargearSel(w: WargearEntry, number: number): Sel {
+function wargearSel(entry: WargearEntry, number: number, choices?: ArmyChoices): Sel {
+  const w = applyArmyChoice(entry, choices);
   return {
     name: w.name,
     entryId: w.path ?? w.entryId,
     ...(w.groupPath ? { entryGroupId: w.groupPath } : {}),
     type: 'upgrade',
     number,
-    children: (w.children ?? []).map((c) => wargearSel(c, number)),
+    children: (w.children ?? []).map((c) => wargearSel(c, number, choices)),
   };
 }
 
-function modelSel(m: ModelEntry): Sel {
+function modelSel(m: ModelEntry, choices?: ArmyChoices): Sel {
   return {
     name: m.name,
     entryId: m.path ?? m.entryId ?? '',
     type: m.kind === 'unit' ? 'unit-group' : 'model',
     number: m.min,
     cost: Math.round(m.cost * m.min),
-    children: [...(m.models ?? []).map(modelSel), ...m.defaultWargear.map((w) => wargearSel(w, m.min))],
+    children: [
+      ...(m.models ?? []).map((sub) => modelSel(sub, choices)),
+      ...m.defaultWargear.map((w) => wargearSel(w, m.min, choices)),
+    ],
   };
 }
 
@@ -126,7 +133,13 @@ function primaryCategory(role: string, categoryId: string | undefined): Sel['cat
   return categoryId ? [{ name: role, entryId: categoryId, primary: true }] : undefined;
 }
 
-function unitSel(unit: UnitEntry, categories: Sel['categories'], extraPoints: number, extras: Sel[]): Sel {
+function unitSel(
+  unit: UnitEntry,
+  categories: Sel['categories'],
+  extraPoints: number,
+  extras: Sel[],
+  choices?: ArmyChoices
+): Sel {
   return {
     name: unit.name,
     entryId: unit.path ?? unit.entryId ?? '',
@@ -136,8 +149,8 @@ function unitSel(unit: UnitEntry, categories: Sel['categories'], extraPoints: nu
     cost: unit.baseCost + extraPoints,
     categories,
     children: [
-      ...unit.models.map(modelSel),
-      ...(unit.unitWargear ?? []).map((w) => wargearSel(w, 1)),
+      ...unit.models.map((m) => modelSel(m, choices)),
+      ...(unit.unitWargear ?? []).map((w) => wargearSel(w, 1, choices)),
       ...extras,
     ],
   };
@@ -328,7 +341,7 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
           }
         }
 
-        emitSelection(lines, unitSel(unit, primaryCategory(unitRole, unitCategoryId), filled.extraPoints ?? 0, extras), '            ');
+        emitSelection(lines, unitSel(unit, primaryCategory(unitRole, unitCategoryId), filled.extraPoints ?? 0, extras, opts.armyChoices), '            ');
       }
 
       // Bonus slots (Logistical Benefit)
@@ -336,7 +349,7 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
         if (!bs.unit) continue;
         const bonusSlotDef = det.def.slots.find((s) => s.role === bs.role);
         const categoryId = bonusSlotDef?.categoryId ?? ROLE_CATEGORY_MAP[bs.role];
-        emitSelection(lines, unitSel(bs.unit, primaryCategory(bs.role, categoryId), bs.extraPoints ?? 0, []), '            ');
+        emitSelection(lines, unitSel(bs.unit, primaryCategory(bs.role, categoryId), bs.extraPoints ?? 0, [], opts.armyChoices), '            ');
       }
 
       lines.push('          </selections>');

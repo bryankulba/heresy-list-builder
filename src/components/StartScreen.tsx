@@ -4,6 +4,7 @@ import type { Allegiance } from '../types';
 import { useRosterStore } from '../store/rosterStore';
 import { FACTIONS, FACTION_GROUPS, factionLabel } from '../data/factions';
 import { COHORT_DOCTRINES } from '../constants/cohortDoctrines';
+import { armyChoiceGroups, armyChoiceLabel, defaultArmyChoices } from '../rules/armyChoices';
 import SavedListsModal from './modals/SavedListsModal';
 
 export default function StartScreen() {
@@ -13,16 +14,19 @@ export default function StartScreen() {
   const [allegiance, setAllegiance] = useState<Allegiance>('Loyalist');
   const [pointsLimit, setPointsLimit] = useState(3000);
   const [cohortDoctrine, setCohortDoctrine] = useState('');
+  const [armyChoices, setArmyChoices] = useState(() => defaultArmyChoices(FACTIONS[0].id));
+  const choiceGroups = armyChoiceGroups(faction);
   const [showSavedLists, setShowSavedLists] = useState(false);
 
   function handleFactionChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const next = e.target.value;
     setFaction(next);
     if (next !== 'solar-auxilia') setCohortDoctrine('');
+    setArmyChoices(defaultArmyChoices(next));
   }
 
   function handleStart() {
-    startBuild(faction, allegiance, pointsLimit, cohortDoctrine);
+    startBuild(faction, allegiance, pointsLimit, cohortDoctrine, armyChoices);
   }
 
   return (
@@ -111,6 +115,25 @@ export default function StartScreen() {
             </Select>
           </div>
         )}
+
+        {/* Army-wide picks for per-unit choices (Skitarii / Mechanicum sub-faction) */}
+        {choiceGroups.map((g) => (
+          <div className="mb-6" key={g.id}>
+            <Select
+              id={`army-choice-${g.id}`}
+              labelText={armyChoiceLabel(g)}
+              helperText="Applied to every unit that takes one"
+              value={armyChoices[g.id] ?? ''}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                setArmyChoices((c) => ({ ...c, [g.id]: e.target.value }))
+              }
+            >
+              {g.options.map((o) => (
+                <SelectItem key={o.id} value={o.id} text={o.name} />
+              ))}
+            </Select>
+          </div>
+        ))}
 
         {/* Points Limit */}
         <div className="mb-8">
