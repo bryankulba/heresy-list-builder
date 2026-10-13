@@ -60,7 +60,7 @@ export default function Slot({ slotDef, filled, onClick, onClear, slotRef, isDas
       {isFilled && (
         <button
           onClick={handleClear}
-          className="absolute top-0.5 right-0.5 rounded flex items-center justify-center"
+          className="slot-clear absolute top-0.5 right-0.5 rounded flex items-center justify-center"
           style={{
             width: 16,
             height: 16,

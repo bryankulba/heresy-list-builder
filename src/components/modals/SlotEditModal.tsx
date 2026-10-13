@@ -16,6 +16,8 @@ interface SlotEditModalProps {
   onChangeUnit: () => void;
   onChangeBenefit: () => void;
   onAnnotationsChange: (notes: string, extraPoints: number) => void;
+  /** Empties the slot (and removes what it unlocked, asking first if those have units) */
+  onRemove: () => void;
   onClose: () => void;
 }
 
@@ -26,6 +28,7 @@ export default function SlotEditModal({
   onChangeUnit,
   onChangeBenefit,
   onAnnotationsChange,
+  onRemove,
   onClose,
 }: SlotEditModalProps) {
   const displayRole = getBaseRole(stripPrimePrefix(slotDef.role));
@@ -170,6 +173,9 @@ export default function SlotEditModal({
         </div>
       </ModalBody>
       <ModalFooter>
+        <Button kind="danger--ghost" onClick={onRemove}>
+          Remove unit
+        </Button>
         <Button kind="secondary" onClick={onClose}>
           Done
         </Button>

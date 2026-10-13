@@ -130,6 +130,7 @@ export default function DetachmentCard({
           {onRemove && (
             <button
               data-interactive
+              className="detachment-remove"
               onClick={onRemove}
               aria-label={`Remove ${title}`}
               title="Remove detachment"

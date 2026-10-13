@@ -1,6 +1,13 @@
 import React, { useState } from 'react';
 import { ChevronDown, ChevronUp, WarningAltFilled } from '@carbon/icons-react';
 
+/** Device safe-area insets (notch, home indicator); 0 elsewhere */
+export const SAFE = {
+  bottom: 'env(safe-area-inset-bottom, 0px)',
+  left: 'env(safe-area-inset-left, 0px)',
+  right: 'env(safe-area-inset-right, 0px)',
+};
+
 interface PointsCardProps {
   current: number;
   limit: number;
@@ -28,8 +35,22 @@ export default function PointsCard({ current, limit, allowances = [], warnings =
         zIndex: 100,
         boxShadow: '0 4px 16px rgba(0,0,0,0.4)',
         ...(bar
-          ? { bottom: 0, left: 0, right: 0, borderWidth: '1px 0 0', padding: '8px 16px 10px' }
-          : { bottom: 24, right: 24, borderRadius: 4, padding: '12px 16px', minWidth: 160, maxWidth: 320 }),
+          ? {
+              bottom: 0,
+              left: 0,
+              right: 0,
+              borderWidth: '1px 0 0',
+              // Clear of the home indicator and a landscape notch
+              padding: `8px calc(16px + ${SAFE.right}) calc(10px + ${SAFE.bottom}) calc(16px + ${SAFE.left})`,
+            }
+          : {
+              bottom: `calc(24px + ${SAFE.bottom})`,
+              right: `calc(24px + ${SAFE.right})`,
+              borderRadius: 4,
+              padding: '12px 16px',
+              minWidth: 160,
+              maxWidth: 320,
+            }),
       }}
     >
       {/* Bar (phones): points and detachment counts side by side */}

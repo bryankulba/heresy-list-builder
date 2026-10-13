@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
 import { ComposedModal, ModalHeader, ModalBody, ModalFooter, Button } from '@carbon/react';
 import type { Allegiance, Force, PlacedDetachment } from '../../types';
 import { getDetachmentDisplayName } from '../../data/loader';
@@ -64,6 +64,19 @@ function buildExportText(
   return lines.join('\n');
 }
 
+function rosFile(xml: string, faction: string): File {
+  return new File([xml], `${faction}.ros`, { type: 'application/xml' });
+}
+
+/** Phones and tablets: the system share sheet (New Recruit, Files, Messages…) instead of a download. */
+function canShareFiles(): boolean {
+  try {
+    return typeof navigator.canShare === 'function' && navigator.canShare({ files: [rosFile('', 'roster')] });
+  } catch {
+    return false;
+  }
+}
+
 function downloadRos(xml: string, faction: string): void {
   const filename = `${faction}.ros`;
   const blob = new Blob([xml], { type: 'text/xml;charset=utf-8' });
@@ -90,13 +103,32 @@ export default function ExportModal({
     [forces, allegiance, pointsLimit, totalPoints]
   );
 
+  const [copied, setCopied] = useState(false);
+  // Only touch devices: desktop browsers that can share files still expect a download
+  const share = useMemo(() => window.matchMedia('(pointer: coarse)').matches && canShareFiles(), []);
+
   function copyToClipboard() {
-    navigator.clipboard.writeText(text).catch(() => {});
+    navigator.clipboard
+      .writeText(text)
+      .then(() => {
+        setCopied(true);
+        setTimeout(() => setCopied(false), 1500);
+      })
+      .catch(() => {});
   }
 
+  const rosXml = () => buildRosXml(forces, pointsLimit, totalPoints, { allegiance, cohortDoctrine, armyChoices, configChoices });
+  const faction = forces.find((f) => f.kind === 'primary')?.faction ?? 'roster';
+
   function handleDownloadRos() {
-    const xml = buildRosXml(forces, pointsLimit, totalPoints, { allegiance, cohortDoctrine, armyChoices, configChoices });
-    downloadRos(xml, forces.find((f) => f.kind === 'primary')?.faction ?? 'roster');
+    downloadRos(rosXml(), faction);
+  }
+
+  function handleShareRos() {
+    navigator.share({ files: [rosFile(rosXml(), faction)], title: `${factionLabel(faction)} roster` }).catch((err) => {
+      // Dismissing the sheet is an AbortError; anything else falls back to a download
+      if ((err as DOMException)?.name !== 'AbortError') handleDownloadRos();
+    });
   }
 
   return (
@@ -126,11 +158,17 @@ export default function ExportModal({
           Close
         </Button>
         <Button kind="secondary" onClick={copyToClipboard}>
-          Copy to Clipboard
+          {copied ? 'Copied' : 'Copy text'}
         </Button>
-        <Button kind="primary" onClick={handleDownloadRos}>
-          Download .ros
-        </Button>
+        {share ? (
+          <Button kind="primary" onClick={handleShareRos}>
+            Share .ros
+          </Button>
+        ) : (
+          <Button kind="primary" onClick={handleDownloadRos}>
+            Download .ros
+          </Button>
+        )}
       </ModalFooter>
     </ComposedModal>
   );
