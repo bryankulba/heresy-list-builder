@@ -11,12 +11,12 @@
  */
 
 import type { Allegiance, Force, ModelEntry, UnitEntry, WargearEntry } from '../types';
-import { systemData, cataloguesData, detachmentsData, getChart, rulesData, type ArmyConfigEntry } from '../data/loader';
+import { systemData, cataloguesData, detachmentsData, getBaseRole, getChart, rulesData, type ArmyConfigEntry } from '../data/loader';
 import { FACTION_BY_ID, factionLabel } from '../data/factions';
 import { COHORT_DOCTRINE_BY_ID } from '../constants/cohortDoctrines';
 import { findPrimeNodeInGroups, logisticalBenefitChoice } from '../rules/primeBenefits';
-import { withEffectiveSlots } from '../rules/slots';
-import { rosterCounts } from '../rules/context';
+import { effectivePrimaryCategory, withEffectiveSlots } from '../rules/slots';
+import { rosterCounts, unitContext } from '../rules/context';
 import { effectiveHidden, type RuleContext } from '../rules/evaluate';
 import { cardSlots } from '../components/canvas/slotLayout';
 
@@ -38,7 +38,7 @@ interface Sel {
   type: 'unit' | 'model' | 'upgrade' | 'unit-group';
   number: number;
   cost?: number;
-  category?: { name: string; entryId: string };
+  categories?: Array<{ name: string; entryId: string; primary: boolean }>;
   children?: Sel[];
 }
 
@@ -82,11 +82,13 @@ function emitSelection(lines: string[], sel: Sel, i: string): void {
     for (const child of sel.children) emitSelection(lines, child, `${i}    `);
     lines.push(`${i}  </selections>`);
   }
-  if (sel.category) {
+  if (sel.categories && sel.categories.length > 0) {
     lines.push(`${i}  <categories>`);
-    lines.push(
-      `${i}    <category id="${uuid()}" name="${escapeXml(sel.category.name)}" entryId="${escapeXml(sel.category.entryId)}" primary="true"/>`
-    );
+    for (const c of sel.categories) {
+      lines.push(
+        `${i}    <category id="${uuid()}" name="${escapeXml(c.name)}" entryId="${escapeXml(c.entryId)}" primary="${c.primary}"/>`
+      );
+    }
     lines.push(`${i}  </categories>`);
   }
   lines.push(...costXml(sel.cost ?? 0, `${i}  `));
@@ -119,7 +121,12 @@ function modelSel(m: ModelEntry): Sel {
   };
 }
 
-function unitSel(unit: UnitEntry, category: Sel['category'], extraPoints: number, extras: Sel[]): Sel {
+/** A unit's primary category, as New Recruit records it. */
+function primaryCategory(role: string, categoryId: string | undefined): Sel['categories'] {
+  return categoryId ? [{ name: role, entryId: categoryId, primary: true }] : undefined;
+}
+
+function unitSel(unit: UnitEntry, categories: Sel['categories'], extraPoints: number, extras: Sel[]): Sel {
   return {
     name: unit.name,
     entryId: unit.path ?? unit.entryId ?? '',
@@ -127,7 +134,7 @@ function unitSel(unit: UnitEntry, category: Sel['category'], extraPoints: number
     number: 1,
     // Models carry their own costs; the unit carries its base cost (+ any extra points noted)
     cost: unit.baseCost + extraPoints,
-    category,
+    categories,
     children: [
       ...unit.models.map(modelSel),
       ...(unit.unitWargear ?? []).map((w) => wargearSel(w, 1)),
@@ -252,6 +259,13 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
         const role = slotDef?.role ?? key.slice(0, key.lastIndexOf('-'));
         const categoryId = slotDef?.categoryId ?? ROLE_CATEGORY_MAP[role];
         const unit = filled.unit;
+        // A unit in a Prime position keeps its own primary category (e.g.
+        // "Troops - Terror Squads Only"); the Prime category goes on its
+        // "Prime Unit" upgrade — as New Recruit records it
+        const baseRole = role.replace(/^Prime /, '');
+        const ownCategory = effectivePrimaryCategory(unit, unitContext(forces, force, det, unit, categoryId, counts));
+        const unitRole = baseRole !== role && getBaseRole(ownCategory) === getBaseRole(baseRole) ? ownCategory : baseRole;
+        const unitCategoryId = unitRole === role ? categoryId : ROLE_CATEGORY_MAP[unitRole];
         const extras: Sel[] = [];
 
         // Prime unit: emit its "Prime Unit" upgrade with the chosen benefit inside
@@ -269,6 +283,7 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
             entryId: unit.prime.path ?? unit.prime.linkId,
             type: 'upgrade',
             number: 1,
+            ...(role !== unitRole && categoryId ? { categories: [{ name: role, entryId: categoryId, primary: false }] } : {}),
             children: found
               ? [{
                   name: found.node.name,
@@ -313,8 +328,7 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
           }
         }
 
-        const category = categoryId ? { name: role, entryId: categoryId } : undefined;
-        emitSelection(lines, unitSel(unit, category, filled.extraPoints ?? 0, extras), '            ');
+        emitSelection(lines, unitSel(unit, primaryCategory(unitRole, unitCategoryId), filled.extraPoints ?? 0, extras), '            ');
       }
 
       // Bonus slots (Logistical Benefit)
@@ -322,8 +336,7 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
         if (!bs.unit) continue;
         const bonusSlotDef = det.def.slots.find((s) => s.role === bs.role);
         const categoryId = bonusSlotDef?.categoryId ?? ROLE_CATEGORY_MAP[bs.role];
-        const category = categoryId ? { name: bs.role, entryId: categoryId } : undefined;
-        emitSelection(lines, unitSel(bs.unit, category, bs.extraPoints ?? 0, []), '            ');
+        emitSelection(lines, unitSel(bs.unit, primaryCategory(bs.role, categoryId), bs.extraPoints ?? 0, []), '            ');
       }
 
       lines.push('          </selections>');

@@ -230,7 +230,45 @@ const mech: BsCatalogueFile = {
     name: 'Mechanicum',
     revision: 26,
     sharedSelectionEntries: [
-      { id: 'u-krios', name: 'Krios Battle Tank', type: 'unit', costs: pts(135), selectionEntries: [{ id: 'm-krios', name: 'Krios', type: 'model', constraints: [min(1), max(1)] }] },
+      {
+        id: 'u-krios',
+        name: 'Krios Battle Tank',
+        type: 'unit',
+        costs: pts(135),
+        selectionEntries: [
+          { id: 'm-krios', name: 'Krios', type: 'model', constraints: [min(1), max(1)] },
+          // Mandatory only in a Mechanicum army
+          {
+            id: 'cyb',
+            name: 'Cybernetica',
+            type: 'upgrade',
+            constraints: [{ ...min(1), id: 'cyb-min' }],
+            modifiers: [{
+              type: 'set',
+              field: 'cyb-min',
+              value: 0,
+              conditionGroups: [{
+                type: 'or',
+                conditions: [
+                  { type: 'instanceOf', value: 1, field: 'forces', scope: 'force', childId: 'vagus' },
+                  { type: 'notInstanceOf', value: 1, field: 'selections', scope: 'primary-catalogue', childId: MECH_CAT_ID },
+                ],
+              }],
+            }],
+          },
+        ],
+        // A required choice with no default: the first free option is taken
+        selectionEntryGroups: [{
+          id: 'krios-weapon',
+          name: 'Weapon',
+          constraints: [min(1), max(1)],
+          selectionEntries: [
+            { id: 'w-big', name: 'Big gun', type: 'upgrade', costs: pts(10) },
+            { id: 'w-zeta', name: 'Zeta blade', type: 'upgrade' },
+            { id: 'w-alpha', name: 'alpha rifle', type: 'upgrade' },
+          ],
+        }],
+      },
       { id: 'u-troop', name: 'Infantry Troop', type: 'unit', costs: pts(60) },
     ],
   },
@@ -251,6 +289,17 @@ const skitarii: BsCatalogueFile = {
         type: 'selectionEntry',
         targetId: 'u-krios',
         categoryLinks: [{ id: 's1', name: 'Armour', targetId: 'arm', primary: true }],
+        modifiers: [{ type: 'set', field: 'name', value: 'Skitarii Krios' }],
+        // Choices attached to the link itself (paths don't include the link id)
+        selectionEntryGroups: [{
+          id: 'sk-subfac',
+          name: 'Sub Factions',
+          constraints: [min(1), max(1)],
+          selectionEntries: [
+            { id: 'sf-exp', name: 'Expurgator', type: 'upgrade', sortIndex: 2 },
+            { id: 'sf-acq', name: 'Acquisitor', type: 'upgrade', sortIndex: 1 },
+          ],
+        }],
         modifierGroups: [
           {
             conditions: [{ type: 'instanceOf', value: 1, field: 'forces', scope: 'force', childId: 'vagus' }],
@@ -344,11 +393,19 @@ describe('units', () => {
   });
 
   test('resolves units linked from another catalogue', () => {
-    const u = unit('skitarii-conclaves', 'Krios Battle Tank');
+    const u = unit('skitarii-conclaves', 'Skitarii Krios');
     expect(u.entryId).toBe('sk-krios');
     expect(u.points).toBe(135);
     expect(u.source).toBe('skitarii-conclaves');
     expect(u.primaryCategory).toBe('Armour'); // conditional re-file ignored
+  });
+
+  test('fills required choices and settles primary-catalogue constraint modifiers', () => {
+    const u = unit('skitarii-conclaves', 'Skitarii Krios');
+    expect(u.unitWargear?.map((w) => [w.name, w.path, w.groupPath])).toEqual([
+      ['alpha rifle', 'sk-krios::w-alpha', 'sk-krios::krios-weapon'],
+      ['Acquisitor', 'sf-acq', 'sk-subfac'],
+    ]); // no Cybernetica outside a Mechanicum army
   });
 
   test('applies unconditional set-primary modifiers', () => {

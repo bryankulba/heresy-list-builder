@@ -7070,7 +7070,14 @@
             "groupPath": "b7d2-7697-3dc2-210c::9fa8-cbae-ef5e-4b7c"
           }
         ],
-        "defaults": []
+        "defaults": [
+          {
+            "name": "Loyalist",
+            "entryId": "e1e1-a344-d3e2-0b91",
+            "path": "b7d2-7697-3dc2-210c::e1e1-a344-d3e2-0b91",
+            "groupPath": "b7d2-7697-3dc2-210c::9fa8-cbae-ef5e-4b7c"
+          }
+        ]
       },
       {
         "name": "Army Configuration",
@@ -7302,7 +7309,31 @@
             "groupPath": "a4a4-1585-1c50-4ccc::73a3-ded4-7d09-5204::67f2-6d7f-9c35-9774"
           }
         ],
-        "defaults": []
+        "defaults": [
+          {
+            "name": "Legiones Astartes Emperor's Children",
+            "entryId": "6666-33b0-8206-5094",
+            "path": "a4a4-1585-1c50-4ccc::73a3-ded4-7d09-5204::6666-33b0-8206-5094",
+            "groupPath": "a4a4-1585-1c50-4ccc::73a3-ded4-7d09-5204::67f2-6d7f-9c35-9774",
+            "children": [
+              {
+                "name": "Legion Tactica",
+                "entryId": "4db9-ba16-afbf-2d26",
+                "path": "a4a4-1585-1c50-4ccc::73a3-ded4-7d09-5204::4db9-ba16-afbf-2d26"
+              },
+              {
+                "name": "Gambit",
+                "entryId": "3cf8-a0d6-6922-44dc",
+                "path": "a4a4-1585-1c50-4ccc::73a3-ded4-7d09-5204::3cf8-a0d6-6922-44dc"
+              },
+              {
+                "name": "Advanced Reaction",
+                "entryId": "f523-f3c7-9bd0-f42c",
+                "path": "a4a4-1585-1c50-4ccc::73a3-ded4-7d09-5204::f523-f3c7-9bd0-f42c"
+              }
+            ]
+          }
+        ]
       }
     ],
     "imperial-fists": [
@@ -8337,7 +8368,15 @@
             "groupPath": "c0cd-7f53-2f56-2015::4a41-6ef3-9edb-6b71::5a46-d9a6-d191-6441"
           }
         ],
-        "defaults": []
+        "defaults": [
+          {
+            "name": "Questoris Imperialis",
+            "entryId": "1d9a-6b1a-d70b-63ac",
+            "targetId": "0544-8dce-3f8a-245d",
+            "path": "c0cd-7f53-2f56-2015::4a41-6ef3-9edb-6b71::1d9a-6b1a-d70b-63ac::0544-8dce-3f8a-245d",
+            "groupPath": "c0cd-7f53-2f56-2015::4a41-6ef3-9edb-6b71::5a46-d9a6-d191-6441"
+          }
+        ]
       },
       {
         "name": "Advanced Reactions",
@@ -8377,7 +8416,14 @@
             "groupPath": "98e8-37ee-0754-bb6e::81a7-40bd-749f-ac6b::3f02-d062-0d02-f83d"
           }
         ],
-        "defaults": []
+        "defaults": [
+          {
+            "name": "Joust!",
+            "entryId": "06ab-0a93-1765-ec55",
+            "path": "98e8-37ee-0754-bb6e::81a7-40bd-749f-ac6b::06ab-0a93-1765-ec55",
+            "groupPath": "98e8-37ee-0754-bb6e::81a7-40bd-749f-ac6b::3f02-d062-0d02-f83d"
+          }
+        ]
       },
       {
         "name": "Provenances of War",

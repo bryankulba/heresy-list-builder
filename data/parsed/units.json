@@ -337,6 +337,13 @@
               "entryId": "3a50-2adf-1972-4538",
               "targetId": "ae43-8418-ecb1-ef6e",
               "path": "723a-caa1-9f03-13f9::3a50-2adf-1972-4538::ae43-8418-ecb1-ef6e"
+            },
+            {
+              "name": "Saturnine war axe",
+              "entryId": "348d-05b8-1b3b-a99a",
+              "targetId": "2c38-5c75-ae96-1391",
+              "path": "723a-caa1-9f03-13f9::348d-05b8-1b3b-a99a::2c38-5c75-ae96-1391",
+              "groupPath": "723a-caa1-9f03-13f9::3204-79db-bbc4-2000"
             }
           ]
         }
@@ -351,7 +358,9 @@
         "9871-cb62-5283-2216": 1,
         "1e7d-9066-28d2-97a0": 1,
         "3a50-2adf-1972-4538": 1,
-        "ae43-8418-ecb1-ef6e": 1
+        "ae43-8418-ecb1-ef6e": 1,
+        "348d-05b8-1b3b-a99a": 1,
+        "2c38-5c75-ae96-1391": 1
       },
       "prime": {
         "linkId": "943f-e958-461a-bb23",
@@ -933,6 +942,13 @@
           "defaultWargear": [
             {
               "name": "Bolter",
+              "entryId": "8ea5-3791-a4ab-d0b9",
+              "targetId": "d3f9-b9e6-3ea5-cc8e",
+              "path": "a221-5810-8800-1f65::8ea5-3791-a4ab-d0b9::d3f9-b9e6-3ea5-cc8e",
+              "groupPath": "a221-5810-8800-1f65::d3be-7f0e-10f8-58cf::d625-37d6-d83a-0de3"
+            },
+            {
+              "name": "Bolter",
               "entryId": "c5e4-6b70-a14b-4ac5",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "a221-5810-8800-1f65::c5e4-6b70-a14b-4ac5::d3f9-b9e6-3ea5-cc8e",
@@ -949,8 +965,9 @@
         "0dc5-a99d-8e65-9ab8": 1,
         "aa5a-c9fd-1eb1-7a45": 1,
         "2e6d-36f6-eeca-8e0c": 1,
-        "c5e4-6b70-a14b-4ac5": 1,
-        "d3f9-b9e6-3ea5-cc8e": 1
+        "8ea5-3791-a4ab-d0b9": 1,
+        "d3f9-b9e6-3ea5-cc8e": 2,
+        "c5e4-6b70-a14b-4ac5": 1
       },
       "prime": {
         "linkId": "c3ac-8587-a3f5-3c18",
@@ -1491,6 +1508,26 @@
           ]
         },
         {
+          "name": "Leviathan siege claw and one meltagun",
+          "entryId": "b2b0-557f-985e-ab0c",
+          "path": "e468-70ee-8012-9b20::b2b0-557f-985e-ab0c",
+          "groupPath": "e468-70ee-8012-9b20::d25e-85ec-02d5-cf19",
+          "children": [
+            {
+              "name": "Leviathan siege claw",
+              "entryId": "24d2-615e-ff1e-475a",
+              "targetId": "f39b-5653-54c5-50e2",
+              "path": "e468-70ee-8012-9b20::24d2-615e-ff1e-475a::f39b-5653-54c5-50e2"
+            },
+            {
+              "name": "Meltagun",
+              "entryId": "1a99-4ddd-44a1-a49e",
+              "targetId": "b1e1-e164-5877-6734",
+              "path": "e468-70ee-8012-9b20::1a99-4ddd-44a1-a49e::b1e1-e164-5877-6734"
+            }
+          ]
+        },
+        {
           "name": "Two Heavy flamers",
           "entryId": "338f-ed9f-7536-c6d3",
           "path": "e468-70ee-8012-9b20::338f-ed9f-7536-c6d3",
@@ -1626,6 +1663,12 @@
           "max": 1,
           "defaultWargear": [
             {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "e5b5-5476-3c88-141b::4c90-f075-aea1-340e::38a8-2683-c590-3c4b",
+              "groupPath": "e5b5-5476-3c88-141b::4c90-f075-aea1-340e::170b-d9c0-e9d6-b314"
+            },
+            {
               "name": "Paragon blade",
               "entryId": "de2e-168d-fb17-f498",
               "targetId": "1881-a2b5-fc58-4270",
@@ -1653,6 +1696,7 @@
         "594d-fa82-13cb-a345": 1,
         "9871-cb62-5283-2216": 1,
         "1e7d-9066-28d2-97a0": 1,
+        "38a8-2683-c590-3c4b": 1,
         "de2e-168d-fb17-f498": 1,
         "1881-a2b5-fc58-4270": 1,
         "9268-f724-d807-d41f": 1,
@@ -1761,6 +1805,12 @@
           "max": 1,
           "defaultWargear": [
             {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "5dd5-d00c-b150-34b9::d704-0f74-99e4-dbc7::38a8-2683-c590-3c4b",
+              "groupPath": "5dd5-d00c-b150-34b9::d704-0f74-99e4-dbc7::170b-d9c0-e9d6-b314"
+            },
+            {
               "name": "Volkite charger",
               "entryId": "374a-8fe9-c894-73aa",
               "targetId": "93e7-6a83-1e9e-204a",
@@ -1783,6 +1833,7 @@
         "594d-fa82-13cb-a345": 1,
         "9871-cb62-5283-2216": 1,
         "1e7d-9066-28d2-97a0": 1,
+        "38a8-2683-c590-3c4b": 1,
         "374a-8fe9-c894-73aa": 1,
         "93e7-6a83-1e9e-204a": 1
       },
@@ -1828,6 +1879,13 @@
             },
             {
               "name": "Bolter",
+              "entryId": "3d0e-63be-92c1-f9a1",
+              "targetId": "d3f9-b9e6-3ea5-cc8e",
+              "path": "fe78-9671-5656-c304::3d0e-63be-92c1-f9a1::d3f9-b9e6-3ea5-cc8e",
+              "groupPath": "fe78-9671-5656-c304::0391-e330-1b9a-b27b::d625-37d6-d83a-0de3"
+            },
+            {
+              "name": "Bolter",
               "entryId": "f112-d472-06f5-083d",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "fe78-9671-5656-c304::f112-d472-06f5-083d::d3f9-b9e6-3ea5-cc8e",
@@ -1846,8 +1904,9 @@
         "2e6d-36f6-eeca-8e0c": 1,
         "1092-a0c1-578f-9f11": 1,
         "2012-4b76-43b0-c7dd": 1,
-        "f112-d472-06f5-083d": 1,
-        "d3f9-b9e6-3ea5-cc8e": 1
+        "3d0e-63be-92c1-f9a1": 1,
+        "d3f9-b9e6-3ea5-cc8e": 2,
+        "f112-d472-06f5-083d": 1
       },
       "prime": {
         "linkId": "ca37-c978-03cf-6ed6",
@@ -3928,6 +3987,22 @@
         }
       ],
       "source": "legiones-astartes",
+      "unitWargear": [
+        {
+          "name": "Gravis bolt cannon",
+          "entryId": "cd73-cd83-d8f7-2b55",
+          "targetId": "50d5-02d3-0be6-9143",
+          "path": "4f8f-1588-ee1e-789c::cd73-cd83-d8f7-2b55::50d5-02d3-0be6-9143",
+          "groupPath": "4f8f-1588-ee1e-789c::cf7f-2d94-519d-4289"
+        },
+        {
+          "name": "Gravis bolt cannon",
+          "entryId": "9689-9000-131f-1b43",
+          "targetId": "50d5-02d3-0be6-9143",
+          "path": "4f8f-1588-ee1e-789c::9689-9000-131f-1b43::50d5-02d3-0be6-9143",
+          "groupPath": "4f8f-1588-ee1e-789c::2eab-b247-9786-3106"
+        }
+      ],
       "facts": {
         "3337-0b90-6ead-cba1": 1,
         "4f8f-1588-ee1e-789c": 1,
@@ -5156,6 +5231,20 @@
           "max": 1,
           "defaultWargear": [
             {
+              "name": "Heavy Bolters",
+              "entryId": "5a3c-9f07-2ef6-a37a",
+              "path": "aadc-fe71-f5a1-afcd::a49a-d3d7-7da3-2429::5a3c-9f07-2ef6-a37a",
+              "groupPath": "aadc-fe71-f5a1-afcd::a49a-d3d7-7da3-2429::df25-ac22-5bbd-0e44",
+              "children": [
+                {
+                  "name": "Heavy bolter",
+                  "entryId": "dfde-7237-e188-06e0",
+                  "targetId": "bc40-b14a-978e-0232",
+                  "path": "aadc-fe71-f5a1-afcd::a49a-d3d7-7da3-2429::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
+                }
+              ]
+            },
+            {
               "name": "Predator cannon",
               "entryId": "1ac0-1304-aa0e-e68b",
               "targetId": "4c10-e3e7-244a-cf23",
@@ -5172,6 +5261,7 @@
         "643a-1012-bd51-6537": 1,
         "99bb-2f78-0840-c5ba": 1,
         "aa5a-c9fd-1eb1-7a45": 1,
+        "5a3c-9f07-2ef6-a37a": 1,
         "1ac0-1304-aa0e-e68b": 1,
         "4c10-e3e7-244a-cf23": 1
       },
@@ -5283,6 +5373,20 @@
               "path": "f28e-ef2e-f28c-5385::e5b1-223c-7cc2-645a::bc40-b14a-978e-0232"
             },
             {
+              "name": "Heavy Bolters",
+              "entryId": "5a3c-9f07-2ef6-a37a",
+              "path": "f28e-ef2e-f28c-5385::3b88-70bd-772b-32b0::5a3c-9f07-2ef6-a37a",
+              "groupPath": "f28e-ef2e-f28c-5385::3b88-70bd-772b-32b0::df25-ac22-5bbd-0e44",
+              "children": [
+                {
+                  "name": "Heavy bolter",
+                  "entryId": "dfde-7237-e188-06e0",
+                  "targetId": "bc40-b14a-978e-0232",
+                  "path": "f28e-ef2e-f28c-5385::3b88-70bd-772b-32b0::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
+                }
+              ]
+            },
+            {
               "name": "Twin accelerator autocannon",
               "entryId": "3a8a-ca86-37b6-9b04",
               "targetId": "8a78-fd06-a32c-0d44",
@@ -5301,6 +5405,7 @@
         "aa5a-c9fd-1eb1-7a45": 1,
         "e5b1-223c-7cc2-645a": 1,
         "bc40-b14a-978e-0232": 1,
+        "5a3c-9f07-2ef6-a37a": 1,
         "3a8a-ca86-37b6-9b04": 1,
         "8a78-fd06-a32c-0d44": 1
       },
@@ -5343,6 +5448,20 @@
               "entryId": "c057-fed1-8e5f-18c8",
               "targetId": "bc40-b14a-978e-0232",
               "path": "e782-806b-997d-257d::c057-fed1-8e5f-18c8::bc40-b14a-978e-0232"
+            },
+            {
+              "name": "Heavy Bolters",
+              "entryId": "5a3c-9f07-2ef6-a37a",
+              "path": "e782-806b-997d-257d::a62d-2eb6-3b67-2691::5a3c-9f07-2ef6-a37a",
+              "groupPath": "e782-806b-997d-257d::a62d-2eb6-3b67-2691::df25-ac22-5bbd-0e44",
+              "children": [
+                {
+                  "name": "Heavy bolter",
+                  "entryId": "dfde-7237-e188-06e0",
+                  "targetId": "bc40-b14a-978e-0232",
+                  "path": "e782-806b-997d-257d::a62d-2eb6-3b67-2691::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
+                }
+              ]
             }
           ]
         }
@@ -5357,7 +5476,8 @@
         "3afe-1863-a80f-9f04": 1,
         "81f3-6879-257e-6552": 1,
         "c057-fed1-8e5f-18c8": 1,
-        "bc40-b14a-978e-0232": 1
+        "bc40-b14a-978e-0232": 1,
+        "5a3c-9f07-2ef6-a37a": 1
       },
       "prime": {
         "linkId": "2db2-ebb0-85fb-1fae",
@@ -5394,6 +5514,20 @@
               "path": "82d0-fe0d-f087-3fff::7c7f-e369-1fa5-d1de::da6e-3b8a-ea61-1e93"
             },
             {
+              "name": "Heavy Bolters",
+              "entryId": "5a3c-9f07-2ef6-a37a",
+              "path": "82d0-fe0d-f087-3fff::e3b6-b7b7-2448-ca57::5a3c-9f07-2ef6-a37a",
+              "groupPath": "82d0-fe0d-f087-3fff::e3b6-b7b7-2448-ca57::df25-ac22-5bbd-0e44",
+              "children": [
+                {
+                  "name": "Heavy bolter",
+                  "entryId": "dfde-7237-e188-06e0",
+                  "targetId": "bc40-b14a-978e-0232",
+                  "path": "82d0-fe0d-f087-3fff::e3b6-b7b7-2448-ca57::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
+                }
+              ]
+            },
+            {
               "name": "Kratos battle cannon",
               "entryId": "2559-bb09-0ab4-b9b6",
               "targetId": "04f4-aa6a-ee27-15c1",
@@ -5427,6 +5561,7 @@
         "3753-39e1-22c2-531b": 1,
         "7c7f-e369-1fa5-d1de": 1,
         "da6e-3b8a-ea61-1e93": 1,
+        "5a3c-9f07-2ef6-a37a": 1,
         "2559-bb09-0ab4-b9b6": 1,
         "04f4-aa6a-ee27-15c1": 1,
         "dfb7-d856-91df-8154": 1
@@ -5549,6 +5684,13 @@
             },
             {
               "name": "Bolter",
+              "entryId": "1d6f-f394-bd4d-da82",
+              "targetId": "d3f9-b9e6-3ea5-cc8e",
+              "path": "fd2d-2f7b-803a-c377::1d6f-f394-bd4d-da82::d3f9-b9e6-3ea5-cc8e",
+              "groupPath": "fd2d-2f7b-803a-c377::f129-0760-4473-0fd6::d625-37d6-d83a-0de3"
+            },
+            {
+              "name": "Bolter",
               "entryId": "38c4-6abd-661e-966e",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "fd2d-2f7b-803a-c377::38c4-6abd-661e-966e::d3f9-b9e6-3ea5-cc8e",
@@ -5566,8 +5708,9 @@
         "aa5a-c9fd-1eb1-7a45": 1,
         "4cc7-9ee1-81c4-bcd1": 1,
         "b706-15fa-601e-78b9": 1,
-        "38c4-6abd-661e-966e": 1,
-        "d3f9-b9e6-3ea5-cc8e": 1
+        "1d6f-f394-bd4d-da82": 1,
+        "d3f9-b9e6-3ea5-cc8e": 2,
+        "38c4-6abd-661e-966e": 1
       },
       "prime": {
         "linkId": "d82d-71a9-71af-46f4",
@@ -5596,7 +5739,29 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Heavy Bolters",
+              "entryId": "5a3c-9f07-2ef6-a37a",
+              "path": "08db-017f-44c0-51a4::dd0d-8e1f-809f-ee18::5a3c-9f07-2ef6-a37a",
+              "groupPath": "08db-017f-44c0-51a4::dd0d-8e1f-809f-ee18::df25-ac22-5bbd-0e44",
+              "children": [
+                {
+                  "name": "Heavy bolter",
+                  "entryId": "dfde-7237-e188-06e0",
+                  "targetId": "bc40-b14a-978e-0232",
+                  "path": "08db-017f-44c0-51a4::dd0d-8e1f-809f-ee18::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
+                }
+              ]
+            },
+            {
+              "name": "Morbus bombard",
+              "entryId": "33ef-70dd-6b15-ecdc",
+              "targetId": "1729-5940-4e73-a27f",
+              "path": "08db-017f-44c0-51a4::33ef-70dd-6b15-ecdc::1729-5940-4e73-a27f",
+              "groupPath": "08db-017f-44c0-51a4::d06c-2663-0a1c-d1f3"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes",
@@ -5605,7 +5770,10 @@
         "08db-017f-44c0-51a4": 1,
         "643a-1012-bd51-6537": 1,
         "b39e-881a-ad40-c1b3": 1,
-        "aa5a-c9fd-1eb1-7a45": 1
+        "aa5a-c9fd-1eb1-7a45": 1,
+        "5a3c-9f07-2ef6-a37a": 1,
+        "33ef-70dd-6b15-ecdc": 1,
+        "1729-5940-4e73-a27f": 1
       },
       "prime": {
         "linkId": "b004-97e3-f932-b030",
@@ -5666,6 +5834,20 @@
               "entryId": "4bd8-f660-4031-f541",
               "targetId": "e1fa-b0b7-240a-df13",
               "path": "92b5-9340-df96-6375::4bd8-f660-4031-f541::e1fa-b0b7-240a-df13"
+            },
+            {
+              "name": "Heavy Bolters",
+              "entryId": "5a3c-9f07-2ef6-a37a",
+              "path": "92b5-9340-df96-6375::f355-58ef-9f2d-aaaf::5a3c-9f07-2ef6-a37a",
+              "groupPath": "92b5-9340-df96-6375::f355-58ef-9f2d-aaaf::df25-ac22-5bbd-0e44",
+              "children": [
+                {
+                  "name": "Heavy bolter",
+                  "entryId": "dfde-7237-e188-06e0",
+                  "targetId": "bc40-b14a-978e-0232",
+                  "path": "92b5-9340-df96-6375::f355-58ef-9f2d-aaaf::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
+                }
+              ]
             }
           ]
         }
@@ -5680,7 +5862,8 @@
         "aa5a-c9fd-1eb1-7a45": 1,
         "4d42-b711-7946-8e15": 1,
         "4bd8-f660-4031-f541": 1,
-        "e1fa-b0b7-240a-df13": 1
+        "e1fa-b0b7-240a-df13": 1,
+        "5a3c-9f07-2ef6-a37a": 1
       }
     },
     {
@@ -5705,6 +5888,20 @@
               "entryId": "a119-0b5b-439e-602b",
               "targetId": "6241-f9ad-8d5f-9494",
               "path": "c6aa-db21-1ce7-6b8b::a119-0b5b-439e-602b::6241-f9ad-8d5f-9494"
+            },
+            {
+              "name": "Heavy Bolters",
+              "entryId": "5a3c-9f07-2ef6-a37a",
+              "path": "c6aa-db21-1ce7-6b8b::3a0a-63c2-26bf-2f65::5a3c-9f07-2ef6-a37a",
+              "groupPath": "c6aa-db21-1ce7-6b8b::3a0a-63c2-26bf-2f65::df25-ac22-5bbd-0e44",
+              "children": [
+                {
+                  "name": "Heavy bolter",
+                  "entryId": "dfde-7237-e188-06e0",
+                  "targetId": "bc40-b14a-978e-0232",
+                  "path": "c6aa-db21-1ce7-6b8b::3a0a-63c2-26bf-2f65::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
+                }
+              ]
             }
           ]
         }
@@ -5719,7 +5916,8 @@
         "aa5a-c9fd-1eb1-7a45": 1,
         "4d42-b711-7946-8e15": 1,
         "a119-0b5b-439e-602b": 1,
-        "6241-f9ad-8d5f-9494": 1
+        "6241-f9ad-8d5f-9494": 1,
+        "5a3c-9f07-2ef6-a37a": 1
       }
     },
     {
@@ -5931,6 +6129,20 @@
               "entryId": "377c-8098-7dd6-8bb1",
               "targetId": "3763-ca65-098f-97d7",
               "path": "0047-b1df-944f-498e::377c-8098-7dd6-8bb1::3763-ca65-098f-97d7"
+            },
+            {
+              "name": "Heavy Bolters",
+              "entryId": "5a3c-9f07-2ef6-a37a",
+              "path": "0047-b1df-944f-498e::e54b-b14e-07bf-4e0e::5a3c-9f07-2ef6-a37a",
+              "groupPath": "0047-b1df-944f-498e::e54b-b14e-07bf-4e0e::df25-ac22-5bbd-0e44",
+              "children": [
+                {
+                  "name": "Heavy bolter",
+                  "entryId": "dfde-7237-e188-06e0",
+                  "targetId": "bc40-b14a-978e-0232",
+                  "path": "0047-b1df-944f-498e::e54b-b14e-07bf-4e0e::dfde-7237-e188-06e0::bc40-b14a-978e-0232"
+                }
+              ]
             }
           ]
         }
@@ -5948,7 +6160,8 @@
         "3dfb-afc2-4b29-051e": 1,
         "711a-5744-668b-feb2": 1,
         "377c-8098-7dd6-8bb1": 1,
-        "3763-ca65-098f-97d7": 1
+        "3763-ca65-098f-97d7": 1,
+        "5a3c-9f07-2ef6-a37a": 1
       }
     },
     {
@@ -5989,6 +6202,20 @@
           "entryId": "e5a7-8160-90d7-a488",
           "targetId": "e0bc-e3e1-54e7-bd75",
           "path": "8edf-e3e1-0a1b-20a9::e5a7-8160-90d7-a488::e0bc-e3e1-54e7-bd75"
+        },
+        {
+          "name": "Twin lascannon",
+          "entryId": "1590-79a1-617f-af18",
+          "targetId": "8e62-3fda-37e1-5f0a",
+          "path": "8edf-e3e1-0a1b-20a9::1590-79a1-617f-af18::8e62-3fda-37e1-5f0a",
+          "groupPath": "8edf-e3e1-0a1b-20a9::d832-5f66-f189-5c6a"
+        },
+        {
+          "name": "Twin lascannon",
+          "entryId": "7c56-2250-7a45-0082",
+          "targetId": "8e62-3fda-37e1-5f0a",
+          "path": "8edf-e3e1-0a1b-20a9::7c56-2250-7a45-0082::8e62-3fda-37e1-5f0a",
+          "groupPath": "8edf-e3e1-0a1b-20a9::f6eb-b419-7033-f945"
         }
       ],
       "facts": {
@@ -6240,6 +6467,13 @@
             },
             {
               "name": "Bolter",
+              "entryId": "5287-5589-cc4c-6296",
+              "targetId": "d3f9-b9e6-3ea5-cc8e",
+              "path": "001e-35e4-9d3c-4c46::5287-5589-cc4c-6296::d3f9-b9e6-3ea5-cc8e",
+              "groupPath": "001e-35e4-9d3c-4c46::0d3a-f420-76f2-6e5d::d625-37d6-d83a-0de3"
+            },
+            {
+              "name": "Bolter",
               "entryId": "4529-1417-138b-d21c",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "001e-35e4-9d3c-4c46::4529-1417-138b-d21c::d3f9-b9e6-3ea5-cc8e",
@@ -6257,8 +6491,9 @@
         "aa5a-c9fd-1eb1-7a45": 1,
         "68fc-0ba5-c404-fc17": 1,
         "a4e2-e284-30e1-f05a": 1,
-        "4529-1417-138b-d21c": 1,
-        "d3f9-b9e6-3ea5-cc8e": 1
+        "5287-5589-cc4c-6296": 1,
+        "d3f9-b9e6-3ea5-cc8e": 2,
+        "4529-1417-138b-d21c": 1
       },
       "prime": {
         "linkId": "7b70-272e-208b-3279",
@@ -6321,6 +6556,13 @@
               "groupPath": "b486-4dce-c2a3-2e24::1990-68c5-425f-b8ec"
             },
             {
+              "name": "Heavy bolter",
+              "entryId": "ae14-feba-c845-224a",
+              "targetId": "bc40-b14a-978e-0232",
+              "path": "b486-4dce-c2a3-2e24::ae14-feba-c845-224a::bc40-b14a-978e-0232",
+              "groupPath": "b486-4dce-c2a3-2e24::3124-6e2a-8647-9789"
+            },
+            {
               "name": "Bolt pistol",
               "entryId": "b332-4a60-fb6e-b17b",
               "targetId": "2942-f783-d627-33c5",
@@ -6347,6 +6589,8 @@
         "78f4-4967-2896-c3a5": 1,
         "5b12-c7bb-4d35-b92c": 1,
         "1603-43c6-8860-d57e": 1,
+        "ae14-feba-c845-224a": 1,
+        "bc40-b14a-978e-0232": 1,
         "b332-4a60-fb6e-b17b": 1,
         "2942-f783-d627-33c5": 1
       },
@@ -6399,6 +6643,27 @@
               "entryId": "4f20-9a87-8334-9f26",
               "path": "1ebd-e929-e5f8-2797::9e9c-d577-4bb6-2221::4f20-9a87-8334-9f26",
               "groupPath": "1ebd-e929-e5f8-2797::9e9c-d577-4bb6-2221::9089-07e5-3653-84b6"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "5b22-10c4-4058-86d7",
+              "targetId": "78f4-4967-2896-c3a5",
+              "path": "1ebd-e929-e5f8-2797::5b22-10c4-4058-86d7::78f4-4967-2896-c3a5",
+              "groupPath": "1ebd-e929-e5f8-2797::8158-5bac-4c7b-9050"
+            },
+            {
+              "name": "Twin bolter",
+              "entryId": "229b-3b78-402a-842c",
+              "targetId": "222f-82cb-05a2-f8f1",
+              "path": "1ebd-e929-e5f8-2797::229b-3b78-402a-842c::222f-82cb-05a2-f8f1",
+              "groupPath": "1ebd-e929-e5f8-2797::f4bf-ade1-4ec2-9be6"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "7ce5-c698-4051-bd96",
+              "targetId": "bc40-b14a-978e-0232",
+              "path": "1ebd-e929-e5f8-2797::7ce5-c698-4051-bd96::bc40-b14a-978e-0232",
+              "groupPath": "1ebd-e929-e5f8-2797::bd38-6afe-4ac0-94c9"
             }
           ]
         }
@@ -6417,7 +6682,13 @@
         "60e4-ca33-2e68-9afc": 1,
         "b89f-b91f-4d9d-b659": 1,
         "fa20-82bc-c7de-9e97": 1,
-        "4f20-9a87-8334-9f26": 1
+        "4f20-9a87-8334-9f26": 1,
+        "5b22-10c4-4058-86d7": 1,
+        "78f4-4967-2896-c3a5": 1,
+        "229b-3b78-402a-842c": 1,
+        "222f-82cb-05a2-f8f1": 1,
+        "7ce5-c698-4051-bd96": 1,
+        "bc40-b14a-978e-0232": 1
       },
       "prime": {
         "linkId": "34de-3307-d118-19b9",
@@ -6553,6 +6824,20 @@
               "targetId": "2942-f783-d627-33c5",
               "path": "010f-4406-3a8e-5fbf::a450-e94f-492b-b281::2942-f783-d627-33c5",
               "groupPath": "010f-4406-3a8e-5fbf::6e35-25c8-4fec-bf8a"
+            },
+            {
+              "name": "Twin bolter",
+              "entryId": "e795-11d8-40e5-a967",
+              "targetId": "222f-82cb-05a2-f8f1",
+              "path": "010f-4406-3a8e-5fbf::e795-11d8-40e5-a967::222f-82cb-05a2-f8f1",
+              "groupPath": "010f-4406-3a8e-5fbf::4df9-bcf8-4dfd-9884"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "5fe9-fc6b-497b-8a07",
+              "targetId": "bc40-b14a-978e-0232",
+              "path": "010f-4406-3a8e-5fbf::5fe9-fc6b-497b-8a07::bc40-b14a-978e-0232",
+              "groupPath": "010f-4406-3a8e-5fbf::439c-4d94-48fc-86b4"
             }
           ]
         }
@@ -6573,7 +6858,11 @@
         "970d-7af0-0052-e25c": 1,
         "02b1-ed1c-7c89-fc36": 1,
         "a450-e94f-492b-b281": 1,
-        "2942-f783-d627-33c5": 1
+        "2942-f783-d627-33c5": 1,
+        "e795-11d8-40e5-a967": 1,
+        "222f-82cb-05a2-f8f1": 1,
+        "5fe9-fc6b-497b-8a07": 1,
+        "bc40-b14a-978e-0232": 1
       },
       "prime": {
         "linkId": "179a-2b52-4f30-cb37",
@@ -6604,11 +6893,24 @@
           "max": 1,
           "defaultWargear": [
             {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "f134-7c32-d6b2-82f2::92e1-edc3-6bea-0b6e::38a8-2683-c590-3c4b",
+              "groupPath": "f134-7c32-d6b2-82f2::92e1-edc3-6bea-0b6e::170b-d9c0-e9d6-b314"
+            },
+            {
               "name": "Force sword",
               "entryId": "970d-7af0-0052-e25c",
               "targetId": "02b1-ed1c-7c89-fc36",
               "path": "f134-7c32-d6b2-82f2::7f4c-7851-cacc-ee7f::970d-7af0-0052-e25c::02b1-ed1c-7c89-fc36",
               "groupPath": "f134-7c32-d6b2-82f2::7f4c-7851-cacc-ee7f::89e6-2502-2486-71f4"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "2a45-6e45-4c58-ad51",
+              "targetId": "042d-9e60-db9e-c147",
+              "path": "f134-7c32-d6b2-82f2::2a45-6e45-4c58-ad51::042d-9e60-db9e-c147",
+              "groupPath": "f134-7c32-d6b2-82f2::db1b-35be-42c0-8973"
             }
           ]
         }
@@ -6622,8 +6924,11 @@
         "594d-fa82-13cb-a345": 1,
         "9871-cb62-5283-2216": 1,
         "1e7d-9066-28d2-97a0": 1,
+        "38a8-2683-c590-3c4b": 1,
         "970d-7af0-0052-e25c": 1,
-        "02b1-ed1c-7c89-fc36": 1
+        "02b1-ed1c-7c89-fc36": 1,
+        "2a45-6e45-4c58-ad51": 1,
+        "042d-9e60-db9e-c147": 1
       },
       "prime": {
         "linkId": "54fb-a60f-99d5-3c18",
@@ -6771,6 +7076,20 @@
               "targetId": "02b1-ed1c-7c89-fc36",
               "path": "644a-79bf-4ff5-c3ba::99b3-44b1-3520-c618::970d-7af0-0052-e25c::02b1-ed1c-7c89-fc36",
               "groupPath": "644a-79bf-4ff5-c3ba::99b3-44b1-3520-c618::89e6-2502-2486-71f4"
+            },
+            {
+              "name": "Twin bolter",
+              "entryId": "4a27-0e56-4abc-b9a7",
+              "targetId": "222f-82cb-05a2-f8f1",
+              "path": "644a-79bf-4ff5-c3ba::4a27-0e56-4abc-b9a7::222f-82cb-05a2-f8f1",
+              "groupPath": "644a-79bf-4ff5-c3ba::fb55-6889-4688-939c"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "299a-ec0c-4b6c-aceb",
+              "targetId": "bc40-b14a-978e-0232",
+              "path": "644a-79bf-4ff5-c3ba::299a-ec0c-4b6c-aceb::bc40-b14a-978e-0232",
+              "groupPath": "644a-79bf-4ff5-c3ba::de04-4e4e-4516-ba38"
             }
           ]
         }
@@ -6793,7 +7112,11 @@
         "091a-56c9-7eba-9fa7": 1,
         "4f20-9a87-8334-9f26": 1,
         "970d-7af0-0052-e25c": 1,
-        "02b1-ed1c-7c89-fc36": 1
+        "02b1-ed1c-7c89-fc36": 1,
+        "4a27-0e56-4abc-b9a7": 1,
+        "222f-82cb-05a2-f8f1": 1,
+        "299a-ec0c-4b6c-aceb": 1,
+        "bc40-b14a-978e-0232": 1
       },
       "prime": {
         "linkId": "824f-88cf-2126-0808",
@@ -6830,11 +7153,24 @@
               "path": "4b24-f831-bc45-1e53::f45c-b423-3ea9-237b::091a-56c9-7eba-9fa7"
             },
             {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "4b24-f831-bc45-1e53::d457-9153-879c-d3aa::38a8-2683-c590-3c4b",
+              "groupPath": "4b24-f831-bc45-1e53::d457-9153-879c-d3aa::170b-d9c0-e9d6-b314"
+            },
+            {
               "name": "Force sword",
               "entryId": "970d-7af0-0052-e25c",
               "targetId": "02b1-ed1c-7c89-fc36",
               "path": "4b24-f831-bc45-1e53::0ada-1b1e-e8f1-1849::970d-7af0-0052-e25c::02b1-ed1c-7c89-fc36",
               "groupPath": "4b24-f831-bc45-1e53::0ada-1b1e-e8f1-1849::89e6-2502-2486-71f4"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "c098-0450-46a2-b294",
+              "targetId": "042d-9e60-db9e-c147",
+              "path": "4b24-f831-bc45-1e53::c098-0450-46a2-b294::042d-9e60-db9e-c147",
+              "groupPath": "4b24-f831-bc45-1e53::5f97-13b9-41f7-a584"
             }
           ]
         }
@@ -6850,8 +7186,11 @@
         "1e7d-9066-28d2-97a0": 1,
         "f45c-b423-3ea9-237b": 1,
         "091a-56c9-7eba-9fa7": 1,
+        "38a8-2683-c590-3c4b": 1,
         "970d-7af0-0052-e25c": 1,
-        "02b1-ed1c-7c89-fc36": 1
+        "02b1-ed1c-7c89-fc36": 1,
+        "c098-0450-46a2-b294": 1,
+        "042d-9e60-db9e-c147": 1
       },
       "prime": {
         "linkId": "c3a4-5a01-78b8-6729",
@@ -6898,6 +7237,13 @@
               "entryId": "d8de-4f39-4b94-b6df",
               "targetId": "fa20-82bc-c7de-9e97",
               "path": "cb60-d6c9-55ca-f650::d8de-4f39-4b94-b6df::fa20-82bc-c7de-9e97"
+            },
+            {
+              "name": "Volkite serpenta",
+              "entryId": "2ea4-67d6-408e-84c7",
+              "targetId": "b7c3-1de1-087c-3d6e",
+              "path": "cb60-d6c9-55ca-f650::2ea4-67d6-408e-84c7::b7c3-1de1-087c-3d6e",
+              "groupPath": "cb60-d6c9-55ca-f650::6a2d-30b7-4055-8717"
             }
           ]
         }
@@ -6917,7 +7263,9 @@
         "7e08-beb9-441a-8ebf": 1,
         "60e4-ca33-2e68-9afc": 1,
         "d8de-4f39-4b94-b6df": 1,
-        "fa20-82bc-c7de-9e97": 1
+        "fa20-82bc-c7de-9e97": 1,
+        "2ea4-67d6-408e-84c7": 1,
+        "b7c3-1de1-087c-3d6e": 1
       },
       "prime": {
         "linkId": "c10a-5e3d-cdfe-bb11",
@@ -6976,6 +7324,20 @@
               "entryId": "4f20-9a87-8334-9f26",
               "path": "e067-25ea-da8b-ed25::bc46-1a1d-4686-cb35::4f20-9a87-8334-9f26",
               "groupPath": "e067-25ea-da8b-ed25::bc46-1a1d-4686-cb35::9089-07e5-3653-84b6"
+            },
+            {
+              "name": "Twin bolter",
+              "entryId": "e110-6edf-444b-bb68",
+              "targetId": "222f-82cb-05a2-f8f1",
+              "path": "e067-25ea-da8b-ed25::e110-6edf-444b-bb68::222f-82cb-05a2-f8f1",
+              "groupPath": "e067-25ea-da8b-ed25::ab3b-9178-458a-b6b3"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "c868-27f8-4738-a9a8",
+              "targetId": "bc40-b14a-978e-0232",
+              "path": "e067-25ea-da8b-ed25::c868-27f8-4738-a9a8::bc40-b14a-978e-0232",
+              "groupPath": "e067-25ea-da8b-ed25::4577-8dfe-402a-a0f9"
             }
           ]
         }
@@ -6997,7 +7359,11 @@
         "60e4-ca33-2e68-9afc": 1,
         "f31e-1443-4c21-9866": 1,
         "fa20-82bc-c7de-9e97": 1,
-        "4f20-9a87-8334-9f26": 1
+        "4f20-9a87-8334-9f26": 1,
+        "e110-6edf-444b-bb68": 1,
+        "222f-82cb-05a2-f8f1": 1,
+        "c868-27f8-4738-a9a8": 1,
+        "bc40-b14a-978e-0232": 1
       },
       "prime": {
         "linkId": "bf29-5187-a3cf-de2e",
@@ -7034,6 +7400,12 @@
               "path": "b533-04b5-72e1-0083::e9e3-114a-49e4-9a0a::1881-a2b5-fc58-4270"
             },
             {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "b533-04b5-72e1-0083::f0b2-f00d-3602-b87a::38a8-2683-c590-3c4b",
+              "groupPath": "b533-04b5-72e1-0083::f0b2-f00d-3602-b87a::170b-d9c0-e9d6-b314"
+            },
+            {
               "name": "Combi-bolter",
               "entryId": "cba4-2a51-418f-a95d",
               "targetId": "042d-9e60-db9e-c147",
@@ -7056,6 +7428,7 @@
         "1e7d-9066-28d2-97a0": 1,
         "e9e3-114a-49e4-9a0a": 1,
         "1881-a2b5-fc58-4270": 1,
+        "38a8-2683-c590-3c4b": 1,
         "cba4-2a51-418f-a95d": 1,
         "042d-9e60-db9e-c147": 1
       },
@@ -7186,6 +7559,20 @@
               "groupPath": "aebd-07af-af5a-9319::678e-9c9f-85a7-9eea::9089-07e5-3653-84b6"
             },
             {
+              "name": "Twin bolter",
+              "entryId": "c9ff-c961-4788-8aef",
+              "targetId": "222f-82cb-05a2-f8f1",
+              "path": "aebd-07af-af5a-9319::c9ff-c961-4788-8aef::222f-82cb-05a2-f8f1",
+              "groupPath": "aebd-07af-af5a-9319::0e2b-0b8f-45ff-9cb3"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "7e73-e6ff-4821-9444",
+              "targetId": "bc40-b14a-978e-0232",
+              "path": "aebd-07af-af5a-9319::7e73-e6ff-4821-9444::bc40-b14a-978e-0232",
+              "groupPath": "aebd-07af-af5a-9319::bfa5-70ab-4034-bdbc"
+            },
+            {
               "name": "Bolt pistol",
               "entryId": "84be-128d-e921-f0c6",
               "targetId": "2942-f783-d627-33c5",
@@ -7210,6 +7597,10 @@
         "3727-2e0b-4d5e-93d5": 1,
         "fa20-82bc-c7de-9e97": 1,
         "4f20-9a87-8334-9f26": 1,
+        "c9ff-c961-4788-8aef": 1,
+        "222f-82cb-05a2-f8f1": 1,
+        "7e73-e6ff-4821-9444": 1,
+        "bc40-b14a-978e-0232": 1,
         "84be-128d-e921-f0c6": 1,
         "2942-f783-d627-33c5": 1
       },
@@ -7246,6 +7637,19 @@
               "entryId": "19d1-949a-41e0-ae0c",
               "targetId": "4da8-c2aa-1380-9825",
               "path": "3a4d-4253-3c1c-7d28::19d1-949a-41e0-ae0c::4da8-c2aa-1380-9825"
+            },
+            {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "3a4d-4253-3c1c-7d28::a1af-d364-a837-e188::38a8-2683-c590-3c4b",
+              "groupPath": "3a4d-4253-3c1c-7d28::a1af-d364-a837-e188::170b-d9c0-e9d6-b314"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "cbd0-7a7b-42d3-a4be",
+              "targetId": "042d-9e60-db9e-c147",
+              "path": "3a4d-4253-3c1c-7d28::cbd0-7a7b-42d3-a4be::042d-9e60-db9e-c147",
+              "groupPath": "3a4d-4253-3c1c-7d28::3939-d395-40d9-a768"
             }
           ]
         }
@@ -7261,7 +7665,10 @@
         "9871-cb62-5283-2216": 1,
         "1e7d-9066-28d2-97a0": 1,
         "19d1-949a-41e0-ae0c": 1,
-        "4da8-c2aa-1380-9825": 1
+        "4da8-c2aa-1380-9825": 1,
+        "38a8-2683-c590-3c4b": 1,
+        "cbd0-7a7b-42d3-a4be": 1,
+        "042d-9e60-db9e-c147": 1
       },
       "prime": {
         "linkId": "b04f-d96c-55f0-9cf4",
@@ -7410,6 +7817,20 @@
               "targetId": "2fcc-92a6-d03a-4b55",
               "path": "7c3d-16f8-a6ae-2c73::b99d-0ccb-416e-936c::2fcc-92a6-d03a-4b55",
               "groupPath": "7c3d-16f8-a6ae-2c73::1a35-16c8-4f19-afab"
+            },
+            {
+              "name": "Twin bolter",
+              "entryId": "25f1-18ef-49e9-befd",
+              "targetId": "222f-82cb-05a2-f8f1",
+              "path": "7c3d-16f8-a6ae-2c73::25f1-18ef-49e9-befd::222f-82cb-05a2-f8f1",
+              "groupPath": "7c3d-16f8-a6ae-2c73::ce1e-bef0-4cd0-896f"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "afef-0c4a-4c28-9076",
+              "targetId": "bc40-b14a-978e-0232",
+              "path": "7c3d-16f8-a6ae-2c73::afef-0c4a-4c28-9076::bc40-b14a-978e-0232",
+              "groupPath": "7c3d-16f8-a6ae-2c73::8159-e567-40ff-bc97"
             }
           ]
         }
@@ -7433,7 +7854,11 @@
         "2942-f783-d627-33c5": 1,
         "4f20-9a87-8334-9f26": 1,
         "b99d-0ccb-416e-936c": 1,
-        "2fcc-92a6-d03a-4b55": 1
+        "2fcc-92a6-d03a-4b55": 1,
+        "25f1-18ef-49e9-befd": 1,
+        "222f-82cb-05a2-f8f1": 1,
+        "afef-0c4a-4c28-9076": 1,
+        "bc40-b14a-978e-0232": 1
       },
       "prime": {
         "linkId": "dc95-f8e2-3e6a-442a",
@@ -7468,6 +7893,12 @@
               "entryId": "9030-b997-4b2e-9045",
               "targetId": "b808-6eaa-6396-6ce3",
               "path": "6058-6f09-9050-f72a::9030-b997-4b2e-9045::b808-6eaa-6396-6ce3"
+            },
+            {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "6058-6f09-9050-f72a::6805-d597-d47b-d146::38a8-2683-c590-3c4b",
+              "groupPath": "6058-6f09-9050-f72a::6805-d597-d47b-d146::170b-d9c0-e9d6-b314"
             }
           ]
         }
@@ -7483,7 +7914,8 @@
         "9871-cb62-5283-2216": 1,
         "1e7d-9066-28d2-97a0": 1,
         "9030-b997-4b2e-9045": 1,
-        "b808-6eaa-6396-6ce3": 1
+        "b808-6eaa-6396-6ce3": 1,
+        "38a8-2683-c590-3c4b": 1
       },
       "prime": {
         "linkId": "0e6f-d11f-456f-da43",
@@ -7657,6 +8089,13 @@
               "groupPath": "ddd7-ad93-7a65-7501::efed-9f77-45a6-8cd7"
             },
             {
+              "name": "Heavy bolter",
+              "entryId": "bd4b-6cca-3a67-201b",
+              "targetId": "bc40-b14a-978e-0232",
+              "path": "ddd7-ad93-7a65-7501::bd4b-6cca-3a67-201b::bc40-b14a-978e-0232",
+              "groupPath": "ddd7-ad93-7a65-7501::6344-7b02-c875-2e82"
+            },
+            {
               "name": "Thunder hammer",
               "entryId": "5323-9593-2e57-3096",
               "targetId": "4338-dbe9-1e94-7e6d",
@@ -7695,6 +8134,8 @@
         "4f20-9a87-8334-9f26": 1,
         "6c6a-3c13-4cd1-a078": 1,
         "222f-82cb-05a2-f8f1": 1,
+        "bd4b-6cca-3a67-201b": 1,
+        "bc40-b14a-978e-0232": 1,
         "5323-9593-2e57-3096": 1,
         "4338-dbe9-1e94-7e6d": 1,
         "ce65-61b0-b1e7-6552": 1,
@@ -7741,6 +8182,12 @@
               "path": "4433-8d9a-41ba-796d::5870-f3dc-41c6-bbc7::fede-99f5-4c76-4659"
             },
             {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "4433-8d9a-41ba-796d::6cb3-8585-2644-2e60::38a8-2683-c590-3c4b",
+              "groupPath": "4433-8d9a-41ba-796d::6cb3-8585-2644-2e60::170b-d9c0-e9d6-b314"
+            },
+            {
               "name": "Combi-bolter",
               "entryId": "3d55-66c3-43e6-826c",
               "targetId": "042d-9e60-db9e-c147",
@@ -7771,6 +8218,7 @@
         "268f-5e98-166a-6f01": 1,
         "5870-f3dc-41c6-bbc7": 1,
         "fede-99f5-4c76-4659": 1,
+        "38a8-2683-c590-3c4b": 1,
         "3d55-66c3-43e6-826c": 1,
         "042d-9e60-db9e-c147": 1,
         "b3e2-83b2-9de7-d2f2": 1,
@@ -7904,6 +8352,13 @@
               "groupPath": "c8d5-4706-df9a-b38c::5eab-c787-bea1-a21e::9089-07e5-3653-84b6"
             },
             {
+              "name": "Heavy bolter",
+              "entryId": "2b6a-7189-fa8b-97da",
+              "targetId": "bc40-b14a-978e-0232",
+              "path": "c8d5-4706-df9a-b38c::2b6a-7189-fa8b-97da::bc40-b14a-978e-0232",
+              "groupPath": "c8d5-4706-df9a-b38c::c4be-e8d4-6e2f-a6fd"
+            },
+            {
               "name": "Twin bolter",
               "entryId": "f9e3-e0ac-0a50-5dac",
               "targetId": "222f-82cb-05a2-f8f1",
@@ -7936,6 +8391,8 @@
         "e10a-3caa-4377-970a": 1,
         "2012-4b76-43b0-c7dd": 1,
         "4f20-9a87-8334-9f26": 1,
+        "2b6a-7189-fa8b-97da": 1,
+        "bc40-b14a-978e-0232": 1,
         "f9e3-e0ac-0a50-5dac": 1,
         "222f-82cb-05a2-f8f1": 1,
         "f990-bcdc-1690-5c23": 1,
@@ -8257,11 +8714,24 @@
               "path": "510e-fab1-c084-ebe6::88e8-c523-7fc0-a62d::3e37-6d4b-1198-b3fa"
             },
             {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "510e-fab1-c084-ebe6::7bb8-89b5-52d6-ea60::38a8-2683-c590-3c4b",
+              "groupPath": "510e-fab1-c084-ebe6::7bb8-89b5-52d6-ea60::170b-d9c0-e9d6-b314"
+            },
+            {
               "name": "Combi-bolter",
               "entryId": "be51-7b38-4c83-8835",
               "targetId": "042d-9e60-db9e-c147",
               "path": "510e-fab1-c084-ebe6::be51-7b38-4c83-8835::042d-9e60-db9e-c147",
               "groupPath": "510e-fab1-c084-ebe6::28fa-c671-4a68-a38e"
+            },
+            {
+              "name": "Power axe",
+              "entryId": "cd6d-58d1-46be-8b20",
+              "targetId": "4861-b77a-620c-f0d6",
+              "path": "510e-fab1-c084-ebe6::cd6d-58d1-46be-8b20::4861-b77a-620c-f0d6",
+              "groupPath": "510e-fab1-c084-ebe6::666b-436f-41b1-a5ac"
             }
           ]
         }
@@ -8280,8 +8750,11 @@
         "4453-7c1d-15ff-f22c": 1,
         "88e8-c523-7fc0-a62d": 1,
         "3e37-6d4b-1198-b3fa": 1,
+        "38a8-2683-c590-3c4b": 1,
         "be51-7b38-4c83-8835": 1,
-        "042d-9e60-db9e-c147": 1
+        "042d-9e60-db9e-c147": 1,
+        "cd6d-58d1-46be-8b20": 1,
+        "4861-b77a-620c-f0d6": 1
       },
       "prime": {
         "linkId": "29ae-1aa9-6bd2-d0e6",
@@ -8400,6 +8873,13 @@
               "groupPath": "f95b-5fb5-3745-8d83::cc2c-4540-a6fe-78ac::9089-07e5-3653-84b6"
             },
             {
+              "name": "Bolt pistol",
+              "entryId": "3d7d-d945-cd9d-cb54",
+              "targetId": "2942-f783-d627-33c5",
+              "path": "f95b-5fb5-3745-8d83::3d7d-d945-cd9d-cb54::2942-f783-d627-33c5",
+              "groupPath": "f95b-5fb5-3745-8d83::8ae9-9c51-423d-84c5"
+            },
+            {
               "name": "Twin bolter",
               "entryId": "6cd3-9433-7b49-f26f",
               "targetId": "222f-82cb-05a2-f8f1",
@@ -8425,6 +8905,8 @@
         "a073-2d4a-5bed-123e": 1,
         "af7d-af64-6b7d-da9d": 1,
         "4f20-9a87-8334-9f26": 1,
+        "3d7d-d945-cd9d-cb54": 1,
+        "2942-f783-d627-33c5": 1,
         "6cd3-9433-7b49-f26f": 1,
         "222f-82cb-05a2-f8f1": 1,
         "b30e-0e27-4d22-a511": 1,
@@ -8463,6 +8945,19 @@
               "entryId": "ac7e-1973-446f-9b5a",
               "targetId": "a7bb-ae7f-3ef2-90d1",
               "path": "4e69-d5f6-81ff-f6fb::ac7e-1973-446f-9b5a::a7bb-ae7f-3ef2-90d1"
+            },
+            {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "4e69-d5f6-81ff-f6fb::d11c-0515-2800-1112::38a8-2683-c590-3c4b",
+              "groupPath": "4e69-d5f6-81ff-f6fb::d11c-0515-2800-1112::170b-d9c0-e9d6-b314"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "555b-9bdc-4414-9b7e",
+              "targetId": "042d-9e60-db9e-c147",
+              "path": "4e69-d5f6-81ff-f6fb::555b-9bdc-4414-9b7e::042d-9e60-db9e-c147",
+              "groupPath": "4e69-d5f6-81ff-f6fb::24c0-d537-4e7f-86a9"
             }
           ]
         }
@@ -8479,7 +8974,10 @@
         "af7d-af64-6b7d-da9d": 1,
         "1e7d-9066-28d2-97a0": 1,
         "ac7e-1973-446f-9b5a": 1,
-        "a7bb-ae7f-3ef2-90d1": 1
+        "a7bb-ae7f-3ef2-90d1": 1,
+        "38a8-2683-c590-3c4b": 1,
+        "555b-9bdc-4414-9b7e": 1,
+        "042d-9e60-db9e-c147": 1
       },
       "prime": {
         "linkId": "8008-23cc-516c-5df4",
@@ -8682,7 +9180,21 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "847a-f9d1-0e66-4394::1438-d687-5311-7a50::38a8-2683-c590-3c4b",
+              "groupPath": "847a-f9d1-0e66-4394::1438-d687-5311-7a50::170b-d9c0-e9d6-b314"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "41cd-32e5-4958-a9c6",
+              "targetId": "042d-9e60-db9e-c147",
+              "path": "847a-f9d1-0e66-4394::41cd-32e5-4958-a9c6::042d-9e60-db9e-c147",
+              "groupPath": "847a-f9d1-0e66-4394::6868-30bd-4963-89b3"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes",
@@ -8696,7 +9208,10 @@
         "5248-df21-4aaf-b2a5": 1,
         "594d-fa82-13cb-a345": 1,
         "9871-cb62-5283-2216": 1,
-        "1e7d-9066-28d2-97a0": 1
+        "1e7d-9066-28d2-97a0": 1,
+        "38a8-2683-c590-3c4b": 1,
+        "41cd-32e5-4958-a9c6": 1,
+        "042d-9e60-db9e-c147": 1
       },
       "prime": {
         "linkId": "55a0-17df-333d-0dcc",
@@ -8825,6 +9340,12 @@
               "path": "6ad7-936d-e4f5-ff50::ccf7-e41b-4d3e-9f69::9902-2d5f-0df2-5cf0"
             },
             {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "6ad7-936d-e4f5-ff50::835f-c355-88b5-6e53::38a8-2683-c590-3c4b",
+              "groupPath": "6ad7-936d-e4f5-ff50::835f-c355-88b5-6e53::170b-d9c0-e9d6-b314"
+            },
+            {
               "name": "Combi-bolter",
               "entryId": "7526-9d28-4f83-afef",
               "targetId": "042d-9e60-db9e-c147",
@@ -8849,6 +9370,7 @@
         "38c9-56fb-0a27-4b1a": 1,
         "ccf7-e41b-4d3e-9f69": 1,
         "9902-2d5f-0df2-5cf0": 1,
+        "38a8-2683-c590-3c4b": 1,
         "7526-9d28-4f83-afef": 1,
         "042d-9e60-db9e-c147": 1
       },
@@ -8969,6 +9491,12 @@
               "path": "d4d5-8d88-5f93-c317::ce41-2b73-d4b8-1804::61b1-747d-d563-d7e8"
             },
             {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "d4d5-8d88-5f93-c317::fb29-10a7-ec22-f17f::38a8-2683-c590-3c4b",
+              "groupPath": "d4d5-8d88-5f93-c317::fb29-10a7-ec22-f17f::170b-d9c0-e9d6-b314"
+            },
+            {
               "name": "Combi-bolter",
               "entryId": "0c4f-6d86-4470-80c7",
               "targetId": "042d-9e60-db9e-c147",
@@ -8991,6 +9519,7 @@
         "1e7d-9066-28d2-97a0": 1,
         "ce41-2b73-d4b8-1804": 1,
         "61b1-747d-d563-d7e8": 1,
+        "38a8-2683-c590-3c4b": 1,
         "0c4f-6d86-4470-80c7": 1,
         "042d-9e60-db9e-c147": 1
       },
@@ -9326,6 +9855,13 @@
               "groupPath": "1690-b914-1a31-9c76::94a9-4926-4ab7-9081"
             },
             {
+              "name": "Bolt pistol",
+              "entryId": "d087-6d8c-4918-9196",
+              "targetId": "2942-f783-d627-33c5",
+              "path": "1690-b914-1a31-9c76::d087-6d8c-4918-9196::2942-f783-d627-33c5",
+              "groupPath": "1690-b914-1a31-9c76::109d-50f2-4f7b-b609"
+            },
+            {
               "name": "Twin bolter",
               "entryId": "e5a3-8246-4178-a97a",
               "targetId": "222f-82cb-05a2-f8f1",
@@ -9359,12 +9895,13 @@
         "f564-655e-4c06-a5b5": 2,
         "78f4-4967-2896-c3a5": 3,
         "8aee-d7b5-44bf-a165": 2,
-        "2942-f783-d627-33c5": 2,
+        "2942-f783-d627-33c5": 3,
         "e5a2-7b0f-4436-8776": 2,
         "222f-82cb-05a2-f8f1": 3,
         "f854-ce3e-4c4c-9c38": 1,
         "5a95-e564-96b2-8dc9": 1,
         "56c8-e9a6-4245-94c7": 1,
+        "d087-6d8c-4918-9196": 1,
         "e5a3-8246-4178-a97a": 1
       },
       "prime": {
@@ -9506,6 +10043,13 @@
               "entryId": "b260-2d6f-33fc-6c3a",
               "targetId": "2942-f783-d627-33c5",
               "path": "9319-86bf-c0ed-12d3::b260-2d6f-33fc-6c3a::2942-f783-d627-33c5"
+            },
+            {
+              "name": "Heavy disintegrator",
+              "entryId": "d540-f9de-d50f-c3f9",
+              "targetId": "5359-13c1-29ff-9d3c",
+              "path": "9319-86bf-c0ed-12d3::d540-f9de-d50f-c3f9::5359-13c1-29ff-9d3c",
+              "groupPath": "9319-86bf-c0ed-12d3::75d4-aa74-436c-ac96"
             }
           ]
         },
@@ -9522,6 +10066,13 @@
               "entryId": "1ec6-476b-30b9-ad0e",
               "targetId": "2942-f783-d627-33c5",
               "path": "9319-86bf-c0ed-12d3::1ec6-476b-30b9-ad0e::2942-f783-d627-33c5"
+            },
+            {
+              "name": "Heavy disintegrator",
+              "entryId": "e038-28a7-ae9f-a2de",
+              "targetId": "5359-13c1-29ff-9d3c",
+              "path": "9319-86bf-c0ed-12d3::e038-28a7-ae9f-a2de::5359-13c1-29ff-9d3c",
+              "groupPath": "9319-86bf-c0ed-12d3::ef12-1523-b5c6-e2d9"
             }
           ]
         }
@@ -9549,9 +10100,12 @@
         "594d-fa82-13cb-a345": 5,
         "b260-2d6f-33fc-6c3a": 4,
         "2942-f783-d627-33c5": 5,
+        "d540-f9de-d50f-c3f9": 4,
+        "5359-13c1-29ff-9d3c": 5,
         "da8e-8b85-4b60-9a21": 1,
         "8045-89a4-76d4-fcef": 1,
-        "1ec6-476b-30b9-ad0e": 1
+        "1ec6-476b-30b9-ad0e": 1,
+        "e038-28a7-ae9f-a2de": 1
       },
       "prime": {
         "linkId": "0c7e-0a94-b44c-e25c",
@@ -9944,7 +10498,22 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Gravis bolt cannon",
+              "entryId": "23ba-17c2-fe05-7abf",
+              "targetId": "50d5-02d3-0be6-9143",
+              "path": "0365-190b-7181-ec24::23ba-17c2-fe05-7abf::50d5-02d3-0be6-9143",
+              "groupPath": "0365-190b-7181-ec24::6e82-2c1f-e041-dafd"
+            },
+            {
+              "name": "Gravis bolt cannon",
+              "entryId": "4034-411e-0b06-5801",
+              "targetId": "50d5-02d3-0be6-9143",
+              "path": "0365-190b-7181-ec24::4034-411e-0b06-5801::50d5-02d3-0be6-9143",
+              "groupPath": "0365-190b-7181-ec24::4b96-c334-9bc8-bd56"
+            }
+          ]
         }
       ],
       "source": "legiones-astartes",
@@ -9954,7 +10523,10 @@
         "2499-7239-685f-8465": 1,
         "a01d-d337-445f-a39b": 1,
         "38d4-d720-8009-acd3": 1,
-        "1e7d-9066-28d2-97a0": 1
+        "1e7d-9066-28d2-97a0": 1,
+        "23ba-17c2-fe05-7abf": 1,
+        "50d5-02d3-0be6-9143": 2,
+        "4034-411e-0b06-5801": 1
       },
       "prime": {
         "linkId": "f2ad-33db-2bfb-e419",
@@ -10495,6 +11067,13 @@
               "path": "d7c4-cf86-bbcd-1bea::cb8c-a8d3-1bbe-4c1c::bc43-a3f4-2d34-550a"
             },
             {
+              "name": "Saturnine disruption fist",
+              "entryId": "d6f4-e93c-d838-b836",
+              "targetId": "487c-7be9-48db-e02a",
+              "path": "d7c4-cf86-bbcd-1bea::d6f4-e93c-d838-b836::487c-7be9-48db-e02a",
+              "groupPath": "d7c4-cf86-bbcd-1bea::cd2c-21cd-7703-a4e9"
+            },
+            {
               "name": "Plasma bombard",
               "entryId": "377e-2ef4-2b94-2836",
               "targetId": "9734-6aa8-f0fe-1930",
@@ -10521,6 +11100,8 @@
         "01d8-92c7-5399-5e2a": 1,
         "cb8c-a8d3-1bbe-4c1c": 1,
         "bc43-a3f4-2d34-550a": 1,
+        "d6f4-e93c-d838-b836": 1,
+        "487c-7be9-48db-e02a": 1,
         "377e-2ef4-2b94-2836": 1,
         "9734-6aa8-f0fe-1930": 1
       },
@@ -10682,6 +11263,13 @@
             },
             {
               "name": "Bolter",
+              "entryId": "16c4-631a-1c1b-f65b",
+              "targetId": "d3f9-b9e6-3ea5-cc8e",
+              "path": "5b2f-c9e8-cdfa-6c0a::16c4-631a-1c1b-f65b::d3f9-b9e6-3ea5-cc8e",
+              "groupPath": "5b2f-c9e8-cdfa-6c0a::7af6-e703-993e-fd90::d625-37d6-d83a-0de3"
+            },
+            {
+              "name": "Bolter",
               "entryId": "7d36-2dd8-f52e-b544",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "5b2f-c9e8-cdfa-6c0a::7d36-2dd8-f52e-b544::d3f9-b9e6-3ea5-cc8e",
@@ -10701,8 +11289,9 @@
         "4f69-5473-091b-6331": 1,
         "7012-bd1f-b9ef-bdf5": 1,
         "b94f-e829-064a-9d60": 1,
-        "7d36-2dd8-f52e-b544": 1,
-        "d3f9-b9e6-3ea5-cc8e": 1
+        "16c4-631a-1c1b-f65b": 1,
+        "d3f9-b9e6-3ea5-cc8e": 2,
+        "7d36-2dd8-f52e-b544": 1
       },
       "prime": {
         "linkId": "7b66-657c-182d-3f2f",
@@ -10936,6 +11525,13 @@
               "path": "566a-34b5-2a7c-ccd0::27d1-a226-320d-2999::ec2c-185f-3e9e-7ccd"
             },
             {
+              "name": "Shock chargers",
+              "entryId": "7f17-ee9e-8cfb-4e5e",
+              "targetId": "9f0d-5e6b-1a6e-0546",
+              "path": "566a-34b5-2a7c-ccd0::7f17-ee9e-8cfb-4e5e::9f0d-5e6b-1a6e-0546",
+              "groupPath": "566a-34b5-2a7c-ccd0::0f15-ade9-42bf-8eb7"
+            },
+            {
               "name": "Bolter",
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
@@ -10963,6 +11559,8 @@
         "5833-5e86-26bc-0916": 2,
         "27d1-a226-320d-2999": 2,
         "ec2c-185f-3e9e-7ccd": 2,
+        "7f17-ee9e-8cfb-4e5e": 2,
+        "9f0d-5e6b-1a6e-0546": 2,
         "94da-d659-4db3-d979": 2,
         "d3f9-b9e6-3ea5-cc8e": 2
       },
@@ -11084,7 +11682,15 @@
           "cost": 10,
           "min": 0,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Lightning gun",
+              "entryId": "3eb6-f604-f513-ecb8",
+              "targetId": "9b86-e05d-8ce5-ab8b",
+              "path": "6736-bed2-679a-c32e::3eb6-f604-f513-ecb8::9b86-e05d-8ce5-ab8b",
+              "groupPath": "6736-bed2-679a-c32e::c678-ee68-9e90-06da"
+            }
+          ]
         },
         {
           "name": "Thallax",
@@ -11163,6 +11769,12 @@
               "entryId": "4c2f-5f6d-f44d-8612",
               "targetId": "abb9-05fd-a704-fdad",
               "path": "8a46-d6b0-1ab9-d999::4c2f-5f6d-f44d-8612::abb9-05fd-a704-fdad"
+            },
+            {
+              "name": "Encroaching Ruin",
+              "entryId": "42a2-c87d-c37f-5263",
+              "path": "8a46-d6b0-1ab9-d999::826a-fdae-dbd8-c4fc::42a2-c87d-c37f-5263",
+              "groupPath": "8a46-d6b0-1ab9-d999::826a-fdae-dbd8-c4fc::5b1e-2194-8cb9-592b"
             }
           ]
         }
@@ -11177,7 +11789,8 @@
         "594d-fa82-13cb-a345": 3,
         "2de1-ddd6-ebb4-10df": 3,
         "4c2f-5f6d-f44d-8612": 3,
-        "abb9-05fd-a704-fdad": 3
+        "abb9-05fd-a704-fdad": 3,
+        "42a2-c87d-c37f-5263": 3
       },
       "prime": {
         "linkId": "9b58-a620-333d-3171",
@@ -12439,6 +13052,13 @@
               "entryId": "6bbd-df5e-28af-2ccc",
               "targetId": "509f-0a58-f6e8-c8f5",
               "path": "e233-b1f5-c3d1-d731::6bbd-df5e-28af-2ccc::509f-0a58-f6e8-c8f5"
+            },
+            {
+              "name": "Terranic greatsword",
+              "entryId": "51a6-7d56-fb99-2a00",
+              "targetId": "f1aa-3d18-caac-a960",
+              "path": "e233-b1f5-c3d1-d731::51a6-7d56-fb99-2a00::f1aa-3d18-caac-a960",
+              "groupPath": "e233-b1f5-c3d1-d731::5ab0-8134-b3c7-2fa7"
             }
           ]
         },
@@ -12461,11 +13081,26 @@
               "entryId": "ca67-f475-403e-c3ad",
               "targetId": "509f-0a58-f6e8-c8f5",
               "path": "e233-b1f5-c3d1-d731::ca67-f475-403e-c3ad::509f-0a58-f6e8-c8f5"
+            },
+            {
+              "name": "Terranic greatsword",
+              "entryId": "1550-1f0b-ff8d-8f2d",
+              "targetId": "f1aa-3d18-caac-a960",
+              "path": "e233-b1f5-c3d1-d731::1550-1f0b-ff8d-8f2d::f1aa-3d18-caac-a960",
+              "groupPath": "e233-b1f5-c3d1-d731::494f-34b9-9b2c-b772"
             }
           ]
         }
       ],
       "source": "alpha-legion",
+      "unitWargear": [
+        {
+          "name": "Augurs of Weakness",
+          "entryId": "e0e2-4f18-b1fb-ce5d",
+          "path": "e233-b1f5-c3d1-d731::9120-8b58-f50f-944a::e0e2-4f18-b1fb-ce5d",
+          "groupPath": "e233-b1f5-c3d1-d731::9120-8b58-f50f-944a::9035-6bbe-3431-876d"
+        }
+      ],
       "facts": {
         "e033-118d-4b07-5cd1": 1,
         "e233-b1f5-c3d1-d731": 1,
@@ -12476,11 +13111,14 @@
         "1e7d-9066-28d2-97a0": 5,
         "6bbd-df5e-28af-2ccc": 4,
         "509f-0a58-f6e8-c8f5": 5,
+        "51a6-7d56-fb99-2a00": 4,
+        "f1aa-3d18-caac-a960": 5,
         "020f-37dd-726f-1888": 1,
         "8045-89a4-76d4-fcef": 1,
         "a725-5bf6-4dc4-4144": 1,
         "a766-856c-52bd-d30a": 1,
-        "ca67-f475-403e-c3ad": 1
+        "ca67-f475-403e-c3ad": 1,
+        "1550-1f0b-ff8d-8f2d": 1
       },
       "prime": {
         "linkId": "4edf-74d7-ceb9-d5e2",
@@ -14509,7 +15147,22 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power axe",
+              "entryId": "ba91-dffc-8cb2-2c2a",
+              "targetId": "4861-b77a-620c-f0d6",
+              "path": "a303-bc62-8d6a-1f11::ba91-dffc-8cb2-2c2a::4861-b77a-620c-f0d6",
+              "groupPath": "a303-bc62-8d6a-1f11::5d34-8687-651e-5869"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "dbb8-d19b-b379-651a",
+              "targetId": "042d-9e60-db9e-c147",
+              "path": "a303-bc62-8d6a-1f11::dbb8-d19b-b379-651a::042d-9e60-db9e-c147",
+              "groupPath": "a303-bc62-8d6a-1f11::445c-55d2-3fc8-05c4"
+            }
+          ]
         },
         {
           "name": "Red Butcher",
@@ -14532,6 +15185,10 @@
         "8045-89a4-76d4-fcef": 1,
         "594d-fa82-13cb-a345": 5,
         "1e7d-9066-28d2-97a0": 5,
+        "ba91-dffc-8cb2-2c2a": 1,
+        "4861-b77a-620c-f0d6": 1,
+        "dbb8-d19b-b379-651a": 1,
+        "042d-9e60-db9e-c147": 1,
         "08a3-46d5-a3ce-0b30": 4
       },
       "prime": {
@@ -14561,7 +15218,21 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Pair of lightning claws",
+              "entryId": "3107-dce7-8751-c598",
+              "targetId": "6754-24dd-5be0-26ff",
+              "path": "eb40-7916-1b27-b491::3107-dce7-8751-c598::6754-24dd-5be0-26ff",
+              "groupPath": "eb40-7916-1b27-b491::cb5c-6109-959e-43e3"
+            },
+            {
+              "name": "Meteor hammer",
+              "entryId": "5d93-8523-229e-32df",
+              "path": "eb40-7916-1b27-b491::2bc2-d4d8-3c17-1546::5d93-8523-229e-32df",
+              "groupPath": "eb40-7916-1b27-b491::2bc2-d4d8-3c17-1546::f18f-e86f-e13e-4a48"
+            }
+          ]
         },
         {
           "name": "Rampager",
@@ -14570,7 +15241,14 @@
           "cost": 22,
           "min": 4,
           "max": 14,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Meteor hammer",
+              "entryId": "5d93-8523-229e-32df",
+              "path": "eb40-7916-1b27-b491::3ee1-dc34-0734-d740::5d93-8523-229e-32df",
+              "groupPath": "eb40-7916-1b27-b491::3ee1-dc34-0734-d740::f18f-e86f-e13e-4a48"
+            }
+          ]
         }
       ],
       "source": "alpha-legion",
@@ -14597,6 +15275,9 @@
         "8045-89a4-76d4-fcef": 1,
         "5a95-e564-96b2-8dc9": 1,
         "594d-fa82-13cb-a345": 5,
+        "3107-dce7-8751-c598": 1,
+        "6754-24dd-5be0-26ff": 1,
+        "5d93-8523-229e-32df": 5,
         "821a-4497-0743-9777": 4
       },
       "prime": {
@@ -14967,6 +15648,12 @@
               "entryId": "4e79-b93f-6223-7456",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "ea92-2ed1-da76-a859::4e79-b93f-6223-7456::d3f9-b9e6-3ea5-cc8e"
+            },
+            {
+              "name": "Asphyx bolt cannon",
+              "entryId": "ecec-d2f3-ad61-ca00",
+              "path": "ea92-2ed1-da76-a859::ecec-d2f3-ad61-ca00",
+              "groupPath": "ea92-2ed1-da76-a859::420f-b4af-5f34-0756"
             }
           ]
         }
@@ -14981,7 +15668,8 @@
         "5833-5e86-26bc-0916": 1,
         "bd48-b242-9657-4fa8": 1,
         "4e79-b93f-6223-7456": 1,
-        "d3f9-b9e6-3ea5-cc8e": 1
+        "d3f9-b9e6-3ea5-cc8e": 1,
+        "ecec-d2f3-ad61-ca00": 1
       },
       "prime": {
         "linkId": "05b2-c3f9-42f4-94d8",
@@ -15015,6 +15703,20 @@
               "name": "Gravis force blade",
               "entryId": "9b5d-00d1-3be9-1580",
               "path": "772e-93f6-cd9c-4bd3::9b5d-00d1-3be9-1580"
+            },
+            {
+              "name": "Gravis bolt cannon",
+              "entryId": "84d1-f74c-bca4-73a4",
+              "targetId": "50d5-02d3-0be6-9143",
+              "path": "772e-93f6-cd9c-4bd3::84d1-f74c-bca4-73a4::50d5-02d3-0be6-9143",
+              "groupPath": "772e-93f6-cd9c-4bd3::56fb-fb67-24c9-b350"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "e88c-c5e8-7b58-cb68",
+              "targetId": "042d-9e60-db9e-c147",
+              "path": "772e-93f6-cd9c-4bd3::e88c-c5e8-7b58-cb68::042d-9e60-db9e-c147",
+              "groupPath": "772e-93f6-cd9c-4bd3::c849-1153-1e0c-a902"
             }
           ]
         }
@@ -15029,7 +15731,11 @@
         "a114-fe5b-0a4f-632e": 1,
         "681d-5a87-a24d-040c": 1,
         "38d4-d720-8009-acd3": 1,
-        "9b5d-00d1-3be9-1580": 1
+        "9b5d-00d1-3be9-1580": 1,
+        "84d1-f74c-bca4-73a4": 1,
+        "50d5-02d3-0be6-9143": 1,
+        "e88c-c5e8-7b58-cb68": 1,
+        "042d-9e60-db9e-c147": 1
       },
       "prime": {
         "linkId": "1cfb-ccf3-40a6-acac",
@@ -15370,6 +16076,13 @@
               "entryId": "24d7-d344-09ca-9690",
               "targetId": "103d-b9cb-bb16-1645",
               "path": "bd0f-bbe3-c21b-3d0f::24d7-d344-09ca-9690::103d-b9cb-bb16-1645"
+            },
+            {
+              "name": "Akkadic hand flamer",
+              "entryId": "478a-16dd-2ef0-7e45",
+              "targetId": "04d0-1f99-ce32-94fc",
+              "path": "bd0f-bbe3-c21b-3d0f::478a-16dd-2ef0-7e45::04d0-1f99-ce32-94fc",
+              "groupPath": "bd0f-bbe3-c21b-3d0f::ff8a-17b4-3124-b75b"
             }
           ]
         }
@@ -15400,10 +16113,11 @@
         "3b15-1202-d433-f896": 4,
         "103d-b9cb-bb16-1645": 5,
         "3166-f385-1dee-9034": 4,
-        "04d0-1f99-ce32-94fc": 4,
+        "04d0-1f99-ce32-94fc": 5,
         "4844-0ce8-3681-2bfa": 1,
         "8045-89a4-76d4-fcef": 1,
-        "24d7-d344-09ca-9690": 1
+        "24d7-d344-09ca-9690": 1,
+        "478a-16dd-2ef0-7e45": 1
       },
       "prime": {
         "linkId": "3032-e409-4d33-a113",
@@ -15751,7 +16465,22 @@
           "cost": 45,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Forge-crafted thunder hammer",
+              "entryId": "9783-61b0-d7b1-aae4",
+              "targetId": "d08b-34be-c6b9-8494",
+              "path": "257b-902d-9037-7245::9783-61b0-d7b1-aae4::d08b-34be-c6b9-8494",
+              "groupPath": "257b-902d-9037-7245::880f-ecf5-af86-4441"
+            },
+            {
+              "name": "Drakenscale",
+              "entryId": "0912-a280-fab5-47a0",
+              "targetId": "b021-e506-1ecd-b3c5",
+              "path": "257b-902d-9037-7245::0912-a280-fab5-47a0::b021-e506-1ecd-b3c5",
+              "groupPath": "257b-902d-9037-7245::a274-ce72-fdca-f29c"
+            }
+          ]
         },
         {
           "name": "Firedrake Master",
@@ -15760,7 +16489,22 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Forge-crafted thunder hammer",
+              "entryId": "38b4-3cb0-53e6-e8f4",
+              "targetId": "d08b-34be-c6b9-8494",
+              "path": "257b-902d-9037-7245::38b4-3cb0-53e6-e8f4::d08b-34be-c6b9-8494",
+              "groupPath": "257b-902d-9037-7245::d573-b96e-0b79-245c"
+            },
+            {
+              "name": "Drakenscale",
+              "entryId": "2f75-e87a-ca04-5321",
+              "targetId": "b021-e506-1ecd-b3c5",
+              "path": "257b-902d-9037-7245::2f75-e87a-ca04-5321::b021-e506-1ecd-b3c5",
+              "groupPath": "257b-902d-9037-7245::58a6-5b26-cd9f-26a9"
+            }
+          ]
         }
       ],
       "source": "alpha-legion",
@@ -15774,8 +16518,14 @@
         "1f0a-53e1-910a-a3b1": 4,
         "594d-fa82-13cb-a345": 5,
         "1e7d-9066-28d2-97a0": 5,
+        "9783-61b0-d7b1-aae4": 4,
+        "d08b-34be-c6b9-8494": 5,
+        "0912-a280-fab5-47a0": 4,
+        "b021-e506-1ecd-b3c5": 5,
         "6f99-6a87-8ad6-8467": 1,
-        "8045-89a4-76d4-fcef": 1
+        "8045-89a4-76d4-fcef": 1,
+        "38b4-3cb0-53e6-e8f4": 1,
+        "2f75-e87a-ca04-5321": 1
       },
       "prime": {
         "linkId": "5099-c7ee-ec18-9823",
@@ -15967,6 +16717,13 @@
               "entryId": "dda7-2b41-d075-f051",
               "targetId": "509f-0a58-f6e8-c8f5",
               "path": "7e02-4f45-4f2c-aee4::dda7-2b41-d075-f051::509f-0a58-f6e8-c8f5"
+            },
+            {
+              "name": "Terranic greatsword",
+              "entryId": "bf4c-51b4-a54f-5a69",
+              "targetId": "f1aa-3d18-caac-a960",
+              "path": "7e02-4f45-4f2c-aee4::bf4c-51b4-a54f-5a69::f1aa-3d18-caac-a960",
+              "groupPath": "7e02-4f45-4f2c-aee4::d1c0-830f-77f5-ca33"
             }
           ]
         },
@@ -15989,6 +16746,13 @@
               "entryId": "1175-c5d8-e417-9a79",
               "targetId": "509f-0a58-f6e8-c8f5",
               "path": "7e02-4f45-4f2c-aee4::1175-c5d8-e417-9a79::509f-0a58-f6e8-c8f5"
+            },
+            {
+              "name": "Terranic greatsword",
+              "entryId": "76fb-0c78-a30a-a112",
+              "targetId": "f1aa-3d18-caac-a960",
+              "path": "7e02-4f45-4f2c-aee4::76fb-0c78-a30a-a112::f1aa-3d18-caac-a960",
+              "groupPath": "7e02-4f45-4f2c-aee4::115b-ee56-19ac-fca0"
             }
           ]
         }
@@ -16004,11 +16768,14 @@
         "1e7d-9066-28d2-97a0": 5,
         "dda7-2b41-d075-f051": 4,
         "509f-0a58-f6e8-c8f5": 5,
+        "bf4c-51b4-a54f-5a69": 4,
+        "f1aa-3d18-caac-a960": 5,
         "0178-e586-4e81-017c": 1,
         "8045-89a4-76d4-fcef": 1,
         "2ca7-7e30-cbeb-0d80": 1,
         "a766-856c-52bd-d30a": 1,
-        "1175-c5d8-e417-9a79": 1
+        "1175-c5d8-e417-9a79": 1,
+        "76fb-0c78-a30a-a112": 1
       },
       "prime": {
         "linkId": "a048-9e58-b45c-cc58",
@@ -16247,6 +17014,13 @@
           "entryId": "4978-b231-45e6-a2ba",
           "targetId": "fa20-82bc-c7de-9e97",
           "path": "09ae-b78d-807e-d9ad::4978-b231-45e6-a2ba::fa20-82bc-c7de-9e97"
+        },
+        {
+          "name": "Volkite culverin",
+          "entryId": "5131-95bc-46e1-abb2",
+          "targetId": "fcf0-9c1b-d51e-6bc7",
+          "path": "09ae-b78d-807e-d9ad::5131-95bc-46e1-abb2::fcf0-9c1b-d51e-6bc7",
+          "groupPath": "09ae-b78d-807e-d9ad::ed55-6fa0-42cf-b6e4"
         }
       ],
       "facts": {
@@ -16470,6 +17244,13 @@
               "entryId": "2e29-c759-075f-2e93",
               "targetId": "fa20-82bc-c7de-9e97",
               "path": "fb16-b09a-5fde-b4e8::2e29-c759-075f-2e93::fa20-82bc-c7de-9e97"
+            },
+            {
+              "name": "Pair of lightning claws",
+              "entryId": "2bb1-1be5-d4e9-5d67",
+              "targetId": "6754-24dd-5be0-26ff",
+              "path": "fb16-b09a-5fde-b4e8::2bb1-1be5-d4e9-5d67::6754-24dd-5be0-26ff",
+              "groupPath": "fb16-b09a-5fde-b4e8::164c-cb34-6993-9fa6"
             }
           ]
         }
@@ -16489,10 +17270,11 @@
         "cea5-e8b1-1931-400d": 1,
         "fa20-82bc-c7de-9e97": 5,
         "79ed-138f-bcd8-5319": 1,
-        "6754-24dd-5be0-26ff": 1,
+        "6754-24dd-5be0-26ff": 5,
         "662c-33cb-13d1-483c": 4,
         "1a7d-1713-cbad-ee52": 4,
-        "2e29-c759-075f-2e93": 4
+        "2e29-c759-075f-2e93": 4,
+        "2bb1-1be5-d4e9-5d67": 4
       },
       "prime": {
         "linkId": "15b9-7c17-7494-c33b",
@@ -16559,6 +17341,13 @@
               "targetId": "2942-f783-d627-33c5",
               "path": "cbc6-c7ef-4c1f-d49b::e8b0-1a7d-a350-12fb::2942-f783-d627-33c5",
               "groupPath": "cbc6-c7ef-4c1f-d49b::c59f-f6c9-3cab-c141"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "8751-a984-278c-fd14",
+              "targetId": "78f4-4967-2896-c3a5",
+              "path": "cbc6-c7ef-4c1f-d49b::8751-a984-278c-fd14::78f4-4967-2896-c3a5",
+              "groupPath": "cbc6-c7ef-4c1f-d49b::3c9d-d3c2-007c-f042"
             }
           ]
         }
@@ -16595,12 +17384,13 @@
         "98d7-7a1a-984e-8355": 4,
         "2942-f783-d627-33c5": 5,
         "3196-aa0a-9b83-132e": 4,
-        "78f4-4967-2896-c3a5": 4,
+        "78f4-4967-2896-c3a5": 5,
         "15fd-61b6-f9ad-9b46": 1,
         "8045-89a4-76d4-fcef": 1,
         "949c-ae23-394e-4e2c": 1,
         "6754-24dd-5be0-26ff": 1,
-        "e8b0-1a7d-a350-12fb": 1
+        "e8b0-1a7d-a350-12fb": 1,
+        "8751-a984-278c-fd14": 1
       },
       "prime": {
         "linkId": "ad21-ab1a-c1f4-1b76",
@@ -16648,6 +17438,13 @@
               "targetId": "9322-09ed-abec-6e13",
               "path": "9f42-ca50-fda9-fc85::7733-752c-9219-58e7::9322-09ed-abec-6e13",
               "groupPath": "9f42-ca50-fda9-fc85::5c40-1259-9a42-beb1"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "3ba3-3239-49ce-b26e",
+              "targetId": "78f4-4967-2896-c3a5",
+              "path": "9f42-ca50-fda9-fc85::3ba3-3239-49ce-b26e::78f4-4967-2896-c3a5",
+              "groupPath": "9f42-ca50-fda9-fc85::23fc-b2e9-cc11-3d24"
             }
           ]
         },
@@ -16695,6 +17492,8 @@
         "fa20-82bc-c7de-9e97": 5,
         "7733-752c-9219-58e7": 4,
         "9322-09ed-abec-6e13": 5,
+        "3ba3-3239-49ce-b26e": 4,
+        "78f4-4967-2896-c3a5": 4,
         "b8c2-7a1c-47a8-818d": 1,
         "8045-89a4-76d4-fcef": 1,
         "0fc2-b622-4615-b462": 1,
@@ -16868,6 +17667,13 @@
               "targetId": "042d-9e60-db9e-c147",
               "path": "ec15-7002-1d8a-9534::4cbd-6f1f-d45c-c11f::042d-9e60-db9e-c147",
               "groupPath": "ec15-7002-1d8a-9534::2cca-3e19-2553-94fd"
+            },
+            {
+              "name": "Chainglaive",
+              "entryId": "980d-6d03-7960-6e76",
+              "targetId": "3708-b181-5f26-4387",
+              "path": "ec15-7002-1d8a-9534::980d-6d03-7960-6e76::3708-b181-5f26-4387",
+              "groupPath": "ec15-7002-1d8a-9534::cf56-5f30-bd28-7b4a"
             }
           ]
         },
@@ -16885,6 +17691,13 @@
               "targetId": "042d-9e60-db9e-c147",
               "path": "ec15-7002-1d8a-9534::379e-73cb-c909-2b96::042d-9e60-db9e-c147",
               "groupPath": "ec15-7002-1d8a-9534::4682-9300-f7a1-15bd"
+            },
+            {
+              "name": "Chainglaive",
+              "entryId": "5f76-a9fa-42a1-e33c",
+              "targetId": "3708-b181-5f26-4387",
+              "path": "ec15-7002-1d8a-9534::5f76-a9fa-42a1-e33c::3708-b181-5f26-4387",
+              "groupPath": "ec15-7002-1d8a-9534::356d-8339-dea2-db4c"
             }
           ]
         }
@@ -16901,8 +17714,11 @@
         "8045-89a4-76d4-fcef": 1,
         "4cbd-6f1f-d45c-c11f": 1,
         "042d-9e60-db9e-c147": 5,
+        "980d-6d03-7960-6e76": 1,
+        "3708-b181-5f26-4387": 5,
         "6c97-58d8-096d-89ae": 4,
-        "379e-73cb-c909-2b96": 4
+        "379e-73cb-c909-2b96": 4,
+        "5f76-a9fa-42a1-e33c": 4
       },
       "prime": {
         "linkId": "a1fc-bfb3-dafc-99aa",
@@ -16931,7 +17747,22 @@
           "cost": 40,
           "min": 5,
           "max": 10,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Blade of Perdition",
+              "entryId": "7d13-ed02-8de8-7853",
+              "targetId": "a3a1-84f7-4e23-3ed6",
+              "path": "e33f-b5bc-3d1b-faf7::04f7-ba09-e4e7-78bf::7d13-ed02-8de8-7853::a3a1-84f7-4e23-3ed6",
+              "groupPath": "e33f-b5bc-3d1b-faf7::04f7-ba09-e4e7-78bf::6a6b-1cda-b6a4-8b3e"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "3960-ec44-4a1f-a2d7",
+              "targetId": "2942-f783-d627-33c5",
+              "path": "e33f-b5bc-3d1b-faf7::3960-ec44-4a1f-a2d7::2942-f783-d627-33c5",
+              "groupPath": "e33f-b5bc-3d1b-faf7::ca54-443d-4784-8ffe"
+            }
+          ]
         }
       ],
       "source": "alpha-legion",
@@ -16956,7 +17787,11 @@
         "a114-fe5b-0a4f-632e": 1,
         "7eed-be8c-4d5f-9c7f": 5,
         "594d-fa82-13cb-a345": 5,
-        "c504-9dfa-35d3-c98f": 5
+        "c504-9dfa-35d3-c98f": 5,
+        "7d13-ed02-8de8-7853": 5,
+        "a3a1-84f7-4e23-3ed6": 5,
+        "3960-ec44-4a1f-a2d7": 5,
+        "2942-f783-d627-33c5": 5
       },
       "prime": {
         "linkId": "3897-d401-223b-69bc",
@@ -17155,6 +17990,13 @@
               "targetId": "042d-9e60-db9e-c147",
               "path": "0c48-2745-1148-6978::9b76-d98c-c220-7e34::042d-9e60-db9e-c147",
               "groupPath": "0c48-2745-1148-6978::353f-2c55-af23-d3d2"
+            },
+            {
+              "name": "Artificer Power Axe",
+              "entryId": "fc55-fdb4-b5ce-1b68",
+              "targetId": "68e3-de15-d977-3c36",
+              "path": "0c48-2745-1148-6978::fc55-fdb4-b5ce-1b68::68e3-de15-d977-3c36",
+              "groupPath": "0c48-2745-1148-6978::3179-3b62-cb02-9120"
             }
           ]
         },
@@ -17166,6 +18008,13 @@
           "min": 1,
           "max": 1,
           "defaultWargear": [
+            {
+              "name": "Artificer Power Axe",
+              "entryId": "e0af-5bd3-4f5d-b38b",
+              "targetId": "68e3-de15-d977-3c36",
+              "path": "0c48-2745-1148-6978::e0af-5bd3-4f5d-b38b::68e3-de15-d977-3c36",
+              "groupPath": "0c48-2745-1148-6978::50c2-b4f4-4a94-a8aa"
+            },
             {
               "name": "Combi-bolter",
               "entryId": "d460-2382-41b0-8b04",
@@ -17188,8 +18037,11 @@
         "1e7d-9066-28d2-97a0": 3,
         "9b76-d98c-c220-7e34": 2,
         "042d-9e60-db9e-c147": 3,
+        "fc55-fdb4-b5ce-1b68": 2,
+        "68e3-de15-d977-3c36": 3,
         "baaf-6454-49e9-a93b": 1,
         "8045-89a4-76d4-fcef": 1,
+        "e0af-5bd3-4f5d-b38b": 1,
         "d460-2382-41b0-8b04": 1
       },
       "prime": {
@@ -17983,6 +18835,13 @@
               "entryId": "ecf5-b800-4d97-b959",
               "targetId": "96e3-031c-2139-1335",
               "path": "09c0-384d-8a7b-9fed::ecf5-b800-4d97-b959::96e3-031c-2139-1335"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "bcfa-c0f6-420a-a96a",
+              "targetId": "2942-f783-d627-33c5",
+              "path": "09c0-384d-8a7b-9fed::bcfa-c0f6-420a-a96a::2942-f783-d627-33c5",
+              "groupPath": "09c0-384d-8a7b-9fed::523f-eaa6-4382-baec"
             }
           ]
         }
@@ -18016,7 +18875,9 @@
         "96e3-031c-2139-1335": 5,
         "5bd7-0847-420e-b1f4": 1,
         "8045-89a4-76d4-fcef": 1,
-        "ecf5-b800-4d97-b959": 1
+        "ecf5-b800-4d97-b959": 1,
+        "bcfa-c0f6-420a-a96a": 1,
+        "2942-f783-d627-33c5": 1
       },
       "prime": {
         "linkId": "b549-9ec5-95f1-1aac",
@@ -18071,6 +18932,13 @@
               "path": "988a-bdd9-3e7f-c18d::ec43-a47a-5dbc-2aa5::01e9-334c-80cb-f1c6"
             },
             {
+              "name": "Banestrike bolter",
+              "entryId": "dfec-8ed9-80c2-b4c8",
+              "targetId": "69de-4883-efd2-b876",
+              "path": "988a-bdd9-3e7f-c18d::dfec-8ed9-80c2-b4c8::69de-4883-efd2-b876",
+              "groupPath": "988a-bdd9-3e7f-c18d::5c7d-6511-c175-e467"
+            },
+            {
               "name": "Chainsword",
               "entryId": "3eeb-8494-3959-8f25",
               "targetId": "78f4-4967-2896-c3a5",
@@ -18097,6 +18965,8 @@
         "2942-f783-d627-33c5": 5,
         "ec43-a47a-5dbc-2aa5": 5,
         "01e9-334c-80cb-f1c6": 5,
+        "dfec-8ed9-80c2-b4c8": 5,
+        "69de-4883-efd2-b876": 5,
         "3eeb-8494-3959-8f25": 5,
         "78f4-4967-2896-c3a5": 5
       },
@@ -18701,6 +19571,13 @@
           "max": 14,
           "defaultWargear": [
             {
+              "name": "Power fist",
+              "entryId": "2031-bace-42f1-800b",
+              "targetId": "2fcc-92a6-d03a-4b55",
+              "path": "8740-9bf1-0eb9-1e46::2031-bace-42f1-800b::2fcc-92a6-d03a-4b55",
+              "groupPath": "8740-9bf1-0eb9-1e46::2b1f-2b4d-4987-92f9"
+            },
+            {
               "name": "Combi-bolter",
               "entryId": "1332-d41c-44cf-b702",
               "targetId": "042d-9e60-db9e-c147",
@@ -18717,6 +19594,13 @@
           "min": 1,
           "max": 1,
           "defaultWargear": [
+            {
+              "name": "Power fist",
+              "entryId": "5839-54eb-4398-9a40",
+              "targetId": "2fcc-92a6-d03a-4b55",
+              "path": "8740-9bf1-0eb9-1e46::5839-54eb-4398-9a40::2fcc-92a6-d03a-4b55",
+              "groupPath": "8740-9bf1-0eb9-1e46::bcc0-f431-429a-9e59"
+            },
             {
               "name": "Combi-bolter",
               "entryId": "c38a-8234-4c29-9ef6",
@@ -18737,10 +19621,13 @@
         "377e-9bef-41e2-b597": 4,
         "594d-fa82-13cb-a345": 5,
         "1e7d-9066-28d2-97a0": 5,
+        "2031-bace-42f1-800b": 4,
+        "2fcc-92a6-d03a-4b55": 5,
         "1332-d41c-44cf-b702": 4,
         "042d-9e60-db9e-c147": 5,
         "4773-8470-43ef-846b": 1,
         "8045-89a4-76d4-fcef": 1,
+        "5839-54eb-4398-9a40": 1,
         "c38a-8234-4c29-9ef6": 1
       },
       "prime": {
@@ -19584,6 +20471,13 @@
               "path": "d916-ceb3-eeaa-d447::04ad-ae67-4cce-93c2::fa20-82bc-c7de-9e97"
             },
             {
+              "name": "Bolter",
+              "entryId": "a46e-dda0-4bb9-baf2",
+              "targetId": "d3f9-b9e6-3ea5-cc8e",
+              "path": "d916-ceb3-eeaa-d447::a46e-dda0-4bb9-baf2::d3f9-b9e6-3ea5-cc8e",
+              "groupPath": "d916-ceb3-eeaa-d447::6fa3-babe-74c3-1452"
+            },
+            {
               "name": "Bolt pistol",
               "entryId": "68e4-6a8a-4faa-b7b5",
               "targetId": "2942-f783-d627-33c5",
@@ -19605,6 +20499,8 @@
         "60e4-ca33-2e68-9afc": 10,
         "04ad-ae67-4cce-93c2": 10,
         "fa20-82bc-c7de-9e97": 10,
+        "a46e-dda0-4bb9-baf2": 10,
+        "d3f9-b9e6-3ea5-cc8e": 10,
         "68e4-6a8a-4faa-b7b5": 10,
         "2942-f783-d627-33c5": 10
       }
@@ -20642,7 +21538,22 @@
           "cost": 40,
           "min": 5,
           "max": 10,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Blade of Perdition",
+              "entryId": "7d13-ed02-8de8-7853",
+              "targetId": "a3a1-84f7-4e23-3ed6",
+              "path": "8f95-d929-4ae0-cdbf::04f7-ba09-e4e7-78bf::7d13-ed02-8de8-7853::a3a1-84f7-4e23-3ed6",
+              "groupPath": "8f95-d929-4ae0-cdbf::04f7-ba09-e4e7-78bf::6a6b-1cda-b6a4-8b3e"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "3960-ec44-4a1f-a2d7",
+              "targetId": "2942-f783-d627-33c5",
+              "path": "8f95-d929-4ae0-cdbf::3960-ec44-4a1f-a2d7::2942-f783-d627-33c5",
+              "groupPath": "8f95-d929-4ae0-cdbf::ca54-443d-4784-8ffe"
+            }
+          ]
         }
       ],
       "source": "blood-angels",
@@ -20666,7 +21577,11 @@
         "a38e-50ff-310f-f19e": 1,
         "7eed-be8c-4d5f-9c7f": 5,
         "594d-fa82-13cb-a345": 5,
-        "c504-9dfa-35d3-c98f": 5
+        "c504-9dfa-35d3-c98f": 5,
+        "7d13-ed02-8de8-7853": 5,
+        "a3a1-84f7-4e23-3ed6": 5,
+        "3960-ec44-4a1f-a2d7": 5,
+        "2942-f783-d627-33c5": 5
       },
       "prime": {
         "linkId": "3897-d401-223b-69bc",
@@ -21228,6 +22143,13 @@
               "entryId": "6bbd-df5e-28af-2ccc",
               "targetId": "509f-0a58-f6e8-c8f5",
               "path": "e377-3039-fed2-b525::6bbd-df5e-28af-2ccc::509f-0a58-f6e8-c8f5"
+            },
+            {
+              "name": "Terranic greatsword",
+              "entryId": "51a6-7d56-fb99-2a00",
+              "targetId": "f1aa-3d18-caac-a960",
+              "path": "e377-3039-fed2-b525::51a6-7d56-fb99-2a00::f1aa-3d18-caac-a960",
+              "groupPath": "e377-3039-fed2-b525::5ab0-8134-b3c7-2fa7"
             }
           ]
         },
@@ -21250,11 +22172,26 @@
               "entryId": "ca67-f475-403e-c3ad",
               "targetId": "509f-0a58-f6e8-c8f5",
               "path": "e377-3039-fed2-b525::ca67-f475-403e-c3ad::509f-0a58-f6e8-c8f5"
+            },
+            {
+              "name": "Terranic greatsword",
+              "entryId": "1550-1f0b-ff8d-8f2d",
+              "targetId": "f1aa-3d18-caac-a960",
+              "path": "e377-3039-fed2-b525::1550-1f0b-ff8d-8f2d::f1aa-3d18-caac-a960",
+              "groupPath": "e377-3039-fed2-b525::494f-34b9-9b2c-b772"
             }
           ]
         }
       ],
       "source": "dark-angels",
+      "unitWargear": [
+        {
+          "name": "Augurs of Weakness",
+          "entryId": "e0e2-4f18-b1fb-ce5d",
+          "path": "e377-3039-fed2-b525::9120-8b58-f50f-944a::e0e2-4f18-b1fb-ce5d",
+          "groupPath": "e377-3039-fed2-b525::9120-8b58-f50f-944a::9035-6bbe-3431-876d"
+        }
+      ],
       "facts": {
         "e033-118d-4b07-5cd1": 1,
         "e377-3039-fed2-b525": 1,
@@ -21265,11 +22202,14 @@
         "1e7d-9066-28d2-97a0": 5,
         "6bbd-df5e-28af-2ccc": 4,
         "509f-0a58-f6e8-c8f5": 5,
+        "51a6-7d56-fb99-2a00": 4,
+        "f1aa-3d18-caac-a960": 5,
         "020f-37dd-726f-1888": 1,
         "8045-89a4-76d4-fcef": 1,
         "a725-5bf6-4dc4-4144": 1,
         "a766-856c-52bd-d30a": 1,
-        "ca67-f475-403e-c3ad": 1
+        "ca67-f475-403e-c3ad": 1,
+        "1550-1f0b-ff8d-8f2d": 1
       },
       "prime": {
         "linkId": "4edf-74d7-ceb9-d5e2",
@@ -21595,6 +22535,13 @@
               "entryId": "dda7-2b41-d075-f051",
               "targetId": "509f-0a58-f6e8-c8f5",
               "path": "7f90-b6df-5196-b320::dda7-2b41-d075-f051::509f-0a58-f6e8-c8f5"
+            },
+            {
+              "name": "Terranic greatsword",
+              "entryId": "bf4c-51b4-a54f-5a69",
+              "targetId": "f1aa-3d18-caac-a960",
+              "path": "7f90-b6df-5196-b320::bf4c-51b4-a54f-5a69::f1aa-3d18-caac-a960",
+              "groupPath": "7f90-b6df-5196-b320::d1c0-830f-77f5-ca33"
             }
           ]
         },
@@ -21617,6 +22564,13 @@
               "entryId": "1175-c5d8-e417-9a79",
               "targetId": "509f-0a58-f6e8-c8f5",
               "path": "7f90-b6df-5196-b320::1175-c5d8-e417-9a79::509f-0a58-f6e8-c8f5"
+            },
+            {
+              "name": "Terranic greatsword",
+              "entryId": "76fb-0c78-a30a-a112",
+              "targetId": "f1aa-3d18-caac-a960",
+              "path": "7f90-b6df-5196-b320::76fb-0c78-a30a-a112::f1aa-3d18-caac-a960",
+              "groupPath": "7f90-b6df-5196-b320::115b-ee56-19ac-fca0"
             }
           ]
         }
@@ -21631,11 +22585,14 @@
         "1e7d-9066-28d2-97a0": 5,
         "dda7-2b41-d075-f051": 4,
         "509f-0a58-f6e8-c8f5": 5,
+        "bf4c-51b4-a54f-5a69": 4,
+        "f1aa-3d18-caac-a960": 5,
         "0178-e586-4e81-017c": 1,
         "8045-89a4-76d4-fcef": 1,
         "2ca7-7e30-cbeb-0d80": 1,
         "a766-856c-52bd-d30a": 1,
-        "1175-c5d8-e417-9a79": 1
+        "1175-c5d8-e417-9a79": 1,
+        "76fb-0c78-a30a-a112": 1
       },
       "prime": {
         "linkId": "a048-9e58-b45c-cc58",
@@ -23130,6 +24087,13 @@
           "entryId": "4978-b231-45e6-a2ba",
           "targetId": "fa20-82bc-c7de-9e97",
           "path": "b0c8-b4ea-249e-cf55::4978-b231-45e6-a2ba::fa20-82bc-c7de-9e97"
+        },
+        {
+          "name": "Volkite culverin",
+          "entryId": "5131-95bc-46e1-abb2",
+          "targetId": "fcf0-9c1b-d51e-6bc7",
+          "path": "b0c8-b4ea-249e-cf55::5131-95bc-46e1-abb2::fcf0-9c1b-d51e-6bc7",
+          "groupPath": "b0c8-b4ea-249e-cf55::ed55-6fa0-42cf-b6e4"
         }
       ],
       "facts": {
@@ -24640,6 +25604,13 @@
               "targetId": "042d-9e60-db9e-c147",
               "path": "d42a-5ff0-3f10-b2b6::9b76-d98c-c220-7e34::042d-9e60-db9e-c147",
               "groupPath": "d42a-5ff0-3f10-b2b6::353f-2c55-af23-d3d2"
+            },
+            {
+              "name": "Artificer Power Axe",
+              "entryId": "fc55-fdb4-b5ce-1b68",
+              "targetId": "68e3-de15-d977-3c36",
+              "path": "d42a-5ff0-3f10-b2b6::fc55-fdb4-b5ce-1b68::68e3-de15-d977-3c36",
+              "groupPath": "d42a-5ff0-3f10-b2b6::3179-3b62-cb02-9120"
             }
           ]
         },
@@ -24651,6 +25622,13 @@
           "min": 1,
           "max": 1,
           "defaultWargear": [
+            {
+              "name": "Artificer Power Axe",
+              "entryId": "e0af-5bd3-4f5d-b38b",
+              "targetId": "68e3-de15-d977-3c36",
+              "path": "d42a-5ff0-3f10-b2b6::e0af-5bd3-4f5d-b38b::68e3-de15-d977-3c36",
+              "groupPath": "d42a-5ff0-3f10-b2b6::50c2-b4f4-4a94-a8aa"
+            },
             {
               "name": "Combi-bolter",
               "entryId": "d460-2382-41b0-8b04",
@@ -24672,8 +25650,11 @@
         "1e7d-9066-28d2-97a0": 3,
         "9b76-d98c-c220-7e34": 2,
         "042d-9e60-db9e-c147": 3,
+        "fc55-fdb4-b5ce-1b68": 2,
+        "68e3-de15-d977-3c36": 3,
         "baaf-6454-49e9-a93b": 1,
         "8045-89a4-76d4-fcef": 1,
+        "e0af-5bd3-4f5d-b38b": 1,
         "d460-2382-41b0-8b04": 1
       },
       "prime": {
@@ -24802,6 +25783,13 @@
               "path": "3c19-634b-5bc1-cd24::27d1-a226-320d-2999::ec2c-185f-3e9e-7ccd"
             },
             {
+              "name": "Shock chargers",
+              "entryId": "7f17-ee9e-8cfb-4e5e",
+              "targetId": "9f0d-5e6b-1a6e-0546",
+              "path": "3c19-634b-5bc1-cd24::7f17-ee9e-8cfb-4e5e::9f0d-5e6b-1a6e-0546",
+              "groupPath": "3c19-634b-5bc1-cd24::0f15-ade9-42bf-8eb7"
+            },
+            {
               "name": "Bolter",
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
@@ -24829,6 +25817,8 @@
         "5833-5e86-26bc-0916": 2,
         "27d1-a226-320d-2999": 2,
         "ec2c-185f-3e9e-7ccd": 2,
+        "7f17-ee9e-8cfb-4e5e": 2,
+        "9f0d-5e6b-1a6e-0546": 2,
         "94da-d659-4db3-d979": 2,
         "d3f9-b9e6-3ea5-cc8e": 2
       },
@@ -26097,6 +27087,13 @@
               "targetId": "042d-9e60-db9e-c147",
               "path": "3cf5-0b78-6f41-4a8f::4cbd-6f1f-d45c-c11f::042d-9e60-db9e-c147",
               "groupPath": "3cf5-0b78-6f41-4a8f::2cca-3e19-2553-94fd"
+            },
+            {
+              "name": "Chainglaive",
+              "entryId": "980d-6d03-7960-6e76",
+              "targetId": "3708-b181-5f26-4387",
+              "path": "3cf5-0b78-6f41-4a8f::980d-6d03-7960-6e76::3708-b181-5f26-4387",
+              "groupPath": "3cf5-0b78-6f41-4a8f::cf56-5f30-bd28-7b4a"
             }
           ]
         },
@@ -26114,6 +27111,13 @@
               "targetId": "042d-9e60-db9e-c147",
               "path": "3cf5-0b78-6f41-4a8f::379e-73cb-c909-2b96::042d-9e60-db9e-c147",
               "groupPath": "3cf5-0b78-6f41-4a8f::4682-9300-f7a1-15bd"
+            },
+            {
+              "name": "Chainglaive",
+              "entryId": "5f76-a9fa-42a1-e33c",
+              "targetId": "3708-b181-5f26-4387",
+              "path": "3cf5-0b78-6f41-4a8f::5f76-a9fa-42a1-e33c::3708-b181-5f26-4387",
+              "groupPath": "3cf5-0b78-6f41-4a8f::356d-8339-dea2-db4c"
             }
           ]
         }
@@ -26129,8 +27133,11 @@
         "8045-89a4-76d4-fcef": 1,
         "4cbd-6f1f-d45c-c11f": 1,
         "042d-9e60-db9e-c147": 5,
+        "980d-6d03-7960-6e76": 1,
+        "3708-b181-5f26-4387": 5,
         "6c97-58d8-096d-89ae": 4,
-        "379e-73cb-c909-2b96": 4
+        "379e-73cb-c909-2b96": 4,
+        "5f76-a9fa-42a1-e33c": 4
       },
       "prime": {
         "linkId": "a1fc-bfb3-dafc-99aa",
@@ -26623,6 +27630,13 @@
           "max": 14,
           "defaultWargear": [
             {
+              "name": "Power fist",
+              "entryId": "2031-bace-42f1-800b",
+              "targetId": "2fcc-92a6-d03a-4b55",
+              "path": "30c4-e580-a2b6-11da::2031-bace-42f1-800b::2fcc-92a6-d03a-4b55",
+              "groupPath": "30c4-e580-a2b6-11da::2b1f-2b4d-4987-92f9"
+            },
+            {
               "name": "Combi-bolter",
               "entryId": "1332-d41c-44cf-b702",
               "targetId": "042d-9e60-db9e-c147",
@@ -26639,6 +27653,13 @@
           "min": 1,
           "max": 1,
           "defaultWargear": [
+            {
+              "name": "Power fist",
+              "entryId": "5839-54eb-4398-9a40",
+              "targetId": "2fcc-92a6-d03a-4b55",
+              "path": "30c4-e580-a2b6-11da::5839-54eb-4398-9a40::2fcc-92a6-d03a-4b55",
+              "groupPath": "30c4-e580-a2b6-11da::bcc0-f431-429a-9e59"
+            },
             {
               "name": "Combi-bolter",
               "entryId": "c38a-8234-4c29-9ef6",
@@ -26658,10 +27679,13 @@
         "377e-9bef-41e2-b597": 4,
         "594d-fa82-13cb-a345": 5,
         "1e7d-9066-28d2-97a0": 5,
+        "2031-bace-42f1-800b": 4,
+        "2fcc-92a6-d03a-4b55": 5,
         "1332-d41c-44cf-b702": 4,
         "042d-9e60-db9e-c147": 5,
         "4773-8470-43ef-846b": 1,
         "8045-89a4-76d4-fcef": 1,
+        "5839-54eb-4398-9a40": 1,
         "c38a-8234-4c29-9ef6": 1
       },
       "prime": {
@@ -26755,7 +27779,22 @@
           "cost": 45,
           "min": 4,
           "max": 9,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Forge-crafted thunder hammer",
+              "entryId": "9783-61b0-d7b1-aae4",
+              "targetId": "d08b-34be-c6b9-8494",
+              "path": "e255-98b6-88b6-d0f0::9783-61b0-d7b1-aae4::d08b-34be-c6b9-8494",
+              "groupPath": "e255-98b6-88b6-d0f0::880f-ecf5-af86-4441"
+            },
+            {
+              "name": "Drakenscale",
+              "entryId": "0912-a280-fab5-47a0",
+              "targetId": "b021-e506-1ecd-b3c5",
+              "path": "e255-98b6-88b6-d0f0::0912-a280-fab5-47a0::b021-e506-1ecd-b3c5",
+              "groupPath": "e255-98b6-88b6-d0f0::a274-ce72-fdca-f29c"
+            }
+          ]
         },
         {
           "name": "Firedrake Master",
@@ -26764,7 +27803,22 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Forge-crafted thunder hammer",
+              "entryId": "38b4-3cb0-53e6-e8f4",
+              "targetId": "d08b-34be-c6b9-8494",
+              "path": "e255-98b6-88b6-d0f0::38b4-3cb0-53e6-e8f4::d08b-34be-c6b9-8494",
+              "groupPath": "e255-98b6-88b6-d0f0::d573-b96e-0b79-245c"
+            },
+            {
+              "name": "Drakenscale",
+              "entryId": "2f75-e87a-ca04-5321",
+              "targetId": "b021-e506-1ecd-b3c5",
+              "path": "e255-98b6-88b6-d0f0::2f75-e87a-ca04-5321::b021-e506-1ecd-b3c5",
+              "groupPath": "e255-98b6-88b6-d0f0::58a6-5b26-cd9f-26a9"
+            }
+          ]
         }
       ],
       "source": "salamanders",
@@ -26778,8 +27832,14 @@
         "1f0a-53e1-910a-a3b1": 4,
         "594d-fa82-13cb-a345": 5,
         "1e7d-9066-28d2-97a0": 5,
+        "9783-61b0-d7b1-aae4": 4,
+        "d08b-34be-c6b9-8494": 5,
+        "0912-a280-fab5-47a0": 4,
+        "b021-e506-1ecd-b3c5": 5,
         "6f99-6a87-8ad6-8467": 1,
-        "8045-89a4-76d4-fcef": 1
+        "8045-89a4-76d4-fcef": 1,
+        "38b4-3cb0-53e6-e8f4": 1,
+        "2f75-e87a-ca04-5321": 1
       },
       "prime": {
         "linkId": "5099-c7ee-ec18-9823",
@@ -27434,6 +28494,26 @@
           "name": "Cthonian Power Claw",
           "entryId": "1a1a-72f9-7032-69a5",
           "path": "a14b-f575-14ae-c66d::1a1a-72f9-7032-69a5"
+        },
+        {
+          "name": "Banestrike Combi-Bolter and Grenade Harness",
+          "entryId": "f910-8a5b-1084-71c3",
+          "path": "a14b-f575-14ae-c66d::f910-8a5b-1084-71c3",
+          "groupPath": "a14b-f575-14ae-c66d::a0d3-dcfb-0cdf-ab11",
+          "children": [
+            {
+              "name": "Banestrike combi-bolter",
+              "entryId": "4a3c-aff7-3790-7dd7",
+              "targetId": "08db-6d95-f0be-cfe0",
+              "path": "a14b-f575-14ae-c66d::4a3c-aff7-3790-7dd7::08db-6d95-f0be-cfe0"
+            },
+            {
+              "name": "Grenade harness",
+              "entryId": "bcc5-53ca-fff0-fa6b",
+              "targetId": "a766-856c-52bd-d30a",
+              "path": "a14b-f575-14ae-c66d::bcc5-53ca-fff0-fa6b::a766-856c-52bd-d30a"
+            }
+          ]
         }
       ],
       "facts": {
@@ -28256,7 +29336,14 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "bbfe-7605-3627-7ee9::c947-8e11-1f90-e2a8::38a8-2683-c590-3c4b",
+              "groupPath": "bbfe-7605-3627-7ee9::c947-8e11-1f90-e2a8::170b-d9c0-e9d6-b314"
+            }
+          ]
         }
       ],
       "source": "sons-of-horus",
@@ -28269,7 +29356,8 @@
         "594d-fa82-13cb-a345": 1,
         "b980-187b-2b17-d635": 1,
         "9871-cb62-5283-2216": 1,
-        "1e7d-9066-28d2-97a0": 1
+        "1e7d-9066-28d2-97a0": 1,
+        "38a8-2683-c590-3c4b": 1
       },
       "prime": {
         "linkId": "6e0e-c166-1d39-cf0a",
@@ -28324,6 +29412,13 @@
               "path": "bb2a-0229-ffdf-4617::ec43-a47a-5dbc-2aa5::01e9-334c-80cb-f1c6"
             },
             {
+              "name": "Banestrike bolter",
+              "entryId": "dfec-8ed9-80c2-b4c8",
+              "targetId": "69de-4883-efd2-b876",
+              "path": "bb2a-0229-ffdf-4617::dfec-8ed9-80c2-b4c8::69de-4883-efd2-b876",
+              "groupPath": "bb2a-0229-ffdf-4617::5c7d-6511-c175-e467"
+            },
+            {
               "name": "Chainsword",
               "entryId": "3eeb-8494-3959-8f25",
               "targetId": "78f4-4967-2896-c3a5",
@@ -28350,6 +29445,8 @@
         "2942-f783-d627-33c5": 5,
         "ec43-a47a-5dbc-2aa5": 5,
         "01e9-334c-80cb-f1c6": 5,
+        "dfec-8ed9-80c2-b4c8": 5,
+        "69de-4883-efd2-b876": 5,
         "3eeb-8494-3959-8f25": 5,
         "78f4-4967-2896-c3a5": 5
       },
@@ -28973,6 +30070,12 @@
               "entryId": "a8e3-e85b-4420-a916",
               "targetId": "1deb-afd8-f63d-0fe5",
               "path": "eb52-01f6-3a20-6da5::a8e3-e85b-4420-a916::1deb-afd8-f63d-0fe5"
+            },
+            {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "eb52-01f6-3a20-6da5::aeeb-e47d-0c06-b7ec::38a8-2683-c590-3c4b",
+              "groupPath": "eb52-01f6-3a20-6da5::aeeb-e47d-0c06-b7ec::170b-d9c0-e9d6-b314"
             }
           ]
         }
@@ -28991,7 +30094,8 @@
         "c025-5518-4dd1-9231": 1,
         "968c-969b-bf56-8bde": 1,
         "a8e3-e85b-4420-a916": 1,
-        "1deb-afd8-f63d-0fe5": 1
+        "1deb-afd8-f63d-0fe5": 1,
+        "38a8-2683-c590-3c4b": 1
       },
       "prime": {
         "linkId": "4f87-ebbc-b028-c57f",
@@ -29122,6 +30226,13 @@
               "targetId": "9322-09ed-abec-6e13",
               "path": "5ab5-1196-7afa-9cfc::7733-752c-9219-58e7::9322-09ed-abec-6e13",
               "groupPath": "5ab5-1196-7afa-9cfc::5c40-1259-9a42-beb1"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "3ba3-3239-49ce-b26e",
+              "targetId": "78f4-4967-2896-c3a5",
+              "path": "5ab5-1196-7afa-9cfc::3ba3-3239-49ce-b26e::78f4-4967-2896-c3a5",
+              "groupPath": "5ab5-1196-7afa-9cfc::23fc-b2e9-cc11-3d24"
             }
           ]
         },
@@ -29168,6 +30279,8 @@
         "fa20-82bc-c7de-9e97": 5,
         "7733-752c-9219-58e7": 4,
         "9322-09ed-abec-6e13": 5,
+        "3ba3-3239-49ce-b26e": 4,
+        "78f4-4967-2896-c3a5": 4,
         "b8c2-7a1c-47a8-818d": 1,
         "8045-89a4-76d4-fcef": 1,
         "0fc2-b622-4615-b462": 1,
@@ -29233,11 +30346,25 @@
               "groupPath": "33f1-3213-0cc4-df63::bc02-7f7a-d38d-661a::9089-07e5-3653-84b6"
             },
             {
+              "name": "Twin bolter",
+              "entryId": "afda-c212-46c5-a0ef",
+              "targetId": "222f-82cb-05a2-f8f1",
+              "path": "33f1-3213-0cc4-df63::afda-c212-46c5-a0ef::222f-82cb-05a2-f8f1",
+              "groupPath": "33f1-3213-0cc4-df63::43ee-9347-4cf3-8a9a"
+            },
+            {
               "name": "Bolt pistol",
               "entryId": "0f19-a711-cc3b-e1fd",
               "targetId": "2942-f783-d627-33c5",
               "path": "33f1-3213-0cc4-df63::0f19-a711-cc3b-e1fd::2942-f783-d627-33c5",
               "groupPath": "33f1-3213-0cc4-df63::5392-c4c7-c010-79fd"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "c5a1-669e-4390-af43",
+              "targetId": "bc40-b14a-978e-0232",
+              "path": "33f1-3213-0cc4-df63::c5a1-669e-4390-af43::bc40-b14a-978e-0232",
+              "groupPath": "33f1-3213-0cc4-df63::724b-f221-4679-822d"
             }
           ]
         }
@@ -29260,8 +30387,12 @@
         "12b0-b882-4f1f-a4e7": 1,
         "fa20-82bc-c7de-9e97": 1,
         "4f20-9a87-8334-9f26": 1,
+        "afda-c212-46c5-a0ef": 1,
+        "222f-82cb-05a2-f8f1": 1,
         "0f19-a711-cc3b-e1fd": 1,
-        "2942-f783-d627-33c5": 1
+        "2942-f783-d627-33c5": 1,
+        "c5a1-669e-4390-af43": 1,
+        "bc40-b14a-978e-0232": 1
       },
       "prime": {
         "linkId": "5cfc-e516-baf1-be46",
@@ -29429,6 +30560,12 @@
               "entryId": "714c-d6dc-404e-a64f",
               "targetId": "a7bb-ae7f-3ef2-90d1",
               "path": "14f3-17cf-117e-a255::714c-d6dc-404e-a64f::a7bb-ae7f-3ef2-90d1"
+            },
+            {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "14f3-17cf-117e-a255::0b6e-b6c2-f9c0-5798::38a8-2683-c590-3c4b",
+              "groupPath": "14f3-17cf-117e-a255::0b6e-b6c2-f9c0-5798::170b-d9c0-e9d6-b314"
             }
           ]
         }
@@ -29445,7 +30582,8 @@
         "e235-e37e-4d47-a006": 1,
         "4da8-c2aa-1380-9825": 1,
         "714c-d6dc-404e-a64f": 1,
-        "a7bb-ae7f-3ef2-90d1": 1
+        "a7bb-ae7f-3ef2-90d1": 1,
+        "38a8-2683-c590-3c4b": 1
       },
       "prime": {
         "linkId": "86c3-8c55-031c-b33a",
@@ -29510,6 +30648,20 @@
               "entryId": "4f20-9a87-8334-9f26",
               "path": "b795-ec81-8e34-fc91::1fbc-8c29-1fc2-2963::4f20-9a87-8334-9f26",
               "groupPath": "b795-ec81-8e34-fc91::1fbc-8c29-1fc2-2963::9089-07e5-3653-84b6"
+            },
+            {
+              "name": "Twin bolter",
+              "entryId": "4598-115b-4036-b1ef",
+              "targetId": "222f-82cb-05a2-f8f1",
+              "path": "b795-ec81-8e34-fc91::4598-115b-4036-b1ef::222f-82cb-05a2-f8f1",
+              "groupPath": "b795-ec81-8e34-fc91::1676-9cc3-47c6-b3d5"
+            },
+            {
+              "name": "Heavy bolter",
+              "entryId": "6ae7-e752-abad-cb74",
+              "targetId": "bc40-b14a-978e-0232",
+              "path": "b795-ec81-8e34-fc91::6ae7-e752-abad-cb74::bc40-b14a-978e-0232",
+              "groupPath": "b795-ec81-8e34-fc91::cd5e-cddf-7306-06f6"
             }
           ]
         }
@@ -29532,7 +30684,11 @@
         "60e4-ca33-2e68-9afc": 1,
         "8ce7-9222-4321-b8fe": 1,
         "fa20-82bc-c7de-9e97": 1,
-        "4f20-9a87-8334-9f26": 1
+        "4f20-9a87-8334-9f26": 1,
+        "4598-115b-4036-b1ef": 1,
+        "222f-82cb-05a2-f8f1": 1,
+        "6ae7-e752-abad-cb74": 1,
+        "bc40-b14a-978e-0232": 1
       },
       "prime": {
         "linkId": "5f67-bc5c-7ab2-2852",
@@ -30168,6 +31324,20 @@
               "name": "Gravis force blade",
               "entryId": "9b5d-00d1-3be9-1580",
               "path": "1ee2-34ab-cb0e-3b25::9b5d-00d1-3be9-1580"
+            },
+            {
+              "name": "Gravis bolt cannon",
+              "entryId": "84d1-f74c-bca4-73a4",
+              "targetId": "50d5-02d3-0be6-9143",
+              "path": "1ee2-34ab-cb0e-3b25::84d1-f74c-bca4-73a4::50d5-02d3-0be6-9143",
+              "groupPath": "1ee2-34ab-cb0e-3b25::56fb-fb67-24c9-b350"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "e88c-c5e8-7b58-cb68",
+              "targetId": "042d-9e60-db9e-c147",
+              "path": "1ee2-34ab-cb0e-3b25::e88c-c5e8-7b58-cb68::042d-9e60-db9e-c147",
+              "groupPath": "1ee2-34ab-cb0e-3b25::c849-1153-1e0c-a902"
             }
           ]
         }
@@ -30182,7 +31352,11 @@
         "7c3f-93c7-d5b9-89e3": 1,
         "681d-5a87-a24d-040c": 1,
         "38d4-d720-8009-acd3": 1,
-        "9b5d-00d1-3be9-1580": 1
+        "9b5d-00d1-3be9-1580": 1,
+        "84d1-f74c-bca4-73a4": 1,
+        "50d5-02d3-0be6-9143": 1,
+        "e88c-c5e8-7b58-cb68": 1,
+        "042d-9e60-db9e-c147": 1
       },
       "prime": {
         "linkId": "1cfb-ccf3-40a6-acac",
@@ -30222,6 +31396,12 @@
               "entryId": "4e79-b93f-6223-7456",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
               "path": "4e95-8076-b824-8c02::4e79-b93f-6223-7456::d3f9-b9e6-3ea5-cc8e"
+            },
+            {
+              "name": "Asphyx bolt cannon",
+              "entryId": "ecec-d2f3-ad61-ca00",
+              "path": "4e95-8076-b824-8c02::ecec-d2f3-ad61-ca00",
+              "groupPath": "4e95-8076-b824-8c02::420f-b4af-5f34-0756"
             }
           ]
         }
@@ -30236,7 +31416,8 @@
         "5833-5e86-26bc-0916": 1,
         "bd48-b242-9657-4fa8": 1,
         "4e79-b93f-6223-7456": 1,
-        "d3f9-b9e6-3ea5-cc8e": 1
+        "d3f9-b9e6-3ea5-cc8e": 1,
+        "ecec-d2f3-ad61-ca00": 1
       },
       "prime": {
         "linkId": "05b2-c3f9-42f4-94d8",
@@ -30396,6 +31577,13 @@
               "entryId": "ecf5-b800-4d97-b959",
               "targetId": "96e3-031c-2139-1335",
               "path": "72ac-23f1-6eee-988e::ecf5-b800-4d97-b959::96e3-031c-2139-1335"
+            },
+            {
+              "name": "Bolt pistol",
+              "entryId": "bcfa-c0f6-420a-a96a",
+              "targetId": "2942-f783-d627-33c5",
+              "path": "72ac-23f1-6eee-988e::bcfa-c0f6-420a-a96a::2942-f783-d627-33c5",
+              "groupPath": "72ac-23f1-6eee-988e::523f-eaa6-4382-baec"
             }
           ]
         }
@@ -30428,7 +31616,9 @@
         "96e3-031c-2139-1335": 5,
         "5bd7-0847-420e-b1f4": 1,
         "8045-89a4-76d4-fcef": 1,
-        "ecf5-b800-4d97-b959": 1
+        "ecf5-b800-4d97-b959": 1,
+        "bcfa-c0f6-420a-a96a": 1,
+        "2942-f783-d627-33c5": 1
       },
       "prime": {
         "linkId": "b549-9ec5-95f1-1aac",
@@ -30471,6 +31661,13 @@
               "path": "f4f6-a913-a0f2-9666::04ad-ae67-4cce-93c2::fa20-82bc-c7de-9e97"
             },
             {
+              "name": "Bolter",
+              "entryId": "a46e-dda0-4bb9-baf2",
+              "targetId": "d3f9-b9e6-3ea5-cc8e",
+              "path": "f4f6-a913-a0f2-9666::a46e-dda0-4bb9-baf2::d3f9-b9e6-3ea5-cc8e",
+              "groupPath": "f4f6-a913-a0f2-9666::6fa3-babe-74c3-1452"
+            },
+            {
               "name": "Bolt pistol",
               "entryId": "68e4-6a8a-4faa-b7b5",
               "targetId": "2942-f783-d627-33c5",
@@ -30491,6 +31688,8 @@
         "60e4-ca33-2e68-9afc": 10,
         "04ad-ae67-4cce-93c2": 10,
         "fa20-82bc-c7de-9e97": 10,
+        "a46e-dda0-4bb9-baf2": 10,
+        "d3f9-b9e6-3ea5-cc8e": 10,
         "68e4-6a8a-4faa-b7b5": 10,
         "2942-f783-d627-33c5": 10
       }
@@ -32098,6 +33297,13 @@
               "entryId": "2e29-c759-075f-2e93",
               "targetId": "fa20-82bc-c7de-9e97",
               "path": "e6bb-8795-db5e-95e3::2e29-c759-075f-2e93::fa20-82bc-c7de-9e97"
+            },
+            {
+              "name": "Pair of lightning claws",
+              "entryId": "2bb1-1be5-d4e9-5d67",
+              "targetId": "6754-24dd-5be0-26ff",
+              "path": "e6bb-8795-db5e-95e3::2bb1-1be5-d4e9-5d67::6754-24dd-5be0-26ff",
+              "groupPath": "e6bb-8795-db5e-95e3::164c-cb34-6993-9fa6"
             }
           ]
         }
@@ -32117,10 +33323,11 @@
         "cea5-e8b1-1931-400d": 1,
         "fa20-82bc-c7de-9e97": 5,
         "79ed-138f-bcd8-5319": 1,
-        "6754-24dd-5be0-26ff": 1,
+        "6754-24dd-5be0-26ff": 5,
         "662c-33cb-13d1-483c": 4,
         "1a7d-1713-cbad-ee52": 4,
-        "2e29-c759-075f-2e93": 4
+        "2e29-c759-075f-2e93": 4,
+        "2bb1-1be5-d4e9-5d67": 4
       },
       "prime": {
         "linkId": "15b9-7c17-7494-c33b",
@@ -32422,6 +33629,13 @@
               "targetId": "2942-f783-d627-33c5",
               "path": "ec4e-16b6-8313-4ab3::e8b0-1a7d-a350-12fb::2942-f783-d627-33c5",
               "groupPath": "ec4e-16b6-8313-4ab3::c59f-f6c9-3cab-c141"
+            },
+            {
+              "name": "Chainsword",
+              "entryId": "8751-a984-278c-fd14",
+              "targetId": "78f4-4967-2896-c3a5",
+              "path": "ec4e-16b6-8313-4ab3::8751-a984-278c-fd14::78f4-4967-2896-c3a5",
+              "groupPath": "ec4e-16b6-8313-4ab3::3c9d-d3c2-007c-f042"
             }
           ]
         }
@@ -32458,12 +33672,13 @@
         "98d7-7a1a-984e-8355": 4,
         "2942-f783-d627-33c5": 5,
         "3196-aa0a-9b83-132e": 4,
-        "78f4-4967-2896-c3a5": 4,
+        "78f4-4967-2896-c3a5": 5,
         "15fd-61b6-f9ad-9b46": 1,
         "8045-89a4-76d4-fcef": 1,
         "949c-ae23-394e-4e2c": 1,
         "6754-24dd-5be0-26ff": 1,
-        "e8b0-1a7d-a350-12fb": 1
+        "e8b0-1a7d-a350-12fb": 1,
+        "8751-a984-278c-fd14": 1
       },
       "prime": {
         "linkId": "ad21-ab1a-c1f4-1b76",
@@ -33103,6 +34318,13 @@
               "entryId": "24d7-d344-09ca-9690",
               "targetId": "103d-b9cb-bb16-1645",
               "path": "4f05-5ff4-f414-18f4::24d7-d344-09ca-9690::103d-b9cb-bb16-1645"
+            },
+            {
+              "name": "Akkadic hand flamer",
+              "entryId": "478a-16dd-2ef0-7e45",
+              "targetId": "04d0-1f99-ce32-94fc",
+              "path": "4f05-5ff4-f414-18f4::478a-16dd-2ef0-7e45::04d0-1f99-ce32-94fc",
+              "groupPath": "4f05-5ff4-f414-18f4::ff8a-17b4-3124-b75b"
             }
           ]
         }
@@ -33133,10 +34355,11 @@
         "3b15-1202-d433-f896": 4,
         "103d-b9cb-bb16-1645": 5,
         "3166-f385-1dee-9034": 4,
-        "04d0-1f99-ce32-94fc": 4,
+        "04d0-1f99-ce32-94fc": 5,
         "4844-0ce8-3681-2bfa": 1,
         "8045-89a4-76d4-fcef": 1,
-        "24d7-d344-09ca-9690": 1
+        "24d7-d344-09ca-9690": 1,
+        "478a-16dd-2ef0-7e45": 1
       },
       "prime": {
         "linkId": "3032-e409-4d33-a113",
@@ -33260,6 +34483,19 @@
               "targetId": "02b1-ed1c-7c89-fc36",
               "path": "a00e-3769-62db-37b7::3000-4692-8df5-6267::970d-7af0-0052-e25c::02b1-ed1c-7c89-fc36",
               "groupPath": "a00e-3769-62db-37b7::3000-4692-8df5-6267::89e6-2502-2486-71f4"
+            },
+            {
+              "name": "Cataphractii",
+              "entryId": "38a8-2683-c590-3c4b",
+              "path": "a00e-3769-62db-37b7::7108-389d-b9d5-6545::38a8-2683-c590-3c4b",
+              "groupPath": "a00e-3769-62db-37b7::7108-389d-b9d5-6545::170b-d9c0-e9d6-b314"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "4afc-4177-4ecd-a5b0",
+              "targetId": "042d-9e60-db9e-c147",
+              "path": "a00e-3769-62db-37b7::4afc-4177-4ecd-a5b0::042d-9e60-db9e-c147",
+              "groupPath": "a00e-3769-62db-37b7::3b41-e203-4d7e-9875"
             }
           ]
         }
@@ -33276,7 +34512,10 @@
         "f95c-d343-e2ce-da96": 1,
         "f6c0-5042-9c80-f993": 1,
         "970d-7af0-0052-e25c": 1,
-        "02b1-ed1c-7c89-fc36": 1
+        "02b1-ed1c-7c89-fc36": 1,
+        "38a8-2683-c590-3c4b": 1,
+        "4afc-4177-4ecd-a5b0": 1,
+        "042d-9e60-db9e-c147": 1
       },
       "prime": {
         "linkId": "bdf4-8bcb-c7b5-1d22",
@@ -33848,7 +35087,21 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Pair of lightning claws",
+              "entryId": "3107-dce7-8751-c598",
+              "targetId": "6754-24dd-5be0-26ff",
+              "path": "6ab4-9770-dcb2-8b0b::3107-dce7-8751-c598::6754-24dd-5be0-26ff",
+              "groupPath": "6ab4-9770-dcb2-8b0b::cb5c-6109-959e-43e3"
+            },
+            {
+              "name": "Meteor hammer",
+              "entryId": "5d93-8523-229e-32df",
+              "path": "6ab4-9770-dcb2-8b0b::2bc2-d4d8-3c17-1546::5d93-8523-229e-32df",
+              "groupPath": "6ab4-9770-dcb2-8b0b::2bc2-d4d8-3c17-1546::f18f-e86f-e13e-4a48"
+            }
+          ]
         },
         {
           "name": "Rampager",
@@ -33857,7 +35110,14 @@
           "cost": 22,
           "min": 4,
           "max": 14,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Meteor hammer",
+              "entryId": "5d93-8523-229e-32df",
+              "path": "6ab4-9770-dcb2-8b0b::3ee1-dc34-0734-d740::5d93-8523-229e-32df",
+              "groupPath": "6ab4-9770-dcb2-8b0b::3ee1-dc34-0734-d740::f18f-e86f-e13e-4a48"
+            }
+          ]
         }
       ],
       "source": "world-eaters",
@@ -33884,6 +35144,9 @@
         "8045-89a4-76d4-fcef": 1,
         "5a95-e564-96b2-8dc9": 1,
         "594d-fa82-13cb-a345": 5,
+        "3107-dce7-8751-c598": 1,
+        "6754-24dd-5be0-26ff": 1,
+        "5d93-8523-229e-32df": 5,
         "821a-4497-0743-9777": 4
       },
       "prime": {
@@ -33927,7 +35190,22 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Power axe",
+              "entryId": "ba91-dffc-8cb2-2c2a",
+              "targetId": "4861-b77a-620c-f0d6",
+              "path": "542f-ad6f-ca67-8e34::ba91-dffc-8cb2-2c2a::4861-b77a-620c-f0d6",
+              "groupPath": "542f-ad6f-ca67-8e34::5d34-8687-651e-5869"
+            },
+            {
+              "name": "Combi-bolter",
+              "entryId": "dbb8-d19b-b379-651a",
+              "targetId": "042d-9e60-db9e-c147",
+              "path": "542f-ad6f-ca67-8e34::dbb8-d19b-b379-651a::042d-9e60-db9e-c147",
+              "groupPath": "542f-ad6f-ca67-8e34::445c-55d2-3fc8-05c4"
+            }
+          ]
         },
         {
           "name": "Red Butcher",
@@ -33950,6 +35228,10 @@
         "8045-89a4-76d4-fcef": 1,
         "594d-fa82-13cb-a345": 5,
         "1e7d-9066-28d2-97a0": 5,
+        "ba91-dffc-8cb2-2c2a": 1,
+        "4861-b77a-620c-f0d6": 1,
+        "dbb8-d19b-b379-651a": 1,
+        "042d-9e60-db9e-c147": 1,
         "08a3-46d5-a3ce-0b30": 4
       },
       "prime": {
@@ -34540,6 +35822,12 @@
           "entryId": "5649-a889-af77-ae35",
           "targetId": "60e4-ca33-2e68-9afc",
           "path": "a5e9-209d-9f17-9afd::5649-a889-af77-ae35::60e4-ca33-2e68-9afc"
+        },
+        {
+          "name": "Archimandrite",
+          "entryId": "6a01-072d-5f2a-deed",
+          "path": "a5e9-209d-9f17-9afd::f00f-c9df-b87d-58d3::6a01-072d-5f2a-deed",
+          "groupPath": "a5e9-209d-9f17-9afd::f00f-c9df-b87d-58d3::ce61-2d74-5519-70bf"
         }
       ],
       "facts": {
@@ -34605,6 +35893,12 @@
           "entryId": "3562-ecc3-6acf-5346",
           "targetId": "60e4-ca33-2e68-9afc",
           "path": "a2f9-908e-52aa-046f::3562-ecc3-6acf-5346::60e4-ca33-2e68-9afc"
+        },
+        {
+          "name": "Archimandrite",
+          "entryId": "6a01-072d-5f2a-deed",
+          "path": "a2f9-908e-52aa-046f::577d-b859-7392-8223::6a01-072d-5f2a-deed",
+          "groupPath": "a2f9-908e-52aa-046f::577d-b859-7392-8223::ce61-2d74-5519-70bf"
         }
       ],
       "facts": {
@@ -34672,6 +35966,12 @@
           "entryId": "6d15-44db-201f-f6b2",
           "targetId": "60e4-ca33-2e68-9afc",
           "path": "59e2-dde7-5e8f-30e2::6d15-44db-201f-f6b2::60e4-ca33-2e68-9afc"
+        },
+        {
+          "name": "Archimandrite",
+          "entryId": "6a01-072d-5f2a-deed",
+          "path": "59e2-dde7-5e8f-30e2::40b6-5935-2a4f-f5eb::6a01-072d-5f2a-deed",
+          "groupPath": "59e2-dde7-5e8f-30e2::40b6-5935-2a4f-f5eb::ce61-2d74-5519-70bf"
         }
       ],
       "officerOfTheLine": 2,
@@ -34735,6 +36035,12 @@
           "entryId": "695e-1dd4-98e1-ad3e",
           "targetId": "e269-7996-f41f-b892",
           "path": "7fd7-738d-d9d2-a73c::695e-1dd4-98e1-ad3e::e269-7996-f41f-b892"
+        },
+        {
+          "name": "Archimandrite",
+          "entryId": "6a01-072d-5f2a-deed",
+          "path": "7fd7-738d-d9d2-a73c::3f36-ef37-6adb-409e::6a01-072d-5f2a-deed",
+          "groupPath": "7fd7-738d-d9d2-a73c::3f36-ef37-6adb-409e::ce61-2d74-5519-70bf"
         }
       ],
       "facts": {
@@ -34858,6 +36164,12 @@
           "entryId": "f2a3-6675-fa16-47c7",
           "targetId": "a71c-d284-cb63-869e",
           "path": "9d21-5f4a-0234-078a::f2a3-6675-fa16-47c7::a71c-d284-cb63-869e"
+        },
+        {
+          "name": "Archimandrite",
+          "entryId": "6a01-072d-5f2a-deed",
+          "path": "9d21-5f4a-0234-078a::fee7-bc64-5422-4317::6a01-072d-5f2a-deed",
+          "groupPath": "9d21-5f4a-0234-078a::fee7-bc64-5422-4317::ce61-2d74-5519-70bf"
         }
       ],
       "facts": {
@@ -35010,6 +36322,12 @@
           "entryId": "a99f-f713-a766-617b",
           "targetId": "60e4-ca33-2e68-9afc",
           "path": "945b-b281-c049-2dfc::a99f-f713-a766-617b::60e4-ca33-2e68-9afc"
+        },
+        {
+          "name": "Archimandrite",
+          "entryId": "6a01-072d-5f2a-deed",
+          "path": "945b-b281-c049-2dfc::1f26-8829-0310-fcff::6a01-072d-5f2a-deed",
+          "groupPath": "945b-b281-c049-2dfc::1f26-8829-0310-fcff::ce61-2d74-5519-70bf"
         }
       ],
       "officerOfTheLine": 2,
@@ -35519,6 +36837,12 @@
           "entryId": "ad5e-8491-4b85-de75",
           "targetId": "60e4-ca33-2e68-9afc",
           "path": "c778-e1d5-301a-2804::ad5e-8491-4b85-de75::60e4-ca33-2e68-9afc"
+        },
+        {
+          "name": "Archimandrite",
+          "entryId": "6a01-072d-5f2a-deed",
+          "path": "c778-e1d5-301a-2804::884b-f6af-9a40-7ff1::6a01-072d-5f2a-deed",
+          "groupPath": "c778-e1d5-301a-2804::884b-f6af-9a40-7ff1::ce61-2d74-5519-70bf"
         }
       ],
       "facts": {
@@ -35557,7 +36881,15 @@
           "cost": 10,
           "min": 0,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Lightning gun",
+              "entryId": "3eb6-f604-f513-ecb8",
+              "targetId": "9b86-e05d-8ce5-ab8b",
+              "path": "44ac-38f8-633f-9bfd::3eb6-f604-f513-ecb8::9b86-e05d-8ce5-ab8b",
+              "groupPath": "44ac-38f8-633f-9bfd::c678-ee68-9e90-06da"
+            }
+          ]
         },
         {
           "name": "Thallax",
@@ -35650,11 +36982,39 @@
               "entryId": "e13a-67fa-d0ce-b439",
               "targetId": "e269-7996-f41f-b892",
               "path": "2646-d42e-7383-0e94::e13a-67fa-d0ce-b439::e269-7996-f41f-b892"
+            },
+            {
+              "name": "Gyges siege claw and one Irad-cleanser",
+              "entryId": "7739-8123-d0eb-a8fa",
+              "path": "2646-d42e-7383-0e94::7739-8123-d0eb-a8fa",
+              "groupPath": "2646-d42e-7383-0e94::7d45-d7d2-00ef-6c0f",
+              "children": [
+                {
+                  "name": "Irad-cleanser",
+                  "entryId": "79e6-e72b-6f3e-2027",
+                  "targetId": "910e-3579-4968-44af",
+                  "path": "2646-d42e-7383-0e94::79e6-e72b-6f3e-2027::910e-3579-4968-44af"
+                },
+                {
+                  "name": "Gyges siege claws",
+                  "entryId": "45c1-84e7-1aba-3ade",
+                  "targetId": "8026-777a-5e74-7952",
+                  "path": "2646-d42e-7383-0e94::45c1-84e7-1aba-3ade::8026-777a-5e74-7952"
+                }
+              ]
             }
           ]
         }
       ],
       "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Archimandrite",
+          "entryId": "6a01-072d-5f2a-deed",
+          "path": "2646-d42e-7383-0e94::d1c2-ce59-a6f4-9191::6a01-072d-5f2a-deed",
+          "groupPath": "2646-d42e-7383-0e94::d1c2-ce59-a6f4-9191::ce61-2d74-5519-70bf"
+        }
+      ],
       "facts": {
         "1777-db1a-0cd5-6a89": 1,
         "2646-d42e-7383-0e94": 1,
@@ -35662,7 +37022,8 @@
         "3d84-fd67-3560-2968": 1,
         "38d4-d720-8009-acd3": 1,
         "e13a-67fa-d0ce-b439": 1,
-        "e269-7996-f41f-b892": 1
+        "e269-7996-f41f-b892": 1,
+        "7739-8123-d0eb-a8fa": 1
       },
       "prime": {
         "linkId": "5338-ba8d-a3b8-4e94",
@@ -35840,6 +37201,12 @@
           "entryId": "9e53-e96f-601f-172e",
           "targetId": "5a85-bf28-f790-7bf0",
           "path": "b0a1-0f87-385f-4239::9e53-e96f-601f-172e::5a85-bf28-f790-7bf0"
+        },
+        {
+          "name": "Archimandrite",
+          "entryId": "6a01-072d-5f2a-deed",
+          "path": "b0a1-0f87-385f-4239::6516-bee0-56b2-0965::6a01-072d-5f2a-deed",
+          "groupPath": "b0a1-0f87-385f-4239::6516-bee0-56b2-0965::ce61-2d74-5519-70bf"
         }
       ],
       "facts": {
@@ -35915,6 +37282,13 @@
               "path": "0d8a-be54-5bd2-1d5a::27d1-a226-320d-2999::ec2c-185f-3e9e-7ccd"
             },
             {
+              "name": "Shock chargers",
+              "entryId": "7f17-ee9e-8cfb-4e5e",
+              "targetId": "9f0d-5e6b-1a6e-0546",
+              "path": "0d8a-be54-5bd2-1d5a::7f17-ee9e-8cfb-4e5e::9f0d-5e6b-1a6e-0546",
+              "groupPath": "0d8a-be54-5bd2-1d5a::0f15-ade9-42bf-8eb7"
+            },
+            {
               "name": "Bolter",
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
@@ -35942,6 +37316,8 @@
         "5833-5e86-26bc-0916": 2,
         "27d1-a226-320d-2999": 2,
         "ec2c-185f-3e9e-7ccd": 2,
+        "7f17-ee9e-8cfb-4e5e": 2,
+        "9f0d-5e6b-1a6e-0546": 2,
         "94da-d659-4db3-d979": 2,
         "d3f9-b9e6-3ea5-cc8e": 2
       },
@@ -36417,6 +37793,26 @@
               "path": "4930-9671-b90d-37ac::6d8e-510d-e912-7d5e::711e-da62-be5d-72b5"
             }
           ]
+        },
+        {
+          "name": "Decimator claw w/ Heavy Flamer",
+          "entryId": "f167-78ea-bb1e-dc22",
+          "path": "4930-9671-b90d-37ac::f167-78ea-bb1e-dc22",
+          "groupPath": "4930-9671-b90d-37ac::f8e5-7be8-4034-e294",
+          "children": [
+            {
+              "name": "Heavy flamer",
+              "entryId": "4599-e019-fc7b-e056",
+              "targetId": "4fa7-ea45-2a89-ad86",
+              "path": "4930-9671-b90d-37ac::4599-e019-fc7b-e056::4fa7-ea45-2a89-ad86"
+            },
+            {
+              "name": "Decimator claw",
+              "entryId": "66dc-32df-88ee-11be",
+              "targetId": "711e-da62-be5d-72b5",
+              "path": "4930-9671-b90d-37ac::66dc-32df-88ee-11be::711e-da62-be5d-72b5"
+            }
+          ]
         }
       ],
       "facts": {
@@ -36846,6 +38242,25 @@
               "entryId": "51b2-79d6-c366-ab5c",
               "targetId": "f8b8-96c8-ba31-faf8",
               "path": "559c-8bc6-9f46-c7ad::51b2-79d6-c366-ab5c::f8b8-96c8-ba31-faf8"
+            },
+            {
+              "name": "Pair of Power blades and Paired light autocannons ",
+              "entryId": "64c9-82fe-cecf-17da",
+              "path": "559c-8bc6-9f46-c7ad::64c9-82fe-cecf-17da",
+              "groupPath": "559c-8bc6-9f46-c7ad::1144-f575-1807-cbec",
+              "children": [
+                {
+                  "name": "Paired light autocannons",
+                  "entryId": "8180-c7fd-2da9-931b",
+                  "path": "559c-8bc6-9f46-c7ad::8180-c7fd-2da9-931b"
+                },
+                {
+                  "name": "Pair of power blades",
+                  "entryId": "459b-9176-b087-3959",
+                  "targetId": "b6de-1568-2981-de20",
+                  "path": "559c-8bc6-9f46-c7ad::459b-9176-b087-3959::b6de-1568-2981-de20"
+                }
+              ]
             }
           ]
         }
@@ -36860,7 +38275,8 @@
         "5833-5e86-26bc-0916": 1,
         "c504-9dfa-35d3-c98f": 1,
         "51b2-79d6-c366-ab5c": 1,
-        "f8b8-96c8-ba31-faf8": 1
+        "f8b8-96c8-ba31-faf8": 1,
+        "64c9-82fe-cecf-17da": 1
       },
       "prime": {
         "linkId": "a19b-e169-376d-3768",
@@ -36921,6 +38337,14 @@
         }
       ],
       "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Archimandrite",
+          "entryId": "6a01-072d-5f2a-deed",
+          "path": "5d4e-4320-cb37-0e82::a7a8-4f12-691a-dc4b::6a01-072d-5f2a-deed",
+          "groupPath": "5d4e-4320-cb37-0e82::a7a8-4f12-691a-dc4b::ce61-2d74-5519-70bf"
+        }
+      ],
       "facts": {
         "2943-f3ad-5b26-1377": 1,
         "5d4e-4320-cb37-0e82": 1,
@@ -36972,6 +38396,14 @@
         }
       ],
       "source": "mechanicum",
+      "unitWargear": [
+        {
+          "name": "Archimandrite",
+          "entryId": "6a01-072d-5f2a-deed",
+          "path": "84c9-6d52-fba4-1508::f41f-1b33-e5dd-a200::6a01-072d-5f2a-deed",
+          "groupPath": "84c9-6d52-fba4-1508::f41f-1b33-e5dd-a200::ce61-2d74-5519-70bf"
+        }
+      ],
       "facts": {
         "02c3-37ea-5d20-8291": 1,
         "84c9-6d52-fba4-1508": 1,
@@ -37349,6 +38781,13 @@
               "targetId": "e85f-734a-c587-e88b",
               "path": "fb32-4e10-5284-0f58::5ebb-1679-1be6-01cd::e85f-734a-c587-e88b",
               "groupPath": "fb32-4e10-5284-0f58::d215-2ecb-a011-8355"
+            },
+            {
+              "name": "Laspistol",
+              "entryId": "9f1e-0dde-ae91-933e",
+              "targetId": "70e6-52c9-86b9-604c",
+              "path": "fb32-4e10-5284-0f58::9f1e-0dde-ae91-933e::70e6-52c9-86b9-604c",
+              "groupPath": "fb32-4e10-5284-0f58::5f88-0373-e979-669e"
             }
           ]
         },
@@ -37386,6 +38825,8 @@
         "594d-fa82-13cb-a345": 5,
         "5ebb-1679-1be6-01cd": 1,
         "e85f-734a-c587-e88b": 1,
+        "9f1e-0dde-ae91-933e": 1,
+        "70e6-52c9-86b9-604c": 1,
         "a77a-561c-ad71-d586": 4
       },
       "prime": {
@@ -40814,6 +42255,12 @@
           "entryId": "ad5e-8491-4b85-de75",
           "targetId": "60e4-ca33-2e68-9afc",
           "path": "2961-1167-7a69-c00b::ad5e-8491-4b85-de75::60e4-ca33-2e68-9afc"
+        },
+        {
+          "name": "Archimandrite",
+          "entryId": "6a01-072d-5f2a-deed",
+          "path": "2961-1167-7a69-c00b::884b-f6af-9a40-7ff1::6a01-072d-5f2a-deed",
+          "groupPath": "2961-1167-7a69-c00b::884b-f6af-9a40-7ff1::ce61-2d74-5519-70bf"
         }
       ],
       "facts": {
@@ -40852,7 +42299,15 @@
           "cost": 10,
           "min": 0,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Lightning gun",
+              "entryId": "3eb6-f604-f513-ecb8",
+              "targetId": "9b86-e05d-8ce5-ab8b",
+              "path": "9417-4cb5-a16c-86b9::3eb6-f604-f513-ecb8::9b86-e05d-8ce5-ab8b",
+              "groupPath": "9417-4cb5-a16c-86b9::c678-ee68-9e90-06da"
+            }
+          ]
         },
         {
           "name": "Thallax",
@@ -40879,12 +42334,6 @@
           "entryId": "efc4-34fd-aad1-acf4",
           "targetId": "60e4-ca33-2e68-9afc",
           "path": "9417-4cb5-a16c-86b9::efc4-34fd-aad1-acf4::60e4-ca33-2e68-9afc"
-        },
-        {
-          "name": "Reductor",
-          "entryId": "b231-2cf3-d356-d6f1",
-          "targetId": "3f59-64f9-43da-d43e",
-          "path": "9417-4cb5-a16c-86b9::b231-2cf3-d356-d6f1::3f59-64f9-43da-d43e"
         }
       ],
       "facts": {
@@ -40963,6 +42412,13 @@
               "path": "be59-2c52-e384-dfcd::27d1-a226-320d-2999::ec2c-185f-3e9e-7ccd"
             },
             {
+              "name": "Shock chargers",
+              "entryId": "7f17-ee9e-8cfb-4e5e",
+              "targetId": "9f0d-5e6b-1a6e-0546",
+              "path": "be59-2c52-e384-dfcd::7f17-ee9e-8cfb-4e5e::9f0d-5e6b-1a6e-0546",
+              "groupPath": "be59-2c52-e384-dfcd::0f15-ade9-42bf-8eb7"
+            },
+            {
               "name": "Bolter",
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
@@ -40990,6 +42446,8 @@
         "5833-5e86-26bc-0916": 2,
         "27d1-a226-320d-2999": 2,
         "ec2c-185f-3e9e-7ccd": 2,
+        "7f17-ee9e-8cfb-4e5e": 2,
+        "9f0d-5e6b-1a6e-0546": 2,
         "94da-d659-4db3-d979": 2,
         "d3f9-b9e6-3ea5-cc8e": 2
       },
@@ -41483,12 +42941,6 @@
           "entryId": "6907-7db4-81c8-2581",
           "targetId": "5a33-b483-64cb-9853",
           "path": "cbbe-aa27-4002-d5c9::6907-7db4-81c8-2581::5a33-b483-64cb-9853"
-        },
-        {
-          "name": "Cybernetica",
-          "entryId": "2406-9718-d72d-0348",
-          "targetId": "403d-7806-215e-7676",
-          "path": "cbbe-aa27-4002-d5c9::2406-9718-d72d-0348::403d-7806-215e-7676"
         }
       ],
       "facts": {
@@ -41566,6 +43018,29 @@
         }
       ],
       "source": "solar-auxilia",
+      "unitWargear": [
+        {
+          "name": "Discipline Master",
+          "entryId": "c3fe-89e1-4b5f-a120",
+          "path": "4a21-4cd9-454f-ff5e::c3fe-89e1-4b5f-a120",
+          "groupPath": "4a21-4cd9-454f-ff5e::a544-bd85-4407-d410",
+          "children": [
+            {
+              "name": "Frag grenades",
+              "entryId": "807c-bc8e-4216-bd16",
+              "targetId": "60e4-ca33-2e68-9afc",
+              "path": "4a21-4cd9-454f-ff5e::807c-bc8e-4216-bd16::60e4-ca33-2e68-9afc"
+            },
+            {
+              "name": "Militia pistol",
+              "entryId": "68b3-b54b-439b-8696",
+              "targetId": "7702-e5d6-4f99-96b4",
+              "path": "4a21-4cd9-454f-ff5e::68b3-b54b-439b-8696::7702-e5d6-4f99-96b4",
+              "groupPath": "4a21-4cd9-454f-ff5e::b016-1bf0-4a3d-b5cc"
+            }
+          ]
+        }
+      ],
       "facts": {
         "2e95-2117-4d59-acbd": 1,
         "4a21-4cd9-454f-ff5e": 1,
@@ -41611,6 +43086,13 @@
               "entryId": "50b9-8a97-4cff-b460",
               "targetId": "60e4-ca33-2e68-9afc",
               "path": "72ba-7804-95e9-dcb2::50b9-8a97-4cff-b460::60e4-ca33-2e68-9afc"
+            },
+            {
+              "name": "Militia rifle",
+              "entryId": "c32c-e506-4178-a377",
+              "targetId": "221a-9945-43f9-baac",
+              "path": "72ba-7804-95e9-dcb2::c32c-e506-4178-a377::221a-9945-43f9-baac",
+              "groupPath": "72ba-7804-95e9-dcb2::5b22-4fd3-4e98-9e67"
             }
           ]
         },
@@ -41647,11 +43129,12 @@
         "594d-fa82-13cb-a345": 20,
         "50b9-8a97-4cff-b460": 19,
         "60e4-ca33-2e68-9afc": 20,
+        "c32c-e506-4178-a377": 19,
+        "221a-9945-43f9-baac": 20,
         "5aa0-d5a3-4eaf-84cc": 1,
         "8045-89a4-76d4-fcef": 1,
         "41d0-8095-41b4-8d14": 1,
-        "5a2a-586c-ba6b-2409": 1,
-        "221a-9945-43f9-baac": 1
+        "5a2a-586c-ba6b-2409": 1
       },
       "prime": {
         "linkId": "9dea-6556-5ac6-4b86",
@@ -41819,6 +43302,13 @@
           "max": 10,
           "defaultWargear": [
             {
+              "name": "Twin heavy stubber",
+              "entryId": "57a0-2331-4a62-b0ba",
+              "targetId": "9027-63f4-4780-b5b1",
+              "path": "db27-8397-7836-b615::98e4-33be-bb39-e56a::57a0-2331-4a62-b0ba::9027-63f4-4780-b5b1",
+              "groupPath": "db27-8397-7836-b615::98e4-33be-bb39-e56a::cf14-e95b-4c69-8187"
+            },
+            {
               "name": "Militia pistol",
               "entryId": "a837-296d-4afa-889a",
               "targetId": "7702-e5d6-4f99-96b4",
@@ -41843,6 +43333,8 @@
         "8dbf-0242-4ea4-811b": 3,
         "594d-fa82-13cb-a345": 3,
         "1e7d-9066-28d2-97a0": 3,
+        "57a0-2331-4a62-b0ba": 3,
+        "9027-63f4-4780-b5b1": 3,
         "a837-296d-4afa-889a": 3,
         "7702-e5d6-4f99-96b4": 3,
         "d83d-7e95-491c-a974": 3,
@@ -42137,6 +43629,12 @@
           "entryId": "6692-0feb-d04b-578f",
           "targetId": "fa20-82bc-c7de-9e97",
           "path": "423f-fa68-18c6-dea8::6692-0feb-d04b-578f::fa20-82bc-c7de-9e97"
+        },
+        {
+          "name": "Acquisitor",
+          "entryId": "637f-8850-f6f5-6f6a",
+          "path": "423f-fa68-18c6-dea8::6375-80fd-dfed-c82d::637f-8850-f6f5-6f6a",
+          "groupPath": "423f-fa68-18c6-dea8::6375-80fd-dfed-c82d::cdc4-0bc4-89cb-3689"
         }
       ],
       "facts": {
@@ -42178,7 +43676,15 @@
           "cost": 0,
           "min": 1,
           "max": 1,
-          "defaultWargear": []
+          "defaultWargear": [
+            {
+              "name": "Voltlock arquebus",
+              "entryId": "2500-b5ab-ff51-7813",
+              "targetId": "e3b6-1a1e-9837-343a",
+              "path": "18b6-6864-1121-9cd2::2500-b5ab-ff51-7813::e3b6-1a1e-9837-343a",
+              "groupPath": "18b6-6864-1121-9cd2::81dc-5721-520e-edd2"
+            }
+          ]
         },
         {
           "name": "Skitarii Battle-Pigrym",
@@ -42210,6 +43716,12 @@
           "entryId": "0b15-411f-cbb6-c4b2",
           "targetId": "fa20-82bc-c7de-9e97",
           "path": "18b6-6864-1121-9cd2::0b15-411f-cbb6-c4b2::fa20-82bc-c7de-9e97"
+        },
+        {
+          "name": "Acquisitor",
+          "entryId": "637f-8850-f6f5-6f6a",
+          "path": "18b6-6864-1121-9cd2::c67f-6fec-b33f-d2c0::637f-8850-f6f5-6f6a",
+          "groupPath": "18b6-6864-1121-9cd2::c67f-6fec-b33f-d2c0::cdc4-0bc4-89cb-3689"
         }
       ],
       "facts": {
@@ -42219,9 +43731,10 @@
         "791c-5df9-be05-0a0d": 1,
         "8045-89a4-76d4-fcef": 1,
         "594d-fa82-13cb-a345": 8,
+        "2500-b5ab-ff51-7813": 1,
+        "e3b6-1a1e-9837-343a": 8,
         "ddee-b4fb-12d7-cfbf": 7,
-        "446e-1606-fe3f-85f9": 7,
-        "e3b6-1a1e-9837-343a": 7
+        "446e-1606-fe3f-85f9": 7
       },
       "prime": {
         "linkId": "500f-7835-89ed-3c91",
@@ -42261,6 +43774,14 @@
         }
       ],
       "source": "skitarii-conclaves",
+      "unitWargear": [
+        {
+          "name": "Acquisitor",
+          "entryId": "637f-8850-f6f5-6f6a",
+          "path": "90af-21a5-e0fd-af39::637f-8850-f6f5-6f6a",
+          "groupPath": "90af-21a5-e0fd-af39::cdc4-0bc4-89cb-3689"
+        }
+      ],
       "facts": {
         "2e2e-87d0-2624-eae6": 1,
         "b6b8-47c2-c0a1-7ca0": 1,
@@ -42282,7 +43803,7 @@
       }
     },
     {
-      "name": "Vultarax Stratos Squadron",
+      "name": "Skitarii Vultarax Stratos-Automata",
       "entryId": "7986-c0de-a682-3ccc",
       "path": "7986-c0de-a682-3ccc::710e-f1ea-0061-d3cb",
       "role": "Fast Attack",
@@ -42332,10 +43853,10 @@
           "path": "7986-c0de-a682-3ccc::6907-7db4-81c8-2581::5a33-b483-64cb-9853"
         },
         {
-          "name": "Cybernetica",
-          "entryId": "2406-9718-d72d-0348",
-          "targetId": "403d-7806-215e-7676",
-          "path": "7986-c0de-a682-3ccc::2406-9718-d72d-0348::403d-7806-215e-7676"
+          "name": "Acquisitor",
+          "entryId": "637f-8850-f6f5-6f6a",
+          "path": "abd3-c1ac-17be-9d21::637f-8850-f6f5-6f6a",
+          "groupPath": "abd3-c1ac-17be-9d21::cdc4-0bc4-89cb-3689"
         }
       ],
       "facts": {
@@ -42424,6 +43945,18 @@
           "entryId": "9e53-e96f-601f-172e",
           "targetId": "5a85-bf28-f790-7bf0",
           "path": "7acc-6115-828f-c94d::9e53-e96f-601f-172e::5a85-bf28-f790-7bf0"
+        },
+        {
+          "name": "Archimandrite",
+          "entryId": "6a01-072d-5f2a-deed",
+          "path": "7acc-6115-828f-c94d::6516-bee0-56b2-0965::6a01-072d-5f2a-deed",
+          "groupPath": "7acc-6115-828f-c94d::6516-bee0-56b2-0965::ce61-2d74-5519-70bf"
+        },
+        {
+          "name": "Acquisitor",
+          "entryId": "637f-8850-f6f5-6f6a",
+          "path": "6c23-7e36-20a9-2ff6::637f-8850-f6f5-6f6a",
+          "groupPath": "6c23-7e36-20a9-2ff6::cdc4-0bc4-89cb-3689"
         }
       ],
       "facts": {
@@ -42505,10 +44038,10 @@
           "path": "36d4-66e8-efcc-23bd::0359-2d91-5f70-eaf2::5a85-bf28-f790-7bf0"
         },
         {
-          "name": "Macrotek",
-          "entryId": "cf5a-1858-e445-6426",
-          "targetId": "67af-3519-2c95-6da0",
-          "path": "36d4-66e8-efcc-23bd::cf5a-1858-e445-6426::67af-3519-2c95-6da0"
+          "name": "Acquisitor",
+          "entryId": "637f-8850-f6f5-6f6a",
+          "path": "7530-1594-bf7c-7e1c::637f-8850-f6f5-6f6a",
+          "groupPath": "7530-1594-bf7c-7e1c::cdc4-0bc4-89cb-3689"
         }
       ],
       "facts": {
@@ -42552,17 +44085,17 @@
       "source": "skitarii-conclaves",
       "unitWargear": [
         {
-          "name": "Macrotek",
-          "entryId": "ec64-ac7e-84e0-56d4",
-          "targetId": "67af-3519-2c95-6da0",
-          "path": "8480-0708-1019-3c83::ec64-ac7e-84e0-56d4::67af-3519-2c95-6da0"
-        },
-        {
           "name": "Lightning cannon",
           "entryId": "9e35-1648-18af-6a7c",
           "targetId": "fae1-04cd-0971-ee22",
           "path": "8480-0708-1019-3c83::9e35-1648-18af-6a7c::fae1-04cd-0971-ee22",
           "groupPath": "8480-0708-1019-3c83::2cff-2fa3-0522-4381"
+        },
+        {
+          "name": "Acquisitor",
+          "entryId": "637f-8850-f6f5-6f6a",
+          "path": "7a35-9046-6d58-d0d9::637f-8850-f6f5-6f6a",
+          "groupPath": "7a35-9046-6d58-d0d9::cdc4-0bc4-89cb-3689"
         }
       ],
       "facts": {
@@ -42613,10 +44146,10 @@
           "path": "1267-0dec-49c3-5f88::d3c5-910d-7de4-44b9::d114-2798-e500-c4a4"
         },
         {
-          "name": "Macrotek",
-          "entryId": "93d0-6bd8-0cff-7ead",
-          "targetId": "67af-3519-2c95-6da0",
-          "path": "1267-0dec-49c3-5f88::93d0-6bd8-0cff-7ead::67af-3519-2c95-6da0"
+          "name": "Acquisitor",
+          "entryId": "637f-8850-f6f5-6f6a",
+          "path": "247a-119f-a332-f30f::637f-8850-f6f5-6f6a",
+          "groupPath": "247a-119f-a332-f30f::cdc4-0bc4-89cb-3689"
         }
       ],
       "facts": {
@@ -42693,6 +44226,13 @@
               "path": "9568-7307-e33d-4d14::27d1-a226-320d-2999::ec2c-185f-3e9e-7ccd"
             },
             {
+              "name": "Shock chargers",
+              "entryId": "7f17-ee9e-8cfb-4e5e",
+              "targetId": "9f0d-5e6b-1a6e-0546",
+              "path": "9568-7307-e33d-4d14::7f17-ee9e-8cfb-4e5e::9f0d-5e6b-1a6e-0546",
+              "groupPath": "9568-7307-e33d-4d14::0f15-ade9-42bf-8eb7"
+            },
+            {
               "name": "Bolter",
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
@@ -42720,6 +44260,8 @@
         "5833-5e86-26bc-0916": 2,
         "27d1-a226-320d-2999": 2,
         "ec2c-185f-3e9e-7ccd": 2,
+        "7f17-ee9e-8cfb-4e5e": 2,
+        "9f0d-5e6b-1a6e-0546": 2,
         "94da-d659-4db3-d979": 2,
         "d3f9-b9e6-3ea5-cc8e": 2
       },
@@ -43685,6 +45227,26 @@
               "entryId": "1e6b-c153-22cb-02eb",
               "targetId": "b94f-e829-064a-9d60",
               "path": "e720-ffae-db69-0009::1e6b-c153-22cb-02eb::b94f-e829-064a-9d60"
+            },
+            {
+              "name": "Telemon caestus and one twin netronium cascade projector",
+              "entryId": "62c3-404e-3011-1441",
+              "path": "e720-ffae-db69-0009::62c3-404e-3011-1441",
+              "groupPath": "e720-ffae-db69-0009::0980-35ef-20c3-dcbc",
+              "children": [
+                {
+                  "name": "Twin neutronium cascade projector",
+                  "entryId": "cc49-d9d8-fac8-956f",
+                  "targetId": "d3d6-b9aa-11b4-0421",
+                  "path": "e720-ffae-db69-0009::cc49-d9d8-fac8-956f::d3d6-b9aa-11b4-0421"
+                },
+                {
+                  "name": "Telemon caestus",
+                  "entryId": "a6f2-6815-dd0a-1f36",
+                  "targetId": "f4de-682d-a00c-3b30",
+                  "path": "e720-ffae-db69-0009::a6f2-6815-dd0a-1f36::f4de-682d-a00c-3b30"
+                }
+              ]
             }
           ]
         }
@@ -43700,7 +45262,8 @@
         "9407-d48e-903a-0f9e": 1,
         "e0ca-34e6-eb83-1845": 1,
         "1e6b-c153-22cb-02eb": 1,
-        "b94f-e829-064a-9d60": 1
+        "b94f-e829-064a-9d60": 1,
+        "62c3-404e-3011-1441": 1
       },
       "prime": {
         "linkId": "6acc-329e-4256-8aa6",
@@ -44500,6 +46063,13 @@
               "path": "eedc-c9be-7a66-50f6::27d1-a226-320d-2999::ec2c-185f-3e9e-7ccd"
             },
             {
+              "name": "Shock chargers",
+              "entryId": "7f17-ee9e-8cfb-4e5e",
+              "targetId": "9f0d-5e6b-1a6e-0546",
+              "path": "eedc-c9be-7a66-50f6::7f17-ee9e-8cfb-4e5e::9f0d-5e6b-1a6e-0546",
+              "groupPath": "eedc-c9be-7a66-50f6::0f15-ade9-42bf-8eb7"
+            },
+            {
               "name": "Bolter",
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
@@ -44527,6 +46097,8 @@
         "5833-5e86-26bc-0916": 2,
         "27d1-a226-320d-2999": 2,
         "ec2c-185f-3e9e-7ccd": 2,
+        "7f17-ee9e-8cfb-4e5e": 2,
+        "9f0d-5e6b-1a6e-0546": 2,
         "94da-d659-4db3-d979": 2,
         "d3f9-b9e6-3ea5-cc8e": 2
       },
@@ -44986,12 +46558,6 @@
           "entryId": "6907-7db4-81c8-2581",
           "targetId": "5a33-b483-64cb-9853",
           "path": "464b-5d15-8554-04a5::6907-7db4-81c8-2581::5a33-b483-64cb-9853"
-        },
-        {
-          "name": "Cybernetica",
-          "entryId": "2406-9718-d72d-0348",
-          "targetId": "403d-7806-215e-7676",
-          "path": "464b-5d15-8554-04a5::2406-9718-d72d-0348::403d-7806-215e-7676"
         }
       ],
       "facts": {
@@ -45328,6 +46894,13 @@
               "path": "01c9-68cf-adb6-ace6::27d1-a226-320d-2999::ec2c-185f-3e9e-7ccd"
             },
             {
+              "name": "Shock chargers",
+              "entryId": "7f17-ee9e-8cfb-4e5e",
+              "targetId": "9f0d-5e6b-1a6e-0546",
+              "path": "01c9-68cf-adb6-ace6::7f17-ee9e-8cfb-4e5e::9f0d-5e6b-1a6e-0546",
+              "groupPath": "01c9-68cf-adb6-ace6::0f15-ade9-42bf-8eb7"
+            },
+            {
               "name": "Bolter",
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
@@ -45355,6 +46928,8 @@
         "5833-5e86-26bc-0916": 2,
         "27d1-a226-320d-2999": 2,
         "ec2c-185f-3e9e-7ccd": 2,
+        "7f17-ee9e-8cfb-4e5e": 2,
+        "9f0d-5e6b-1a6e-0546": 2,
         "94da-d659-4db3-d979": 2,
         "d3f9-b9e6-3ea5-cc8e": 2
       },
@@ -45814,12 +47389,6 @@
           "entryId": "6907-7db4-81c8-2581",
           "targetId": "5a33-b483-64cb-9853",
           "path": "5dd4-a54c-a8dd-3720::6907-7db4-81c8-2581::5a33-b483-64cb-9853"
-        },
-        {
-          "name": "Cybernetica",
-          "entryId": "2406-9718-d72d-0348",
-          "targetId": "403d-7806-215e-7676",
-          "path": "5dd4-a54c-a8dd-3720::2406-9718-d72d-0348::403d-7806-215e-7676"
         }
       ],
       "facts": {
@@ -45891,6 +47460,13 @@
           "entryId": "9716-7e0d-2e8c-2643",
           "targetId": "b6e2-d84c-ca4a-c4db",
           "path": "6fec-85db-da98-e18c::9716-7e0d-2e8c-2643::b6e2-d84c-ca4a-c4db"
+        },
+        {
+          "name": "Reaper chainsword",
+          "entryId": "d0ca-63d0-f43a-2335",
+          "targetId": "05cd-46ca-02ca-2d36",
+          "path": "6fec-85db-da98-e18c::d0ca-63d0-f43a-2335::05cd-46ca-02ca-2d36",
+          "groupPath": "6fec-85db-da98-e18c::eaa5-8127-a44e-aea2"
         },
         {
           "name": "Heavy stubber",
@@ -46034,6 +47610,26 @@
               "entryId": "d061-688b-72e5-619d",
               "targetId": "e269-7996-f41f-b892",
               "path": "6cc7-d325-35e3-fc44::d061-688b-72e5-619d::e269-7996-f41f-b892"
+            },
+            {
+              "name": "Gyges siege claw and one Irad-cleanser",
+              "entryId": "61d7-d253-fb9e-dd2d",
+              "path": "6cc7-d325-35e3-fc44::61d7-d253-fb9e-dd2d",
+              "groupPath": "6cc7-d325-35e3-fc44::2370-be56-af4d-6bf8",
+              "children": [
+                {
+                  "name": "Irad-cleanser",
+                  "entryId": "c1b0-1e61-7534-f097",
+                  "targetId": "910e-3579-4968-44af",
+                  "path": "6cc7-d325-35e3-fc44::c1b0-1e61-7534-f097::910e-3579-4968-44af"
+                },
+                {
+                  "name": "Gyges siege claws",
+                  "entryId": "1511-9141-9c29-e585",
+                  "targetId": "8026-777a-5e74-7952",
+                  "path": "6cc7-d325-35e3-fc44::1511-9141-9c29-e585::8026-777a-5e74-7952"
+                }
+              ]
             }
           ]
         }
@@ -46046,7 +47642,8 @@
         "f245-ba60-db11-6e05": 1,
         "38d4-d720-8009-acd3": 1,
         "d061-688b-72e5-619d": 1,
-        "e269-7996-f41f-b892": 1
+        "e269-7996-f41f-b892": 1,
+        "61d7-d253-fb9e-dd2d": 1
       }
     },
     {
@@ -46738,6 +48335,13 @@
               "path": "ce0e-2124-78c2-b1c0::27d1-a226-320d-2999::ec2c-185f-3e9e-7ccd"
             },
             {
+              "name": "Shock chargers",
+              "entryId": "7f17-ee9e-8cfb-4e5e",
+              "targetId": "9f0d-5e6b-1a6e-0546",
+              "path": "ce0e-2124-78c2-b1c0::7f17-ee9e-8cfb-4e5e::9f0d-5e6b-1a6e-0546",
+              "groupPath": "ce0e-2124-78c2-b1c0::0f15-ade9-42bf-8eb7"
+            },
+            {
               "name": "Bolter",
               "entryId": "94da-d659-4db3-d979",
               "targetId": "d3f9-b9e6-3ea5-cc8e",
@@ -46765,6 +48369,8 @@
         "5833-5e86-26bc-0916": 2,
         "27d1-a226-320d-2999": 2,
         "ec2c-185f-3e9e-7ccd": 2,
+        "7f17-ee9e-8cfb-4e5e": 2,
+        "9f0d-5e6b-1a6e-0546": 2,
         "94da-d659-4db3-d979": 2,
         "d3f9-b9e6-3ea5-cc8e": 2
       },
@@ -46941,12 +48547,6 @@
           "entryId": "6907-7db4-81c8-2581",
           "targetId": "5a33-b483-64cb-9853",
           "path": "8711-9a83-b33a-9638::6907-7db4-81c8-2581::5a33-b483-64cb-9853"
-        },
-        {
-          "name": "Cybernetica",
-          "entryId": "2406-9718-d72d-0348",
-          "targetId": "403d-7806-215e-7676",
-          "path": "8711-9a83-b33a-9638::2406-9718-d72d-0348::403d-7806-215e-7676"
         }
       ],
       "facts": {
@@ -47408,6 +49008,13 @@
               "entryId": "50b9-8a97-4cff-b460",
               "targetId": "60e4-ca33-2e68-9afc",
               "path": "e321-b6cc-b075-9685::50b9-8a97-4cff-b460::60e4-ca33-2e68-9afc"
+            },
+            {
+              "name": "Militia rifle",
+              "entryId": "c32c-e506-4178-a377",
+              "targetId": "221a-9945-43f9-baac",
+              "path": "e321-b6cc-b075-9685::c32c-e506-4178-a377::221a-9945-43f9-baac",
+              "groupPath": "e321-b6cc-b075-9685::5b22-4fd3-4e98-9e67"
             }
           ]
         },
@@ -47444,11 +49051,12 @@
         "594d-fa82-13cb-a345": 20,
         "50b9-8a97-4cff-b460": 19,
         "60e4-ca33-2e68-9afc": 20,
+        "c32c-e506-4178-a377": 19,
+        "221a-9945-43f9-baac": 20,
         "5aa0-d5a3-4eaf-84cc": 1,
         "8045-89a4-76d4-fcef": 1,
         "41d0-8095-41b4-8d14": 1,
-        "5a2a-586c-ba6b-2409": 1,
-        "221a-9945-43f9-baac": 1
+        "5a2a-586c-ba6b-2409": 1
       },
       "prime": {
         "linkId": "9dea-6556-5ac6-4b86",
@@ -47762,6 +49370,13 @@
               "entryId": "026c-4206-48a4-ad5c",
               "targetId": "60e4-ca33-2e68-9afc",
               "path": "46d2-ebab-ee59-8bd9::026c-4206-48a4-ad5c::60e4-ca33-2e68-9afc"
+            },
+            {
+              "name": "Militia shotgun",
+              "entryId": "07bc-c32b-482a-9947",
+              "targetId": "f9f5-edc3-4cb3-9fa6",
+              "path": "46d2-ebab-ee59-8bd9::07bc-c32b-482a-9947::f9f5-edc3-4cb3-9fa6",
+              "groupPath": "46d2-ebab-ee59-8bd9::e27b-7356-4c77-8d96"
             }
           ]
         },
@@ -47799,11 +49414,12 @@
         "f4ba-00e5-3d2e-eaac": 5,
         "026c-4206-48a4-ad5c": 4,
         "60e4-ca33-2e68-9afc": 5,
+        "07bc-c32b-482a-9947": 4,
+        "f9f5-edc3-4cb3-9fa6": 5,
         "617c-f641-4142-87b0": 1,
         "8045-89a4-76d4-fcef": 1,
         "ff45-ea33-4c02-b0ef": 1,
-        "b175-ef67-4bed-a5fa": 1,
-        "f9f5-edc3-4cb3-9fa6": 1
+        "b175-ef67-4bed-a5fa": 1
       },
       "prime": {
         "linkId": "a5bb-fc2a-874f-defc",

@@ -85,6 +85,7 @@ export interface BsEntry {
   name: string;
   type?: string; // selectionEntry: 'unit' | 'model' | 'upgrade'; entryLink: 'selectionEntry' | 'selectionEntryGroup'
   hidden?: boolean;
+  sortIndex?: number;
   targetId?: string;
   defaultSelectionEntryId?: string;
   flatten?: boolean;
@@ -463,8 +464,69 @@ function allModifiers(holder: { modifiers?: BsModifier[]; modifierGroups?: BsMod
 // Mandatory & default wargear
 // ---------------------------------------------------------------------------
 
+/**
+ * The primary catalogue of any army fielding the units being extracted, when
+ * that's fixed by the source (Skitarii units are only fielded by Skitarii
+ * armies; Legiones Astartes units by any Legion, so unknown). Lets the parser
+ * settle `primary-catalogue` conditions on wargear constraints.
+ */
+let knownPrimaryCatalogue: string | undefined;
+
+/** A condition's value at parse time, or undefined if it depends on the roster. */
+function conditionAtParse(c: BsCondition): boolean | undefined {
+  if (c.scope !== 'primary-catalogue' || !knownPrimaryCatalogue) return undefined;
+  const is = c.childId === knownPrimaryCatalogue;
+  if (c.type === 'instanceOf') return is;
+  if (c.type === 'notInstanceOf') return !is;
+  return undefined;
+}
+
+function conditionsAtParse(
+  holder: { conditions?: BsCondition[]; conditionGroups?: BsConditionGroup[] },
+  type = 'and'
+): boolean | undefined {
+  const results = [
+    ...(holder.conditions ?? []).map(conditionAtParse),
+    ...(holder.conditionGroups ?? []).map((g) => conditionsAtParse(g, g.type)),
+  ];
+  if (type === 'or') {
+    if (results.some((r) => r === true)) return true;
+    return results.every((r) => r === false) ? false : undefined;
+  }
+  if (results.some((r) => r === false)) return false;
+  return results.every((r) => r === true) ? true : undefined;
+}
+
+/** A constraint's value after modifiers whose conditions are settled at parse time. */
+function constraintValue(holder: BsEntry, c: BsConstraint): number {
+  let value = c.value;
+  for (const mod of allModifiers(holder)) {
+    if (mod.field !== c.id || mod.type !== 'set') continue;
+    if (conditionsAtParse(mod) === true) value = Number(mod.value);
+  }
+  return value;
+}
+
 function hasMinAtLeastOne(entry: BsEntry): boolean {
-  return entry.constraints?.some((c) => c.type === 'min' && c.value >= 1) ?? false;
+  return entry.constraints?.some((c) => c.type === 'min' && constraintValue(entry, c) >= 1) ?? false;
+}
+
+/** Display name after unconditional "set name" modifiers (e.g. a linked unit renamed for its catalogue). */
+function displayName(...holders: BsEntry[]): string | undefined {
+  let name: string | undefined;
+  for (const h of holders) {
+    for (const mod of allModifiers(h)) {
+      if (mod.field === 'name' && mod.type === 'set' && allConditions(mod).length === 0) name = String(mod.value);
+    }
+  }
+  return name;
+}
+
+/** Options in the order BattleScribe / New Recruit list them: sortIndex, then name. */
+function byListOrder(a: Member, b: Member): number {
+  const ia = a.entry.sortIndex ?? Number.MAX_SAFE_INTEGER;
+  const ib = b.entry.sortIndex ?? Number.MAX_SAFE_INTEGER;
+  return ia - ib || a.entry.name.localeCompare(b.entry.name, 'en', { sensitivity: 'base' });
 }
 
 /** max 0 with no modifiers that could raise it. */
@@ -638,10 +700,18 @@ function mandatoryIn(
       // (min ≥ 1) — matches New Recruit (e.g. no default chainsword on a sergeant)
       const requiresChoice = g.constraints?.some((c) => c.type === 'min' && c.field === 'selections' && c.value >= 1);
       if (requiresChoice) {
-        // The default, or — with no usable default — the only visible option
-        // (e.g. a Despoiler's bolt pistol, the sole choice of its Pistol group)
-        const visible = g.options.filter((o) => !o.entry.hidden && !isDisabled(o.entry));
-        const choice = g.options.find((o) => o.entry.id === g.defaultId) ?? (visible.length === 1 ? visible[0] : undefined);
+        // The default; with no usable default, the first visible free option (the
+        // sole one for a Despoiler's Pistol group; a Skitarii unit's sub-faction
+        // or an Ordinatus' weapon otherwise) — so the export is a legal roster
+        // and the choice can be changed in New Recruit. Options a modifier may
+        // hide are taken only if nothing else is left.
+        // Free options first, so the unit's points stay as the app shows them
+        const cost = (o: Member) => pointsOf(o.entry) + (o.entry.targetId ? pointsOf(index.get(o.entry.targetId) ?? {}) : 0);
+        const visible = g.options
+          .filter((o) => !o.entry.hidden && !isDisabled(o.entry))
+          .sort((a, b) => Number(cost(a) > 0) - Number(cost(b) > 0) || byListOrder(a, b));
+        const steady = visible.filter((o) => !allModifiers(o.entry).some((m) => m.field === 'hidden'));
+        const choice = g.options.find((o) => o.entry.id === g.defaultId) ?? steady[0] ?? visible[0];
         if (choice) add(choice);
       }
       visit(g);
@@ -1065,7 +1135,13 @@ function extractUnitsFromCatalogue(
     const breakdown = extractPointsBreakdown(entry, link.linkId, index);
     if (breakdown === null) warnings.push(`${source}: No points found for "${entry.name}" (id=${entry.id})`);
 
-    const unitWargear = collectMandatoryWargear(entry, [link.linkId], index);
+    // The unit's own wargear, plus anything attached to its root link (e.g.
+    // Skitarii's sub-faction choice on a linked Mechanicum unit) — link-level
+    // children don't take the link's id in their path
+    const unitWargear = [
+      ...collectMandatoryWargear(entry, [link.linkId], index),
+      ...collectMandatoryWargear(link.link, [], index),
+    ];
     const prime = primeLinkage(entry, link.linkId);
     const categoryRules = primaryCategoryRules(link.link, entry, categoryNames);
     const alternateLinks = (allRootLinks.get(entry.id) ?? []).filter((l) => l.entryId !== link.linkId);
@@ -1073,7 +1149,7 @@ function extractUnitsFromCatalogue(
     const officerOfTheLine = officerOfTheLineFor(entry, ootlMap);
 
     units.push({
-      name: entry.name,
+      name: displayName(entry, link.link) ?? entry.name,
       entryId: link.linkId,
       path: join([link.linkId, entry.id]),
       role: normalizeRole(link.role),
@@ -1248,7 +1324,10 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
       warnings.push(`No catalogue found for faction "${key}"`);
       continue;
     }
+    // Shared Legiones Astartes units are fielded under every Legion's catalogue
+    knownPrimaryCatalogue = key === 'legiones-astartes' ? undefined : cat.id;
     units[key] = extractUnitsFromCatalogue(cat, key, warnings, ootlMap, slotRoles, index, categoryNames, primeGroupIds);
+    knownPrimaryCatalogue = undefined;
     catalogueInfo[key] = {
       catalogueId: cat.id,
       catalogueName: normalizeCatalogueName(cat.name),

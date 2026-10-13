@@ -147,8 +147,11 @@ describe('buildRosXml', () => {
     const units = [cpd.selections.selection].flat();
     expect(units).toHaveLength(4);
     for (const u of units) {
-      expect(u.categories.category['@_name']).toBe('Prime Troops');
-      expect([u.selections.selection].flat().some((s: Record<string, string>) => s['@_name'] === 'Prime Unit')).toBe(true);
+      // New Recruit keeps the unit's own role as primary; the Prime category sits on "Prime Unit"
+      expect(u.categories.category['@_name']).toBe('Troops');
+      const primeUnit = [u.selections.selection].flat().find((s: Record<string, string>) => s['@_name'] === 'Prime Unit');
+      expect(primeUnit.categories.category['@_name']).toBe('Prime Troops');
+      expect(primeUnit.categories.category['@_primary']).toBe('false');
     }
   });
 });

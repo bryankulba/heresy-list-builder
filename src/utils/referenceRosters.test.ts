@@ -23,6 +23,7 @@ interface Node {
   selections?: { selection?: Node[] };
   forces?: { force?: Node[] };
   costs?: { cost?: Array<{ name?: string; value?: string }> };
+  categories?: { category?: Array<{ name?: string; primary?: string }> };
 }
 
 const parser = new XMLParser({
@@ -32,6 +33,7 @@ const parser = new XMLParser({
 });
 const parse = (xml: string) => (parser.parse(xml) as { roster: Node }).roster;
 const kids = (n: Node | undefined) => n?.selections?.selection ?? [];
+const cats = (n: Node) => (n.categories?.category ?? []).map((c) => `${c.primary === 'true' ? '*' : ''}${c.name}`).sort();
 const unitCost = (n: Node) => Number(n.costs?.cost?.find((c) => c.name === 'Point(s)')?.value ?? 0);
 
 /** Force-org fingerprint of a roster: what the builder is responsible for. */
@@ -49,9 +51,10 @@ function fingerprint(roster: Node, supported: (f: Node) => boolean) {
         .map((u) => ({
           entryId: u.entryId,
           cost: unitCost(u),
+          primaryCategory: cats(u).filter((c) => c.startsWith('*')),
           prime: kids(u)
             .filter((c) => c.name === 'Prime Unit')
-            .map((p) => [p.entryId, kids(p).map((b) => [b.entryId, b.entryGroupId, kids(b).map((lb) => lb.entryId)])]),
+            .map((p) => [p.entryId, cats(p), kids(p).map((b) => [b.entryId, b.entryGroupId, kids(b).map((lb) => lb.entryId)])]),
           detachmentChoice: kids(u)
             .filter((c) => /^One (Apex|Auxiliary) Detachment/.test(c.name ?? ''))
             .map((c) => [c.entryId, c.entryGroupId]),
