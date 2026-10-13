@@ -96,6 +96,7 @@ All modals are coordinated by a `ModalState` discriminated union (defined in `sr
 Slot interaction chains:
 1. **Prime slot**: `unitPicker` → user picks unit → `primeBenefit` → user picks benefit → if logistical: `bonusSlotRoleSelector` (sets `lbRole`) → then the unlocks below
 2. **Unlocks** (`startUnlocks`): a High Command unit opens one `detachmentSelector` (Apex or Auxiliary); any other unit opens as many Auxiliary selectors as it adds to the army's BSData allowance (`rules/detachmentLimits.ts` `auxiliaryUnlocks`: 2 for a Centurion as Command — Command + Officer of the Line (2) — but 1 in a "Command - Centurions Only" slot)
+3. **Squad size**: a newly placed unit with a model-count range (`isSizeAdjustable`) opens in `slotEdit` when its chain ends (`sizeAfter` ref, honoured by `close()`), to set its size
 4. **Edit existing slot**: opens `slotEdit` first; all subsequent handlers check `isEditingSlot.current` ref and return to `slotEdit` instead of chaining unlocks
 5. **Allies**: header "Add Allies" → `allySelector` → `addAlliedForce`; the allied army's Command slots unlock Auxiliary detachments from the ally's own faction (pickers/selectors resolve faction via `factionOfDetachment`)
 

@@ -15,6 +15,7 @@ import { unitsForSlot } from '../../rules/slots';
 import { auxiliaryUnlocks } from '../../rules/detachmentLimits';
 import { allegianceCounts, chartBan, isAllegianceLocked } from '../../rules/availability';
 import { cardSlots } from './slotLayout';
+import { isSizeAdjustable } from '../../rules/unitSize';
 import type { RosterView } from './useRosterView';
 
 export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, counts }: RosterView) {
@@ -32,6 +33,8 @@ export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, 
   const pendingUnlocks = useRef<{ unlockedBy: string; remaining: number; total: number } | null>(null);
   // Set while editing a filled slot, so handlers return to the slot editor instead of chaining
   const isEditingSlot = useRef<{ detachmentId: string; slotKey: string } | null>(null);
+  // A newly placed squad whose size to set once its chain (benefit, unlocks) ends
+  const sizeAfter = useRef<{ detachmentId: string; slotKey: string } | null>(null);
 
   const placed = (detachmentId: string) => {
     const force = forces.find((f) => f.detachments.some((d) => d.id === detachmentId));
@@ -61,10 +64,27 @@ export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, 
     return getPrimeOptions(unit, unitContext(forces, force, det, unit, findSlotDef(detachmentId, slotKey)?.categoryId, counts));
   }
 
-  /** Closes the open modal and ends any edit or unlock chain (Cancel mid-edit must not leak into the next fill). */
+  /**
+   * Closes the open modal and ends any edit or unlock chain (Cancel mid-edit
+   * must not leak into the next fill). A squad just placed then opens in the
+   * slot editor to set its size.
+   */
   const close = () => {
     isEditingSlot.current = null;
     pendingUnlocks.current = null;
+    const size = sizeAfter.current;
+    sizeAfter.current = null;
+    if (size) {
+      const filled = useRosterStore
+        .getState()
+        .forces.flatMap((f) => f.detachments)
+        .find((d) => d.id === size.detachmentId)?.slots[size.slotKey];
+      const slotDef = findSlotDef(size.detachmentId, size.slotKey);
+      if (filled && slotDef) {
+        setModal({ type: 'slotEdit', detachmentId: size.detachmentId, slotKey: size.slotKey, slotDef, filled });
+        return;
+      }
+    }
     setModal({ type: 'none' });
   };
 
@@ -90,6 +110,7 @@ export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, 
     // A fresh click starts a new flow; edit mode is entered only from the slot editor's actions
     isEditingSlot.current = null;
     pendingUnlocks.current = null;
+    sizeAfter.current = null;
     const filled = detachments.find((d) => d.id === detachmentId)?.slots[slotKey];
     if (filled) setModal({ type: 'slotEdit', detachmentId, slotKey, slotDef, filled });
     else {
@@ -164,6 +185,8 @@ export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, 
       goBackToSlotEdit(detachmentId, slotKey, { unit, primeBenefit: existingBenefit });
       return;
     }
+    // A squad (a model type with a range) gets its size set when the chain ends
+    sizeAfter.current = unit.models.some(isSizeAdjustable) ? { detachmentId, slotKey } : null;
     if (isPrime) setModal({ type: 'primeBenefit', detachmentId, slotKey, role, unit });
     else fillAndUnlock(detachmentId, slotKey, role, unit);
   }
