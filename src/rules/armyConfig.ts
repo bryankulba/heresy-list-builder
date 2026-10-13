@@ -48,7 +48,11 @@ function choiceIds(faction: string, entryName: string, choiceName: string | unde
   return entry?.choices.find((c) => c.name === choiceName)?.ids ?? [];
 }
 
-/** Army settings with their own picker: single choices among several (Rite of War, Household Paradigm…). */
+/**
+ * Army settings with their own picker: required single choices among several
+ * (Rite of War, Household Paradigm…). Optional ones (Provenances of War,
+ * Legiones Auxilia designation) are left to New Recruit.
+ */
 export interface ConfigOption {
   name: string;
   choices: string[];
@@ -61,7 +65,7 @@ export interface ConfigOption {
 export function configOptions(faction: string): ConfigOption[] {
   return armyConfigFor(faction)
     .filter((e) => e.category !== 'Allegiance' && e.name !== DOCTRINE_ENTRY)
-    .filter((e) => e.pick?.max === 1 && e.choices.length > 1)
+    .filter((e) => e.pick?.max === 1 && (e.pick?.min ?? 0) >= 1 && e.choices.length > 1)
     .map((e) => {
       const optional = (e.pick?.min ?? 0) < 1;
       const bsDefault = e.defaults.find((d) => e.choices.some((c) => c.name === d.name))?.name;

@@ -416,7 +416,8 @@
                   "counts": [
                     "0d32-12ae-3831-a4d6"
                   ],
-                  "path": "305a-ba33-df73-b67d::e1fa-45fa-333a-78f1::0d32-12ae-3831-a4d6"
+                  "path": "305a-ba33-df73-b67d::e1fa-45fa-333a-78f1::0d32-12ae-3831-a4d6",
+                  "description": "This Prime Advantage can only be selected once per Army. Add one additional War Engine Battlefield Role Slot to the Detachment that includes the Prime Force Organisation Slot with this Prime Advantage. A Unit that is selected to fill that Slot gains the Champion Sub-Type if it did not already have it."
                 }
               ]
             },
@@ -2394,29 +2395,153 @@
           "id": "c6a6-47b0-4926-dd94",
           "name": "Paragon of Metal",
           "kind": "option",
+          "counts": [
+            "e6ba-320e-f91f-d533"
+          ],
           "path": "c6a6-47b0-4926-dd94::e6ba-320e-f91f-d533",
-          "groupPath": "4ae1-f3b2-e1c8-165f"
+          "groupPath": "4ae1-f3b2-e1c8-165f",
+          "modifiers": [
+            {
+              "type": "set",
+              "field": "hidden",
+              "value": true,
+              "conditionGroups": [
+                {
+                  "type": "or",
+                  "conditions": [
+                    {
+                      "type": "notInstanceOf",
+                      "scope": "ancestor",
+                      "field": "selections",
+                      "value": 0,
+                      "childId": "df10-4634-c1aa-f6e0"
+                    },
+                    {
+                      "type": "equalTo",
+                      "scope": "unit",
+                      "field": "selections",
+                      "value": 0,
+                      "childId": "5833-5e86-26bc-0916"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "description": "This Prime Advantage may only be selected for a Unit composed entirely of Models with both the Automata Type and the Cybernetica Trait. One Model in the Unit for which this Prime Advantage is selected, chosen by the Controlling Player, has its Base Leadership, Intelligence and Willpower modified by +4 each, its base Initiative and Weapon Skill modified by +1 each, and gains the Sergeant Sub-type. The Model that gains these benefits is also counted as a Tech-priest with the Cybernetica Trait for the purposes of The Deus Machina Arcana Benefice only."
         },
         {
           "id": "3d61-54d8-f3e6-c097",
           "name": "Prime Specimens",
           "kind": "option",
+          "counts": [
+            "a533-4a75-9434-4595"
+          ],
           "path": "3d61-54d8-f3e6-c097::a533-4a75-9434-4595",
-          "groupPath": "4ae1-f3b2-e1c8-165f"
+          "groupPath": "4ae1-f3b2-e1c8-165f",
+          "modifiers": [
+            {
+              "type": "set",
+              "field": "hidden",
+              "value": true,
+              "conditionGroups": [
+                {
+                  "type": "or",
+                  "conditions": [
+                    {
+                      "type": "notInstanceOf",
+                      "scope": "ancestor",
+                      "field": "selections",
+                      "value": 0,
+                      "childId": "8268-aa48-f4dc-0506"
+                    },
+                    {
+                      "type": "equalTo",
+                      "scope": "unit",
+                      "field": "selections",
+                      "value": 0,
+                      "childId": "594d-fa82-13cb-a345"
+                    },
+                    {
+                      "type": "instanceOf",
+                      "scope": "ancestor",
+                      "field": "selections",
+                      "value": 1,
+                      "childId": "d9a6-9b5f-b18a-4d63"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "description": "This Prime Advantage may only be selected for a Unit composed entirely of Models with both the Infantry Type and the Lacrymaerta Trait. All Models in a Unit for which this Prime Advantage is selected have the Base Value of their Strength Characteristic modified by +2 and the Base Value of their Wounds Characteristic modified by +1."
         },
         {
           "id": "8855-4255-3c14-bc68",
           "name": "Prime Conveyor",
           "kind": "option",
+          "counts": [
+            "5e61-75cf-5a52-a94d"
+          ],
           "path": "8855-4255-3c14-bc68::5e61-75cf-5a52-a94d",
-          "groupPath": "4ae1-f3b2-e1c8-165f"
+          "groupPath": "4ae1-f3b2-e1c8-165f",
+          "modifiers": [
+            {
+              "type": "set",
+              "field": "hidden",
+              "value": true,
+              "conditionGroups": [
+                {
+                  "type": "or",
+                  "conditions": [
+                    {
+                      "type": "notInstanceOf",
+                      "scope": "ancestor",
+                      "field": "selections",
+                      "value": 0,
+                      "childId": "1ec3-1433-658a-f04e"
+                    },
+                    {
+                      "type": "equalTo",
+                      "scope": "unit",
+                      "field": "selections",
+                      "value": 0,
+                      "childId": "aa5a-c9fd-1eb1-7a45"
+                    }
+                  ]
+                }
+              ]
+            }
+          ],
+          "description": "This Prime Advantage may only be selected for a Unit composed of a single Model with the Vehicle Type that does not also have the Super-heavy Sub-Type. A Model for which this Prime Advantage is selected gains a bonus of +1 to its Front and Side Armour Values, to a maximum of 14, +2 to its Hull Points Characterisic. If the Unit selected includes any Models with the Transport Sub-Type, then the Transport Capacity of those Models is also modified by +2."
         },
         {
           "id": "6c45-965d-4aef-3d33",
           "name": "Thallaxi Principe",
           "kind": "option",
+          "counts": [
+            "a3af-b73f-4a1b-efd1"
+          ],
           "path": "6c45-965d-4aef-3d33::a3af-b73f-4a1b-efd1",
-          "groupPath": "4ae1-f3b2-e1c8-165f"
+          "groupPath": "4ae1-f3b2-e1c8-165f",
+          "hidden": true,
+          "modifiers": [
+            {
+              "type": "set",
+              "field": "hidden",
+              "value": false,
+              "conditions": [
+                {
+                  "type": "instanceOf",
+                  "scope": "unit",
+                  "field": "selections",
+                  "value": 1,
+                  "childId": "a4ad-1b49-0303-59b3"
+                }
+              ]
+            }
+          ],
+          "description": "This Prime Advantage may only be selected for a Thallax Cohort Unit. All Models in a Unit with this Prime Advantage increase the Base Value of the Invulnerable Save Characteristic to 5+ and increase the Base Value of their Leadership Characteristic by +1"
         },
         {
           "id": "4b45-404f-dec7-194d",
@@ -7229,6 +7354,7 @@
   "armyChoices": {
     "ce61-2d74-5519-70bf": {
       "name": "Mechanicum - Sub-faction",
+      "catalogue": "mechanicum",
       "options": [
         {
           "id": "6a01-072d-5f2a-deed",
@@ -7350,6 +7476,7 @@
     },
     "cdc4-0bc4-89cb-3689": {
       "name": "Skitarii Sub Factions",
+      "catalogue": "skitarii-conclaves",
       "options": [
         {
           "id": "637f-8850-f6f5-6f6a",

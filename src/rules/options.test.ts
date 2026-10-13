@@ -89,7 +89,7 @@ describe('army settings', () => {
       "Legiones Hereticus Emperor's Children",
     ]);
     expect(defaultConfigChoices('questoris-familia')).toEqual({ 'Household Paradigms': 'Questoris Imperialis' });
-    expect(configOptions('solar-auxilia').map((o) => o.name)).toEqual(['Legiones Auxilia designation', 'Provenances of War']);
+    expect(configOptions('solar-auxilia')).toEqual([]); // designation and Provenances of War are optional
     expect(configOptions('death-guard')).toEqual([]); // one Rite of War only
   });
 

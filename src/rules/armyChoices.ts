@@ -33,7 +33,11 @@ function choiceGroupIds(units: UnitEntry[]): string[] {
 
 const cache = new Map<string, Array<{ id: string } & ArmyChoiceGroup>>();
 
-/** The army-wide choices an army of `faction` makes, with the options visible to it. */
+/**
+ * The army-wide choices an army of `faction` makes, with the options visible
+ * to it — its own catalogue's only (a Solar Auxilia Tech-Priest's Mechanicum
+ * sub-faction keeps BSData's default rather than adding a choice).
+ */
 export function armyChoiceGroups(faction: string): Array<{ id: string } & ArmyChoiceGroup> {
   const cached = cache.get(faction);
   if (cached) return cached;
@@ -45,7 +49,9 @@ export function armyChoiceGroups(faction: string): Array<{ id: string } & ArmyCh
     roster: {},
     rosterForces: {},
   };
-  const groups = choiceGroupIds(getUnitsForFaction(faction)).map((id) => {
+  const groups = choiceGroupIds(getUnitsForFaction(faction))
+    .filter((id) => !rulesData.armyChoices[id].catalogue || rulesData.armyChoices[id].catalogue === faction)
+    .map((id) => {
     const g = rulesData.armyChoices[id];
     return { id, ...g, options: g.options.filter((o) => !effectiveHidden(o.hidden ?? false, o.modifiers, ctx)) };
   });

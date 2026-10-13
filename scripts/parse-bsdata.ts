@@ -344,6 +344,8 @@ export interface RulesData {
 
 export interface ArmyChoiceGroup {
   name: string;
+  /** Catalogue key the group belongs to (an army is offered its own catalogues' choices) */
+  catalogue?: string;
   options: Array<{ id: string; name: string; path: string; hidden?: boolean; modifiers?: RuleModifier[] }>;
 }
 
@@ -615,9 +617,23 @@ export type SharedIndex = Map<string, BsEntry>;
 
 export function buildSharedIndex(roots: BsRoot[]): SharedIndex {
   const index: SharedIndex = new Map();
+  const add = (e: BsEntry) => {
+    if (!index.has(e.id)) index.set(e.id, e);
+  };
+  // Entries inside shared groups can be link targets too (Mechanicum's Prime
+  // benefits sit in its "Arcana Options:" group)
+  const addGroupContents = (g: BsEntry) => {
+    for (const e of g.selectionEntries ?? []) add(e);
+    for (const sub of g.selectionEntryGroups ?? []) {
+      add(sub);
+      addGroupContents(sub);
+    }
+  };
   for (const root of roots) {
-    for (const e of [...(root.sharedSelectionEntries ?? []), ...(root.sharedSelectionEntryGroups ?? [])]) {
-      if (!index.has(e.id)) index.set(e.id, e);
+    for (const e of root.sharedSelectionEntries ?? []) add(e);
+    for (const g of root.sharedSelectionEntryGroups ?? []) {
+      add(g);
+      addGroupContents(g);
     }
   }
   return index;
@@ -996,7 +1012,12 @@ function hiddenModifiers(mods: BsModifier[]): RuleModifier[] {
  * A Prime benefit tree for a shared benefit group, with option paths relative to
  * the group's entry (each unit prepends its own "root::groupLink" prefix).
  */
-function buildPrimeTree(group: BsEntry, index: SharedIndex, rules: Map<string, BsRule>): PrimeNode {
+function buildPrimeTree(
+  group: BsEntry,
+  index: SharedIndex,
+  rules: Map<string, BsRule>,
+  textByName: Map<string, string> = new Map()
+): PrimeNode {
   const fromGroup = (g: GroupView, depth: number): PrimeNode => {
     const children = [
       ...g.options.map((o) => fromOption(o, depth)),
@@ -1021,7 +1042,9 @@ function buildPrimeTree(group: BsEntry, index: SharedIndex, rules: Map<string, B
       ...sub.options.map((o) => fromOption(o, depth + 1)),
       ...sub.groups.map((g) => fromGroup(g, depth + 1)),
     ];
-    const description = describe(target ?? e, rules);
+    // Its own (or its target's) rules; else a same-named entry's elsewhere (the
+    // game system's placeholder "The Iron-clad" vs Legiones Astartes' full one)
+    const description = describe(target ?? e, rules) ?? describe(e, rules) ?? textByName.get(e.name.trim());
     // What choosing it puts in the roster besides its own id: the link's target
     // and categories (conditions often name the target, e.g. Clade Operative)
     const also = [...(target ? [target.id] : []), ...[...(e.categoryLinks ?? []), ...(target?.categoryLinks ?? [])].map((c) => c.targetId)];
@@ -1332,7 +1355,11 @@ function usedGroupIds(units: UnitEntry[]): Set<string> {
   return ids;
 }
 
-function extractArmyChoices(units: UnitEntry[], index: SharedIndex): Record<string, ArmyChoiceGroup> {
+function extractArmyChoices(
+  units: UnitEntry[],
+  index: SharedIndex,
+  catalogueOf: Map<string, string>
+): Record<string, ArmyChoiceGroup> {
   const out: Record<string, ArmyChoiceGroup> = {};
   for (const id of usedGroupIds(units)) {
     const group = index.get(id);
@@ -1340,6 +1367,7 @@ function extractArmyChoices(units: UnitEntry[], index: SharedIndex): Record<stri
     const members = contents(group, [], undefined, index, 0).options.sort(byListOrder);
     out[id] = {
       name: group.name,
+      ...(catalogueOf.has(id) ? { catalogue: catalogueOf.get(id) } : {}),
       options: members.map((m) => {
         const mods = hiddenModifiers(allModifiers(m.entry));
         return {
@@ -1618,10 +1646,18 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
   for (const root of [gst, ...catalogues.map((c) => c.catalogue)]) {
     for (const r of root.sharedRules ?? []) if (!sharedRules.has(r.id)) sharedRules.set(r.id, r);
   }
+  // Descriptions by entry name, for options whose own entry carries no text
+  const textByName = new Map<string, string>();
+  walk([gst, ...catalogues.map((c) => c.catalogue)], (obj) => {
+    const e = obj as unknown as BsEntry;
+    if (typeof e.name !== 'string' || !e.type || textByName.has(e.name.trim())) return;
+    const text = describe(e, sharedRules);
+    if (text) textByName.set(e.name.trim(), text);
+  });
   const primeGroups: Record<string, PrimeNode> = {};
   for (const groupId of primeGroupIds) {
     const group = index.get(groupId);
-    if (group) primeGroups[groupId] = buildPrimeTree(group, index, sharedRules);
+    if (group) primeGroups[groupId] = buildPrimeTree(group, index, sharedRules, textByName);
   }
 
   return {
@@ -1632,7 +1668,15 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
     rules: {
       primeGroups,
       detachmentChoice: detachmentChoiceIds(index),
-      armyChoices: extractArmyChoices(Object.values(units).flat(), index),
+      armyChoices: extractArmyChoices(
+        Object.values(units).flat(),
+        index,
+        new Map(
+          catalogues.flatMap((c) =>
+            (c.catalogue.sharedSelectionEntryGroups ?? []).map((g) => [g.id, factionKeyForCatalogue(c.catalogue.name)] as const)
+          )
+        )
+      ),
       armyConfig: {
         'game-system': extractArmyConfig(gst, index, categoryNames),
         ...Object.fromEntries(

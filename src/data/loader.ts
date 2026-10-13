@@ -102,6 +102,8 @@ export const rulesData = rulesJson as unknown as {
 /** A per-unit BSData choice the builder makes once for the whole army — see scripts/parse-bsdata.ts */
 export interface ArmyChoiceGroup {
   name: string;
+  /** Catalogue key the group belongs to (an army is offered its own catalogues' choices) */
+  catalogue?: string;
   options: Array<{ id: string; name: string; path: string; hidden?: boolean; modifiers?: RuleModifier[] }>;
 }
 export const cataloguesData = cataloguesJson as Record<string, CatalogueInfo>;
