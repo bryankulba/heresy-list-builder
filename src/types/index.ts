@@ -74,6 +74,9 @@ export interface SlotDef {
   categoryId?: string;
   /** BSData modifiers on the slot's max — evaluated by rules/slots.ts effectiveSlots */
   maxModifiers?: RuleModifier[];
+  /** Shown only when these allow (e.g. "Clade Operative" slots once the Clade Operative benefit is taken) */
+  hidden?: boolean;
+  visibility?: RuleModifier[];
 }
 
 export interface DetachmentDef {

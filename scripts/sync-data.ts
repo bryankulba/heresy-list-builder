@@ -26,6 +26,9 @@ const SOURCE_FILE = path.join(RAW_DIR, 'source.json');
  */
 const UNIT_FACTIONS = [
   'legiones-astartes',
+  // Fielded by any Crusade army through the Clade / Cult Operative Prime benefits
+  'divisio-assassinorum',
+  'cults-abominatio',
   'alpha-legion',
   'blood-angels',
   'dark-angels',

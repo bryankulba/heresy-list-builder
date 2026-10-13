@@ -3,10 +3,10 @@
  * Builds RuleContexts (see evaluate.ts) from the roster.
  */
 
-import type { Allegiance, Force, PlacedDetachment, UnitEntry } from '../types';
+import type { Allegiance, Force, PlacedDetachment, PrimeBenefit, UnitEntry } from '../types';
 import { cataloguesData, getChart, rulesData } from '../data/loader';
 import { configCounts } from './armyConfig';
-import { logisticalBenefitChoice } from './primeBenefits';
+import { findPrimeNode, logisticalBenefitChoice } from './primeBenefits';
 import type { RuleContext } from './evaluate';
 
 type Counts = Record<string, number>;
@@ -15,10 +15,13 @@ function addCounts(into: Counts, from: Counts | undefined, times = 1): void {
   for (const [id, n] of Object.entries(from ?? {})) into[id] = (into[id] ?? 0) + n * times;
 }
 
-/** Ids a placed unit contributes: its facts, plus its chosen Prime benefit. */
-function slotCounts(unit: UnitEntry, primeBenefitId?: string): Counts {
+/** Ids a placed unit contributes: its facts, plus its chosen Prime benefit (and what that benefit counts as). */
+function slotCounts(unit: UnitEntry, primeBenefit?: PrimeBenefit): Counts {
   const counts: Counts = { ...(unit.facts ?? {}) };
-  if (primeBenefitId) counts[primeBenefitId] = (counts[primeBenefitId] ?? 0) + 1;
+  if (primeBenefit) {
+    const node = findPrimeNode(unit, primeBenefit);
+    for (const id of [primeBenefit.id, ...(node?.counts ?? [])]) counts[id] = (counts[id] ?? 0) + 1;
+  }
   return counts;
 }
 
@@ -46,7 +49,7 @@ function detachmentCounts(det: PlacedDetachment, choices: Map<string, Array<'ape
   const counts: Counts = {};
   for (const [key, fs] of Object.entries(det.slots)) {
     if (!fs) continue;
-    addCounts(counts, slotCounts(fs.unit, fs.primeBenefit?.id));
+    addCounts(counts, slotCounts(fs.unit, fs.primeBenefit));
     // A Logistical Benefit's chosen role ("LB - Armour"), which BSData counts to add that slot
     if (fs.lbRole && fs.primeBenefit) {
       const choice = logisticalBenefitChoice(fs.unit, fs.primeBenefit, fs.lbRole);

@@ -122,6 +122,10 @@ export interface BsForceEntry {
 export interface BsCategoryEntry {
   id: string;
   name: string;
+  hidden?: boolean;
+  constraints?: BsConstraint[];
+  modifiers?: BsModifier[];
+  modifierGroups?: BsModifierGroup[];
 }
 
 interface BsRoot {
@@ -302,6 +306,8 @@ export interface PrimeNode {
   id: string;
   name: string;
   kind: 'group' | 'option';
+  /** Ids it also puts in the roster when chosen (its link target, categories) */
+  counts?: string[];
   /** Options: selection path relative to the unit's group prefix (see UnitEntry.prime) */
   path?: string;
   /** Options: entryGroupId path relative to the unit's group prefix */
@@ -352,6 +358,9 @@ export interface DetachmentSlot {
    * rule turning all Troops Prime, or Logisticae adding Transport slots.
    */
   maxModifiers?: RuleModifier[];
+  /** Shown only when these allow (a category hidden until e.g. the Clade Operative benefit is taken) */
+  hidden?: boolean;
+  visibility?: RuleModifier[];
 }
 
 export interface Detachment {
@@ -1004,10 +1013,14 @@ function buildPrimeTree(group: BsEntry, index: SharedIndex, rules: Map<string, B
       ...sub.groups.map((g) => fromGroup(g, depth + 1)),
     ];
     const description = describe(target ?? e, rules);
+    // What choosing it puts in the roster besides its own id: the link's target
+    // and categories (conditions often name the target, e.g. Clade Operative)
+    const also = [...(target ? [target.id] : []), ...[...(e.categoryLinks ?? []), ...(target?.categoryLinks ?? [])].map((c) => c.targetId)];
     return {
       id: e.id,
       name: e.name.trim(),
       kind: 'option',
+      ...(also.length > 0 ? { counts: also } : {}),
       path: join(memberPath(m)),
       ...(m.groupPath ? { groupPath: join(m.groupPath) } : {}),
       ...(e.hidden || target?.hidden ? { hidden: true } : {}),
@@ -1343,14 +1356,20 @@ function extractArmyChoices(units: UnitEntry[], index: SharedIndex): Record<stri
  * positive, or zero but raisable by a modifier (e.g. a slot a Logistical
  * Benefit or a legion rule opens up).
  */
-function extractSlots(fe: BsForceEntry): DetachmentSlot[] {
+function extractSlots(fe: BsForceEntry, categories: Map<string, BsCategoryEntry>): DetachmentSlot[] {
   const slots: DetachmentSlot[] = [];
   for (const link of fe.categoryLinks ?? []) {
-    const maxConstraint = link.constraints?.find((c) => c.type === 'max');
+    // A link without its own limit takes its category's (e.g. "Clade Operative":
+    // up to 3, hidden until the Clade Operative benefit is in the detachment)
+    const category = categories.get(link.targetId);
+    const own = link.constraints?.find((c) => c.type === 'max');
+    const maxConstraint = own ?? category?.constraints?.find((c) => c.type === 'max' && c.field === 'selections');
     if (!maxConstraint) continue;
+    const holder = own ? link : category!;
     const maxModifiers = maxConstraint.id
-      ? allModifiers(link).filter((m) => m.field === maxConstraint.id).map(slimModifier)
+      ? allModifiers(holder).filter((m) => m.field === maxConstraint.id).map(slimModifier)
       : [];
+    const visibility = own ? [] : hiddenModifiers(allModifiers(category!));
     const canRaise = maxModifiers.some((m) => m.type === 'increment' || (m.type === 'set' && Number(m.value) > 0));
     if (maxConstraint.value === 0 && !canRaise) continue; // placeholder / disabled slot
     const min = link.constraints?.find((c) => c.type === 'min')?.value ?? 0;
@@ -1361,6 +1380,8 @@ function extractSlots(fe: BsForceEntry): DetachmentSlot[] {
       prime: link.name.toLowerCase().startsWith('prime'),
       categoryId: link.targetId,
       ...(maxModifiers.length > 0 ? { maxModifiers } : {}),
+      ...(!own && category?.hidden ? { hidden: true } : {}),
+      ...(visibility.length > 0 ? { visibility } : {}),
     });
   }
   return slots;
@@ -1394,8 +1415,12 @@ function detachmentType(name: string): Detachment['type'] {
   return 'other';
 }
 
-function parseDetachment(fe: BsForceEntry, catalogueKeyById: Map<string, string>): Detachment | null {
-  const slots = extractSlots(fe);
+function parseDetachment(
+  fe: BsForceEntry,
+  catalogueKeyById: Map<string, string>,
+  categories: Map<string, BsCategoryEntry>
+): Detachment | null {
+  const slots = extractSlots(fe, categories);
   if (slots.length === 0) return null;
   const costs: Record<string, number> = {};
   for (const c of fe.costs ?? []) {
@@ -1453,6 +1478,9 @@ function parseCharts(
   catalogueKeyById: Map<string, string>
 ): ForceChart[] {
   const costTypeNames = new Map((gst.costTypes ?? []).map((t) => [t.id, t.name]));
+  const categories = new Map(
+    [gst, ...catalogues.map((c) => c.root)].flatMap((r) => r.categoryEntries ?? []).map((c) => [c.id, c])
+  );
   const toChart = (fe: BsForceEntry, catalogue: string | null): ForceChart => {
     // The chart's caps, plus a points share set on its detachment (Knight Lord of War)
     const limits = [
@@ -1468,7 +1496,7 @@ function parseCharts(
       // A chart without child forces (Lord of War Detachment) holds its units
       // itself: it is its own single detachment
       detachments: (fe.forceEntries?.length ? fe.forceEntries : [fe])
-        .map((child) => parseDetachment(child, catalogueKeyById))
+        .map((child) => parseDetachment(child, catalogueKeyById, categories))
         .filter((d): d is Detachment => d !== null),
       ...(limits.length > 0 ? { limits } : {}),
     };

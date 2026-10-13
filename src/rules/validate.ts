@@ -12,6 +12,7 @@ import { cardSlots, expandSlots } from '../components/canvas/slotLayout';
 import { rosterCounts, type RosterCounts } from './context';
 import { allegianceCounts, isAllegianceLocked } from './availability';
 import { detachmentAllowances, detachmentCaps } from './detachmentLimits';
+import { isLogisticalBenefit } from './primeBenefits';
 import { withEffectiveSlots } from './slots';
 
 export interface RosterWarning {
@@ -135,10 +136,19 @@ function primeBenefitWarnings(view: Force[]): RosterWarning[] {
       return Object.entries(det.slots).flatMap(([key, fs]): RosterWarning[] => {
         if (!fs?.unit.prime) return [];
         const prime = fs.isPrime ?? slotDefs.get(key)?.prime ?? false;
-        return prime && !fs.primeBenefit
+        if (prime && !fs.primeBenefit) {
+          return [{
+            id: `prime-${det.id}-${key}`,
+            message: `${fs.unit.name} in ${detName(det)} has no Prime benefit`,
+            detachmentId: det.id,
+            slotKey: key,
+          }];
+        }
+        // New Recruit requires the Logistical Benefit's slot role ("LB - Armour")
+        return prime && fs.primeBenefit && isLogisticalBenefit(fs.primeBenefit) && !fs.lbRole
           ? [{
-              id: `prime-${det.id}-${key}`,
-              message: `${fs.unit.name} in ${detName(det)} has no Prime benefit`,
+              id: `lb-${det.id}-${key}`,
+              message: `${fs.unit.name}'s Logistical Benefit in ${detName(det)} has no slot role chosen`,
               detachmentId: det.id,
               slotKey: key,
             }]

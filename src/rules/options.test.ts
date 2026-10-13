@@ -58,3 +58,25 @@ describe('choices offered', () => {
     expect(getChart('Crusade Force Organization Chart')).toBeTruthy();
   });
 });
+
+describe('Assassins and Cult Operatives', () => {
+  test('Clade Operative opens 3 slots for Assassins (Loyalist); Cult Operative 1 for the Abomination (Traitor)', async () => {
+    const { withEffectiveSlots, unitsForSlot } = await import('./slots');
+    for (const [allegiance, benefit, max, unit] of [
+      ['Loyalist', 'Clade Operative', 3, 'Vindicare Assassin'],
+      ['Traitor', 'Cult Operative', 1, 'Infernus Abomination'],
+    ] as const) {
+      const force = createForce('death-guard', 'primary');
+      const det = force.detachments[0];
+      const tactical = getUnitsForFaction('death-guard').find((u) => u.name === 'Tactical Squad')!;
+      const slot = det.def.slots.find((s) => s.role === 'Prime Troops')!;
+      expect(withEffectiveSlots([force], rosterCounts([force], { allegiance }))[0].detachments[0].def.slots.some((s) => s.role === benefit)).toBe(false);
+      const opt = getPrimeOptions(tactical, unitContext([force], force, det, tactical, slot.categoryId, rosterCounts([force], { allegiance }))).find((o) => o.name === benefit)!;
+      det.slots['Prime Troops-0'] = { unit: tactical, primeBenefit: { id: opt.id, name: opt.name, description: opt.description } };
+      const counts = rosterCounts([force], { allegiance });
+      const opened = withEffectiveSlots([force], counts)[0].detachments[0].def.slots.find((s) => s.role === benefit)!;
+      expect(opened.max).toBe(max);
+      expect(unitsForSlot([force], force, det, opened, counts).map((u) => u.name)).toContain(unit);
+    }
+  });
+});

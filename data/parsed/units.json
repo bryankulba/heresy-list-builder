@@ -12584,6 +12584,619 @@
       ]
     }
   ],
+  "divisio-assassinorum": [
+    {
+      "name": "Vindicare Assassin",
+      "visibility": [
+        {
+          "type": "set",
+          "field": "hidden",
+          "value": true,
+          "conditions": [
+            {
+              "type": "atLeast",
+              "scope": "roster",
+              "field": "selections",
+              "value": 1,
+              "childId": "597e-83d8-32e1-8eaa"
+            }
+          ]
+        }
+      ],
+      "entryId": "7092-be0d-28a6-c2f4",
+      "path": "7092-be0d-28a6-c2f4::04c4-a7e6-0ba9-1959",
+      "role": "Clade Operative",
+      "primaryCategory": "Clade Operative",
+      "points": 150,
+      "baseCost": 150,
+      "models": [
+        {
+          "name": "Vindicare Assassin",
+          "entryId": "aaee-54f7-81f3-f154",
+          "path": "7092-be0d-28a6-c2f4::aaee-54f7-81f3-f154",
+          "cost": 0,
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Exitus rifle",
+              "entryId": "05a8-3db1-0a65-7110",
+              "path": "7092-be0d-28a6-c2f4::05a8-3db1-0a65-7110"
+            },
+            {
+              "name": "Assassin’s blade",
+              "entryId": "5dea-b266-c20b-78b2",
+              "path": "7092-be0d-28a6-c2f4::5dea-b266-c20b-78b2"
+            },
+            {
+              "name": "Exitus pistol",
+              "entryId": "74a2-4df0-2dc2-cf5f",
+              "path": "7092-be0d-28a6-c2f4::74a2-4df0-2dc2-cf5f"
+            }
+          ]
+        }
+      ],
+      "source": "divisio-assassinorum",
+      "facts": {
+        "04c4-a7e6-0ba9-1959": 1,
+        "7092-be0d-28a6-c2f4": 1,
+        "335a-5a90-3b7c-c034": 1,
+        "aaee-54f7-81f3-f154": 1,
+        "594d-fa82-13cb-a345": 1,
+        "f4ba-00e5-3d2e-eaac": 1,
+        "05a8-3db1-0a65-7110": 1,
+        "5dea-b266-c20b-78b2": 1,
+        "74a2-4df0-2dc2-cf5f": 1
+      },
+      "prime": {
+        "linkId": "47fe-ea09-c784-674f",
+        "path": "7092-be0d-28a6-c2f4::47fe-ea09-c784-674f::3fa2-78b1-637f-7fb2",
+        "groups": [
+          "09f3-7d9e-1892-28c1"
+        ],
+        "groupPrefixes": {
+          "09f3-7d9e-1892-28c1": "7092-be0d-28a6-c2f4::7eab-84a5-d9f8-9c1e"
+        }
+      }
+    },
+    {
+      "name": "Eversor Assassin",
+      "visibility": [
+        {
+          "type": "set",
+          "field": "hidden",
+          "value": true,
+          "conditions": [
+            {
+              "type": "atLeast",
+              "scope": "roster",
+              "field": "selections",
+              "value": 1,
+              "childId": "597e-83d8-32e1-8eaa"
+            }
+          ]
+        }
+      ],
+      "entryId": "0822-3ff2-ea75-807d",
+      "path": "0822-3ff2-ea75-807d::338d-2f4d-f7c6-8f5b",
+      "role": "Clade Operative",
+      "primaryCategory": "Clade Operative",
+      "points": 125,
+      "baseCost": 125,
+      "models": [
+        {
+          "name": "Eversor Assassin",
+          "entryId": "d5b9-edb6-e550-a985",
+          "path": "0822-3ff2-ea75-807d::d5b9-edb6-e550-a985",
+          "cost": 0,
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Executioner pistol",
+              "entryId": "f690-ea88-9bc8-9830",
+              "path": "0822-3ff2-ea75-807d::f690-ea88-9bc8-9830",
+              "children": [
+                {
+                  "name": "Needle pistol (Secondary)",
+                  "entryId": "35cf-dac2-2565-ad2b",
+                  "path": "0822-3ff2-ea75-807d::35cf-dac2-2565-ad2b"
+                },
+                {
+                  "name": "Bolt pistol (Primary)",
+                  "entryId": "c08d-c340-70a4-3a99",
+                  "targetId": "e8cf-c87f-a5e9-4a7c",
+                  "path": "0822-3ff2-ea75-807d::c08d-c340-70a4-3a99::e8cf-c87f-a5e9-4a7c"
+                }
+              ]
+            },
+            {
+              "name": "Neuro-gauntlet",
+              "entryId": "ff9c-c654-2b0e-bc8e",
+              "path": "0822-3ff2-ea75-807d::ff9c-c654-2b0e-bc8e"
+            },
+            {
+              "name": "Power sword",
+              "entryId": "6770-cde2-1fec-68c7",
+              "targetId": "59a9-57c1-fff9-ca75",
+              "path": "0822-3ff2-ea75-807d::6770-cde2-1fec-68c7::59a9-57c1-fff9-ca75"
+            }
+          ]
+        }
+      ],
+      "source": "divisio-assassinorum",
+      "facts": {
+        "338d-2f4d-f7c6-8f5b": 1,
+        "0822-3ff2-ea75-807d": 1,
+        "335a-5a90-3b7c-c034": 1,
+        "d5b9-edb6-e550-a985": 1,
+        "594d-fa82-13cb-a345": 1,
+        "5a95-e564-96b2-8dc9": 1,
+        "f4ba-00e5-3d2e-eaac": 1,
+        "f690-ea88-9bc8-9830": 1,
+        "ff9c-c654-2b0e-bc8e": 1,
+        "6770-cde2-1fec-68c7": 1,
+        "59a9-57c1-fff9-ca75": 1
+      },
+      "prime": {
+        "linkId": "bf05-24b7-111e-5b80",
+        "path": "0822-3ff2-ea75-807d::bf05-24b7-111e-5b80::3fa2-78b1-637f-7fb2",
+        "groups": [
+          "09f3-7d9e-1892-28c1"
+        ],
+        "groupPrefixes": {
+          "09f3-7d9e-1892-28c1": "0822-3ff2-ea75-807d::9e45-a449-e42a-d346"
+        }
+      }
+    },
+    {
+      "name": "Callidus Assassin",
+      "visibility": [
+        {
+          "type": "set",
+          "field": "hidden",
+          "value": true,
+          "conditions": [
+            {
+              "type": "atLeast",
+              "scope": "roster",
+              "field": "selections",
+              "value": 1,
+              "childId": "597e-83d8-32e1-8eaa"
+            }
+          ]
+        }
+      ],
+      "entryId": "8212-46e9-0ed5-6e6e",
+      "path": "8212-46e9-0ed5-6e6e::29bc-487d-42cb-b139",
+      "role": "Clade Operative",
+      "primaryCategory": "Clade Operative",
+      "points": 125,
+      "baseCost": 125,
+      "models": [
+        {
+          "name": "Callidus Assassin",
+          "entryId": "4c14-1c3e-943f-fcb3",
+          "path": "8212-46e9-0ed5-6e6e::4c14-1c3e-943f-fcb3",
+          "cost": 0,
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Neural Shredder",
+              "entryId": "808a-8cb5-b9a9-8c2e",
+              "path": "8212-46e9-0ed5-6e6e::808a-8cb5-b9a9-8c2e"
+            },
+            {
+              "name": "Poison Blades",
+              "entryId": "635c-ec25-ca6c-3fe3",
+              "path": "8212-46e9-0ed5-6e6e::635c-ec25-ca6c-3fe3"
+            },
+            {
+              "name": "Phase Sword",
+              "entryId": "04df-d66a-154f-4ef0",
+              "path": "8212-46e9-0ed5-6e6e::04df-d66a-154f-4ef0"
+            }
+          ]
+        }
+      ],
+      "source": "divisio-assassinorum",
+      "facts": {
+        "29bc-487d-42cb-b139": 1,
+        "8212-46e9-0ed5-6e6e": 1,
+        "335a-5a90-3b7c-c034": 1,
+        "4c14-1c3e-943f-fcb3": 1,
+        "594d-fa82-13cb-a345": 1,
+        "5a95-e564-96b2-8dc9": 1,
+        "f4ba-00e5-3d2e-eaac": 1,
+        "808a-8cb5-b9a9-8c2e": 1,
+        "635c-ec25-ca6c-3fe3": 1,
+        "04df-d66a-154f-4ef0": 1
+      },
+      "prime": {
+        "linkId": "8684-77fb-2ad1-5f62",
+        "path": "8212-46e9-0ed5-6e6e::8684-77fb-2ad1-5f62::3fa2-78b1-637f-7fb2",
+        "groups": [
+          "09f3-7d9e-1892-28c1"
+        ],
+        "groupPrefixes": {
+          "09f3-7d9e-1892-28c1": "8212-46e9-0ed5-6e6e::2c39-cb5c-574c-0939"
+        }
+      }
+    },
+    {
+      "name": "Culexus Assassin",
+      "visibility": [
+        {
+          "type": "set",
+          "field": "hidden",
+          "value": true,
+          "conditions": [
+            {
+              "type": "atLeast",
+              "scope": "roster",
+              "field": "selections",
+              "value": 1,
+              "childId": "597e-83d8-32e1-8eaa"
+            }
+          ]
+        }
+      ],
+      "entryId": "c0f6-f88b-e2a3-f1eb",
+      "path": "c0f6-f88b-e2a3-f1eb::e43f-df95-094c-2e7d",
+      "role": "Clade Operative",
+      "primaryCategory": "Clade Operative",
+      "points": 140,
+      "baseCost": 140,
+      "models": [
+        {
+          "name": "Culexus Assassin",
+          "entryId": "d095-dc1a-6256-cf80",
+          "path": "c0f6-f88b-e2a3-f1eb::d095-dc1a-6256-cf80",
+          "cost": 0,
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Animus speculum",
+              "entryId": "df16-2322-d5d0-f06c",
+              "path": "c0f6-f88b-e2a3-f1eb::df16-2322-d5d0-f06c"
+            },
+            {
+              "name": "Psyk-out bombs",
+              "entryId": "8427-f235-7ef5-dc92",
+              "path": "c0f6-f88b-e2a3-f1eb::8427-f235-7ef5-dc92"
+            }
+          ]
+        }
+      ],
+      "source": "divisio-assassinorum",
+      "facts": {
+        "e43f-df95-094c-2e7d": 1,
+        "c0f6-f88b-e2a3-f1eb": 1,
+        "335a-5a90-3b7c-c034": 1,
+        "d095-dc1a-6256-cf80": 1,
+        "594d-fa82-13cb-a345": 1,
+        "5a95-e564-96b2-8dc9": 1,
+        "f4ba-00e5-3d2e-eaac": 1,
+        "df16-2322-d5d0-f06c": 1,
+        "8427-f235-7ef5-dc92": 1
+      },
+      "prime": {
+        "linkId": "0293-8529-b559-a36c",
+        "path": "c0f6-f88b-e2a3-f1eb::0293-8529-b559-a36c::3fa2-78b1-637f-7fb2",
+        "groups": [
+          "09f3-7d9e-1892-28c1"
+        ],
+        "groupPrefixes": {
+          "09f3-7d9e-1892-28c1": "c0f6-f88b-e2a3-f1eb::c709-c20b-2a00-6c79"
+        }
+      }
+    },
+    {
+      "name": "Adamus Assassin",
+      "visibility": [
+        {
+          "type": "set",
+          "field": "hidden",
+          "value": true,
+          "conditions": [
+            {
+              "type": "atLeast",
+              "scope": "roster",
+              "field": "selections",
+              "value": 1,
+              "childId": "597e-83d8-32e1-8eaa"
+            }
+          ]
+        }
+      ],
+      "entryId": "5e72-d317-3e3a-2c7c",
+      "path": "5e72-d317-3e3a-2c7c::839f-c075-ca71-5c18",
+      "role": "Clade Operative",
+      "primaryCategory": "Clade Operative",
+      "points": 125,
+      "baseCost": 125,
+      "models": [
+        {
+          "name": "Adamus Assassin",
+          "entryId": "c9ba-c626-24d3-4a37",
+          "path": "5e72-d317-3e3a-2c7c::c9ba-c626-24d3-4a37",
+          "cost": 0,
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Needlespine blaster",
+              "entryId": "36d5-3d22-7cc4-fc6b",
+              "path": "5e72-d317-3e3a-2c7c::36d5-3d22-7cc4-fc6b",
+              "children": [
+                {
+                  "name": "Needlespine launcher",
+                  "entryId": "e4bf-04bb-39ee-5cc2",
+                  "path": "5e72-d317-3e3a-2c7c::e4bf-04bb-39ee-5cc2"
+                },
+                {
+                  "name": "Bolt pistol (Primary)",
+                  "entryId": "de19-46ef-d75b-667a",
+                  "targetId": "e8cf-c87f-a5e9-4a7c",
+                  "path": "5e72-d317-3e3a-2c7c::de19-46ef-d75b-667a::e8cf-c87f-a5e9-4a7c"
+                }
+              ]
+            },
+            {
+              "name": "Nemesii blade",
+              "entryId": "1aba-5cd5-7ae9-0b23",
+              "path": "5e72-d317-3e3a-2c7c::1aba-5cd5-7ae9-0b23"
+            },
+            {
+              "name": "Nemesii Grenades",
+              "entryId": "7796-ba46-748d-6663",
+              "path": "5e72-d317-3e3a-2c7c::7796-ba46-748d-6663"
+            }
+          ]
+        }
+      ],
+      "source": "divisio-assassinorum",
+      "facts": {
+        "839f-c075-ca71-5c18": 1,
+        "5e72-d317-3e3a-2c7c": 1,
+        "335a-5a90-3b7c-c034": 1,
+        "c9ba-c626-24d3-4a37": 1,
+        "594d-fa82-13cb-a345": 1,
+        "5a95-e564-96b2-8dc9": 1,
+        "f4ba-00e5-3d2e-eaac": 1,
+        "36d5-3d22-7cc4-fc6b": 1,
+        "1aba-5cd5-7ae9-0b23": 1,
+        "7796-ba46-748d-6663": 1
+      },
+      "prime": {
+        "linkId": "b484-916e-fcb7-da57",
+        "path": "5e72-d317-3e3a-2c7c::b484-916e-fcb7-da57::3fa2-78b1-637f-7fb2",
+        "groups": [
+          "09f3-7d9e-1892-28c1"
+        ],
+        "groupPrefixes": {
+          "09f3-7d9e-1892-28c1": "5e72-d317-3e3a-2c7c::949f-15b5-8274-2004"
+        }
+      }
+    },
+    {
+      "name": "Venenum Assassin",
+      "visibility": [
+        {
+          "type": "set",
+          "field": "hidden",
+          "value": true,
+          "conditions": [
+            {
+              "type": "atLeast",
+              "scope": "roster",
+              "field": "selections",
+              "value": 1,
+              "childId": "597e-83d8-32e1-8eaa"
+            }
+          ]
+        }
+      ],
+      "entryId": "ec3e-3de8-bb6b-9ddc",
+      "path": "ec3e-3de8-bb6b-9ddc::3858-f098-b947-3b91",
+      "role": "Clade Operative",
+      "primaryCategory": "Clade Operative",
+      "points": 125,
+      "baseCost": 125,
+      "models": [
+        {
+          "name": "Venenum Assassin",
+          "entryId": "6e03-b2a8-ff2b-3d26",
+          "path": "ec3e-3de8-bb6b-9ddc::6e03-b2a8-ff2b-3d26",
+          "cost": 0,
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Toxin ejector",
+              "entryId": "582e-817e-845c-f737",
+              "path": "ec3e-3de8-bb6b-9ddc::582e-817e-845c-f737"
+            },
+            {
+              "name": "Poison globes",
+              "entryId": "d44a-0c70-ec3a-f896",
+              "path": "ec3e-3de8-bb6b-9ddc::d44a-0c70-ec3a-f896"
+            },
+            {
+              "name": "Hookfang",
+              "entryId": "e683-e13c-4cdd-14d4",
+              "path": "ec3e-3de8-bb6b-9ddc::e683-e13c-4cdd-14d4"
+            }
+          ]
+        }
+      ],
+      "source": "divisio-assassinorum",
+      "facts": {
+        "3858-f098-b947-3b91": 1,
+        "ec3e-3de8-bb6b-9ddc": 1,
+        "335a-5a90-3b7c-c034": 1,
+        "6e03-b2a8-ff2b-3d26": 1,
+        "594d-fa82-13cb-a345": 1,
+        "5a95-e564-96b2-8dc9": 1,
+        "f4ba-00e5-3d2e-eaac": 1,
+        "582e-817e-845c-f737": 1,
+        "d44a-0c70-ec3a-f896": 1,
+        "e683-e13c-4cdd-14d4": 1
+      },
+      "prime": {
+        "linkId": "c1cf-526a-5a6e-2f28",
+        "path": "ec3e-3de8-bb6b-9ddc::c1cf-526a-5a6e-2f28::3fa2-78b1-637f-7fb2",
+        "groups": [
+          "09f3-7d9e-1892-28c1"
+        ],
+        "groupPrefixes": {
+          "09f3-7d9e-1892-28c1": "ec3e-3de8-bb6b-9ddc::9c68-6a46-9d0a-0e3a"
+        }
+      }
+    },
+    {
+      "name": "Vanus Infocyte Assassin",
+      "visibility": [
+        {
+          "type": "set",
+          "field": "hidden",
+          "value": true,
+          "conditions": [
+            {
+              "type": "atLeast",
+              "scope": "roster",
+              "field": "selections",
+              "value": 1,
+              "childId": "597e-83d8-32e1-8eaa"
+            }
+          ]
+        }
+      ],
+      "entryId": "9100-2a6c-d1f0-0a4c",
+      "path": "9100-2a6c-d1f0-0a4c::ac7a-3b38-f106-d2bc",
+      "role": "Clade Operative",
+      "primaryCategory": "Clade Operative",
+      "points": 105,
+      "baseCost": 105,
+      "models": [
+        {
+          "name": "Vanus Infocyte Assassin",
+          "entryId": "2bfd-2f6a-5c52-81e0",
+          "path": "9100-2a6c-d1f0-0a4c::2bfd-2f6a-5c52-81e0",
+          "cost": 0,
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Laspistol",
+              "count": 2,
+              "entryId": "6e77-4744-ce51-391e",
+              "path": "9100-2a6c-d1f0-0a4c::6e77-4744-ce51-391e"
+            },
+            {
+              "name": "Sympatic dataspikes",
+              "entryId": "8151-c287-7184-94d1",
+              "path": "9100-2a6c-d1f0-0a4c::8151-c287-7184-94d1"
+            }
+          ]
+        }
+      ],
+      "source": "divisio-assassinorum",
+      "facts": {
+        "ac7a-3b38-f106-d2bc": 1,
+        "9100-2a6c-d1f0-0a4c": 1,
+        "335a-5a90-3b7c-c034": 1,
+        "2bfd-2f6a-5c52-81e0": 1,
+        "594d-fa82-13cb-a345": 1,
+        "f4ba-00e5-3d2e-eaac": 1,
+        "6e77-4744-ce51-391e": 1,
+        "8151-c287-7184-94d1": 1
+      },
+      "prime": {
+        "linkId": "91f8-aa33-f87f-f9a3",
+        "path": "9100-2a6c-d1f0-0a4c::91f8-aa33-f87f-f9a3::3fa2-78b1-637f-7fb2",
+        "groups": [
+          "09f3-7d9e-1892-28c1"
+        ],
+        "groupPrefixes": {
+          "09f3-7d9e-1892-28c1": "9100-2a6c-d1f0-0a4c::5c1b-6b5d-cbcc-ee8b"
+        }
+      }
+    }
+  ],
+  "cults-abominatio": [
+    {
+      "name": "Infernus Abomination",
+      "visibility": [
+        {
+          "type": "set",
+          "field": "hidden",
+          "value": true,
+          "conditions": [
+            {
+              "type": "atLeast",
+              "scope": "roster",
+              "field": "selections",
+              "value": 1,
+              "childId": "e1e1-a344-d3e2-0b91"
+            }
+          ]
+        }
+      ],
+      "entryId": "0361-0b51-43bc-1e70",
+      "path": "0361-0b51-43bc-1e70::c66f-ea16-ec49-7a60",
+      "role": "Cult Operative",
+      "primaryCategory": "Cult Operative",
+      "points": 120,
+      "baseCost": 120,
+      "models": [
+        {
+          "name": "Infernus Abomination",
+          "entryId": "d54e-c919-0fe3-b4b2",
+          "path": "0361-0b51-43bc-1e70::d54e-c919-0fe3-b4b2",
+          "cost": 0,
+          "min": 1,
+          "max": 1,
+          "defaultWargear": [
+            {
+              "name": "Boneshard spitter",
+              "entryId": "743f-2560-5ed1-6126",
+              "path": "0361-0b51-43bc-1e70::743f-2560-5ed1-6126"
+            },
+            {
+              "name": "Transmutative claw",
+              "entryId": "3088-ed4f-8b5f-5260",
+              "path": "0361-0b51-43bc-1e70::3088-ed4f-8b5f-5260"
+            }
+          ]
+        }
+      ],
+      "source": "cults-abominatio",
+      "facts": {
+        "c66f-ea16-ec49-7a60": 1,
+        "0361-0b51-43bc-1e70": 1,
+        "4f71-897f-8ae1-303b": 1,
+        "d54e-c919-0fe3-b4b2": 1,
+        "594d-fa82-13cb-a345": 1,
+        "5a95-e564-96b2-8dc9": 1,
+        "f4ba-00e5-3d2e-eaac": 1,
+        "743f-2560-5ed1-6126": 1,
+        "3088-ed4f-8b5f-5260": 1
+      },
+      "prime": {
+        "linkId": "f728-aae8-bedc-5a0c",
+        "path": "0361-0b51-43bc-1e70::f728-aae8-bedc-5a0c::3fa2-78b1-637f-7fb2",
+        "groups": [
+          "e5d1-992e-9efa-3c87"
+        ],
+        "groupPrefixes": {
+          "e5d1-992e-9efa-3c87": "0361-0b51-43bc-1e70::43ad-1a96-172a-4051"
+        }
+      }
+    }
+  ],
   "alpha-legion": [
     {
       "name": "Armillus Dynat",
