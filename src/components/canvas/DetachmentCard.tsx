@@ -45,6 +45,8 @@ interface DetachmentCardProps {
   onSlotClear: (slotKey: string) => void;
   cardRef?: (el: HTMLDivElement | null) => void;
   slotRefCallback?: (slotKey: string) => (el: HTMLDivElement | null) => void;
+  /** Fill the available width (phone layout) instead of the canvas card width */
+  fluid?: boolean;
 }
 
 export default function DetachmentCard({
@@ -57,6 +59,7 @@ export default function DetachmentCard({
   onSlotClear,
   cardRef,
   slotRefCallback,
+  fluid = false,
 }: DetachmentCardProps) {
   const displayName = getDetachmentDisplayName(detachment.def.name);
   const title = instanceNumber != null ? `${displayName} #${instanceNumber}` : displayName;
@@ -84,10 +87,10 @@ export default function DetachmentCard({
         background: 'var(--cds-layer-01)',
         border: '1px solid var(--cds-border-strong-01)',
         borderRadius: 4,
-        padding: 16,
-        minWidth: 300,
-        maxWidth: 400,
+        padding: fluid ? 12 : 16,
+        ...(fluid ? {} : { minWidth: 300, maxWidth: 400 }),
         width: '100%',
+        boxSizing: 'border-box',
       }}
     >
       {/* Header */}

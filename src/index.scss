@@ -41,3 +41,14 @@ body {
   mask-image: none;
   -webkit-mask-image: none;
 }
+
+// Phone header menu: match the header's height and colours
+.cds--header .app-header__menu {
+  block-size: 3rem;
+  inline-size: 3rem;
+  color: var(--cds-icon-primary);
+}
+
+.cds--header .app-header__name {
+  white-space: nowrap;
+}

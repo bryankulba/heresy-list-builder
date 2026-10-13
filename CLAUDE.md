@@ -113,9 +113,13 @@ Each `SlotDef` has `max: N` and expands to N individual slot instances with keys
 
 Carbon Design System header is `position: fixed` (48px tall). Any scrollable content area directly below it needs `paddingTop: 64` (48px header + 16px gap).
 
+### Phones and tablets
+
+Below 672px (`useIsPhone`) the canvas becomes `StackedView`: the same cards in one scrolling column — each army's root detachment, then each detachment under the one whose slot unlocked it ("Unlocked by <unit>", `stackedOrder`) — with the army line (`ArmySummary` panel) on top and the points card as a bottom bar. Below 1056px (`useIsCompactHeader`) header actions go in a menu. The canvas uses pointer events (`useCanvasViewport`): one finger pans (from cards too), two pinch-zoom, long press drags a card; `touch-action: none` keeps the browser from scrolling.
+
 ### Canvas Layout
 
-The canvas is a large `4000×3000px` div inside an `overflow: hidden` viewport container. Pan is CSS `transform: translate(panX, panY)`; ctrl/pinch zooms. Armies are stacked vertically (allied armies get a label); within an army the root detachment is anchored left (Warlord below), Apex detachments in a 2-column grid to the right, other detachments below. Row heights come from `estimateCardHeight` in `slotLayout.ts`; positions from `canvasLayout.ts`. Cards can be long-press dragged (position overrides are not persisted). SVG connector lines are rendered as an absolute-positioned overlay with `pointer-events: none`.
+The canvas is a large `4000×3000px` div inside an `overflow: hidden` viewport container. Pan is CSS `transform: translate(panX, panY)`; ctrl/pinch zooms (trackpad or touch). Armies are stacked vertically (allied armies get a label); within an army the root detachment is anchored left (Warlord below), Apex detachments in a 2-column grid to the right, other detachments below. Row heights come from `estimateCardHeight` in `slotLayout.ts`; positions from `canvasLayout.ts`. Cards can be long-press dragged (position overrides are not persisted). SVG connector lines are rendered as an absolute-positioned overlay with `pointer-events: none`.
 
 ## Key Files
 
