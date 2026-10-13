@@ -62,9 +62,7 @@ const SLOTS_PER_ROW = 6;
 /** Estimated rendered height of a detachment card, from its slots. */
 export function estimateCardHeight(detachment: PlacedDetachment): number {
   const groups = groupByRole(cardSlots(detachment));
-  const bonus = detachment.bonusSlots?.length ?? 0;
   const groupHeights = groups.map((g) => ROLE_HEADING_H + Math.ceil(g.slots.length / SLOTS_PER_ROW) * SLOT_ROW_H);
-  if (bonus > 0) groupHeights.push(ROLE_HEADING_H + Math.ceil(bonus / SLOTS_PER_ROW) * SLOT_ROW_H);
   return CARD_CHROME_H + groupHeights.reduce((a, b) => a + b, 0);
 }
 

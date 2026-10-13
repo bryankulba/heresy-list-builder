@@ -1,0 +1,899 @@
+[
+  {
+    "name": "Jenetia Krole",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "entryId": "5f19-2fda-5599-d3d3",
+    "path": "5f19-2fda-5599-d3d3::578c-1407-0ada-3c52",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 125,
+    "baseCost": 125,
+    "models": [
+      {
+        "name": "Jenetia Krole",
+        "entryId": "aae7-f76c-81ea-a228",
+        "path": "5f19-2fda-5599-d3d3::aae7-f76c-81ea-a228",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "The Sword of Oblivion",
+            "entryId": "743a-e10f-ad3a-ff18",
+            "path": "5f19-2fda-5599-d3d3::743a-e10f-ad3a-ff18"
+          },
+          {
+            "name": "Archeotech pistol",
+            "entryId": "e752-6096-739b-0a58",
+            "targetId": "0600-3af1-d080-abf7",
+            "path": "5f19-2fda-5599-d3d3::e752-6096-739b-0a58::0600-3af1-d080-abf7"
+          }
+        ]
+      }
+    ],
+    "source": "anathema-psykana",
+    "facts": {
+      "578c-1407-0ada-3c52": 1,
+      "5f19-2fda-5599-d3d3": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "aae7-f76c-81ea-a228": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "f4ba-00e5-3d2e-eaac": 1,
+      "9871-cb62-5283-2216": 1,
+      "6445-be01-196a-928f": 1,
+      "af7f-ce65-7fad-6d0e": 1,
+      "60e8-05b4-0f73-a45a": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "743a-e10f-ad3a-ff18": 1,
+      "e752-6096-739b-0a58": 1,
+      "0600-3af1-d080-abf7": 1
+    },
+    "prime": {
+      "linkId": "01c8-8bdd-4283-a8b3",
+      "path": "5f19-2fda-5599-d3d3::01c8-8bdd-4283-a8b3::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "5f88-9f8a-5fef-2a71"
+      ],
+      "groupPrefixes": {
+        "5f88-9f8a-5fef-2a71": "5f19-2fda-5599-d3d3::6b2e-e4e6-44ce-84c1"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "5f19-2fda-5599-d3d3::a524-abd4-772e-678c",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Knight-Centura",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "entryId": "79c2-ebfb-f42d-0442",
+    "path": "79c2-ebfb-f42d-0442::aaf8-a9e7-8c56-2dac",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 75,
+    "baseCost": 75,
+    "models": [
+      {
+        "name": "Knight-Centura",
+        "entryId": "1c95-188b-7f7a-8b85",
+        "path": "79c2-ebfb-f42d-0442::1c95-188b-7f7a-8b85",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Paragon blade",
+            "entryId": "e54d-514d-f932-62d6",
+            "targetId": "1881-a2b5-fc58-4270",
+            "path": "79c2-ebfb-f42d-0442::e54d-514d-f932-62d6::1881-a2b5-fc58-4270"
+          }
+        ]
+      }
+    ],
+    "source": "anathema-psykana",
+    "facts": {
+      "aaf8-a9e7-8c56-2dac": 1,
+      "79c2-ebfb-f42d-0442": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "1c95-188b-7f7a-8b85": 1,
+      "594d-fa82-13cb-a345": 1,
+      "f4ba-00e5-3d2e-eaac": 1,
+      "9871-cb62-5283-2216": 1,
+      "6445-be01-196a-928f": 1,
+      "af7f-ce65-7fad-6d0e": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "60e8-05b4-0f73-a45a": 1,
+      "e54d-514d-f932-62d6": 1,
+      "1881-a2b5-fc58-4270": 1
+    },
+    "prime": {
+      "linkId": "976c-3618-41e3-9c71",
+      "path": "79c2-ebfb-f42d-0442::976c-3618-41e3-9c71::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "5f88-9f8a-5fef-2a71"
+      ],
+      "groupPrefixes": {
+        "5f88-9f8a-5fef-2a71": "79c2-ebfb-f42d-0442::0a96-7030-403c-90d5"
+      }
+    }
+  },
+  {
+    "name": "Anathema Cadre",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "entryId": "d0f0-7547-8d35-473a",
+    "path": "d0f0-7547-8d35-473a::70fb-de8a-7d80-b232",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 65,
+    "baseCost": 25,
+    "models": [
+      {
+        "name": "Null Sister",
+        "entryId": "1892-6a9e-b07c-cee0",
+        "path": "d0f0-7547-8d35-473a::1892-6a9e-b07c-cee0",
+        "cost": 10,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": []
+      },
+      {
+        "name": "Null Mistress",
+        "entryId": "8c02-3dfa-aa25-65c3",
+        "path": "d0f0-7547-8d35-473a::8c02-3dfa-aa25-65c3",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "anathema-psykana",
+    "unitWargear": [
+      {
+        "name": "Bolter",
+        "entryId": "d70f-cbeb-614d-04c8",
+        "targetId": "d3f9-b9e6-3ea5-cc8e",
+        "path": "d0f0-7547-8d35-473a::d70f-cbeb-614d-04c8::d3f9-b9e6-3ea5-cc8e",
+        "groupPath": "d0f0-7547-8d35-473a::6fec-2cf0-d792-8eb3"
+      }
+    ],
+    "facts": {
+      "70fb-de8a-7d80-b232": 1,
+      "d0f0-7547-8d35-473a": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "60e8-05b4-0f73-a45a": 1,
+      "af7f-ce65-7fad-6d0e": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "1892-6a9e-b07c-cee0": 4,
+      "594d-fa82-13cb-a345": 5,
+      "f4ba-00e5-3d2e-eaac": 5,
+      "8c02-3dfa-aa25-65c3": 1,
+      "8045-89a4-76d4-fcef": 1
+    },
+    "prime": {
+      "linkId": "96f9-a333-4cb3-a013",
+      "path": "d0f0-7547-8d35-473a::96f9-a333-4cb3-a013::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "5f88-9f8a-5fef-2a71"
+      ],
+      "groupPrefixes": {
+        "5f88-9f8a-5fef-2a71": "d0f0-7547-8d35-473a::0156-e731-4b42-9efe"
+      }
+    }
+  },
+  {
+    "name": "Kharon Pattern Acquisitor",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "entryId": "a938-2983-d059-4b19",
+    "path": "a938-2983-d059-4b19::076f-4533-fb5b-8a3e",
+    "role": "Transport",
+    "primaryCategory": "Transport",
+    "points": 120,
+    "baseCost": 120,
+    "models": [
+      {
+        "name": "Kharon Pattern Acquisitor",
+        "entryId": "e594-369e-6f9f-e166",
+        "path": "a938-2983-d059-4b19::e594-369e-6f9f-e166",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Hull (Front) Mounted Hellion heavy cannon array",
+            "entryId": "f2d5-5e8a-d04e-cc96",
+            "path": "a938-2983-d059-4b19::f2d5-5e8a-d04e-cc96"
+          },
+          {
+            "name": "Centreline Mounted Vratine heavy missiles",
+            "count": 2,
+            "entryId": "51ad-60ff-8054-9b14",
+            "targetId": "efef-9b82-8679-f9fa",
+            "path": "a938-2983-d059-4b19::51ad-60ff-8054-9b14::efef-9b82-8679-f9fa"
+          }
+        ]
+      }
+    ],
+    "source": "anathema-psykana",
+    "facts": {
+      "076f-4533-fb5b-8a3e": 1,
+      "a938-2983-d059-4b19": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "60e8-05b4-0f73-a45a": 1,
+      "af7f-ce65-7fad-6d0e": 1,
+      "d162-4711-5d60-0a48": 1,
+      "e594-369e-6f9f-e166": 1,
+      "aa5a-c9fd-1eb1-7a45": 1,
+      "c504-9dfa-35d3-c98f": 1,
+      "2e6d-36f6-eeca-8e0c": 1,
+      "f2d5-5e8a-d04e-cc96": 1,
+      "51ad-60ff-8054-9b14": 1,
+      "efef-9b82-8679-f9fa": 1
+    },
+    "prime": {
+      "linkId": "55a7-cf4b-464f-bcb0",
+      "path": "a938-2983-d059-4b19::55a7-cf4b-464f-bcb0::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "5f88-9f8a-5fef-2a71"
+      ],
+      "groupPrefixes": {
+        "5f88-9f8a-5fef-2a71": "a938-2983-d059-4b19::d183-7341-474e-89a6"
+      }
+    }
+  },
+  {
+    "name": "Castellax Battle Maniple",
+    "entryId": "01c9-68cf-adb6-ace6",
+    "path": "01c9-68cf-adb6-ace6::e8d6-2ba5-d10d-d617",
+    "role": "Support",
+    "primaryCategory": "Support - Castellax Battle Maniple Only",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Castellax (Paragon of Metal)",
+        "entryId": "61ae-2955-4177-a4df",
+        "path": "01c9-68cf-adb6-ace6::61ae-2955-4177-a4df",
+        "cost": 50,
+        "min": 0,
+        "max": 0,
+        "defaultWargear": [
+          {
+            "name": "Mauler bolt cannon",
+            "entryId": "ce29-a75b-7037-2623",
+            "targetId": "ec2c-185f-3e9e-7ccd",
+            "path": "01c9-68cf-adb6-ace6::ce29-a75b-7037-2623::ec2c-185f-3e9e-7ccd"
+          },
+          {
+            "name": "Shock chargers",
+            "entryId": "d737-d2d2-d671-78ed",
+            "targetId": "9f0d-5e6b-1a6e-0546",
+            "path": "01c9-68cf-adb6-ace6::d737-d2d2-d671-78ed::9f0d-5e6b-1a6e-0546",
+            "groupPath": "01c9-68cf-adb6-ace6::3d55-db80-0636-342d"
+          },
+          {
+            "name": "Bolter",
+            "count": 2,
+            "entryId": "8606-def5-7473-defb",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "01c9-68cf-adb6-ace6::8606-def5-7473-defb::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "01c9-68cf-adb6-ace6::ff8a-d46f-b8c8-16a9"
+          }
+        ]
+      },
+      {
+        "name": "Castellax",
+        "entryId": "6d1b-0e66-a950-f0ea",
+        "path": "01c9-68cf-adb6-ace6::6d1b-0e66-a950-f0ea",
+        "cost": 50,
+        "min": 2,
+        "max": 10,
+        "defaultWargear": [
+          {
+            "name": "Mauler bolt cannon",
+            "entryId": "27d1-a226-320d-2999",
+            "targetId": "ec2c-185f-3e9e-7ccd",
+            "path": "01c9-68cf-adb6-ace6::27d1-a226-320d-2999::ec2c-185f-3e9e-7ccd"
+          },
+          {
+            "name": "Shock chargers",
+            "entryId": "7f17-ee9e-8cfb-4e5e",
+            "targetId": "9f0d-5e6b-1a6e-0546",
+            "path": "01c9-68cf-adb6-ace6::7f17-ee9e-8cfb-4e5e::9f0d-5e6b-1a6e-0546",
+            "groupPath": "01c9-68cf-adb6-ace6::0f15-ade9-42bf-8eb7"
+          },
+          {
+            "name": "Bolter",
+            "count": 2,
+            "entryId": "94da-d659-4db3-d979",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "01c9-68cf-adb6-ace6::94da-d659-4db3-d979::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "01c9-68cf-adb6-ace6::762a-0f39-afd1-1f0c"
+          }
+        ]
+      }
+    ],
+    "source": "anathema-psykana",
+    "unitWargear": [
+      {
+        "name": "Cybernetica",
+        "entryId": "2b49-5e7b-9f4b-2f4f",
+        "targetId": "403d-7806-215e-7676",
+        "path": "01c9-68cf-adb6-ace6::2b49-5e7b-9f4b-2f4f::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "e8d6-2ba5-d10d-d617": 1,
+      "01c9-68cf-adb6-ace6": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "61eb-11e2-1592-3161": 1,
+      "6d1b-0e66-a950-f0ea": 2,
+      "5833-5e86-26bc-0916": 2,
+      "27d1-a226-320d-2999": 2,
+      "ec2c-185f-3e9e-7ccd": 2,
+      "7f17-ee9e-8cfb-4e5e": 2,
+      "9f0d-5e6b-1a6e-0546": 2,
+      "94da-d659-4db3-d979": 2,
+      "d3f9-b9e6-3ea5-cc8e": 2
+    },
+    "prime": {
+      "linkId": "f0bf-fcb1-3cee-5d06",
+      "path": "01c9-68cf-adb6-ace6::f0bf-fcb1-3cee-5d06::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "01c9-68cf-adb6-ace6::89c3-e386-201c-227b",
+        "1abc-7dd4-54e7-48e5": "01c9-68cf-adb6-ace6::ba74-fa42-f195-4dbe"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Support - Castellax Battle Maniple Only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Castellax Destructor Maniple",
+    "entryId": "7cc7-11aa-59ab-1013",
+    "path": "7cc7-11aa-59ab-1013::112f-1168-d07c-7f8f",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault - Castellax Destructor Maniple only",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Castellax",
+        "entryId": "66b7-9883-86f7-a90f",
+        "path": "7cc7-11aa-59ab-1013::66b7-9883-86f7-a90f",
+        "cost": 50,
+        "min": 2,
+        "max": 6,
+        "defaultWargear": [
+          {
+            "name": "Shock chargers",
+            "entryId": "407b-457c-8bc4-f296",
+            "targetId": "9f0d-5e6b-1a6e-0546",
+            "path": "7cc7-11aa-59ab-1013::407b-457c-8bc4-f296::9f0d-5e6b-1a6e-0546",
+            "groupPath": "7cc7-11aa-59ab-1013::1241-6eab-4261-d15a"
+          },
+          {
+            "name": "Bolter",
+            "count": 2,
+            "entryId": "c050-620e-c956-df2c",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "7cc7-11aa-59ab-1013::c050-620e-c956-df2c::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "7cc7-11aa-59ab-1013::0215-ef86-01e4-0f1f"
+          },
+          {
+            "name": "Mauler bolt cannon",
+            "entryId": "d7ec-04c6-4688-c02e",
+            "targetId": "ec2c-185f-3e9e-7ccd",
+            "path": "7cc7-11aa-59ab-1013::d7ec-04c6-4688-c02e::ec2c-185f-3e9e-7ccd",
+            "groupPath": "7cc7-11aa-59ab-1013::d5cd-f8b5-86c8-944f"
+          }
+        ]
+      }
+    ],
+    "source": "anathema-psykana",
+    "unitWargear": [
+      {
+        "name": "Cybernetica",
+        "entryId": "a92a-c17d-f444-9e5b",
+        "targetId": "403d-7806-215e-7676",
+        "path": "7cc7-11aa-59ab-1013::a92a-c17d-f444-9e5b::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "112f-1168-d07c-7f8f": 1,
+      "7cc7-11aa-59ab-1013": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "d49e-048b-a8e2-ba52": 1,
+      "66b7-9883-86f7-a90f": 2,
+      "5833-5e86-26bc-0916": 2,
+      "407b-457c-8bc4-f296": 2,
+      "9f0d-5e6b-1a6e-0546": 2,
+      "c050-620e-c956-df2c": 2,
+      "d3f9-b9e6-3ea5-cc8e": 2,
+      "d7ec-04c6-4688-c02e": 2,
+      "ec2c-185f-3e9e-7ccd": 2
+    },
+    "prime": {
+      "linkId": "0121-094d-bbac-806b",
+      "path": "7cc7-11aa-59ab-1013::0121-094d-bbac-806b::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "7cc7-11aa-59ab-1013::2add-3992-0734-9159",
+        "1abc-7dd4-54e7-48e5": "7cc7-11aa-59ab-1013::34a0-1bee-1d5f-7758"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Heavy Assault - Castellax Destructor Maniple only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Domitar Battle Maniple",
+    "entryId": "eef7-2b2e-23d4-fb4d",
+    "path": "eef7-2b2e-23d4-fb4d::cefd-9aca-871d-3263",
+    "role": "Elites",
+    "primaryCategory": "Elites - Domitar Battle Maniple Only",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Domitar",
+        "entryId": "e8f4-acac-c459-7d6b",
+        "path": "eef7-2b2e-23d4-fb4d::e8f4-acac-c459-7d6b",
+        "cost": 100,
+        "min": 1,
+        "max": 4,
+        "defaultWargear": []
+      },
+      {
+        "name": "Domitar (Paragon of Metal)",
+        "entryId": "0a4a-9eac-49c1-569e",
+        "path": "eef7-2b2e-23d4-fb4d::0a4a-9eac-49c1-569e",
+        "cost": 100,
+        "min": 0,
+        "max": 0,
+        "defaultWargear": []
+      }
+    ],
+    "source": "anathema-psykana",
+    "unitWargear": [
+      {
+        "name": "Domitar fists",
+        "entryId": "d399-d1a3-0440-dbb8",
+        "path": "eef7-2b2e-23d4-fb4d::d399-d1a3-0440-dbb8"
+      },
+      {
+        "name": "Cyclone missile launcher",
+        "entryId": "c037-028a-8ad1-ecf1",
+        "targetId": "b341-159d-9dfb-ff31",
+        "path": "eef7-2b2e-23d4-fb4d::c037-028a-8ad1-ecf1::b341-159d-9dfb-ff31"
+      },
+      {
+        "name": "Graviton hammers",
+        "entryId": "998d-5c50-fafa-b052",
+        "targetId": "39bd-daf2-8118-1611",
+        "path": "eef7-2b2e-23d4-fb4d::998d-5c50-fafa-b052::39bd-daf2-8118-1611"
+      },
+      {
+        "name": "Cybernetica",
+        "entryId": "c4a3-8ded-261d-6c7d",
+        "targetId": "403d-7806-215e-7676",
+        "path": "eef7-2b2e-23d4-fb4d::c4a3-8ded-261d-6c7d::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "cefd-9aca-871d-3263": 1,
+      "eef7-2b2e-23d4-fb4d": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "826c-7b05-0f62-8b16": 1,
+      "e8f4-acac-c459-7d6b": 1,
+      "5833-5e86-26bc-0916": 1
+    },
+    "prime": {
+      "linkId": "b377-f86e-6cd7-e128",
+      "path": "eef7-2b2e-23d4-fb4d::b377-f86e-6cd7-e128::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "eef7-2b2e-23d4-fb4d::f7bd-69d0-8993-bd24",
+        "1abc-7dd4-54e7-48e5": "eef7-2b2e-23d4-fb4d::5a20-af64-74ec-708d"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Elites - Domitar Battle Maniple Only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Thanatar Siege Maniple",
+    "entryId": "6d30-40cf-952f-98e1",
+    "path": "6d30-40cf-952f-98e1::3833-2f09-7ec7-b5f5",
+    "role": "War Engine",
+    "primaryCategory": "War Engine - Thanatar Siege Maniple only",
+    "points": 225,
+    "baseCost": 225,
+    "models": [
+      {
+        "name": "Thanatar",
+        "entryId": "f4d8-5c0c-290e-c9f8",
+        "path": "6d30-40cf-952f-98e1::f4d8-5c0c-290e-c9f8",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "anathema-psykana",
+    "unitWargear": [
+      {
+        "name": "Shock chargers",
+        "entryId": "c940-cbc1-1ebf-ada3",
+        "targetId": "9f0d-5e6b-1a6e-0546",
+        "path": "6d30-40cf-952f-98e1::c940-cbc1-1ebf-ada3::9f0d-5e6b-1a6e-0546"
+      },
+      {
+        "name": "Twin mauler bolt cannon",
+        "entryId": "aba3-6a80-765a-2dfe",
+        "targetId": "f55e-5279-ca20-3a9b",
+        "path": "6d30-40cf-952f-98e1::aba3-6a80-765a-2dfe::f55e-5279-ca20-3a9b"
+      },
+      {
+        "name": "Cybernetica",
+        "entryId": "60d6-3379-8896-86d8",
+        "targetId": "403d-7806-215e-7676",
+        "path": "6d30-40cf-952f-98e1::60d6-3379-8896-86d8::403d-7806-215e-7676"
+      },
+      {
+        "name": "Cavas Configuration",
+        "entryId": "b0c4-16a4-19e9-d90f",
+        "path": "6d30-40cf-952f-98e1::b0c4-16a4-19e9-d90f",
+        "groupPath": "6d30-40cf-952f-98e1::07a5-b643-1588-1cee",
+        "children": [
+          {
+            "name": "Plasma mortar",
+            "entryId": "4f39-b26f-c2b2-7d98",
+            "targetId": "1b63-cd6f-7762-2fb2",
+            "path": "6d30-40cf-952f-98e1::4f39-b26f-c2b2-7d98::1b63-cd6f-7762-2fb2"
+          }
+        ]
+      }
+    ],
+    "facts": {
+      "3833-2f09-7ec7-b5f5": 1,
+      "6d30-40cf-952f-98e1": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "64d7-855f-726b-803f": 1,
+      "f4d8-5c0c-290e-c9f8": 1,
+      "5833-5e86-26bc-0916": 1,
+      "1e7d-9066-28d2-97a0": 1
+    },
+    "prime": {
+      "linkId": "1cf3-2329-6452-494b",
+      "path": "6d30-40cf-952f-98e1::1cf3-2329-6452-494b::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "6d30-40cf-952f-98e1::f87b-760f-5b44-e00c",
+        "1abc-7dd4-54e7-48e5": "6d30-40cf-952f-98e1::4da8-2deb-a4e7-774e"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "War Engine - Thanatar Siege Maniple only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vorax Attack Maniple",
+    "entryId": "fbf5-69f2-f7c5-8b8c",
+    "path": "fbf5-69f2-f7c5-8b8c::de2e-f9b5-abe6-b8b5",
+    "role": "Recon",
+    "primaryCategory": "Recon - Vorax Attack Maniple Only",
+    "points": 90,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Vorax",
+        "entryId": "3fe5-3f4e-c7cb-7ba8",
+        "path": "fbf5-69f2-f7c5-8b8c::3fe5-3f4e-c7cb-7ba8",
+        "cost": 45,
+        "min": 2,
+        "max": 8,
+        "defaultWargear": [
+          {
+            "name": "Lightning gun",
+            "entryId": "da09-78fe-fc7b-086a",
+            "targetId": "9b86-e05d-8ce5-ab8b",
+            "path": "fbf5-69f2-f7c5-8b8c::da09-78fe-fc7b-086a::9b86-e05d-8ce5-ab8b",
+            "groupPath": "fbf5-69f2-f7c5-8b8c::2430-259f-ad59-e794"
+          }
+        ]
+      }
+    ],
+    "source": "anathema-psykana",
+    "unitWargear": [
+      {
+        "name": "Pair of power blades",
+        "entryId": "28ff-37d7-48a8-ae88",
+        "targetId": "b6de-1568-2981-de20",
+        "path": "fbf5-69f2-f7c5-8b8c::28ff-37d7-48a8-ae88::b6de-1568-2981-de20"
+      },
+      {
+        "name": "Twin rotor cannon",
+        "entryId": "61f2-d958-8936-310e",
+        "targetId": "8346-d5be-e159-326d",
+        "path": "fbf5-69f2-f7c5-8b8c::61f2-d958-8936-310e::8346-d5be-e159-326d"
+      },
+      {
+        "name": "Cybernetica",
+        "entryId": "9a26-ef5e-552f-8248",
+        "targetId": "403d-7806-215e-7676",
+        "path": "fbf5-69f2-f7c5-8b8c::9a26-ef5e-552f-8248::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "de2e-f9b5-abe6-b8b5": 1,
+      "fbf5-69f2-f7c5-8b8c": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "0fb1-2125-2a33-b094": 1,
+      "3fe5-3f4e-c7cb-7ba8": 2,
+      "5833-5e86-26bc-0916": 2,
+      "da09-78fe-fc7b-086a": 2,
+      "9b86-e05d-8ce5-ab8b": 2
+    },
+    "prime": {
+      "linkId": "74da-ed32-b735-0799",
+      "path": "fbf5-69f2-f7c5-8b8c::74da-ed32-b735-0799::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "fbf5-69f2-f7c5-8b8c::440a-bcbb-f6ae-54ab",
+        "1abc-7dd4-54e7-48e5": "fbf5-69f2-f7c5-8b8c::114c-e998-d5b5-06d6"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Recon - Vorax Attack Maniple Only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Vultarax Stratos Squadron",
+    "entryId": "5dd4-a54c-a8dd-3720",
+    "path": "5dd4-a54c-a8dd-3720::710e-f1ea-0061-d3cb",
+    "role": "Fast Attack",
+    "primaryCategory": "Fast Attack - Vultarax Stratos Squadron Only",
+    "points": 100,
+    "baseCost": 100,
+    "models": [
+      {
+        "name": "Vultarax",
+        "entryId": "3583-7243-9323-073e",
+        "path": "5dd4-a54c-a8dd-3720::3583-7243-9323-073e",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "anathema-psykana",
+    "unitWargear": [
+      {
+        "name": "Vultarax missile-launcher",
+        "entryId": "19db-9500-b308-5593",
+        "path": "5dd4-a54c-a8dd-3720::19db-9500-b308-5593",
+        "children": [
+          {
+            "name": "Vultarax missile-launcher - Airburst",
+            "entryId": "ea3b-b3ce-b2b6-54ed",
+            "path": "5dd4-a54c-a8dd-3720::ea3b-b3ce-b2b6-54ed"
+          },
+          {
+            "name": "Vultarax missile-launcher - Shaped Charge",
+            "entryId": "f885-a412-8a12-7712",
+            "path": "5dd4-a54c-a8dd-3720::f885-a412-8a12-7712"
+          }
+        ]
+      },
+      {
+        "name": "Arc blaster",
+        "entryId": "5c61-5177-9588-c7cb",
+        "targetId": "e8bd-5972-dafc-783e",
+        "path": "5dd4-a54c-a8dd-3720::5c61-5177-9588-c7cb::e8bd-5972-dafc-783e"
+      },
+      {
+        "name": "Dendrite talons",
+        "entryId": "6907-7db4-81c8-2581",
+        "targetId": "5a33-b483-64cb-9853",
+        "path": "5dd4-a54c-a8dd-3720::6907-7db4-81c8-2581::5a33-b483-64cb-9853"
+      }
+    ],
+    "facts": {
+      "710e-f1ea-0061-d3cb": 1,
+      "5dd4-a54c-a8dd-3720": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "7db9-74d1-6ba1-061e": 1,
+      "3583-7243-9323-073e": 1,
+      "5833-5e86-26bc-0916": 1,
+      "c504-9dfa-35d3-c98f": 1
+    },
+    "prime": {
+      "linkId": "d7c8-a204-8c6d-6f67",
+      "path": "5dd4-a54c-a8dd-3720::d7c8-a204-8c6d-6f67::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "5dd4-a54c-a8dd-3720::6d2f-5545-0f2d-c5d1",
+        "1abc-7dd4-54e7-48e5": "5dd4-a54c-a8dd-3720::25b7-ec59-193a-4e62"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Fast Attack - Vultarax Stratos Squadron Only",
+        "conditionGroups": [
+          {
+            "type": "and",
+            "conditions": [
+              {
+                "type": "instanceOf",
+                "scope": "force",
+                "field": "forces",
+                "value": 1,
+                "childId": "2dfc-259d-d11b-dc8b"
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]

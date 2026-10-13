@@ -16,7 +16,10 @@ import type {
   UnitEntry,
 } from '../types';
 import { ALLIED_CHART, ALLIED_DETACHMENT, CRUSADE_CHART, FACTION_BY_ID } from '../data/factions';
-import { detachmentsData, getChartDetachment, getUnitsForFaction, lordOfWarChartFor, unitVariant } from '../data/loader';
+import { normalizeDoctrine } from '../rules/armyConfig';
+import { withEffectiveSlots } from '../rules/slots';
+import { cardSlots } from '../components/canvas/slotLayout';
+import { detachmentsData, getBaseRole, stripPrimePrefix, getChartDetachment, getUnitsForFaction, lordOfWarChartFor, unitVariant } from '../data/loader';
 
 // ---------------------------------------------------------------------------
 // Construction
@@ -75,11 +78,7 @@ function slotPoints(fs: FilledSlot | null | undefined): number {
 
 export function detachmentPoints(det: PlacedDetachment): number {
   const slots = Object.values(det.slots).reduce((sum, fs) => sum + slotPoints(fs), 0);
-  const bonus = (det.bonusSlots ?? []).reduce(
-    (sum, bs) => sum + (bs.unit ? bs.unit.points + (bs.extraPoints ?? 0) : 0),
-    0
-  );
-  return slots + bonus;
+  return slots;
 }
 
 export function computeTotalPoints(forces: Force[]): number {
@@ -142,7 +141,7 @@ export function migrateV1(v1: RosterSnapshotV1): RosterSnapshot {
   return {
     allegiance: v1.allegiance,
     pointsLimit: v1.pointsLimit,
-    cohortDoctrine: v1.cohortDoctrine ?? '',
+    cohortDoctrine: normalizeDoctrine(v1.cohortDoctrine),
     forces: [
       {
         id: uuidv4(),
@@ -162,8 +161,9 @@ export function migrateSnapshot(raw: unknown): RosterSnapshot {
     return {
       allegiance: r.allegiance ?? 'Loyalist',
       pointsLimit: r.pointsLimit ?? 3000,
-      cohortDoctrine: r.cohortDoctrine ?? '',
+      cohortDoctrine: normalizeDoctrine(r.cohortDoctrine),
       armyChoices: r.armyChoices ?? {},
+      configChoices: r.configChoices ?? {},
       forces: r.forces,
     };
   }
@@ -187,7 +187,7 @@ function freshDetachmentDef(def: DetachmentDef): DetachmentDef {
  * relinks a unit). Anything no longer in the data is kept as saved.
  */
 export function refreshUnits(forces: Force[]): Force[] {
-  return forces.map((force) => {
+  const refreshed = forces.map((force) => {
     const current = getUnitsForFaction(force.faction);
     const byId = new Map(current.map((u) => [u.entryId, u]));
     for (const u of current) {
@@ -210,4 +210,38 @@ export function refreshUnits(forces: Force[]): Force[] {
       })),
     };
   });
+  return migrateBonusSlots(refreshed);
+}
+
+/**
+ * Logistical Benefit used to add an app-managed bonus slot; it's now the slot
+ * BSData adds for the chosen "LB - <role>". Moves each bonus slot's role onto
+ * the Prime unit (`lbRole`) and its unit into the slot that role now opens.
+ */
+export function migrateBonusSlots(forces: Force[]): Force[] {
+  if (!forces.some((f) => f.detachments.some((d) => d.bonusSlots?.length))) return forces;
+  let out = forces.map((f) => ({
+    ...f,
+    detachments: f.detachments.map((d) => {
+      if (!d.bonusSlots?.length) return d;
+      const slots = { ...d.slots };
+      for (const bs of d.bonusSlots) {
+        const source = slots[bs.sourceSlotKey];
+        if (source) slots[bs.sourceSlotKey] = { ...source, lbRole: bs.role };
+      }
+      return { ...d, slots };
+    }),
+  }));
+  // Units from the old bonus slots go into the free slots of their role
+  for (const det of forces.flatMap((f) => f.detachments)) {
+    for (const bs of det.bonusSlots ?? []) {
+      if (!bs.unit) continue;
+      const view = withEffectiveSlots(out).flatMap((f) => f.detachments).find((d) => d.id === det.id)!;
+      const placed = out.flatMap((f) => f.detachments).find((d) => d.id === det.id)!;
+      const free = cardSlots(view).find((s) => getBaseRole(stripPrimePrefix(s.slotDef.role)) === bs.role && !placed.slots[s.key]);
+      const key = free?.key ?? `${bs.role}-${100 + Object.keys(placed.slots).length}`;
+      out = updateDetachment(out, det.id, (d) => ({ ...d, slots: { ...d.slots, [key]: { unit: bs.unit!, extraPoints: bs.extraPoints } } }));
+    }
+  }
+  return out.map((f) => ({ ...f, detachments: f.detachments.map(({ bonusSlots: _old, ...d }) => d) }));
 }

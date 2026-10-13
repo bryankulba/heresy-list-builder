@@ -1,0 +1,490 @@
+[
+  {
+    "name": "Mortarion",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "9043-addf-3b9f-47f5",
+    "path": "9043-addf-3b9f-47f5::1e3b-2a3b-c76d-6f98",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 425,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Mortarion",
+        "entryId": "9a2c-89c5-df39-c07b",
+        "path": "9043-addf-3b9f-47f5::9a2c-89c5-df39-c07b",
+        "cost": 425,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "death-guard",
+    "unitWargear": [
+      {
+        "name": "Sire of the Death Guard",
+        "entryId": "78b9-e5e5-ffc6-fe61",
+        "path": "9043-addf-3b9f-47f5::78b9-e5e5-ffc6-fe61"
+      },
+      {
+        "name": "The Lantern",
+        "entryId": "5238-dabe-7ada-b451",
+        "path": "9043-addf-3b9f-47f5::5238-dabe-7ada-b451"
+      },
+      {
+        "name": "Silence",
+        "entryId": "81b8-c895-0aee-c704",
+        "path": "9043-addf-3b9f-47f5::81b8-c895-0aee-c704"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "9aa9-622b-facd-14b8",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "9043-addf-3b9f-47f5::9aa9-622b-facd-14b8::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "1ac0-e332-bdc9-e5e3",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "9043-addf-3b9f-47f5::1ac0-e332-bdc9-e5e3::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Phosphex bombs",
+        "entryId": "27b2-52a0-e045-1f31",
+        "targetId": "5ad2-c3b4-f5eb-5b10",
+        "path": "9043-addf-3b9f-47f5::27b2-52a0-e045-1f31::5ad2-c3b4-f5eb-5b10"
+      }
+    ],
+    "facts": {
+      "1e3b-2a3b-c76d-6f98": 1,
+      "9043-addf-3b9f-47f5": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d251-944b-3c3b-0579": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "22ee-7208-4089-b005": 1,
+      "2399-482f-47f3-add5": 1,
+      "9a2c-89c5-df39-c07b": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1
+    }
+  },
+  {
+    "name": "Calas Typhon",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "e362-6664-464c-55c4",
+    "path": "e362-6664-464c-55c4::f182-d709-298f-5154",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 200,
+    "baseCost": 200,
+    "models": [
+      {
+        "name": "Calas Typhon",
+        "entryId": "a409-fada-2112-279f",
+        "path": "e362-6664-464c-55c4::a409-fada-2112-279f",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Lakrimae",
+            "entryId": "348e-4811-c5b0-c99c",
+            "path": "e362-6664-464c-55c4::348e-4811-c5b0-c99c"
+          },
+          {
+            "name": "Slaker",
+            "entryId": "a8bc-e03e-b598-9475",
+            "path": "e362-6664-464c-55c4::a8bc-e03e-b598-9475"
+          }
+        ]
+      }
+    ],
+    "source": "death-guard",
+    "unitWargear": [
+      {
+        "name": "Witchblood",
+        "entryId": "b7fc-188d-b246-68c5",
+        "path": "e362-6664-464c-55c4::b7fc-188d-b246-68c5",
+        "children": [
+          {
+            "name": "Biomancy",
+            "entryId": "79b0-74cf-de8f-5f63",
+            "targetId": "7f0b-3a53-fbba-de05",
+            "path": "e362-6664-464c-55c4::79b0-74cf-de8f-5f63::7f0b-3a53-fbba-de05"
+          }
+        ]
+      }
+    ],
+    "facts": {
+      "f182-d709-298f-5154": 1,
+      "e362-6664-464c-55c4": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "d251-944b-3c3b-0579": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "2399-482f-47f3-add5": 1,
+      "a409-fada-2112-279f": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1,
+      "1e7d-9066-28d2-97a0": 1,
+      "348e-4811-c5b0-c99c": 1,
+      "a8bc-e03e-b598-9475": 1
+    },
+    "prime": {
+      "linkId": "2039-bd87-41dc-8fce",
+      "path": "e362-6664-464c-55c4::2039-bd87-41dc-8fce::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "e362-6664-464c-55c4::10cd-114a-4034-93b6"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "e362-6664-464c-55c4::e682-abe8-ed85-919b",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Deathshroud Terminator Squad",
+    "entryId": "676f-c38c-9f8a-99e2",
+    "path": "676f-c38c-9f8a-99e2::11a2-0875-ae7a-3da2",
+    "role": "Retinue",
+    "primaryCategory": "Retinue",
+    "points": 100,
+    "baseCost": 10,
+    "models": [
+      {
+        "name": "Deathshroud",
+        "entryId": "ea74-4c52-9bcd-b0ca",
+        "path": "676f-c38c-9f8a-99e2::ea74-4c52-9bcd-b0ca",
+        "cost": 45,
+        "min": 2,
+        "max": 10,
+        "defaultWargear": [
+          {
+            "name": "Alchem caster",
+            "entryId": "1f5d-9c99-10da-52b4",
+            "targetId": "c7ac-ad11-e90c-592a",
+            "path": "676f-c38c-9f8a-99e2::1f5d-9c99-10da-52b4::c7ac-ad11-e90c-592a"
+          },
+          {
+            "name": "Power scythe",
+            "entryId": "5f97-3e07-3e72-ca30",
+            "targetId": "db0b-0a6f-a228-ebf6",
+            "path": "676f-c38c-9f8a-99e2::5f97-3e07-3e72-ca30::db0b-0a6f-a228-ebf6"
+          }
+        ]
+      }
+    ],
+    "source": "death-guard",
+    "facts": {
+      "11a2-0875-ae7a-3da2": 1,
+      "676f-c38c-9f8a-99e2": 1,
+      "a38e-50ff-310f-f19e": 1,
+      "2399-482f-47f3-add5": 1,
+      "ea74-4c52-9bcd-b0ca": 2,
+      "594d-fa82-13cb-a345": 2,
+      "1f5d-9c99-10da-52b4": 2,
+      "c7ac-ad11-e90c-592a": 2,
+      "5f97-3e07-3e72-ca30": 2,
+      "db0b-0a6f-a228-ebf6": 2
+    },
+    "prime": {
+      "linkId": "5d13-d2f5-46e5-844e",
+      "path": "676f-c38c-9f8a-99e2::5d13-d2f5-46e5-844e::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "676f-c38c-9f8a-99e2::3340-15f9-4261-b8ce"
+      }
+    }
+  },
+  {
+    "name": "Grave Warden Terminator Squad",
+    "entryId": "15d4-c494-15d8-91ae",
+    "path": "15d4-c494-15d8-91ae::adff-529b-2bd1-c87f",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 225,
+    "baseCost": 65,
+    "models": [
+      {
+        "name": "Chem-master",
+        "entryId": "dc93-a59a-caaa-789d",
+        "path": "15d4-c494-15d8-91ae::dc93-a59a-caaa-789d",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Assault grenade launcher",
+            "entryId": "fa74-989c-1dfd-b717",
+            "targetId": "1662-bcaf-58de-c84a",
+            "path": "15d4-c494-15d8-91ae::fa74-989c-1dfd-b717::1662-bcaf-58de-c84a",
+            "groupPath": "15d4-c494-15d8-91ae::a141-4b0f-b189-1ab6"
+          },
+          {
+            "name": "Power fist",
+            "entryId": "0ff7-c3b6-a57a-07b0",
+            "targetId": "2fcc-92a6-d03a-4b55",
+            "path": "15d4-c494-15d8-91ae::0ff7-c3b6-a57a-07b0::2fcc-92a6-d03a-4b55",
+            "groupPath": "15d4-c494-15d8-91ae::354f-9294-a765-bb01"
+          }
+        ]
+      },
+      {
+        "name": "Grave Warden",
+        "entryId": "3e2a-b8c7-5ffe-0f9d",
+        "path": "15d4-c494-15d8-91ae::3e2a-b8c7-5ffe-0f9d",
+        "cost": 40,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Assault grenade launcher",
+            "entryId": "7e5b-d26f-82ef-775f",
+            "targetId": "1662-bcaf-58de-c84a",
+            "path": "15d4-c494-15d8-91ae::7e5b-d26f-82ef-775f::1662-bcaf-58de-c84a",
+            "groupPath": "15d4-c494-15d8-91ae::66ae-2814-1d93-683f"
+          },
+          {
+            "name": "Power fist",
+            "entryId": "4903-6218-39e2-023c",
+            "targetId": "2fcc-92a6-d03a-4b55",
+            "path": "15d4-c494-15d8-91ae::4903-6218-39e2-023c::2fcc-92a6-d03a-4b55",
+            "groupPath": "15d4-c494-15d8-91ae::4c94-4801-a3c4-c622"
+          }
+        ]
+      }
+    ],
+    "source": "death-guard",
+    "facts": {
+      "adff-529b-2bd1-c87f": 1,
+      "15d4-c494-15d8-91ae": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "2399-482f-47f3-add5": 1,
+      "dc93-a59a-caaa-789d": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "fa74-989c-1dfd-b717": 1,
+      "1662-bcaf-58de-c84a": 5,
+      "0ff7-c3b6-a57a-07b0": 1,
+      "2fcc-92a6-d03a-4b55": 5,
+      "3e2a-b8c7-5ffe-0f9d": 4,
+      "7e5b-d26f-82ef-775f": 4,
+      "4903-6218-39e2-023c": 4
+    },
+    "prime": {
+      "linkId": "6a27-4e3f-4c07-8834",
+      "path": "15d4-c494-15d8-91ae::6a27-4e3f-4c07-8834::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "15d4-c494-15d8-91ae::452e-c0d1-4144-8c28"
+      }
+    }
+  },
+  {
+    "name": "Mortus Poisoner Squad",
+    "entryId": "6a01-e55f-212e-d019",
+    "path": "6a01-e55f-212e-d019::a977-8fbb-462e-9872",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 70,
+    "baseCost": 22,
+    "models": [
+      {
+        "name": "Mortus Poisoner",
+        "entryId": "1384-ef2f-4598-8b92",
+        "path": "6a01-e55f-212e-d019::1384-ef2f-4598-8b92",
+        "cost": 12,
+        "min": 4,
+        "max": 14,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "f815-452e-4faa-9ed8",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "6a01-e55f-212e-d019::f815-452e-4faa-9ed8::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Bolter",
+            "entryId": "a4d6-9b17-4a67-cb9c",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "6a01-e55f-212e-d019::a4d6-9b17-4a67-cb9c::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "6a01-e55f-212e-d019::2d7d-e6f0-f300-512a"
+          }
+        ]
+      },
+      {
+        "name": "Poison-master",
+        "entryId": "49a3-f772-4d4f-9d59",
+        "path": "6a01-e55f-212e-d019::49a3-f772-4d4f-9d59",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "d864-9ce7-4d12-bb9b",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "6a01-e55f-212e-d019::d864-9ce7-4d12-bb9b::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Bolter",
+            "entryId": "555a-4a1f-4bfa-ae64",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "6a01-e55f-212e-d019::555a-4a1f-4bfa-ae64::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "6a01-e55f-212e-d019::53c3-dc56-4a70-98cc"
+          }
+        ]
+      }
+    ],
+    "source": "death-guard",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "b3f3-19ef-4208-acd4",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "6a01-e55f-212e-d019::b3f3-19ef-4208-acd4::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "ac54-6432-48bb-97f3",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "6a01-e55f-212e-d019::ac54-6432-48bb-97f3::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Rad grenades",
+        "entryId": "12b9-9d71-47d4-a19c",
+        "targetId": "cd5f-1eff-df69-6bd2",
+        "path": "6a01-e55f-212e-d019::12b9-9d71-47d4-a19c::cd5f-1eff-df69-6bd2"
+      }
+    ],
+    "facts": {
+      "a977-8fbb-462e-9872": 1,
+      "6a01-e55f-212e-d019": 1,
+      "dd1b-70ef-6015-1291": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "1384-ef2f-4598-8b92": 4,
+      "594d-fa82-13cb-a345": 5,
+      "f815-452e-4faa-9ed8": 4,
+      "2942-f783-d627-33c5": 5,
+      "a4d6-9b17-4a67-cb9c": 4,
+      "d3f9-b9e6-3ea5-cc8e": 5,
+      "49a3-f772-4d4f-9d59": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "d864-9ce7-4d12-bb9b": 1,
+      "555a-4a1f-4bfa-ae64": 1
+    },
+    "prime": {
+      "linkId": "34c7-79ce-2399-cb5b",
+      "path": "6a01-e55f-212e-d019::34c7-79ce-2399-cb5b::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "6a01-e55f-212e-d019::ae3c-e7a0-fceb-c3b9"
+      }
+    }
+  },
+  {
+    "name": "Inductii Squad",
+    "entryId": "6427-ced4-f774-4bd2",
+    "path": "6427-ced4-f774-4bd2::8236-95aa-4580-926a",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 90,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Inductii",
+        "entryId": "f6ed-2840-40d2-95b4",
+        "path": "6427-ced4-f774-4bd2::f6ed-2840-40d2-95b4",
+        "cost": 9,
+        "min": 10,
+        "max": 20,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "7b7e-2380-49b3-9b5d",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "6427-ced4-f774-4bd2::7b7e-2380-49b3-9b5d::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "8734-6798-4b01-ba76",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "6427-ced4-f774-4bd2::8734-6798-4b01-ba76::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "7114-38fe-4111-8861",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "6427-ced4-f774-4bd2::7114-38fe-4111-8861::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolter",
+            "entryId": "8dc8-7f7e-455f-b219",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "6427-ced4-f774-4bd2::8dc8-7f7e-455f-b219::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "6427-ced4-f774-4bd2::accb-153c-523a-0f92"
+          }
+        ]
+      }
+    ],
+    "source": "death-guard",
+    "facts": {
+      "8236-95aa-4580-926a": 1,
+      "6427-ced4-f774-4bd2": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "f6ed-2840-40d2-95b4": 10,
+      "594d-fa82-13cb-a345": 10,
+      "7b7e-2380-49b3-9b5d": 10,
+      "2942-f783-d627-33c5": 10,
+      "8734-6798-4b01-ba76": 10,
+      "60e4-ca33-2e68-9afc": 10,
+      "7114-38fe-4111-8861": 10,
+      "fa20-82bc-c7de-9e97": 10,
+      "8dc8-7f7e-455f-b219": 10,
+      "d3f9-b9e6-3ea5-cc8e": 10
+    }
+  }
+]

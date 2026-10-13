@@ -57,4 +57,14 @@ describe('validateRoster', () => {
     force.detachments[0].slots = { 'Troops-99': { unit: unit('death-guard', 'Tactical Squad') } };
     expect(messages([force])).toContain("Tactical Squad doesn't fit a slot in Crusade Primary Detachment");
   });
+
+  test('a Logistical Benefit without its slot role', () => {
+    const { forces, allegiance, pointsLimit } = load('death-guard_v7_fixed.ros');
+    const det = forces[0].detachments[0];
+    const { lbRole: _role, ...herald } = det.slots['Prime Command-0']!;
+    det.slots['Prime Command-0'] = herald;
+    expect(validateRoster({ forces, allegiance, pointsLimit }).map((w) => w.message)).toContain(
+      "Herald In Terminator Armour's Logistical Benefit in Crusade Primary Detachment has no slot role chosen"
+    );
+  });
 });

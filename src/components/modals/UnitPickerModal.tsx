@@ -10,6 +10,7 @@ import {
 } from '@carbon/react';
 import type { UnitEntry } from '../../types';
 import { SM_LEGION_KEYS } from '../../data/factions';
+import { noFocusScroll } from './noFocusScroll';
 
 interface UnitPickerModalProps {
   /** Display role, e.g. "Troops" */
@@ -43,15 +44,17 @@ export default function UnitPickerModal({
     <ComposedModal open onClose={onClose} size="sm">
       <ModalHeader title={`Select ${role} Unit`} />
       <ModalBody hasForm>
-        <Search
-          id="unit-search"
-          labelText="Search units"
-          placeholder="Filter by name…"
-          value={search}
-          onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
-          size="sm"
-          className="mb-4"
-        />
+        {/* Stays in view while the list scrolls */}
+        <div style={{ position: 'sticky', top: 0, zIndex: 1, background: 'var(--cds-layer)', paddingBottom: 16 }}>
+          <Search
+            id="unit-search"
+            labelText="Search units"
+            placeholder="Filter by name…"
+            value={search}
+            onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearch(e.target.value)}
+            size="sm"
+          />
+        </div>
 
         {filtered.length === 0 && (
           <p style={{ color: 'var(--cds-text-secondary)', fontSize: 14 }}>
@@ -61,8 +64,6 @@ export default function UnitPickerModal({
 
         <div
           style={{
-            maxHeight: 400,
-            overflowY: 'auto',
             display: 'flex',
             flexDirection: 'column',
             gap: 2,
@@ -71,6 +72,7 @@ export default function UnitPickerModal({
           {filtered.map((unit) => (
             <button
               key={unit.name}
+              onMouseDown={noFocusScroll}
               onClick={() => onConfirm(unit)}
               style={{
                 display: 'flex',

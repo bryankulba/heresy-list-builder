@@ -13,7 +13,7 @@
 import type { Allegiance, Force, ModelEntry, UnitEntry, WargearEntry } from '../types';
 import { systemData, cataloguesData, detachmentsData, getBaseRole, getChart, rulesData, type ArmyConfigEntry } from '../data/loader';
 import { FACTION_BY_ID, factionLabel } from '../data/factions';
-import { COHORT_DOCTRINE_BY_ID } from '../constants/cohortDoctrines';
+import { armyConfigFor, normalizeDoctrine } from '../rules/armyConfig';
 import { findPrimeNodeInGroups, logisticalBenefitChoice } from '../rules/primeBenefits';
 import { effectivePrimaryCategory, withEffectiveSlots } from '../rules/slots';
 import { rosterCounts, unitContext } from '../rules/context';
@@ -31,6 +31,8 @@ export interface RosOptions {
   cohortDoctrine?: string;
   /** Army-wide picks for per-unit choices (sub-faction) — see rules/armyChoices.ts */
   armyChoices?: ArmyChoices;
+  /** Army settings (Rite of War, Household Paradigms…): entry name → choice */
+  configChoices?: Record<string, string>;
 }
 
 /** A selection to emit. */
@@ -45,8 +47,7 @@ interface Sel {
   children?: Sel[];
 }
 
-// Global role→categoryId fallback for bonus slots whose role may not exist in the
-// detachment's own slot list (e.g. "Support" bonus from Logistical Benefit in CPD).
+// Global role→categoryId fallback for slot roles a detachment doesn't list itself
 const ROLE_CATEGORY_MAP: Record<string, string> = (() => {
   const map: Record<string, string> = {};
   for (const det of detachmentsData.charts.flatMap((c) => c.detachments)) {
@@ -160,19 +161,22 @@ function unitSel(
 // Army configuration (root force selections)
 // ---------------------------------------------------------------------------
 
-function armyConfigFor(force: Force): ArmyConfigEntry[] {
-  const keys = ['game-system', ...(FACTION_BY_ID[force.faction]?.unitSources ?? [force.faction])];
-  const seen = new Set<string>();
-  return keys
-    .flatMap((k) => rulesData.armyConfig[k] ?? [])
-    .filter((e) => (seen.has(e.path) ? false : (seen.add(e.path), true)));
-}
-
 function configSel(entry: ArmyConfigEntry, choiceName: string | undefined): Sel {
+  const asSel = (c: ArmyConfigEntry['choices'][number]): Sel => ({
+    name: c.name,
+    entryId: c.path,
+    entryGroupId: c.groupPath,
+    type: 'upgrade',
+    number: 1,
+  });
   const choice = choiceName ? entry.choices.find((c) => c.name === choiceName) : undefined;
-  const children = choice
-    ? [{ name: choice.name, entryId: choice.path, entryGroupId: choice.groupPath, type: 'upgrade' as const, number: 1 }]
-    : entry.defaults.map((w) => wargearSel(w, 1));
+  // Every choice when all are required (Knights' three Advanced Reactions), else the pick, else BSData's defaults
+  const children =
+    entry.pick && entry.choices.length > 0 && entry.pick.min >= entry.choices.length
+      ? entry.choices.map(asSel)
+      : choice
+        ? [asSel(choice)]
+        : entry.defaults.map((w) => wargearSel(w, 1));
   return {
     name: entry.name,
     entryId: entry.path,
@@ -191,14 +195,13 @@ function configSel(entry: ArmyConfigEntry, choiceName: string | undefined): Sel 
  */
 function armyConfigSelections(force: Force, ctx: RuleContext, opts: RosOptions): Sel[] {
   if (force.kind === 'lordOfWar') return []; // configured by the army it belongs to
-  const doctrine = opts.cohortDoctrine ? COHORT_DOCTRINE_BY_ID[opts.cohortDoctrine]?.name : undefined;
-  return armyConfigFor(force)
+  return armyConfigFor(force.faction)
     .filter((e) => e.min >= 1 && !effectiveHidden(e.hidden ?? false, e.modifiers, ctx))
     .filter((e) => force.kind === 'primary' || e.category !== 'Allegiance')
     .map((e) => {
       if (e.category === 'Allegiance') return configSel(e, opts.allegiance);
-      if (e.name === 'Cohort Doctrine' && doctrine) return configSel(e, `Cohort Doctrine: ${doctrine}`);
-      return configSel(e, undefined);
+      if (e.name === 'Cohort Doctrine' && opts.cohortDoctrine) return configSel(e, normalizeDoctrine(opts.cohortDoctrine));
+      return configSel(e, opts.configChoices?.[e.name]);
     });
 }
 
@@ -211,12 +214,17 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
   const primary = forces.find((f) => f.kind === 'primary') ?? forces[0];
   const rosterName = escapeXml(primary ? factionLabel(primary.faction) : gameSystemName);
   const detachments = forces.flatMap((f) => f.detachments);
-  const counts = rosterCounts(forces);
+  const counts = rosterCounts(forces, {
+    allegiance: opts.allegiance,
+    pointsLimit,
+    cohortDoctrine: opts.cohortDoctrine,
+    configChoices: opts.configChoices,
+  });
 
   // Slot roles as the canvas shows them (slot counts evaluated from the
   // detachment's contents), so a unit in a position a rule made Prime exports
   // as Prime
-  const view = withEffectiveSlots(forces);
+  const view = withEffectiveSlots(forces, counts);
   const slotDefsByDetachment = new Map(
     view.flatMap((f) => f.detachments).map((det) => [det.id, new Map(cardSlots(det).map((s) => [s.key, s.slotDef]))])
   );
@@ -288,8 +296,7 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
         if (isPrime && unit.prime) {
           const benefit = filled.primeBenefit;
           const found = benefit ? findPrimeNodeInGroups(unit, benefit) : undefined;
-          const bonusSlot = det.bonusSlots?.find((bs) => bs.sourceSlotKey === key);
-          const lbChoice = benefit && bonusSlot ? logisticalBenefitChoice(unit, benefit, bonusSlot.role) : undefined;
+          const lbChoice = benefit && filled.lbRole ? logisticalBenefitChoice(unit, benefit, filled.lbRole) : undefined;
           const at = (rel: string | undefined) => (found && rel ? `${found.prefix}::${rel}` : undefined);
           extras.push({
             name: 'Prime Unit',
@@ -342,14 +349,6 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
         }
 
         sels.push(unitSel(unit, primaryCategory(unitRole, unitCategoryId), filled.extraPoints ?? 0, extras, opts.armyChoices));
-      }
-
-      // Bonus slots (Logistical Benefit)
-      for (const bs of det.bonusSlots ?? []) {
-        if (!bs.unit) continue;
-        const bonusSlotDef = det.def.slots.find((s) => s.role === bs.role);
-        const categoryId = bonusSlotDef?.categoryId ?? ROLE_CATEGORY_MAP[bs.role];
-        sels.push(unitSel(bs.unit, primaryCategory(bs.role, categoryId), bs.extraPoints ?? 0, [], opts.armyChoices));
       }
 
       return sels;

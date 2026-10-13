@@ -2,6 +2,7 @@ import React from 'react';
 import { ComposedModal, ModalHeader, ModalBody, ModalFooter, Button } from '@carbon/react';
 import type { FactionDef } from '../../data/factions';
 import { FACTION_GROUPS } from '../../data/factions';
+import { noFocusScroll } from './noFocusScroll';
 
 interface AllySelectorModalProps {
   factions: FactionDef[];
@@ -18,7 +19,7 @@ export default function AllySelectorModal({ factions, onConfirm, onClose }: Ally
           An Allied Detachment is a second army in your roster. Its Command choices can unlock its own
           Auxiliary detachments.
         </p>
-        <div style={{ maxHeight: 440, overflowY: 'auto', display: 'flex', flexDirection: 'column', gap: 12 }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
           {FACTION_GROUPS.map((group) => {
             const inGroup = factions.filter((f) => f.group === group);
             if (inGroup.length === 0) return null;
@@ -40,6 +41,7 @@ export default function AllySelectorModal({ factions, onConfirm, onClose }: Ally
                   {inGroup.map((f) => (
                     <button
                       key={f.id}
+                      onMouseDown={noFocusScroll}
                       onClick={() => onConfirm(f.id)}
                       style={{
                         textAlign: 'left',

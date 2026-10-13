@@ -36,12 +36,15 @@ export const ALLIED_DETACHMENT = 'Allied Detachment';
 export const LORD_OF_WAR_CHART = 'Lord of War Detachment';
 const KNIGHT_CHART = 'Knight Households Crusade';
 
+/** Assassins (Clade Operative) and the Cults' Abomination (Cult Operative), open to any Crusade army */
+const OPERATIVE_SOURCES = ['divisio-assassinorum', 'cults-abominatio'];
+
 function crusade(id: string, label: string, group: FactionGroup, unitSources: string[] = [id]): FactionDef {
   return {
     id,
     label,
     group,
-    unitSources,
+    unitSources: [...unitSources, ...OPERATIVE_SOURCES],
     chart: CRUSADE_CHART,
     primaryDetachment: 'Crusade Primary Detachment',
     canTakeAllies: true,

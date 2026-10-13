@@ -1,0 +1,863 @@
+[
+  {
+    "name": "Roboute Guilliman",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "5a54-9d3a-c0a8-dac8",
+    "path": "5a54-9d3a-c0a8-dac8::8b5a-f212-1993-60bb",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 465,
+    "baseCost": 465,
+    "models": [
+      {
+        "name": "Roboute Guilliman",
+        "entryId": "8566-b4ed-c381-cbd8",
+        "path": "5a54-9d3a-c0a8-dac8::8566-b4ed-c381-cbd8",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "ultramarines",
+    "unitWargear": [
+      {
+        "name": "The Arbitrator",
+        "entryId": "3972-799f-b51a-2582",
+        "targetId": "af83-7257-970c-c60c",
+        "path": "5a54-9d3a-c0a8-dac8::3972-799f-b51a-2582::af83-7257-970c-c60c"
+      },
+      {
+        "name": "The Gladius Incandor",
+        "entryId": "e807-49f3-d56d-e310",
+        "targetId": "9613-3645-91fe-b8c8",
+        "path": "5a54-9d3a-c0a8-dac8::e807-49f3-d56d-e310::9613-3645-91fe-b8c8"
+      },
+      {
+        "name": "The Hand of Dominion",
+        "entryId": "4e25-d791-996a-54e0",
+        "targetId": "a388-f5c7-24f2-a26d",
+        "path": "5a54-9d3a-c0a8-dac8::4e25-d791-996a-54e0::a388-f5c7-24f2-a26d"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "c563-df53-09ae-297a",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "5a54-9d3a-c0a8-dac8::c563-df53-09ae-297a::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "a7fe-0ab7-3cec-1af6",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "5a54-9d3a-c0a8-dac8::a7fe-0ab7-3cec-1af6::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "8b5a-f212-1993-60bb": 1,
+      "5a54-9d3a-c0a8-dac8": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "22ee-7208-4089-b005": 1,
+      "7fcf-5885-0a4d-ee31": 1,
+      "8566-b4ed-c381-cbd8": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1
+    }
+  },
+  {
+    "name": "Remus Ventanus",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "200b-4e53-cc72-f9a1",
+    "path": "200b-4e53-cc72-f9a1::997b-95c4-dc66-a5f8",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 175,
+    "baseCost": 175,
+    "models": [
+      {
+        "name": "Remus Ventanus",
+        "entryId": "fc80-c47b-edb8-7a30",
+        "path": "200b-4e53-cc72-f9a1::fc80-c47b-edb8-7a30",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "ultramarines",
+    "unitWargear": [
+      {
+        "name": "Phaeton",
+        "entryId": "30ad-ea45-5ce5-ffaf",
+        "targetId": "9483-f4ce-7479-ebf9",
+        "path": "200b-4e53-cc72-f9a1::30ad-ea45-5ce5-ffaf::9483-f4ce-7479-ebf9"
+      },
+      {
+        "name": "Icon of Calth",
+        "entryId": "5734-1abf-c514-9bbc",
+        "targetId": "ff71-8945-c670-ad09",
+        "path": "200b-4e53-cc72-f9a1::5734-1abf-c514-9bbc::ff71-8945-c670-ad09"
+      },
+      {
+        "name": "Vox-interlink",
+        "entryId": "e9c7-b2e0-7f39-7c51",
+        "targetId": "7285-41f1-7b7e-6d35",
+        "path": "200b-4e53-cc72-f9a1::e9c7-b2e0-7f39-7c51::7285-41f1-7b7e-6d35"
+      },
+      {
+        "name": "Bolt pistol",
+        "entryId": "3d70-f1eb-ffd4-4f9d",
+        "targetId": "2942-f783-d627-33c5",
+        "path": "200b-4e53-cc72-f9a1::3d70-f1eb-ffd4-4f9d::2942-f783-d627-33c5"
+      },
+      {
+        "name": "Melta bombs",
+        "entryId": "408d-bc63-cd76-1115",
+        "targetId": "2eb4-687e-a515-ee3d",
+        "path": "200b-4e53-cc72-f9a1::408d-bc63-cd76-1115::2eb4-687e-a515-ee3d"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "790e-cc4a-260b-481b",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "200b-4e53-cc72-f9a1::790e-cc4a-260b-481b::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "42dd-1b01-e6c8-41ef",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "200b-4e53-cc72-f9a1::42dd-1b01-e6c8-41ef::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "officerOfTheLine": 2,
+    "facts": {
+      "997b-95c4-dc66-a5f8": 1,
+      "200b-4e53-cc72-f9a1": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "901a-6b71-7a29-4597": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "7fcf-5885-0a4d-ee31": 1,
+      "fc80-c47b-edb8-7a30": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "d9ea-ab56-4f96-be0d",
+      "path": "200b-4e53-cc72-f9a1::d9ea-ab56-4f96-be0d::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "200b-4e53-cc72-f9a1::b7fe-ba5a-4033-adc6"
+      }
+    }
+  },
+  {
+    "name": "Invictus Suzerain Squad",
+    "entryId": "ff65-1f4a-ab24-12ef",
+    "path": "ff65-1f4a-ab24-12ef::3a11-d72b-2f04-cc62",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 175,
+    "baseCost": 25,
+    "models": [
+      {
+        "name": "Suzerain",
+        "entryId": "0530-7b19-9a92-6a6e",
+        "path": "ff65-1f4a-ab24-12ef::0530-7b19-9a92-6a6e",
+        "cost": 30,
+        "min": 5,
+        "max": 10,
+        "defaultWargear": [
+          {
+            "name": "Argyrum pattern boarding shield",
+            "entryId": "597f-3d42-00c0-a1ac",
+            "targetId": "08d0-c612-7007-103d",
+            "path": "ff65-1f4a-ab24-12ef::597f-3d42-00c0-a1ac::08d0-c612-7007-103d"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "a394-7b18-bb21-7661",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "ff65-1f4a-ab24-12ef::a394-7b18-bb21-7661::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "0502-06e9-2597-15cc",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "ff65-1f4a-ab24-12ef::0502-06e9-2597-15cc::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Legatine axe",
+            "entryId": "8f43-ed4d-7898-1a79",
+            "targetId": "46f0-ca50-4e6e-e49f",
+            "path": "ff65-1f4a-ab24-12ef::8f43-ed4d-7898-1a79::46f0-ca50-4e6e-e49f",
+            "groupPath": "ff65-1f4a-ab24-12ef::d2ab-5e55-3845-1ba6"
+          }
+        ]
+      }
+    ],
+    "source": "ultramarines",
+    "facts": {
+      "3a11-d72b-2f04-cc62": 1,
+      "ff65-1f4a-ab24-12ef": 1,
+      "26c6-e05c-0f72-7852": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "7fcf-5885-0a4d-ee31": 1,
+      "0530-7b19-9a92-6a6e": 5,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "597f-3d42-00c0-a1ac": 5,
+      "08d0-c612-7007-103d": 5,
+      "a394-7b18-bb21-7661": 5,
+      "60e4-ca33-2e68-9afc": 5,
+      "0502-06e9-2597-15cc": 5,
+      "fa20-82bc-c7de-9e97": 5,
+      "8f43-ed4d-7898-1a79": 5,
+      "46f0-ca50-4e6e-e49f": 5
+    },
+    "prime": {
+      "linkId": "270e-7558-4735-8033",
+      "path": "ff65-1f4a-ab24-12ef::270e-7558-4735-8033::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "ff65-1f4a-ab24-12ef::d6e7-e513-487c-92e2"
+      }
+    }
+  },
+  {
+    "name": "Praetorian Breacher Squad",
+    "entryId": "b0f9-fbe4-6e4f-f630",
+    "path": "b0f9-fbe4-6e4f-f630::f115-4466-aa86-b446",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 115,
+    "baseCost": 43,
+    "models": [
+      {
+        "name": "Praetorian Primus",
+        "entryId": "d8da-2e7b-77ac-dc40",
+        "path": "b0f9-fbe4-6e4f-f630::d8da-2e7b-77ac-dc40",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Boarding shield",
+            "entryId": "58b2-3277-bec5-29a6",
+            "targetId": "01e9-334c-80cb-f1c6",
+            "path": "b0f9-fbe4-6e4f-f630::58b2-3277-bec5-29a6::01e9-334c-80cb-f1c6"
+          },
+          {
+            "name": "Power sword",
+            "entryId": "59a0-004d-96e5-7473",
+            "targetId": "59a9-57c1-fff9-ca75",
+            "path": "b0f9-fbe4-6e4f-f630::59a0-004d-96e5-7473::59a9-57c1-fff9-ca75",
+            "groupPath": "b0f9-fbe4-6e4f-f630::f9fb-05c7-3726-6a27"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "845c-0643-12ab-ac32",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "b0f9-fbe4-6e4f-f630::845c-0643-12ab-ac32::2942-f783-d627-33c5",
+            "groupPath": "b0f9-fbe4-6e4f-f630::e571-6efe-edf2-f7d3"
+          }
+        ]
+      },
+      {
+        "name": "Praetorian",
+        "entryId": "ee11-4138-eeda-58f7",
+        "path": "b0f9-fbe4-6e4f-f630::ee11-4138-eeda-58f7",
+        "cost": 18,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Power sword",
+            "entryId": "2e0f-7974-8f94-c663",
+            "targetId": "59a9-57c1-fff9-ca75",
+            "path": "b0f9-fbe4-6e4f-f630::2e0f-7974-8f94-c663::59a9-57c1-fff9-ca75"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "3512-b9e7-0988-59f9",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "b0f9-fbe4-6e4f-f630::3512-b9e7-0988-59f9::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Boarding shield",
+            "entryId": "4994-b05c-c771-8b2e",
+            "targetId": "01e9-334c-80cb-f1c6",
+            "path": "b0f9-fbe4-6e4f-f630::4994-b05c-c771-8b2e::01e9-334c-80cb-f1c6"
+          }
+        ]
+      }
+    ],
+    "source": "ultramarines",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "84fb-a48d-91c6-9adc",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "b0f9-fbe4-6e4f-f630::84fb-a48d-91c6-9adc::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "dd81-1147-64f5-a208",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "b0f9-fbe4-6e4f-f630::dd81-1147-64f5-a208::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "f115-4466-aa86-b446": 1,
+      "b0f9-fbe4-6e4f-f630": 1,
+      "26c6-e05c-0f72-7852": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "7fcf-5885-0a4d-ee31": 1,
+      "d8da-2e7b-77ac-dc40": 1,
+      "594d-fa82-13cb-a345": 5,
+      "8045-89a4-76d4-fcef": 1,
+      "1e7d-9066-28d2-97a0": 5,
+      "58b2-3277-bec5-29a6": 1,
+      "01e9-334c-80cb-f1c6": 5,
+      "59a0-004d-96e5-7473": 1,
+      "59a9-57c1-fff9-ca75": 5,
+      "845c-0643-12ab-ac32": 1,
+      "2942-f783-d627-33c5": 5,
+      "ee11-4138-eeda-58f7": 4,
+      "2e0f-7974-8f94-c663": 4,
+      "3512-b9e7-0988-59f9": 4,
+      "4994-b05c-c771-8b2e": 4
+    },
+    "prime": {
+      "linkId": "8102-1632-4e6c-aab0",
+      "path": "b0f9-fbe4-6e4f-f630::8102-1632-4e6c-aab0::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "b0f9-fbe4-6e4f-f630::b694-1111-49eb-8560"
+      }
+    }
+  },
+  {
+    "name": "Locutarus Storm Squad",
+    "entryId": "2193-0ccf-1124-4d3f",
+    "path": "2193-0ccf-1124-4d3f::1d7c-9f14-440c-b457",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 200,
+    "baseCost": 48,
+    "models": [
+      {
+        "name": "Locutarus",
+        "entryId": "8679-05f0-4f87-ad4b",
+        "path": "2193-0ccf-1124-4d3f::8679-05f0-4f87-ad4b",
+        "cost": 38,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Argean power sword",
+            "entryId": "a900-861d-5f76-a50a",
+            "targetId": "c532-24e1-4b57-e753",
+            "path": "2193-0ccf-1124-4d3f::a900-861d-5f76-a50a::c532-24e1-4b57-e753"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "7c44-1d06-604f-ab23",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "2193-0ccf-1124-4d3f::7c44-1d06-604f-ab23::2942-f783-d627-33c5"
+          }
+        ]
+      },
+      {
+        "name": "Locutarus Strike Leader",
+        "entryId": "1149-f536-4302-a6de",
+        "path": "2193-0ccf-1124-4d3f::1149-f536-4302-a6de",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Argean power sword",
+            "entryId": "80ac-522b-d373-6250",
+            "targetId": "c532-24e1-4b57-e753",
+            "path": "2193-0ccf-1124-4d3f::80ac-522b-d373-6250::c532-24e1-4b57-e753",
+            "groupPath": "2193-0ccf-1124-4d3f::44c0-63a7-44c2-a707"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "8c3c-dde3-4816-9065",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "2193-0ccf-1124-4d3f::8c3c-dde3-4816-9065::2942-f783-d627-33c5",
+            "groupPath": "2193-0ccf-1124-4d3f::339d-5e83-4692-b2a1"
+          }
+        ]
+      }
+    ],
+    "source": "ultramarines",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "43fc-94fa-4bdf-a921",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "2193-0ccf-1124-4d3f::43fc-94fa-4bdf-a921::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "2a65-8f10-498d-a74f",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "2193-0ccf-1124-4d3f::2a65-8f10-498d-a74f::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "1d7c-9f14-440c-b457": 1,
+      "2193-0ccf-1124-4d3f": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "8679-05f0-4f87-ad4b": 4,
+      "594d-fa82-13cb-a345": 5,
+      "c504-9dfa-35d3-c98f": 5,
+      "a900-861d-5f76-a50a": 4,
+      "c532-24e1-4b57-e753": 5,
+      "7c44-1d06-604f-ab23": 4,
+      "2942-f783-d627-33c5": 5,
+      "1149-f536-4302-a6de": 1,
+      "5a95-e564-96b2-8dc9": 1,
+      "80ac-522b-d373-6250": 1,
+      "8c3c-dde3-4816-9065": 1
+    },
+    "prime": {
+      "linkId": "a26a-b56b-950a-fb88",
+      "path": "2193-0ccf-1124-4d3f::a26a-b56b-950a-fb88::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "2193-0ccf-1124-4d3f::2d5c-1c80-92f1-750c"
+      }
+    }
+  },
+  {
+    "name": "Fulmentarus Terminator Squad",
+    "entryId": "55ef-afeb-9594-6fc7",
+    "path": "55ef-afeb-9594-6fc7::a02e-5bce-45bd-a1b5",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 290,
+    "baseCost": 70,
+    "models": [
+      {
+        "name": "Fulmentarus Terminator",
+        "entryId": "d4df-e5a7-4479-bab0",
+        "path": "55ef-afeb-9594-6fc7::d4df-e5a7-4479-bab0",
+        "cost": 55,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Combi-bolter",
+            "entryId": "ae62-559c-4d57-b3bb",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "55ef-afeb-9594-6fc7::ae62-559c-4d57-b3bb::042d-9e60-db9e-c147"
+          },
+          {
+            "name": "Fulmentarus Missile Array",
+            "entryId": "ca4b-c91c-0401-3027",
+            "targetId": "fd6c-bad0-38bf-30cd",
+            "path": "55ef-afeb-9594-6fc7::ca4b-c91c-0401-3027::fd6c-bad0-38bf-30cd"
+          },
+          {
+            "name": "Peritarch Targeter",
+            "entryId": "5bed-e020-4fc0-7ada",
+            "targetId": "7379-8243-491e-7be9",
+            "path": "55ef-afeb-9594-6fc7::5bed-e020-4fc0-7ada::7379-8243-491e-7be9",
+            "groupPath": "55ef-afeb-9594-6fc7::efed-f305-8cc8-8e08"
+          }
+        ]
+      },
+      {
+        "name": "Fulmentarus Sergeant",
+        "entryId": "fe63-8394-47cc-b63f",
+        "path": "55ef-afeb-9594-6fc7::fe63-8394-47cc-b63f",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Combi-bolter",
+            "entryId": "dacf-804b-4cbd-8657",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "55ef-afeb-9594-6fc7::dacf-804b-4cbd-8657::042d-9e60-db9e-c147"
+          },
+          {
+            "name": "Fulmentarus Missile Array",
+            "entryId": "6175-bb4a-230e-120a",
+            "targetId": "fd6c-bad0-38bf-30cd",
+            "path": "55ef-afeb-9594-6fc7::6175-bb4a-230e-120a::fd6c-bad0-38bf-30cd"
+          },
+          {
+            "name": "Peritarch Targeter",
+            "entryId": "7c89-20ab-464b-0b31",
+            "targetId": "7379-8243-491e-7be9",
+            "path": "55ef-afeb-9594-6fc7::7c89-20ab-464b-0b31::7379-8243-491e-7be9",
+            "groupPath": "55ef-afeb-9594-6fc7::717d-2f2c-43e7-a1f2"
+          }
+        ]
+      }
+    ],
+    "source": "ultramarines",
+    "facts": {
+      "a02e-5bce-45bd-a1b5": 1,
+      "55ef-afeb-9594-6fc7": 1,
+      "647c-faca-3c98-c203": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "d4df-e5a7-4479-bab0": 4,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "ae62-559c-4d57-b3bb": 4,
+      "042d-9e60-db9e-c147": 5,
+      "ca4b-c91c-0401-3027": 4,
+      "fd6c-bad0-38bf-30cd": 5,
+      "5bed-e020-4fc0-7ada": 4,
+      "7379-8243-491e-7be9": 5,
+      "fe63-8394-47cc-b63f": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "dacf-804b-4cbd-8657": 1,
+      "6175-bb4a-230e-120a": 1,
+      "7c89-20ab-464b-0b31": 1
+    },
+    "prime": {
+      "linkId": "c79d-64d6-4478-daff",
+      "path": "55ef-afeb-9594-6fc7::c79d-64d6-4478-daff::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "55ef-afeb-9594-6fc7::9bf4-1122-08d5-46b3"
+      }
+    }
+  },
+  {
+    "name": "Nemesis Destroyer Squad",
+    "entryId": "44a3-8385-1955-a76c",
+    "path": "44a3-8385-1955-a76c::99b9-94e2-4ef2-9cd6",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 165,
+    "baseCost": 30,
+    "models": [
+      {
+        "name": "Nemesis Destroyer",
+        "entryId": "0c90-e569-4600-8ac0",
+        "path": "44a3-8385-1955-a76c::0c90-e569-4600-8ac0",
+        "cost": 15,
+        "min": 9,
+        "max": 19,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "f0e5-c2a4-4142-bbba",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "44a3-8385-1955-a76c::f0e5-c2a4-4142-bbba::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Mortifier Bolter",
+            "entryId": "7dea-9c6d-3a97-9667",
+            "targetId": "54a6-c85d-141a-9577",
+            "path": "44a3-8385-1955-a76c::7dea-9c6d-3a97-9667::54a6-c85d-141a-9577"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "6e05-8514-5846-ec69",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "44a3-8385-1955-a76c::6e05-8514-5846-ec69::78f4-4967-2896-c3a5"
+          }
+        ]
+      },
+      {
+        "name": "Nemesis Destroyer Sergeant",
+        "entryId": "8353-e023-4b30-91e6",
+        "path": "44a3-8385-1955-a76c::8353-e023-4b30-91e6",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "dc80-16b4-439f-a9cb",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "44a3-8385-1955-a76c::dc80-16b4-439f-a9cb::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Mortifier Bolter",
+            "entryId": "4db7-6322-de84-9e84",
+            "targetId": "54a6-c85d-141a-9577",
+            "path": "44a3-8385-1955-a76c::4db7-6322-de84-9e84::54a6-c85d-141a-9577"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "7dc8-2e87-4de5-a85a",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "44a3-8385-1955-a76c::7dc8-2e87-4de5-a85a::78f4-4967-2896-c3a5",
+            "groupPath": "44a3-8385-1955-a76c::b709-bfe2-4e7b-88f1"
+          }
+        ]
+      }
+    ],
+    "source": "ultramarines",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "b59d-4055-4bed-b1bd",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "44a3-8385-1955-a76c::b59d-4055-4bed-b1bd::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "1a59-63eb-46fa-936e",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "44a3-8385-1955-a76c::1a59-63eb-46fa-936e::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Rad grenades",
+        "entryId": "04df-825f-4f40-bb82",
+        "targetId": "cd5f-1eff-df69-6bd2",
+        "path": "44a3-8385-1955-a76c::04df-825f-4f40-bb82::cd5f-1eff-df69-6bd2"
+      }
+    ],
+    "facts": {
+      "99b9-94e2-4ef2-9cd6": 1,
+      "44a3-8385-1955-a76c": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "0c90-e569-4600-8ac0": 9,
+      "594d-fa82-13cb-a345": 10,
+      "f0e5-c2a4-4142-bbba": 9,
+      "2942-f783-d627-33c5": 10,
+      "7dea-9c6d-3a97-9667": 9,
+      "54a6-c85d-141a-9577": 10,
+      "6e05-8514-5846-ec69": 9,
+      "78f4-4967-2896-c3a5": 10,
+      "8353-e023-4b30-91e6": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "dc80-16b4-439f-a9cb": 1,
+      "4db7-6322-de84-9e84": 1,
+      "7dc8-2e87-4de5-a85a": 1
+    },
+    "prime": {
+      "linkId": "a7e7-b5d5-6bc0-72c1",
+      "path": "44a3-8385-1955-a76c::a7e7-b5d5-6bc0-72c1::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "44a3-8385-1955-a76c::dff6-0cee-dec1-000a"
+      }
+    }
+  },
+  {
+    "name": "Honoured Telemechrus",
+    "rosterMax": 1,
+    "entryId": "f0be-253d-5105-5b0e",
+    "path": "f0be-253d-5105-5b0e::1631-0dce-4bfb-9782",
+    "role": "War-engine",
+    "primaryCategory": "War-engine",
+    "points": 170,
+    "baseCost": 170,
+    "models": [
+      {
+        "name": "Honoured Telemechrus",
+        "entryId": "dcd6-4cb5-407a-a06f",
+        "path": "f0be-253d-5105-5b0e::dcd6-4cb5-407a-a06f",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Kheres assault cannon",
+            "entryId": "0e74-d80a-45c9-9c36",
+            "targetId": "11a5-70a9-9b14-10d3",
+            "path": "f0be-253d-5105-5b0e::0e74-d80a-45c9-9c36::11a5-70a9-9b14-10d3"
+          },
+          {
+            "name": "Gravis power fist",
+            "entryId": "5156-3df7-4a20-9d98",
+            "targetId": "ea00-ac16-4ae6-87d3",
+            "path": "f0be-253d-5105-5b0e::5156-3df7-4a20-9d98::ea00-ac16-4ae6-87d3"
+          },
+          {
+            "name": "Combi-bolter",
+            "entryId": "f03b-d6c1-4694-936d",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "f0be-253d-5105-5b0e::f03b-d6c1-4694-936d::042d-9e60-db9e-c147"
+          }
+        ]
+      }
+    ],
+    "source": "ultramarines",
+    "facts": {
+      "1631-0dce-4bfb-9782": 1,
+      "f0be-253d-5105-5b0e": 1,
+      "2499-7239-685f-8465": 1,
+      "dcd6-4cb5-407a-a06f": 1,
+      "38d4-d720-8009-acd3": 1,
+      "b980-187b-2b17-d635": 1,
+      "0e74-d80a-45c9-9c36": 1,
+      "11a5-70a9-9b14-10d3": 1,
+      "5156-3df7-4a20-9d98": 1,
+      "ea00-ac16-4ae6-87d3": 1,
+      "f03b-d6c1-4694-936d": 1,
+      "042d-9e60-db9e-c147": 1
+    },
+    "prime": {
+      "linkId": "e2e3-0728-9012-8f11",
+      "path": "f0be-253d-5105-5b0e::e2e3-0728-9012-8f11::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "f0be-253d-5105-5b0e::434a-18a6-834e-5cea"
+      }
+    }
+  },
+  {
+    "name": "Inductii Squad",
+    "entryId": "62c4-dbbe-1738-38c9",
+    "path": "62c4-dbbe-1738-38c9::455f-d06a-45b1-a332",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 114,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Inductii",
+        "entryId": "4b2c-8f0b-4c70-8a00",
+        "path": "62c4-dbbe-1738-38c9::4b2c-8f0b-4c70-8a00",
+        "cost": 9,
+        "min": 10,
+        "max": 10,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "7704-0ffa-43c9-b45a",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "62c4-dbbe-1738-38c9::7704-0ffa-43c9-b45a::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "4b5d-b6bb-4735-b9ed",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "62c4-dbbe-1738-38c9::4b5d-b6bb-4735-b9ed::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "2fba-a682-495e-ad62",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "62c4-dbbe-1738-38c9::2fba-a682-495e-ad62::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolter",
+            "entryId": "8889-2e1c-46b8-961b",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "62c4-dbbe-1738-38c9::8889-2e1c-46b8-961b::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "62c4-dbbe-1738-38c9::498d-fa05-47eb-bd61"
+          }
+        ]
+      },
+      {
+        "name": "Evocatus Intendant",
+        "entryId": "0a85-f359-41bc-b251",
+        "path": "62c4-dbbe-1738-38c9::0a85-f359-41bc-b251",
+        "cost": 24,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "8907-fcd0-4df6-adf8",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "62c4-dbbe-1738-38c9::8907-fcd0-4df6-adf8::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "3890-86f0-452a-a195",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "62c4-dbbe-1738-38c9::3890-86f0-452a-a195::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolter",
+            "entryId": "a619-8bbd-4246-bffc",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "62c4-dbbe-1738-38c9::a619-8bbd-4246-bffc::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "62c4-dbbe-1738-38c9::4604-3be0-4fd2-a68b"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "5b84-2eae-a2c8-c9e4",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "62c4-dbbe-1738-38c9::5b84-2eae-a2c8-c9e4::2942-f783-d627-33c5",
+            "groupPath": "62c4-dbbe-1738-38c9::70c7-d0eb-818c-0064"
+          }
+        ]
+      }
+    ],
+    "source": "ultramarines",
+    "facts": {
+      "455f-d06a-45b1-a332": 1,
+      "62c4-dbbe-1738-38c9": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "4b2c-8f0b-4c70-8a00": 10,
+      "594d-fa82-13cb-a345": 11,
+      "7704-0ffa-43c9-b45a": 10,
+      "2942-f783-d627-33c5": 11,
+      "4b5d-b6bb-4735-b9ed": 10,
+      "60e4-ca33-2e68-9afc": 11,
+      "2fba-a682-495e-ad62": 10,
+      "fa20-82bc-c7de-9e97": 11,
+      "8889-2e1c-46b8-961b": 10,
+      "d3f9-b9e6-3ea5-cc8e": 11,
+      "0a85-f359-41bc-b251": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "8907-fcd0-4df6-adf8": 1,
+      "3890-86f0-452a-a195": 1,
+      "a619-8bbd-4246-bffc": 1,
+      "5b84-2eae-a2c8-c9e4": 1
+    }
+  }
+]

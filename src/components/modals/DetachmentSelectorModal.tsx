@@ -7,9 +7,9 @@ import {
   Button,
 } from '@carbon/react';
 import type { DetachmentDef } from '../../types';
+import type { DetachmentAvailability } from '../../rules/options';
 import { getDetachmentsForFaction, getDetachmentDisplayName } from '../../data/loader';
-import { useRosterStore } from '../../store/rosterStore';
-import { COHORT_DOCTRINE_BY_ID } from '../../constants/cohortDoctrines';
+import { noFocusScroll } from './noFocusScroll';
 
 interface DetachmentSelectorModalProps {
   trigger: 'highCommand' | 'command';
@@ -17,8 +17,12 @@ interface DetachmentSelectorModalProps {
   title?: string;
   /** Explicit options; defaults to the Apex/Auxiliary detachments for the trigger */
   options?: DetachmentDef[];
-  /** Highlight the cohort doctrine's boosted Tercio (primary army only) */
-  showDoctrine?: boolean;
+  /**
+   * Whether to offer a detachment: hidden ones aren't listed; locked ones (a
+   * unit would unlock them) are listed last, dimmed, with the reason, and stay
+   * selectable
+   */
+  availability?: (def: DetachmentDef) => DetachmentAvailability;
   onConfirm: (def: DetachmentDef) => void;
   onClose: () => void;
 }
@@ -28,16 +32,18 @@ export default function DetachmentSelectorModal({
   faction,
   title: titleProp,
   options: optionsProp,
-  showDoctrine = true,
+  availability = () => ({ status: 'ok' }),
   onConfirm,
   onClose,
 }: DetachmentSelectorModalProps) {
-  const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
-  const boostedTercio =
-    showDoctrine && cohortDoctrine ? COHORT_DOCTRINE_BY_ID[cohortDoctrine]?.boostedTercio ?? null : null;
 
-  const options =
+  const allOptions =
     optionsProp ?? getDetachmentsForFaction(trigger === 'highCommand' ? 'apex' : 'auxiliary', faction);
+  const status = new Map(allOptions.map((d) => [d, availability(d)]));
+  const locked = new Set(allOptions.filter((d) => status.get(d)?.status === 'locked'));
+  const shown = allOptions.filter((d) => status.get(d)?.status !== 'hidden');
+  const options = [...shown.filter((d) => !locked.has(d)), ...shown.filter((d) => locked.has(d))];
+  const firstLocked = options.find((d) => locked.has(d));
 
   const title =
     titleProp ??
@@ -49,8 +55,6 @@ export default function DetachmentSelectorModal({
       <ModalBody hasForm>
         <div
           style={{
-            maxHeight: 440,
-            overflowY: 'auto',
             display: 'flex',
             flexDirection: 'column',
             gap: 4,
@@ -62,11 +66,17 @@ export default function DetachmentSelectorModal({
               .filter((s) => s.max > 0)
               .map((s) => `${s.max}× ${s.role.replace('Prime ', '★ ')}`)
               .join('  ·  ');
-            const isDoctrineBoost = boostedTercio !== null && displayName === boostedTercio;
+            const isLockedDef = locked.has(def);
 
             return (
+              <React.Fragment key={def.name}>
+              {def === firstLocked && (
+                <div style={{ fontSize: 11, color: 'var(--cds-text-secondary)', margin: '10px 2px 2px' }}>
+                  Not unlocked yet — taking one shows a warning
+                </div>
+              )}
               <button
-                key={def.name}
+                onMouseDown={noFocusScroll}
                 onClick={() => onConfirm(def)}
                 style={{
                   display: 'block',
@@ -74,9 +84,10 @@ export default function DetachmentSelectorModal({
                   textAlign: 'left',
                   padding: '12px 14px',
                   borderRadius: 2,
-                  border: `1px solid ${isDoctrineBoost ? 'var(--cds-interactive)' : 'transparent'}`,
+                  border: '1px solid transparent',
                   background: 'var(--cds-layer-02)',
                   cursor: 'pointer',
+                  opacity: isLockedDef ? 0.55 : 1,
                 }}
                 onMouseEnter={(e) => {
                   (e.currentTarget as HTMLButtonElement).style.background = 'var(--cds-layer-hover-02)';
@@ -89,27 +100,18 @@ export default function DetachmentSelectorModal({
                   <span style={{ color: 'var(--cds-text-primary)', fontWeight: 500, fontSize: 14 }}>
                     {displayName}
                   </span>
-                  {isDoctrineBoost && (
-                    <span style={{
-                      fontSize: 10,
-                      fontWeight: 600,
-                      letterSpacing: '0.04em',
-                      textTransform: 'uppercase',
-                      color: 'var(--cds-interactive)',
-                      border: '1px solid var(--cds-interactive)',
-                      borderRadius: 2,
-                      padding: '1px 5px',
-                      lineHeight: 1.4,
-                      whiteSpace: 'nowrap',
-                    }}>
-                      Doctrine Bonus
-                    </span>
-                  )}
                 </div>
                 <div style={{ color: 'var(--cds-text-secondary)', fontSize: 11, lineHeight: 1.4 }}>
                   {slotSummary}
                 </div>
+                {isLockedDef && (() => {
+                  const s = status.get(def);
+                  return s?.status === 'locked' && s.reason ? (
+                    <div style={{ color: 'var(--cds-support-warning)', fontSize: 11, marginTop: 3 }}>{s.reason}</div>
+                  ) : null;
+                })()}
               </button>
+              </React.Fragment>
             );
           })}
         </div>

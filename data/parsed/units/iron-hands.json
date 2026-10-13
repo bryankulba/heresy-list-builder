@@ -1,0 +1,927 @@
+[
+  {
+    "name": "Ferrus Manus",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "0dbe-8971-9089-37e4",
+    "path": "0dbe-8971-9089-37e4::667d-97c2-e1ea-8fa6",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 465,
+    "baseCost": 465,
+    "models": [
+      {
+        "name": "Ferrus Manus",
+        "entryId": "8b48-c746-3287-3f80",
+        "path": "0dbe-8971-9089-37e4::8b48-c746-3287-3f80",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "iron-hands",
+    "unitWargear": [
+      {
+        "name": "Forgebreaker",
+        "entryId": "f144-c060-425f-64d5",
+        "path": "0dbe-8971-9089-37e4::f144-c060-425f-64d5"
+      },
+      {
+        "name": "The Medusan Carapace",
+        "entryId": "ef80-1543-8f31-1bb2",
+        "path": "0dbe-8971-9089-37e4::ef80-1543-8f31-1bb2"
+      },
+      {
+        "name": "Sire of the Iron Hands",
+        "entryId": "426f-aa7a-5b53-2dc1",
+        "path": "0dbe-8971-9089-37e4::426f-aa7a-5b53-2dc1"
+      },
+      {
+        "name": "Gambit: Tempered by War",
+        "entryId": "f34f-2969-feed-e7c8",
+        "path": "0dbe-8971-9089-37e4::f34f-2969-feed-e7c8"
+      }
+    ],
+    "facts": {
+      "667d-97c2-e1ea-8fa6": 1,
+      "0dbe-8971-9089-37e4": 1,
+      "fc09-911b-ee8c-7967": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "22ee-7208-4089-b005": 1,
+      "3db6-86ea-fd61-340b": 1,
+      "8b48-c746-3287-3f80": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1
+    }
+  },
+  {
+    "name": "Iron Father",
+    "entryId": "57c5-8e93-1b90-a077",
+    "path": "57c5-8e93-1b90-a077::34fa-844e-fbfb-3737",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 175,
+    "baseCost": 175,
+    "models": [
+      {
+        "name": "Iron Father",
+        "entryId": "8e49-77dc-b7b2-6ec3",
+        "path": "57c5-8e93-1b90-a077::8e49-77dc-b7b2-6ec3",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "iron-hands",
+    "unitWargear": [
+      {
+        "name": "Lord of Automata",
+        "entryId": "0510-31ec-43df-2947",
+        "targetId": "0f18-54e0-f92c-e4fb",
+        "path": "57c5-8e93-1b90-a077::0510-31ec-43df-2947::0f18-54e0-f92c-e4fb"
+      },
+      {
+        "name": "Servo-arm",
+        "entryId": "f107-3422-b5b3-382a",
+        "targetId": "9902-2d5f-0df2-5cf0",
+        "path": "57c5-8e93-1b90-a077::f107-3422-b5b3-382a::9902-2d5f-0df2-5cf0"
+      },
+      {
+        "name": "Augury scanner",
+        "entryId": "2dd4-cd87-6f9d-22eb",
+        "targetId": "fede-99f5-4c76-4659",
+        "path": "57c5-8e93-1b90-a077::2dd4-cd87-6f9d-22eb::fede-99f5-4c76-4659"
+      },
+      {
+        "name": "Cortex controller",
+        "entryId": "a09a-1486-d8fb-7c7f",
+        "targetId": "e1c7-e5c2-8a4c-1e79",
+        "path": "57c5-8e93-1b90-a077::a09a-1486-d8fb-7c7f::e1c7-e5c2-8a4c-1e79"
+      },
+      {
+        "name": "Volkite charger",
+        "entryId": "1e07-6855-1edf-0b78",
+        "targetId": "93e7-6a83-1e9e-204a",
+        "path": "57c5-8e93-1b90-a077::1e07-6855-1edf-0b78::93e7-6a83-1e9e-204a",
+        "groupPath": "57c5-8e93-1b90-a077::8203-126e-924a-66e2"
+      },
+      {
+        "name": "Artificer Power Axe",
+        "entryId": "45c7-f237-6dc1-ec15",
+        "targetId": "68e3-de15-d977-3c36",
+        "path": "57c5-8e93-1b90-a077::45c7-f237-6dc1-ec15::68e3-de15-d977-3c36",
+        "groupPath": "57c5-8e93-1b90-a077::6c25-dcb1-f312-fdc5"
+      }
+    ],
+    "facts": {
+      "34fa-844e-fbfb-3737": 1,
+      "57c5-8e93-1b90-a077": 1,
+      "fc09-911b-ee8c-7967": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "8e49-77dc-b7b2-6ec3": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "1e7d-9066-28d2-97a0": 1
+    },
+    "prime": {
+      "linkId": "0b0d-e5e4-3387-598d",
+      "path": "57c5-8e93-1b90-a077::0b0d-e5e4-3387-598d::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "57c5-8e93-1b90-a077::e74a-52be-4c16-9cb2"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "57c5-8e93-1b90-a077::de46-aba0-846f-022b",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Medusan Immortals Squad",
+    "entryId": "bd09-0375-e876-b754",
+    "path": "bd09-0375-e876-b754::c54a-6c98-0f74-d45c",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 95,
+    "baseCost": 35,
+    "models": [
+      {
+        "name": "Immortal Sergeant",
+        "entryId": "e61b-4383-c5b7-602a",
+        "path": "bd09-0375-e876-b754::e61b-4383-c5b7-602a",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Bolter",
+            "entryId": "1e85-deea-50fe-22a4",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "bd09-0375-e876-b754::1e85-deea-50fe-22a4::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "bd09-0375-e876-b754::1da5-2f04-fde5-7cdb"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "bde9-6804-aa2b-edc7",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "bd09-0375-e876-b754::bde9-6804-aa2b-edc7::2942-f783-d627-33c5",
+            "groupPath": "bd09-0375-e876-b754::d9e1-a10e-a9c5-90ef"
+          }
+        ]
+      },
+      {
+        "name": "Immortal",
+        "entryId": "de2c-ac8f-4ed3-47d2",
+        "path": "bd09-0375-e876-b754::de2c-ac8f-4ed3-47d2",
+        "cost": 15,
+        "min": 4,
+        "max": 19,
+        "defaultWargear": [
+          {
+            "name": "Bolter",
+            "entryId": "dce1-5479-53fe-6f5e",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "bd09-0375-e876-b754::dce1-5479-53fe-6f5e::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "bd09-0375-e876-b754::1162-bffd-ae11-1cd5"
+          }
+        ]
+      }
+    ],
+    "source": "iron-hands",
+    "unitWargear": [
+      {
+        "name": "Boarding shield",
+        "entryId": "1612-6d39-de01-fec0",
+        "targetId": "01e9-334c-80cb-f1c6",
+        "path": "bd09-0375-e876-b754::1612-6d39-de01-fec0::01e9-334c-80cb-f1c6"
+      }
+    ],
+    "facts": {
+      "c54a-6c98-0f74-d45c": 1,
+      "bd09-0375-e876-b754": 1,
+      "26c6-e05c-0f72-7852": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "3db6-86ea-fd61-340b": 1,
+      "e61b-4383-c5b7-602a": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "1e85-deea-50fe-22a4": 1,
+      "d3f9-b9e6-3ea5-cc8e": 5,
+      "bde9-6804-aa2b-edc7": 1,
+      "2942-f783-d627-33c5": 1,
+      "de2c-ac8f-4ed3-47d2": 4,
+      "dce1-5479-53fe-6f5e": 4
+    },
+    "prime": {
+      "linkId": "effc-3725-1a58-e670",
+      "path": "bd09-0375-e876-b754::effc-3725-1a58-e670::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "bd09-0375-e876-b754::747c-184f-4492-8de4"
+      }
+    }
+  },
+  {
+    "name": "Shadrak Meduson",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "951e-fe53-524b-f379",
+    "path": "951e-fe53-524b-f379::218f-d70c-501e-0572",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 175,
+    "baseCost": 175,
+    "models": [
+      {
+        "name": "Shadrak Meduson",
+        "entryId": "6df8-a890-f067-fdfb",
+        "path": "951e-fe53-524b-f379::6df8-a890-f067-fdfb",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "iron-hands",
+    "unitWargear": [
+      {
+        "name": "Storm's Wrath",
+        "entryId": "673e-2d29-6502-f8a3",
+        "path": "951e-fe53-524b-f379::673e-2d29-6502-f8a3"
+      },
+      {
+        "name": "Albian power gladius",
+        "entryId": "2397-aa84-37bb-cd78",
+        "path": "951e-fe53-524b-f379::2397-aa84-37bb-cd78"
+      },
+      {
+        "name": "Servo-arm",
+        "entryId": "3d3d-8c07-41e6-8002",
+        "targetId": "9902-2d5f-0df2-5cf0",
+        "path": "951e-fe53-524b-f379::3d3d-8c07-41e6-8002::9902-2d5f-0df2-5cf0"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "d22d-9c67-1203-127f",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "951e-fe53-524b-f379::d22d-9c67-1203-127f::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "74b7-fafd-fb8a-3fea",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "951e-fe53-524b-f379::74b7-fafd-fb8a-3fea::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "218f-d70c-501e-0572": 1,
+      "951e-fe53-524b-f379": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "3db6-86ea-fd61-340b": 1,
+      "6df8-a890-f067-fdfb": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "54b0-5d1b-4712-a2eb",
+      "path": "951e-fe53-524b-f379::54b0-5d1b-4712-a2eb::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "951e-fe53-524b-f379::ba88-70fa-4f91-8ff6"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "951e-fe53-524b-f379::c3e9-2ee6-8aaa-ac4a",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Gorgon Terminator Squad",
+    "entryId": "c171-eaf0-8759-cc3f",
+    "path": "c171-eaf0-8759-cc3f::6545-a621-619e-4757",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 200,
+    "baseCost": 60,
+    "models": [
+      {
+        "name": "Gorgon Hammerbearer",
+        "entryId": "d950-7b5d-c9a4-39f4",
+        "path": "c171-eaf0-8759-cc3f::d950-7b5d-c9a4-39f4",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Thunder hammer",
+            "entryId": "9455-cd34-c5b5-5784",
+            "targetId": "4338-dbe9-1e94-7e6d",
+            "path": "c171-eaf0-8759-cc3f::9455-cd34-c5b5-5784::4338-dbe9-1e94-7e6d"
+          },
+          {
+            "name": "Grenade harness",
+            "entryId": "cfb3-64df-ca3e-1e7d",
+            "targetId": "a766-856c-52bd-d30a",
+            "path": "c171-eaf0-8759-cc3f::cfb3-64df-ca3e-1e7d::a766-856c-52bd-d30a"
+          },
+          {
+            "name": "Combi-bolter",
+            "entryId": "7881-face-4b30-63df",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "c171-eaf0-8759-cc3f::7881-face-4b30-63df::042d-9e60-db9e-c147",
+            "groupPath": "c171-eaf0-8759-cc3f::0b4b-db27-c3f1-2062"
+          }
+        ]
+      },
+      {
+        "name": "Gorgon Terminator",
+        "entryId": "e227-99b9-e7a8-99f7",
+        "path": "c171-eaf0-8759-cc3f::e227-99b9-e7a8-99f7",
+        "cost": 35,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Artificer Power Axe",
+            "entryId": "0ca5-5726-fe15-2ba8",
+            "targetId": "68e3-de15-d977-3c36",
+            "path": "c171-eaf0-8759-cc3f::0ca5-5726-fe15-2ba8::68e3-de15-d977-3c36",
+            "groupPath": "c171-eaf0-8759-cc3f::3356-44d1-7848-5d1f"
+          },
+          {
+            "name": "Combi-bolter",
+            "entryId": "1273-7e9e-b70b-534f",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "c171-eaf0-8759-cc3f::1273-7e9e-b70b-534f::042d-9e60-db9e-c147",
+            "groupPath": "c171-eaf0-8759-cc3f::4226-6808-ee6e-4593"
+          }
+        ]
+      }
+    ],
+    "source": "iron-hands",
+    "facts": {
+      "6545-a621-619e-4757": 1,
+      "c171-eaf0-8759-cc3f": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "d950-7b5d-c9a4-39f4": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "9455-cd34-c5b5-5784": 1,
+      "4338-dbe9-1e94-7e6d": 1,
+      "cfb3-64df-ca3e-1e7d": 1,
+      "a766-856c-52bd-d30a": 1,
+      "7881-face-4b30-63df": 1,
+      "042d-9e60-db9e-c147": 5,
+      "e227-99b9-e7a8-99f7": 4,
+      "0ca5-5726-fe15-2ba8": 4,
+      "68e3-de15-d977-3c36": 4,
+      "1273-7e9e-b70b-534f": 4
+    },
+    "prime": {
+      "linkId": "d53d-8791-a0f5-0800",
+      "path": "c171-eaf0-8759-cc3f::d53d-8791-a0f5-0800::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "c171-eaf0-8759-cc3f::e7c3-a28c-4d4b-a223"
+      }
+    }
+  },
+  {
+    "name": "Iron Father In Artificer Armour",
+    "entryId": "0a6f-220a-b758-21c0",
+    "path": "0a6f-220a-b758-21c0::6c8c-9770-46e5-81b6",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 150,
+    "baseCost": 150,
+    "models": [
+      {
+        "name": "Iron Father in Artificer Armour",
+        "entryId": "ba60-ee8d-4eb4-b75d",
+        "path": "0a6f-220a-b758-21c0::ba60-ee8d-4eb4-b75d",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Servo-arm",
+            "entryId": "95a8-6a47-45df-8b1c",
+            "targetId": "9902-2d5f-0df2-5cf0",
+            "path": "0a6f-220a-b758-21c0::95a8-6a47-45df-8b1c::9902-2d5f-0df2-5cf0"
+          },
+          {
+            "name": "Cortex controller",
+            "entryId": "82e2-2b20-4258-b743",
+            "targetId": "e1c7-e5c2-8a4c-1e79",
+            "path": "0a6f-220a-b758-21c0::82e2-2b20-4258-b743::e1c7-e5c2-8a4c-1e79"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "d6ff-eb88-4c83-83d2",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "0a6f-220a-b758-21c0::d6ff-eb88-4c83-83d2::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "5b8c-8b88-44e0-9235",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "0a6f-220a-b758-21c0::5b8c-8b88-44e0-9235::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "b525-121a-4f92-bb84",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "0a6f-220a-b758-21c0::b525-121a-4f92-bb84::2942-f783-d627-33c5",
+            "groupPath": "0a6f-220a-b758-21c0::a45e-0927-4c1a-9bef"
+          },
+          {
+            "name": "Bolter",
+            "entryId": "5ccb-cf82-f684-86db",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "0a6f-220a-b758-21c0::5ccb-cf82-f684-86db::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "0a6f-220a-b758-21c0::eb0f-4fce-4163-aae1"
+          }
+        ]
+      }
+    ],
+    "source": "iron-hands",
+    "unitWargear": [
+      {
+        "name": "Lord of Automata",
+        "entryId": "8b87-f98d-c916-c97b",
+        "targetId": "0f18-54e0-f92c-e4fb",
+        "path": "0a6f-220a-b758-21c0::8b87-f98d-c916-c97b::0f18-54e0-f92c-e4fb"
+      }
+    ],
+    "facts": {
+      "6c8c-9770-46e5-81b6": 1,
+      "0a6f-220a-b758-21c0": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "fc09-911b-ee8c-7967": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "ba60-ee8d-4eb4-b75d": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "95a8-6a47-45df-8b1c": 1,
+      "9902-2d5f-0df2-5cf0": 1,
+      "82e2-2b20-4258-b743": 1,
+      "e1c7-e5c2-8a4c-1e79": 1,
+      "d6ff-eb88-4c83-83d2": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "5b8c-8b88-44e0-9235": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "b525-121a-4f92-bb84": 1,
+      "2942-f783-d627-33c5": 1,
+      "5ccb-cf82-f684-86db": 1,
+      "d3f9-b9e6-3ea5-cc8e": 1
+    },
+    "prime": {
+      "linkId": "f724-de3e-1756-1afd",
+      "path": "0a6f-220a-b758-21c0::f724-de3e-1756-1afd::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "0a6f-220a-b758-21c0::dc63-1a34-951b-ecad"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "0a6f-220a-b758-21c0::55e7-96ea-6f9f-fefa",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Morlock Terminator Squad",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "entryId": "d42a-5ff0-3f10-b2b6",
+    "path": "d42a-5ff0-3f10-b2b6::1c5d-f399-408b-9a24",
+    "role": "Retinue",
+    "primaryCategory": "Retinue",
+    "points": 165,
+    "baseCost": 65,
+    "models": [
+      {
+        "name": "Morlock",
+        "entryId": "649a-4f1e-4a9b-8c21",
+        "path": "d42a-5ff0-3f10-b2b6::649a-4f1e-4a9b-8c21",
+        "cost": 50,
+        "min": 2,
+        "max": 4,
+        "defaultWargear": [
+          {
+            "name": "Combi-bolter",
+            "entryId": "9b76-d98c-c220-7e34",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "d42a-5ff0-3f10-b2b6::9b76-d98c-c220-7e34::042d-9e60-db9e-c147",
+            "groupPath": "d42a-5ff0-3f10-b2b6::353f-2c55-af23-d3d2"
+          },
+          {
+            "name": "Artificer Power Axe",
+            "entryId": "fc55-fdb4-b5ce-1b68",
+            "targetId": "68e3-de15-d977-3c36",
+            "path": "d42a-5ff0-3f10-b2b6::fc55-fdb4-b5ce-1b68::68e3-de15-d977-3c36",
+            "groupPath": "d42a-5ff0-3f10-b2b6::3179-3b62-cb02-9120"
+          }
+        ]
+      },
+      {
+        "name": "Augmentor",
+        "entryId": "baaf-6454-49e9-a93b",
+        "path": "d42a-5ff0-3f10-b2b6::baaf-6454-49e9-a93b",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Artificer Power Axe",
+            "entryId": "e0af-5bd3-4f5d-b38b",
+            "targetId": "68e3-de15-d977-3c36",
+            "path": "d42a-5ff0-3f10-b2b6::e0af-5bd3-4f5d-b38b::68e3-de15-d977-3c36",
+            "groupPath": "d42a-5ff0-3f10-b2b6::50c2-b4f4-4a94-a8aa"
+          },
+          {
+            "name": "Combi-bolter",
+            "entryId": "d460-2382-41b0-8b04",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "d42a-5ff0-3f10-b2b6::d460-2382-41b0-8b04::042d-9e60-db9e-c147",
+            "groupPath": "d42a-5ff0-3f10-b2b6::6be6-e84d-4926-b915"
+          }
+        ]
+      }
+    ],
+    "source": "iron-hands",
+    "facts": {
+      "1c5d-f399-408b-9a24": 1,
+      "d42a-5ff0-3f10-b2b6": 1,
+      "647c-faca-3c98-c203": 1,
+      "a38e-50ff-310f-f19e": 1,
+      "649a-4f1e-4a9b-8c21": 2,
+      "594d-fa82-13cb-a345": 3,
+      "1e7d-9066-28d2-97a0": 3,
+      "9b76-d98c-c220-7e34": 2,
+      "042d-9e60-db9e-c147": 3,
+      "fc55-fdb4-b5ce-1b68": 2,
+      "68e3-de15-d977-3c36": 3,
+      "baaf-6454-49e9-a93b": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "e0af-5bd3-4f5d-b38b": 1,
+      "d460-2382-41b0-8b04": 1
+    },
+    "prime": {
+      "linkId": "a936-b56c-3e37-1863",
+      "path": "d42a-5ff0-3f10-b2b6::a936-b56c-3e37-1863::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "d42a-5ff0-3f10-b2b6::d0eb-ba11-19af-882d"
+      }
+    }
+  },
+  {
+    "name": "Inductii Squad",
+    "entryId": "46f3-4e83-3db3-f1be",
+    "path": "46f3-4e83-3db3-f1be::ee40-8340-4718-90ef",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 90,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Inductii",
+        "entryId": "53d0-f282-4742-acc3",
+        "path": "46f3-4e83-3db3-f1be::53d0-f282-4742-acc3",
+        "cost": 9,
+        "min": 10,
+        "max": 20,
+        "defaultWargear": [
+          {
+            "name": "Bolter",
+            "entryId": "db79-d33c-4b76-8255",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "46f3-4e83-3db3-f1be::db79-d33c-4b76-8255::d3f9-b9e6-3ea5-cc8e"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "76fa-5d90-436a-b83a",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "46f3-4e83-3db3-f1be::76fa-5d90-436a-b83a::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "1373-be4d-4987-b861",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "46f3-4e83-3db3-f1be::1373-be4d-4987-b861::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "aa07-7a31-470d-b117",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "46f3-4e83-3db3-f1be::aa07-7a31-470d-b117::fa20-82bc-c7de-9e97"
+          }
+        ]
+      }
+    ],
+    "source": "iron-hands",
+    "facts": {
+      "ee40-8340-4718-90ef": 1,
+      "46f3-4e83-3db3-f1be": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "53d0-f282-4742-acc3": 10,
+      "594d-fa82-13cb-a345": 10,
+      "db79-d33c-4b76-8255": 10,
+      "d3f9-b9e6-3ea5-cc8e": 10,
+      "76fa-5d90-436a-b83a": 10,
+      "2942-f783-d627-33c5": 10,
+      "1373-be4d-4987-b861": 10,
+      "60e4-ca33-2e68-9afc": 10,
+      "aa07-7a31-470d-b117": 10,
+      "fa20-82bc-c7de-9e97": 10
+    }
+  },
+  {
+    "name": "Castellax Battle Maniple",
+    "hidden": true,
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": false,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "0f18-54e0-f92c-e4fb"
+          }
+        ]
+      }
+    ],
+    "entryId": "3c19-634b-5bc1-cd24",
+    "path": "3c19-634b-5bc1-cd24::e8d6-2ba5-d10d-d617",
+    "role": "Lord of Automata",
+    "primaryCategory": "Lord of Automata",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Castellax (Paragon of Metal)",
+        "entryId": "61ae-2955-4177-a4df",
+        "path": "3c19-634b-5bc1-cd24::61ae-2955-4177-a4df",
+        "cost": 50,
+        "min": 0,
+        "max": 0,
+        "defaultWargear": [
+          {
+            "name": "Mauler bolt cannon",
+            "entryId": "ce29-a75b-7037-2623",
+            "targetId": "ec2c-185f-3e9e-7ccd",
+            "path": "3c19-634b-5bc1-cd24::ce29-a75b-7037-2623::ec2c-185f-3e9e-7ccd"
+          },
+          {
+            "name": "Shock chargers",
+            "entryId": "d737-d2d2-d671-78ed",
+            "targetId": "9f0d-5e6b-1a6e-0546",
+            "path": "3c19-634b-5bc1-cd24::d737-d2d2-d671-78ed::9f0d-5e6b-1a6e-0546",
+            "groupPath": "3c19-634b-5bc1-cd24::3d55-db80-0636-342d"
+          },
+          {
+            "name": "Bolter",
+            "count": 2,
+            "entryId": "8606-def5-7473-defb",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "3c19-634b-5bc1-cd24::8606-def5-7473-defb::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "3c19-634b-5bc1-cd24::ff8a-d46f-b8c8-16a9"
+          }
+        ]
+      },
+      {
+        "name": "Castellax",
+        "entryId": "6d1b-0e66-a950-f0ea",
+        "path": "3c19-634b-5bc1-cd24::6d1b-0e66-a950-f0ea",
+        "cost": 50,
+        "min": 2,
+        "max": 10,
+        "defaultWargear": [
+          {
+            "name": "Mauler bolt cannon",
+            "entryId": "27d1-a226-320d-2999",
+            "targetId": "ec2c-185f-3e9e-7ccd",
+            "path": "3c19-634b-5bc1-cd24::27d1-a226-320d-2999::ec2c-185f-3e9e-7ccd"
+          },
+          {
+            "name": "Shock chargers",
+            "entryId": "7f17-ee9e-8cfb-4e5e",
+            "targetId": "9f0d-5e6b-1a6e-0546",
+            "path": "3c19-634b-5bc1-cd24::7f17-ee9e-8cfb-4e5e::9f0d-5e6b-1a6e-0546",
+            "groupPath": "3c19-634b-5bc1-cd24::0f15-ade9-42bf-8eb7"
+          },
+          {
+            "name": "Bolter",
+            "count": 2,
+            "entryId": "94da-d659-4db3-d979",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "3c19-634b-5bc1-cd24::94da-d659-4db3-d979::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "3c19-634b-5bc1-cd24::762a-0f39-afd1-1f0c"
+          }
+        ]
+      }
+    ],
+    "source": "iron-hands",
+    "unitWargear": [
+      {
+        "name": "Cybernetica",
+        "entryId": "2b49-5e7b-9f4b-2f4f",
+        "targetId": "403d-7806-215e-7676",
+        "path": "3c19-634b-5bc1-cd24::2b49-5e7b-9f4b-2f4f::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "e8d6-2ba5-d10d-d617": 1,
+      "3c19-634b-5bc1-cd24": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "3e59-3bcf-4bf8-d404": 1,
+      "9fb1-5f74-53af-e34c": 1,
+      "6d1b-0e66-a950-f0ea": 2,
+      "5833-5e86-26bc-0916": 2,
+      "27d1-a226-320d-2999": 2,
+      "ec2c-185f-3e9e-7ccd": 2,
+      "7f17-ee9e-8cfb-4e5e": 2,
+      "9f0d-5e6b-1a6e-0546": 2,
+      "94da-d659-4db3-d979": 2,
+      "d3f9-b9e6-3ea5-cc8e": 2
+    },
+    "prime": {
+      "linkId": "f0bf-fcb1-3cee-5d06",
+      "path": "3c19-634b-5bc1-cd24::f0bf-fcb1-3cee-5d06::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "3c19-634b-5bc1-cd24::89c3-e386-201c-227b",
+        "1abc-7dd4-54e7-48e5": "3c19-634b-5bc1-cd24::ba74-fa42-f195-4dbe"
+      }
+    }
+  },
+  {
+    "name": "Castellax Destructor Maniple",
+    "hidden": true,
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": false,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "0f18-54e0-f92c-e4fb"
+          }
+        ]
+      }
+    ],
+    "entryId": "9b65-cb9d-c0ac-33f9",
+    "path": "9b65-cb9d-c0ac-33f9::112f-1168-d07c-7f8f",
+    "role": "Lord of Automata",
+    "primaryCategory": "Lord of Automata",
+    "points": 100,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Castellax",
+        "entryId": "66b7-9883-86f7-a90f",
+        "path": "9b65-cb9d-c0ac-33f9::66b7-9883-86f7-a90f",
+        "cost": 50,
+        "min": 2,
+        "max": 6,
+        "defaultWargear": [
+          {
+            "name": "Shock chargers",
+            "entryId": "407b-457c-8bc4-f296",
+            "targetId": "9f0d-5e6b-1a6e-0546",
+            "path": "9b65-cb9d-c0ac-33f9::407b-457c-8bc4-f296::9f0d-5e6b-1a6e-0546",
+            "groupPath": "9b65-cb9d-c0ac-33f9::1241-6eab-4261-d15a"
+          },
+          {
+            "name": "Bolter",
+            "count": 2,
+            "entryId": "c050-620e-c956-df2c",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "9b65-cb9d-c0ac-33f9::c050-620e-c956-df2c::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "9b65-cb9d-c0ac-33f9::0215-ef86-01e4-0f1f"
+          },
+          {
+            "name": "Mauler bolt cannon",
+            "entryId": "d7ec-04c6-4688-c02e",
+            "targetId": "ec2c-185f-3e9e-7ccd",
+            "path": "9b65-cb9d-c0ac-33f9::d7ec-04c6-4688-c02e::ec2c-185f-3e9e-7ccd",
+            "groupPath": "9b65-cb9d-c0ac-33f9::d5cd-f8b5-86c8-944f"
+          }
+        ]
+      }
+    ],
+    "source": "iron-hands",
+    "unitWargear": [
+      {
+        "name": "Cybernetica",
+        "entryId": "a92a-c17d-f444-9e5b",
+        "targetId": "403d-7806-215e-7676",
+        "path": "9b65-cb9d-c0ac-33f9::a92a-c17d-f444-9e5b::403d-7806-215e-7676"
+      }
+    ],
+    "facts": {
+      "112f-1168-d07c-7f8f": 1,
+      "9b65-cb9d-c0ac-33f9": 1,
+      "df10-4634-c1aa-f6e0": 1,
+      "3e59-3bcf-4bf8-d404": 1,
+      "9fb1-5f74-53af-e34c": 1,
+      "66b7-9883-86f7-a90f": 2,
+      "5833-5e86-26bc-0916": 2,
+      "407b-457c-8bc4-f296": 2,
+      "9f0d-5e6b-1a6e-0546": 2,
+      "c050-620e-c956-df2c": 2,
+      "d3f9-b9e6-3ea5-cc8e": 2,
+      "d7ec-04c6-4688-c02e": 2,
+      "ec2c-185f-3e9e-7ccd": 2
+    },
+    "prime": {
+      "linkId": "0121-094d-bbac-806b",
+      "path": "9b65-cb9d-c0ac-33f9::0121-094d-bbac-806b::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "4ae1-f3b2-e1c8-165f",
+        "1abc-7dd4-54e7-48e5"
+      ],
+      "groupPrefixes": {
+        "4ae1-f3b2-e1c8-165f": "9b65-cb9d-c0ac-33f9::2add-3992-0734-9159",
+        "1abc-7dd4-54e7-48e5": "9b65-cb9d-c0ac-33f9::34a0-1bee-1d5f-7758"
+      }
+    }
+  }
+]

@@ -7,6 +7,7 @@ import {
   Button,
 } from '@carbon/react';
 import type { PrimeOption } from '../../rules/primeBenefits';
+import { noFocusScroll } from './noFocusScroll';
 
 interface PrimeBenefitModalProps {
   /** Benefits this unit may take in this slot (from BSData) */
@@ -28,10 +29,11 @@ export default function PrimeBenefitModal({ options, onConfirm, onClose }: Prime
             No Prime benefits are available to this unit in this slot.
           </p>
         )}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: 6, maxHeight: 440, overflowY: 'auto' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', gap: 6 }}>
           {options.map((benefit) => (
             <button
               key={benefit.id}
+              onMouseDown={noFocusScroll}
               onClick={() => onConfirm(benefit)}
               style={{
                 display: 'block',

@@ -74,6 +74,9 @@ export interface SlotDef {
   categoryId?: string;
   /** BSData modifiers on the slot's max — evaluated by rules/slots.ts effectiveSlots */
   maxModifiers?: RuleModifier[];
+  /** Shown only when these allow (e.g. "Clade Operative" slots once the Clade Operative benefit is taken) */
+  hidden?: boolean;
+  visibility?: RuleModifier[];
 }
 
 export interface DetachmentDef {
@@ -85,8 +88,12 @@ export interface DetachmentDef {
   sources?: string[];
   /** What it uses of its chart's detachment limits, by cost type id — see rules/detachmentLimits.ts */
   costs?: Record<string, number>;
+  /** Modifiers on those costs (a Tercio counts as half an Auxiliary detachment with its cohort doctrine) */
+  costModifiers?: Record<string, RuleModifier[]>;
   /** How many the roster may contain, raised by modifiers (Knight Additional detachments) */
   rosterMax?: { max: number; modifiers: RuleModifier[] };
+  /** BSData error messages and when they apply ("Storm Battery Detachment requires a Siege Breaker") */
+  errors?: Array<{ message: string } & Pick<RuleModifier, 'conditions' | 'conditionGroups'>>;
 }
 
 export interface PrimeBenefit {
@@ -98,6 +105,8 @@ export interface PrimeBenefit {
 export interface FilledSlot {
   unit: UnitEntry;
   primeBenefit?: PrimeBenefit;
+  /** Logistical Benefit: the role of the extra slot it adds to the detachment ("Armour") */
+  lbRole?: string;
   /**
    * Whether the unit is Prime. Unset = Prime exactly when it sits in a Prime
    * position. Set explicitly by .ros import, where a unit can fill a Prime
@@ -110,7 +119,7 @@ export interface FilledSlot {
   extraPoints?: number;
 }
 
-/** A bonus slot added to a detachment card by the Logistical Benefit prime benefit. */
+/** @deprecated Saved lists only: Logistical Benefit's old app-managed slot (migrated by `migrateBonusSlots`). */
 export interface BonusSlot {
   id: string;             // uuid
   sourceSlotKey: string;  // the prime slot key that created this bonus slot
@@ -157,6 +166,8 @@ export interface RosterSnapshot {
    * unit's sub-faction): choice group id → option id. See rules/armyChoices.ts
    */
   armyChoices?: Record<string, string>;
+  /** Army settings from BSData's army configuration (Rite of War, Household Paradigms…): entry name → choice */
+  configChoices?: Record<string, string>;
   forces: Force[];
 }
 
@@ -182,7 +193,6 @@ export type ModalState =
   | { type: 'unitPicker'; detachmentId: string; slotKey: string; role: string; isPrime?: boolean }
   | { type: 'primeBenefit'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry }
   | { type: 'bonusSlotRoleSelector'; detachmentId: string; slotKey: string; role: string; unit: UnitEntry; roles?: string[] }
-  | { type: 'bonusUnitPicker'; detachmentId: string; bonusSlotId: string; role: string }
   | { type: 'detachmentSelector'; trigger: 'highCommand' | 'command'; unlockedBy: string; title?: string }
   | { type: 'allySelector' }
   | { type: 'additionalDetachmentSelector' }

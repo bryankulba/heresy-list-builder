@@ -34,3 +34,10 @@ body {
 .cds--modal .cds--popover-content {
   display: none;
 }
+
+// One scroll area per modal, without Carbon's fade at the bottom edge (it left
+// a faded sliver of the list above the footer buttons)
+.cds--modal-content.cds--modal-scroll-content {
+  mask-image: none;
+  -webkit-mask-image: none;
+}

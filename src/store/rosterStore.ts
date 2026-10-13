@@ -1,10 +1,11 @@
+import { loadFactionUnits } from '../data/loader';
+import { normalizeDoctrine } from '../rules/armyConfig';
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { v4 as uuidv4 } from 'uuid';
 import type {
   Allegiance,
   AppPhase,
-  BonusSlot,
   DetachmentDef,
   FilledSlot,
   Force,
@@ -35,6 +36,8 @@ interface RosterStore {
   cohortDoctrine: string;
   /** Army-wide picks for per-unit choices (sub-faction): group id → option id */
   armyChoices: Record<string, string>;
+  /** Army settings (Rite of War, Household Paradigms…): entry name → choice name */
+  configChoices: Record<string, string>;
   /** The primary army first, then any allied forces */
   forces: Force[];
 
@@ -43,23 +46,25 @@ interface RosterStore {
     allegiance: Allegiance,
     pointsLimit: number,
     cohortDoctrine?: string,
-    armyChoices?: Record<string, string>
+    armyChoices?: Record<string, string>,
+    configChoices?: Record<string, string>
   ) => void;
   setArmyChoice: (groupId: string, optionId: string) => void;
+  setConfigChoice: (entry: string, choice: string) => void;
   loadSave: (saved: RosterSnapshot) => void;
   addDetachment: (def: DetachmentDef, opts?: { unlockedBy?: string; forceId?: string }) => void;
   addAlliedForce: (faction: string) => void;
+  /** Loads the units of the session's armies (after a reload) and refreshes the stored ones */
+  ensureUnitsLoaded: () => Promise<void>;
   /** Adds a Lord of War Detachment for the primary army (right after it) */
   addLordOfWar: () => void;
   removeForce: (forceId: string) => void;
   fillSlot: (detachmentId: string, slotKey: string, unit: UnitEntry, primeBenefit?: PrimeBenefit) => void;
   updateSlotAnnotations: (detachmentId: string, slotKey: string, notes: string, extraPoints: number) => void;
   clearSlot: (detachmentId: string, slotKey: string) => void;
-  addBonusSlot: (detachmentId: string, sourceSlotKey: string, role: string) => void;
-  fillBonusSlot: (detachmentId: string, bonusSlotId: string, unit: UnitEntry) => void;
-  clearBonusSlot: (detachmentId: string, bonusSlotId: string) => void;
+  /** Logistical Benefit: the role of the extra slot (BSData adds it); undefined clears it */
+  setLogisticalRole: (detachmentId: string, slotKey: string, role: string | undefined) => void;
   removeDetachment: (id: string) => void;
-  clearBonusSlotsForSlot: (detachmentId: string, slotKey: string) => void;
   reset: () => void;
 }
 
@@ -69,6 +74,7 @@ const INITIAL_STATE = {
   pointsLimit: 3000,
   cohortDoctrine: '',
   armyChoices: {} as Record<string, string>,
+  configChoices: {} as Record<string, string>,
   forces: [] as Force[],
 };
 
@@ -82,24 +88,40 @@ export const useRosterStore = create<RosterStore>()(
     (set) => ({
       ...INITIAL_STATE,
 
-      startBuild(faction, allegiance, pointsLimit, cohortDoctrine = '', armyChoices = {}) {
+      async startBuild(faction, allegiance, pointsLimit, cohortDoctrine = '', armyChoices = {}, configChoices = {}) {
+        await loadFactionUnits(faction);
         set({
           phase: 'canvas',
           allegiance,
           pointsLimit,
           cohortDoctrine,
           armyChoices,
+          configChoices,
           forces: [createForce(faction, 'primary')],
         });
       },
 
-      loadSave(saved) {
+      async loadSave(saved) {
         const snapshot = migrateSnapshot(saved);
-        set({ phase: 'canvas', ...snapshot, armyChoices: snapshot.armyChoices ?? {}, forces: refreshUnits(snapshot.forces) });
+        await loadFactionUnits(...snapshot.forces.map((f) => f.faction));
+        set({
+          phase: 'canvas',
+          ...snapshot,
+          armyChoices: snapshot.armyChoices ?? {},
+          configChoices: snapshot.configChoices ?? {},
+          forces: refreshUnits(snapshot.forces),
+        });
       },
 
       setArmyChoice(groupId, optionId) {
         set((s) => ({ armyChoices: { ...s.armyChoices, [groupId]: optionId } }));
+      },
+
+      setConfigChoice(entry, choice) {
+        set((s) => {
+          const { [entry]: _old, ...rest } = s.configChoices;
+          return { configChoices: choice ? { ...rest, [entry]: choice } : rest };
+        });
       },
 
       addDetachment(def, opts) {
@@ -115,8 +137,16 @@ export const useRosterStore = create<RosterStore>()(
         });
       },
 
-      addAlliedForce(faction) {
+      async addAlliedForce(faction) {
+        await loadFactionUnits(faction);
         set((s) => ({ forces: [...s.forces, createForce(faction, 'allied')] }));
+      },
+
+      async ensureUnitsLoaded() {
+        const { forces } = useRosterStore.getState();
+        await loadFactionUnits(...forces.map((f) => f.faction));
+        // Saved units were kept as-is until their army's data arrived; refresh them now
+        set((s) => ({ forces: refreshUnits(s.forces) }));
       },
 
       removeForce(forceId) {
@@ -132,6 +162,10 @@ export const useRosterStore = create<RosterStore>()(
               primeBenefit,
               notes: existing?.notes,
               extraPoints: existing?.extraPoints,
+              // Keep the Logistical Benefit role while the benefit stays the same
+              ...(existing?.lbRole && primeBenefit && existing.primeBenefit?.id === primeBenefit.id
+                ? { lbRole: existing.lbRole }
+                : {}),
             };
             return { ...det, slots: { ...det.slots, [slotKey]: filled } };
           }),
@@ -153,46 +187,18 @@ export const useRosterStore = create<RosterStore>()(
           forces: updateDetachment(s.forces, detachmentId, (det) => ({
             ...det,
             slots: { ...det.slots, [slotKey]: null },
-            // cascade-remove any bonus slots that were created by this prime slot
-            bonusSlots: (det.bonusSlots ?? []).filter((b) => b.sourceSlotKey !== slotKey),
           })),
         }));
       },
 
-      addBonusSlot(detachmentId, sourceSlotKey, role) {
-        const newSlot: BonusSlot = { id: uuidv4(), sourceSlotKey, role, unit: null };
+      setLogisticalRole(detachmentId, slotKey, role) {
         set((s) => ({
-          forces: updateDetachment(s.forces, detachmentId, (det) => ({
-            ...det,
-            bonusSlots: [...(det.bonusSlots ?? []), newSlot],
-          })),
-        }));
-      },
-
-      fillBonusSlot(detachmentId, bonusSlotId, unit) {
-        set((s) => ({
-          forces: updateDetachment(s.forces, detachmentId, (det) => ({
-            ...det,
-            bonusSlots: (det.bonusSlots ?? []).map((b) => (b.id === bonusSlotId ? { ...b, unit } : b)),
-          })),
-        }));
-      },
-
-      clearBonusSlot(detachmentId, bonusSlotId) {
-        set((s) => ({
-          forces: updateDetachment(s.forces, detachmentId, (det) => ({
-            ...det,
-            bonusSlots: (det.bonusSlots ?? []).map((b) => (b.id === bonusSlotId ? { ...b, unit: null } : b)),
-          })),
-        }));
-      },
-
-      clearBonusSlotsForSlot(detachmentId, slotKey) {
-        set((s) => ({
-          forces: updateDetachment(s.forces, detachmentId, (det) => ({
-            ...det,
-            bonusSlots: (det.bonusSlots ?? []).filter((b) => b.sourceSlotKey !== slotKey),
-          })),
+          forces: updateDetachment(s.forces, detachmentId, (det) => {
+            const existing = det.slots[slotKey];
+            if (!existing) return det;
+            const { lbRole: _old, ...rest } = existing;
+            return { ...det, slots: { ...det.slots, [slotKey]: role ? { ...rest, lbRole: role } : rest } };
+          }),
         }));
       },
 
@@ -214,6 +220,7 @@ export const useRosterStore = create<RosterStore>()(
         pointsLimit: state.pointsLimit,
         cohortDoctrine: state.cohortDoctrine,
         armyChoices: state.armyChoices,
+        configChoices: state.configChoices,
         forces: state.forces,
       }),
       // v1 persisted { faction, detachments }; v2 persists { forces }
@@ -226,7 +233,13 @@ export const useRosterStore = create<RosterStore>()(
       merge: (persisted, current) => {
         const p = (persisted ?? {}) as Partial<RosterStore>;
         const forces = refreshUnits(p.forces ?? []);
-        return { ...current, ...p, forces, phase: forces.length > 0 ? p.phase ?? 'start' : 'start' };
+        return {
+          ...current,
+          ...p,
+          forces,
+          cohortDoctrine: normalizeDoctrine(p.cohortDoctrine),
+          phase: forces.length > 0 ? p.phase ?? 'start' : 'start',
+        };
       },
     }
   )

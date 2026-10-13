@@ -1,0 +1,770 @@
+[
+  {
+    "name": "Perturabo",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "06e0-8a81-4a75-4787",
+    "path": "06e0-8a81-4a75-4787::2ff4-482b-a2b2-f853",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 425,
+    "baseCost": 425,
+    "models": [
+      {
+        "name": "Perturabo",
+        "entryId": "39e4-15b8-4ca4-fb4a",
+        "path": "06e0-8a81-4a75-4787::39e4-15b8-4ca4-fb4a",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "iron-warriors",
+    "unitWargear": [
+      {
+        "name": "The Logos Array",
+        "entryId": "d70c-a9a0-1472-45b0",
+        "path": "06e0-8a81-4a75-4787::d70c-a9a0-1472-45b0"
+      },
+      {
+        "name": "Sire of the Iron Warriors",
+        "entryId": "d040-3428-1fea-6665",
+        "path": "06e0-8a81-4a75-4787::d040-3428-1fea-6665"
+      },
+      {
+        "name": "Cognis-signum",
+        "entryId": "5a30-22aa-d1c3-25d5",
+        "targetId": "268f-5e98-166a-6f01",
+        "path": "06e0-8a81-4a75-4787::5a30-22aa-d1c3-25d5::268f-5e98-166a-6f01"
+      },
+      {
+        "name": "Cortex controller",
+        "entryId": "ed9e-30d6-6e79-9d12",
+        "targetId": "e1c7-e5c2-8a4c-1e79",
+        "path": "06e0-8a81-4a75-4787::ed9e-30d6-6e79-9d12::e1c7-e5c2-8a4c-1e79"
+      }
+    ],
+    "facts": {
+      "2ff4-482b-a2b2-f853": 1,
+      "06e0-8a81-4a75-4787": 1,
+      "b7c9-7d2d-fb56-5486": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d251-944b-3c3b-0579": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "22ee-7208-4089-b005": 1,
+      "b5d8-c965-7970-673f": 1,
+      "39e4-15b8-4ca4-fb4a": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1
+    }
+  },
+  {
+    "name": "Warsmith",
+    "entryId": "b201-c904-7a3d-efdc",
+    "path": "b201-c904-7a3d-efdc::5e76-088c-91c5-2d4d",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 165,
+    "baseCost": 165,
+    "models": [
+      {
+        "name": "Warsmith",
+        "entryId": "f9bf-b505-a6d5-4b28",
+        "path": "b201-c904-7a3d-efdc::f9bf-b505-a6d5-4b28",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "iron-warriors",
+    "unitWargear": [
+      {
+        "name": "Servo-arm",
+        "entryId": "b687-786d-fa58-c462",
+        "targetId": "9902-2d5f-0df2-5cf0",
+        "path": "b201-c904-7a3d-efdc::b687-786d-fa58-c462::9902-2d5f-0df2-5cf0"
+      },
+      {
+        "name": "Graviton crusher",
+        "entryId": "9e44-f7ce-20bd-eefd",
+        "targetId": "78f1-345c-81d8-1cb1",
+        "path": "b201-c904-7a3d-efdc::9e44-f7ce-20bd-eefd::78f1-345c-81d8-1cb1"
+      },
+      {
+        "name": "Cortex controller",
+        "entryId": "3b5e-982e-2ffd-66a6",
+        "targetId": "e1c7-e5c2-8a4c-1e79",
+        "path": "b201-c904-7a3d-efdc::3b5e-982e-2ffd-66a6::e1c7-e5c2-8a4c-1e79"
+      },
+      {
+        "name": "Combi-grav",
+        "entryId": "0136-d272-660b-62d7",
+        "targetId": "9b35-7e25-1e16-9ef6",
+        "path": "b201-c904-7a3d-efdc::0136-d272-660b-62d7::9b35-7e25-1e16-9ef6"
+      },
+      {
+        "name": "Cognis-signum",
+        "entryId": "a170-ffee-a8f1-0ff7",
+        "targetId": "268f-5e98-166a-6f01",
+        "path": "b201-c904-7a3d-efdc::a170-ffee-a8f1-0ff7::268f-5e98-166a-6f01"
+      }
+    ],
+    "facts": {
+      "5e76-088c-91c5-2d4d": 1,
+      "b201-c904-7a3d-efdc": 1,
+      "b7c9-7d2d-fb56-5486": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "b5d8-c965-7970-673f": 1,
+      "f9bf-b505-a6d5-4b28": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "1e7d-9066-28d2-97a0": 1
+    },
+    "prime": {
+      "linkId": "ef2e-d2af-4c5f-bad3",
+      "path": "b201-c904-7a3d-efdc::ef2e-d2af-4c5f-bad3::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "b201-c904-7a3d-efdc::e4c0-c9c3-49c7-b08a"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "b201-c904-7a3d-efdc::bb86-1ece-b168-73d7",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Tyrant Siege Terminator Squad",
+    "entryId": "8406-59c8-611c-2ff8",
+    "path": "8406-59c8-611c-2ff8::83b4-239a-806b-33e5",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 300,
+    "baseCost": 80,
+    "models": [
+      {
+        "name": "Siege Master",
+        "entryId": "9a64-3ee4-8884-8a23",
+        "path": "8406-59c8-611c-2ff8::9a64-3ee4-8884-8a23",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Combi-bolter",
+            "entryId": "500e-e2d7-b1e0-4860",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "8406-59c8-611c-2ff8::500e-e2d7-b1e0-4860::042d-9e60-db9e-c147",
+            "groupPath": "8406-59c8-611c-2ff8::6b54-b1d8-98be-d139"
+          },
+          {
+            "name": "Power fist",
+            "entryId": "c889-5170-3794-afc8",
+            "targetId": "2fcc-92a6-d03a-4b55",
+            "path": "8406-59c8-611c-2ff8::c889-5170-3794-afc8::2fcc-92a6-d03a-4b55",
+            "groupPath": "8406-59c8-611c-2ff8::466d-b681-d39c-7e94"
+          }
+        ]
+      },
+      {
+        "name": "Tyrant",
+        "entryId": "812a-7fab-15fa-f41a",
+        "path": "8406-59c8-611c-2ff8::812a-7fab-15fa-f41a",
+        "cost": 55,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Combi-bolter",
+            "entryId": "0c9e-5338-33ff-5fee",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "8406-59c8-611c-2ff8::0c9e-5338-33ff-5fee::042d-9e60-db9e-c147",
+            "groupPath": "8406-59c8-611c-2ff8::9825-2d35-12ea-0fe1"
+          },
+          {
+            "name": "Power fist",
+            "entryId": "163f-2730-fc09-ad30",
+            "targetId": "2fcc-92a6-d03a-4b55",
+            "path": "8406-59c8-611c-2ff8::163f-2730-fc09-ad30::2fcc-92a6-d03a-4b55",
+            "groupPath": "8406-59c8-611c-2ff8::258b-c52f-bcc1-5c32"
+          }
+        ]
+      }
+    ],
+    "source": "iron-warriors",
+    "unitWargear": [
+      {
+        "name": "Tyrant Rocket Launcher",
+        "entryId": "7b54-5e48-cf5f-846b",
+        "path": "8406-59c8-611c-2ff8::7b54-5e48-cf5f-846b"
+      }
+    ],
+    "facts": {
+      "83b4-239a-806b-33e5": 1,
+      "8406-59c8-611c-2ff8": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "b5d8-c965-7970-673f": 1,
+      "9a64-3ee4-8884-8a23": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "500e-e2d7-b1e0-4860": 1,
+      "042d-9e60-db9e-c147": 5,
+      "c889-5170-3794-afc8": 1,
+      "2fcc-92a6-d03a-4b55": 5,
+      "812a-7fab-15fa-f41a": 4,
+      "0c9e-5338-33ff-5fee": 4,
+      "163f-2730-fc09-ad30": 4
+    },
+    "prime": {
+      "linkId": "78f1-9c50-4742-88ab",
+      "path": "8406-59c8-611c-2ff8::78f1-9c50-4742-88ab::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "8406-59c8-611c-2ff8::f18d-f1e4-47b2-a63b"
+      }
+    }
+  },
+  {
+    "name": "Iron Circle Maniple",
+    "entryId": "23e1-7c35-c3b7-ae24",
+    "path": "23e1-7c35-c3b7-ae24::a0e7-1d1c-2d3e-d46d",
+    "role": "Retinue",
+    "primaryCategory": "Retinue",
+    "points": 150,
+    "baseCost": 15,
+    "models": [
+      {
+        "name": "Domitar-ferrum",
+        "entryId": "8077-0252-d6ae-6338",
+        "path": "23e1-7c35-c3b7-ae24::8077-0252-d6ae-6338",
+        "cost": 135,
+        "min": 1,
+        "max": 6,
+        "defaultWargear": []
+      }
+    ],
+    "source": "iron-warriors",
+    "unitWargear": [
+      {
+        "name": "Twin Shrapnel Cannon",
+        "entryId": "10cc-87c4-6d66-71d4",
+        "path": "23e1-7c35-c3b7-ae24::10cc-87c4-6d66-71d4"
+      },
+      {
+        "name": "Karceri Battle Shield",
+        "entryId": "f9a2-3394-700e-ba39",
+        "path": "23e1-7c35-c3b7-ae24::f9a2-3394-700e-ba39"
+      },
+      {
+        "name": "Graviton crusher",
+        "entryId": "c6e6-6c10-b763-26d8",
+        "targetId": "78f1-345c-81d8-1cb1",
+        "path": "23e1-7c35-c3b7-ae24::c6e6-6c10-b763-26d8::78f1-345c-81d8-1cb1"
+      }
+    ],
+    "facts": {
+      "a0e7-1d1c-2d3e-d46d": 1,
+      "23e1-7c35-c3b7-ae24": 1,
+      "a38e-50ff-310f-f19e": 1,
+      "b5d8-c965-7970-673f": 1,
+      "8077-0252-d6ae-6338": 1,
+      "5833-5e86-26bc-0916": 1,
+      "1e7d-9066-28d2-97a0": 1
+    },
+    "prime": {
+      "linkId": "c487-c514-4e92-97ce",
+      "path": "23e1-7c35-c3b7-ae24::c487-c514-4e92-97ce::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "23e1-7c35-c3b7-ae24::4afa-ddd1-4317-b6e9"
+      }
+    }
+  },
+  {
+    "name": "Warsmith In Artificer Armour",
+    "entryId": "c912-c48f-da79-3d45",
+    "path": "c912-c48f-da79-3d45::269e-a6c3-41a0-8cc3",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 140,
+    "baseCost": 140,
+    "models": [
+      {
+        "name": "Warsmith in Artificer Armour",
+        "entryId": "3eeb-2e5d-4e06-be27",
+        "path": "c912-c48f-da79-3d45::3eeb-2e5d-4e06-be27",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Servo-arm",
+            "entryId": "c60c-9201-4b9d-8ac2",
+            "targetId": "9902-2d5f-0df2-5cf0",
+            "path": "c912-c48f-da79-3d45::c60c-9201-4b9d-8ac2::9902-2d5f-0df2-5cf0"
+          },
+          {
+            "name": "Cortex controller",
+            "entryId": "75b4-34cd-47e3-811a",
+            "targetId": "e1c7-e5c2-8a4c-1e79",
+            "path": "c912-c48f-da79-3d45::75b4-34cd-47e3-811a::e1c7-e5c2-8a4c-1e79"
+          },
+          {
+            "name": "Cognis-signum",
+            "entryId": "5ebe-aa52-4e84-8a1d",
+            "targetId": "268f-5e98-166a-6f01",
+            "path": "c912-c48f-da79-3d45::5ebe-aa52-4e84-8a1d::268f-5e98-166a-6f01"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "7f07-8446-4da0-9f3f",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "c912-c48f-da79-3d45::7f07-8446-4da0-9f3f::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "7085-b69a-4c18-8263",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "c912-c48f-da79-3d45::7085-b69a-4c18-8263::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolter",
+            "entryId": "abf9-2cfd-4f69-a26d",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "c912-c48f-da79-3d45::abf9-2cfd-4f69-a26d::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "c912-c48f-da79-3d45::0abc-5226-436b-b4b1"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "38b9-077f-58a6-12f1",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "c912-c48f-da79-3d45::38b9-077f-58a6-12f1::2942-f783-d627-33c5",
+            "groupPath": "c912-c48f-da79-3d45::b4db-6c3a-c135-7f46"
+          }
+        ]
+      }
+    ],
+    "source": "iron-warriors",
+    "facts": {
+      "269e-a6c3-41a0-8cc3": 1,
+      "c912-c48f-da79-3d45": 1,
+      "b7c9-7d2d-fb56-5486": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "3eeb-2e5d-4e06-be27": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "c60c-9201-4b9d-8ac2": 1,
+      "9902-2d5f-0df2-5cf0": 1,
+      "75b4-34cd-47e3-811a": 1,
+      "e1c7-e5c2-8a4c-1e79": 1,
+      "5ebe-aa52-4e84-8a1d": 1,
+      "268f-5e98-166a-6f01": 1,
+      "7f07-8446-4da0-9f3f": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "7085-b69a-4c18-8263": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "abf9-2cfd-4f69-a26d": 1,
+      "d3f9-b9e6-3ea5-cc8e": 1,
+      "38b9-077f-58a6-12f1": 1,
+      "2942-f783-d627-33c5": 1
+    },
+    "prime": {
+      "linkId": "5055-6b24-bd64-6117",
+      "path": "c912-c48f-da79-3d45::5055-6b24-bd64-6117::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "c912-c48f-da79-3d45::c7ff-3436-2be7-57c7"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "c912-c48f-da79-3d45::c305-b5e6-c82a-bb49",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Nârik Dreygur",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "f539-bd38-6f47-45b5",
+    "path": "f539-bd38-6f47-45b5::42ce-6dde-4967-b87a",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 115,
+    "baseCost": 115,
+    "models": [
+      {
+        "name": "Nârik Dreygur",
+        "entryId": "79e9-1649-455c-b748",
+        "path": "f539-bd38-6f47-45b5::79e9-1649-455c-b748",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "e55b-55fd-49ce-8483",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "f539-bd38-6f47-45b5::e55b-55fd-49ce-8483::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "83f5-dda3-4c9c-bb5f",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "f539-bd38-6f47-45b5::83f5-dda3-4c9c-bb5f::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "d5ea-59f5-4f92-a729",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "f539-bd38-6f47-45b5::d5ea-59f5-4f92-a729::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Cortex controller",
+            "entryId": "7e02-e80b-4289-8d95",
+            "targetId": "e1c7-e5c2-8a4c-1e79",
+            "path": "f539-bd38-6f47-45b5::7e02-e80b-4289-8d95::e1c7-e5c2-8a4c-1e79"
+          },
+          {
+            "name": "Graviton gauntlet",
+            "entryId": "f9b3-4dcc-4a2b-f202",
+            "targetId": "a3e7-c6b3-0e66-6980",
+            "path": "f539-bd38-6f47-45b5::f9b3-4dcc-4a2b-f202::a3e7-c6b3-0e66-6980"
+          },
+          {
+            "name": "Master of Automata",
+            "entryId": "087c-d068-624f-252f",
+            "targetId": "abf3-3d0e-d457-3a59",
+            "path": "f539-bd38-6f47-45b5::087c-d068-624f-252f::abf3-3d0e-d457-3a59"
+          }
+        ]
+      }
+    ],
+    "source": "iron-warriors",
+    "facts": {
+      "42ce-6dde-4967-b87a": 1,
+      "f539-bd38-6f47-45b5": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "79e9-1649-455c-b748": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1,
+      "1e7d-9066-28d2-97a0": 1,
+      "e55b-55fd-49ce-8483": 1,
+      "2942-f783-d627-33c5": 1,
+      "83f5-dda3-4c9c-bb5f": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "d5ea-59f5-4f92-a729": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "7e02-e80b-4289-8d95": 1,
+      "e1c7-e5c2-8a4c-1e79": 1,
+      "f9b3-4dcc-4a2b-f202": 1,
+      "a3e7-c6b3-0e66-6980": 1,
+      "087c-d068-624f-252f": 1,
+      "abf3-3d0e-d457-3a59": 1
+    },
+    "prime": {
+      "linkId": "5004-661f-127c-d91f",
+      "path": "f539-bd38-6f47-45b5::5004-661f-127c-d91f::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "f539-bd38-6f47-45b5::4f90-cc15-fac7-ecb8"
+      }
+    }
+  },
+  {
+    "name": "Dominator Cohort",
+    "entryId": "9f2e-07aa-8ab8-4066",
+    "path": "9f2e-07aa-8ab8-4066::d1fa-8392-4117-990d",
+    "role": "Retinue",
+    "primaryCategory": "Retinue",
+    "points": 255,
+    "baseCost": 30,
+    "models": [
+      {
+        "name": "Dominator",
+        "entryId": "8857-434b-468b-a94e",
+        "path": "9f2e-07aa-8ab8-4066::8857-434b-468b-a94e",
+        "cost": 45,
+        "min": 5,
+        "max": 10,
+        "defaultWargear": [
+          {
+            "name": "Thunder hammer",
+            "entryId": "e093-4187-4fee-8794",
+            "targetId": "4338-dbe9-1e94-7e6d",
+            "path": "9f2e-07aa-8ab8-4066::e093-4187-4fee-8794::4338-dbe9-1e94-7e6d",
+            "groupPath": "9f2e-07aa-8ab8-4066::f1bd-5cee-46a8-bc5c"
+          },
+          {
+            "name": "Combi-bolter",
+            "entryId": "ac78-9a43-bb1f-fd9b",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "9f2e-07aa-8ab8-4066::ac78-9a43-bb1f-fd9b::042d-9e60-db9e-c147",
+            "groupPath": "9f2e-07aa-8ab8-4066::609a-9c82-4dcc-896e"
+          }
+        ]
+      }
+    ],
+    "source": "iron-warriors",
+    "facts": {
+      "d1fa-8392-4117-990d": 1,
+      "9f2e-07aa-8ab8-4066": 1,
+      "a38e-50ff-310f-f19e": 1,
+      "8857-434b-468b-a94e": 5,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "e093-4187-4fee-8794": 5,
+      "4338-dbe9-1e94-7e6d": 5,
+      "ac78-9a43-bb1f-fd9b": 5,
+      "042d-9e60-db9e-c147": 5
+    },
+    "prime": {
+      "linkId": "3180-390c-4043-4ed9",
+      "path": "9f2e-07aa-8ab8-4066::3180-390c-4043-4ed9::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "9f2e-07aa-8ab8-4066::9405-3f39-bd9f-c2d3"
+      }
+    }
+  },
+  {
+    "name": "Iron Havocs",
+    "entryId": "1eb3-3595-8c82-7990",
+    "path": "1eb3-3595-8c82-7990::ed0b-1070-4e20-b597",
+    "role": "Support",
+    "primaryCategory": "Support",
+    "points": 135,
+    "baseCost": 35,
+    "models": [
+      {
+        "name": "Iron Havoc",
+        "entryId": "5739-ff73-43a3-aaa9",
+        "path": "1eb3-3595-8c82-7990::5739-ff73-43a3-aaa9",
+        "cost": 25,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "67b1-8081-498e-8dfd",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "1eb3-3595-8c82-7990::67b1-8081-498e-8dfd::2942-f783-d627-33c5"
+          }
+        ]
+      },
+      {
+        "name": "Iron Havoc Sergeant",
+        "entryId": "cafa-bfb0-44fe-9c01",
+        "path": "1eb3-3595-8c82-7990::cafa-bfb0-44fe-9c01",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "e3f7-5ca9-4e70-b46d",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "1eb3-3595-8c82-7990::e3f7-5ca9-4e70-b46d::2942-f783-d627-33c5"
+          }
+        ]
+      }
+    ],
+    "source": "iron-warriors",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "ead0-c211-47b0-80ec",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "1eb3-3595-8c82-7990::ead0-c211-47b0-80ec::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "1fdd-0794-4b6c-b3ee",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "1eb3-3595-8c82-7990::1fdd-0794-4b6c-b3ee::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "ed0b-1070-4e20-b597": 1,
+      "1eb3-3595-8c82-7990": 1,
+      "345f-9ba6-9b02-ed5c": 1,
+      "5739-ff73-43a3-aaa9": 4,
+      "594d-fa82-13cb-a345": 5,
+      "67b1-8081-498e-8dfd": 4,
+      "2942-f783-d627-33c5": 5,
+      "cafa-bfb0-44fe-9c01": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "e3f7-5ca9-4e70-b46d": 1
+    },
+    "prime": {
+      "linkId": "6ce9-3f26-fb83-94e3",
+      "path": "1eb3-3595-8c82-7990::6ce9-3f26-fb83-94e3::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "1eb3-3595-8c82-7990::dad5-f976-8f39-e8bd"
+      }
+    }
+  },
+  {
+    "name": "The Tormentor",
+    "rosterMax": 1,
+    "entryId": "1615-1300-244f-bedf",
+    "path": "1615-1300-244f-bedf::6781-8672-4e6e-a47a",
+    "role": "Lord of War",
+    "primaryCategory": "Lord of War",
+    "points": 700,
+    "baseCost": 700,
+    "models": [
+      {
+        "name": "The Tormentor",
+        "entryId": "d222-4469-4871-b193",
+        "path": "1615-1300-244f-bedf::d222-4469-4871-b193",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Centreline Mounted volcano cannon",
+            "entryId": "0ef6-6fde-4094-bb21",
+            "targetId": "c5f4-55af-54bb-2d18",
+            "path": "1615-1300-244f-bedf::0ef6-6fde-4094-bb21::c5f4-55af-54bb-2d18"
+          },
+          {
+            "name": "Hull (Front) Mounted twin heavy bolter",
+            "entryId": "1df8-4093-4cda-a378",
+            "targetId": "e0bc-e3e1-54e7-bd75",
+            "path": "1615-1300-244f-bedf::1df8-4093-4cda-a378::e0bc-e3e1-54e7-bd75"
+          }
+        ]
+      }
+    ],
+    "source": "iron-warriors",
+    "facts": {
+      "6781-8672-4e6e-a47a": 1,
+      "1615-1300-244f-bedf": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "a46f-a465-0ead-d6b8": 1,
+      "d222-4469-4871-b193": 1,
+      "aa5a-c9fd-1eb1-7a45": 1,
+      "b980-187b-2b17-d635": 1,
+      "2e6d-36f6-eeca-8e0c": 1,
+      "4d42-b711-7946-8e15": 1,
+      "0ef6-6fde-4094-bb21": 1,
+      "c5f4-55af-54bb-2d18": 1,
+      "1df8-4093-4cda-a378": 1,
+      "e0bc-e3e1-54e7-bd75": 1
+    }
+  },
+  {
+    "name": "Inductii Squad",
+    "entryId": "6849-f47a-78f5-639b",
+    "path": "6849-f47a-78f5-639b::bdb6-1c8f-4c24-a156",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 90,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Inductii",
+        "entryId": "bd91-459d-4815-957e",
+        "path": "6849-f47a-78f5-639b::bd91-459d-4815-957e",
+        "cost": 9,
+        "min": 10,
+        "max": 20,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "b07c-4b49-4e80-9ee2",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "6849-f47a-78f5-639b::b07c-4b49-4e80-9ee2::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "872f-cdc9-4c5a-86dd",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "6849-f47a-78f5-639b::872f-cdc9-4c5a-86dd::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolter",
+            "entryId": "74d3-fd21-4cd5-86d4",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "6849-f47a-78f5-639b::74d3-fd21-4cd5-86d4::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "6849-f47a-78f5-639b::1ca6-de26-417d-bc75"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "581a-d188-4918-80ae",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "6849-f47a-78f5-639b::581a-d188-4918-80ae::2942-f783-d627-33c5",
+            "groupPath": "6849-f47a-78f5-639b::2cb1-7cda-d2c5-cecf"
+          }
+        ]
+      }
+    ],
+    "source": "iron-warriors",
+    "facts": {
+      "bdb6-1c8f-4c24-a156": 1,
+      "6849-f47a-78f5-639b": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "bd91-459d-4815-957e": 10,
+      "594d-fa82-13cb-a345": 10,
+      "b07c-4b49-4e80-9ee2": 10,
+      "60e4-ca33-2e68-9afc": 10,
+      "872f-cdc9-4c5a-86dd": 10,
+      "fa20-82bc-c7de-9e97": 10,
+      "74d3-fd21-4cd5-86d4": 10,
+      "d3f9-b9e6-3ea5-cc8e": 10,
+      "581a-d188-4918-80ae": 10,
+      "2942-f783-d627-33c5": 10
+    }
+  }
+]

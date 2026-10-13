@@ -121,3 +121,35 @@ describe('persistence', () => {
     expect(slots['Troops-0']).toBeNull();
   });
 });
+
+describe('Logistical Benefit from BSData', () => {
+  test("the chosen role adds that slot, and old bonus slots migrate into it", async () => {
+    const { getUnitsForFaction } = await import('../data/loader');
+    const { getPrimeOptions, isLogisticalBenefit } = await import('../rules/primeBenefits');
+    const { unitContext } = await import('../rules/context');
+    const { withEffectiveSlots } = await import('../rules/slots');
+    const force = createForce('death-guard', 'primary');
+    const det = force.detachments[0];
+    const tactical = getUnitsForFaction('death-guard').find((u) => u.name === 'Tactical Squad')!;
+    const predator = getUnitsForFaction('death-guard').find((u) => u.name === 'Predator')!;
+    const slot = det.def.slots.find((s) => s.role === 'Prime Troops')!;
+    const lb = getPrimeOptions(tactical, unitContext([force], force, det, tactical, slot.categoryId)).find(isLogisticalBenefit)!;
+    const benefit = { id: lb.id, name: lb.name, description: lb.description };
+
+    // Without a role: no Armour slot in the Crusade Primary Detachment
+    det.slots['Prime Troops-0'] = { unit: tactical, primeBenefit: benefit };
+    expect(withEffectiveSlots([force])[0].detachments[0].def.slots.some((s) => s.role === 'Armour')).toBe(false);
+    // "LB - Armour" chosen: BSData adds one Armour slot
+    det.slots['Prime Troops-0'] = { unit: tactical, primeBenefit: benefit, lbRole: 'Armour' };
+    expect(withEffectiveSlots([force])[0].detachments[0].def.slots.find((s) => s.role === 'Armour')?.max).toBe(1);
+
+    // A list saved with the old bonus slot
+    det.slots['Prime Troops-0'] = { unit: tactical, primeBenefit: benefit };
+    det.bonusSlots = [{ id: 'b1', sourceSlotKey: 'Prime Troops-0', role: 'Armour', unit: predator }];
+    const [migrated] = refreshUnits([force]);
+    const mdet = migrated.detachments[0];
+    expect(mdet.bonusSlots).toBeUndefined();
+    expect(mdet.slots['Prime Troops-0']?.lbRole).toBe('Armour');
+    expect(Object.entries(mdet.slots).find(([, s]) => s?.unit.name === 'Predator')?.[0]).toBe('Armour-0');
+  });
+});

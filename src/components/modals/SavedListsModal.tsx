@@ -1,3 +1,4 @@
+import { loadAllUnits } from '../../data/loader';
 import React, { useRef, useState } from 'react';
 import {
   ComposedModal,
@@ -37,6 +38,7 @@ export default function SavedListsModal({ onClose }: SavedListsModalProps) {
   const pointsLimit = useRosterStore((s) => s.pointsLimit);
   const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
   const armyChoices = useRosterStore((s) => s.armyChoices);
+  const configChoices = useRosterStore((s) => s.configChoices);
   const forces = useRosterStore((s) => s.forces);
   const loadSave = useRosterStore((s) => s.loadSave);
 
@@ -51,6 +53,8 @@ export default function SavedListsModal({ onClose }: SavedListsModalProps) {
   async function handleImportFile(file: File) {
     setImportError(null);
     try {
+      // The roster's armies aren't known until it's read: load them all first
+      await loadAllUnits();
       const result = importRos(await file.text());
       if (result.snapshot.forces.length === 0) {
         setImportError(`Nothing in "${file.name}" could be imported. ${result.warnings.join(' ')}`);
@@ -79,7 +83,7 @@ export default function SavedListsModal({ onClose }: SavedListsModalProps) {
 
   function handleSave() {
     if (!listName.trim() || atLimit) return;
-    saveList({ allegiance, pointsLimit, cohortDoctrine, armyChoices, forces }, listName.trim());
+    saveList({ allegiance, pointsLimit, cohortDoctrine, armyChoices, configChoices, forces }, listName.trim());
     setListName('');
     refreshSaves();
   }

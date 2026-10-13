@@ -1,0 +1,71 @@
+[
+  {
+    "name": "Infernus Abomination",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "0361-0b51-43bc-1e70",
+    "path": "0361-0b51-43bc-1e70::c66f-ea16-ec49-7a60",
+    "role": "Cult Operative",
+    "primaryCategory": "Cult Operative",
+    "points": 120,
+    "baseCost": 120,
+    "models": [
+      {
+        "name": "Infernus Abomination",
+        "entryId": "d54e-c919-0fe3-b4b2",
+        "path": "0361-0b51-43bc-1e70::d54e-c919-0fe3-b4b2",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Boneshard spitter",
+            "entryId": "743f-2560-5ed1-6126",
+            "path": "0361-0b51-43bc-1e70::743f-2560-5ed1-6126"
+          },
+          {
+            "name": "Transmutative claw",
+            "entryId": "3088-ed4f-8b5f-5260",
+            "path": "0361-0b51-43bc-1e70::3088-ed4f-8b5f-5260"
+          }
+        ]
+      }
+    ],
+    "source": "cults-abominatio",
+    "facts": {
+      "c66f-ea16-ec49-7a60": 1,
+      "0361-0b51-43bc-1e70": 1,
+      "4f71-897f-8ae1-303b": 1,
+      "d54e-c919-0fe3-b4b2": 1,
+      "594d-fa82-13cb-a345": 1,
+      "5a95-e564-96b2-8dc9": 1,
+      "f4ba-00e5-3d2e-eaac": 1,
+      "743f-2560-5ed1-6126": 1,
+      "3088-ed4f-8b5f-5260": 1
+    },
+    "prime": {
+      "linkId": "f728-aae8-bedc-5a0c",
+      "path": "0361-0b51-43bc-1e70::f728-aae8-bedc-5a0c::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "e5d1-992e-9efa-3c87"
+      ],
+      "groupPrefixes": {
+        "e5d1-992e-9efa-3c87": "0361-0b51-43bc-1e70::43ad-1a96-172a-4051"
+      }
+    }
+  }
+]

@@ -122,6 +122,10 @@ export interface BsForceEntry {
 export interface BsCategoryEntry {
   id: string;
   name: string;
+  hidden?: boolean;
+  constraints?: BsConstraint[];
+  modifiers?: BsModifier[];
+  modifierGroups?: BsModifierGroup[];
 }
 
 interface BsRoot {
@@ -262,7 +266,10 @@ export interface ArmyConfigEntry {
   hidden?: boolean;
   modifiers?: RuleModifier[];
   /** Choices in its first-level groups (e.g. Loyalist/Traitor, each Cohort Doctrine) */
-  choices: Array<{ name: string; path: string; groupPath?: string }>;
+  /** How many of `choices` must / may be picked (its choice group's constraints) */
+  pick?: { min: number; max: number };
+  /** `ids`: what choosing it puts in the roster (its entry, link target and categories) for BSData conditions */
+  choices: Array<{ name: string; path: string; groupPath?: string; ids?: string[] }>;
   /** Mandatory/default sub-selections */
   defaults: WargearEntry[];
 }
@@ -301,6 +308,8 @@ export interface PrimeNode {
   id: string;
   name: string;
   kind: 'group' | 'option';
+  /** Ids it also puts in the roster when chosen (its link target, categories) */
+  counts?: string[];
   /** Options: selection path relative to the unit's group prefix (see UnitEntry.prime) */
   path?: string;
   /** Options: entryGroupId path relative to the unit's group prefix */
@@ -335,6 +344,8 @@ export interface RulesData {
 
 export interface ArmyChoiceGroup {
   name: string;
+  /** Catalogue key the group belongs to (an army is offered its own catalogues' choices) */
+  catalogue?: string;
   options: Array<{ id: string; name: string; path: string; hidden?: boolean; modifiers?: RuleModifier[] }>;
 }
 
@@ -351,6 +362,9 @@ export interface DetachmentSlot {
    * rule turning all Troops Prime, or Logisticae adding Transport slots.
    */
   maxModifiers?: RuleModifier[];
+  /** Shown only when these allow (a category hidden until e.g. the Clade Operative benefit is taken) */
+  hidden?: boolean;
+  visibility?: RuleModifier[];
 }
 
 export interface Detachment {
@@ -362,8 +376,12 @@ export interface Detachment {
   sources: string[];
   /** What it uses of its chart's detachment limits, by cost type id (e.g. 1 "Auxiliary Detachment(s)") */
   costs?: Record<string, number>;
+  /** Modifiers on those costs (a Tercio counts as half an Auxiliary detachment with its cohort doctrine) */
+  costModifiers?: Record<string, RuleModifier[]>;
   /** How many the roster may contain, raised by modifiers (Knight Additional detachments: +1 per …) */
   rosterMax?: { max: number; modifiers: RuleModifier[] };
+  /** BSData error messages and when they apply ("Storm Battery Detachment requires a Siege Breaker") */
+  errors?: Array<{ message: string } & Pick<RuleModifier, 'conditions' | 'conditionGroups'>>;
 }
 
 /**
@@ -599,9 +617,23 @@ export type SharedIndex = Map<string, BsEntry>;
 
 export function buildSharedIndex(roots: BsRoot[]): SharedIndex {
   const index: SharedIndex = new Map();
+  const add = (e: BsEntry) => {
+    if (!index.has(e.id)) index.set(e.id, e);
+  };
+  // Entries inside shared groups can be link targets too (Mechanicum's Prime
+  // benefits sit in its "Arcana Options:" group)
+  const addGroupContents = (g: BsEntry) => {
+    for (const e of g.selectionEntries ?? []) add(e);
+    for (const sub of g.selectionEntryGroups ?? []) {
+      add(sub);
+      addGroupContents(sub);
+    }
+  };
   for (const root of roots) {
-    for (const e of [...(root.sharedSelectionEntries ?? []), ...(root.sharedSelectionEntryGroups ?? [])]) {
-      if (!index.has(e.id)) index.set(e.id, e);
+    for (const e of root.sharedSelectionEntries ?? []) add(e);
+    for (const g of root.sharedSelectionEntryGroups ?? []) {
+      add(g);
+      addGroupContents(g);
     }
   }
   return index;
@@ -735,7 +767,8 @@ function mandatoryIn(
 ): WargearEntry[] {
   const wargear: WargearEntry[] = [];
   const add = (m: Member) => {
-    if (wargear.some((w) => w.entryId === m.entry.id)) return;
+    // The same entry reached through two links is two selections (a Mastodon's two sponsons)
+    if (wargear.some((w) => w.path === join(memberPath(m)))) return;
     const children = depth < 4 ? mandatoryIn(optionContents(m, index, depth), index, depth + 1) : [];
     // How many come with it (e.g. "Two Sponson Mounted" heavy bolters: min 2)
     const min = Math.max(0, ...(m.entry.constraints ?? []).filter((c) => c.type === 'min' && c.field === 'selections').map((c) => constraintValue(m.entry, c)));
@@ -927,14 +960,26 @@ function armyConfigEntry(
   const member: Member = { entry, prefix: [] };
   const inner = optionContents(member, index, 0);
   const choices = inner.groups.flatMap((g) =>
-    g.options.map((o) => ({
-      name: o.entry.name,
-      path: join(memberPath(o)),
-      ...(o.groupPath ? { groupPath: join(o.groupPath) } : {}),
-    }))
+    g.options.map((o) => {
+      const target = o.entry.targetId ? index.get(o.entry.targetId) : undefined;
+      const ids = [
+        o.entry.id,
+        ...(target ? [target.id] : []),
+        ...[...(o.entry.categoryLinks ?? []), ...(target?.categoryLinks ?? [])].map((c) => c.targetId),
+      ];
+      return {
+        name: o.entry.name,
+        path: join(memberPath(o)),
+        ...(o.groupPath ? { groupPath: join(o.groupPath) } : {}),
+        ids,
+      };
+    })
   );
   const constraints = [...(entry.constraints ?? []), ...(target?.constraints ?? [])];
   const min = Math.max(0, ...constraints.filter((c) => c.type === 'min' && c.field === 'selections').map((c) => c.value));
+  const groupConstraint = (type: 'min' | 'max') =>
+    inner.groups[0]?.constraints?.find((c) => c.type === type && c.field === 'selections')?.value;
+  const pick = inner.groups[0] ? { min: groupConstraint('min') ?? 0, max: groupConstraint('max') ?? -1 } : undefined;
   const mods = hiddenModifiers([...allModifiers(entry), ...(target ? allModifiers(target) : [])]);
   return {
     name: entry.name.trim().replace(/:$/, ''),
@@ -947,6 +992,7 @@ function armyConfigEntry(
     ...(entry.hidden || target?.hidden ? { hidden: true } : {}),
     ...(mods.length > 0 ? { modifiers: mods } : {}),
     choices,
+    ...(pick ? { pick } : {}),
     defaults: mandatoryIn(inner, index, 0),
   };
 }
@@ -966,7 +1012,12 @@ function hiddenModifiers(mods: BsModifier[]): RuleModifier[] {
  * A Prime benefit tree for a shared benefit group, with option paths relative to
  * the group's entry (each unit prepends its own "root::groupLink" prefix).
  */
-function buildPrimeTree(group: BsEntry, index: SharedIndex, rules: Map<string, BsRule>): PrimeNode {
+function buildPrimeTree(
+  group: BsEntry,
+  index: SharedIndex,
+  rules: Map<string, BsRule>,
+  textByName: Map<string, string> = new Map()
+): PrimeNode {
   const fromGroup = (g: GroupView, depth: number): PrimeNode => {
     const children = [
       ...g.options.map((o) => fromOption(o, depth)),
@@ -991,11 +1042,17 @@ function buildPrimeTree(group: BsEntry, index: SharedIndex, rules: Map<string, B
       ...sub.options.map((o) => fromOption(o, depth + 1)),
       ...sub.groups.map((g) => fromGroup(g, depth + 1)),
     ];
-    const description = describe(target ?? e, rules);
+    // Its own (or its target's) rules; else a same-named entry's elsewhere (the
+    // game system's placeholder "The Iron-clad" vs Legiones Astartes' full one)
+    const description = describe(target ?? e, rules) ?? describe(e, rules) ?? textByName.get(e.name.trim());
+    // What choosing it puts in the roster besides its own id: the link's target
+    // and categories (conditions often name the target, e.g. Clade Operative)
+    const also = [...(target ? [target.id] : []), ...[...(e.categoryLinks ?? []), ...(target?.categoryLinks ?? [])].map((c) => c.targetId)];
     return {
       id: e.id,
       name: e.name.trim(),
       kind: 'option',
+      ...(also.length > 0 ? { counts: also } : {}),
       path: join(memberPath(m)),
       ...(m.groupPath ? { groupPath: join(m.groupPath) } : {}),
       ...(e.hidden || target?.hidden ? { hidden: true } : {}),
@@ -1298,7 +1355,11 @@ function usedGroupIds(units: UnitEntry[]): Set<string> {
   return ids;
 }
 
-function extractArmyChoices(units: UnitEntry[], index: SharedIndex): Record<string, ArmyChoiceGroup> {
+function extractArmyChoices(
+  units: UnitEntry[],
+  index: SharedIndex,
+  catalogueOf: Map<string, string>
+): Record<string, ArmyChoiceGroup> {
   const out: Record<string, ArmyChoiceGroup> = {};
   for (const id of usedGroupIds(units)) {
     const group = index.get(id);
@@ -1306,6 +1367,7 @@ function extractArmyChoices(units: UnitEntry[], index: SharedIndex): Record<stri
     const members = contents(group, [], undefined, index, 0).options.sort(byListOrder);
     out[id] = {
       name: group.name,
+      ...(catalogueOf.has(id) ? { catalogue: catalogueOf.get(id) } : {}),
       options: members.map((m) => {
         const mods = hiddenModifiers(allModifiers(m.entry));
         return {
@@ -1331,14 +1393,20 @@ function extractArmyChoices(units: UnitEntry[], index: SharedIndex): Record<stri
  * positive, or zero but raisable by a modifier (e.g. a slot a Logistical
  * Benefit or a legion rule opens up).
  */
-function extractSlots(fe: BsForceEntry): DetachmentSlot[] {
+function extractSlots(fe: BsForceEntry, categories: Map<string, BsCategoryEntry>): DetachmentSlot[] {
   const slots: DetachmentSlot[] = [];
   for (const link of fe.categoryLinks ?? []) {
-    const maxConstraint = link.constraints?.find((c) => c.type === 'max');
+    // A link without its own limit takes its category's (e.g. "Clade Operative":
+    // up to 3, hidden until the Clade Operative benefit is in the detachment)
+    const category = categories.get(link.targetId);
+    const own = link.constraints?.find((c) => c.type === 'max');
+    const maxConstraint = own ?? category?.constraints?.find((c) => c.type === 'max' && c.field === 'selections');
     if (!maxConstraint) continue;
+    const holder = own ? link : category!;
     const maxModifiers = maxConstraint.id
-      ? allModifiers(link).filter((m) => m.field === maxConstraint.id).map(slimModifier)
+      ? allModifiers(holder).filter((m) => m.field === maxConstraint.id).map(slimModifier)
       : [];
+    const visibility = own ? [] : hiddenModifiers(allModifiers(category!));
     const canRaise = maxModifiers.some((m) => m.type === 'increment' || (m.type === 'set' && Number(m.value) > 0));
     if (maxConstraint.value === 0 && !canRaise) continue; // placeholder / disabled slot
     const min = link.constraints?.find((c) => c.type === 'min')?.value ?? 0;
@@ -1349,6 +1417,8 @@ function extractSlots(fe: BsForceEntry): DetachmentSlot[] {
       prime: link.name.toLowerCase().startsWith('prime'),
       categoryId: link.targetId,
       ...(maxModifiers.length > 0 ? { maxModifiers } : {}),
+      ...(!own && category?.hidden ? { hidden: true } : {}),
+      ...(visibility.length > 0 ? { visibility } : {}),
     });
   }
   return slots;
@@ -1382,18 +1452,32 @@ function detachmentType(name: string): Detachment['type'] {
   return 'other';
 }
 
-function parseDetachment(fe: BsForceEntry, catalogueKeyById: Map<string, string>): Detachment | null {
-  const slots = extractSlots(fe);
+function parseDetachment(
+  fe: BsForceEntry,
+  catalogueKeyById: Map<string, string>,
+  categories: Map<string, BsCategoryEntry>
+): Detachment | null {
+  const slots = extractSlots(fe, categories);
   if (slots.length === 0) return null;
   const costs: Record<string, number> = {};
   for (const c of fe.costs ?? []) {
     if (c.typeId !== POINTS_TYPE_ID && c.value > 0) costs[c.typeId] = c.value;
+  }
+  const costModifiers: Record<string, RuleModifier[]> = {};
+  for (const m of allModifiers(fe)) {
+    if (m.field in costs) costModifiers[m.field] = [...(costModifiers[m.field] ?? []), slimModifier(m)];
   }
   // A roster-wide cap on this detachment, with the modifiers that raise it
   const cap = (fe.constraints ?? []).find((c) => c.type === 'max' && c.field === 'forces' && c.scope === 'roster');
   const rosterMax = cap
     ? { max: cap.value, modifiers: allModifiers(fe).filter((m) => cap.id && m.field === cap.id).map(slimModifier) }
     : undefined;
+  const errors = allModifiers(fe)
+    .filter((m) => m.field === 'error' && m.type === 'add')
+    .map((m) => {
+      const { conditions, conditionGroups } = slimModifier(m);
+      return { message: String(m.value), ...(conditions ? { conditions } : {}), ...(conditionGroups ? { conditionGroups } : {}) };
+    });
   return {
     name: fe.name,
     entryId: fe.id,
@@ -1401,7 +1485,9 @@ function parseDetachment(fe: BsForceEntry, catalogueKeyById: Map<string, string>
     slots,
     sources: extractFactionSources(fe, catalogueKeyById),
     ...(Object.keys(costs).length > 0 ? { costs } : {}),
+    ...(Object.keys(costModifiers).length > 0 ? { costModifiers } : {}),
     ...(rosterMax ? { rosterMax } : {}),
+    ...(errors.length > 0 ? { errors } : {}),
   };
 }
 
@@ -1434,6 +1520,9 @@ function parseCharts(
   catalogueKeyById: Map<string, string>
 ): ForceChart[] {
   const costTypeNames = new Map((gst.costTypes ?? []).map((t) => [t.id, t.name]));
+  const categories = new Map(
+    [gst, ...catalogues.map((c) => c.root)].flatMap((r) => r.categoryEntries ?? []).map((c) => [c.id, c])
+  );
   const toChart = (fe: BsForceEntry, catalogue: string | null): ForceChart => {
     // The chart's caps, plus a points share set on its detachment (Knight Lord of War)
     const limits = [
@@ -1449,7 +1538,7 @@ function parseCharts(
       // A chart without child forces (Lord of War Detachment) holds its units
       // itself: it is its own single detachment
       detachments: (fe.forceEntries?.length ? fe.forceEntries : [fe])
-        .map((child) => parseDetachment(child, catalogueKeyById))
+        .map((child) => parseDetachment(child, catalogueKeyById, categories))
         .filter((d): d is Detachment => d !== null),
       ...(limits.length > 0 ? { limits } : {}),
     };
@@ -1557,10 +1646,18 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
   for (const root of [gst, ...catalogues.map((c) => c.catalogue)]) {
     for (const r of root.sharedRules ?? []) if (!sharedRules.has(r.id)) sharedRules.set(r.id, r);
   }
+  // Descriptions by entry name, for options whose own entry carries no text
+  const textByName = new Map<string, string>();
+  walk([gst, ...catalogues.map((c) => c.catalogue)], (obj) => {
+    const e = obj as unknown as BsEntry;
+    if (typeof e.name !== 'string' || !e.type || textByName.has(e.name.trim())) return;
+    const text = describe(e, sharedRules);
+    if (text) textByName.set(e.name.trim(), text);
+  });
   const primeGroups: Record<string, PrimeNode> = {};
   for (const groupId of primeGroupIds) {
     const group = index.get(groupId);
-    if (group) primeGroups[groupId] = buildPrimeTree(group, index, sharedRules);
+    if (group) primeGroups[groupId] = buildPrimeTree(group, index, sharedRules, textByName);
   }
 
   return {
@@ -1571,7 +1668,15 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
     rules: {
       primeGroups,
       detachmentChoice: detachmentChoiceIds(index),
-      armyChoices: extractArmyChoices(Object.values(units).flat(), index),
+      armyChoices: extractArmyChoices(
+        Object.values(units).flat(),
+        index,
+        new Map(
+          catalogues.flatMap((c) =>
+            (c.catalogue.sharedSelectionEntryGroups ?? []).map((g) => [g.id, factionKeyForCatalogue(c.catalogue.name)] as const)
+          )
+        )
+      ),
       armyConfig: {
         'game-system': extractArmyConfig(gst, index, categoryNames),
         ...Object.fromEntries(

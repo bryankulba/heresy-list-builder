@@ -26,6 +26,9 @@ const SOURCE_FILE = path.join(RAW_DIR, 'source.json');
  */
 const UNIT_FACTIONS = [
   'legiones-astartes',
+  // Fielded by any Crusade army through the Clade / Cult Operative Prime benefits
+  'divisio-assassinorum',
+  'cults-abominatio',
   'alpha-legion',
   'blood-angels',
   'dark-angels',
@@ -146,7 +149,12 @@ async function main(): Promise<void> {
   });
 
   fs.mkdirSync(PARSED_DIR, { recursive: true });
-  writeJson('units.json', units);
+  // One file per catalogue, loaded by the app when an army that fields it is picked
+  const unitsDir = path.join(PARSED_DIR, 'units');
+  fs.rmSync(unitsDir, { recursive: true, force: true });
+  fs.mkdirSync(unitsDir, { recursive: true });
+  for (const [key, list] of Object.entries(units)) writeJson(path.join('units', `${key}.json`), list);
+  if (fs.existsSync(path.join(PARSED_DIR, 'units.json'))) fs.rmSync(path.join(PARSED_DIR, 'units.json'));
   writeJson('detachments.json', detachments);
   writeJson('system.json', {
     ...system,

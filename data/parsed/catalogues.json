@@ -4,6 +4,16 @@
     "catalogueName": "Legiones Astartes",
     "revision": 59
   },
+  "divisio-assassinorum": {
+    "catalogueId": "258b-97fb-2366-7344",
+    "catalogueName": "Divisio Assassinorum",
+    "revision": 5
+  },
+  "cults-abominatio": {
+    "catalogueId": "258b-97fb-2366-7348",
+    "catalogueName": "Cults Abominatio",
+    "revision": 3
+  },
   "alpha-legion": {
     "catalogueId": "8813-5298-c368-ee16",
     "catalogueName": "Alpha Legion",

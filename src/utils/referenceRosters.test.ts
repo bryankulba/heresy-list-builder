@@ -73,6 +73,7 @@ describe.each(files)('%s', (file) => {
       allegiance: snapshot.allegiance,
       cohortDoctrine: snapshot.cohortDoctrine,
       armyChoices: snapshot.armyChoices,
+      configChoices: snapshot.configChoices,
     })
   );
   const supportedIds = new Set((exported.forces?.force ?? []).map((f) => f.entryId));

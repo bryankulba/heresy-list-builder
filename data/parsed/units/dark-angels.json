@@ -1,0 +1,1084 @@
+[
+  {
+    "name": "Corswain",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "7c9b-42e2-1c81-3e57",
+    "path": "7c9b-42e2-1c81-3e57::1d4a-09de-2638-e9e0",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 220,
+    "baseCost": 220,
+    "models": [
+      {
+        "name": "Corswain",
+        "entryId": "8f86-aa12-6bd3-6872",
+        "path": "7c9b-42e2-1c81-3e57::8f86-aa12-6bd3-6872",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "dark-angels",
+    "unitWargear": [
+      {
+        "name": "The Blade",
+        "entryId": "cb76-bb4b-7531-63f4",
+        "path": "7c9b-42e2-1c81-3e57::cb76-bb4b-7531-63f4"
+      },
+      {
+        "name": "Bolter",
+        "entryId": "7797-4238-4aae-543c",
+        "targetId": "d3f9-b9e6-3ea5-cc8e",
+        "path": "7c9b-42e2-1c81-3e57::7797-4238-4aae-543c::d3f9-b9e6-3ea5-cc8e"
+      },
+      {
+        "name": "Bolt pistol",
+        "entryId": "f5d8-0940-5388-101c",
+        "targetId": "2942-f783-d627-33c5",
+        "path": "7c9b-42e2-1c81-3e57::f5d8-0940-5388-101c::2942-f783-d627-33c5"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "d547-a448-103f-85d8",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "7c9b-42e2-1c81-3e57::d547-a448-103f-85d8::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "e9d9-0a33-3a8a-2843",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "7c9b-42e2-1c81-3e57::e9d9-0a33-3a8a-2843::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "1d4a-09de-2638-e9e0": 1,
+      "7c9b-42e2-1c81-3e57": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "9776-4805-2e0b-1f0f": 1,
+      "8f86-aa12-6bd3-6872": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "adac-833d-4595-b294",
+      "path": "7c9b-42e2-1c81-3e57::adac-833d-4595-b294::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "7c9b-42e2-1c81-3e57::8b3d-b4fe-4dd6-9533"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "7c9b-42e2-1c81-3e57::b299-0e50-7272-7f2d",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Deathwing Companion Detachment",
+    "entryId": "9601-52bb-0c27-df5f",
+    "path": "9601-52bb-0c27-df5f::1e9c-6b93-a335-43c4",
+    "role": "Retinue",
+    "primaryCategory": "Retinue",
+    "points": 175,
+    "baseCost": 55,
+    "models": [
+      {
+        "name": "Deathwing Companion",
+        "entryId": "4808-791f-8ebd-4027",
+        "path": "9601-52bb-0c27-df5f::4808-791f-8ebd-4027",
+        "cost": 30,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "ef63-f433-6837-1c92",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "9601-52bb-0c27-df5f::ef63-f433-6837-1c92::2942-f783-d627-33c5",
+            "groupPath": "9601-52bb-0c27-df5f::e531-c74d-bdc1-d6e4"
+          },
+          {
+            "name": "Bolter",
+            "entryId": "3c4b-cab5-652c-a14b",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "9601-52bb-0c27-df5f::3c4b-cab5-652c-a14b::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "9601-52bb-0c27-df5f::a4fe-ba65-dfd2-cb9e"
+          },
+          {
+            "name": "Calibanite Warblade",
+            "entryId": "0924-0a8e-3238-1e77",
+            "targetId": "65da-539f-9e31-5a40",
+            "path": "9601-52bb-0c27-df5f::0924-0a8e-3238-1e77::65da-539f-9e31-5a40",
+            "groupPath": "9601-52bb-0c27-df5f::1e79-d943-3094-9dd1"
+          }
+        ]
+      },
+      {
+        "name": "Deathwing Oathbearer",
+        "entryId": "b884-959e-af04-0596",
+        "path": "9601-52bb-0c27-df5f::b884-959e-af04-0596",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Bolter",
+            "entryId": "c023-d7a3-dc69-6bbe",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "9601-52bb-0c27-df5f::c023-d7a3-dc69-6bbe::d3f9-b9e6-3ea5-cc8e",
+            "groupPath": "9601-52bb-0c27-df5f::98d3-bdec-19b9-6ec0"
+          },
+          {
+            "name": "Calibanite Warblade",
+            "entryId": "1ea2-77a4-69e3-a645",
+            "targetId": "65da-539f-9e31-5a40",
+            "path": "9601-52bb-0c27-df5f::1ea2-77a4-69e3-a645::65da-539f-9e31-5a40",
+            "groupPath": "9601-52bb-0c27-df5f::df93-4002-9533-8527"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "59a8-5580-149e-ddb5",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "9601-52bb-0c27-df5f::59a8-5580-149e-ddb5::2942-f783-d627-33c5",
+            "groupPath": "9601-52bb-0c27-df5f::5f09-09b2-6042-45f6"
+          }
+        ]
+      }
+    ],
+    "source": "dark-angels",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "19d6-8b72-a7a2-aeed",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "9601-52bb-0c27-df5f::19d6-8b72-a7a2-aeed::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "8e0f-fb73-9e8b-8e31",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "9601-52bb-0c27-df5f::8e0f-fb73-9e8b-8e31::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "1e9c-6b93-a335-43c4": 1,
+      "9601-52bb-0c27-df5f": 1,
+      "a38e-50ff-310f-f19e": 1,
+      "9776-4805-2e0b-1f0f": 1,
+      "4808-791f-8ebd-4027": 4,
+      "594d-fa82-13cb-a345": 5,
+      "ef63-f433-6837-1c92": 4,
+      "2942-f783-d627-33c5": 5,
+      "3c4b-cab5-652c-a14b": 4,
+      "d3f9-b9e6-3ea5-cc8e": 5,
+      "0924-0a8e-3238-1e77": 4,
+      "65da-539f-9e31-5a40": 5,
+      "b884-959e-af04-0596": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "c023-d7a3-dc69-6bbe": 1,
+      "1ea2-77a4-69e3-a645": 1,
+      "59a8-5580-149e-ddb5": 1
+    },
+    "prime": {
+      "linkId": "8d8e-94ec-f857-c8b1",
+      "path": "9601-52bb-0c27-df5f::8d8e-94ec-f857-c8b1::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "9601-52bb-0c27-df5f::0d41-c8cb-4267-bd1c"
+      }
+    }
+  },
+  {
+    "name": "Dreadwing Interemptor Squad",
+    "entryId": "fbd4-c7ab-dfef-cc42",
+    "path": "fbd4-c7ab-dfef-cc42::d788-b46c-c9f2-0aa9",
+    "role": "Support",
+    "primaryCategory": "Support",
+    "points": 125,
+    "baseCost": 45,
+    "models": [
+      {
+        "name": "Interemptor Praefectus",
+        "entryId": "b9cc-f676-273f-a094",
+        "path": "fbd4-c7ab-dfef-cc42::b9cc-f676-273f-a094",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Plasma burner",
+            "entryId": "bb8e-6f5c-d523-5f96",
+            "targetId": "e2ee-052e-163c-6e65",
+            "path": "fbd4-c7ab-dfef-cc42::bb8e-6f5c-d523-5f96::e2ee-052e-163c-6e65"
+          }
+        ]
+      },
+      {
+        "name": "Interemptors",
+        "entryId": "e956-50db-74c7-d893",
+        "path": "fbd4-c7ab-dfef-cc42::e956-50db-74c7-d893",
+        "cost": 20,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Plasma burner",
+            "entryId": "f33e-391d-8370-7bae",
+            "targetId": "e2ee-052e-163c-6e65",
+            "path": "fbd4-c7ab-dfef-cc42::f33e-391d-8370-7bae::e2ee-052e-163c-6e65",
+            "groupPath": "fbd4-c7ab-dfef-cc42::5942-1f9b-5738-b433"
+          }
+        ]
+      }
+    ],
+    "source": "dark-angels",
+    "unitWargear": [
+      {
+        "name": "Bolt pistol",
+        "entryId": "9450-39e7-dbee-41d1",
+        "targetId": "2942-f783-d627-33c5",
+        "path": "fbd4-c7ab-dfef-cc42::9450-39e7-dbee-41d1::2942-f783-d627-33c5"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "2907-a7ad-0f2c-cc89",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "fbd4-c7ab-dfef-cc42::2907-a7ad-0f2c-cc89::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "b8fd-577f-dd18-6bd5",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "fbd4-c7ab-dfef-cc42::b8fd-577f-dd18-6bd5::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Rad grenades",
+        "entryId": "9a77-6537-f547-b642",
+        "targetId": "cd5f-1eff-df69-6bd2",
+        "path": "fbd4-c7ab-dfef-cc42::9a77-6537-f547-b642::cd5f-1eff-df69-6bd2"
+      }
+    ],
+    "facts": {
+      "d788-b46c-c9f2-0aa9": 1,
+      "fbd4-c7ab-dfef-cc42": 1,
+      "345f-9ba6-9b02-ed5c": 1,
+      "9776-4805-2e0b-1f0f": 1,
+      "b9cc-f676-273f-a094": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "bb8e-6f5c-d523-5f96": 1,
+      "e2ee-052e-163c-6e65": 5,
+      "e956-50db-74c7-d893": 4,
+      "f33e-391d-8370-7bae": 4
+    },
+    "prime": {
+      "linkId": "5225-eb05-6b7a-932f",
+      "path": "fbd4-c7ab-dfef-cc42::5225-eb05-6b7a-932f::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "fbd4-c7ab-dfef-cc42::5d47-5482-4b8a-8135"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Support - Dreadwing or Rapier Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "force",
+            "field": "selections",
+            "value": 1,
+            "childId": "4df8-3a15-6b77-1b80"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Inner Circle Knights Cenobium",
+    "entryId": "e377-3039-fed2-b525",
+    "path": "e377-3039-fed2-b525::e033-118d-4b07-5cd1",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 275,
+    "baseCost": 75,
+    "models": [
+      {
+        "name": "Order Cenobite",
+        "entryId": "8a6b-255c-5771-b471",
+        "path": "e377-3039-fed2-b525::8a6b-255c-5771-b471",
+        "cost": 50,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Plasma caster",
+            "entryId": "6bbd-df5e-28af-2ccc",
+            "targetId": "509f-0a58-f6e8-c8f5",
+            "path": "e377-3039-fed2-b525::6bbd-df5e-28af-2ccc::509f-0a58-f6e8-c8f5"
+          },
+          {
+            "name": "Terranic greatsword",
+            "entryId": "51a6-7d56-fb99-2a00",
+            "targetId": "f1aa-3d18-caac-a960",
+            "path": "e377-3039-fed2-b525::51a6-7d56-fb99-2a00::f1aa-3d18-caac-a960",
+            "groupPath": "e377-3039-fed2-b525::5ab0-8134-b3c7-2fa7"
+          }
+        ]
+      },
+      {
+        "name": "Order Preceptor",
+        "entryId": "020f-37dd-726f-1888",
+        "path": "e377-3039-fed2-b525::020f-37dd-726f-1888",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Grenade harness",
+            "entryId": "a725-5bf6-4dc4-4144",
+            "targetId": "a766-856c-52bd-d30a",
+            "path": "e377-3039-fed2-b525::a725-5bf6-4dc4-4144::a766-856c-52bd-d30a"
+          },
+          {
+            "name": "Plasma caster",
+            "entryId": "ca67-f475-403e-c3ad",
+            "targetId": "509f-0a58-f6e8-c8f5",
+            "path": "e377-3039-fed2-b525::ca67-f475-403e-c3ad::509f-0a58-f6e8-c8f5"
+          },
+          {
+            "name": "Terranic greatsword",
+            "entryId": "1550-1f0b-ff8d-8f2d",
+            "targetId": "f1aa-3d18-caac-a960",
+            "path": "e377-3039-fed2-b525::1550-1f0b-ff8d-8f2d::f1aa-3d18-caac-a960",
+            "groupPath": "e377-3039-fed2-b525::494f-34b9-9b2c-b772"
+          }
+        ]
+      }
+    ],
+    "source": "dark-angels",
+    "unitWargear": [
+      {
+        "name": "Augurs of Weakness",
+        "entryId": "e0e2-4f18-b1fb-ce5d",
+        "path": "e377-3039-fed2-b525::9120-8b58-f50f-944a::e0e2-4f18-b1fb-ce5d",
+        "groupPath": "e377-3039-fed2-b525::9120-8b58-f50f-944a::9035-6bbe-3431-876d"
+      }
+    ],
+    "facts": {
+      "e033-118d-4b07-5cd1": 1,
+      "e377-3039-fed2-b525": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "9776-4805-2e0b-1f0f": 1,
+      "8a6b-255c-5771-b471": 4,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "6bbd-df5e-28af-2ccc": 4,
+      "509f-0a58-f6e8-c8f5": 5,
+      "51a6-7d56-fb99-2a00": 4,
+      "f1aa-3d18-caac-a960": 5,
+      "020f-37dd-726f-1888": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "a725-5bf6-4dc4-4144": 1,
+      "a766-856c-52bd-d30a": 1,
+      "ca67-f475-403e-c3ad": 1,
+      "1550-1f0b-ff8d-8f2d": 1
+    },
+    "prime": {
+      "linkId": "4edf-74d7-ceb9-d5e2",
+      "path": "e377-3039-fed2-b525::4edf-74d7-ceb9-d5e2::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "e377-3039-fed2-b525::0c28-d249-40c7-a8b6"
+      }
+    }
+  },
+  {
+    "name": "Lion El'Johnson",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "e463-3f44-a9ae-6386",
+    "path": "e463-3f44-a9ae-6386::2516-2347-2ca5-af1d",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 460,
+    "baseCost": 460,
+    "models": [
+      {
+        "name": "Lion El'Johnson",
+        "entryId": "e121-089a-eb12-8687",
+        "path": "e463-3f44-a9ae-6386::e121-089a-eb12-8687",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "dark-angels",
+    "unitWargear": [
+      {
+        "name": "Stasis grenades",
+        "entryId": "47b4-56ba-de11-1abe",
+        "path": "e463-3f44-a9ae-6386::47b4-56ba-de11-1abe"
+      },
+      {
+        "name": "The Fusil Actinaeus",
+        "entryId": "b884-a934-46bd-30f3",
+        "path": "e463-3f44-a9ae-6386::b884-a934-46bd-30f3"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "0663-009e-3b74-7d3a",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "e463-3f44-a9ae-6386::0663-009e-3b74-7d3a::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "c951-cf19-6b8c-913a",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "e463-3f44-a9ae-6386::c951-cf19-6b8c-913a::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "The Lion Sword",
+        "entryId": "1e6b-0409-5021-5000",
+        "path": "e463-3f44-a9ae-6386::1e6b-0409-5021-5000",
+        "groupPath": "e463-3f44-a9ae-6386::eb54-4b93-0e45-bcbe"
+      }
+    ],
+    "facts": {
+      "2516-2347-2ca5-af1d": 1,
+      "e463-3f44-a9ae-6386": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "22ee-7208-4089-b005": 1,
+      "9776-4805-2e0b-1f0f": 1,
+      "e121-089a-eb12-8687": 1,
+      "b980-187b-2b17-d635": 1,
+      "7799-e1d6-762b-700b": 1
+    }
+  },
+  {
+    "name": "Marduk Sedras",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "3b39-6a5f-307d-2152",
+    "path": "3b39-6a5f-307d-2152::34d0-7b32-5875-8d5a",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 225,
+    "baseCost": 225,
+    "models": [
+      {
+        "name": "Marduk Sedras",
+        "entryId": "8e82-13e7-cba4-a6a9",
+        "path": "3b39-6a5f-307d-2152::8e82-13e7-cba4-a6a9",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "dark-angels",
+    "unitWargear": [
+      {
+        "name": "The Death of Worlds",
+        "entryId": "aaaa-0f3f-1b3e-75bb",
+        "path": "3b39-6a5f-307d-2152::aaaa-0f3f-1b3e-75bb"
+      },
+      {
+        "name": "Phosphex bombs",
+        "entryId": "00b1-d389-28be-b163",
+        "targetId": "5ad2-c3b4-f5eb-5b10",
+        "path": "3b39-6a5f-307d-2152::00b1-d389-28be-b163::5ad2-c3b4-f5eb-5b10"
+      },
+      {
+        "name": "Plasma burner",
+        "entryId": "5884-db2a-3d84-c50a",
+        "targetId": "e2ee-052e-163c-6e65",
+        "path": "3b39-6a5f-307d-2152::5884-db2a-3d84-c50a::e2ee-052e-163c-6e65"
+      }
+    ],
+    "facts": {
+      "34d0-7b32-5875-8d5a": 1,
+      "3b39-6a5f-307d-2152": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "9776-4805-2e0b-1f0f": 1,
+      "8e82-13e7-cba4-a6a9": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1,
+      "1e7d-9066-28d2-97a0": 1
+    },
+    "prime": {
+      "linkId": "3ba8-3c3d-4faa-a6fc",
+      "path": "3b39-6a5f-307d-2152::3ba8-3c3d-4faa-a6fc::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "3b39-6a5f-307d-2152::3e2e-4118-41c0-bd65"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "3b39-6a5f-307d-2152::8e83-9250-cee3-923b",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Cataphractii Terminator Deathwing Companions",
+    "entryId": "291e-d41c-92b7-9863",
+    "path": "291e-d41c-92b7-9863::cb0f-4537-6a7e-4ed7",
+    "role": "Retinue",
+    "primaryCategory": "Retinue",
+    "points": 240,
+    "baseCost": 240,
+    "models": [
+      {
+        "name": "Cataphractii Companion",
+        "entryId": "052b-35d4-ecc9-ac9c",
+        "path": "291e-d41c-92b7-9863::052b-35d4-ecc9-ac9c",
+        "cost": 0,
+        "min": 4,
+        "max": 4,
+        "defaultWargear": [
+          {
+            "name": "Pair of lightning claws",
+            "entryId": "a782-6dbf-bd6e-573b",
+            "targetId": "6754-24dd-5be0-26ff",
+            "path": "291e-d41c-92b7-9863::a782-6dbf-bd6e-573b::6754-24dd-5be0-26ff",
+            "groupPath": "291e-d41c-92b7-9863::27c0-10c1-9820-a889"
+          }
+        ]
+      },
+      {
+        "name": "Cataphractii Oathbearer",
+        "entryId": "0955-0337-89e4-c40b",
+        "path": "291e-d41c-92b7-9863::0955-0337-89e4-c40b",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Pair of lightning claws",
+            "entryId": "b993-7047-3933-ea5b",
+            "targetId": "6754-24dd-5be0-26ff",
+            "path": "291e-d41c-92b7-9863::b993-7047-3933-ea5b::6754-24dd-5be0-26ff",
+            "groupPath": "291e-d41c-92b7-9863::8c47-b0bf-d97e-1532"
+          }
+        ]
+      }
+    ],
+    "source": "dark-angels",
+    "facts": {
+      "cb0f-4537-6a7e-4ed7": 1,
+      "291e-d41c-92b7-9863": 1,
+      "a38e-50ff-310f-f19e": 1,
+      "052b-35d4-ecc9-ac9c": 4,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "a782-6dbf-bd6e-573b": 4,
+      "6754-24dd-5be0-26ff": 5,
+      "0955-0337-89e4-c40b": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "b993-7047-3933-ea5b": 1
+    },
+    "prime": {
+      "linkId": "ef79-30a0-ff66-630d",
+      "path": "291e-d41c-92b7-9863::ef79-30a0-ff66-630d::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "291e-d41c-92b7-9863::924e-594a-3f6e-11fa"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Retinue - Cataphractii Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "force",
+            "field": "selections",
+            "value": 1,
+            "childId": "d7b3-5d00-8524-73fa"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Tartaros Terminator Deathwing Companions",
+    "entryId": "c16e-901e-d295-3c02",
+    "path": "c16e-901e-d295-3c02::3f9d-5f2f-a47a-bd1f",
+    "role": "Retinue",
+    "primaryCategory": "Retinue",
+    "points": 240,
+    "baseCost": 240,
+    "models": [
+      {
+        "name": "Tartaros Companion",
+        "entryId": "278d-7dfb-e2f4-c4a5",
+        "path": "c16e-901e-d295-3c02::278d-7dfb-e2f4-c4a5",
+        "cost": 0,
+        "min": 4,
+        "max": 4,
+        "defaultWargear": [
+          {
+            "name": "Pair of lightning claws",
+            "entryId": "2ee9-b60f-6b4d-ea0f",
+            "targetId": "6754-24dd-5be0-26ff",
+            "path": "c16e-901e-d295-3c02::2ee9-b60f-6b4d-ea0f::6754-24dd-5be0-26ff",
+            "groupPath": "c16e-901e-d295-3c02::6b33-cdf8-6a60-0549"
+          }
+        ]
+      },
+      {
+        "name": "Tartaros Oathbearer",
+        "entryId": "76de-0b19-e59a-0abc",
+        "path": "c16e-901e-d295-3c02::76de-0b19-e59a-0abc",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Pair of lightning claws",
+            "entryId": "79d9-2348-ee88-7df3",
+            "targetId": "6754-24dd-5be0-26ff",
+            "path": "c16e-901e-d295-3c02::79d9-2348-ee88-7df3::6754-24dd-5be0-26ff",
+            "groupPath": "c16e-901e-d295-3c02::3fed-932f-91e0-75a5"
+          }
+        ]
+      }
+    ],
+    "source": "dark-angels",
+    "facts": {
+      "3f9d-5f2f-a47a-bd1f": 1,
+      "c16e-901e-d295-3c02": 1,
+      "a38e-50ff-310f-f19e": 1,
+      "278d-7dfb-e2f4-c4a5": 4,
+      "594d-fa82-13cb-a345": 5,
+      "2ee9-b60f-6b4d-ea0f": 4,
+      "6754-24dd-5be0-26ff": 5,
+      "76de-0b19-e59a-0abc": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "79d9-2348-ee88-7df3": 1
+    },
+    "prime": {
+      "linkId": "429d-920e-3e78-f0e4",
+      "path": "c16e-901e-d295-3c02::429d-920e-3e78-f0e4::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "c16e-901e-d295-3c02::897f-560d-343e-d44a"
+      }
+    },
+    "primaryCategoryRules": [
+      {
+        "category": "Retinue - Tartaros Only",
+        "conditions": [
+          {
+            "type": "instanceOf",
+            "scope": "force",
+            "field": "selections",
+            "value": 1,
+            "childId": "dd35-dc84-98ac-237d"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Inner Circle Knights Cenobium – Order of the Broken Claws",
+    "entryId": "7f90-b6df-5196-b320",
+    "path": "7f90-b6df-5196-b320::2346-1124-5bc5-7254",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 285,
+    "baseCost": 65,
+    "models": [
+      {
+        "name": "Order Cenobite",
+        "entryId": "a38c-3b44-9eb6-0227",
+        "path": "7f90-b6df-5196-b320::a38c-3b44-9eb6-0227",
+        "cost": 55,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Plasma caster",
+            "entryId": "dda7-2b41-d075-f051",
+            "targetId": "509f-0a58-f6e8-c8f5",
+            "path": "7f90-b6df-5196-b320::dda7-2b41-d075-f051::509f-0a58-f6e8-c8f5"
+          },
+          {
+            "name": "Terranic greatsword",
+            "entryId": "bf4c-51b4-a54f-5a69",
+            "targetId": "f1aa-3d18-caac-a960",
+            "path": "7f90-b6df-5196-b320::bf4c-51b4-a54f-5a69::f1aa-3d18-caac-a960",
+            "groupPath": "7f90-b6df-5196-b320::d1c0-830f-77f5-ca33"
+          }
+        ]
+      },
+      {
+        "name": "Order Preceptor",
+        "entryId": "0178-e586-4e81-017c",
+        "path": "7f90-b6df-5196-b320::0178-e586-4e81-017c",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Grenade harness",
+            "entryId": "2ca7-7e30-cbeb-0d80",
+            "targetId": "a766-856c-52bd-d30a",
+            "path": "7f90-b6df-5196-b320::2ca7-7e30-cbeb-0d80::a766-856c-52bd-d30a"
+          },
+          {
+            "name": "Plasma caster",
+            "entryId": "1175-c5d8-e417-9a79",
+            "targetId": "509f-0a58-f6e8-c8f5",
+            "path": "7f90-b6df-5196-b320::1175-c5d8-e417-9a79::509f-0a58-f6e8-c8f5"
+          },
+          {
+            "name": "Terranic greatsword",
+            "entryId": "76fb-0c78-a30a-a112",
+            "targetId": "f1aa-3d18-caac-a960",
+            "path": "7f90-b6df-5196-b320::76fb-0c78-a30a-a112::f1aa-3d18-caac-a960",
+            "groupPath": "7f90-b6df-5196-b320::115b-ee56-19ac-fca0"
+          }
+        ]
+      }
+    ],
+    "source": "dark-angels",
+    "facts": {
+      "2346-1124-5bc5-7254": 1,
+      "7f90-b6df-5196-b320": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "a38c-3b44-9eb6-0227": 4,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "dda7-2b41-d075-f051": 4,
+      "509f-0a58-f6e8-c8f5": 5,
+      "bf4c-51b4-a54f-5a69": 4,
+      "f1aa-3d18-caac-a960": 5,
+      "0178-e586-4e81-017c": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "2ca7-7e30-cbeb-0d80": 1,
+      "a766-856c-52bd-d30a": 1,
+      "1175-c5d8-e417-9a79": 1,
+      "76fb-0c78-a30a-a112": 1
+    },
+    "prime": {
+      "linkId": "a048-9e58-b45c-cc58",
+      "path": "7f90-b6df-5196-b320::a048-9e58-b45c-cc58::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "7f90-b6df-5196-b320::9ead-ae02-66da-00a0"
+      }
+    }
+  },
+  {
+    "name": "Excindio Battle-automata",
+    "hidden": true,
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": false,
+        "conditionGroups": [
+          {
+            "type": "or",
+            "conditions": [
+              {
+                "type": "atLeast",
+                "scope": "roster",
+                "field": "forces",
+                "value": 1,
+                "childId": "8f12-c30a-6c20-6296"
+              },
+              {
+                "type": "atLeast",
+                "scope": "roster",
+                "field": "forces",
+                "value": 1,
+                "childId": "fe60-2ef4-3e1a-b6c1"
+              },
+              {
+                "type": "atLeast",
+                "scope": "roster",
+                "field": "forces",
+                "value": 1,
+                "childId": "1792-ddc3-0761-cccd"
+              },
+              {
+                "type": "atLeast",
+                "scope": "roster",
+                "field": "forces",
+                "value": 1,
+                "childId": "33cf-087a-39ee-2532"
+              },
+              {
+                "type": "atLeast",
+                "scope": "roster",
+                "field": "forces",
+                "value": 1,
+                "childId": "a4bf-9629-2065-4885"
+              },
+              {
+                "type": "atLeast",
+                "scope": "roster",
+                "field": "forces",
+                "value": 1,
+                "childId": "e46a-e7a0-2dfe-66cf"
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "entryId": "1649-1108-03b0-aba9",
+    "path": "1649-1108-03b0-aba9::f369-7a8f-853b-fdc5",
+    "role": "War-engine",
+    "primaryCategory": "War-engine",
+    "points": 180,
+    "baseCost": 180,
+    "models": [
+      {
+        "name": "Excindio Battle-automata",
+        "entryId": "9021-4604-5292-46a6",
+        "path": "1649-1108-03b0-aba9::9021-4604-5292-46a6",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "dark-angels",
+    "unitWargear": [
+      {
+        "name": "Excindio claws",
+        "entryId": "1b48-0179-6d92-1b26",
+        "path": "1649-1108-03b0-aba9::1b48-0179-6d92-1b26"
+      },
+      {
+        "name": "Two combi-bolters",
+        "entryId": "8af1-b637-f7cc-4047",
+        "path": "1649-1108-03b0-aba9::8af1-b637-f7cc-4047",
+        "groupPath": "1649-1108-03b0-aba9::5619-0575-f8ab-b9d3",
+        "children": [
+          {
+            "name": "Combi-bolter",
+            "count": 2,
+            "entryId": "de5f-d9e6-5071-9073",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "1649-1108-03b0-aba9::de5f-d9e6-5071-9073::042d-9e60-db9e-c147"
+          }
+        ]
+      }
+    ],
+    "facts": {
+      "f369-7a8f-853b-fdc5": 1,
+      "1649-1108-03b0-aba9": 1,
+      "2499-7239-685f-8465": 1,
+      "9021-4604-5292-46a6": 1,
+      "5a95-e564-96b2-8dc9": 1,
+      "8dd8-e8e9-3c90-05cb": 1
+    },
+    "prime": {
+      "linkId": "c393-1132-fedf-1693",
+      "path": "1649-1108-03b0-aba9::c393-1132-fedf-1693::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "1649-1108-03b0-aba9::d7ae-fdca-3108-c95f"
+      }
+    }
+  },
+  {
+    "name": "Firewing Enigmatus Cabal",
+    "entryId": "75ee-b9b4-2db5-d897",
+    "path": "75ee-b9b4-2db5-d897::84d3-129c-126d-5036",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 90,
+    "baseCost": 90,
+    "models": [
+      {
+        "name": "Firewing Enigmatii",
+        "entryId": "3215-b0f9-b220-6e82",
+        "path": "75ee-b9b4-2db5-d897::3215-b0f9-b220-6e82",
+        "cost": 0,
+        "min": 3,
+        "max": 3,
+        "defaultWargear": [
+          {
+            "name": "Calibanite charge-blade",
+            "entryId": "19aa-e596-eeeb-8e48",
+            "path": "75ee-b9b4-2db5-d897::19aa-e596-eeeb-8e48"
+          },
+          {
+            "name": "Needle Pistol",
+            "entryId": "f103-ea6d-2b3c-b46c",
+            "path": "75ee-b9b4-2db5-d897::f103-ea6d-2b3c-b46c"
+          }
+        ]
+      }
+    ],
+    "source": "dark-angels",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "bb5b-b147-2134-dc14",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "75ee-b9b4-2db5-d897::bb5b-b147-2134-dc14::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "74f6-fc86-a1b4-215a",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "75ee-b9b4-2db5-d897::74f6-fc86-a1b4-215a::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "84d3-129c-126d-5036": 1,
+      "75ee-b9b4-2db5-d897": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "3215-b0f9-b220-6e82": 3,
+      "5a95-e564-96b2-8dc9": 3,
+      "c504-9dfa-35d3-c98f": 3,
+      "594d-fa82-13cb-a345": 3,
+      "19aa-e596-eeeb-8e48": 3,
+      "f103-ea6d-2b3c-b46c": 3
+    },
+    "prime": {
+      "linkId": "021b-d78e-3f24-202a",
+      "path": "75ee-b9b4-2db5-d897::021b-d78e-3f24-202a::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "75ee-b9b4-2db5-d897::590a-8993-643a-8016"
+      }
+    }
+  },
+  {
+    "name": "Inductii Squad",
+    "entryId": "0eef-e7e7-b3da-778e",
+    "path": "0eef-e7e7-b3da-778e::d6b5-9428-48a9-952f",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 90,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Inductii",
+        "entryId": "192e-33c3-4a63-8669",
+        "path": "0eef-e7e7-b3da-778e::192e-33c3-4a63-8669",
+        "cost": 9,
+        "min": 10,
+        "max": 20,
+        "defaultWargear": [
+          {
+            "name": "Volkite charger",
+            "entryId": "8a08-f954-41d9-bd55",
+            "targetId": "93e7-6a83-1e9e-204a",
+            "path": "0eef-e7e7-b3da-778e::8a08-f954-41d9-bd55::93e7-6a83-1e9e-204a"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "8c8b-9ffd-4585-b186",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "0eef-e7e7-b3da-778e::8c8b-9ffd-4585-b186::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "7fb5-d566-4ecc-ba0a",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "0eef-e7e7-b3da-778e::7fb5-d566-4ecc-ba0a::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "2130-bea5-4f85-9c3a",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "0eef-e7e7-b3da-778e::2130-bea5-4f85-9c3a::fa20-82bc-c7de-9e97"
+          }
+        ]
+      }
+    ],
+    "source": "dark-angels",
+    "facts": {
+      "d6b5-9428-48a9-952f": 1,
+      "0eef-e7e7-b3da-778e": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "192e-33c3-4a63-8669": 10,
+      "594d-fa82-13cb-a345": 10,
+      "8a08-f954-41d9-bd55": 10,
+      "93e7-6a83-1e9e-204a": 10,
+      "8c8b-9ffd-4585-b186": 10,
+      "2942-f783-d627-33c5": 10,
+      "7fb5-d566-4ecc-ba0a": 10,
+      "60e4-ca33-2e68-9afc": 10,
+      "2130-bea5-4f85-9c3a": 10,
+      "fa20-82bc-c7de-9e97": 10
+    }
+  }
+]

@@ -10,13 +10,13 @@ describe('army-wide sub-faction', () => {
   const expurgator = group.options.find((o) => o.name === 'Expurgator')!;
 
   test('Skitarii and Mechanicum armies pick a sub-faction; options hidden for the army are left out', () => {
-    // The Skitarii's own sub-faction first; Mechanicum's (on units like the Triaros) after
-    expect(armyChoiceGroups('skitarii-conclaves').map(armyChoiceLabel)).toEqual(['Skitarii sub-faction', 'Mechanicum sub-faction']);
+    // Only the army's own catalogue's choice (a Triaros keeps BSData's Mechanicum default)
+    expect(armyChoiceGroups('skitarii-conclaves').map(armyChoiceLabel)).toEqual(['Skitarii sub-faction']);
     expect(group.options.map((o) => o.name)).toContain('Acquisitor');
     const mech = armyChoiceGroups('mechanicum')[0];
     expect(mech.options.map((o) => o.name)).toContain('Macrotek');
-    // Macrotek is only offered to Mechanicum armies
-    expect(armyChoiceGroups('solar-auxilia').flatMap((g) => g.options.map((o) => o.name))).not.toContain('Macrotek');
+    // Solar Auxilia isn't asked for its Tech-Priest's Mechanicum sub-faction
+    expect(armyChoiceGroups('solar-auxilia')).toEqual([]);
     expect(armyChoiceGroups('death-guard')).toEqual([]);
   });
 

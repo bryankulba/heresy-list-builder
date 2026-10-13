@@ -1,3 +1,4 @@
+import type { PrimeNode } from './primeBenefits';
 import { describe, test, expect } from 'vitest';
 import { createForce } from '../store/rosterModel';
 import { getUnitsForFaction } from '../data/loader';
@@ -44,8 +45,10 @@ describe('getPrimeOptions', () => {
 
   test('Mechanicum uses its own Logistical Benefit, not the common one', () => {
     const mech = names(optionsFor('mechanicum', 'Magos', 'Prime Command'));
-    expect(mech).toEqual(expect.arrayContaining(['Logistical Benefit (Mech)', 'Paragon of Metal']));
+    expect(mech).toContain('Logistical Benefit (Mech)');
     expect(mech).not.toContain('Logistical Benefit');
+    // Paragon of Metal: only for units entirely of Cybernetica Automata
+    expect(mech).not.toContain('Paragon of Metal');
   });
 
   test('Logistical Benefit offers its bonus slot roles as sub-choices', () => {
@@ -56,5 +59,12 @@ describe('getPrimeOptions', () => {
   test('benefits carry their BSData rules text', () => {
     const vets = optionsFor('death-guard', 'Tactical Squad', 'Prime Troops').find((o) => o.name === 'Combat Veterans');
     expect(vets?.description).toMatch(/Leadership, Cool, Intelligence and Willpower/);
+  });
+
+  test('Mechanicum benefits carry their rules text', async () => {
+    const { rulesData } = await import('../data/loader');
+    const all = (nodes: PrimeNode[] | undefined): PrimeNode[] => (nodes ?? []).flatMap((n) => [n, ...all(n.children)]);
+    const paragon = Object.values(rulesData.primeGroups).flatMap((g) => all(g.children)).find((n) => n.name === 'Paragon of Metal');
+    expect(paragon?.description).toMatch(/Automata Type and the Cybernetica Trait/);
   });
 });

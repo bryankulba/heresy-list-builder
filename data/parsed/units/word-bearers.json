@@ -1,0 +1,1458 @@
+[
+  {
+    "name": "Lorgar Aurelian",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "3f74-fcee-ebe7-6daf",
+    "path": "3f74-fcee-ebe7-6daf::a763-c205-9fe6-46c1",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 445,
+    "baseCost": 445,
+    "models": [
+      {
+        "name": "Lorgar Aurelian",
+        "entryId": "37a9-c71c-fed2-1062",
+        "path": "3f74-fcee-ebe7-6daf::37a9-c71c-fed2-1062",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "lluminarum",
+            "entryId": "21df-7b16-dcb8-4d08",
+            "path": "3f74-fcee-ebe7-6daf::21df-7b16-dcb8-4d08"
+          },
+          {
+            "name": "Devotion",
+            "entryId": "bbba-7053-95c1-e3c0",
+            "path": "3f74-fcee-ebe7-6daf::bbba-7053-95c1-e3c0"
+          },
+          {
+            "name": "Anathemata",
+            "entryId": "0395-0f54-79c8-2cd3",
+            "targetId": "091a-56c9-7eba-9fa7",
+            "path": "3f74-fcee-ebe7-6daf::0395-0f54-79c8-2cd3::091a-56c9-7eba-9fa7"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "be37-7be9-13a3-cc39",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "3f74-fcee-ebe7-6daf::be37-7be9-13a3-cc39::60e4-ca33-2e68-9afc"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "facts": {
+      "a763-c205-9fe6-46c1": 1,
+      "3f74-fcee-ebe7-6daf": 1,
+      "d251-944b-3c3b-0579": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "8e24-2d8b-26e7-d7aa": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "22ee-7208-4089-b005": 1,
+      "2aba-8953-ea2f-ce59": 1,
+      "37a9-c71c-fed2-1062": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1,
+      "21df-7b16-dcb8-4d08": 1,
+      "bbba-7053-95c1-e3c0": 1,
+      "0395-0f54-79c8-2cd3": 1,
+      "091a-56c9-7eba-9fa7": 1,
+      "be37-7be9-13a3-cc39": 1,
+      "60e4-ca33-2e68-9afc": 1
+    }
+  },
+  {
+    "name": "Kor Phaeron ",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "b77c-5d9b-e8f0-fdfd",
+    "path": "b77c-5d9b-e8f0-fdfd::81d5-3d0d-6447-d52b",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 125,
+    "baseCost": 125,
+    "models": [
+      {
+        "name": "Kor Phaeron",
+        "entryId": "40f7-d15f-35db-9a03",
+        "path": "b77c-5d9b-e8f0-fdfd::40f7-d15f-35db-9a03",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Patriarch’s Claws",
+            "entryId": "0f3c-87c6-b43b-aaaf",
+            "path": "b77c-5d9b-e8f0-fdfd::0f3c-87c6-b43b-aaaf"
+          },
+          {
+            "name": "Digi-flamer",
+            "entryId": "d082-4475-9799-2e2b",
+            "path": "b77c-5d9b-e8f0-fdfd::d082-4475-9799-2e2b"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "facts": {
+      "81d5-3d0d-6447-d52b": 1,
+      "b77c-5d9b-e8f0-fdfd": 1,
+      "d251-944b-3c3b-0579": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "2aba-8953-ea2f-ce59": 1,
+      "40f7-d15f-35db-9a03": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1,
+      "0f3c-87c6-b43b-aaaf": 1,
+      "d082-4475-9799-2e2b": 1
+    },
+    "prime": {
+      "linkId": "40e7-827c-4668-960b",
+      "path": "b77c-5d9b-e8f0-fdfd::40e7-827c-4668-960b::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "b77c-5d9b-e8f0-fdfd::a360-8f33-41b7-941c"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "b77c-5d9b-e8f0-fdfd::03e6-4809-dc67-0208",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Erebus",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "abf5-e9e8-7a90-2e2f",
+    "path": "abf5-e9e8-7a90-2e2f::f075-69f8-c356-a63a",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 165,
+    "baseCost": 165,
+    "models": [
+      {
+        "name": "Erebus",
+        "entryId": "ff4b-26d3-f350-d063",
+        "path": "abf5-e9e8-7a90-2e2f::ff4b-26d3-f350-d063",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Crux Malifica ",
+            "entryId": "9af4-f982-d4b0-390b",
+            "path": "abf5-e9e8-7a90-2e2f::9af4-f982-d4b0-390b"
+          },
+          {
+            "name": "Plasma pistol",
+            "entryId": "b139-d24c-a652-c247",
+            "targetId": "659f-d52e-1515-2912",
+            "path": "abf5-e9e8-7a90-2e2f::b139-d24c-a652-c247::659f-d52e-1515-2912"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "0740-b489-1680-bd56",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "abf5-e9e8-7a90-2e2f::0740-b489-1680-bd56::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "ef40-dc91-c1dc-150d",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "abf5-e9e8-7a90-2e2f::ef40-dc91-c1dc-150d::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Anathemata",
+            "entryId": "a780-8a42-352c-a1e5",
+            "targetId": "091a-56c9-7eba-9fa7",
+            "path": "abf5-e9e8-7a90-2e2f::a780-8a42-352c-a1e5::091a-56c9-7eba-9fa7"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "facts": {
+      "f075-69f8-c356-a63a": 1,
+      "abf5-e9e8-7a90-2e2f": 1,
+      "d251-944b-3c3b-0579": 1,
+      "9254-b1e9-98b2-6101": 1,
+      "8e24-2d8b-26e7-d7aa": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "2aba-8953-ea2f-ce59": 1,
+      "ed12-2e38-312e-83e6": 1,
+      "ff4b-26d3-f350-d063": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1,
+      "9af4-f982-d4b0-390b": 1,
+      "b139-d24c-a652-c247": 1,
+      "659f-d52e-1515-2912": 1,
+      "0740-b489-1680-bd56": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "ef40-dc91-c1dc-150d": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "a780-8a42-352c-a1e5": 1,
+      "091a-56c9-7eba-9fa7": 1
+    },
+    "prime": {
+      "linkId": "3305-a296-49c0-9ad3",
+      "path": "abf5-e9e8-7a90-2e2f::3305-a296-49c0-9ad3::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "abf5-e9e8-7a90-2e2f::0564-6726-4d34-ace0"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "abf5-e9e8-7a90-2e2f::c80a-d7b1-cac6-fe44",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Argel Tal",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "cc58-0f99-610e-0426",
+    "path": "cc58-0f99-610e-0426::185b-76ba-116a-7ad7",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 240,
+    "baseCost": 240,
+    "models": [
+      {
+        "name": "Argel Tal",
+        "entryId": "f5a8-4c94-c8f3-cfb2",
+        "path": "cc58-0f99-610e-0426::f5a8-4c94-c8f3-cfb2",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Daemonic Talons",
+            "entryId": "ab38-05b0-5020-17d4",
+            "path": "cc58-0f99-610e-0426::ab38-05b0-5020-17d4"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "d410-a373-78dc-de4d",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "cc58-0f99-610e-0426::d410-a373-78dc-de4d::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "5110-27e2-2f97-5785",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "cc58-0f99-610e-0426::5110-27e2-2f97-5785::fa20-82bc-c7de-9e97"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "facts": {
+      "185b-76ba-116a-7ad7": 1,
+      "cc58-0f99-610e-0426": 1,
+      "d251-944b-3c3b-0579": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "2aba-8953-ea2f-ce59": 1,
+      "f5a8-4c94-c8f3-cfb2": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1,
+      "c504-9dfa-35d3-c98f": 1,
+      "2de1-ddd6-ebb4-10df": 1,
+      "ab38-05b0-5020-17d4": 1,
+      "d410-a373-78dc-de4d": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "5110-27e2-2f97-5785": 1,
+      "fa20-82bc-c7de-9e97": 1
+    },
+    "prime": {
+      "linkId": "9813-d760-47f7-91eb",
+      "path": "cc58-0f99-610e-0426::9813-d760-47f7-91eb::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "cc58-0f99-610e-0426::6522-0599-462f-95a2"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "cc58-0f99-610e-0426::bf6e-7b9b-570a-a6fd",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Zardu Layak",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "634b-4492-dc6f-d829",
+    "path": "634b-4492-dc6f-d829::dab8-484b-f682-a29d",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 180,
+    "baseCost": 180,
+    "models": [
+      {
+        "name": "Zardu Layak",
+        "entryId": "f84e-e28d-8fee-8344",
+        "path": "634b-4492-dc6f-d829::f84e-e28d-8fee-8344",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "The Panoply of Flame",
+            "entryId": "2342-d8d4-5d92-c8f2",
+            "path": "634b-4492-dc6f-d829::2342-d8d4-5d92-c8f2"
+          },
+          {
+            "name": "The Azurda Char’is ",
+            "entryId": "dffa-3cee-11f0-ac0a",
+            "path": "634b-4492-dc6f-d829::dffa-3cee-11f0-ac0a"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "d79e-58ab-0d27-5740",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "634b-4492-dc6f-d829::d79e-58ab-0d27-5740::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "e6d0-a0cd-d28d-5c1d",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "634b-4492-dc6f-d829::e6d0-a0cd-d28d-5c1d::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "935c-086f-1eb8-6ce9",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "634b-4492-dc6f-d829::935c-086f-1eb8-6ce9::60e4-ca33-2e68-9afc"
+          }
+        ]
+      },
+      {
+        "name": "Anakatis Kul",
+        "entryId": "af65-170e-74d9-8e53",
+        "path": "634b-4492-dc6f-d829::af65-170e-74d9-8e53",
+        "cost": 60,
+        "min": 0,
+        "max": 2,
+        "defaultWargear": [
+          {
+            "name": "Anakatis blade ",
+            "entryId": "60d5-923f-cade-4bcf",
+            "path": "634b-4492-dc6f-d829::60d5-923f-cade-4bcf"
+          },
+          {
+            "name": "Plasma pistol",
+            "entryId": "21dd-536d-4594-9ecc",
+            "targetId": "659f-d52e-1515-2912",
+            "path": "634b-4492-dc6f-d829::21dd-536d-4594-9ecc::659f-d52e-1515-2912"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "facts": {
+      "dab8-484b-f682-a29d": 1,
+      "634b-4492-dc6f-d829": 1,
+      "d251-944b-3c3b-0579": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "2aba-8953-ea2f-ce59": 1,
+      "f84e-e28d-8fee-8344": 1,
+      "9871-cb62-5283-2216": 1,
+      "b980-187b-2b17-d635": 1,
+      "594d-fa82-13cb-a345": 1,
+      "2de1-ddd6-ebb4-10df": 1,
+      "2342-d8d4-5d92-c8f2": 1,
+      "dffa-3cee-11f0-ac0a": 1,
+      "d79e-58ab-0d27-5740": 1,
+      "2942-f783-d627-33c5": 1,
+      "e6d0-a0cd-d28d-5c1d": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "935c-086f-1eb8-6ce9": 1,
+      "60e4-ca33-2e68-9afc": 1
+    },
+    "prime": {
+      "linkId": "23c6-0aa0-4542-9e55",
+      "path": "634b-4492-dc6f-d829::23c6-0aa0-4542-9e55::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "634b-4492-dc6f-d829::d7c1-cbdd-4302-b935"
+      }
+    }
+  },
+  {
+    "name": "Gal Vorbak",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "d374-0470-7755-e9b7",
+    "path": "d374-0470-7755-e9b7::bb3e-f926-23ec-c561",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 250,
+    "baseCost": 0,
+    "models": [
+      {
+        "name": "Dark Brethren",
+        "entryId": "4895-ef9f-062c-0e7c",
+        "path": "d374-0470-7755-e9b7::4895-ef9f-062c-0e7c",
+        "cost": 50,
+        "min": 5,
+        "max": 10,
+        "defaultWargear": [
+          {
+            "name": "Tainted Talons",
+            "entryId": "f75d-72d3-79c2-ba3b",
+            "path": "d374-0470-7755-e9b7::f75d-72d3-79c2-ba3b"
+          },
+          {
+            "name": "Bolter",
+            "entryId": "f1f5-1cb1-4a36-c35f",
+            "targetId": "d3f9-b9e6-3ea5-cc8e",
+            "path": "d374-0470-7755-e9b7::f1f5-1cb1-4a36-c35f::d3f9-b9e6-3ea5-cc8e"
+          },
+          {
+            "name": "Frag grenades",
+            "entryId": "ffde-df34-aa34-0dc3",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "d374-0470-7755-e9b7::ffde-df34-aa34-0dc3::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "d9c7-4611-fc5c-3e69",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "d374-0470-7755-e9b7::d9c7-4611-fc5c-3e69::fa20-82bc-c7de-9e97"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "facts": {
+      "bb3e-f926-23ec-c561": 1,
+      "d374-0470-7755-e9b7": 1,
+      "d251-944b-3c3b-0579": 1,
+      "dd1b-70ef-6015-1291": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "2aba-8953-ea2f-ce59": 1,
+      "4895-ef9f-062c-0e7c": 5,
+      "594d-fa82-13cb-a345": 5,
+      "2de1-ddd6-ebb4-10df": 5,
+      "f75d-72d3-79c2-ba3b": 5,
+      "f1f5-1cb1-4a36-c35f": 5,
+      "d3f9-b9e6-3ea5-cc8e": 5,
+      "ffde-df34-aa34-0dc3": 5,
+      "60e4-ca33-2e68-9afc": 5,
+      "d9c7-4611-fc5c-3e69": 5,
+      "fa20-82bc-c7de-9e97": 5
+    },
+    "prime": {
+      "linkId": "9952-be5a-4881-9d15",
+      "path": "d374-0470-7755-e9b7::9952-be5a-4881-9d15::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "d374-0470-7755-e9b7::a7c4-2ab1-46da-86d3"
+      }
+    }
+  },
+  {
+    "name": "Mhara Gal Dreadnought",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "9003-7fc9-5a92-81a4",
+    "path": "9003-7fc9-5a92-81a4::87ac-c2df-6bd9-33e3",
+    "role": "War-engine",
+    "primaryCategory": "War-engine",
+    "points": 210,
+    "baseCost": 210,
+    "models": [
+      {
+        "name": "Mhara Gal Dreadnought",
+        "entryId": "145f-a707-eb27-8a65",
+        "path": "9003-7fc9-5a92-81a4::145f-a707-eb27-8a65",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Burning Warpfire",
+            "entryId": "3b25-470e-8405-bd10",
+            "path": "9003-7fc9-5a92-81a4::3b25-470e-8405-bd10"
+          },
+          {
+            "name": "Tainted Claw",
+            "entryId": "b689-68d4-32e4-695c",
+            "path": "9003-7fc9-5a92-81a4::b689-68d4-32e4-695c"
+          },
+          {
+            "name": "Warpfire Cannon",
+            "entryId": "c0b1-473e-cb46-3079",
+            "path": "9003-7fc9-5a92-81a4::c0b1-473e-cb46-3079",
+            "groupPath": "9003-7fc9-5a92-81a4::bacc-1fbf-b150-5be4"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "facts": {
+      "87ac-c2df-6bd9-33e3": 1,
+      "9003-7fc9-5a92-81a4": 1,
+      "d251-944b-3c3b-0579": 1,
+      "2499-7239-685f-8465": 1,
+      "2aba-8953-ea2f-ce59": 1,
+      "145f-a707-eb27-8a65": 1,
+      "38d4-d720-8009-acd3": 1,
+      "2de1-ddd6-ebb4-10df": 1,
+      "3b25-470e-8405-bd10": 1,
+      "b689-68d4-32e4-695c": 1,
+      "c0b1-473e-cb46-3079": 1
+    },
+    "prime": {
+      "linkId": "8b14-5da8-4620-a494",
+      "path": "9003-7fc9-5a92-81a4::8b14-5da8-4620-a494::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "9003-7fc9-5a92-81a4::d2fc-d00f-448d-a987"
+      }
+    }
+  },
+  {
+    "name": "Ashen Circle",
+    "entryId": "4f05-5ff4-f414-18f4",
+    "path": "4f05-5ff4-f414-18f4::9290-f8f4-ff78-b09c",
+    "role": "Fast Attack",
+    "primaryCategory": "Fast Attack",
+    "points": 125,
+    "baseCost": 45,
+    "models": [
+      {
+        "name": "Incendiary",
+        "entryId": "9e26-66a6-9381-04cd",
+        "path": "4f05-5ff4-f414-18f4::9e26-66a6-9381-04cd",
+        "cost": 20,
+        "min": 4,
+        "max": 9,
+        "defaultWargear": [
+          {
+            "name": "Axe-rake",
+            "entryId": "3b15-1202-d433-f896",
+            "targetId": "103d-b9cb-bb16-1645",
+            "path": "4f05-5ff4-f414-18f4::3b15-1202-d433-f896::103d-b9cb-bb16-1645"
+          },
+          {
+            "name": "Akkadic hand flamer",
+            "entryId": "3166-f385-1dee-9034",
+            "targetId": "04d0-1f99-ce32-94fc",
+            "path": "4f05-5ff4-f414-18f4::3166-f385-1dee-9034::04d0-1f99-ce32-94fc"
+          }
+        ]
+      },
+      {
+        "name": "Iconoclast",
+        "entryId": "4844-0ce8-3681-2bfa",
+        "path": "4f05-5ff4-f414-18f4::4844-0ce8-3681-2bfa",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Axe-rake",
+            "entryId": "24d7-d344-09ca-9690",
+            "targetId": "103d-b9cb-bb16-1645",
+            "path": "4f05-5ff4-f414-18f4::24d7-d344-09ca-9690::103d-b9cb-bb16-1645"
+          },
+          {
+            "name": "Akkadic hand flamer",
+            "entryId": "478a-16dd-2ef0-7e45",
+            "targetId": "04d0-1f99-ce32-94fc",
+            "path": "4f05-5ff4-f414-18f4::478a-16dd-2ef0-7e45::04d0-1f99-ce32-94fc",
+            "groupPath": "4f05-5ff4-f414-18f4::ff8a-17b4-3124-b75b"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "a3cf-8a19-e1b9-c76b",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "4f05-5ff4-f414-18f4::a3cf-8a19-e1b9-c76b::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "4116-9490-e468-4d33",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "4f05-5ff4-f414-18f4::4116-9490-e468-4d33::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "9290-f8f4-ff78-b09c": 1,
+      "4f05-5ff4-f414-18f4": 1,
+      "cf96-8891-3f9a-8921": 1,
+      "2aba-8953-ea2f-ce59": 1,
+      "9e26-66a6-9381-04cd": 4,
+      "594d-fa82-13cb-a345": 5,
+      "c504-9dfa-35d3-c98f": 5,
+      "3b15-1202-d433-f896": 4,
+      "103d-b9cb-bb16-1645": 5,
+      "3166-f385-1dee-9034": 4,
+      "04d0-1f99-ce32-94fc": 5,
+      "4844-0ce8-3681-2bfa": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "24d7-d344-09ca-9690": 1,
+      "478a-16dd-2ef0-7e45": 1
+    },
+    "prime": {
+      "linkId": "3032-e409-4d33-a113",
+      "path": "4f05-5ff4-f414-18f4::3032-e409-4d33-a113::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "4f05-5ff4-f414-18f4::9b45-b790-4326-84eb"
+      }
+    }
+  },
+  {
+    "name": "Diabolist",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "02ec-aba2-1a8e-706a",
+    "path": "02ec-aba2-1a8e-706a::1c2d-33b0-4ec7-8802",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 105,
+    "baseCost": 105,
+    "models": [
+      {
+        "name": "Diabolist",
+        "entryId": "3bfc-98bc-4458-82b9",
+        "path": "02ec-aba2-1a8e-706a::3bfc-98bc-4458-82b9",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "1501-1154-4d95-ae2e",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "02ec-aba2-1a8e-706a::1501-1154-4d95-ae2e::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "749a-5fcb-4129-98a4",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "02ec-aba2-1a8e-706a::749a-5fcb-4129-98a4::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Diabolism",
+            "entryId": "dad5-28bf-9f77-2889",
+            "targetId": "f6c0-5042-9c80-f993",
+            "path": "02ec-aba2-1a8e-706a::dad5-28bf-9f77-2889::f6c0-5042-9c80-f993"
+          },
+          {
+            "name": "Force sword",
+            "entryId": "970d-7af0-0052-e25c",
+            "targetId": "02b1-ed1c-7c89-fc36",
+            "path": "02ec-aba2-1a8e-706a::a775-526d-294a-4f8a::970d-7af0-0052-e25c::02b1-ed1c-7c89-fc36",
+            "groupPath": "02ec-aba2-1a8e-706a::a775-526d-294a-4f8a::89e6-2502-2486-71f4"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "6853-58e8-40da-916d",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "02ec-aba2-1a8e-706a::6853-58e8-40da-916d::2942-f783-d627-33c5",
+            "groupPath": "02ec-aba2-1a8e-706a::c328-1178-489d-b01d"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "facts": {
+      "1c2d-33b0-4ec7-8802": 1,
+      "02ec-aba2-1a8e-706a": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "3bfc-98bc-4458-82b9": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "1501-1154-4d95-ae2e": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "749a-5fcb-4129-98a4": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "dad5-28bf-9f77-2889": 1,
+      "f6c0-5042-9c80-f993": 1,
+      "970d-7af0-0052-e25c": 1,
+      "02b1-ed1c-7c89-fc36": 1,
+      "6853-58e8-40da-916d": 1,
+      "2942-f783-d627-33c5": 1
+    },
+    "prime": {
+      "linkId": "6fc6-451f-9c25-1a1f",
+      "path": "02ec-aba2-1a8e-706a::6fc6-451f-9c25-1a1f::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "02ec-aba2-1a8e-706a::c76e-0928-e270-d1b3"
+      }
+    }
+  },
+  {
+    "name": "Diabolist In Terminator Armour",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "a00e-3769-62db-37b7",
+    "path": "a00e-3769-62db-37b7::065d-8cb2-40d6-b905",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 135,
+    "baseCost": 135,
+    "models": [
+      {
+        "name": "Cataphractii Diabolist",
+        "entryId": "3b3c-42db-4812-b856",
+        "path": "a00e-3769-62db-37b7::3b3c-42db-4812-b856",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Diabolism",
+            "entryId": "f95c-d343-e2ce-da96",
+            "targetId": "f6c0-5042-9c80-f993",
+            "path": "a00e-3769-62db-37b7::f95c-d343-e2ce-da96::f6c0-5042-9c80-f993"
+          },
+          {
+            "name": "Force sword",
+            "entryId": "970d-7af0-0052-e25c",
+            "targetId": "02b1-ed1c-7c89-fc36",
+            "path": "a00e-3769-62db-37b7::3000-4692-8df5-6267::970d-7af0-0052-e25c::02b1-ed1c-7c89-fc36",
+            "groupPath": "a00e-3769-62db-37b7::3000-4692-8df5-6267::89e6-2502-2486-71f4"
+          },
+          {
+            "name": "Cataphractii",
+            "entryId": "38a8-2683-c590-3c4b",
+            "path": "a00e-3769-62db-37b7::7108-389d-b9d5-6545::38a8-2683-c590-3c4b",
+            "groupPath": "a00e-3769-62db-37b7::7108-389d-b9d5-6545::170b-d9c0-e9d6-b314"
+          },
+          {
+            "name": "Combi-bolter",
+            "entryId": "4afc-4177-4ecd-a5b0",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "a00e-3769-62db-37b7::4afc-4177-4ecd-a5b0::042d-9e60-db9e-c147",
+            "groupPath": "a00e-3769-62db-37b7::3b41-e203-4d7e-9875"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "facts": {
+      "065d-8cb2-40d6-b905": 1,
+      "a00e-3769-62db-37b7": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "3b3c-42db-4812-b856": 1,
+      "594d-fa82-13cb-a345": 1,
+      "9871-cb62-5283-2216": 1,
+      "1e7d-9066-28d2-97a0": 1,
+      "f95c-d343-e2ce-da96": 1,
+      "f6c0-5042-9c80-f993": 1,
+      "970d-7af0-0052-e25c": 1,
+      "02b1-ed1c-7c89-fc36": 1,
+      "38a8-2683-c590-3c4b": 1,
+      "4afc-4177-4ecd-a5b0": 1,
+      "042d-9e60-db9e-c147": 1
+    },
+    "prime": {
+      "linkId": "bdf4-8bcb-c7b5-1d22",
+      "path": "a00e-3769-62db-37b7::bdf4-8bcb-c7b5-1d22::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "a00e-3769-62db-37b7::761b-21ee-d42e-783f"
+      }
+    }
+  },
+  {
+    "name": "Mounted Diabolist",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "c0bb-c580-fd12-4e7a",
+    "path": "c0bb-c580-fd12-4e7a::ce41-394c-4797-be31",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 145,
+    "baseCost": 145,
+    "models": [
+      {
+        "name": "Outrider Diabolist",
+        "entryId": "e211-ab54-42b2-a22d",
+        "path": "c0bb-c580-fd12-4e7a::e211-ab54-42b2-a22d",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "3dff-0749-4839-a4ed",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "c0bb-c580-fd12-4e7a::3dff-0749-4839-a4ed::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "3bf7-2078-4608-9caa",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "c0bb-c580-fd12-4e7a::3bf7-2078-4608-9caa::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Diabolism",
+            "entryId": "19b8-5400-36f4-7150",
+            "targetId": "f6c0-5042-9c80-f993",
+            "path": "c0bb-c580-fd12-4e7a::19b8-5400-36f4-7150::f6c0-5042-9c80-f993"
+          },
+          {
+            "name": "Outrider",
+            "entryId": "4f20-9a87-8334-9f26",
+            "path": "c0bb-c580-fd12-4e7a::6f2f-1f32-b7f4-c0f4::4f20-9a87-8334-9f26",
+            "groupPath": "c0bb-c580-fd12-4e7a::6f2f-1f32-b7f4-c0f4::9089-07e5-3653-84b6"
+          },
+          {
+            "name": "Force sword",
+            "entryId": "970d-7af0-0052-e25c",
+            "targetId": "02b1-ed1c-7c89-fc36",
+            "path": "c0bb-c580-fd12-4e7a::6b87-71b7-ed92-c91e::970d-7af0-0052-e25c::02b1-ed1c-7c89-fc36",
+            "groupPath": "c0bb-c580-fd12-4e7a::6b87-71b7-ed92-c91e::89e6-2502-2486-71f4"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "0604-04bd-4fee-ba74",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "c0bb-c580-fd12-4e7a::0604-04bd-4fee-ba74::2942-f783-d627-33c5",
+            "groupPath": "c0bb-c580-fd12-4e7a::80b1-91fe-404f-bf67"
+          },
+          {
+            "name": "Twin bolter",
+            "entryId": "7cfa-8e38-23a4-645a",
+            "targetId": "222f-82cb-05a2-f8f1",
+            "path": "c0bb-c580-fd12-4e7a::7cfa-8e38-23a4-645a::222f-82cb-05a2-f8f1",
+            "groupPath": "c0bb-c580-fd12-4e7a::b09f-3ef5-0d2b-2f77"
+          },
+          {
+            "name": "Heavy bolter",
+            "entryId": "a055-8193-f628-316d",
+            "targetId": "bc40-b14a-978e-0232",
+            "path": "c0bb-c580-fd12-4e7a::a055-8193-f628-316d::bc40-b14a-978e-0232",
+            "groupPath": "c0bb-c580-fd12-4e7a::85e8-2b87-8a35-2f39"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "facts": {
+      "ce41-394c-4797-be31": 1,
+      "c0bb-c580-fd12-4e7a": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "e211-ab54-42b2-a22d": 1,
+      "a073-2d4a-5bed-123e": 1,
+      "9871-cb62-5283-2216": 1,
+      "3dff-0749-4839-a4ed": 1,
+      "60e4-ca33-2e68-9afc": 1,
+      "3bf7-2078-4608-9caa": 1,
+      "fa20-82bc-c7de-9e97": 1,
+      "19b8-5400-36f4-7150": 1,
+      "f6c0-5042-9c80-f993": 1,
+      "4f20-9a87-8334-9f26": 1,
+      "970d-7af0-0052-e25c": 1,
+      "02b1-ed1c-7c89-fc36": 1,
+      "0604-04bd-4fee-ba74": 1,
+      "2942-f783-d627-33c5": 1,
+      "7cfa-8e38-23a4-645a": 1,
+      "222f-82cb-05a2-f8f1": 1,
+      "a055-8193-f628-316d": 1,
+      "bc40-b14a-978e-0232": 1
+    },
+    "prime": {
+      "linkId": "a3be-2a26-a770-654b",
+      "path": "c0bb-c580-fd12-4e7a::a3be-2a26-a770-654b::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "c0bb-c580-fd12-4e7a::0308-6268-fec2-d7e5"
+      }
+    }
+  },
+  {
+    "name": "Procurators",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "4934-5ee3-2d65-7ef3",
+    "path": "4934-5ee3-2d65-7ef3::bb9d-a1b4-48d5-ac58",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 60,
+    "baseCost": 25,
+    "models": [
+      {
+        "name": "Procurant",
+        "entryId": "7b76-a23f-4c83-a267",
+        "path": "4934-5ee3-2d65-7ef3::7b76-a23f-4c83-a267",
+        "cost": 15,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "d256-e7d0-4abb-9e4e",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "4934-5ee3-2d65-7ef3::d256-e7d0-4abb-9e4e::2942-f783-d627-33c5",
+            "groupPath": "4934-5ee3-2d65-7ef3::b916-02b3-0bb2-1c25"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "211d-38fc-4c51-a58a",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "4934-5ee3-2d65-7ef3::211d-38fc-4c51-a58a::78f4-4967-2896-c3a5",
+            "groupPath": "4934-5ee3-2d65-7ef3::8d72-f72d-81ca-dd1d"
+          }
+        ]
+      },
+      {
+        "name": "Procurator",
+        "entryId": "e1df-5b20-4bbf-9ee2",
+        "path": "4934-5ee3-2d65-7ef3::e1df-5b20-4bbf-9ee2",
+        "cost": 20,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "1f04-772e-4787-b949",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "4934-5ee3-2d65-7ef3::1f04-772e-4787-b949::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Narthecium",
+            "entryId": "8266-6192-4058-856f",
+            "targetId": "a7bb-ae7f-3ef2-90d1",
+            "path": "4934-5ee3-2d65-7ef3::8266-6192-4058-856f::a7bb-ae7f-3ef2-90d1"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "b418-6516-425e-8472",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "4934-5ee3-2d65-7ef3::b418-6516-425e-8472::78f4-4967-2896-c3a5",
+            "groupPath": "4934-5ee3-2d65-7ef3::a24c-04db-4d9e-9f7f"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "62c7-01c2-46f5-80bc",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "4934-5ee3-2d65-7ef3::62c7-01c2-46f5-80bc::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "b439-78e0-4c85-a68e",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "4934-5ee3-2d65-7ef3::b439-78e0-4c85-a68e::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "bb9d-a1b4-48d5-ac58": 1,
+      "4934-5ee3-2d65-7ef3": 1,
+      "dd1b-70ef-6015-1291": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "7b76-a23f-4c83-a267": 1,
+      "594d-fa82-13cb-a345": 2,
+      "d256-e7d0-4abb-9e4e": 1,
+      "2942-f783-d627-33c5": 2,
+      "211d-38fc-4c51-a58a": 1,
+      "78f4-4967-2896-c3a5": 2,
+      "e1df-5b20-4bbf-9ee2": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "1f04-772e-4787-b949": 1,
+      "8266-6192-4058-856f": 1,
+      "a7bb-ae7f-3ef2-90d1": 1,
+      "b418-6516-425e-8472": 1
+    },
+    "prime": {
+      "linkId": "0190-5b7e-51c5-522d",
+      "path": "4934-5ee3-2d65-7ef3::0190-5b7e-51c5-522d::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "4934-5ee3-2d65-7ef3::052f-3062-0c13-1af5"
+      }
+    }
+  },
+  {
+    "name": "Procurators with Jump Packs",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "entryId": "eaa2-3547-72f6-d19c",
+    "path": "eaa2-3547-72f6-d19c::fd26-9fa0-4360-ae66",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 70,
+    "baseCost": 30,
+    "models": [
+      {
+        "name": "Procurant with Jump Pack",
+        "entryId": "552a-e6e2-3b64-738b",
+        "path": "eaa2-3547-72f6-d19c::552a-e6e2-3b64-738b",
+        "cost": 20,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "e64d-c119-d3f4-16aa",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "eaa2-3547-72f6-d19c::e64d-c119-d3f4-16aa::2942-f783-d627-33c5",
+            "groupPath": "eaa2-3547-72f6-d19c::5010-e7b8-7995-34fe"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "d932-f424-0baf-8acd",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "eaa2-3547-72f6-d19c::d932-f424-0baf-8acd::78f4-4967-2896-c3a5",
+            "groupPath": "eaa2-3547-72f6-d19c::bad8-d82e-0008-bac8"
+          }
+        ]
+      },
+      {
+        "name": "Procurator with Jump Pack",
+        "entryId": "4c00-6da4-8a83-e5ba",
+        "path": "eaa2-3547-72f6-d19c::4c00-6da4-8a83-e5ba",
+        "cost": 20,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Bolt pistol",
+            "entryId": "37f4-9155-9f62-b0e4",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "eaa2-3547-72f6-d19c::37f4-9155-9f62-b0e4::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Narthecium",
+            "entryId": "b3ee-5674-6b7c-6bf6",
+            "targetId": "a7bb-ae7f-3ef2-90d1",
+            "path": "eaa2-3547-72f6-d19c::b3ee-5674-6b7c-6bf6::a7bb-ae7f-3ef2-90d1"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "d2a8-4cc9-6225-3f8a",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "eaa2-3547-72f6-d19c::d2a8-4cc9-6225-3f8a::78f4-4967-2896-c3a5",
+            "groupPath": "eaa2-3547-72f6-d19c::c40a-f621-dfad-5723"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "8097-bee1-ff7f-7c90",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "eaa2-3547-72f6-d19c::8097-bee1-ff7f-7c90::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "54dd-060e-7df1-364e",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "eaa2-3547-72f6-d19c::54dd-060e-7df1-364e::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "fd26-9fa0-4360-ae66": 1,
+      "eaa2-3547-72f6-d19c": 1,
+      "dd1b-70ef-6015-1291": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "552a-e6e2-3b64-738b": 1,
+      "594d-fa82-13cb-a345": 2,
+      "c504-9dfa-35d3-c98f": 2,
+      "e64d-c119-d3f4-16aa": 1,
+      "2942-f783-d627-33c5": 2,
+      "d932-f424-0baf-8acd": 1,
+      "78f4-4967-2896-c3a5": 2,
+      "4c00-6da4-8a83-e5ba": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "37f4-9155-9f62-b0e4": 1,
+      "b3ee-5674-6b7c-6bf6": 1,
+      "a7bb-ae7f-3ef2-90d1": 1,
+      "d2a8-4cc9-6225-3f8a": 1
+    },
+    "prime": {
+      "linkId": "ac7e-c0cb-79e9-d6f0",
+      "path": "eaa2-3547-72f6-d19c::ac7e-c0cb-79e9-d6f0::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "eaa2-3547-72f6-d19c::948d-33c6-c513-108b"
+      }
+    }
+  },
+  {
+    "name": "Inductii Squad",
+    "entryId": "0114-8012-66c3-7c50",
+    "path": "0114-8012-66c3-7c50::4755-69ce-4a81-894c",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 100,
+    "baseCost": 10,
+    "models": [
+      {
+        "name": "Inductii",
+        "entryId": "6d64-01f7-44e5-bcdb",
+        "path": "0114-8012-66c3-7c50::6d64-01f7-44e5-bcdb",
+        "cost": 9,
+        "min": 10,
+        "max": 20,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "3cb1-8ac2-48f4-86c3",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "0114-8012-66c3-7c50::3cb1-8ac2-48f4-86c3::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "9a80-d50d-49a5-8be3",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "0114-8012-66c3-7c50::9a80-d50d-49a5-8be3::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "46ff-8068-4aee-bb9e",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "0114-8012-66c3-7c50::46ff-8068-4aee-bb9e::2942-f783-d627-33c5",
+            "groupPath": "0114-8012-66c3-7c50::728c-ca5f-495b-ab19"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "e76d-68ab-4a84-a493",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "0114-8012-66c3-7c50::e76d-68ab-4a84-a493::78f4-4967-2896-c3a5",
+            "groupPath": "0114-8012-66c3-7c50::28ea-2632-81c9-9f9d"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "facts": {
+      "4755-69ce-4a81-894c": 1,
+      "0114-8012-66c3-7c50": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "6d64-01f7-44e5-bcdb": 10,
+      "594d-fa82-13cb-a345": 10,
+      "3cb1-8ac2-48f4-86c3": 10,
+      "60e4-ca33-2e68-9afc": 10,
+      "9a80-d50d-49a5-8be3": 10,
+      "fa20-82bc-c7de-9e97": 10,
+      "46ff-8068-4aee-bb9e": 10,
+      "2942-f783-d627-33c5": 10,
+      "e76d-68ab-4a84-a493": 10,
+      "78f4-4967-2896-c3a5": 10
+    }
+  },
+  {
+    "name": "Phraetus Anointed Conclave",
+    "entryId": "a84a-f4b4-398e-6b43",
+    "path": "a84a-f4b4-398e-6b43::56a7-a810-598c-7309",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 240,
+    "baseCost": 110,
+    "models": [
+      {
+        "name": "Phraetus Anointed",
+        "entryId": "19e6-bfec-fb21-70b2",
+        "path": "a84a-f4b4-398e-6b43::19e6-bfec-fb21-70b2",
+        "cost": 65,
+        "min": 2,
+        "max": 5,
+        "defaultWargear": [
+          {
+            "name": "Warpfire Mantle",
+            "entryId": "8c60-4e95-18a9-0509",
+            "targetId": "a7cd-c531-be16-79dc",
+            "path": "a84a-f4b4-398e-6b43::8c60-4e95-18a9-0509::a7cd-c531-be16-79dc"
+          },
+          {
+            "name": "Saturnine Teleport Synchroniser",
+            "entryId": "01d3-9422-8b27-903d",
+            "targetId": "bc43-a3f4-2d34-550a",
+            "path": "a84a-f4b4-398e-6b43::01d3-9422-8b27-903d::bc43-a3f4-2d34-550a"
+          },
+          {
+            "name": "Paired Saturnine Disruption Fists",
+            "entryId": "ac2f-e06a-e509-10c1",
+            "targetId": "1595-ae69-52bb-4160",
+            "path": "a84a-f4b4-398e-6b43::ac2f-e06a-e509-10c1::1595-ae69-52bb-4160",
+            "groupPath": "a84a-f4b4-398e-6b43::1f79-65f0-64d2-4bf8"
+          }
+        ]
+      },
+      {
+        "name": "Phraetus Disciple",
+        "entryId": "3b02-c677-ca13-ef8d",
+        "path": "a84a-f4b4-398e-6b43::3b02-c677-ca13-ef8d",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Saturnine Teleport Synchroniser",
+            "entryId": "5d0d-cbb7-1172-6901",
+            "targetId": "bc43-a3f4-2d34-550a",
+            "path": "a84a-f4b4-398e-6b43::5d0d-cbb7-1172-6901::bc43-a3f4-2d34-550a"
+          },
+          {
+            "name": "Warpfire Mantle",
+            "entryId": "18b7-e821-408f-b425",
+            "targetId": "a7cd-c531-be16-79dc",
+            "path": "a84a-f4b4-398e-6b43::18b7-e821-408f-b425::a7cd-c531-be16-79dc"
+          },
+          {
+            "name": "Paired Saturnine Disruption Fists",
+            "entryId": "ff5d-5e14-086a-2cb8",
+            "targetId": "1595-ae69-52bb-4160",
+            "path": "a84a-f4b4-398e-6b43::ff5d-5e14-086a-2cb8::1595-ae69-52bb-4160",
+            "groupPath": "a84a-f4b4-398e-6b43::509c-10b2-7d01-8338"
+          }
+        ]
+      }
+    ],
+    "source": "word-bearers",
+    "facts": {
+      "56a7-a810-598c-7309": 1,
+      "a84a-f4b4-398e-6b43": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "19e6-bfec-fb21-70b2": 2,
+      "594d-fa82-13cb-a345": 3,
+      "1e7d-9066-28d2-97a0": 3,
+      "2de1-ddd6-ebb4-10df": 3,
+      "8c60-4e95-18a9-0509": 2,
+      "a7cd-c531-be16-79dc": 3,
+      "01d3-9422-8b27-903d": 2,
+      "bc43-a3f4-2d34-550a": 3,
+      "ac2f-e06a-e509-10c1": 2,
+      "1595-ae69-52bb-4160": 3,
+      "3b02-c677-ca13-ef8d": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "5a95-e564-96b2-8dc9": 1,
+      "5d0d-cbb7-1172-6901": 1,
+      "18b7-e821-408f-b425": 1,
+      "ff5d-5e14-086a-2cb8": 1
+    },
+    "prime": {
+      "linkId": "3da5-7445-c170-d4c3",
+      "path": "a84a-f4b4-398e-6b43::3da5-7445-c170-d4c3::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "a84a-f4b4-398e-6b43::ef86-f1d3-3b5e-da2e"
+      }
+    }
+  }
+]

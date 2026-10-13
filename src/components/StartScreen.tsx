@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import { loadFactionUnits } from '../data/loader';
+import React, { useEffect, useState } from 'react';
 import { Button, NumberInput, Select, SelectItem, SelectItemGroup } from '@carbon/react';
 import type { Allegiance } from '../types';
 import { useRosterStore } from '../store/rosterStore';
 import { FACTIONS, FACTION_GROUPS, factionLabel } from '../data/factions';
-import { COHORT_DOCTRINES } from '../constants/cohortDoctrines';
+import { configOptions, defaultConfigChoices, doctrineLabel, doctrineOptions } from '../rules/armyConfig';
 import { armyChoiceGroups, armyChoiceLabel, defaultArmyChoices } from '../rules/armyChoices';
 import SavedListsModal from './modals/SavedListsModal';
 
@@ -14,19 +15,34 @@ export default function StartScreen() {
   const [allegiance, setAllegiance] = useState<Allegiance>('Loyalist');
   const [pointsLimit, setPointsLimit] = useState(3000);
   const [cohortDoctrine, setCohortDoctrine] = useState('');
-  const [armyChoices, setArmyChoices] = useState(() => defaultArmyChoices(FACTIONS[0].id));
-  const choiceGroups = armyChoiceGroups(faction);
+  const [armyChoices, setArmyChoices] = useState<Record<string, string>>({});
+  // The army's units load when it's picked; its sub-faction choices come from them
+  const [loadedFaction, setLoadedFaction] = useState<string | null>(null);
+  useEffect(() => {
+    let current = true;
+    loadFactionUnits(faction).then(() => {
+      if (!current) return;
+      setLoadedFaction(faction);
+      setArmyChoices(defaultArmyChoices(faction));
+    });
+    return () => {
+      current = false;
+    };
+  }, [faction]);
+  const choiceGroups = loadedFaction === faction ? armyChoiceGroups(faction) : [];
+  const [configChoices, setConfigChoices] = useState(() => defaultConfigChoices(FACTIONS[0].id));
+  const settings = configOptions(faction);
   const [showSavedLists, setShowSavedLists] = useState(false);
 
   function handleFactionChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const next = e.target.value;
     setFaction(next);
-    if (next !== 'solar-auxilia') setCohortDoctrine('');
-    setArmyChoices(defaultArmyChoices(next));
+    if (!doctrineOptions(next).includes(cohortDoctrine)) setCohortDoctrine('');
+    setConfigChoices(defaultConfigChoices(next));
   }
 
   function handleStart() {
-    startBuild(faction, allegiance, pointsLimit, cohortDoctrine, armyChoices);
+    startBuild(faction, allegiance, pointsLimit, cohortDoctrine, armyChoices, configChoices);
   }
 
   return (
@@ -99,8 +115,8 @@ export default function StartScreen() {
           </div>
         </div>
 
-        {/* Cohort Doctrine (Solar Auxilia only) */}
-        {faction === 'solar-auxilia' && (
+        {/* Cohort Doctrine (Solar Auxilia), from BSData */}
+        {doctrineOptions(faction).length > 0 && (
           <div className="mb-6">
             <Select
               id="cohort-doctrine-select"
@@ -109,12 +125,34 @@ export default function StartScreen() {
               onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setCohortDoctrine(e.target.value)}
             >
               <SelectItem value="" text="— Select Cohort Doctrine —" />
-              {COHORT_DOCTRINES.map((d) => (
-                <SelectItem key={d.id} value={d.id} text={d.name} />
+              {doctrineOptions(faction).map((d) => (
+                <SelectItem key={d} value={d} text={doctrineLabel(d)} />
               ))}
             </Select>
           </div>
         )}
+
+        {/* Army settings from BSData (Rite of War, Household Paradigm, Provenances of War…) */}
+        {settings.map((o) => (
+          <div className="mb-6" key={o.name}>
+            <Select
+              id={`config-${o.name}`}
+              labelText={o.name}
+              value={configChoices[o.name] ?? ''}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                setConfigChoices((c) => {
+                  const { [o.name]: _old, ...rest } = c;
+                  return e.target.value ? { ...rest, [o.name]: e.target.value } : rest;
+                })
+              }
+            >
+              {o.optional && <SelectItem value="" text="— None —" />}
+              {o.choices.map((c) => (
+                <SelectItem key={c} value={c} text={c} />
+              ))}
+            </Select>
+          </div>
+        ))}
 
         {/* Army-wide picks for per-unit choices (Skitarii / Mechanicum sub-faction) */}
         {choiceGroups.map((g) => (

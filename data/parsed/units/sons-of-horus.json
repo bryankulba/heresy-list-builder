@@ -1,0 +1,1291 @@
+[
+  {
+    "name": "Horus Lupercal",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "4572-993b-6949-aa65",
+    "path": "4572-993b-6949-aa65::c0a2-76a5-6a6f-82bc",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 530,
+    "baseCost": 530,
+    "models": [
+      {
+        "name": "Horus Lupercal",
+        "entryId": "d989-aa0c-2706-c586",
+        "path": "4572-993b-6949-aa65::d989-aa0c-2706-c586",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "sons-of-horus",
+    "unitWargear": [
+      {
+        "name": "The Warmaster's Talon",
+        "entryId": "0d6c-08a5-de34-fd0e",
+        "path": "4572-993b-6949-aa65::0d6c-08a5-de34-fd0e"
+      },
+      {
+        "name": "Worldbreaker",
+        "entryId": "86a4-29e1-b99c-e6ba",
+        "path": "4572-993b-6949-aa65::86a4-29e1-b99c-e6ba"
+      },
+      {
+        "name": "Sire of the Sons of Horus",
+        "entryId": "a02c-cda3-6036-d206",
+        "path": "4572-993b-6949-aa65::a02c-cda3-6036-d206"
+      },
+      {
+        "name": "Master of War",
+        "entryId": "b8a6-365e-fb17-0ac6",
+        "path": "4572-993b-6949-aa65::b8a6-365e-fb17-0ac6"
+      }
+    ],
+    "facts": {
+      "c0a2-76a5-6a6f-82bc": 1,
+      "4572-993b-6949-aa65": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "d251-944b-3c3b-0579": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "22ee-7208-4089-b005": 1,
+      "d989-aa0c-2706-c586": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1
+    }
+  },
+  {
+    "name": "Ezekyle Abaddon",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "a14b-f575-14ae-c66d",
+    "path": "a14b-f575-14ae-c66d::aa7d-73fa-eaac-d951",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 250,
+    "baseCost": 250,
+    "models": [
+      {
+        "name": "Ezekyle Abaddon",
+        "entryId": "20a3-8f5f-b252-8991",
+        "path": "a14b-f575-14ae-c66d::20a3-8f5f-b252-8991",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "sons-of-horus",
+    "unitWargear": [
+      {
+        "name": "Cthonian Power Claw",
+        "entryId": "1a1a-72f9-7032-69a5",
+        "path": "a14b-f575-14ae-c66d::1a1a-72f9-7032-69a5"
+      },
+      {
+        "name": "Banestrike Combi-Bolter and Grenade Harness",
+        "entryId": "f910-8a5b-1084-71c3",
+        "path": "a14b-f575-14ae-c66d::f910-8a5b-1084-71c3",
+        "groupPath": "a14b-f575-14ae-c66d::a0d3-dcfb-0cdf-ab11",
+        "children": [
+          {
+            "name": "Banestrike combi-bolter",
+            "entryId": "4a3c-aff7-3790-7dd7",
+            "targetId": "08db-6d95-f0be-cfe0",
+            "path": "a14b-f575-14ae-c66d::4a3c-aff7-3790-7dd7::08db-6d95-f0be-cfe0"
+          },
+          {
+            "name": "Grenade harness",
+            "entryId": "bcc5-53ca-fff0-fa6b",
+            "targetId": "a766-856c-52bd-d30a",
+            "path": "a14b-f575-14ae-c66d::bcc5-53ca-fff0-fa6b::a766-856c-52bd-d30a"
+          }
+        ]
+      }
+    ],
+    "facts": {
+      "aa7d-73fa-eaac-d951": 1,
+      "a14b-f575-14ae-c66d": 1,
+      "d251-944b-3c3b-0579": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "20a3-8f5f-b252-8991": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1,
+      "1e7d-9066-28d2-97a0": 1
+    },
+    "prime": {
+      "linkId": "c375-4da0-cf46-43f3",
+      "path": "a14b-f575-14ae-c66d::c375-4da0-cf46-43f3::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "a14b-f575-14ae-c66d::6d2f-57c4-47ad-a30f"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "a14b-f575-14ae-c66d::8d54-3cb4-6b4e-d7a8",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Dark Emmissary",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "0517-aa86-94c6-43b6",
+    "path": "0517-aa86-94c6-43b6::ac51-dccb-d5ff-3d20",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 90,
+    "baseCost": 90,
+    "models": [
+      {
+        "name": "Dark Emmissary",
+        "entryId": "f0cd-2432-330b-9652",
+        "path": "0517-aa86-94c6-43b6::f0cd-2432-330b-9652",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "sons-of-horus",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "33c8-56e5-70bc-b502",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "0517-aa86-94c6-43b6::33c8-56e5-70bc-b502::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "1455-3f3d-ecba-a0b1",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "0517-aa86-94c6-43b6::1455-3f3d-ecba-a0b1::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Bolt pistol",
+        "entryId": "2e26-9713-401a-f820",
+        "targetId": "2942-f783-d627-33c5",
+        "path": "0517-aa86-94c6-43b6::2e26-9713-401a-f820::2942-f783-d627-33c5",
+        "groupPath": "0517-aa86-94c6-43b6::43ac-8317-ebe2-2766"
+      }
+    ],
+    "facts": {
+      "ac51-dccb-d5ff-3d20": 1,
+      "0517-aa86-94c6-43b6": 1,
+      "d251-944b-3c3b-0579": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "f0cd-2432-330b-9652": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "9fb2-b7dd-c7fd-4890",
+      "path": "0517-aa86-94c6-43b6::9fb2-b7dd-c7fd-4890::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "0517-aa86-94c6-43b6::234d-7f53-4cdc-96dc"
+      }
+    }
+  },
+  {
+    "name": "Vheren Ashurhaddon",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "0ea6-7c14-563b-f3b3",
+    "path": "0ea6-7c14-563b-f3b3::6b99-8ee6-accb-c1e3",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 205,
+    "baseCost": 205,
+    "models": [
+      {
+        "name": "Vheren Ashurhaddon",
+        "entryId": "d245-a974-f175-5581",
+        "path": "0ea6-7c14-563b-f3b3::d245-a974-f175-5581",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "sons-of-horus",
+    "unitWargear": [
+      {
+        "name": "The Axe Serpentis",
+        "entryId": "4aae-2c52-0c52-66ca",
+        "path": "0ea6-7c14-563b-f3b3::4aae-2c52-0c52-66ca"
+      },
+      {
+        "name": "Banestrike fusillade",
+        "entryId": "9c14-d909-d683-a96a",
+        "path": "0ea6-7c14-563b-f3b3::9c14-d909-d683-a96a"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "ec12-df4e-8edb-64af",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "0ea6-7c14-563b-f3b3::ec12-df4e-8edb-64af::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "64c6-3e31-eeed-0146",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "0ea6-7c14-563b-f3b3::64c6-3e31-eeed-0146::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Vexilla",
+        "entryId": "9314-6542-beae-1926",
+        "targetId": "dfcd-0669-ad43-28aa",
+        "path": "0ea6-7c14-563b-f3b3::9314-6542-beae-1926::dfcd-0669-ad43-28aa"
+      }
+    ],
+    "facts": {
+      "6b99-8ee6-accb-c1e3": 1,
+      "0ea6-7c14-563b-f3b3": 1,
+      "d251-944b-3c3b-0579": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "d245-a974-f175-5581": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "ae60-90f2-3d02-e060",
+      "path": "0ea6-7c14-563b-f3b3::ae60-90f2-3d02-e060::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "0ea6-7c14-563b-f3b3::f455-934d-401c-b4e0"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "0ea6-7c14-563b-f3b3::d230-35e0-84c7-044a",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Horus Ascended",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "0ffe-e209-c9f2-8791",
+    "path": "0ffe-e209-c9f2-8791::79f3-7312-bae4-da6c",
+    "role": "Warlord",
+    "primaryCategory": "Warlord",
+    "points": 850,
+    "baseCost": 850,
+    "models": [
+      {
+        "name": "Horus Ascended",
+        "entryId": "b6a8-4a03-a8b5-87de",
+        "path": "0ffe-e209-c9f2-8791::b6a8-4a03-a8b5-87de",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "sons-of-horus",
+    "unitWargear": [
+      {
+        "name": "The Warmaster's Talon",
+        "entryId": "032d-8b55-fe1a-d6ad",
+        "path": "0ffe-e209-c9f2-8791::032d-8b55-fe1a-d6ad"
+      },
+      {
+        "name": "Worldbreaker",
+        "entryId": "0480-f618-1ba3-896f",
+        "path": "0ffe-e209-c9f2-8791::0480-f618-1ba3-896f"
+      },
+      {
+        "name": "Master of War",
+        "entryId": "90dd-5409-e81e-9a31",
+        "path": "0ffe-e209-c9f2-8791::90dd-5409-e81e-9a31"
+      },
+      {
+        "name": "The Warmaster Ascended",
+        "entryId": "f966-9f57-6b5b-aabf",
+        "path": "0ffe-e209-c9f2-8791::f966-9f57-6b5b-aabf"
+      },
+      {
+        "name": "The Spreading Corruption",
+        "entryId": "acf3-8637-4a1d-7c35",
+        "path": "0ffe-e209-c9f2-8791::acf3-8637-4a1d-7c35"
+      }
+    ],
+    "facts": {
+      "79f3-7312-bae4-da6c": 1,
+      "0ffe-e209-c9f2-8791": 1,
+      "d251-944b-3c3b-0579": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "3420-1652-ccd9-aa8e": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "22ee-7208-4089-b005": 1,
+      "b6a8-4a03-a8b5-87de": 1,
+      "7799-e1d6-762b-700b": 1,
+      "b980-187b-2b17-d635": 1
+    }
+  },
+  {
+    "name": "Justaerin Terminator Squad",
+    "entryId": "b39e-86ad-438b-2875",
+    "path": "b39e-86ad-438b-2875::3866-f18c-3b7c-3a7e",
+    "role": "Elites",
+    "primaryCategory": "Elites",
+    "points": 275,
+    "baseCost": 25,
+    "models": [
+      {
+        "name": "Justaerin",
+        "entryId": "79ba-f89e-d130-48a5",
+        "path": "b39e-86ad-438b-2875::79ba-f89e-d130-48a5",
+        "cost": 50,
+        "min": 5,
+        "max": 10,
+        "defaultWargear": [
+          {
+            "name": "Pair of lightning claws",
+            "entryId": "d48e-8954-3c44-ad35",
+            "targetId": "6754-24dd-5be0-26ff",
+            "path": "b39e-86ad-438b-2875::d48e-8954-3c44-ad35::6754-24dd-5be0-26ff",
+            "groupPath": "b39e-86ad-438b-2875::05b6-eb5b-4272-df7e"
+          }
+        ]
+      }
+    ],
+    "source": "sons-of-horus",
+    "facts": {
+      "3866-f18c-3b7c-3a7e": 1,
+      "b39e-86ad-438b-2875": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "5d5e-958f-e388-50b5": 1,
+      "79ba-f89e-d130-48a5": 5,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "d48e-8954-3c44-ad35": 5,
+      "6754-24dd-5be0-26ff": 5
+    },
+    "prime": {
+      "linkId": "1ee5-e4b6-168e-7096",
+      "path": "b39e-86ad-438b-2875::1ee5-e4b6-168e-7096::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "b39e-86ad-438b-2875::1ef8-f3fd-4f2e-b619"
+      }
+    }
+  },
+  {
+    "name": "'Little' Horus Aximand ",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "3fae-2625-dafe-c987",
+    "path": "3fae-2625-dafe-c987::f9ac-f2fc-fbb3-cc37",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 170,
+    "baseCost": 170,
+    "models": [
+      {
+        "name": "Horus Aximand ",
+        "entryId": "ec1c-34cc-46a1-f0ea",
+        "path": "3fae-2625-dafe-c987::ec1c-34cc-46a1-f0ea",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "sons-of-horus",
+    "unitWargear": [
+      {
+        "name": "Mourn-it-all",
+        "entryId": "8fb2-3e36-7d93-374f",
+        "path": "3fae-2625-dafe-c987::8fb2-3e36-7d93-374f"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "a4b9-8239-91cc-97d1",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "3fae-2625-dafe-c987::a4b9-8239-91cc-97d1::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "e962-5fcf-fa6e-0b49",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "3fae-2625-dafe-c987::e962-5fcf-fa6e-0b49::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Banestrike bolter",
+        "entryId": "bc42-7b8f-d7dd-6186",
+        "targetId": "69de-4883-efd2-b876",
+        "path": "3fae-2625-dafe-c987::bc42-7b8f-d7dd-6186::69de-4883-efd2-b876"
+      },
+      {
+        "name": "Bolt pistol",
+        "entryId": "92ac-3b53-a93d-8335",
+        "targetId": "2942-f783-d627-33c5",
+        "path": "3fae-2625-dafe-c987::92ac-3b53-a93d-8335::2942-f783-d627-33c5"
+      }
+    ],
+    "facts": {
+      "f9ac-f2fc-fbb3-cc37": 1,
+      "3fae-2625-dafe-c987": 1,
+      "d251-944b-3c3b-0579": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "26c6-e05c-0f72-7852": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "ec1c-34cc-46a1-f0ea": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "418d-7fcf-8f75-b96e",
+      "path": "3fae-2625-dafe-c987::418d-7fcf-8f75-b96e::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "3fae-2625-dafe-c987::0d68-2811-4b63-9942"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "3fae-2625-dafe-c987::acf6-a410-39c7-7088",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Garviel Loken",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "597e-83d8-32e1-8eaa"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "6986-13bd-e529-305e",
+    "path": "6986-13bd-e529-305e::ed21-80f8-e842-c972",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 175,
+    "baseCost": 175,
+    "models": [
+      {
+        "name": "Garviel Loken",
+        "entryId": "d5a5-4f8b-3589-247b",
+        "path": "6986-13bd-e529-305e::d5a5-4f8b-3589-247b",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "sons-of-horus",
+    "unitWargear": [
+      {
+        "name": "Bolt pistol",
+        "entryId": "7540-a159-265a-7d42",
+        "targetId": "2942-f783-d627-33c5",
+        "path": "6986-13bd-e529-305e::7540-a159-265a-7d42::2942-f783-d627-33c5"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "c8b5-3dc1-1f16-939a",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "6986-13bd-e529-305e::c8b5-3dc1-1f16-939a::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "06f2-4fc8-c23b-5b69",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "6986-13bd-e529-305e::06f2-4fc8-c23b-5b69::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Paragon blade",
+        "entryId": "f786-c724-f73e-7fb7",
+        "targetId": "1881-a2b5-fc58-4270",
+        "path": "6986-13bd-e529-305e::f786-c724-f73e-7fb7::1881-a2b5-fc58-4270"
+      }
+    ],
+    "facts": {
+      "ed21-80f8-e842-c972": 1,
+      "6986-13bd-e529-305e": 1,
+      "4381-ed35-c3fa-a225": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "d5a5-4f8b-3589-247b": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "05bb-bfe0-1c0f-32a3",
+      "path": "6986-13bd-e529-305e::05bb-bfe0-1c0f-32a3::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "6986-13bd-e529-305e::3b34-2c90-4a48-b854"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "6986-13bd-e529-305e::4634-b3db-431e-cfff",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Tybalt Marr",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "34f6-b392-fd1e-e99b",
+    "path": "34f6-b392-fd1e-e99b::df11-d2e3-cfd8-a189",
+    "role": "High Command",
+    "primaryCategory": "High Command",
+    "points": 160,
+    "baseCost": 160,
+    "models": [
+      {
+        "name": "Tybalt Marr",
+        "entryId": "a1c6-ebab-02ac-8cf4",
+        "path": "34f6-b392-fd1e-e99b::a1c6-ebab-02ac-8cf4",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "sons-of-horus",
+    "unitWargear": [
+      {
+        "name": "The Culling Blade",
+        "entryId": "061e-25e2-ea3d-ba11",
+        "path": "34f6-b392-fd1e-e99b::061e-25e2-ea3d-ba11"
+      },
+      {
+        "name": "Banestrike bolter",
+        "entryId": "2135-86af-8945-6bc7",
+        "targetId": "69de-4883-efd2-b876",
+        "path": "34f6-b392-fd1e-e99b::2135-86af-8945-6bc7::69de-4883-efd2-b876"
+      },
+      {
+        "name": "Bolt pistol",
+        "entryId": "b8b0-ba31-4f42-009e",
+        "targetId": "2942-f783-d627-33c5",
+        "path": "34f6-b392-fd1e-e99b::b8b0-ba31-4f42-009e::2942-f783-d627-33c5"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "945d-b382-43a4-7ff3",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "34f6-b392-fd1e-e99b::945d-b382-43a4-7ff3::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "461e-7185-7f2d-60da",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "34f6-b392-fd1e-e99b::461e-7185-7f2d-60da::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "df11-d2e3-cfd8-a189": 1,
+      "34f6-b392-fd1e-e99b": 1,
+      "d251-944b-3c3b-0579": 1,
+      "e3cd-7a38-34d7-9cbf": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "d9a6-9b5f-b18a-4d63": 1,
+      "a1c6-ebab-02ac-8cf4": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "4261-7ccb-7dc1-0344",
+      "path": "34f6-b392-fd1e-e99b::4261-7ccb-7dc1-0344::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "34f6-b392-fd1e-e99b::f4e0-a644-40a0-a6fc"
+      }
+    },
+    "detachmentChoice": {
+      "prefix": "34f6-b392-fd1e-e99b::35ea-e725-119e-b653",
+      "groupId": "969e-8b5b-1410-cfc6"
+    }
+  },
+  {
+    "name": "Reaver Attack Squad",
+    "entryId": "e1d7-8ba7-ade1-fc04",
+    "path": "e1d7-8ba7-ade1-fc04::8010-21cf-b606-b491",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 135,
+    "baseCost": 47,
+    "models": [
+      {
+        "name": "Reaver Chieftain",
+        "entryId": "a7c6-6507-5322-173f",
+        "path": "e1d7-8ba7-ade1-fc04::a7c6-6507-5322-173f",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Chainaxe",
+            "entryId": "e3af-081b-ea29-d8d6",
+            "targetId": "31a4-f8de-de6d-1fd9",
+            "path": "e1d7-8ba7-ade1-fc04::e3af-081b-ea29-d8d6::31a4-f8de-de6d-1fd9",
+            "groupPath": "e1d7-8ba7-ade1-fc04::cabb-6ec7-7258-bc7d"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "b917-74fd-840f-e708",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "e1d7-8ba7-ade1-fc04::b917-74fd-840f-e708::2942-f783-d627-33c5",
+            "groupPath": "e1d7-8ba7-ade1-fc04::51ea-16da-0e69-cb77"
+          }
+        ]
+      },
+      {
+        "name": "Reaver",
+        "entryId": "0d9d-8a8f-b0f0-abeb",
+        "path": "e1d7-8ba7-ade1-fc04::0d9d-8a8f-b0f0-abeb",
+        "cost": 22,
+        "min": 4,
+        "max": 19,
+        "defaultWargear": [
+          {
+            "name": "Chainaxe",
+            "entryId": "dfc2-90bc-b0fc-b6e2",
+            "targetId": "31a4-f8de-de6d-1fd9",
+            "path": "e1d7-8ba7-ade1-fc04::dfc2-90bc-b0fc-b6e2::31a4-f8de-de6d-1fd9",
+            "groupPath": "e1d7-8ba7-ade1-fc04::ca09-92b8-adfe-194c"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "27d0-ba17-7f9c-4e8b",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "e1d7-8ba7-ade1-fc04::27d0-ba17-7f9c-4e8b::2942-f783-d627-33c5",
+            "groupPath": "e1d7-8ba7-ade1-fc04::c0f6-4bff-cae3-391d"
+          }
+        ]
+      }
+    ],
+    "source": "sons-of-horus",
+    "unitWargear": [
+      {
+        "name": "Frag grenades",
+        "entryId": "23ff-780d-d0a0-6542",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "e1d7-8ba7-ade1-fc04::23ff-780d-d0a0-6542::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "6343-9370-5db1-2c73",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "e1d7-8ba7-ade1-fc04::6343-9370-5db1-2c73::fa20-82bc-c7de-9e97"
+      }
+    ],
+    "facts": {
+      "8010-21cf-b606-b491": 1,
+      "e1d7-8ba7-ade1-fc04": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "a7c6-6507-5322-173f": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "594d-fa82-13cb-a345": 5,
+      "e3af-081b-ea29-d8d6": 1,
+      "31a4-f8de-de6d-1fd9": 5,
+      "b917-74fd-840f-e708": 1,
+      "2942-f783-d627-33c5": 5,
+      "0d9d-8a8f-b0f0-abeb": 4,
+      "dfc2-90bc-b0fc-b6e2": 4,
+      "27d0-ba17-7f9c-4e8b": 4
+    },
+    "prime": {
+      "linkId": "aa7b-befb-3994-605f",
+      "path": "e1d7-8ba7-ade1-fc04::aa7b-befb-3994-605f::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "e1d7-8ba7-ade1-fc04::d734-5818-416f-a257"
+      }
+    }
+  },
+  {
+    "name": "Maloghurst the Twisted",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "2a53-ef08-5077-60df",
+    "path": "2a53-ef08-5077-60df::cdbb-e9d2-1c14-4a15",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 140,
+    "baseCost": 140,
+    "models": [
+      {
+        "name": "Maloghurst the Twisted",
+        "entryId": "ac63-2820-c12d-0e66",
+        "path": "2a53-ef08-5077-60df::ac63-2820-c12d-0e66",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": []
+      }
+    ],
+    "source": "sons-of-horus",
+    "unitWargear": [
+      {
+        "name": "Icon of the Warmaster",
+        "entryId": "04df-e91e-b451-33ca",
+        "path": "2a53-ef08-5077-60df::04df-e91e-b451-33ca"
+      },
+      {
+        "name": "Banestrike bolter",
+        "entryId": "847a-b45a-6019-b584",
+        "targetId": "69de-4883-efd2-b876",
+        "path": "2a53-ef08-5077-60df::847a-b45a-6019-b584::69de-4883-efd2-b876"
+      },
+      {
+        "name": "Bolt pistol",
+        "entryId": "328d-984a-9f85-10ac",
+        "targetId": "2942-f783-d627-33c5",
+        "path": "2a53-ef08-5077-60df::328d-984a-9f85-10ac::2942-f783-d627-33c5"
+      },
+      {
+        "name": "Frag grenades",
+        "entryId": "7835-7286-daaf-e867",
+        "targetId": "60e4-ca33-2e68-9afc",
+        "path": "2a53-ef08-5077-60df::7835-7286-daaf-e867::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Krak grenades",
+        "entryId": "92ec-5874-00c8-32e3",
+        "targetId": "fa20-82bc-c7de-9e97",
+        "path": "2a53-ef08-5077-60df::92ec-5874-00c8-32e3::fa20-82bc-c7de-9e97"
+      },
+      {
+        "name": "Power sword",
+        "entryId": "b8c2-3610-0484-f750",
+        "targetId": "59a9-57c1-fff9-ca75",
+        "path": "2a53-ef08-5077-60df::b8c2-3610-0484-f750::59a9-57c1-fff9-ca75"
+      }
+    ],
+    "facts": {
+      "cdbb-e9d2-1c14-4a15": 1,
+      "2a53-ef08-5077-60df": 1,
+      "d251-944b-3c3b-0579": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "ac63-2820-c12d-0e66": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1
+    },
+    "prime": {
+      "linkId": "28bf-cb68-6d66-894f",
+      "path": "2a53-ef08-5077-60df::28bf-cb68-6d66-894f::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "2a53-ef08-5077-60df::360d-c5b2-4fca-89eb"
+      }
+    }
+  },
+  {
+    "name": "Reaver Aggressor Squad",
+    "entryId": "d42c-6b17-0445-5921",
+    "path": "d42c-6b17-0445-5921::8357-2e10-4d5c-b134",
+    "role": "Heavy Assault",
+    "primaryCategory": "Heavy Assault",
+    "points": 165,
+    "baseCost": 57,
+    "models": [
+      {
+        "name": "Reaver with Jump Pack",
+        "entryId": "e42e-4036-4be7-b4d9",
+        "path": "d42c-6b17-0445-5921::e42e-4036-4be7-b4d9",
+        "cost": 27,
+        "min": 4,
+        "max": 19,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "9f87-fb6e-4f6b-953e",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "d42c-6b17-0445-5921::9f87-fb6e-4f6b-953e::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "d924-1d75-4a78-871c",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "d42c-6b17-0445-5921::d924-1d75-4a78-871c::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Chainaxe",
+            "entryId": "a323-6c6e-3fb8-2491",
+            "targetId": "31a4-f8de-de6d-1fd9",
+            "path": "d42c-6b17-0445-5921::a323-6c6e-3fb8-2491::31a4-f8de-de6d-1fd9",
+            "groupPath": "d42c-6b17-0445-5921::4ae4-f12a-6f55-57d5"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "f269-1a59-b8fb-05ef",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "d42c-6b17-0445-5921::f269-1a59-b8fb-05ef::2942-f783-d627-33c5",
+            "groupPath": "d42c-6b17-0445-5921::d93a-44b6-8a0c-64da"
+          }
+        ]
+      },
+      {
+        "name": "Reaver Chieftain with Jump Pack",
+        "entryId": "11eb-847d-4522-9999",
+        "path": "d42c-6b17-0445-5921::11eb-847d-4522-9999",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "00b3-12c3-470e-b3e7",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "d42c-6b17-0445-5921::00b3-12c3-470e-b3e7::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "d9af-f6ce-4706-ad44",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "d42c-6b17-0445-5921::d9af-f6ce-4706-ad44::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Chainaxe",
+            "entryId": "f3ec-e5b7-38b9-7f1b",
+            "targetId": "31a4-f8de-de6d-1fd9",
+            "path": "d42c-6b17-0445-5921::f3ec-e5b7-38b9-7f1b::31a4-f8de-de6d-1fd9",
+            "groupPath": "d42c-6b17-0445-5921::8f3c-fc5b-c5d5-7daa"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "8fad-f9c7-f685-22af",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "d42c-6b17-0445-5921::8fad-f9c7-f685-22af::2942-f783-d627-33c5",
+            "groupPath": "d42c-6b17-0445-5921::1f8a-84fc-9135-a73c"
+          }
+        ]
+      }
+    ],
+    "source": "sons-of-horus",
+    "facts": {
+      "8357-2e10-4d5c-b134": 1,
+      "d42c-6b17-0445-5921": 1,
+      "3235-bd79-e9b1-60fa": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "e42e-4036-4be7-b4d9": 4,
+      "594d-fa82-13cb-a345": 5,
+      "c504-9dfa-35d3-c98f": 5,
+      "9f87-fb6e-4f6b-953e": 4,
+      "60e4-ca33-2e68-9afc": 5,
+      "d924-1d75-4a78-871c": 4,
+      "fa20-82bc-c7de-9e97": 5,
+      "a323-6c6e-3fb8-2491": 4,
+      "31a4-f8de-de6d-1fd9": 5,
+      "f269-1a59-b8fb-05ef": 4,
+      "2942-f783-d627-33c5": 5,
+      "11eb-847d-4522-9999": 1,
+      "8045-89a4-76d4-fcef": 1,
+      "00b3-12c3-470e-b3e7": 1,
+      "d9af-f6ce-4706-ad44": 1,
+      "f3ec-e5b7-38b9-7f1b": 1,
+      "8fad-f9c7-f685-22af": 1
+    },
+    "prime": {
+      "linkId": "2dd0-7576-f9f8-f416",
+      "path": "d42c-6b17-0445-5921::2dd0-7576-f9f8-f416::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "d42c-6b17-0445-5921::cb0c-672c-d171-321f"
+      }
+    }
+  },
+  {
+    "name": "Dark Emissary In Terminator Armour",
+    "visibility": [
+      {
+        "type": "set",
+        "field": "hidden",
+        "value": true,
+        "conditions": [
+          {
+            "type": "atLeast",
+            "scope": "roster",
+            "field": "selections",
+            "value": 1,
+            "childId": "e1e1-a344-d3e2-0b91"
+          }
+        ]
+      }
+    ],
+    "rosterMax": 1,
+    "entryId": "bbfe-7605-3627-7ee9",
+    "path": "bbfe-7605-3627-7ee9::10ac-ef98-4ee1-b49d",
+    "role": "Command",
+    "primaryCategory": "Command",
+    "points": 120,
+    "baseCost": 120,
+    "models": [
+      {
+        "name": "Dark Emissary in Terminator Armour",
+        "entryId": "4340-cec9-4c26-8272",
+        "path": "bbfe-7605-3627-7ee9::4340-cec9-4c26-8272",
+        "cost": 0,
+        "min": 1,
+        "max": 1,
+        "defaultWargear": [
+          {
+            "name": "Cataphractii",
+            "entryId": "38a8-2683-c590-3c4b",
+            "path": "bbfe-7605-3627-7ee9::c947-8e11-1f90-e2a8::38a8-2683-c590-3c4b",
+            "groupPath": "bbfe-7605-3627-7ee9::c947-8e11-1f90-e2a8::170b-d9c0-e9d6-b314"
+          },
+          {
+            "name": "Combi-bolter",
+            "entryId": "6c5a-095d-1f96-be3b",
+            "targetId": "042d-9e60-db9e-c147",
+            "path": "bbfe-7605-3627-7ee9::6c5a-095d-1f96-be3b::042d-9e60-db9e-c147",
+            "groupPath": "bbfe-7605-3627-7ee9::4b5d-792d-96d0-4462::f335-622e-6b0a-6b08"
+          }
+        ]
+      }
+    ],
+    "source": "sons-of-horus",
+    "facts": {
+      "10ac-ef98-4ee1-b49d": 1,
+      "bbfe-7605-3627-7ee9": 1,
+      "6dbf-654a-f06f-2d69": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "4340-cec9-4c26-8272": 1,
+      "594d-fa82-13cb-a345": 1,
+      "b980-187b-2b17-d635": 1,
+      "9871-cb62-5283-2216": 1,
+      "1e7d-9066-28d2-97a0": 1,
+      "38a8-2683-c590-3c4b": 1,
+      "6c5a-095d-1f96-be3b": 1,
+      "042d-9e60-db9e-c147": 1
+    },
+    "prime": {
+      "linkId": "6e0e-c166-1d39-cf0a",
+      "path": "bbfe-7605-3627-7ee9::6e0e-c166-1d39-cf0a::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "bbfe-7605-3627-7ee9::1917-61af-1b97-9b26"
+      }
+    }
+  },
+  {
+    "name": "Chieftain Squad",
+    "entryId": "bb2a-0229-ffdf-4617",
+    "path": "bb2a-0229-ffdf-4617::5664-ef98-46b9-85a1",
+    "role": "Retinue",
+    "primaryCategory": "Retinue",
+    "points": 155,
+    "baseCost": 30,
+    "models": [
+      {
+        "name": "Chieftain",
+        "entryId": "bf87-e130-4199-ae3b",
+        "path": "bb2a-0229-ffdf-4617::bf87-e130-4199-ae3b",
+        "cost": 25,
+        "min": 5,
+        "max": 10,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "14ec-570a-d872-0a2b",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "bb2a-0229-ffdf-4617::14ec-570a-d872-0a2b::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "02ad-748c-ee4f-9b14",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "bb2a-0229-ffdf-4617::02ad-748c-ee4f-9b14::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "5045-4a79-3d10-4856",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "bb2a-0229-ffdf-4617::5045-4a79-3d10-4856::2942-f783-d627-33c5"
+          },
+          {
+            "name": "Boarding shield",
+            "entryId": "ec43-a47a-5dbc-2aa5",
+            "targetId": "01e9-334c-80cb-f1c6",
+            "path": "bb2a-0229-ffdf-4617::ec43-a47a-5dbc-2aa5::01e9-334c-80cb-f1c6"
+          },
+          {
+            "name": "Banestrike bolter",
+            "entryId": "dfec-8ed9-80c2-b4c8",
+            "targetId": "69de-4883-efd2-b876",
+            "path": "bb2a-0229-ffdf-4617::dfec-8ed9-80c2-b4c8::69de-4883-efd2-b876",
+            "groupPath": "bb2a-0229-ffdf-4617::5c7d-6511-c175-e467"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "3eeb-8494-3959-8f25",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "bb2a-0229-ffdf-4617::3eeb-8494-3959-8f25::78f4-4967-2896-c3a5",
+            "groupPath": "bb2a-0229-ffdf-4617::608f-04a2-2deb-63d3"
+          }
+        ]
+      }
+    ],
+    "source": "sons-of-horus",
+    "facts": {
+      "5664-ef98-46b9-85a1": 1,
+      "bb2a-0229-ffdf-4617": 1,
+      "a38e-50ff-310f-f19e": 1,
+      "3b0c-6e3a-f5cd-02cd": 1,
+      "bf87-e130-4199-ae3b": 5,
+      "594d-fa82-13cb-a345": 5,
+      "1e7d-9066-28d2-97a0": 5,
+      "14ec-570a-d872-0a2b": 5,
+      "60e4-ca33-2e68-9afc": 5,
+      "02ad-748c-ee4f-9b14": 5,
+      "fa20-82bc-c7de-9e97": 5,
+      "5045-4a79-3d10-4856": 5,
+      "2942-f783-d627-33c5": 5,
+      "ec43-a47a-5dbc-2aa5": 5,
+      "01e9-334c-80cb-f1c6": 5,
+      "dfec-8ed9-80c2-b4c8": 5,
+      "69de-4883-efd2-b876": 5,
+      "3eeb-8494-3959-8f25": 5,
+      "78f4-4967-2896-c3a5": 5
+    },
+    "prime": {
+      "linkId": "7dab-7ee2-4e74-3efc",
+      "path": "bb2a-0229-ffdf-4617::7dab-7ee2-4e74-3efc::3fa2-78b1-637f-7fb2",
+      "groups": [
+        "a396-b846-c263-6767"
+      ],
+      "groupPrefixes": {
+        "a396-b846-c263-6767": "bb2a-0229-ffdf-4617::cfc8-79fd-0645-2962"
+      }
+    }
+  },
+  {
+    "name": "Inductii Squad",
+    "entryId": "7718-647a-3e24-1126",
+    "path": "7718-647a-3e24-1126::e8b7-bff3-4c22-b342",
+    "role": "Troops",
+    "primaryCategory": "Troops",
+    "points": 100,
+    "baseCost": 10,
+    "models": [
+      {
+        "name": "Inductii",
+        "entryId": "0d07-f5a5-4b27-ae2b",
+        "path": "7718-647a-3e24-1126::0d07-f5a5-4b27-ae2b",
+        "cost": 9,
+        "min": 10,
+        "max": 20,
+        "defaultWargear": [
+          {
+            "name": "Frag grenades",
+            "entryId": "2694-77e8-47c3-891b",
+            "targetId": "60e4-ca33-2e68-9afc",
+            "path": "7718-647a-3e24-1126::2694-77e8-47c3-891b::60e4-ca33-2e68-9afc"
+          },
+          {
+            "name": "Krak grenades",
+            "entryId": "37f2-c0fa-4652-bdd8",
+            "targetId": "fa20-82bc-c7de-9e97",
+            "path": "7718-647a-3e24-1126::37f2-c0fa-4652-bdd8::fa20-82bc-c7de-9e97"
+          },
+          {
+            "name": "Bolt pistol",
+            "entryId": "23a7-fe08-4e8e-8b2e",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "7718-647a-3e24-1126::23a7-fe08-4e8e-8b2e::2942-f783-d627-33c5",
+            "groupPath": "7718-647a-3e24-1126::aaff-679c-83db-7405"
+          },
+          {
+            "name": "Chainsword",
+            "entryId": "3f26-3c8a-465d-9464",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "7718-647a-3e24-1126::3f26-3c8a-465d-9464::78f4-4967-2896-c3a5",
+            "groupPath": "7718-647a-3e24-1126::9f0f-f20b-7539-a431"
+          }
+        ]
+      }
+    ],
+    "source": "sons-of-horus",
+    "facts": {
+      "e8b7-bff3-4c22-b342": 1,
+      "7718-647a-3e24-1126": 1,
+      "88e6-d373-4152-0dd8": 1,
+      "0d07-f5a5-4b27-ae2b": 10,
+      "594d-fa82-13cb-a345": 10,
+      "2694-77e8-47c3-891b": 10,
+      "60e4-ca33-2e68-9afc": 10,
+      "37f2-c0fa-4652-bdd8": 10,
+      "fa20-82bc-c7de-9e97": 10,
+      "23a7-fe08-4e8e-8b2e": 10,
+      "2942-f783-d627-33c5": 10,
+      "3f26-3c8a-465d-9464": 10,
+      "78f4-4967-2896-c3a5": 10
+    }
+  }
+]

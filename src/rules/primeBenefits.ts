@@ -13,6 +13,8 @@ export interface PrimeNode {
   id: string;
   name: string;
   kind: 'group' | 'option';
+  /** Ids it also puts in the roster when chosen (its link target, categories) */
+  counts?: string[];
   /** Options: .ros path relative to the unit's group prefix (UnitEntry.prime.groupPrefixes) */
   path?: string;
   groupPath?: string;

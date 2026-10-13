@@ -109,8 +109,11 @@ describe('buildRosXml', () => {
     const slot = det.def.slots.find((s) => s.role === 'Prime Troops')!;
     const options = getPrimeOptions(unit, unitContext([force], force, det, unit, slot.categoryId));
     const lb = options.find(isLogisticalBenefit)!;
-    det.slots['Prime Troops-0'] = { unit, primeBenefit: { id: lb.id, name: lb.name, description: lb.description } };
-    det.bonusSlots = [{ id: 'b1', sourceSlotKey: 'Prime Troops-0', role: 'Armour', unit: null }];
+    det.slots['Prime Troops-0'] = {
+      unit,
+      primeBenefit: { id: lb.id, name: lb.name, description: lb.description },
+      lbRole: 'Armour',
+    };
 
     const parsed = xmlParser.parse(buildRosXml([force], 3000, unit.points, OPTS));
     const unitSel = [parsed.roster.forces.force.forces.force.selections.selection].flat()[0];
@@ -174,5 +177,14 @@ describe('default wargear as New Recruit fills it', () => {
     expect(names(sponsons.children)).toEqual(['Sponson Mounted heavy bolters x2']);
     const rhino = units.find((u) => u.name === 'Rhino')!;
     expect(names(rhino.models[0].defaultWargear)).toEqual(['Pintle Mounted bolter', 'Pintle Mounted Bolter']);
+  });
+});
+
+describe('a unit with the same option group twice', () => {
+  test("a Mastodon exports both sponsons (New Recruit: \"Sponsons #2 requires 1 selections more\")", () => {
+    const mastodon = getUnitsForFaction('death-guard').find((u) => u.name.startsWith('Mastodon'))!;
+    const sponsons = mastodon.models[0].defaultWargear.filter((w) => w.name === 'Heavy Bolters');
+    expect(sponsons).toHaveLength(2);
+    expect(new Set(sponsons.map((w) => w.groupPath)).size).toBe(2); // one per sponson group link
   });
 });

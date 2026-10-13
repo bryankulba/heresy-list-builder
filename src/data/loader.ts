@@ -1,4 +1,3 @@
-import unitsJson from '../../data/parsed/units.json';
 import detachmentsJson from '../../data/parsed/detachments.json';
 import systemJson from '../../data/parsed/system.json';
 import cataloguesJson from '../../data/parsed/catalogues.json';
@@ -8,7 +7,49 @@ import type { PrimeNode } from '../rules/primeBenefits';
 import type { RuleModifier } from '../rules/evaluate';
 import { ALLIED_CHART, ALLIED_DETACHMENT, CRUSADE_CHART, FACTIONS, FACTION_BY_ID, LORD_OF_WAR_CHART } from './factions';
 
-export const unitsData = unitsJson as unknown as Record<string, UnitEntry[]>;
+// ---------------------------------------------------------------------------
+// Units: one file per catalogue (data/parsed/units/<key>.json), loaded on
+// demand so the app only downloads the armies in use. Call loadFactionUnits
+// (or loadAllUnits) before reading an army's units; reads are synchronous.
+// ---------------------------------------------------------------------------
+
+const unitFiles = import.meta.glob<UnitEntry[]>('../../data/parsed/units/*.json', { import: 'default' });
+const unitFileKey = (path: string) => path.replace(/^.*\/units\//, '').replace(/\.json$/, '');
+const unitFileByKey = new Map(Object.entries(unitFiles).map(([path, load]) => [unitFileKey(path), load]));
+
+/** Units loaded so far, by catalogue key. */
+export const unitsData: Record<string, UnitEntry[]> = {};
+const unitLoads = new Map<string, Promise<void>>();
+
+function loadUnitSource(key: string): Promise<void> {
+  if (unitsData[key]) return Promise.resolve();
+  const load = unitFileByKey.get(key);
+  if (!load) return Promise.resolve();
+  let pending = unitLoads.get(key);
+  if (!pending) {
+    pending = load().then((list) => {
+      unitsData[key] = list;
+    });
+    unitLoads.set(key, pending);
+  }
+  return pending;
+}
+
+/** Loads the units an army fields (its catalogue, Legiones Astartes for Legions, Assassins…). */
+export async function loadFactionUnits(...factions: string[]): Promise<void> {
+  const keys = new Set(factions.flatMap((f) => FACTION_BY_ID[f]?.unitSources ?? [f]));
+  await Promise.all([...keys].map(loadUnitSource));
+}
+
+/** Loads every army's units (importing a .ros of unknown armies, tests). */
+export async function loadAllUnits(): Promise<void> {
+  await Promise.all([...unitFileByKey.keys()].map(loadUnitSource));
+}
+
+/** Whether an army's units are loaded. */
+export function factionUnitsLoaded(faction: string): boolean {
+  return (FACTION_BY_ID[faction]?.unitSources ?? [faction]).every((k) => unitsData[k] || !unitFileByKey.has(k));
+}
 
 export interface SystemInfo {
   gameSystemId: string;
@@ -39,7 +80,10 @@ export interface ArmyConfigEntry {
   min: number;
   hidden?: boolean;
   modifiers?: RuleModifier[];
-  choices: Array<{ name: string; path: string; groupPath?: string }>;
+  /** How many of `choices` must / may be picked (its choice group's constraints) */
+  pick?: { min: number; max: number };
+  /** `ids`: what choosing it puts in the roster (its entry, link target and categories) for BSData conditions */
+  choices: Array<{ name: string; path: string; groupPath?: string; ids?: string[] }>;
   defaults: WargearEntry[];
 }
 
@@ -58,6 +102,8 @@ export const rulesData = rulesJson as unknown as {
 /** A per-unit BSData choice the builder makes once for the whole army — see scripts/parse-bsdata.ts */
 export interface ArmyChoiceGroup {
   name: string;
+  /** Catalogue key the group belongs to (an army is offered its own catalogues' choices) */
+  catalogue?: string;
   options: Array<{ id: string; name: string; path: string; hidden?: boolean; modifiers?: RuleModifier[] }>;
 }
 export const cataloguesData = cataloguesJson as Record<string, CatalogueInfo>;

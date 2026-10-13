@@ -22,17 +22,13 @@ function detachmentLines(det: PlacedDetachment): string[] {
   for (const { key, slotDef } of cardSlots(det)) {
     const filled = det.slots[key];
     if (!filled) continue;
-    const benefitStr = filled.primeBenefit ? `  [Prime: ${filled.primeBenefit.name}]` : '';
+    const benefitStr = filled.primeBenefit
+      ? `  [Prime: ${filled.primeBenefit.name}${filled.lbRole ? ` — ${filled.lbRole}` : ''}]`
+      : '';
     const role = slotDef.role.replace('Prime ', '★ ');
     const effectivePts = filled.unit.points + (filled.extraPoints ?? 0);
     const notesStr = filled.notes ? `  — ${filled.notes}` : '';
     lines.push(`  ${role}: ${filled.unit.name} (${effectivePts}pts)${benefitStr}${notesStr}`);
-  }
-  for (const bs of det.bonusSlots ?? []) {
-    if (!bs.unit) continue;
-    const bsEffectivePts = bs.unit.points + (bs.extraPoints ?? 0);
-    const bsNotesStr = bs.notes ? `  — ${bs.notes}` : '';
-    lines.push(`  ${bs.role} [Logistical Benefit]: ${bs.unit.name} (${bsEffectivePts}pts)${bsNotesStr}`);
   }
   return lines;
 }
@@ -88,6 +84,7 @@ export default function ExportModal({
 }: ExportModalProps) {
   const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
   const armyChoices = useRosterStore((s) => s.armyChoices);
+  const configChoices = useRosterStore((s) => s.configChoices);
   const text = useMemo(
     () => buildExportText(withEffectiveSlots(forces), allegiance, pointsLimit, totalPoints),
     [forces, allegiance, pointsLimit, totalPoints]
@@ -98,7 +95,7 @@ export default function ExportModal({
   }
 
   function handleDownloadRos() {
-    const xml = buildRosXml(forces, pointsLimit, totalPoints, { allegiance, cohortDoctrine, armyChoices });
+    const xml = buildRosXml(forces, pointsLimit, totalPoints, { allegiance, cohortDoctrine, armyChoices, configChoices });
     downloadRos(xml, forces.find((f) => f.kind === 'primary')?.faction ?? 'roster');
   }
 

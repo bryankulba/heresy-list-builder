@@ -7,7 +7,7 @@
  * Auxiliary Detachment" choice, −1 for Special Assignment…
  */
 
-import type { Force } from '../types';
+import type { DetachmentDef, Force } from '../types';
 import { cataloguesData, getChart } from '../data/loader';
 import { applyNumericModifiers, type RuleContext } from './evaluate';
 import { rosterCounts, type RosterCounts } from './context';
@@ -42,6 +42,13 @@ function armyContext(forces: Force[], force: Force, counts: RosterCounts): RuleC
   };
 }
 
+/** What a detachment uses of a limit, after its cost modifiers (a Tercio with its doctrine: 0.5). */
+function detachmentCost(def: DetachmentDef, costTypeId: string, ctx: RuleContext): number {
+  const base = def.costs?.[costTypeId] ?? 0;
+  const mods = def.costModifiers?.[costTypeId];
+  return mods ? applyNumericModifiers(base, mods, ctx) : base;
+}
+
 /** Each detachment limit of the army's chart, with what the army uses of it. */
 export function detachmentAllowances(
   forces: Force[],
@@ -57,7 +64,7 @@ export function detachmentAllowances(
     used:
       limit.costTypeId === POINTS_TYPE_ID
         ? force.detachments.reduce((n, d) => n + detachmentPoints(d), 0)
-        : force.detachments.reduce((n, d) => n + (d.def.costs?.[limit.costTypeId] ?? 0), 0),
+        : force.detachments.reduce((n, d) => n + detachmentCost(d.def, limit.costTypeId, ctx), 0),
   }));
 }
 
@@ -92,6 +99,31 @@ export function detachmentCaps(
     }
   }
   return out;
+}
+
+/**
+ * Whether the army hasn't unlocked a detachment it could add: its roster cap is
+ * used up (a Storm Battery without a Siege Breaker) or it would go past another
+ * of the chart's limits (a Tank Commander detachment without a Tank Commander).
+ * The Auxiliary/Apex count itself is left to the unlock that offers the choice.
+ */
+export function isDetachmentLocked(
+  forces: Force[],
+  force: Force,
+  def: DetachmentDef,
+  counts: RosterCounts = rosterCounts(forces)
+): boolean {
+  const key = def.entryId ?? def.name;
+  if (def.rosterMax) {
+    const used = forces.flatMap((f) => f.detachments).filter((d) => (d.def.entryId ?? d.def.name) === key).length;
+    if (used + 1 > applyNumericModifiers(def.rosterMax.max, def.rosterMax.modifiers, armyContext(forces, force, counts))) {
+      return true;
+    }
+  }
+  const ownType = allowanceFor(forces, force, def.type === 'apex' ? 'apex' : 'auxiliary', counts)?.costTypeId;
+  return detachmentAllowances(forces, force, counts).some(
+    (a) => a.costTypeId !== ownType && (def.costs?.[a.costTypeId] ?? 0) > 0 && a.used + (def.costs?.[a.costTypeId] ?? 0) > a.max
+  );
 }
 
 /**

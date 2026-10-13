@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tag } from '@carbon/react';
 import { Close, WarningAltFilled } from '@carbon/icons-react';
-import type { BonusSlot, FilledSlot, PlacedDetachment, SlotDef } from '../../types';
+import type { PlacedDetachment, SlotDef } from '../../types';
 import { getDetachmentDisplayName } from '../../data/loader';
 import { cardSlots, groupByRole } from './slotLayout';
 
@@ -43,8 +43,6 @@ interface DetachmentCardProps {
   warnings?: Array<{ message: string; slotKey?: string }>;
   onSlotClick: (slotKey: string, slotDef: SlotDef) => void;
   onSlotClear: (slotKey: string) => void;
-  onBonusSlotClick: (bonusSlotId: string, role: string) => void;
-  onBonusSlotClear: (bonusSlotId: string) => void;
   cardRef?: (el: HTMLDivElement | null) => void;
   slotRefCallback?: (slotKey: string) => (el: HTMLDivElement | null) => void;
 }
@@ -57,8 +55,6 @@ export default function DetachmentCard({
   warnings = [],
   onSlotClick,
   onSlotClear,
-  onBonusSlotClick,
-  onBonusSlotClear,
   cardRef,
   slotRefCallback,
 }: DetachmentCardProps) {
@@ -185,41 +181,6 @@ export default function DetachmentCard({
           </div>
         ))}
 
-        {/* Logistical Benefit bonus slots */}
-        {(detachment.bonusSlots ?? []).length > 0 && (
-          <div>
-            <div
-              style={{
-                fontSize: 9,
-                fontWeight: 600,
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: 'var(--cds-support-warning)',
-                marginBottom: 5,
-                paddingBottom: 3,
-                borderBottom: '1px dashed var(--cds-support-warning)',
-              }}
-            >
-              Logistical Benefit
-            </div>
-            <div style={{ display: 'flex', flexWrap: 'wrap', gap: 6 }}>
-              {(detachment.bonusSlots ?? []).map((bs: BonusSlot) => {
-                const fakeSlotDef: SlotDef = { role: bs.role, min: 0, max: 1, prime: false };
-                const filledSlot: FilledSlot | null = bs.unit ? { unit: bs.unit } : null;
-                return (
-                  <Slot
-                    key={bs.id}
-                    slotDef={fakeSlotDef}
-                    filled={filledSlot}
-                    onClick={() => onBonusSlotClick(bs.id, bs.role)}
-                    onClear={() => onBonusSlotClear(bs.id)}
-                    isDashed
-                  />
-                );
-              })}
-            </div>
-          </div>
-        )}
       </div>
     </div>
   );

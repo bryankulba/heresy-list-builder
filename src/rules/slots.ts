@@ -9,7 +9,7 @@
 
 import type { Force, PlacedDetachment, SlotDef, UnitEntry } from '../types';
 import { getBaseRole, getUnitsForFaction, stripPrimePrefix, unitVariant } from '../data/loader';
-import { applyNumericModifiers, conditionsHold, type RuleContext } from './evaluate';
+import { applyNumericModifiers, conditionsHold, effectiveHidden, type RuleContext } from './evaluate';
 import { detachmentContext, rosterCounts, unitContext, type RosterCounts } from './context';
 
 /** The unit's primary category where `ctx` places it. */
@@ -72,12 +72,11 @@ export function effectiveSlots(
   const ctx = detachmentContext(forces, force, detachment, counts);
   return detachment.def.slots
     .map((slot) => (slot.maxModifiers ? { ...slot, max: applyNumericModifiers(slot.max, slot.maxModifiers, ctx) } : slot))
-    .filter((slot) => slot.max > 0);
+    .filter((slot) => slot.max > 0 && !effectiveHidden(slot.hidden ?? false, slot.visibility, ctx));
 }
 
 /** Forces whose placed detachments carry their effective slots (for rendering and layout). */
-export function withEffectiveSlots(forces: Force[]): Force[] {
-  const counts = rosterCounts(forces);
+export function withEffectiveSlots(forces: Force[], counts: RosterCounts = rosterCounts(forces)): Force[] {
   return forces.map((force) => ({
     ...force,
     detachments: force.detachments.map((det) => ({
