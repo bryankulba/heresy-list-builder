@@ -3,6 +3,7 @@ import { Tag } from '@carbon/react';
 import { Close, WarningAltFilled } from '@carbon/icons-react';
 import type { PlacedDetachment, SlotDef } from '../../types';
 import { getDetachmentDisplayName } from '../../data/loader';
+import { detachmentPoints } from '../../store/rosterModel';
 import { cardSlots, groupByRole } from './slotLayout';
 
 export { cardSlots, estimateCardHeight, expandSlots, groupByRole } from './slotLayout';
@@ -73,12 +74,7 @@ export default function DetachmentCard({
     | 'gray';
 
   // Points on this card
-  const cardPoints = Object.values(detachment.slots).reduce((sum, fs) => {
-    if (!fs) return sum;
-    let pts = fs.unit.points;
-    // bonusUnit removed — bonus slots tracked separately in detachment.bonusSlots
-    return sum + pts;
-  }, 0);
+  const cardPoints = detachmentPoints(detachment);
 
   return (
     <div

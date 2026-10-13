@@ -22,8 +22,8 @@ describe('validateRoster', () => {
   test('points and detachment limits', () => {
     const { forces, allegiance, pointsLimit } = load('I am Patient I am the End (3500 points no Legion uniques).ros');
     expect(messages(forces, allegiance, pointsLimit)).toContain('3 Auxiliary detachments, but the army allows 2');
-    // The builder counts base points (wargear is finished in New Recruit): 2140 here
-    expect(messages(forces, allegiance, 2000)).toContain('140 points over the 2000 point limit');
+    // The builder counts units at their size, without wargear (finished in New Recruit): 2840 here
+    expect(messages(forces, allegiance, 2000)).toContain('840 points over the 2000 point limit');
   });
 
   test("Lord of War Detachment over its share of the army's points", () => {

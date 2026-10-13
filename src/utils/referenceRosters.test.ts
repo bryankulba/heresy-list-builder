@@ -1,6 +1,6 @@
 /**
  * Round-trips the New Recruit rosters in reference_armies/: import → export,
- * then compares the export with the original at force-org level. This is the
+ * then compares the export with the original at force-org level (plus unit sizes). This is the
  * check that our .ros output matches what New Recruit itself writes.
  */
 import { describe, test, expect } from 'vitest';
@@ -36,6 +36,17 @@ const kids = (n: Node | undefined) => n?.selections?.selection ?? [];
 const cats = (n: Node) => (n.categories?.category ?? []).map((c) => `${c.primary === 'true' ? '*' : ''}${c.name}`).sort();
 const unitCost = (n: Node) => Number(n.costs?.cost?.find((c) => c.name === 'Point(s)')?.value ?? 0);
 
+/** Models of each type in a unit, by entryId (New Recruit splits a type into selections by loadout). */
+function modelCounts(unit: Node): Array<[string, number]> {
+  const counts = new Map<string, number>();
+  for (const c of kids(unit)) {
+    if (c.type !== 'model' && c.type !== 'unit-group') continue;
+    const n = Number((c as { number?: string }).number ?? 1);
+    if (n > 0) counts.set(c.entryId ?? '', (counts.get(c.entryId ?? '') ?? 0) + n);
+  }
+  return [...counts].sort(([a], [b]) => a.localeCompare(b));
+}
+
 /** Force-org fingerprint of a roster: what the builder is responsible for. */
 function fingerprint(roster: Node, supported: (f: Node) => boolean) {
   return (roster.forces?.force ?? []).filter(supported).map((f) => ({
@@ -55,6 +66,8 @@ function fingerprint(roster: Node, supported: (f: Node) => boolean) {
           prime: kids(u)
             .filter((c) => c.name === 'Prime Unit')
             .map((p) => [p.entryId, cats(p), kids(p).map((b) => [b.entryId, b.entryGroupId, kids(b).map((lb) => lb.entryId)])]),
+          // Unit size: models per type (a type split by loadout summed)
+          models: modelCounts(u),
           detachmentChoice: kids(u)
             .filter((c) => /^One (Apex|Auxiliary) Detachment/.test(c.name ?? ''))
             .map((c) => [c.entryId, c.entryGroupId]),

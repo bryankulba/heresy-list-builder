@@ -40,7 +40,7 @@ Work:
 Today each slot holds a unit at its minimum size with default wargear. The parsed data already has each model type's
 min / max and per-model cost; option groups are not parsed.
 
-### Step 1 — Troop numbers _(small)_
+### Step 1 — Troop numbers _(small)_ — done (Phase 9)
 - `FilledSlot.modelCounts` (per model type); points = base cost + per-model cost × count.
 - Slot editor: a stepper per model type; the slot tile shows the size.
 - Export writes the counts (default wargear scales); import reads them back — the reference lists already carry real

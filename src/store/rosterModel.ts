@@ -17,6 +17,7 @@ import type {
 } from '../types';
 import { ALLIED_CHART, ALLIED_DETACHMENT, CRUSADE_CHART, FACTION_BY_ID } from '../data/factions';
 import { normalizeDoctrine } from '../rules/armyConfig';
+import { slotPoints } from '../rules/unitSize';
 import { withEffectiveSlots } from '../rules/slots';
 import { cardSlots } from '../components/canvas/slotLayout';
 import { detachmentsData, getBaseRole, stripPrimePrefix, getChartDetachment, getUnitsForFaction, lordOfWarChartFor, unitVariant } from '../data/loader';
@@ -76,9 +77,7 @@ export function factionOfDetachment(forces: Force[], detachmentIdOrRef: string):
   return findForceOfDetachment(forces, detId)?.faction ?? primaryForce(forces)?.faction ?? '';
 }
 
-function slotPoints(fs: FilledSlot | null | undefined): number {
-  return fs ? fs.unit.points + (fs.extraPoints ?? 0) : 0;
-}
+export { isSizeAdjustable, modelCount, modelKey, slotPoints, unitModelTotal, unitPoints } from '../rules/unitSize';
 
 export function detachmentPoints(det: PlacedDetachment): number {
   const slots = Object.values(det.slots).reduce((sum, fs) => sum + slotPoints(fs), 0);

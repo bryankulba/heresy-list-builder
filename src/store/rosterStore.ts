@@ -17,6 +17,7 @@ import {
   addDetachment,
   createForce,
   migrateSnapshot,
+  modelKey as modelKeyOf,
   primaryForce,
   refreshUnits,
   removeDetachmentCascade,
@@ -63,6 +64,8 @@ interface RosterStore {
   removeForce: (forceId: string) => void;
   fillSlot: (detachmentId: string, slotKey: string, unit: UnitEntry, primeBenefit?: PrimeBenefit) => void;
   updateSlotAnnotations: (detachmentId: string, slotKey: string, notes: string, extraPoints: number) => void;
+  /** Sets how many of a model type (by `modelKey`) the slot's unit has */
+  setModelCount: (detachmentId: string, slotKey: string, modelKey: string, count: number) => void;
   clearSlot: (detachmentId: string, slotKey: string) => void;
   /** Logistical Benefit: the role of the extra slot (BSData adds it); undefined clears it */
   setLogisticalRole: (detachmentId: string, slotKey: string, role: string | undefined) => void;
@@ -164,12 +167,35 @@ export const useRosterStore = create<RosterStore>()(
               primeBenefit,
               notes: existing?.notes,
               extraPoints: existing?.extraPoints,
+              // Keep the unit's size while it's the same unit (e.g. only the benefit changed)
+              ...(existing?.modelCounts && existing.unit.entryId === unit.entryId && existing.unit.name === unit.name
+                ? { modelCounts: existing.modelCounts }
+                : {}),
               // Keep the Logistical Benefit role while the benefit stays the same
               ...(existing?.lbRole && primeBenefit && existing.primeBenefit?.id === primeBenefit.id
                 ? { lbRole: existing.lbRole }
                 : {}),
             };
             return { ...det, slots: { ...det.slots, [slotKey]: filled } };
+          }),
+        }));
+      },
+
+      setModelCount(detachmentId, slotKey, modelKey, count) {
+        set((s) => ({
+          forces: updateDetachment(s.forces, detachmentId, (det) => {
+            const existing = det.slots[slotKey];
+            const model = existing?.unit.models.find((m) => modelKeyOf(m) === modelKey);
+            if (!existing || !model) return det;
+            const clamped = Math.max(model.min, Math.min(model.max, Math.round(count)));
+            const { [modelKey]: _old, ...rest } = existing.modelCounts ?? {};
+            // Only sizes that differ from the minimum are stored
+            const modelCounts = clamped === model.min ? rest : { ...rest, [modelKey]: clamped };
+            const { modelCounts: _prev, ...slot } = existing;
+            return {
+              ...det,
+              slots: { ...det.slots, [slotKey]: Object.keys(modelCounts).length > 0 ? { ...slot, modelCounts } : slot },
+            };
           }),
         }));
       },

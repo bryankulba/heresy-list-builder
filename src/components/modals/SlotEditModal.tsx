@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { ComposedModal, ModalHeader, ModalBody, ModalFooter, Button, TextInput, NumberInput } from '@carbon/react';
 import type { FilledSlot, SlotDef } from '../../types';
 import { getBaseRole, stripPrimePrefix, getDetachmentDisplayName } from '../../data/loader';
+import { isSizeAdjustable, modelCount, modelKey, slotPoints, unitModelTotal } from '../../rules/unitSize';
 
 export interface LinkedDetachmentRow {
   name: string;
@@ -16,9 +17,82 @@ interface SlotEditModalProps {
   onChangeUnit: () => void;
   onChangeBenefit: () => void;
   onAnnotationsChange: (notes: string, extraPoints: number) => void;
+  /** Sets how many of a model type (by modelKey) the unit has */
+  onModelCountChange: (modelKey: string, count: number) => void;
   /** Empties the slot (and removes what it unlocked, asking first if those have units) */
   onRemove: () => void;
   onClose: () => void;
+}
+
+/** − value + buttons, big enough to tap; the value can also be typed. */
+function Stepper({
+  label,
+  value,
+  min,
+  max,
+  onChange,
+}: {
+  label: string;
+  value: number;
+  min: number;
+  max: number;
+  onChange: (value: number) => void;
+}) {
+  const [draft, setDraft] = useState<string | null>(null);
+  const button = (text: string, next: number, disabled: boolean) => (
+    <button
+      type="button"
+      aria-label={`${text === '−' ? 'Fewer' : 'More'} ${label}`}
+      disabled={disabled}
+      onClick={() => onChange(next)}
+      style={{
+        width: 36,
+        height: 36,
+        fontSize: 18,
+        lineHeight: 1,
+        background: 'var(--cds-field-01, var(--cds-layer-01))',
+        border: '1px solid var(--cds-border-strong-01)',
+        color: disabled ? 'var(--cds-text-disabled)' : 'var(--cds-text-primary)',
+        cursor: disabled ? 'not-allowed' : 'pointer',
+      }}
+    >
+      {text}
+    </button>
+  );
+  return (
+    <div style={{ display: 'flex', alignItems: 'center', gap: 4, flexShrink: 0 }}>
+      {button('−', value - 1, value <= min)}
+      <input
+        aria-label={label}
+        inputMode="numeric"
+        value={draft ?? String(value)}
+        // Typing replaces the number rather than adding to it
+        // (a frame later: Safari's mouseup would otherwise undo the selection)
+        onFocus={(e) => {
+          const input = e.target;
+          requestAnimationFrame(() => input.select());
+        }}
+        onChange={(e) => setDraft(e.target.value.replace(/[^0-9]/g, ''))}
+        onBlur={() => {
+          if (draft !== null && draft !== '') onChange(Math.max(min, Math.min(max, Number(draft))));
+          setDraft(null);
+        }}
+        onKeyDown={(e) => {
+          if (e.key === 'Enter') (e.target as HTMLInputElement).blur();
+        }}
+        style={{
+          width: 44,
+          height: 36,
+          textAlign: 'center',
+          fontSize: 14,
+          background: 'transparent',
+          border: '1px solid var(--cds-border-subtle-01)',
+          color: 'var(--cds-text-primary)',
+        }}
+      />
+      {button('+', value + 1, value >= max)}
+    </div>
+  );
 }
 
 export default function SlotEditModal({
@@ -28,10 +102,12 @@ export default function SlotEditModal({
   onChangeUnit,
   onChangeBenefit,
   onAnnotationsChange,
+  onModelCountChange,
   onRemove,
   onClose,
 }: SlotEditModalProps) {
   const displayRole = getBaseRole(stripPrimePrefix(slotDef.role));
+  const sizeModels = filled.unit.models.filter(isSizeAdjustable);
   const [notes, setNotes] = useState(filled.notes ?? '');
   const [extraPoints, setExtraPoints] = useState(filled.extraPoints ?? 0);
 
@@ -76,13 +152,55 @@ export default function SlotEditModal({
                 {filled.unit.name}
               </div>
               <div style={{ fontSize: 11, color: 'var(--cds-text-secondary)', marginTop: 2 }}>
-                {filled.unit.points}pts
+                {slotPoints(filled)}pts
+                {sizeModels.length > 0 && ` · ${unitModelTotal(filled)} models`}
               </div>
             </div>
             <Button kind="ghost" size="sm" onClick={onChangeUnit}>
               Change
             </Button>
           </div>
+
+          {/* Unit size — a stepper per model type with a range (Legionaries 9–19), at BSData's cost per model */}
+          {sizeModels.length > 0 && (
+            <div
+              style={{
+                padding: '12px 14px',
+                background: 'var(--cds-layer-02)',
+                border: '1px solid var(--cds-border-subtle-01)',
+                borderRadius: 4,
+                display: 'flex',
+                flexDirection: 'column',
+                gap: 10,
+              }}
+            >
+              <div style={{ fontSize: 10, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--cds-text-secondary)' }}>
+                Unit size
+              </div>
+              {sizeModels.map((m) => {
+                const key = modelKey(m);
+                const n = modelCount(filled, m);
+                return (
+                  <div key={key} style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+                    <div style={{ flex: 1, minWidth: 0 }}>
+                      <div style={{ fontSize: 14, color: 'var(--cds-text-primary)' }}>{m.name}</div>
+                      <div style={{ fontSize: 11, color: 'var(--cds-text-secondary)' }}>
+                        {m.min}–{m.max}
+                        {m.cost > 0 ? ` · ${m.cost}pts each` : ''}
+                      </div>
+                    </div>
+                    <Stepper
+                      label={m.name}
+                      value={n}
+                      min={m.min}
+                      max={m.max}
+                      onChange={(v) => onModelCountChange(key, v)}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+          )}
 
           {/* Linked detachment rows — one per unlocked detachment (2 for Officer of the Line) */}
           {linkedDetachments?.map((linked, i) => (
