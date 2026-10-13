@@ -319,6 +319,12 @@
         "max": 0,
         "defaultWargear": [
           {
+            "name": "Arcana Benefice:",
+            "entryId": "66e0-e77e-9d6e-6301",
+            "targetId": "f7b9-dc9c-2c8b-0c92",
+            "path": "01c9-68cf-adb6-ace6::66e0-e77e-9d6e-6301::f7b9-dc9c-2c8b-0c92"
+          },
+          {
             "name": "Mauler bolt cannon",
             "entryId": "ce29-a75b-7037-2623",
             "targetId": "ec2c-185f-3e9e-7ccd",
@@ -550,7 +556,14 @@
         "cost": 100,
         "min": 0,
         "max": 0,
-        "defaultWargear": []
+        "defaultWargear": [
+          {
+            "name": "Arcana Benefice:",
+            "entryId": "5b90-9aa1-039f-6a32",
+            "targetId": "f7b9-dc9c-2c8b-0c92",
+            "path": "eef7-2b2e-23d4-fb4d::5b90-9aa1-039f-6a32::f7b9-dc9c-2c8b-0c92"
+          }
+        ]
       }
     ],
     "source": "anathema-psykana",
@@ -657,6 +670,12 @@
         "entryId": "60d6-3379-8896-86d8",
         "targetId": "403d-7806-215e-7676",
         "path": "6d30-40cf-952f-98e1::60d6-3379-8896-86d8::403d-7806-215e-7676"
+      },
+      {
+        "name": "Arcana Benefice:",
+        "entryId": "7080-9b2b-2347-816c",
+        "targetId": "f7b9-dc9c-2c8b-0c92",
+        "path": "6d30-40cf-952f-98e1::7080-9b2b-2347-816c::f7b9-dc9c-2c8b-0c92"
       },
       {
         "name": "Cavas Configuration",

@@ -10,7 +10,7 @@ import { getDetachmentDisplayName } from '../data/loader';
 import { computeTotalPoints } from '../store/rosterModel';
 import { cardSlots, expandSlots } from '../components/canvas/slotLayout';
 import { rosterCounts, type RosterCounts } from './context';
-import { allegianceCounts, isAllegianceLocked } from './availability';
+import { allegianceCounts, chartBan, isAllegianceLocked } from './availability';
 import { detachmentAllowances, detachmentCaps } from './detachmentLimits';
 import { isLogisticalBenefit } from './primeBenefits';
 import { withEffectiveSlots } from './slots';
@@ -195,6 +195,16 @@ function availabilityWarnings(forces: Force[], allegiance: Allegiance): RosterWa
   );
 }
 
+/** Units the army's chart forbids (Zone Mortalis: flyers, vehicles with 3+ hull points) — e.g. from an import. */
+function chartBanWarnings(forces: Force[]): RosterWarning[] {
+  return placedUnits(forces).flatMap(({ force, det, slotKey, unit }) => {
+    const message = chartBan(force, unit);
+    return message
+      ? [{ id: `ban:${det.id}:${slotKey}`, message: `${unit.name}: ${message}`, detachmentId: det.id, slotKey }]
+      : [];
+  });
+}
+
 export function validateRoster(input: ValidationInput): RosterWarning[] {
   const { forces, allegiance, pointsLimit, cohortDoctrine, configChoices } = input;
   const counts = rosterCounts(forces, { allegiance, pointsLimit, cohortDoctrine, configChoices });
@@ -208,5 +218,6 @@ export function validateRoster(input: ValidationInput): RosterWarning[] {
     ...primeBenefitWarnings(view),
     ...uniqueWarnings(forces),
     ...availabilityWarnings(forces, allegiance),
+    ...chartBanWarnings(forces),
   ];
 }

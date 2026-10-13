@@ -837,7 +837,14 @@
         "cost": 100,
         "min": 0,
         "max": 0,
-        "defaultWargear": []
+        "defaultWargear": [
+          {
+            "name": "Arcana Benefice:",
+            "entryId": "5b90-9aa1-039f-6a32",
+            "targetId": "f7b9-dc9c-2c8b-0c92",
+            "path": "7230-61cc-805d-656e::5b90-9aa1-039f-6a32::f7b9-dc9c-2c8b-0c92"
+          }
+        ]
       }
     ],
     "source": "questoris-familia",
@@ -947,6 +954,12 @@
         "min": 0,
         "max": 0,
         "defaultWargear": [
+          {
+            "name": "Arcana Benefice:",
+            "entryId": "66e0-e77e-9d6e-6301",
+            "targetId": "f7b9-dc9c-2c8b-0c92",
+            "path": "ce0e-2124-78c2-b1c0::66e0-e77e-9d6e-6301::f7b9-dc9c-2c8b-0c92"
+          },
           {
             "name": "Mauler bolt cannon",
             "entryId": "ce29-a75b-7037-2623",
@@ -2356,6 +2369,12 @@
         "entryId": "60d6-3379-8896-86d8",
         "targetId": "403d-7806-215e-7676",
         "path": "3b34-1361-79b6-7bcc::60d6-3379-8896-86d8::403d-7806-215e-7676"
+      },
+      {
+        "name": "Arcana Benefice:",
+        "entryId": "7080-9b2b-2347-816c",
+        "targetId": "f7b9-dc9c-2c8b-0c92",
+        "path": "3b34-1361-79b6-7bcc::7080-9b2b-2347-816c::f7b9-dc9c-2c8b-0c92"
       },
       {
         "name": "Cavas Configuration",

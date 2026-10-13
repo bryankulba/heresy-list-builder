@@ -14,6 +14,8 @@ import { noFocusScroll } from './noFocusScroll';
 interface DetachmentSelectorModalProps {
   trigger: 'highCommand' | 'command';
   faction: string;
+  /** The force's chart (Zone Mortalis armies pick from their own chart) */
+  chart?: string;
   title?: string;
   /** Explicit options; defaults to the Apex/Auxiliary detachments for the trigger */
   options?: DetachmentDef[];
@@ -30,6 +32,7 @@ interface DetachmentSelectorModalProps {
 export default function DetachmentSelectorModal({
   trigger,
   faction,
+  chart,
   title: titleProp,
   options: optionsProp,
   availability = () => ({ status: 'ok' }),
@@ -38,7 +41,7 @@ export default function DetachmentSelectorModal({
 }: DetachmentSelectorModalProps) {
 
   const allOptions =
-    optionsProp ?? getDetachmentsForFaction(trigger === 'highCommand' ? 'apex' : 'auxiliary', faction);
+    optionsProp ?? getDetachmentsForFaction(trigger === 'highCommand' ? 'apex' : 'auxiliary', faction, chart);
   const status = new Map(allOptions.map((d) => [d, availability(d)]));
   const locked = new Set(allOptions.filter((d) => status.get(d)?.status === 'locked'));
   const shown = allOptions.filter((d) => status.get(d)?.status !== 'hidden');

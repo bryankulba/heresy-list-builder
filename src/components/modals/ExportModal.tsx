@@ -3,7 +3,7 @@ import { ComposedModal, ModalHeader, ModalBody, ModalFooter, Button } from '@car
 import type { Allegiance, Force, PlacedDetachment } from '../../types';
 import { getDetachmentDisplayName } from '../../data/loader';
 import { cardSlots } from '../canvas/DetachmentCard';
-import { factionLabel } from '../../data/factions';
+import { ZONE_MORTALIS_CHART, factionLabel } from '../../data/factions';
 import { buildRosXml } from '../../utils/buildRos';
 import { withEffectiveSlots } from '../../rules/slots';
 import { useRosterStore } from '../../store/rosterStore';
@@ -42,7 +42,8 @@ function buildExportText(
   const lines: string[] = [];
   const primary = forces.find((f) => f.kind === 'primary') ?? forces[0];
 
-  lines.push(`${factionLabel(primary?.faction ?? '').toUpperCase()} — ${allegiance.toUpperCase()} — ${pointsLimit}pts`);
+  const game = primary?.chart === ZONE_MORTALIS_CHART ? ' — ZONE MORTALIS' : '';
+  lines.push(`${factionLabel(primary?.faction ?? '').toUpperCase()} — ${allegiance.toUpperCase()}${game} — ${pointsLimit}pts`);
   lines.push('');
 
   for (const force of forces) {

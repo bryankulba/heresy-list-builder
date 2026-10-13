@@ -89,6 +89,7 @@ export default function CanvasModals({ roster, flow, primary, additionalDetachme
           trigger={modal.trigger}
           title={modal.title}
           faction={factionFor(modal.unlockedBy)}
+          chart={forceOf(modal.unlockedBy)?.chart}
           availability={(def) => {
             const force = forceOf(modal.unlockedBy);
             return force ? detachmentAvailability(forces, force, def, counts) : { status: 'ok' };

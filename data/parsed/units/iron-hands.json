@@ -737,6 +737,12 @@
         "max": 0,
         "defaultWargear": [
           {
+            "name": "Arcana Benefice:",
+            "entryId": "66e0-e77e-9d6e-6301",
+            "targetId": "f7b9-dc9c-2c8b-0c92",
+            "path": "3c19-634b-5bc1-cd24::66e0-e77e-9d6e-6301::f7b9-dc9c-2c8b-0c92"
+          },
+          {
             "name": "Mauler bolt cannon",
             "entryId": "ce29-a75b-7037-2623",
             "targetId": "ec2c-185f-3e9e-7ccd",

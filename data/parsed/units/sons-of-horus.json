@@ -214,6 +214,12 @@
         "path": "0517-aa86-94c6-43b6::1455-3f3d-ecba-a0b1::fa20-82bc-c7de-9e97"
       },
       {
+        "name": "Staff of Dark Authority",
+        "entryId": "4c42-bdc6-23d4-b814",
+        "targetId": "5181-73dd-2980-7d7a",
+        "path": "0517-aa86-94c6-43b6::4c42-bdc6-23d4-b814::5181-73dd-2980-7d7a"
+      },
+      {
         "name": "Bolt pistol",
         "entryId": "2e26-9713-401a-f820",
         "targetId": "2942-f783-d627-33c5",
@@ -1093,6 +1099,12 @@
         "max": 1,
         "defaultWargear": [
           {
+            "name": "Staff of Dark Authority",
+            "entryId": "bd3a-8e23-f506-ddee",
+            "targetId": "5181-73dd-2980-7d7a",
+            "path": "bbfe-7605-3627-7ee9::bd3a-8e23-f506-ddee::5181-73dd-2980-7d7a"
+          },
+          {
             "name": "Cataphractii",
             "entryId": "38a8-2683-c590-3c4b",
             "path": "bbfe-7605-3627-7ee9::c947-8e11-1f90-e2a8::38a8-2683-c590-3c4b",
@@ -1119,6 +1131,8 @@
       "b980-187b-2b17-d635": 1,
       "9871-cb62-5283-2216": 1,
       "1e7d-9066-28d2-97a0": 1,
+      "bd3a-8e23-f506-ddee": 1,
+      "5181-73dd-2980-7d7a": 1,
       "38a8-2683-c590-3c4b": 1,
       "6c5a-095d-1f96-be3b": 1,
       "042d-9e60-db9e-c147": 1

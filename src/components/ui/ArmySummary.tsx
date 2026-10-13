@@ -7,7 +7,7 @@
 
 import React from 'react';
 import { useRosterStore, selectPrimaryFaction } from '../../store/rosterStore';
-import { factionLabel } from '../../data/factions';
+import { ZONE_MORTALIS_CHART, factionLabel } from '../../data/factions';
 import { configOptions, doctrineLabel as labelOfDoctrine, normalizeDoctrine } from '../../rules/armyConfig';
 import { armyChoiceLabel, rosterArmyChoiceGroups } from '../../rules/armyChoices';
 
@@ -29,6 +29,7 @@ export default function ArmySummary({ layout }: { layout: 'inline' | 'panel' }) 
   const faction = useRosterStore(selectPrimaryFaction);
   const allies = useRosterStore((s) => s.forces.filter((f) => f.kind === 'allied').map((f) => f.faction));
   const allegiance = useRosterStore((s) => s.allegiance);
+  const zoneMortalis = useRosterStore((s) => s.forces.some((f) => f.kind === 'primary' && f.chart === ZONE_MORTALIS_CHART));
   const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
   const armyChoices = useRosterStore((s) => s.armyChoices);
   const setArmyChoice = useRosterStore((s) => s.setArmyChoice);
@@ -86,6 +87,12 @@ export default function ArmySummary({ layout }: { layout: 'inline' | 'panel' }) 
       {allies.length > 0 && <span>+ {allies.map(factionLabel).join(' + ')}</span>}
       <Dot />
       <span>{allegiance}</span>
+      {zoneMortalis && (
+        <>
+          <Dot />
+          <span>Zone Mortalis</span>
+        </>
+      )}
       {doctrine && (
         <>
           <Dot />

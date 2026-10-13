@@ -47,7 +47,9 @@ interface RosterStore {
     pointsLimit: number,
     cohortDoctrine?: string,
     armyChoices?: Record<string, string>,
-    configChoices?: Record<string, string>
+    configChoices?: Record<string, string>,
+    /** Another game type than a Crusade army: its chart and primary detachment (Zone Mortalis) */
+    game?: { chart: string; primary: string }
   ) => void;
   setArmyChoice: (groupId: string, optionId: string) => void;
   setConfigChoice: (entry: string, choice: string) => void;
@@ -88,7 +90,7 @@ export const useRosterStore = create<RosterStore>()(
     (set) => ({
       ...INITIAL_STATE,
 
-      async startBuild(faction, allegiance, pointsLimit, cohortDoctrine = '', armyChoices = {}, configChoices = {}) {
+      async startBuild(faction, allegiance, pointsLimit, cohortDoctrine = '', armyChoices = {}, configChoices = {}, game) {
         await loadFactionUnits(faction);
         set({
           phase: 'canvas',
@@ -97,7 +99,7 @@ export const useRosterStore = create<RosterStore>()(
           cohortDoctrine,
           armyChoices,
           configChoices,
-          forces: [createForce(faction, 'primary')],
+          forces: [createForce(faction, 'primary', game)],
         });
       },
 

@@ -13,7 +13,7 @@ import { unitContext } from '../../rules/context';
 import { getPrimeOptions, isLogisticalBenefit, logisticalBenefitRoles, type PrimeOption } from '../../rules/primeBenefits';
 import { unitsForSlot } from '../../rules/slots';
 import { auxiliaryUnlocks } from '../../rules/detachmentLimits';
-import { allegianceCounts, isAllegianceLocked } from '../../rules/availability';
+import { allegianceCounts, chartBan, isAllegianceLocked } from '../../rules/availability';
 import { cardSlots } from './slotLayout';
 import type { RosterView } from './useRosterView';
 
@@ -49,7 +49,9 @@ export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, 
     const { force, det } = placed(detachmentId);
     if (!force || !det || !slot) return [];
     const locked = allegianceCounts(forces, allegiance);
-    return unitsForSlot(forces, force, det, slot, counts).filter((u) => !isAllegianceLocked(forces, force, det, u, locked));
+    return unitsForSlot(forces, force, det, slot, counts).filter(
+      (u) => !isAllegianceLocked(forces, force, det, u, locked) && !chartBan(force, u)
+    );
   }
 
   /** Prime benefits a unit may take in a given slot, evaluated from BSData. */

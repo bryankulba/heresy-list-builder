@@ -82,6 +82,8 @@ export interface SlotDef {
 export interface DetachmentDef {
   name: string;
   entryId?: string;
+  /** Set when the chart links the detachment from another chart (Zone Mortalis → Crusade Auxiliaries) */
+  linkId?: string;
   type: string;
   slots: SlotDef[];
   /** Faction keys that can field this detachment (empty = available to all / unknown) */

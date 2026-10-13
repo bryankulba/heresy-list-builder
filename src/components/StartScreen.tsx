@@ -1,12 +1,28 @@
-import { loadFactionUnits } from '../data/loader';
+import { getDetachmentDisplayName, loadFactionUnits, zoneMortalisPrimaries } from '../data/loader';
 import React, { useEffect, useState } from 'react';
 import { Button, NumberInput, Select, SelectItem, SelectItemGroup } from '@carbon/react';
-import type { Allegiance } from '../types';
+import type { Allegiance, DetachmentDef } from '../types';
 import { useRosterStore } from '../store/rosterStore';
-import { FACTIONS, FACTION_GROUPS, factionLabel } from '../data/factions';
+import { FACTIONS, FACTION_GROUPS, ZONE_MORTALIS_CHART, factionLabel } from '../data/factions';
 import { configOptions, defaultConfigChoices, doctrineLabel, doctrineOptions } from '../rules/armyConfig';
 import { armyChoiceGroups, armyChoiceLabel, defaultArmyChoices } from '../rules/armyChoices';
 import SavedListsModal from './modals/SavedListsModal';
+
+/**
+ * "1 High Command · 1 Command · 4 Troops (1 Prime) · 2 Heavy Assault (1 Prime)" —
+ * the detachment's plain roles, as BSData's composition text puts it (qualified
+ * and benefit-only slots like "Command - Centurions Only" or Clade Operative left out).
+ */
+function slotSummary(def: DetachmentDef): string {
+  const plain = def.slots.filter((s) => s.max > 0 && !s.role.includes(' - ') && !/Operative$/.test(s.role));
+  return plain
+    .filter((s) => !s.prime)
+    .map((s) => {
+      const prime = plain.find((p) => p.prime && p.role === `Prime ${s.role}`)?.max;
+      return `${s.max} ${s.role}${prime ? ` (${prime} Prime)` : ''}`;
+    })
+    .join(' · ');
+}
 
 export default function StartScreen() {
   const startBuild = useRosterStore((s) => s.startBuild);
@@ -33,6 +49,12 @@ export default function StartScreen() {
   const [configChoices, setConfigChoices] = useState(() => defaultConfigChoices(FACTIONS[0].id));
   const settings = configOptions(faction);
   const [showSavedLists, setShowSavedLists] = useState(false);
+  // Game type: a Crusade army, or Zone Mortalis on one of its primary detachments (from BSData)
+  const [zoneMortalis, setZoneMortalis] = useState(false);
+  const zmPrimaries = zoneMortalisPrimaries(faction);
+  const [zmPrimary, setZmPrimary] = useState('');
+  const zmPrimaryDef = zmPrimaries.find((d) => d.name === zmPrimary) ?? zmPrimaries[0];
+  const playingZm = zoneMortalis && !!zmPrimaryDef;
 
   function handleFactionChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const next = e.target.value;
@@ -42,8 +64,37 @@ export default function StartScreen() {
   }
 
   function handleStart() {
-    startBuild(faction, allegiance, pointsLimit, cohortDoctrine, armyChoices, configChoices);
+    startBuild(
+      faction,
+      allegiance,
+      pointsLimit,
+      cohortDoctrine,
+      armyChoices,
+      configChoices,
+      playingZm ? { chart: ZONE_MORTALIS_CHART, primary: zmPrimaryDef.name } : undefined
+    );
   }
+
+  /** Two-way toggle, styled like the allegiance buttons */
+  const toggle = <T extends string>(options: Array<{ value: T; label: string }>, value: T, onChange: (v: T) => void) => (
+    <div className="flex gap-2">
+      {options.map((o) => (
+        <button
+          key={o.value}
+          onClick={() => onChange(o.value)}
+          className="flex-1 py-2 px-4 rounded transition-colors text-sm font-medium"
+          style={{
+            background: value === o.value ? 'var(--cds-layer-selected-01)' : 'var(--cds-layer-02)',
+            border: `1px solid ${value === o.value ? 'var(--cds-interactive)' : 'var(--cds-border-subtle-01)'}`,
+            color: 'var(--cds-text-primary)',
+            cursor: 'pointer',
+          }}
+        >
+          {o.label}
+        </button>
+      ))}
+    </div>
+  );
 
   return (
     <div className="flex items-center justify-center min-h-screen bg-cds-background">
@@ -84,6 +135,38 @@ export default function StartScreen() {
             ))}
           </Select>
         </div>
+
+        {/* Game type: Crusade or Zone Mortalis (armies BSData gives Zone Mortalis primaries) */}
+        {zmPrimaries.length > 0 && (
+          <div className="mb-6">
+            <p className="text-xs uppercase tracking-wide mb-2" style={{ color: 'var(--cds-text-secondary)' }}>
+              Game type
+            </p>
+            {toggle(
+              [
+                { value: 'crusade', label: 'Crusade' },
+                { value: 'zm', label: 'Zone Mortalis' },
+              ],
+              zoneMortalis ? 'zm' : 'crusade',
+              (v) => setZoneMortalis(v === 'zm')
+            )}
+            {zoneMortalis && zmPrimaryDef && (
+              <div className="mt-4">
+                <Select
+                  id="zm-primary-select"
+                  labelText="Primary detachment"
+                  helperText={slotSummary(zmPrimaryDef)}
+                  value={zmPrimaryDef.name}
+                  onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setZmPrimary(e.target.value)}
+                >
+                  {zmPrimaries.map((d) => (
+                    <SelectItem key={d.name} value={d.name} text={getDetachmentDisplayName(d.name)} />
+                  ))}
+                </Select>
+              </div>
+            )}
+          </div>
+        )}
 
         {/* Allegiance */}
         <div className="mb-6">
@@ -217,7 +300,7 @@ export default function StartScreen() {
           style={{ color: 'var(--cds-text-placeholder)' }}
         >
           {faction && allegiance
-            ? `${factionLabel(faction)} · ${allegiance} · ${pointsLimit}pts`
+            ? `${factionLabel(faction)} · ${allegiance}${playingZm ? ' · Zone Mortalis' : ''} · ${pointsLimit}pts`
             : 'Select an army to continue'}
         </p>
       </div>

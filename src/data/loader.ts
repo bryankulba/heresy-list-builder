@@ -5,7 +5,7 @@ import rulesJson from '../../data/parsed/rules.json';
 import type { UnitEntry, DetachmentDef, ModelEntry, WargearEntry } from '../types';
 import type { PrimeNode } from '../rules/primeBenefits';
 import type { RuleModifier } from '../rules/evaluate';
-import { ALLIED_CHART, ALLIED_DETACHMENT, CRUSADE_CHART, FACTIONS, FACTION_BY_ID, LORD_OF_WAR_CHART } from './factions';
+import { ALLIED_CHART, ALLIED_DETACHMENT, CRUSADE_CHART, FACTIONS, FACTION_BY_ID, LORD_OF_WAR_CHART, ZONE_MORTALIS_CHART } from './factions';
 
 // ---------------------------------------------------------------------------
 // Units: one file per catalogue (data/parsed/units/<key>.json), loaded on
@@ -116,6 +116,8 @@ export interface ForceChartDef {
   detachments: DetachmentDef[];
   /** Caps on the chart's detachments (Auxiliary/Apex Detachment(s)) — see rules/detachmentLimits.ts */
   limits?: Array<{ costTypeId: string; name: string; max: number; modifiers: RuleModifier[] }>;
+  /** BSData errors on the chart (Zone Mortalis: no flyers or vehicles with 3+ hull points) */
+  errors?: DetachmentDef['errors'];
 }
 
 const charts = (detachmentsJson as unknown as { charts: ForceChartDef[] }).charts;
@@ -266,16 +268,34 @@ export function getMatchableRole(slotRole: string): string {
 /**
  * Returns detachments of a given type available to the specified faction.
  * If no faction is provided, or sources list is empty (unknown), includes all.
+ * A Zone Mortalis army picks from its own chart's (linked) detachments; every
+ * other army from the Crusade chart's.
  */
 export function getDetachmentsForFaction(
   type: 'auxiliary' | 'apex',
-  faction: string
+  faction: string,
+  chartName?: string
 ): DetachmentDef[] {
-  const all = detachmentsData[type] ?? [];
+  const all =
+    chartName === ZONE_MORTALIS_CHART
+      ? getChart(chartName).detachments.filter((d) => (type === 'apex' ? d.type === 'apex' : d.type === 'auxiliary'))
+      : detachmentsData[type] ?? [];
   return all.filter((d) => !d.sources || d.sources.length === 0 || d.sources.includes(faction));
 }
 
-/** Strips the "Auxiliary - ", "Apex - " or "Additional - " type prefix for display. */
+/**
+ * The primary detachments a faction may build a Zone Mortalis army on
+ * (Strike Force, Bulwark, Linebreaker, Crusade Primary) — none for armies
+ * not built on the Crusade chart (Knights).
+ */
+export function zoneMortalisPrimaries(faction: string): DetachmentDef[] {
+  if (FACTION_BY_ID[faction]?.chart !== CRUSADE_CHART || !hasChart(ZONE_MORTALIS_CHART)) return [];
+  return getChart(ZONE_MORTALIS_CHART).detachments.filter(
+    (d) => d.type === 'core' && d.slots.some((s) => s.max > 0) && (!d.sources?.length || d.sources.includes(faction))
+  );
+}
+
+/** Strips the "Auxiliary - ", "Apex - ", "Additional - " or "Primary - " type prefix for display. */
 export function getDetachmentDisplayName(name: string): string {
-  return name.replace(/^(Auxiliary|Apex|Additional) [-–] /, '').trim() || name;
+  return name.replace(/^(Auxiliary|Apex|Additional|Primary) [-–] /, '').trim() || name.trim();
 }

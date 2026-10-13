@@ -29,10 +29,14 @@ The BSData JSON is the BattleScribe schema as objects (`forceEntries`, `sharedSe
 - Root entry links may be re-filed by unconditional `set-primary` category modifiers
 
 - `data/parsed/units/<key>.json` — each catalogue's `UnitEntry[]`; keys are slugified catalogue names (`emperors-children`, `skitarii-conclaves`); the extracted catalogues are listed in `UNIT_FACTIONS` in `scripts/sync-data.ts`. The app loads them on demand (`loadFactionUnits` / `loadAllUnits` in `loader.ts`): store actions that start, load or add an army await them, the app waits for a restored session's armies, and import loads all. Reads (`getUnitsForFaction`) are synchronous once loaded; tests load everything in `src/test/setup.ts`
-- `data/parsed/detachments.json` — `{ charts }`: every supported force org chart (Crusade, Allied Detachment, Knight Households…) with its detachments. `loader.ts` derives `detachmentsData.core/apex/auxiliary` from the Crusade chart. Each `DetachmentDef` has `sources?: string[]`; each slot may carry `maxModifiers`
+- `data/parsed/detachments.json` — `{ charts }`: every supported force org chart (Crusade, Allied Detachment, Knight Households, Zone Mortalis…) with its detachments and chart-level `errors`. A chart in `CHARTS_WITH_LINKED_DETACHMENTS` also gets the detachments it links from another chart (`linkId`; Zone Mortalis links the Crusade Auxiliary / Apex detachments; exported as `linkId::targetId`). `loader.ts` derives `detachmentsData.core/apex/auxiliary` from the Crusade chart. Each `DetachmentDef` has `sources?: string[]`; each slot may carry `maxModifiers`
 - `data/parsed/rules.json` — Prime benefit trees (`primeGroups`) with their BSData visibility conditions, and the High Command detachment-choice upgrade ids
 - Empty `sources[]` = available to all factions; non-empty = faction-restricted
 - Faction restrictions come from the detachment's `set hidden=false` modifiers conditioned on `instanceOf primary-catalogue <catalogueId>`
+
+### Zone Mortalis
+
+A second game type for Crusade-chart armies: the start screen's game type picks the `Zone Mortalis` chart and one of its primary detachments (`zoneMortalisPrimaries`: Strike Force, Bulwark, Linebreaker, Crusade Primary); `startBuild`'s `game` option creates the primary force on it. Auxiliary / Apex pickers use the force's chart (`getDetachmentsForFaction(type, faction, chart)`). `availability.ts` `chartBan` reads the chart's BSData errors keyed on a single category — Zone Mortalis' "Invalid ZM Vehicle" (flyers, 3+ hull points) — to leave those units out of pickers and slot/detachment availability, and to warn on imported ones. The export writes the required "Zone Mortalis" configuration (special rules, terrain, Advanced Reactions).
 
 ### Rules Evaluator (`src/rules/`)
 

@@ -29,8 +29,12 @@ export function makePlacedDetachment(def: DetachmentDef, unlockedBy?: string): P
   return { id: uuidv4(), def, slots: {}, unlockedBy };
 }
 
-/** A new force with its chart's primary detachment (or the Allied Detachment) already placed. */
-export function createForce(faction: string, kind: ForceKind): Force {
+/**
+ * A new force with its chart's primary detachment (or the Allied Detachment)
+ * already placed. `game` builds a primary army on another chart — Zone
+ * Mortalis, with the chosen primary detachment.
+ */
+export function createForce(faction: string, kind: ForceKind, game?: { chart: string; primary: string }): Force {
   const factionDef = FACTION_BY_ID[faction];
   if (!factionDef) throw new Error(`Unknown faction "${faction}"`);
   if (kind === 'lordOfWar') {
@@ -39,8 +43,8 @@ export function createForce(faction: string, kind: ForceKind): Force {
     if (!lowChart) throw new Error(`No Lord of War chart for "${faction}"`);
     return { id: uuidv4(), faction, kind, chart: lowChart.name, detachments: [makePlacedDetachment(lowChart.detachments[0])] };
   }
-  const chart = kind === 'allied' ? ALLIED_CHART : factionDef.chart;
-  const rootName = kind === 'allied' ? ALLIED_DETACHMENT : factionDef.primaryDetachment;
+  const chart = kind === 'allied' ? ALLIED_CHART : game?.chart ?? factionDef.chart;
+  const rootName = kind === 'allied' ? ALLIED_DETACHMENT : game?.primary ?? factionDef.primaryDetachment;
   return {
     id: uuidv4(),
     faction,

@@ -160,6 +160,12 @@
         "path": "a5e9-209d-9f17-9afd::5649-a889-af77-ae35::60e4-ca33-2e68-9afc"
       },
       {
+        "name": "Arcana Benefice:",
+        "entryId": "57e7-d51f-4686-3ed9",
+        "targetId": "f7b9-dc9c-2c8b-0c92",
+        "path": "a5e9-209d-9f17-9afd::57e7-d51f-4686-3ed9::f7b9-dc9c-2c8b-0c92"
+      },
+      {
         "name": "Archimandrite",
         "entryId": "6a01-072d-5f2a-deed",
         "path": "a5e9-209d-9f17-9afd::f00f-c9df-b87d-58d3::6a01-072d-5f2a-deed",
@@ -229,6 +235,12 @@
         "entryId": "3562-ecc3-6acf-5346",
         "targetId": "60e4-ca33-2e68-9afc",
         "path": "a2f9-908e-52aa-046f::3562-ecc3-6acf-5346::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Arcana Benefice:",
+        "entryId": "51da-abb9-3b60-d4a0",
+        "targetId": "f7b9-dc9c-2c8b-0c92",
+        "path": "a2f9-908e-52aa-046f::51da-abb9-3b60-d4a0::f7b9-dc9c-2c8b-0c92"
       },
       {
         "name": "Archimandrite",
@@ -304,6 +316,12 @@
         "path": "59e2-dde7-5e8f-30e2::6d15-44db-201f-f6b2::60e4-ca33-2e68-9afc"
       },
       {
+        "name": "Arcana Benefice:",
+        "entryId": "b23a-3936-6431-374e",
+        "targetId": "f7b9-dc9c-2c8b-0c92",
+        "path": "59e2-dde7-5e8f-30e2::b23a-3936-6431-374e::f7b9-dc9c-2c8b-0c92"
+      },
+      {
         "name": "Archimandrite",
         "entryId": "6a01-072d-5f2a-deed",
         "path": "59e2-dde7-5e8f-30e2::40b6-5935-2a4f-f5eb::6a01-072d-5f2a-deed",
@@ -347,7 +365,14 @@
         "cost": 25,
         "min": 0,
         "max": 0,
-        "defaultWargear": []
+        "defaultWargear": [
+          {
+            "name": "Arcana Benefice:",
+            "entryId": "4dd5-2c77-5f66-8433",
+            "targetId": "f7b9-dc9c-2c8b-0c92",
+            "path": "7fd7-738d-d9d2-a73c::4dd5-2c77-5f66-8433::f7b9-dc9c-2c8b-0c92"
+          }
+        ]
       },
       {
         "name": "Scyllax",
@@ -429,6 +454,12 @@
         "entryId": "eff0-d7db-316b-4f78",
         "targetId": "7560-ba42-5273-27fd",
         "path": "0701-af75-3ed0-5330::eff0-d7db-316b-4f78::7560-ba42-5273-27fd"
+      },
+      {
+        "name": "Arcana Benefice:",
+        "entryId": "4d1e-0afa-099f-7e20",
+        "targetId": "f7b9-dc9c-2c8b-0c92",
+        "path": "0701-af75-3ed0-5330::4d1e-0afa-099f-7e20::f7b9-dc9c-2c8b-0c92"
       }
     ],
     "facts": {
@@ -481,7 +512,14 @@
         "cost": 10,
         "min": 0,
         "max": 0,
-        "defaultWargear": []
+        "defaultWargear": [
+          {
+            "name": "Arcana Benefice:",
+            "entryId": "f67b-5a4a-01bf-956d",
+            "targetId": "f7b9-dc9c-2c8b-0c92",
+            "path": "9d21-5f4a-0234-078a::f67b-5a4a-01bf-956d::f7b9-dc9c-2c8b-0c92"
+          }
+        ]
       },
       {
         "name": "Echidnax",
@@ -551,7 +589,14 @@
         "cost": 100,
         "min": 0,
         "max": 0,
-        "defaultWargear": []
+        "defaultWargear": [
+          {
+            "name": "Arcana Benefice:",
+            "entryId": "5b90-9aa1-039f-6a32",
+            "targetId": "f7b9-dc9c-2c8b-0c92",
+            "path": "994a-d2fc-3d52-61cd::5b90-9aa1-039f-6a32::f7b9-dc9c-2c8b-0c92"
+          }
+        ]
       }
     ],
     "source": "mechanicum",
@@ -658,6 +703,12 @@
         "entryId": "a99f-f713-a766-617b",
         "targetId": "60e4-ca33-2e68-9afc",
         "path": "945b-b281-c049-2dfc::a99f-f713-a766-617b::60e4-ca33-2e68-9afc"
+      },
+      {
+        "name": "Arcana Benefice:",
+        "entryId": "ae59-b0fb-2120-a6e1",
+        "targetId": "f7b9-dc9c-2c8b-0c92",
+        "path": "945b-b281-c049-2dfc::ae59-b0fb-2120-a6e1::f7b9-dc9c-2c8b-0c92"
       },
       {
         "name": "Archimandrite",
@@ -1192,6 +1243,12 @@
         "path": "c778-e1d5-301a-2804::ad5e-8491-4b85-de75::60e4-ca33-2e68-9afc"
       },
       {
+        "name": "Arcana Benefice:",
+        "entryId": "68f5-a35d-51e6-3b32",
+        "targetId": "f7b9-dc9c-2c8b-0c92",
+        "path": "c778-e1d5-301a-2804::68f5-a35d-51e6-3b32::f7b9-dc9c-2c8b-0c92"
+      },
+      {
         "name": "Archimandrite",
         "entryId": "6a01-072d-5f2a-deed",
         "path": "c778-e1d5-301a-2804::884b-f6af-9a40-7ff1::6a01-072d-5f2a-deed",
@@ -1445,6 +1502,12 @@
         "path": "d3c4-a71a-85bf-01f2::60d6-3379-8896-86d8::403d-7806-215e-7676"
       },
       {
+        "name": "Arcana Benefice:",
+        "entryId": "7080-9b2b-2347-816c",
+        "targetId": "f7b9-dc9c-2c8b-0c92",
+        "path": "d3c4-a71a-85bf-01f2::7080-9b2b-2347-816c::f7b9-dc9c-2c8b-0c92"
+      },
+      {
         "name": "Cavas Configuration",
         "entryId": "b0c4-16a4-19e9-d90f",
         "path": "d3c4-a71a-85bf-01f2::b0c4-16a4-19e9-d90f",
@@ -1615,6 +1678,12 @@
         "min": 0,
         "max": 0,
         "defaultWargear": [
+          {
+            "name": "Arcana Benefice:",
+            "entryId": "66e0-e77e-9d6e-6301",
+            "targetId": "f7b9-dc9c-2c8b-0c92",
+            "path": "0d8a-be54-5bd2-1d5a::66e0-e77e-9d6e-6301::f7b9-dc9c-2c8b-0c92"
+          },
           {
             "name": "Mauler bolt cannon",
             "entryId": "ce29-a75b-7037-2623",
@@ -2196,6 +2265,12 @@
         "path": "4930-9671-b90d-37ac::a028-e8bf-3866-b4b8::403d-7806-215e-7676"
       },
       {
+        "name": "Arcana Benefice:",
+        "entryId": "56b8-c8bd-d1dd-af5a",
+        "targetId": "f7b9-dc9c-2c8b-0c92",
+        "path": "4930-9671-b90d-37ac::56b8-c8bd-d1dd-af5a::f7b9-dc9c-2c8b-0c92"
+      },
+      {
         "name": "Decimator claw w/ Heavy Flamer",
         "entryId": "1d2f-c9ff-ecbd-b1b8",
         "path": "4930-9671-b90d-37ac::1d2f-c9ff-ecbd-b1b8",
@@ -2708,6 +2783,12 @@
             "path": "559c-8bc6-9f46-c7ad::1d4d-fe18-3cc8-2298::f8b8-96c8-ba31-faf8"
           },
           {
+            "name": "Arcana Benefice:",
+            "entryId": "0657-5d25-9620-d1b1",
+            "targetId": "f7b9-dc9c-2c8b-0c92",
+            "path": "559c-8bc6-9f46-c7ad::0657-5d25-9620-d1b1::f7b9-dc9c-2c8b-0c92"
+          },
+          {
             "name": "Pair of Power blades and Paired light autocannons ",
             "entryId": "a840-d54c-cf25-25fc",
             "path": "559c-8bc6-9f46-c7ad::a840-d54c-cf25-25fc",
@@ -3164,6 +3245,12 @@
         "min": 0,
         "max": 0,
         "defaultWargear": [
+          {
+            "name": "Arcana Benefice:",
+            "entryId": "2320-cde2-7150-97bc",
+            "targetId": "f7b9-dc9c-2c8b-0c92",
+            "path": "bc5e-ce5d-2b7b-3d03::2320-cde2-7150-97bc::f7b9-dc9c-2c8b-0c92"
+          },
           {
             "name": "Pair of power blades",
             "entryId": "0d23-0c26-eaf9-37bb",
