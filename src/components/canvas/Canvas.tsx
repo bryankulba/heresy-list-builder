@@ -86,7 +86,9 @@ export default function Canvas() {
       allowances={
         primary
           ? detachmentAllowances(forces, primary, counts)
-              .filter((a) => a.max > 0 || a.used > 0)
+              // Allowances the army builds up (Auxiliary, Apex); a fixed cap (one Zone
+              // Mortalis primary) only when it's broken
+              .filter((a) => (a.max > 0 || a.used > 0) && (a.adjustable || a.used > a.max))
               .map((a) => ({ label: a.name.replace(/ Detachment\(s\)$|s$/, ''), used: a.used, max: a.max }))
           : []
       }

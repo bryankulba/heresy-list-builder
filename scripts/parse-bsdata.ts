@@ -115,8 +115,19 @@ export interface BsForceEntry {
   modifiers?: BsModifier[];
   modifierGroups?: BsModifierGroup[];
   forceEntries?: BsForceEntry[];
+  /** Detachments shared from another chart (Zone Mortalis links the Crusade chart's Auxiliary / Apex) */
+  forceEntryLinks?: BsForceEntryLink[];
   constraints?: BsConstraint[];
   costs?: BsCost[];
+}
+
+export interface BsForceEntryLink {
+  id: string;
+  name: string;
+  targetId: string;
+  hidden?: boolean;
+  modifiers?: BsModifier[];
+  modifierGroups?: BsModifierGroup[];
 }
 
 export interface BsCategoryEntry {
@@ -370,6 +381,8 @@ export interface DetachmentSlot {
 export interface Detachment {
   name: string;
   entryId: string;
+  /** Set when the chart links the detachment from another chart: the link's id */
+  linkId?: string;
   type: 'core' | 'auxiliary' | 'apex' | 'allied' | 'additional' | 'lordOfWar' | 'other';
   slots: DetachmentSlot[];
   /** Faction keys whose primary catalogue can field this detachment (empty = all) */
@@ -409,6 +422,8 @@ export interface ForceChart {
   catalogue: string | null;
   detachments: Detachment[];
   limits?: DetachmentLimit[];
+  /** BSData error messages on the chart and when they apply ("Flyers and Vehicles … not allowed in … Zone Mortalis") */
+  errors?: Detachment['errors'];
 }
 
 export interface SystemInfo {
@@ -789,7 +804,9 @@ function mandatoryIn(
     for (const m of c.options) {
       const e = m.entry;
       if (e.hidden || e.type === 'model' || e.type === 'unit') continue;
-      if (hasMinAtLeastOne(e) && !isDisabled(e)) add(m);
+      // A link's target may carry the minimum (Zone Mortalis' Special Rules, Terrain…)
+      const target = e.targetId ? index.get(e.targetId) : undefined;
+      if ((hasMinAtLeastOne(e) || (target && hasMinAtLeastOne(target))) && !isDisabled(e)) add(m);
     }
     for (const g of c.groups) {
       if (g.hidden || isGroupDisabled(g) || FORCE_ORG_CHOICE_GROUP_IDS.has(g.source.id)) continue;
@@ -1442,14 +1459,26 @@ function extractFactionSources(fe: BsForceEntry, catalogueKeyById: Map<string, s
   return Array.from(sources).sort();
 }
 
-function detachmentType(name: string): Detachment['type'] {
-  if (/Primary Detachment$/.test(name) || name === 'Warlord Detachment') return 'core';
+function detachmentType(rawName: string): Detachment['type'] {
+  const name = rawName.trim();
+  // Zone Mortalis primaries are "Primary - Zone Mortalis Strike Force"…
+  if (/Primary Detachment$/.test(name) || /^Primary [-–] /.test(name) || name === 'Warlord Detachment') return 'core';
   if (/^Auxiliary [-–] /.test(name)) return 'auxiliary';
   if (/^Apex [-–] /.test(name)) return 'apex';
   if (/^Additional [-–] /.test(name)) return 'additional';
   if (name === 'Allied Detachment') return 'allied';
   if (name === 'Lord of War Detachment') return 'lordOfWar';
   return 'other';
+}
+
+/** A force entry's "add error" modifiers: the message and when it applies. */
+function errorModifiers(fe: BsForceEntry): NonNullable<Detachment['errors']> {
+  return allModifiers(fe)
+    .filter((m) => m.field === 'error' && m.type === 'add')
+    .map((m) => {
+      const { conditions, conditionGroups } = slimModifier(m);
+      return { message: String(m.value), ...(conditions ? { conditions } : {}), ...(conditionGroups ? { conditionGroups } : {}) };
+    });
 }
 
 function parseDetachment(
@@ -1472,12 +1501,7 @@ function parseDetachment(
   const rosterMax = cap
     ? { max: cap.value, modifiers: allModifiers(fe).filter((m) => cap.id && m.field === cap.id).map(slimModifier) }
     : undefined;
-  const errors = allModifiers(fe)
-    .filter((m) => m.field === 'error' && m.type === 'add')
-    .map((m) => {
-      const { conditions, conditionGroups } = slimModifier(m);
-      return { message: String(m.value), ...(conditions ? { conditions } : {}), ...(conditionGroups ? { conditionGroups } : {}) };
-    });
+  const errors = errorModifiers(fe);
   return {
     name: fe.name,
     entryId: fe.id,
@@ -1512,7 +1536,41 @@ function extractLimits(fe: BsForceEntry, costTypeNames: Map<string, string>): De
 }
 
 /** Game-system charts the app supports, by root force entry name. */
-const GAME_SYSTEM_CHARTS = [CRUSADE_FORCE_ORG_NAME, 'Allied Detachment and its Auxiliary', 'Lord of War Detachment'];
+const GAME_SYSTEM_CHARTS = [
+  CRUSADE_FORCE_ORG_NAME,
+  'Allied Detachment and its Auxiliary',
+  'Lord of War Detachment',
+  'Zone Mortalis',
+];
+/**
+ * Charts whose linked detachments are read too. Zone Mortalis links the
+ * Crusade chart's Auxiliary / Apex detachments; the other charts' links
+ * (Allied Auxiliaries, Cohorts Vagus) are left as they were.
+ */
+const CHARTS_WITH_LINKED_DETACHMENTS = ['Zone Mortalis'];
+
+/** Every force entry in the game system and catalogues, by id (link targets). */
+function indexForceEntries(roots: BsRoot[]): Map<string, BsForceEntry> {
+  const index = new Map<string, BsForceEntry>();
+  const visit = (fe: BsForceEntry) => {
+    index.set(fe.id, fe);
+    fe.forceEntries?.forEach(visit);
+  };
+  for (const root of roots) root.forceEntries?.forEach(visit);
+  return index;
+}
+
+/** A linked detachment: the target, with the link's id, visibility and modifiers on top. */
+function resolveForceEntryLink(link: BsForceEntryLink, index: Map<string, BsForceEntry>): BsForceEntry | null {
+  const target = index.get(link.targetId);
+  if (!target) return null;
+  return {
+    ...target,
+    hidden: link.hidden ?? target.hidden,
+    modifiers: [...(target.modifiers ?? []), ...(link.modifiers ?? [])],
+    modifierGroups: [...(target.modifierGroups ?? []), ...(link.modifierGroups ?? [])],
+  };
+}
 
 function parseCharts(
   gst: BsRoot,
@@ -1523,6 +1581,7 @@ function parseCharts(
   const categories = new Map(
     [gst, ...catalogues.map((c) => c.root)].flatMap((r) => r.categoryEntries ?? []).map((c) => [c.id, c])
   );
+  const forceEntryIndex = indexForceEntries([gst, ...catalogues.map((c) => c.root)]);
   const toChart = (fe: BsForceEntry, catalogue: string | null): ForceChart => {
     // The chart's caps, plus a points share set on its detachment (Knight Lord of War)
     const limits = [
@@ -1531,16 +1590,25 @@ function parseCharts(
         extractLimits(child, costTypeNames).filter((l) => l.costTypeId === POINTS_TYPE_ID)
       ),
     ];
+    const errors = errorModifiers(fe);
     return {
       id: fe.id,
       name: fe.name,
       catalogue,
       // A chart without child forces (Lord of War Detachment) holds its units
       // itself: it is its own single detachment
-      detachments: (fe.forceEntries?.length ? fe.forceEntries : [fe])
-        .map((child) => parseDetachment(child, catalogueKeyById, categories))
-        .filter((d): d is Detachment => d !== null),
+      detachments: [
+        ...(fe.forceEntries?.length ? fe.forceEntries : [fe]).map((child) =>
+          parseDetachment(child, catalogueKeyById, categories)
+        ),
+        ...(CHARTS_WITH_LINKED_DETACHMENTS.includes(fe.name) ? fe.forceEntryLinks ?? [] : []).map((link) => {
+          const target = resolveForceEntryLink(link, forceEntryIndex);
+          const det = target && parseDetachment(target, catalogueKeyById, categories);
+          return det && { ...det, linkId: link.id };
+        }),
+      ].filter((d): d is Detachment => d !== null),
       ...(limits.length > 0 ? { limits } : {}),
+      ...(errors.length > 0 ? { errors } : {}),
     };
   };
   return [

@@ -10,7 +10,7 @@
  * with the same entries a list built there would have.
  */
 
-import type { Allegiance, Force, ModelEntry, UnitEntry, WargearEntry } from '../types';
+import type { Allegiance, DetachmentDef, Force, ModelEntry, UnitEntry, WargearEntry } from '../types';
 import { systemData, cataloguesData, detachmentsData, getBaseRole, getChart, rulesData, type ArmyConfigEntry } from '../data/loader';
 import { FACTION_BY_ID, factionLabel } from '../data/factions';
 import { armyConfigFor, normalizeDoctrine } from '../rules/armyConfig';
@@ -205,6 +205,15 @@ function armyConfigSelections(force: Force, ctx: RuleContext, opts: RosOptions):
     });
 }
 
+/**
+ * A detachment's force entryId: its own id, or for a detachment the chart links
+ * from another (Zone Mortalis' Auxiliaries) "linkId::targetId", as New Recruit
+ * writes links.
+ */
+export function detachmentForceEntryId(def: DetachmentDef): string {
+  return def.linkId && def.entryId ? `${def.linkId}::${def.entryId}` : def.entryId ?? '';
+}
+
 // ---------------------------------------------------------------------------
 // Roster
 // ---------------------------------------------------------------------------
@@ -366,7 +375,7 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
       lines.push('      <forces>');
       for (const det of force.detachments) {
         lines.push(
-          `        <force id="${uuid()}" name="${escapeXml(det.def.name)}" entryId="${escapeXml(det.def.entryId ?? '')}"${catalogueAttrs}>`
+          `        <force id="${uuid()}" name="${escapeXml(det.def.name)}" entryId="${escapeXml(detachmentForceEntryId(det.def))}"${catalogueAttrs}>`
         );
         lines.push('          <selections>');
         for (const sel of unitSelections(det)) emitSelection(lines, sel, '            ');

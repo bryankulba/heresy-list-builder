@@ -214,7 +214,10 @@ export function importRos(xml: string): ImportResult {
     forces.push(force);
     const pending: Array<{ det: PlacedDetachment; units: PendingUnit[] }> = [];
     for (const childForce of rootLevel ? [rootForce] : rootForce.forces?.force ?? []) {
-      const def = chart.detachments.find((d) => d.entryId === childForce.entryId);
+      // A linked detachment may be written "linkId::targetId" or by its target id
+      const def = chart.detachments.find(
+        (d) => d.entryId === childForce.entryId || (!!d.linkId && `${d.linkId}::${d.entryId}` === childForce.entryId)
+      ) ?? chart.detachments.find((d) => !!d.entryId && childForce.entryId?.endsWith(`::${d.entryId}`));
       if (!def) {
         warnings.push(`Detachment "${childForce.name}" isn't supported yet — skipped`);
         continue;

@@ -21,6 +21,8 @@ export interface DetachmentAllowance {
   name: string;
   used: number;
   max: number;
+  /** Whether BSData modifiers move the cap (false: a fixed cap, e.g. one Zone Mortalis primary) */
+  adjustable: boolean;
 }
 
 /** Selections across the whole army (the chart's scope "force" includes its child forces). */
@@ -60,6 +62,8 @@ export function detachmentAllowances(
     costTypeId: limit.costTypeId,
     name: limit.name,
     max: applyNumericModifiers(limit.max, limit.modifiers, ctx),
+    // Raised or lowered by what the army takes (Command units, High Command choices…)
+    adjustable: limit.modifiers.length > 0,
     // Points (a Lord of War Detachment's share of the army) or detachments used
     used:
       limit.costTypeId === POINTS_TYPE_ID

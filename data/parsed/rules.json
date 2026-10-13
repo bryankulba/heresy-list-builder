@@ -7638,7 +7638,29 @@
           "min": 0,
           "max": -1
         },
-        "defaults": []
+        "defaults": [
+          {
+            "name": "Zone Mortalis Advanced Reactions",
+            "entryId": "210d-9042-89be-0d53",
+            "targetId": "3ffa-9d93-cc2f-b6c4",
+            "path": "ac9b-af12-a761-c3de::8ebb-fc6b-5dcd-0aee::210d-9042-89be-0d53::3ffa-9d93-cc2f-b6c4",
+            "groupPath": "ac9b-af12-a761-c3de::8ebb-fc6b-5dcd-0aee::a6ea-f57c-7bca-f91b"
+          },
+          {
+            "name": "Zone Mortalis Special Rules",
+            "entryId": "f4fc-4333-7894-6c2a",
+            "targetId": "a7b6-aa43-6e89-1a4e",
+            "path": "ac9b-af12-a761-c3de::d1cc-df97-0c20-1e4f::f4fc-4333-7894-6c2a::a7b6-aa43-6e89-1a4e",
+            "groupPath": "ac9b-af12-a761-c3de::d1cc-df97-0c20-1e4f::7276-2485-cf2e-b68f"
+          },
+          {
+            "name": "Zone Mortalis Terrain",
+            "entryId": "8899-257f-4776-40ed",
+            "targetId": "a017-5adc-fa89-dd16",
+            "path": "ac9b-af12-a761-c3de::9182-ff12-a3b0-2eb4::8899-257f-4776-40ed::a017-5adc-fa89-dd16",
+            "groupPath": "ac9b-af12-a761-c3de::9182-ff12-a3b0-2eb4::cde6-2c4b-1fce-6c0c"
+          }
+        ]
       }
     ],
     "legiones-astartes": [],
