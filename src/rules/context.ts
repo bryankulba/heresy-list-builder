@@ -74,6 +74,8 @@ export interface RosterCounts {
   /** Points spent on selections of each id/category ("any" = everything) */
   rosterCosts: Counts;
   pointsLimit?: number;
+  /** The roster's allegiance, when known (availability checks leave out the other allegiance's units) */
+  allegiance?: Allegiance;
 }
 
 /** Army-level choices that BSData conditions count in the roster. */
@@ -109,7 +111,7 @@ export function rosterCounts(forces: Force[], opts: RosterOptions = {}): RosterC
   }
   // The army's configuration (allegiance, cohort doctrine) — chosen in the app, not placed as units
   addCounts(roster, configCounts(forces.find((f) => f.kind === 'primary')?.faction, opts));
-  return { roster, rosterForces, byDetachment, rosterCosts, pointsLimit: opts.pointsLimit };
+  return { roster, rosterForces, byDetachment, rosterCosts, pointsLimit: opts.pointsLimit, allegiance: opts.allegiance };
 }
 
 /** Context for a detachment's own slots (their max modifiers). */

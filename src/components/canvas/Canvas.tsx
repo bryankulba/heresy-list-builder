@@ -13,6 +13,7 @@ import { primaryForce } from '../../store/rosterModel';
 import { getAdditionalDetachments, getAllyFactions, getChart, lordOfWarChartFor } from '../../data/loader';
 import { CRUSADE_CHART, factionLabel } from '../../data/factions';
 import { detachmentAllowances } from '../../rules/detachmentLimits';
+import { compulsorySlotsFillable } from '../../rules/options';
 import DetachmentCard from './DetachmentCard';
 import ConnectorLine from './ConnectorLine';
 import CanvasModals from './CanvasModals';
@@ -44,11 +45,16 @@ export default function Canvas() {
   const totalPoints = computeTotalPoints(forces);
 
   // Header actions depend on the primary army's chart and rules
-  const warlordDef =
+  // Only for armies with a unit BSData lets fill its Warlord slot (not Mechanicum, Solar Auxilia…)
+  const warlordCandidate =
     primary?.chart === CRUSADE_CHART && !primary.detachments.some((d) => d.def.name === 'Warlord Detachment')
       ? getChart(CRUSADE_CHART).detachments.find(
           (d) => d.name === 'Warlord Detachment' && (!d.sources?.length || d.sources.includes(primary.faction))
         )
+      : undefined;
+  const warlordDef =
+    warlordCandidate && primary && compulsorySlotsFillable(forces, primary, warlordCandidate, counts)
+      ? warlordCandidate
       : undefined;
   const additionalDetachments = primary ? getAdditionalDetachments(primary.chart, primary.faction) : [];
   const allyFactions = primary ? getAllyFactions(primary.faction) : [];

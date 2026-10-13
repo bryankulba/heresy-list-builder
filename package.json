@@ -7,7 +7,8 @@
     "preview": "vite preview",
     "sync-data": "npx ts-node scripts/sync-data.ts",
     "test": "vitest",
-    "test:ui": "vitest --ui"
+    "test:ui": "vitest --ui",
+    "samples": "WRITE_SAMPLES=1 vitest run src/tools/sampleArmies.test.ts"
   },
   "dependencies": {
     "@carbon/icons-react": "^11.0.0",
