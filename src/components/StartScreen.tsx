@@ -8,6 +8,10 @@ import { configOptions, defaultConfigChoices, doctrineLabel, doctrineOptions } f
 import { armyChoiceGroups, armyChoiceLabel, defaultArmyChoices } from '../rules/armyChoices';
 import SavedListsModal from './modals/SavedListsModal';
 
+/** Default points limits per game type */
+const CRUSADE_POINTS = 3000;
+const ZM_POINTS = 1500;
+
 /**
  * "1 High Command · 1 Command · 4 Troops (1 Prime) · 2 Heavy Assault (1 Prime)" —
  * the detachment's plain roles, as BSData's composition text puts it (qualified
@@ -29,7 +33,7 @@ export default function StartScreen() {
 
   const [faction, setFaction] = useState(FACTIONS[0].id);
   const [allegiance, setAllegiance] = useState<Allegiance>('Loyalist');
-  const [pointsLimit, setPointsLimit] = useState(3000);
+  const [pointsLimit, setPointsLimit] = useState(CRUSADE_POINTS);
   const [cohortDoctrine, setCohortDoctrine] = useState('');
   const [armyChoices, setArmyChoices] = useState<Record<string, string>>({});
   // The army's units load when it's picked; its sub-faction choices come from them
@@ -61,6 +65,11 @@ export default function StartScreen() {
     setFaction(next);
     if (!doctrineOptions(next).includes(cohortDoctrine)) setCohortDoctrine('');
     setConfigChoices(defaultConfigChoices(next));
+    // An army without Zone Mortalis (Knights) goes back to a Crusade
+    if (zoneMortalis && zoneMortalisPrimaries(next).length === 0) {
+      setZoneMortalis(false);
+      if (pointsLimit === ZM_POINTS) setPointsLimit(CRUSADE_POINTS);
+    }
   }
 
   function handleStart() {
@@ -148,7 +157,14 @@ export default function StartScreen() {
                 { value: 'zm', label: 'Zone Mortalis' },
               ],
               zoneMortalis ? 'zm' : 'crusade',
-              (v) => setZoneMortalis(v === 'zm')
+              (v) => {
+                const zm = v === 'zm';
+                if (zm === zoneMortalis) return;
+                setZoneMortalis(zm);
+                // Each game type's usual size; switching back undoes only the default
+                if (zm) setPointsLimit(ZM_POINTS);
+                else if (pointsLimit === ZM_POINTS) setPointsLimit(CRUSADE_POINTS);
+              }
             )}
             {zoneMortalis && zmPrimaryDef && (
               <div className="mt-4">
