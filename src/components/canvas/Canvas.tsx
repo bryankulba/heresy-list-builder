@@ -204,6 +204,9 @@ export default function Canvas() {
 
   // ── Modal state ──
   const [modal, setModal] = useState<ModalState>({ type: 'none' });
+  // Changes with every modal transition (each setModal makes a new state object)
+  const modalSteps = useRef(0);
+  const modalStep = useMemo(() => ++modalSteps.current, [modal]); // eslint-disable-line react-hooks/exhaustive-deps
   // Further Auxiliary selectors still owed to a slot (e.g. Officer of the Line's second)
   const pendingUnlocks = useRef<{ unlockedBy: string; remaining: number; total: number } | null>(null);
   // Tracks when we're in edit mode so handlers return to slotEdit instead of chaining
@@ -794,7 +797,9 @@ export default function Canvas() {
         }
       />
 
-      {/* Modals */}
+      {/* Modals — keyed per step so a chained modal (e.g. the second Officer of
+          the Line selector) opens fresh instead of keeping the last one's scroll */}
+      <React.Fragment key={modalStep}>
       {modal.type === 'slotEdit' && (() => {
         const { detachmentId, slotKey, slotDef, filled } = modal;
         const role = getBaseRole(stripPrimePrefix(slotDef.role));
@@ -1007,6 +1012,7 @@ export default function Canvas() {
           onClose={() => setModal({ type: 'none' })}
         />
       )}
+      </React.Fragment>
     </div>
   );
 }
