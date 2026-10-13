@@ -80,9 +80,13 @@ Key store actions: `startBuild` (creates the primary force with its chart's prim
 
 Persistence: session state is persisted with `version: 2` (v1 `{ faction, detachments }` is migrated). Saved lists use `ROSTER_SCHEMA_VERSION` 2; `migrateSnapshot` upgrades older saves. On every load `refreshUnits` replaces stored unit snapshots with current data (by entryId, then name + role), so saved lists pick up points fixes from new BSData syncs.
 
-### Modal State Machine (`src/components/canvas/Canvas.tsx`)
+### Canvas (`src/components/canvas/`)
 
-All modals are coordinated by a `ModalState` discriminated union (defined in `src/types/index.ts`). Canvas.tsx is the sole owner — it reads modal state, renders the correct modal, and handles transitions between modal types.
+`Canvas.tsx` composes: `useRosterView` (counts, the shown detachments, warnings), `useSlotFlow` (the modal state machine and its handlers), `useCanvasViewport` (pan / zoom / long-press drag), `useConnections` (unlock lines), `canvasLayout.ts` (pure card positions) and `CanvasModals.tsx` (renders the open modal, keyed per step).
+
+### Modal State Machine (`useSlotFlow.ts`)
+
+All modals are coordinated by a `ModalState` discriminated union (defined in `src/types/index.ts`). `useSlotFlow` owns it and the transitions; `CanvasModals` renders the open one.
 
 Slot interaction chains:
 1. **Prime slot**: `unitPicker` → user picks unit → `primeBenefit` → user picks benefit → if logistical: `bonusSlotRoleSelector` (sets `lbRole`) → then the unlocks below
@@ -111,7 +115,7 @@ Carbon Design System header is `position: fixed` (48px tall). Any scrollable con
 
 ### Canvas Layout
 
-The canvas is a large `4000×3000px` div inside an `overflow: hidden` viewport container. Pan is CSS `transform: translate(panX, panY)`; ctrl/pinch zooms. Armies are stacked vertically (allied armies get a label); within an army the root detachment is anchored left (Warlord below), Apex detachments in a 2-column grid to the right, other detachments below. Row heights come from `estimateCardHeight` in `DetachmentCard.tsx`. Cards can be long-press dragged (position overrides are not persisted). SVG connector lines are rendered as an absolute-positioned overlay with `pointer-events: none`.
+The canvas is a large `4000×3000px` div inside an `overflow: hidden` viewport container. Pan is CSS `transform: translate(panX, panY)`; ctrl/pinch zooms. Armies are stacked vertically (allied armies get a label); within an army the root detachment is anchored left (Warlord below), Apex detachments in a 2-column grid to the right, other detachments below. Row heights come from `estimateCardHeight` in `slotLayout.ts`; positions from `canvasLayout.ts`. Cards can be long-press dragged (position overrides are not persisted). SVG connector lines are rendered as an absolute-positioned overlay with `pointer-events: none`.
 
 ## Key Files
 
@@ -119,7 +123,7 @@ The canvas is a large `4000×3000px` div inside an `overflow: hidden` viewport c
 |------|---------|
 | `src/types/index.ts` | All TypeScript types + `ModalState` union |
 | `src/store/rosterStore.ts` | All state + mutations |
-| `src/components/canvas/Canvas.tsx` | Modal orchestration + canvas layout |
+| `src/components/canvas/Canvas.tsx` | Composes the canvas (hooks: `useRosterView`, `useSlotFlow`, `useCanvasViewport`, `useConnections`; `canvasLayout.ts`, `CanvasModals.tsx`) |
 | `src/components/canvas/DetachmentCard.tsx` | Card rendering |
 | `src/data/loader.ts` | Runtime data filtering helpers |
 | `src/data/factions.ts` | Faction registry (`FactionDef`: unit sources, chart, primary detachment, allies) |

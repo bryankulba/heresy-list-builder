@@ -1,623 +1,65 @@
-import React, {
-  useCallback,
-  useEffect,
-  useLayoutEffect,
-  useMemo,
-  useRef,
-  useState,
-} from 'react';
-import type { FilledSlot, Force, ModalState, PlacedDetachment, SlotDef } from '../../types';
+/**
+ * Canvas.tsx
+ * The card table: header actions, the pannable / zoomable canvas of detachment
+ * cards with connector lines, the points card, and the modals. Logic lives in
+ * hooks: useRosterView (derived roster data), useSlotFlow (the modal state
+ * machine), useCanvasViewport (pan / zoom / drag), useConnections (lines).
+ */
+
+import React from 'react';
+import type { Force, PlacedDetachment } from '../../types';
 import { useRosterStore, computeTotalPoints } from '../../store/rosterStore';
-import { allDetachments, factionOfDetachment, primaryForce } from '../../store/rosterModel';
-import {
-  getAdditionalDetachments,
-  getAllyFactions,
-  getBaseRole,
-  getChart,
-  getDetachmentDisplayName,
-  lordOfWarChartFor,
-  stripPrimePrefix,
-} from '../../data/loader';
+import { primaryForce } from '../../store/rosterModel';
+import { getAdditionalDetachments, getAllyFactions, getChart, lordOfWarChartFor } from '../../data/loader';
 import { CRUSADE_CHART, factionLabel } from '../../data/factions';
-import DetachmentCard, { cardSlots, estimateCardHeight } from './DetachmentCard';
+import { detachmentAllowances } from '../../rules/detachmentLimits';
+import DetachmentCard from './DetachmentCard';
 import ConnectorLine from './ConnectorLine';
-import SlotEditModal from '../modals/SlotEditModal';
-import UnitPickerModal from '../modals/UnitPickerModal';
-import PrimeBenefitModal from '../modals/PrimeBenefitModal';
-import BonusSlotRoleSelectorModal from '../modals/BonusSlotRoleSelectorModal';
-import DetachmentSelectorModal from '../modals/DetachmentSelectorModal';
-import AllySelectorModal from '../modals/AllySelectorModal';
-import { unitContext } from '../../rules/context';
-import { getPrimeOptions, isLogisticalBenefit, logisticalBenefitRoles } from '../../rules/primeBenefits';
-import { unitsForSlot, withEffectiveSlots } from '../../rules/slots';
-import { auxiliaryUnlocks, detachmentAllowances } from '../../rules/detachmentLimits';
-import { detachmentAvailability, fillableSlots } from '../../rules/options';
-import { allegianceCounts, isAllegianceLocked } from '../../rules/availability';
-import { validateRoster, type RosterWarning } from '../../rules/validate';
-import { rosterCounts } from '../../rules/context';
-import ConfirmModal from '../modals/ConfirmModal';
-import ExportModal from '../modals/ExportModal';
-import SavedListsModal from '../modals/SavedListsModal';
+import CanvasModals from './CanvasModals';
 import AppHeader from '../ui/AppHeader';
 import PointsCard from '../ui/PointsCard';
+import { CANVAS_H, CANVAS_W, CARD_W, computeCardPositions, computeInstanceNumbers, type CardPosition } from './canvasLayout';
+import { useCanvasViewport } from './useCanvasViewport';
+import { useConnections } from './useConnections';
+import { useRosterView } from './useRosterView';
+import { useSlotFlow } from './useSlotFlow';
 
-// ---------------------------------------------------------------------------
-// Layout constants
-// ---------------------------------------------------------------------------
-const CANVAS_W = 4000;
-const CANVAS_H = 3000;
-const CARD_W = 360;
-const CARD_GAP = 24;
-const CANVAS_ORIGIN_Y = 80;
-
-// Primary card anchored top-left; everything else to its right
-const PRIMARY_X = 24;
-const RIGHT_X = PRIMARY_X + CARD_W + CARD_GAP * 2;   // start of the right section
-const RIGHT_COL_STRIDE = CARD_W + CARD_GAP;           // 384 — distance between column starts
-const RIGHT_COLS = 2;
-
-const ROW_GAP = 24;        // vertical gap between cards in the same column/grid
-const SECTION_GAP = 64;    // vertical gap between the apex group and the aux group
-
-interface CardPosition {
-  x: number;
-  y: number;
-}
-
-const FORCE_GAP = 96;     // vertical gap between one army's cards and the next
-const FORCE_LABEL_H = 32; // space reserved above an allied army for its label
-
-/**
- * Card positions for one army: its root detachment anchored left (Warlord
- * below it), Apex detachments in a 2-column grid to the right, everything else
- * (Auxiliary, Additional…) in a grid below the Apex group. Row heights come
- * from each card's estimated height.
- */
-function layoutForce(
-  force: Force,
-  originY: number
-): { positions: Map<string, CardPosition>; bottom: number } {
-  const positions = new Map<string, CardPosition>();
-  const [root, ...rest] = force.detachments;
-  const warlord = rest.find((d) => d.def.name === 'Warlord Detachment');
-  const others = rest.filter((d) => d !== warlord);
-  const apex = others.filter((d) => d.def.type === 'apex');
-  const auxiliaries = others.filter((d) => d.def.type !== 'apex');
-
-  let bottom = originY;
-
-  // Left column: root, then Warlord
-  let leftY = originY;
-  for (const det of [root, warlord]) {
-    if (!det) continue;
-    positions.set(det.id, { x: PRIMARY_X, y: leftY });
-    leftY += estimateCardHeight(det) + ROW_GAP;
-    bottom = Math.max(bottom, leftY - ROW_GAP);
-  }
-
-  // Right side: 2-column grids, each row as tall as its tallest card
-  const placeGrid = (dets: PlacedDetachment[], startY: number): number => {
-    let y = startY;
-    for (let i = 0; i < dets.length; i += RIGHT_COLS) {
-      const row = dets.slice(i, i + RIGHT_COLS);
-      row.forEach((det, col) => positions.set(det.id, { x: RIGHT_X + col * RIGHT_COL_STRIDE, y }));
-      y += Math.max(...row.map(estimateCardHeight)) + ROW_GAP;
-    }
-    return dets.length > 0 ? y - ROW_GAP : startY;
-  };
-  const apexBottom = placeGrid(apex, originY);
-  const auxBottom = placeGrid(auxiliaries, apex.length > 0 ? apexBottom + SECTION_GAP : originY);
-
-  return { positions, bottom: Math.max(bottom, apexBottom, auxBottom) };
-}
-
-/** Card positions for every army, stacked vertically; plus a label position per allied army. */
-function computeCardPositions(forces: Force[]): {
-  positions: Map<string, CardPosition>;
-  labels: Array<{ forceId: string; text: string; x: number; y: number }>;
-} {
-  const positions = new Map<string, CardPosition>();
-  const labels: Array<{ forceId: string; text: string; x: number; y: number }> = [];
-  let y = CANVAS_ORIGIN_Y;
-  for (const force of forces) {
-    if (force.kind !== 'primary') {
-      const text = force.kind === 'allied' ? `Allies — ${factionLabel(force.faction)}` : 'Lord of War';
-      labels.push({ forceId: force.id, text, x: PRIMARY_X, y });
-      y += FORCE_LABEL_H;
-    }
-    const laid = layoutForce(force, y);
-    laid.positions.forEach((pos, id) => positions.set(id, pos));
-    y = laid.bottom + FORCE_GAP;
-  }
-  return { positions, labels };
-}
-
-interface Connection {
-  id: string;
-  from: { x: number; y: number };
-  to: { x: number; y: number };
-}
-
-// ---------------------------------------------------------------------------
-// Instance numbering
-// ---------------------------------------------------------------------------
-function computeInstanceNumbers(dets: PlacedDetachment[]): Map<string, number | undefined> {
-  const countByName = new Map<string, number>();
-  const result = new Map<string, number | undefined>();
-
-  for (const d of dets) {
-    const name = d.def.name;
-    countByName.set(name, (countByName.get(name) ?? 0) + 1);
-  }
-
-  const seenByName = new Map<string, number>();
-  for (const d of dets) {
-    const name = d.def.name;
-    if ((countByName.get(name) ?? 0) > 1) {
-      const idx = (seenByName.get(name) ?? 0) + 1;
-      seenByName.set(name, idx);
-      result.set(d.id, idx);
-    } else {
-      result.set(d.id, undefined);
-    }
-  }
-  return result;
-}
-
-// ---------------------------------------------------------------------------
-// Canvas component
-// ---------------------------------------------------------------------------
 export default function Canvas() {
-  const forces = useRosterStore((s) => s.forces);
-  // Memoized: the connector-line layout effect depends on this array's identity
-  const detachments = useMemo(() => allDetachments(forces), [forces]);
-  const primary = primaryForce(forces);
-  const allegiance = useRosterStore((s) => s.allegiance);
-  const pointsLimit = useRosterStore((s) => s.pointsLimit);
+  const roster = useRosterView();
+  const { forces, detachments, counts, view, warnings, warningsByDetachment, pointsLimit } = roster;
+  const flow = useSlotFlow(roster);
+  const { setModal } = flow;
+  const viewport = useCanvasViewport();
+  const { pan, zoom, positionOverrides, draggingId } = viewport;
+  const { innerRef, connections, cardRefCallback, slotRefCallback } = useConnections(detachments, zoom, [pan, positionOverrides]);
+
   const addDetachment = useRosterStore((s) => s.addDetachment);
-  const fillSlot = useRosterStore((s) => s.fillSlot);
-  const clearSlot = useRosterStore((s) => s.clearSlot);
-  const setLogisticalRole = useRosterStore((s) => s.setLogisticalRole);
-  const removeDetachment = useRosterStore((s) => s.removeDetachment);
-  const addAlliedForce = useRosterStore((s) => s.addAlliedForce);
   const addLordOfWar = useRosterStore((s) => s.addLordOfWar);
   const removeForce = useRosterStore((s) => s.removeForce);
-  const updateSlotAnnotations = useRosterStore((s) => s.updateSlotAnnotations);
-  const reset = useRosterStore((s) => s.reset);
+  const removeDetachment = useRosterStore((s) => s.removeDetachment);
 
-  const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
-  const configChoices = useRosterStore((s) => s.configChoices);
+  const primary = primaryForce(forces);
   const totalPoints = computeTotalPoints(forces);
-  // What the army's configuration contributes to every BSData rule check
-  const rosterOpts = useMemo(
-    () => ({ allegiance, pointsLimit, cohortDoctrine, configChoices }),
-    [allegiance, pointsLimit, cohortDoctrine, configChoices]
-  );
-  const counts = useMemo(() => rosterCounts(forces, rosterOpts), [forces, rosterOpts]);
-  // What the canvas shows: detachments with slot counts evaluated from their contents
-  // (without slot roles no unit of the army can fill, e.g. Skitarii Transport)
-  const view = useMemo(
-    () =>
-      withEffectiveSlots(forces, counts).map((force) => ({
-        ...force,
-        detachments: force.detachments.map((det) => ({
-          ...det,
-          def: { ...det.def, slots: fillableSlots(forces, force, det, counts) },
-        })),
-      })),
-    [forces, counts]
-  );
-  const viewDetachments = useMemo(() => allDetachments(view), [view]);
-  // Roster warnings (never blocking), by detachment for the cards' badges
-  const warnings = useMemo(() => validateRoster({ forces, ...rosterOpts }), [forces, rosterOpts]);
-  const warningsByDetachment = useMemo(() => {
-    const map = new Map<string, RosterWarning[]>();
-    for (const w of warnings) if (w.detachmentId) map.set(w.detachmentId, [...(map.get(w.detachmentId) ?? []), w]);
-    return map;
-  }, [warnings]);
-
-  /** Faction of the army a detachment (or "detId::slotKey" reference) belongs to. */
-  const factionFor = (detachmentIdOrRef: string) => factionOfDetachment(forces, detachmentIdOrRef);
-
-  // ── Modal state ──
-  const [modal, setModal] = useState<ModalState>({ type: 'none' });
-  // Changes with every modal transition (each setModal makes a new state object)
-  const modalSteps = useRef(0);
-  const modalStep = useMemo(() => ++modalSteps.current, [modal]); // eslint-disable-line react-hooks/exhaustive-deps
-  // Further Auxiliary selectors still owed to a slot (e.g. Officer of the Line's second)
-  const pendingUnlocks = useRef<{ unlockedBy: string; remaining: number; total: number } | null>(null);
-  // Tracks when we're in edit mode so handlers return to slotEdit instead of chaining
-  const isEditingSlot = useRef<{ detachmentId: string; slotKey: string } | null>(null);
-
-  /** Find the SlotDef for a given slot key on a placed detachment. */
-  function findSlotDef(detachmentId: string, slotKey: string): SlotDef | undefined {
-    const det = viewDetachments.find((d) => d.id === detachmentId);
-    if (!det) return undefined;
-    return cardSlots(det).find((s) => s.key === slotKey)?.slotDef;
-  }
-
-  /** Units that can fill a slot (or a Logistical Benefit bonus slot of `role`), less those the allegiance can't field. */
-  function slotUnits(detachmentId: string, slot: SlotDef | undefined) {
-    const force = forces.find((f) => f.detachments.some((d) => d.id === detachmentId));
-    const det = force?.detachments.find((d) => d.id === detachmentId);
-    if (!force || !det || !slot) return [];
-    const locked = allegianceCounts(forces, allegiance);
-    return unitsForSlot(forces, force, det, slot, counts).filter((u) => !isAllegianceLocked(forces, force, det, u, locked));
-  }
-
-  /** Prime benefits a unit may take in a given slot, evaluated from BSData. */
-  function primeOptionsFor(detachmentId: string, slotKey: string, unit: Parameters<typeof fillSlot>[2]) {
-    const force = forces.find((f) => f.detachments.some((d) => d.id === detachmentId));
-    const det = force?.detachments.find((d) => d.id === detachmentId);
-    if (!force || !det) return [];
-    return getPrimeOptions(unit, unitContext(forces, force, det, unit, findSlotDef(detachmentId, slotKey)?.categoryId, counts));
-  }
-
-  /** After an edit action, return to the slotEdit modal with updated filled data. */
-  function goBackToSlotEdit(detachmentId: string, slotKey: string, newFilled: FilledSlot) {
-    isEditingSlot.current = null;
-    const slotDef = findSlotDef(detachmentId, slotKey);
-    if (slotDef) {
-      setModal({ type: 'slotEdit', detachmentId, slotKey, slotDef, filled: newFilled });
-    } else {
-      setModal({ type: 'none' });
-    }
-  }
-
-  // ── Pan + zoom state ──
-  const [pan, setPan] = useState({ x: 16, y: 16 });
-  const [zoom, setZoom] = useState(1);
-  const isPanning = useRef(false);
-  const panStart = useRef({ mouseX: 0, mouseY: 0, panX: 0, panY: 0 });
-
-  function onMouseDown(e: React.MouseEvent<HTMLDivElement>) {
-    if ((e.target as HTMLElement).closest('[data-no-pan]')) return;
-    isPanning.current = true;
-    panStart.current = { mouseX: e.clientX, mouseY: e.clientY, panX: pan.x, panY: pan.y };
-  }
-
-  function onMouseMove(e: React.MouseEvent<HTMLDivElement>) {
-    // Card drag takes priority
-    if (dragState.current?.active) {
-      const ds = dragState.current;
-      const dx = (e.clientX - ds.startMouseX) / zoom;
-      const dy = (e.clientY - ds.startMouseY) / zoom;
-      setPositionOverrides((prev) => ({
-        ...prev,
-        [ds.detId]: { x: ds.startCardX + dx, y: ds.startCardY + dy },
-      }));
-      return;
-    }
-
-    // Cancel long-press if mouse moves too much before timer fires
-    if (longPressTimer.current && dragState.current) {
-      const ds = dragState.current;
-      if (
-        Math.abs(e.clientX - ds.startMouseX) > 5 ||
-        Math.abs(e.clientY - ds.startMouseY) > 5
-      ) {
-        clearTimeout(longPressTimer.current);
-        longPressTimer.current = null;
-        dragState.current = null;
-      }
-    }
-
-    if (!isPanning.current) return;
-    const dx = e.clientX - panStart.current.mouseX;
-    const dy = e.clientY - panStart.current.mouseY;
-    setPan({ x: panStart.current.panX + dx, y: panStart.current.panY + dy });
-  }
-
-  function onMouseUp() {
-    if (longPressTimer.current) {
-      clearTimeout(longPressTimer.current);
-      longPressTimer.current = null;
-    }
-    dragState.current = null;
-    setDraggingId(null);
-    isPanning.current = false;
-  }
-
-  function onWheel(e: React.WheelEvent<HTMLDivElement>) {
-    e.preventDefault();
-    if (e.ctrlKey) {
-      // Pinch gesture (trackpad) or ctrl+scroll → zoom centered on cursor
-      const factor = e.deltaY > 0 ? 0.95 : 1.05;
-      const newZoom = Math.max(0.2, Math.min(3, zoom * factor));
-      const rect = outerRef.current!.getBoundingClientRect();
-      const mouseX = e.clientX - rect.left;
-      const mouseY = e.clientY - rect.top;
-      // Keep the canvas point under cursor fixed: newPan = mouse - (mouse - pan) / zoom * newZoom
-      setPan({
-        x: mouseX - ((mouseX - pan.x) / zoom) * newZoom,
-        y: mouseY - ((mouseY - pan.y) / zoom) * newZoom,
-      });
-      setZoom(newZoom);
-    } else {
-      // Two-finger scroll or regular scroll → pan
-      setPan((p) => ({ x: p.x - e.deltaX, y: p.y - e.deltaY }));
-    }
-  }
-
-  function onDoubleClick(e: React.MouseEvent<HTMLDivElement>) {
-    if ((e.target as HTMLElement).closest('[data-no-pan]')) return;
-    // Reset zoom and pan to default
-    setZoom(1);
-    setPan({ x: 16, y: 16 });
-  }
-
-  // ── Card drag state ──
-  const [positionOverrides, setPositionOverrides] = useState<Record<string, CardPosition>>({});
-  const [draggingId, setDraggingId] = useState<string | null>(null);
-  const dragState = useRef<{
-    detId: string;
-    startMouseX: number;
-    startMouseY: number;
-    startCardX: number;
-    startCardY: number;
-    active: boolean;
-  } | null>(null);
-  const longPressTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
-
-  function handleCardMouseDown(e: React.MouseEvent, detId: string, pos: CardPosition) {
-    // Don't initiate drag from interactive elements
-    if ((e.target as HTMLElement).closest('button, input, select, [data-interactive]')) return;
-    dragState.current = {
-      detId,
-      startMouseX: e.clientX,
-      startMouseY: e.clientY,
-      startCardX: pos.x,
-      startCardY: pos.y,
-      active: false,
-    };
-    longPressTimer.current = setTimeout(() => {
-      if (dragState.current) {
-        dragState.current.active = true;
-        setDraggingId(detId);
-      }
-    }, 350);
-  }
-
-  // ── Refs for connector lines ──
-  const cardRefs = useRef<Map<string, HTMLDivElement>>(new Map());
-  const slotRefs = useRef<Map<string, HTMLDivElement>>(new Map());
-  const outerRef = useRef<HTMLDivElement>(null);
-
-  const cardRefCallback = useCallback(
-    (id: string) => (el: HTMLDivElement | null) => {
-      if (el) cardRefs.current.set(id, el);
-      else cardRefs.current.delete(id);
-    },
-    []
-  );
-
-  const slotRefCallback = useCallback(
-    (detId: string) => (slotKey: string) => (el: HTMLDivElement | null) => {
-      const key = `${detId}::${slotKey}`;
-      if (el) slotRefs.current.set(key, el);
-      else slotRefs.current.delete(key);
-    },
-    []
-  );
-
-  // ── Connector line computation ──
-  const [connections, setConnections] = useState<Connection[]>([]);
-  const innerRef = useRef<HTMLDivElement>(null);
-
-  useLayoutEffect(() => {
-    if (!innerRef.current) return;
-    const innerRect = innerRef.current.getBoundingClientRect();
-
-    const newConns: Connection[] = [];
-    for (const det of detachments) {
-      if (!det.unlockedBy) continue;
-      const cardEl = cardRefs.current.get(det.id);
-      const slotEl = slotRefs.current.get(det.unlockedBy);
-      if (!cardEl || !slotEl) continue;
-
-      const cardRect = cardEl.getBoundingClientRect();
-      const slotRect = slotEl.getBoundingClientRect();
-
-      // getBoundingClientRect gives screen-space coords; divide by zoom to get canvas-local coords
-      newConns.push({
-        id: det.id,
-        from: {
-          x: (slotRect.left - innerRect.left + slotRect.width / 2) / zoom,
-          y: (slotRect.bottom - innerRect.top) / zoom,
-        },
-        to: {
-          x: (cardRect.left - innerRect.left + cardRect.width / 2) / zoom,
-          y: (cardRect.top - innerRect.top) / zoom,
-        },
-      });
-    }
-    setConnections(newConns);
-  }, [detachments, pan, zoom, positionOverrides]);
-
-  // ── Slot interaction ──
-  function handleSlotClick(detachmentId: string, slotKey: string, slotDef: SlotDef) {
-    const filled = detachments.find((d) => d.id === detachmentId)?.slots[slotKey];
-    if (filled) {
-      setModal({ type: 'slotEdit', detachmentId, slotKey, slotDef, filled });
-    } else {
-      const matchableRole = getBaseRole(stripPrimePrefix(slotDef.role));
-      setModal({
-        type: 'unitPicker',
-        detachmentId,
-        slotKey,
-        role: matchableRole,
-        isPrime: slotDef.prime,
-      });
-    }
-  }
-
-  function handleSlotClear(detachmentId: string, slotKey: string) {
-    const qualifiedKey = `${detachmentId}::${slotKey}`;
-    const unlocked = detachments.filter((d) => d.unlockedBy === qualifiedKey);
-    const anyUnlockedFilled = unlocked.some((d) => Object.values(d.slots).some(Boolean));
-
-    if (anyUnlockedFilled) {
-      setModal({
-        type: 'confirmClear',
-        detachmentId,
-        slotKey,
-        affectedIds: unlocked.map((d) => d.id),
-      });
-    } else {
-      doClear(detachmentId, slotKey, unlocked.map((d) => d.id));
-    }
-  }
-
-  function doClear(detachmentId: string, slotKey: string, affectedIds: string[]) {
-    clearSlot(detachmentId, slotKey);
-    for (const id of affectedIds) removeDetachment(id);
-    setModal({ type: 'none' });
-  }
-
-  // Shared: fill slot then handle unlock chain
-  function fillAndUnlock(
-    detachmentId: string,
-    slotKey: string,
-    role: string,
-    unit: Parameters<typeof fillSlot>[2],
-    benefit?: Parameters<typeof fillSlot>[3]
-  ) {
-    fillSlot(detachmentId, slotKey, unit, benefit);
-    // Replace any detachments it unlocked before (changing a unit should swap, not stack)
-    const unlockedBy = `${detachmentId}::${slotKey}`;
-    for (const det of detachments.filter((d) => d.unlockedBy === unlockedBy)) removeDetachment(det.id);
-    startUnlocks(detachmentId, slotKey, role);
-  }
-
-  /**
-   * Opens the detachment selectors a newly placed unit earns: a High Command
-   * unit picks an Apex or Auxiliary detachment; any other unit as many
-   * Auxiliary detachments as it adds to the army's BSData allowance (1 per
-   * Command unit, +1 for Officer of the Line (2)…).
-   */
-  function startUnlocks(detachmentId: string, slotKey: string, role: string) {
-    const unlockedBy = `${detachmentId}::${slotKey}`;
-    if (role === 'High Command') {
-      setModal({ type: 'detachmentSelector', trigger: 'highCommand', unlockedBy });
-      return;
-    }
-    const count = auxiliaryUnlocks(useRosterStore.getState().forces, detachmentId, slotKey);
-    if (count === 0) {
-      setModal({ type: 'none' });
-      return;
-    }
-    pendingUnlocks.current = count > 1 ? { unlockedBy, remaining: count - 1, total: count } : null;
-    setModal({
-      type: 'detachmentSelector',
-      trigger: 'command',
-      unlockedBy,
-      ...(count > 1 ? { title: `Choose Auxiliary Detachment (1 of ${count})` } : {}),
-    });
-  }
-
-  function handleUnitConfirmed(unit: Parameters<typeof fillSlot>[2]) {
-    if (modal.type !== 'unitPicker') return;
-    const { detachmentId, slotKey, role, isPrime } = modal;
-
-    if (isEditingSlot.current) {
-      // Edit mode: keep existing prime benefit, just update the unit
-      const existingBenefit = detachments.find((d) => d.id === detachmentId)?.slots[slotKey]?.primeBenefit;
-      fillSlot(detachmentId, slotKey, unit, existingBenefit);
-      goBackToSlotEdit(detachmentId, slotKey, { unit, primeBenefit: existingBenefit });
-      return;
-    }
-
-    if (isPrime) {
-      // Unit chosen — now pick the prime benefit (pass role through so handler can chain unlock)
-      setModal({ type: 'primeBenefit', detachmentId, slotKey, role, unit });
-    } else {
-      fillAndUnlock(detachmentId, slotKey, role, unit);
-    }
-  }
-
-  function handleBonusSlotRoleSelected(bonusRole: string) {
-    if (modal.type !== 'bonusSlotRoleSelector') return;
-    const { detachmentId, slotKey, role, unit } = modal;
-    // BSData adds the slot for the chosen "LB - <role>"
-    setLogisticalRole(detachmentId, slotKey, bonusRole);
-
-    if (isEditingSlot.current) {
-      // Return to slotEdit after choosing the role
-      const det = detachments.find((d) => d.id === detachmentId);
-      const filled = det?.slots[slotKey];
-      if (filled) {
-        goBackToSlotEdit(detachmentId, slotKey, filled);
-      } else {
-        isEditingSlot.current = null;
-        setModal({ type: 'none' });
-      }
-    } else {
-      // Fresh fill: open the detachment selectors the unit earns
-      startUnlocks(detachmentId, slotKey, role);
-    }
-  }
-
-  function handleDetachmentSelected(def: Parameters<typeof addDetachment>[0]) {
-    if (modal.type !== 'detachmentSelector') return;
-    const { unlockedBy } = modal;
-    addDetachment(def, { unlockedBy });
-
-    // More Auxiliary detachments owed to this slot (e.g. Officer of the Line)
-    const pending = pendingUnlocks.current;
-    if (pending?.unlockedBy === unlockedBy && pending.remaining > 0) {
-      pending.remaining -= 1;
-      if (pending.remaining === 0) pendingUnlocks.current = null;
-      setModal({
-        type: 'detachmentSelector',
-        trigger: 'command',
-        unlockedBy,
-        title: `Choose Auxiliary Detachment (${pending.total - pending.remaining} of ${pending.total})`,
-      });
-      return;
-    }
-
-    if (isEditingSlot.current) {
-      const { detachmentId, slotKey } = isEditingSlot.current;
-      const det = detachments.find((d) => d.id === detachmentId);
-      const filled = det?.slots[slotKey];
-      if (filled) {
-        goBackToSlotEdit(detachmentId, slotKey, filled);
-      } else {
-        isEditingSlot.current = null;
-        setModal({ type: 'none' });
-      }
-    } else {
-      setModal({ type: 'none' });
-    }
-  }
 
   // Header actions depend on the primary army's chart and rules
   const warlordDef =
-    primary?.chart === CRUSADE_CHART &&
-    !primary.detachments.some((d) => d.def.name === 'Warlord Detachment')
+    primary?.chart === CRUSADE_CHART && !primary.detachments.some((d) => d.def.name === 'Warlord Detachment')
       ? getChart(CRUSADE_CHART).detachments.find(
           (d) => d.name === 'Warlord Detachment' && (!d.sources?.length || d.sources.includes(primary.faction))
         )
       : undefined;
   const additionalDetachments = primary ? getAdditionalDetachments(primary.chart, primary.faction) : [];
   const allyFactions = primary ? getAllyFactions(primary.faction) : [];
-  // Crusade armies may add one Lord of War Detachment (Knights use their own chart)
   // One Lord of War Detachment per army (Knights use their own "Knight Lord of War" chart)
   const canAddLordOfWar = !!primary && !forces.some((f) => f.kind === 'lordOfWar') && !!lordOfWarChartFor(primary.faction);
 
-  function handleAddWarlord() {
-    if (warlordDef && primary) addDetachment(warlordDef, { forceId: primary.id });
-  }
-
-  /** Remove action for a card, if it can be removed on its own. */
   /**
    * Remove action for a card, if it can be removed on its own: an allied army
    * or Lord of War Detachment (from its root card), the Warlord Detachment,
    * and freely-added detachments. Asks first when units would be lost.
    */
   function removeActionFor(force: Force, det: PlacedDetachment): (() => void) | undefined {
-    const hasUnits = (dets: PlacedDetachment[]) =>
-      dets.some((d) => Object.values(d.slots).some(Boolean));
+    const hasUnits = (dets: PlacedDetachment[]) => dets.some((d) => Object.values(d.slots).some(Boolean));
     if (force.kind !== 'primary' && det.id === force.detachments[0]?.id) {
       return () =>
         hasUnits(force.detachments) ? setModal({ type: 'confirmRemoveForce', forceId: force.id }) : removeForce(force.id);
@@ -631,14 +73,10 @@ export default function Canvas() {
     return undefined;
   }
 
-  // ── Card positions ──
   const { positions: cardPositions, labels: forceLabels } = computeCardPositions(view);
   const instanceNumbers = computeInstanceNumbers(detachments);
-
-  // Resolve effective position (user override takes precedence over computed)
-  function getCardPos(detId: string): CardPosition {
-    return positionOverrides[detId] ?? cardPositions.get(detId) ?? { x: 0, y: 0 };
-  }
+  // A dragged card's position overrides the computed layout
+  const getCardPos = (detId: string): CardPosition => positionOverrides[detId] ?? cardPositions.get(detId) ?? { x: 0, y: 0 };
 
   return (
     <div className="flex flex-col" style={{ height: '100vh', overflow: 'hidden' }}>
@@ -646,7 +84,7 @@ export default function Canvas() {
         onExport={() => setModal({ type: 'export' })}
         onSaveLoad={() => setModal({ type: 'saveLoad' })}
         onNewList={() => setModal({ type: 'confirmReset' })}
-        onAddWarlord={warlordDef ? handleAddWarlord : undefined}
+        onAddWarlord={warlordDef && primary ? () => addDetachment(warlordDef, { forceId: primary.id }) : undefined}
         onAddAllies={allyFactions.length > 0 ? () => setModal({ type: 'allySelector' }) : undefined}
         onAddLordOfWar={canAddLordOfWar ? addLordOfWar : undefined}
         onAddDetachment={
@@ -656,7 +94,7 @@ export default function Canvas() {
 
       {/* Canvas area */}
       <div
-        ref={outerRef}
+        ref={viewport.outerRef}
         style={{
           flex: 1,
           overflow: 'hidden',
@@ -665,12 +103,7 @@ export default function Canvas() {
           background: 'var(--cds-background)',
           userSelect: draggingId ? 'none' : undefined,
         }}
-        onMouseDown={onMouseDown}
-        onMouseMove={onMouseMove}
-        onMouseUp={onMouseUp}
-        onMouseLeave={onMouseUp}
-        onWheel={onWheel}
-        onDoubleClick={onDoubleClick}
+        {...viewport.viewportHandlers}
       >
         {/* Pannable + zoomable inner canvas */}
         <div
@@ -684,22 +117,13 @@ export default function Canvas() {
           }}
         >
           {/* SVG connector overlay */}
-          <svg
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              pointerEvents: 'none',
-            }}
-          >
+          <svg style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', pointerEvents: 'none' }}>
             {connections.map((conn) => (
               <ConnectorLine key={conn.id} from={conn.from} to={conn.to} />
             ))}
           </svg>
 
-          {/* Allied army labels */}
+          {/* Allied / Lord of War army labels */}
           {forceLabels.map((label) => (
             <div
               key={label.forceId}
@@ -739,7 +163,7 @@ export default function Canvas() {
                   zIndex: isDragging ? 10 : undefined,
                   transition: isDragging ? undefined : 'box-shadow 0.15s, outline 0.15s',
                 }}
-                onMouseDown={(e) => handleCardMouseDown(e, det.id, pos)}
+                onMouseDown={(e) => viewport.handleCardMouseDown(e, det.id, pos)}
               >
                 <DetachmentCard
                   detachment={det}
@@ -747,23 +171,20 @@ export default function Canvas() {
                   allyFaction={force.kind === 'allied' ? factionLabel(force.faction) : undefined}
                   warnings={warningsByDetachment.get(det.id)}
                   onRemove={removeActionFor(force, det)}
-                  onSlotClick={(slotKey, slotDef) =>
-                    handleSlotClick(det.id, slotKey, slotDef)
-                  }
-                  onSlotClear={(slotKey) => handleSlotClear(det.id, slotKey)}
+                  onSlotClick={(slotKey, slotDef) => flow.handleSlotClick(det.id, slotKey, slotDef)}
+                  onSlotClear={(slotKey) => flow.handleSlotClear(det.id, slotKey)}
                   cardRef={cardRefCallback(det.id)}
                   slotRefCallback={(slotKey) => slotRefCallback(det.id)(slotKey)}
                 />
               </div>
             );
           })}
-
         </div>
 
         {/* Zoom indicator — click to reset */}
         <button
           data-no-pan
-          onClick={() => { setZoom(1); setPan({ x: 16, y: 16 }); }}
+          onClick={viewport.resetView}
           title="Reset zoom (or double-click canvas)"
           style={{
             position: 'absolute',
@@ -784,7 +205,6 @@ export default function Canvas() {
         </button>
       </div>
 
-      {/* Points card */}
       <PointsCard
         current={totalPoints}
         limit={pointsLimit}
@@ -798,215 +218,14 @@ export default function Canvas() {
         }
       />
 
-      {/* Modals — keyed per step so a chained modal (e.g. the second Officer of
-          the Line selector) opens fresh instead of keeping the last one's scroll */}
-      <React.Fragment key={modalStep}>
-      {modal.type === 'slotEdit' && (() => {
-        const { detachmentId, slotKey, slotDef, filled } = modal;
-        const role = getBaseRole(stripPrimePrefix(slotDef.role));
-        const isCommandSlot = role === 'High Command' || auxiliaryUnlocks(forces, detachmentId, slotKey) > 0;
-        const unlockedBy = `${detachmentId}::${slotKey}`;
-        const unlockedDets = detachments.filter((d) => d.unlockedBy === unlockedBy);
-        const trigger = role === 'High Command' ? 'highCommand' : 'command';
-
-        const linkedDetachments = isCommandSlot
-          ? unlockedDets.length > 0
-            ? unlockedDets.map((det) => ({
-                name: det.def.name,
-                onChange: () => {
-                  isEditingSlot.current = { detachmentId, slotKey };
-                  removeDetachment(det.id);
-                  setModal({ type: 'detachmentSelector', trigger, unlockedBy });
-                },
-              }))
-            : [{ name: '', onChange: () => {
-                isEditingSlot.current = { detachmentId, slotKey };
-                setModal({ type: 'detachmentSelector', trigger, unlockedBy });
-              }}]
-          : undefined;
-
-        return (
-          <SlotEditModal
-            slotDef={slotDef}
-            filled={filled}
-            linkedDetachments={linkedDetachments}
-            onChangeUnit={() => {
-              isEditingSlot.current = { detachmentId, slotKey };
-              setModal({ type: 'unitPicker', detachmentId, slotKey, role, isPrime: slotDef.prime });
-            }}
-            onChangeBenefit={() => {
-              isEditingSlot.current = { detachmentId, slotKey };
-              setModal({ type: 'primeBenefit', detachmentId, slotKey, role, unit: filled.unit });
-            }}
-            onAnnotationsChange={(notes, extraPoints) =>
-              updateSlotAnnotations(detachmentId, slotKey, notes, extraPoints)
-            }
-            onClose={() => setModal({ type: 'none' })}
-          />
-        );
-      })()}
-
-      {modal.type === 'unitPicker' && (
-        <UnitPickerModal
-          role={modal.role}
-          units={slotUnits(modal.detachmentId, findSlotDef(modal.detachmentId, modal.slotKey))}
-          faction={factionFor(modal.detachmentId)}
-          onConfirm={handleUnitConfirmed}
-          onClose={() => setModal({ type: 'none' })}
-        />
-      )}
-
-      {modal.type === 'primeBenefit' && (
-        <PrimeBenefitModal
-          options={primeOptionsFor(modal.detachmentId, modal.slotKey, modal.unit)}
-          onConfirm={(option) => {
-            if (modal.type !== 'primeBenefit') return;
-            const { detachmentId, slotKey, role, unit } = modal;
-            const benefit = { id: option.id, name: option.name, description: option.description };
-
-            if (isLogisticalBenefit(benefit)) {
-              // A fresh role choice follows (its slot is added by BSData once chosen)
-              fillSlot(detachmentId, slotKey, unit, benefit);
-              setLogisticalRole(detachmentId, slotKey, undefined);
-              // bonusSlotRoleSelector will return to slotEdit (edit mode) or trigger unlock (fresh fill)
-              setModal({
-                type: 'bonusSlotRoleSelector',
-                detachmentId,
-                slotKey,
-                role,
-                unit,
-                // Only roles the army has units for
-                roles: logisticalBenefitRoles(option).filter(
-                  (r) => slotUnits(detachmentId, { role: r, min: 0, max: 1, prime: false }).length > 0
-                ),
-              });
-            } else {
-              if (isEditingSlot.current) {
-                // Changing benefit only — drops a Logistical Benefit role, returns to slotEdit
-                fillSlot(detachmentId, slotKey, unit, benefit);
-                setLogisticalRole(detachmentId, slotKey, undefined);
-                goBackToSlotEdit(detachmentId, slotKey, { unit, primeBenefit: benefit });
-              } else {
-                fillAndUnlock(detachmentId, slotKey, role, unit, benefit);
-              }
-            }
-          }}
-          onClose={() => setModal({ type: 'none' })}
-        />
-      )}
-
-      {modal.type === 'bonusSlotRoleSelector' && (
-        <BonusSlotRoleSelectorModal
-          roles={modal.roles}
-          onConfirm={handleBonusSlotRoleSelected}
-          onClose={() => setModal({ type: 'none' })}
-        />
-      )}
-
-      {modal.type === 'detachmentSelector' && (
-        <DetachmentSelectorModal
-          trigger={modal.trigger}
-          title={modal.title}
-          faction={factionFor(modal.unlockedBy)}
-          availability={(def) => {
-            const force = forces.find((f) => f.detachments.some((d) => d.id === modal.unlockedBy.split('::')[0]));
-            return force ? detachmentAvailability(forces, force, def, counts) : { status: 'ok' };
-          }}
-          onConfirm={handleDetachmentSelected}
-          onClose={() => setModal({ type: 'none' })}
-        />
-      )}
-
-      {modal.type === 'confirmClear' && (
-        <ConfirmModal
-          message="This slot unlocked one or more detachments with units in them. Clearing it will remove those detachments. Continue?"
-          onConfirm={() =>
-            modal.type === 'confirmClear' &&
-            doClear(modal.detachmentId, modal.slotKey, modal.affectedIds)
-          }
-          onClose={() => setModal({ type: 'none' })}
-        />
-      )}
-
-      {modal.type === 'additionalDetachmentSelector' && primary && (
-        <DetachmentSelectorModal
-          trigger="command"
-          title="Add Detachment"
-          faction={primary.faction}
-          options={additionalDetachments}
-          availability={(def) => detachmentAvailability(forces, primary, def, counts)}
-          onConfirm={(def) => {
-            addDetachment(def, { forceId: primary.id });
-            setModal({ type: 'none' });
-          }}
-          onClose={() => setModal({ type: 'none' })}
-        />
-      )}
-
-      {modal.type === 'allySelector' && (
-        <AllySelectorModal
-          factions={allyFactions}
-          onConfirm={(faction) => {
-            addAlliedForce(faction);
-            setModal({ type: 'none' });
-          }}
-          onClose={() => setModal({ type: 'none' })}
-        />
-      )}
-
-      {modal.type === 'confirmRemoveForce' && (
-        <ConfirmModal
-          message={
-            forces.find((f) => f.id === modal.forceId)?.kind === 'lordOfWar'
-              ? 'Remove the Lord of War Detachment and its units?'
-              : `Remove the ${factionLabel(forces.find((f) => f.id === modal.forceId)?.faction ?? '')} allies and every detachment they unlocked?`
-          }
-          primaryButtonText="Remove"
-          onConfirm={() => {
-            if (modal.type === 'confirmRemoveForce') removeForce(modal.forceId);
-            setModal({ type: 'none' });
-          }}
-          onClose={() => setModal({ type: 'none' })}
-        />
-      )}
-
-      {modal.type === 'confirmRemoveDetachment' && (
-        <ConfirmModal
-          message={`Remove the ${getDetachmentDisplayName(
-            detachments.find((d) => d.id === modal.detachmentId)?.def.name ?? 'detachment'
-          )} and its units?`}
-          primaryButtonText="Remove"
-          onConfirm={() => {
-            if (modal.type === 'confirmRemoveDetachment') removeDetachment(modal.detachmentId);
-            setModal({ type: 'none' });
-          }}
-          onClose={() => setModal({ type: 'none' })}
-        />
-      )}
-
-      {modal.type === 'export' && (
-        <ExportModal
-          forces={forces}
-          allegiance={allegiance}
-          pointsLimit={pointsLimit}
-          totalPoints={totalPoints}
-          onClose={() => setModal({ type: 'none' })}
-        />
-      )}
-
-      {modal.type === 'saveLoad' && (
-        <SavedListsModal onClose={() => setModal({ type: 'none' })} />
-      )}
-
-      {modal.type === 'confirmReset' && (
-        <ConfirmModal
-          message="Start a new list? Your current list will be lost unless you save it first."
-          primaryButtonText="New List"
-          onConfirm={() => { reset(); setModal({ type: 'none' }); }}
-          onClose={() => setModal({ type: 'none' })}
-        />
-      )}
-      </React.Fragment>
+      <CanvasModals
+        roster={roster}
+        flow={flow}
+        primary={primary}
+        additionalDetachments={additionalDetachments}
+        allyFactions={allyFactions}
+        totalPoints={totalPoints}
+      />
     </div>
   );
 }
