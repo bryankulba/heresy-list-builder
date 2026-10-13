@@ -71,6 +71,21 @@ const gameSystem: BsGameSystemFile = {
               { id: 'l3', name: 'Command - Centurions Only', targetId: 'cat-cent', constraints: [max(2)] },
               { id: 'l4', name: 'Prime Troops', targetId: 'cat-prime-troops', constraints: [max(1)] },
               { id: 'l5', name: 'Elites', targetId: 'cat-elites', constraints: [max(0)] },
+              // max 0 but raisable by a modifier (e.g. Logistical Benefit) — kept with its modifiers
+              {
+                id: 'l7',
+                name: 'Retinue',
+                targetId: 'cat-retinue',
+                constraints: [{ ...max(0), id: 'c-ret' }],
+                modifiers: [
+                  {
+                    type: 'increment',
+                    field: 'c-ret',
+                    value: 1,
+                    conditions: [{ type: 'equalTo', value: 1, field: 'selections', scope: 'force', childId: 'lb-retinue' }],
+                  },
+                ],
+              },
             ],
           },
           {
@@ -131,7 +146,7 @@ const legionUnits: BsEntry[] = [
         constraints: [min(4), max(9)],
         entryLinks: [
           // Link to a shared group: default must be resolved through the index
-          { id: 'leg-force', name: 'Force Weapon', type: 'selectionEntryGroup', targetId: 'shared-force-weapons' },
+          { id: 'leg-force', name: 'Force Weapon', type: 'selectionEntryGroup', targetId: 'shared-force-weapons', constraints: [min(1), max(1)] },
           // Group link itself must never be emitted as wargear
           { id: 'leg-arcana', name: 'Prosperine Arcana', type: 'selectionEntryGroup', targetId: 'missing' },
         ],
@@ -205,6 +220,8 @@ const legion: BsCatalogueFile = {
       { id: 'link-squad', name: 'TSS', type: 'selectionEntry', targetId: 'u-squad', categoryLinks: [{ id: 'x3', name: 'Troops', targetId: 'cat-troops', primary: true }] },
       { id: 'link-cent', name: 'Centurion', type: 'selectionEntry', targetId: 'u-centurion', categoryLinks: [{ id: 'x4', name: 'Command', targetId: 'cmd', primary: true }] },
       { id: 'link-grav', name: 'Grav-Tank', type: 'selectionEntry', targetId: 'u-grav', categoryLinks: [{ id: 'x5', name: 'Armour', targetId: 'arm', primary: true }] },
+      // A Retinue unit, so the detachment's raisable Retinue slot is one a unit can fill
+      { id: 'link-retinue', name: 'Command Squad', type: 'selectionEntry', targetId: 'u-primarch', categoryLinks: [{ id: 'x6', name: 'Retinue', targetId: 'ret', primary: true }] },
     ],
   },
 };
@@ -215,7 +232,45 @@ const mech: BsCatalogueFile = {
     name: 'Mechanicum',
     revision: 26,
     sharedSelectionEntries: [
-      { id: 'u-krios', name: 'Krios Battle Tank', type: 'unit', costs: pts(135), selectionEntries: [{ id: 'm-krios', name: 'Krios', type: 'model', constraints: [min(1), max(1)] }] },
+      {
+        id: 'u-krios',
+        name: 'Krios Battle Tank',
+        type: 'unit',
+        costs: pts(135),
+        selectionEntries: [
+          { id: 'm-krios', name: 'Krios', type: 'model', constraints: [min(1), max(1)] },
+          // Mandatory only in a Mechanicum army
+          {
+            id: 'cyb',
+            name: 'Cybernetica',
+            type: 'upgrade',
+            constraints: [{ ...min(1), id: 'cyb-min' }],
+            modifiers: [{
+              type: 'set',
+              field: 'cyb-min',
+              value: 0,
+              conditionGroups: [{
+                type: 'or',
+                conditions: [
+                  { type: 'instanceOf', value: 1, field: 'forces', scope: 'force', childId: 'vagus' },
+                  { type: 'notInstanceOf', value: 1, field: 'selections', scope: 'primary-catalogue', childId: MECH_CAT_ID },
+                ],
+              }],
+            }],
+          },
+        ],
+        // A required choice with no default: the first free option is taken
+        selectionEntryGroups: [{
+          id: 'krios-weapon',
+          name: 'Weapon',
+          constraints: [min(1), max(1)],
+          selectionEntries: [
+            { id: 'w-big', name: 'Big gun', type: 'upgrade', costs: pts(10) },
+            { id: 'w-zeta', name: 'Zeta blade', type: 'upgrade' },
+            { id: 'w-alpha', name: 'alpha rifle', type: 'upgrade' },
+          ],
+        }],
+      },
       { id: 'u-troop', name: 'Infantry Troop', type: 'unit', costs: pts(60) },
     ],
   },
@@ -236,6 +291,17 @@ const skitarii: BsCatalogueFile = {
         type: 'selectionEntry',
         targetId: 'u-krios',
         categoryLinks: [{ id: 's1', name: 'Armour', targetId: 'arm', primary: true }],
+        modifiers: [{ type: 'set', field: 'name', value: 'Skitarii Krios' }],
+        // Choices attached to the link itself (paths don't include the link id)
+        selectionEntryGroups: [{
+          id: 'sk-subfac',
+          name: 'Sub Factions',
+          constraints: [min(1), max(1)],
+          selectionEntries: [
+            { id: 'sf-exp', name: 'Expurgator', type: 'upgrade', sortIndex: 2 },
+            { id: 'sf-acq', name: 'Acquisitor', type: 'upgrade', sortIndex: 1 },
+          ],
+        }],
         modifierGroups: [
           {
             conditions: [{ type: 'instanceOf', value: 1, field: 'forces', scope: 'force', childId: 'vagus' }],
@@ -304,8 +370,16 @@ describe('units', () => {
     const u = unit('emperors-test-legion', 'Tactical Support Squad');
     expect(u.unitWargear?.map((w) => w.name)).toEqual(['Frag grenades', 'Flamer']);
     expect(u.models[0].defaultWargear.map((w) => w.name)).toEqual(['Bolt pistol']);
-    // Shared group default resolved; group links never emitted
-    expect(u.models[1].defaultWargear).toEqual([{ name: 'Force sword', entryId: 'force-sword' }]);
+    // Shared group default resolved (path enters the group link's target); group links never emitted
+    expect(u.models[1].defaultWargear).toEqual([
+      {
+        name: 'Force sword',
+        entryId: 'force-sword',
+        targetId: 'x',
+        path: 'link-squad::leg-force::force-sword::x',
+        groupPath: 'link-squad::leg-force::shared-force-weapons',
+      },
+    ]);
   });
 
   test('leaves force-org detachment choices to the exporter', () => {
@@ -321,11 +395,19 @@ describe('units', () => {
   });
 
   test('resolves units linked from another catalogue', () => {
-    const u = unit('skitarii-conclaves', 'Krios Battle Tank');
+    const u = unit('skitarii-conclaves', 'Skitarii Krios');
     expect(u.entryId).toBe('sk-krios');
     expect(u.points).toBe(135);
     expect(u.source).toBe('skitarii-conclaves');
     expect(u.primaryCategory).toBe('Armour'); // conditional re-file ignored
+  });
+
+  test('fills required choices and settles primary-catalogue constraint modifiers', () => {
+    const u = unit('skitarii-conclaves', 'Skitarii Krios');
+    expect(u.unitWargear?.map((w) => [w.name, w.path, w.groupPath])).toEqual([
+      ['alpha rifle', 'sk-krios::w-alpha', 'sk-krios::krios-weapon'],
+      ['Acquisitor', 'sf-acq', 'sk-subfac'],
+    ]); // no Cybernetica outside a Mechanicum army
   });
 
   test('applies unconditional set-primary modifiers', () => {
@@ -340,20 +422,29 @@ describe('units', () => {
 });
 
 describe('detachments', () => {
-  test('slots only from links with a positive max, without borrowing neighbours', () => {
-    const primary = parse().detachments.core[0];
+  test('slots from links with a positive or raisable max, without borrowing neighbours', () => {
+    const primary = parse().detachments.charts[0].detachments[0];
     expect(primary.slots.map((s) => [s.role, s.min, s.max, s.prime])).toEqual([
       ['Troops', 2, 4, false],
       ['Command - Centurions Only', 0, 2, false],
       ['Prime Troops', 0, 1, true],
+      ['Retinue', 0, 0, false],
+    ]);
+    expect(primary.slots[3].maxModifiers).toEqual([
+      {
+        type: 'increment',
+        field: 'c-ret',
+        value: 1,
+        conditions: [{ type: 'equalTo', scope: 'force', field: 'selections', value: 1, childId: 'lb-retinue' }],
+      },
     ]);
   });
 
   test('faction sources come from instanceOf primary-catalogue conditions', () => {
-    const { core, auxiliary } = parse().detachments;
-    expect(core[0].sources).toEqual(['emperors-test-legion', 'skitarii-conclaves']);
+    const [primary, aux] = parse().detachments.charts[0].detachments;
+    expect(primary.sources).toEqual(['emperors-test-legion', 'skitarii-conclaves']);
     // …including conditions on a modifierGroup
-    expect(auxiliary[0].sources).toEqual(['emperors-test-legion']);
+    expect(aux.sources).toEqual(['emperors-test-legion']);
   });
 
   test('system info', () => {

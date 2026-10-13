@@ -16,11 +16,14 @@ const VALID_ROLES = [
 ];
 
 interface BonusSlotRoleSelectorModalProps {
+  /** Roles offered by the chosen Logistical Benefit (from BSData); defaults to the standard list */
+  roles?: string[];
   onConfirm: (role: string) => void;
   onClose: () => void;
 }
 
 export default function BonusSlotRoleSelectorModal({
+  roles,
   onConfirm,
   onClose,
 }: BonusSlotRoleSelectorModalProps) {
@@ -29,7 +32,7 @@ export default function BonusSlotRoleSelectorModal({
       <ModalHeader title="Logistical Benefit" />
       <ModalBody hasForm>
         <div style={{ display: 'flex', flexDirection: 'column', gap: 4 }}>
-          {VALID_ROLES.map((role) => (
+          {(roles && roles.length > 0 ? roles : VALID_ROLES).map((role) => (
             <button
               key={role}
               onClick={() => onConfirm(role)}

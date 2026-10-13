@@ -11,9 +11,11 @@ interface SlotProps {
   onClear: () => void;
   slotRef?: (el: HTMLDivElement | null) => void;
   isDashed?: boolean;
+  /** Warnings about this slot's unit (shown as a red outline with a tooltip) */
+  warnings?: string[];
 }
 
-export default function Slot({ slotDef, filled, onClick, onClear, slotRef, isDashed }: SlotProps) {
+export default function Slot({ slotDef, filled, onClick, onClear, slotRef, isDashed, warnings = [] }: SlotProps) {
   const isPrime = slotDef.prime;
   const displayRole = getBaseRole(stripPrimePrefix(slotDef.role));
   const isFilled = !!filled;
@@ -35,6 +37,7 @@ export default function Slot({ slotDef, filled, onClick, onClear, slotRef, isDas
       ref={slotRef}
       data-interactive
       onClick={handleClick}
+      title={warnings.length > 0 ? warnings.join('\n') : undefined}
       className="relative flex flex-col items-center transition-all duration-150"
       style={{
         width: isFilled ? 72 : 56,
@@ -43,7 +46,11 @@ export default function Slot({ slotDef, filled, onClick, onClear, slotRef, isDas
         borderRadius: 4,
         background: isFilled ? 'var(--cds-layer-03)' : 'var(--cds-layer-02)',
         border: `${isDashed ? '1px dashed' : '1px solid'} ${
-          isFilled ? 'var(--cds-border-strong-01)' : 'var(--cds-border-subtle-01)'
+          warnings.length > 0
+            ? 'var(--cds-support-error)'
+            : isFilled
+              ? 'var(--cds-border-strong-01)'
+              : 'var(--cds-border-subtle-01)'
         }`,
         opacity: isFilled ? 1 : 0.55,
         cursor: 'pointer',

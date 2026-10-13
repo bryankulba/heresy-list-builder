@@ -1,28 +1,28 @@
 import { create } from 'zustand';
 import { persist, createJSONStorage } from 'zustand/middleware';
 import { v4 as uuidv4 } from 'uuid';
-import type { Allegiance, AppPhase, BonusSlot, DetachmentDef, FilledSlot, PlacedDetachment, PrimeBenefit, SavedList, UnitEntry } from '../types';
-import { detachmentsData } from '../data/loader';
+import type {
+  Allegiance,
+  AppPhase,
+  BonusSlot,
+  DetachmentDef,
+  FilledSlot,
+  Force,
+  PrimeBenefit,
+  RosterSnapshot,
+  UnitEntry,
+} from '../types';
+import {
+  addDetachment,
+  createForce,
+  migrateSnapshot,
+  primaryForce,
+  refreshUnits,
+  removeDetachmentCascade,
+  updateDetachment,
+} from './rosterModel';
 
-// ---------------------------------------------------------------------------
-// Derived helpers
-// ---------------------------------------------------------------------------
-
-export function computeTotalPoints(detachments: PlacedDetachment[]): number {
-  return detachments.reduce((total, det) => {
-    const slotPts = Object.values(det.slots).reduce((sum, fs) => {
-      return sum + (fs ? fs.unit.points + (fs.extraPoints ?? 0) : 0);
-    }, 0);
-    const bonusPts = (det.bonusSlots ?? []).reduce((sum, bs) => {
-      return sum + (bs.unit ? bs.unit.points + (bs.extraPoints ?? 0) : 0);
-    }, 0);
-    return total + slotPts + bonusPts;
-  }, 0);
-}
-
-function makeEmptyPlacedDetachment(def: DetachmentDef, unlockedBy?: string): PlacedDetachment {
-  return { id: uuidv4(), def, slots: {}, unlockedBy };
-}
+export { computeTotalPoints } from './rosterModel';
 
 // ---------------------------------------------------------------------------
 // Store
@@ -30,15 +30,28 @@ function makeEmptyPlacedDetachment(def: DetachmentDef, unlockedBy?: string): Pla
 
 interface RosterStore {
   phase: AppPhase;
-  faction: string;
   allegiance: Allegiance;
   pointsLimit: number;
   cohortDoctrine: string;
-  detachments: PlacedDetachment[];
+  /** Army-wide picks for per-unit choices (sub-faction): group id → option id */
+  armyChoices: Record<string, string>;
+  /** The primary army first, then any allied forces */
+  forces: Force[];
 
-  startBuild: (faction: string, allegiance: Allegiance, pointsLimit: number, cohortDoctrine?: string) => void;
-  loadSave: (saved: Pick<SavedList, 'faction' | 'allegiance' | 'pointsLimit' | 'cohortDoctrine' | 'detachments'>) => void;
-  addDetachment: (def: DetachmentDef, unlockedBy?: string) => void;
+  startBuild: (
+    faction: string,
+    allegiance: Allegiance,
+    pointsLimit: number,
+    cohortDoctrine?: string,
+    armyChoices?: Record<string, string>
+  ) => void;
+  setArmyChoice: (groupId: string, optionId: string) => void;
+  loadSave: (saved: RosterSnapshot) => void;
+  addDetachment: (def: DetachmentDef, opts?: { unlockedBy?: string; forceId?: string }) => void;
+  addAlliedForce: (faction: string) => void;
+  /** Adds a Lord of War Detachment for the primary army (right after it) */
+  addLordOfWar: () => void;
+  removeForce: (forceId: string) => void;
   fillSlot: (detachmentId: string, slotKey: string, unit: UnitEntry, primeBenefit?: PrimeBenefit) => void;
   updateSlotAnnotations: (detachmentId: string, slotKey: string, notes: string, extraPoints: number) => void;
   clearSlot: (detachmentId: string, slotKey: string) => void;
@@ -52,55 +65,67 @@ interface RosterStore {
 
 const INITIAL_STATE = {
   phase: 'start' as AppPhase,
-  faction: 'death-guard',
   allegiance: 'Traitor' as Allegiance,
   pointsLimit: 3000,
   cohortDoctrine: '',
-  detachments: [] as PlacedDetachment[],
+  armyChoices: {} as Record<string, string>,
+  forces: [] as Force[],
 };
+
+/** Faction of the primary army. */
+export function selectPrimaryFaction(s: { forces: Force[] }): string {
+  return primaryForce(s.forces)?.faction ?? '';
+}
 
 export const useRosterStore = create<RosterStore>()(
   persist(
-    (set, get) => ({
+    (set) => ({
       ...INITIAL_STATE,
 
-      startBuild(faction, allegiance, pointsLimit, cohortDoctrine = '') {
-        const primaryDef = detachmentsData.core.find(
-          (d) => d.name === 'Crusade Primary Detachment'
-        );
-        if (!primaryDef) throw new Error('Crusade Primary Detachment not found in data');
-
+      startBuild(faction, allegiance, pointsLimit, cohortDoctrine = '', armyChoices = {}) {
         set({
           phase: 'canvas',
-          faction,
           allegiance,
           pointsLimit,
           cohortDoctrine,
-          detachments: [makeEmptyPlacedDetachment(primaryDef)],
+          armyChoices,
+          forces: [createForce(faction, 'primary')],
         });
       },
 
       loadSave(saved) {
-        set({
-          phase: 'canvas',
-          faction: saved.faction,
-          allegiance: saved.allegiance,
-          pointsLimit: saved.pointsLimit,
-          cohortDoctrine: saved.cohortDoctrine,
-          detachments: saved.detachments,
+        const snapshot = migrateSnapshot(saved);
+        set({ phase: 'canvas', ...snapshot, armyChoices: snapshot.armyChoices ?? {}, forces: refreshUnits(snapshot.forces) });
+      },
+
+      setArmyChoice(groupId, optionId) {
+        set((s) => ({ armyChoices: { ...s.armyChoices, [groupId]: optionId } }));
+      },
+
+      addDetachment(def, opts) {
+        set((s) => ({ forces: addDetachment(s.forces, def, opts) }));
+      },
+
+      addLordOfWar() {
+        set((s) => {
+          const primary = s.forces.find((f) => f.kind === 'primary');
+          if (!primary || s.forces.some((f) => f.kind === 'lordOfWar')) return {};
+          const [first, ...rest] = s.forces;
+          return { forces: [first, createForce(primary.faction, 'lordOfWar'), ...rest] };
         });
       },
 
-      addDetachment(def, unlockedBy) {
-        set((s) => ({
-          detachments: [...s.detachments, makeEmptyPlacedDetachment(def, unlockedBy)],
-        }));
+      addAlliedForce(faction) {
+        set((s) => ({ forces: [...s.forces, createForce(faction, 'allied')] }));
+      },
+
+      removeForce(forceId) {
+        set((s) => ({ forces: s.forces.filter((f) => f.id !== forceId || f.kind === 'primary') }));
       },
 
       fillSlot(detachmentId, slotKey, unit, primeBenefit) {
         set((s) => ({
-          detachments: s.detachments.map((det) => {
-            if (det.id !== detachmentId) return det;
+          forces: updateDetachment(s.forces, detachmentId, (det) => {
             const existing = det.slots[slotKey];
             const filled: FilledSlot = {
               unit,
@@ -115,8 +140,7 @@ export const useRosterStore = create<RosterStore>()(
 
       updateSlotAnnotations(detachmentId, slotKey, notes, extraPoints) {
         set((s) => ({
-          detachments: s.detachments.map((det) => {
-            if (det.id !== detachmentId) return det;
+          forces: updateDetachment(s.forces, detachmentId, (det) => {
             const existing = det.slots[slotKey];
             if (!existing) return det;
             return { ...det, slots: { ...det.slots, [slotKey]: { ...existing, notes, extraPoints } } };
@@ -126,86 +150,54 @@ export const useRosterStore = create<RosterStore>()(
 
       clearSlot(detachmentId, slotKey) {
         set((s) => ({
-          detachments: s.detachments.map((det) => {
-            if (det.id !== detachmentId) return det;
-            return {
-              ...det,
-              slots: { ...det.slots, [slotKey]: null },
-              // cascade-remove any bonus slots that were created by this prime slot
-              bonusSlots: (det.bonusSlots ?? []).filter((b) => b.sourceSlotKey !== slotKey),
-            };
-          }),
+          forces: updateDetachment(s.forces, detachmentId, (det) => ({
+            ...det,
+            slots: { ...det.slots, [slotKey]: null },
+            // cascade-remove any bonus slots that were created by this prime slot
+            bonusSlots: (det.bonusSlots ?? []).filter((b) => b.sourceSlotKey !== slotKey),
+          })),
         }));
       },
 
       addBonusSlot(detachmentId, sourceSlotKey, role) {
         const newSlot: BonusSlot = { id: uuidv4(), sourceSlotKey, role, unit: null };
         set((s) => ({
-          detachments: s.detachments.map((det) => {
-            if (det.id !== detachmentId) return det;
-            return { ...det, bonusSlots: [...(det.bonusSlots ?? []), newSlot] };
-          }),
+          forces: updateDetachment(s.forces, detachmentId, (det) => ({
+            ...det,
+            bonusSlots: [...(det.bonusSlots ?? []), newSlot],
+          })),
         }));
       },
 
       fillBonusSlot(detachmentId, bonusSlotId, unit) {
         set((s) => ({
-          detachments: s.detachments.map((det) => {
-            if (det.id !== detachmentId) return det;
-            return {
-              ...det,
-              bonusSlots: (det.bonusSlots ?? []).map((b) =>
-                b.id === bonusSlotId ? { ...b, unit } : b
-              ),
-            };
-          }),
+          forces: updateDetachment(s.forces, detachmentId, (det) => ({
+            ...det,
+            bonusSlots: (det.bonusSlots ?? []).map((b) => (b.id === bonusSlotId ? { ...b, unit } : b)),
+          })),
         }));
       },
 
       clearBonusSlot(detachmentId, bonusSlotId) {
         set((s) => ({
-          detachments: s.detachments.map((det) => {
-            if (det.id !== detachmentId) return det;
-            return {
-              ...det,
-              bonusSlots: (det.bonusSlots ?? []).map((b) =>
-                b.id === bonusSlotId ? { ...b, unit: null } : b
-              ),
-            };
-          }),
+          forces: updateDetachment(s.forces, detachmentId, (det) => ({
+            ...det,
+            bonusSlots: (det.bonusSlots ?? []).map((b) => (b.id === bonusSlotId ? { ...b, unit: null } : b)),
+          })),
         }));
       },
 
       clearBonusSlotsForSlot(detachmentId, slotKey) {
         set((s) => ({
-          detachments: s.detachments.map((det) => {
-            if (det.id !== detachmentId) return det;
-            return {
-              ...det,
-              bonusSlots: (det.bonusSlots ?? []).filter((b) => b.sourceSlotKey !== slotKey),
-            };
-          }),
+          forces: updateDetachment(s.forces, detachmentId, (det) => ({
+            ...det,
+            bonusSlots: (det.bonusSlots ?? []).filter((b) => b.sourceSlotKey !== slotKey),
+          })),
         }));
       },
 
       removeDetachment(id) {
-        // Cascade: also remove any detachment unlocked by a slot on the removed detachment
-        const allDets = get().detachments;
-        const idsToRemove = new Set<string>();
-
-        function collectCascade(removedId: string) {
-          idsToRemove.add(removedId);
-          for (const det of allDets) {
-            if (det.unlockedBy?.startsWith(`${removedId}::`) && !idsToRemove.has(det.id)) {
-              collectCascade(det.id);
-            }
-          }
-        }
-
-        collectCascade(id);
-        set((s) => ({
-          detachments: s.detachments.filter((d) => !idsToRemove.has(d.id)),
-        }));
+        set((s) => ({ forces: removeDetachmentCascade(s.forces, id) }));
       },
 
       reset() {
@@ -214,15 +206,28 @@ export const useRosterStore = create<RosterStore>()(
     }),
     {
       name: 'heresy-builder:session',
+      version: 2,
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         phase: state.phase,
-        faction: state.faction,
         allegiance: state.allegiance,
         pointsLimit: state.pointsLimit,
         cohortDoctrine: state.cohortDoctrine,
-        detachments: state.detachments,
+        armyChoices: state.armyChoices,
+        forces: state.forces,
       }),
+      // v1 persisted { faction, detachments }; v2 persists { forces }
+      migrate: (persisted, version) => {
+        const p = persisted as { phase?: AppPhase };
+        if (version >= 2) return persisted as RosterStore;
+        return { phase: p.phase ?? 'start', ...migrateSnapshot(persisted) } as unknown as RosterStore;
+      },
+      // Refresh unit snapshots from the current data on every load
+      merge: (persisted, current) => {
+        const p = (persisted ?? {}) as Partial<RosterStore>;
+        const forces = refreshUnits(p.forces ?? []);
+        return { ...current, ...p, forces, phase: forces.length > 0 ? p.phase ?? 'start' : 'start' };
+      },
     }
   )
 );

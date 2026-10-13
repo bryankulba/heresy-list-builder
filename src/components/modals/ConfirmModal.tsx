@@ -20,7 +20,7 @@ export default function ConfirmModal({ message, onConfirm, onClose, primaryButto
       onRequestClose={onClose}
       size="xs"
     >
-      <p style={{ color: 'var(--cds-text-primary)', fontSize: 14 }}>{message}</p>
+      <p style={{ color: 'var(--cds-text-primary)', fontSize: 14, whiteSpace: 'pre-line' }}>{message}</p>
     </Modal>
   );
 }

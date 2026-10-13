@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { Button, NumberInput, Select, SelectItem } from '@carbon/react';
+import { Button, NumberInput, Select, SelectItem, SelectItemGroup } from '@carbon/react';
 import type { Allegiance } from '../types';
 import { useRosterStore } from '../store/rosterStore';
-import { FACTIONS, FACTION_LABEL_MAP } from '../data/factions';
+import { FACTIONS, FACTION_GROUPS, factionLabel } from '../data/factions';
 import { COHORT_DOCTRINES } from '../constants/cohortDoctrines';
-import { getAllSaves } from '../utils/savedLists';
+import { armyChoiceGroups, armyChoiceLabel, defaultArmyChoices } from '../rules/armyChoices';
 import SavedListsModal from './modals/SavedListsModal';
 
 export default function StartScreen() {
@@ -14,17 +14,19 @@ export default function StartScreen() {
   const [allegiance, setAllegiance] = useState<Allegiance>('Loyalist');
   const [pointsLimit, setPointsLimit] = useState(3000);
   const [cohortDoctrine, setCohortDoctrine] = useState('');
+  const [armyChoices, setArmyChoices] = useState(() => defaultArmyChoices(FACTIONS[0].id));
+  const choiceGroups = armyChoiceGroups(faction);
   const [showSavedLists, setShowSavedLists] = useState(false);
-  const [hasSaves] = useState(() => getAllSaves().length > 0);
 
   function handleFactionChange(e: React.ChangeEvent<HTMLSelectElement>) {
     const next = e.target.value;
     setFaction(next);
     if (next !== 'solar-auxilia') setCohortDoctrine('');
+    setArmyChoices(defaultArmyChoices(next));
   }
 
   function handleStart() {
-    startBuild(faction, allegiance, pointsLimit, cohortDoctrine);
+    startBuild(faction, allegiance, pointsLimit, cohortDoctrine, armyChoices);
   }
 
   return (
@@ -53,12 +55,16 @@ export default function StartScreen() {
         <div className="mb-6">
           <Select
             id="faction-select"
-            labelText="Legion"
+            labelText="Army"
             value={faction}
             onChange={handleFactionChange}
           >
-            {FACTIONS.map((f) => (
-              <SelectItem key={f.id} value={f.id} text={f.label} />
+            {FACTION_GROUPS.map((group) => (
+              <SelectItemGroup key={group} label={group}>
+                {FACTIONS.filter((f) => f.group === group).map((f) => (
+                  <SelectItem key={f.id} value={f.id} text={f.label} />
+                ))}
+              </SelectItemGroup>
             ))}
           </Select>
         </div>
@@ -110,6 +116,25 @@ export default function StartScreen() {
           </div>
         )}
 
+        {/* Army-wide picks for per-unit choices (Skitarii / Mechanicum sub-faction) */}
+        {choiceGroups.map((g) => (
+          <div className="mb-6" key={g.id}>
+            <Select
+              id={`army-choice-${g.id}`}
+              labelText={armyChoiceLabel(g)}
+              helperText="Applied to every unit that takes one"
+              value={armyChoices[g.id] ?? ''}
+              onChange={(e: React.ChangeEvent<HTMLSelectElement>) =>
+                setArmyChoices((c) => ({ ...c, [g.id]: e.target.value }))
+              }
+            >
+              {g.options.map((o) => (
+                <SelectItem key={o.id} value={o.id} text={o.name} />
+              ))}
+            </Select>
+          </div>
+        ))}
+
         {/* Points Limit */}
         <div className="mb-8">
           <NumberInput
@@ -138,17 +163,15 @@ export default function StartScreen() {
           Build Army
         </Button>
 
-        {/* Load saved list */}
-        {hasSaves && (
-          <Button
-            kind="ghost"
-            size="md"
-            onClick={() => setShowSavedLists(true)}
-            style={{ width: '100%', marginTop: 12 }}
-          >
-            Load a Saved List...
-          </Button>
-        )}
+        {/* Load a saved list or import a .ros */}
+        <Button
+          kind="ghost"
+          size="md"
+          onClick={() => setShowSavedLists(true)}
+          style={{ width: '100%', marginTop: 12 }}
+        >
+          Saved Lists &amp; Import…
+        </Button>
 
         {/* Footer */}
         <p
@@ -156,8 +179,8 @@ export default function StartScreen() {
           style={{ color: 'var(--cds-text-placeholder)' }}
         >
           {faction && allegiance
-            ? `${FACTION_LABEL_MAP[faction] ?? faction} · ${allegiance} · ${pointsLimit}pts`
-            : 'Select a legion to continue'}
+            ? `${factionLabel(faction)} · ${allegiance} · ${pointsLimit}pts`
+            : 'Select an army to continue'}
         </p>
       </div>
 

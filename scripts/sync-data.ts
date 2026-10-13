@@ -139,7 +139,7 @@ async function main(): Promise<void> {
   const { gameSystem, catalogues, source } = readRaw();
 
   console.log('\n=== Parsing ===');
-  const { units, detachments, system, catalogues: catalogueInfo, warnings } = parseAll({
+  const { units, detachments, system, catalogues: catalogueInfo, rules, warnings } = parseAll({
     gameSystem,
     catalogues,
     unitFactions: UNIT_FACTIONS,
@@ -154,6 +154,7 @@ async function main(): Promise<void> {
     bsdataCommitDate: source.commitDate,
   });
   writeJson('catalogues.json', catalogueInfo);
+  writeJson('rules.json', rules);
 
   console.log('\n=== Summary ===');
   console.log(`BSData ${source.repo}@${source.commit.slice(0, 7)} (${source.commitDate})`);
@@ -162,9 +163,9 @@ async function main(): Promise<void> {
     const cat = catalogueInfo[key];
     console.log(`  ${key.padEnd(22)} ${String(list.length).padStart(4)} units   (${cat.catalogueName} rev ${cat.revision})`);
   }
-  console.log(
-    `Detachments: ${detachments.core.length} core, ${detachments.auxiliary.length} auxiliary, ${detachments.apex.length} apex`
-  );
+  for (const chart of detachments.charts) {
+    console.log(`Chart: ${chart.name} — ${chart.detachments.length} detachments`);
+  }
 
   if (warnings.length > 0) {
     console.warn(`\nWarnings (${warnings.length}) — units needing manual review:`);

@@ -1,17 +1,10 @@
 import { v4 as uuidv4 } from 'uuid';
-import { SavedList, PlacedDetachment, Allegiance } from '../types';
+import type { RosterSnapshot, SavedList } from '../types';
 import { ROSTER_SCHEMA_VERSION } from '../constants/schemaVersion';
+import { migrateSnapshot } from '../store/rosterModel';
 
 const SAVES_KEY = 'heresy-builder:saves';
 export const SAVE_LIMIT = 10;
-
-type RosterSnapshot = {
-  faction: string;
-  allegiance: Allegiance;
-  pointsLimit: number;
-  cohortDoctrine: string;
-  detachments: PlacedDetachment[];
-};
 
 function readAll(): Record<string, SavedList> {
   try {
@@ -31,9 +24,18 @@ function writeAll(saves: Record<string, SavedList>): void {
   }
 }
 
+/** All saves, newest first, upgraded to the current roster shape. */
 export function getAllSaves(): SavedList[] {
   const all = readAll();
-  return Object.values(all).sort((a, b) => b.savedAt - a.savedAt);
+  return Object.values(all)
+    .map((raw): SavedList => ({
+      id: raw.id,
+      name: raw.name,
+      savedAt: raw.savedAt,
+      schemaVersion: ROSTER_SCHEMA_VERSION,
+      ...migrateSnapshot(raw),
+    }))
+    .sort((a, b) => b.savedAt - a.savedAt);
 }
 
 export function saveList(snapshot: RosterSnapshot, name: string): SavedList {
@@ -43,7 +45,11 @@ export function saveList(snapshot: RosterSnapshot, name: string): SavedList {
     name,
     savedAt: Date.now(),
     schemaVersion: ROSTER_SCHEMA_VERSION,
-    ...snapshot,
+    allegiance: snapshot.allegiance,
+    pointsLimit: snapshot.pointsLimit,
+    cohortDoctrine: snapshot.cohortDoctrine,
+    armyChoices: snapshot.armyChoices ?? {},
+    forces: snapshot.forces,
   };
   saves[entry.id] = entry;
   writeAll(saves);

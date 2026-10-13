@@ -1,59 +1,21 @@
 import React from 'react';
 import { Tag } from '@carbon/react';
+import { Close, WarningAltFilled } from '@carbon/icons-react';
 import type { BonusSlot, FilledSlot, PlacedDetachment, SlotDef } from '../../types';
-import { getDetachmentDisplayName, getBaseRole, stripPrimePrefix } from '../../data/loader';
+import { getDetachmentDisplayName } from '../../data/loader';
+import { cardSlots, groupByRole } from './slotLayout';
+
+export { cardSlots, estimateCardHeight, expandSlots, groupByRole } from './slotLayout';
 import Slot from './Slot';
-
-interface ExpandedSlot {
-  key: string;
-  slotDef: SlotDef;
-}
-
-export function expandSlots(def: PlacedDetachment['def']): ExpandedSlot[] {
-  // Drop qualifier slots (e.g. "Command - Centurions Only") only when a parent
-  // slot with the base role exists in the same detachment. Qualifier slots that
-  // ARE the primary slot (e.g. Solar Auxilia "Troops - Lasrifle Section Units only")
-  // are kept because no parent "Troops" slot exists alongside them.
-  const relevant = def.slots.filter(s => {
-    if (!s.role.includes(' - ')) return true;
-    const baseRole = s.role.split(' - ')[0];
-    return !def.slots.some(other => other.role === baseRole);
-  });
-
-  const primeSlots = relevant.filter(s => s.prime);
-  const regularSlots = relevant.filter(s => !s.prime);
-
-  const result: ExpandedSlot[] = [];
-
-  // Iterate regular slots in BSData order to preserve role group ordering.
-  // Within each role: prime slot(s) first, then remaining regular slots.
-  for (const regular of regularSlots) {
-    // For qualifier slots (e.g. "Troops - Lasrifle Section Units only"), match
-    // prime slots against the base role ("Troops") so "Prime Troops" pairs correctly.
-    const regularBase = regular.role.includes(' - ') ? regular.role.split(' - ')[0] : regular.role;
-    const prime = primeSlots.find(p => p.role.replace(/^Prime /, '') === regularBase);
-    const primeCount = prime?.max ?? 0;
-
-    if (prime) {
-      for (let i = 0; i < prime.max; i++) {
-        result.push({ key: `${prime.role}-${i}`, slotDef: prime });
-      }
-    }
-
-    const remaining = regular.max - primeCount;
-    for (let i = 0; i < remaining; i++) {
-      result.push({ key: `${regular.role}-${primeCount + i}`, slotDef: regular });
-    }
-  }
-
-  return result;
-}
 
 function detachmentTagType(type: string): string {
   switch (type) {
     case 'core': return 'blue';
     case 'auxiliary': return 'teal';
     case 'apex': return 'purple';
+    case 'allied': return 'cyan';
+    case 'additional': return 'teal';
+    case 'lordOfWar': return 'magenta';
     default: return 'gray';
   }
 }
@@ -63,33 +25,22 @@ function detachmentTypeLabel(type: string): string {
     case 'core': return 'Core';
     case 'auxiliary': return 'Auxiliary';
     case 'apex': return 'Apex';
+    case 'allied': return 'Allied';
+    case 'additional': return 'Additional';
+    case 'lordOfWar': return 'Lord of War';
     default: return type;
   }
-}
-
-interface SlotGroup {
-  displayRole: string;
-  slots: ExpandedSlot[];
-}
-
-export function groupByRole(expanded: ExpandedSlot[]): SlotGroup[] {
-  const groups: SlotGroup[] = [];
-  const seen = new Map<string, SlotGroup>();
-  for (const es of expanded) {
-    const displayRole = getBaseRole(stripPrimePrefix(es.slotDef.role));
-    if (!seen.has(displayRole)) {
-      const group: SlotGroup = { displayRole, slots: [] };
-      groups.push(group);
-      seen.set(displayRole, group);
-    }
-    seen.get(displayRole)!.slots.push(es);
-  }
-  return groups;
 }
 
 interface DetachmentCardProps {
   detachment: PlacedDetachment;
   instanceNumber?: number; // set when >1 of the same name exists
+  /** Label of the allied faction, when this card belongs to an allied army */
+  allyFaction?: string;
+  /** When set, the card shows a remove button */
+  onRemove?: () => void;
+  /** Roster warnings about this detachment (a badge on the card; slot warnings outline their slot) */
+  warnings?: Array<{ message: string; slotKey?: string }>;
   onSlotClick: (slotKey: string, slotDef: SlotDef) => void;
   onSlotClear: (slotKey: string) => void;
   onBonusSlotClick: (bonusSlotId: string, role: string) => void;
@@ -101,6 +52,9 @@ interface DetachmentCardProps {
 export default function DetachmentCard({
   detachment,
   instanceNumber,
+  allyFaction,
+  onRemove,
+  warnings = [],
   onSlotClick,
   onSlotClear,
   onBonusSlotClick,
@@ -110,12 +64,13 @@ export default function DetachmentCard({
 }: DetachmentCardProps) {
   const displayName = getDetachmentDisplayName(detachment.def.name);
   const title = instanceNumber != null ? `${displayName} #${instanceNumber}` : displayName;
-  const expanded = expandSlots(detachment.def);
-  const groups = groupByRole(expanded);
+  const groups = groupByRole(cardSlots(detachment));
   const tagType = detachmentTagType(detachment.def.type) as
     | 'blue'
     | 'teal'
     | 'purple'
+    | 'cyan'
+    | 'magenta'
     | 'gray';
 
   // Points on this card
@@ -151,15 +106,47 @@ export default function DetachmentCard({
           <Tag type={tagType} size="sm">
             {detachmentTypeLabel(detachment.def.type)}
           </Tag>
+          {allyFaction && detachment.def.type !== 'allied' && (
+            <Tag type="cyan" size="sm">
+              {allyFaction}
+            </Tag>
+          )}
         </div>
-        {cardPoints > 0 && (
-          <span
-            className="text-xs shrink-0"
-            style={{ color: 'var(--cds-text-secondary)' }}
-          >
-            {cardPoints}pts
-          </span>
-        )}
+        <div className="flex items-center gap-2 shrink-0">
+          {warnings.length > 0 && (
+            <span
+              title={warnings.map((w) => w.message).join('\n')}
+              aria-label={`${warnings.length} warning${warnings.length > 1 ? 's' : ''}`}
+              style={{ display: 'flex', alignItems: 'center', gap: 2, color: 'var(--cds-support-error)', fontSize: 12 }}
+            >
+              <WarningAltFilled size={16} />
+              {warnings.length > 1 && warnings.length}
+            </span>
+          )}
+          {cardPoints > 0 && (
+            <span className="text-xs" style={{ color: 'var(--cds-text-secondary)' }}>
+              {cardPoints}pts
+            </span>
+          )}
+          {onRemove && (
+            <button
+              data-interactive
+              onClick={onRemove}
+              aria-label={`Remove ${title}`}
+              title="Remove detachment"
+              style={{
+                background: 'none',
+                border: 'none',
+                padding: 2,
+                cursor: 'pointer',
+                color: 'var(--cds-icon-secondary)',
+                display: 'flex',
+              }}
+            >
+              <Close size={16} />
+            </button>
+          )}
+        </div>
       </div>
 
       {/* Slot rows grouped by role */}
@@ -191,6 +178,7 @@ export default function DetachmentCard({
                   onClick={() => onSlotClick(key, slotDef)}
                   onClear={() => onSlotClear(key)}
                   slotRef={slotRefCallback ? slotRefCallback(key) : undefined}
+                  warnings={warnings.filter((w) => w.slotKey === key).map((w) => w.message)}
                 />
               ))}
             </div>
