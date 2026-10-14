@@ -4,6 +4,7 @@ import { useRosterStore } from './store/rosterStore';
 import StartScreen from './components/StartScreen';
 import Canvas from './components/canvas/Canvas';
 import { useDrawerSwipe } from './components/ui/useDrawerSwipe';
+import UpdatePrompt from './components/ui/UpdatePrompt';
 
 export default function App() {
   const phase = useRosterStore((s) => s.phase);
@@ -26,6 +27,8 @@ export default function App() {
       ) : (
         <div style={{ minHeight: '100vh', background: 'var(--cds-background)' }} aria-busy="true" />
       )}
+      {/* Offline-ready notice and update prompt (service worker) */}
+      <UpdatePrompt />
     </Theme>
   );
 }
