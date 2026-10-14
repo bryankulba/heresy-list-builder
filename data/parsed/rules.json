@@ -13416,12 +13416,18 @@
         {
           "id": "6a01-072d-5f2a-deed",
           "name": "Archimandrite",
-          "path": "6a01-072d-5f2a-deed"
+          "path": "6a01-072d-5f2a-deed",
+          "counts": [
+            "3252-003d-1181-0f99"
+          ]
         },
         {
           "id": "403d-7806-215e-7676",
           "name": "Cybernetica",
           "path": "403d-7806-215e-7676",
+          "counts": [
+            "df10-4634-c1aa-f6e0"
+          ],
           "modifiers": [
             {
               "type": "set",
@@ -13475,12 +13481,18 @@
         {
           "id": "0d7c-dc0a-3942-b4eb",
           "name": "Lacrymaerta",
-          "path": "0d7c-dc0a-3942-b4eb"
+          "path": "0d7c-dc0a-3942-b4eb",
+          "counts": [
+            "8268-aa48-f4dc-0506"
+          ]
         },
         {
           "id": "67af-3519-2c95-6da0",
           "name": "Macrotek",
           "path": "67af-3519-2c95-6da0",
+          "counts": [
+            "1ec3-1433-658a-f04e"
+          ],
           "modifiers": [
             {
               "type": "set",
@@ -13501,17 +13513,26 @@
         {
           "id": "7560-ba42-5273-27fd",
           "name": "Malagra",
-          "path": "7560-ba42-5273-27fd"
+          "path": "7560-ba42-5273-27fd",
+          "counts": [
+            "eba5-3e47-aa06-65fe"
+          ]
         },
         {
           "id": "20af-27a5-9296-e90f",
           "name": "Myrmidax",
-          "path": "20af-27a5-9296-e90f"
+          "path": "20af-27a5-9296-e90f",
+          "counts": [
+            "9e7d-913d-86f0-e05e"
+          ]
         },
         {
           "id": "3f59-64f9-43da-d43e",
           "name": "Reductor",
           "path": "3f59-64f9-43da-d43e",
+          "counts": [
+            "e76a-e22d-9fc4-dc1f"
+          ],
           "modifiers": [
             {
               "type": "set",
@@ -13538,17 +13559,26 @@
         {
           "id": "637f-8850-f6f5-6f6a",
           "name": "Acquisitor",
-          "path": "637f-8850-f6f5-6f6a"
+          "path": "637f-8850-f6f5-6f6a",
+          "counts": [
+            "1ebf-72a3-b0b3-4944"
+          ]
         },
         {
           "id": "ac1d-bf09-c84a-fce3",
           "name": "Expurgator",
-          "path": "ac1d-bf09-c84a-fce3"
+          "path": "ac1d-bf09-c84a-fce3",
+          "counts": [
+            "ac12-7d1f-98e4-2b58"
+          ]
         },
         {
           "id": "70fa-cb14-19c6-a11d",
           "name": "Vindictor",
           "path": "70fa-cb14-19c6-a11d",
+          "counts": [
+            "b2d5-2df6-b213-989b"
+          ],
           "modifiers": [
             {
               "type": "set",
@@ -13570,6 +13600,9 @@
           "id": "979d-4792-94a6-d6b8",
           "name": "Scourger",
           "path": "979d-4792-94a6-d6b8",
+          "counts": [
+            "b819-ac22-c04b-0932"
+          ],
           "modifiers": [
             {
               "type": "set",

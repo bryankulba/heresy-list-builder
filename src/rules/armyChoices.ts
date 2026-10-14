@@ -6,7 +6,7 @@
  * it to every unit carrying that group.
  */
 
-import type { UnitEntry, WargearEntry } from '../types';
+import type { PlacedDetachment, UnitEntry, WargearEntry } from '../types';
 import { cataloguesData, factionUnitsLoaded, getUnitsForFaction, rulesData, type ArmyChoiceGroup } from '../data/loader';
 import { effectiveHidden, type RuleContext } from './evaluate';
 
@@ -84,4 +84,50 @@ export function rosterArmyChoiceGroups(factions: string[]): Array<{ id: string }
 /** Default picks for an army: each group's first visible option (what the export would use anyway). */
 export function defaultArmyChoices(faction: string): ArmyChoices {
   return Object.fromEntries(armyChoiceGroups(faction).flatMap((g) => (g.options[0] ? [[g.id, g.options[0].id]] : [])));
+}
+
+/** The army-wide choice groups a unit carries (it has a default from them). */
+function groupsCarried(unit: UnitEntry): Set<string> {
+  const out = new Set<string>();
+  const visit = (ws: WargearEntry[] | undefined) => {
+    for (const w of ws ?? []) {
+      const g = groupOf(w);
+      if (g && rulesData.armyChoices[g]) out.add(g);
+      visit(w.children);
+    }
+  };
+  visit(unit.unitWargear);
+  const models = (ms: UnitEntry['models']) => ms.forEach((m) => (visit(m.defaultWargear), models(m.models ?? [])));
+  models(unit.models);
+  return out;
+}
+
+/**
+ * The picks in force in one detachment. BSData allows one Mechanicum Trait per
+ * detachment, and units with a fixed Trait (Tech-Thralls: Lacrymaerta) decide
+ * it: where all of a detachment's fixed-Trait units agree, the units choosing
+ * a Trait take that one; otherwise the army's pick stands.
+ */
+export function detachmentChoices(det: PlacedDetachment, choices: ArmyChoices | undefined): ArmyChoices {
+  const out: ArmyChoices = { ...choices };
+  const units = Object.values(det.slots).flatMap((fs) => (fs ? [fs.unit] : []));
+  for (const [groupId, group] of Object.entries(rulesData.armyChoices)) {
+    if (!units.some((u) => groupsCarried(u).has(groupId))) continue;
+    const fixed = new Set(
+      units
+        .filter((u) => !groupsCarried(u).has(groupId))
+        .flatMap((u) => group.options.filter((o) => (o.counts ?? []).some((id) => (u.facts?.[id] ?? 0) > 0)).map((o) => o.id))
+    );
+    if (fixed.size === 1) out[groupId] = [...fixed][0];
+  }
+  return out;
+}
+
+/** What a unit's army-wide choices put in the roster (the chosen option and its category), for rule counts. */
+export function unitChoiceIds(unit: UnitEntry, choices: ArmyChoices): string[] {
+  return [...groupsCarried(unit)].flatMap((groupId) => {
+    const group = rulesData.armyChoices[groupId];
+    const option = group.options.find((o) => o.id === choices[groupId]) ?? group.options.find((o) => !o.hidden) ?? group.options[0];
+    return option ? [option.id, ...(option.counts ?? [])] : [];
+  });
 }

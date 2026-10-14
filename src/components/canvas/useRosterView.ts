@@ -19,13 +19,14 @@ export function useRosterView() {
   const pointsLimit = useRosterStore((s) => s.pointsLimit);
   const cohortDoctrine = useRosterStore((s) => s.cohortDoctrine);
   const configChoices = useRosterStore((s) => s.configChoices);
+  const armyChoices = useRosterStore((s) => s.armyChoices);
 
   // Memoized: the connector-line layout effect depends on this array's identity
   const detachments = useMemo(() => allDetachments(forces), [forces]);
   // What the army's configuration contributes to every BSData rule check
   const rosterOpts = useMemo(
-    () => ({ allegiance, pointsLimit, cohortDoctrine, configChoices }),
-    [allegiance, pointsLimit, cohortDoctrine, configChoices]
+    () => ({ allegiance, pointsLimit, cohortDoctrine, configChoices, armyChoices }),
+    [allegiance, pointsLimit, cohortDoctrine, configChoices, armyChoices]
   );
   const counts = useMemo(() => rosterCounts(forces, rosterOpts), [forces, rosterOpts]);
   // Detachments as shown: slot counts evaluated from their contents, without

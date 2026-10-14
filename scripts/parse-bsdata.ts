@@ -366,7 +366,15 @@ export interface ArmyChoiceGroup {
   name: string;
   /** Catalogue key the group belongs to (an army is offered its own catalogues' choices) */
   catalogue?: string;
-  options: Array<{ id: string; name: string; path: string; hidden?: boolean; modifiers?: RuleModifier[] }>;
+  options: Array<{
+    id: string;
+    name: string;
+    path: string;
+    /** What choosing it puts in the roster besides its id: its target and categories (a Mechanicum Trait's category) */
+    counts?: string[];
+    hidden?: boolean;
+    modifiers?: RuleModifier[];
+  }>;
 }
 
 export interface DetachmentSlot {
@@ -1452,9 +1460,13 @@ function usedGroupIds(units: UnitEntry[]): Set<string> {
 function extractArmyChoices(
   units: UnitEntry[],
   index: SharedIndex,
-  catalogueOf: Map<string, string>
+  catalogueOf: Map<string, string>,
+  categoryNames: Map<string, string>
 ): Record<string, ArmyChoiceGroup> {
   const out: Record<string, ArmyChoiceGroup> = {};
+  // A unit taking a Mechanicum Trait gains the category of the same name (its
+  // modifiers add it when the upgrade is selected) — BSData's Trait rules count those
+  const categoryByName = new Map([...categoryNames].map(([id, name]) => [name.trim(), id]));
   for (const id of usedGroupIds(units)) {
     const group = index.get(id);
     if (!group || !ARMY_CHOICE_GROUP_NAME.test(group.name)) continue;
@@ -1464,10 +1476,18 @@ function extractArmyChoices(
       ...(catalogueOf.has(id) ? { catalogue: catalogueOf.get(id) } : {}),
       options: members.map((m) => {
         const mods = hiddenModifiers(allModifiers(m.entry));
+        const target = m.entry.targetId ? index.get(m.entry.targetId) : undefined;
+        const sameName = categoryByName.get(m.entry.name.trim());
+        const counts = [
+          ...(target ? [target.id] : []),
+          ...[...(m.entry.categoryLinks ?? []), ...(target?.categoryLinks ?? [])].map((c) => c.targetId),
+          ...(sameName ? [sameName] : []),
+        ];
         return {
           id: m.entry.id,
           name: m.entry.name,
           path: join(memberPath(m)),
+          ...(counts.length > 0 ? { counts } : {}),
           ...(m.entry.hidden ? { hidden: true } : {}),
           ...(mods.length > 0 ? { modifiers: mods } : {}),
         };
@@ -1862,7 +1882,8 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
           catalogues.flatMap((c) =>
             (c.catalogue.sharedSelectionEntryGroups ?? []).map((g) => [g.id, factionKeyForCatalogue(c.catalogue.name)] as const)
           )
-        )
+        ),
+        categoryNames
       ),
       armyConfig: {
         'game-system': extractArmyConfig(gst, index, categoryNames),

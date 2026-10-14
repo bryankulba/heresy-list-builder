@@ -33,6 +33,8 @@ export interface ValidationInput {
   /** BSData choice name ("Cohort Doctrine: …") */
   cohortDoctrine?: string;
   configChoices?: Record<string, string>;
+  /** Army-wide picks (sub-faction / Mechanicum Trait) */
+  armyChoices?: Record<string, string>;
 }
 
 const POINTS_TYPE_ID = '9893-c379-920b-8982';
@@ -219,8 +221,8 @@ function detachmentErrorWarnings(forces: Force[], counts: RosterCounts): RosterW
 }
 
 export function validateRoster(input: ValidationInput): RosterWarning[] {
-  const { forces, allegiance, pointsLimit, cohortDoctrine, configChoices } = input;
-  const counts = rosterCounts(forces, { allegiance, pointsLimit, cohortDoctrine, configChoices });
+  const { forces, allegiance, pointsLimit, cohortDoctrine, configChoices, armyChoices } = input;
+  const counts = rosterCounts(forces, { allegiance, pointsLimit, cohortDoctrine, configChoices, armyChoices });
   const view = withEffectiveSlots(forces, counts);
   return [
     ...pointsWarnings(input),

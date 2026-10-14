@@ -3,7 +3,8 @@
  * (sample_exports/export_errors.md).
  */
 import { describe, test, expect } from 'vitest';
-import { getDetachmentsForFaction, getUnitsForFaction } from '../data/loader';
+import { getDetachmentsForFaction, getUnitsForFaction, rulesData } from '../data/loader';
+import { defaultArmyChoices, detachmentChoices } from '../rules/armyChoices';
 import { addDetachment, createForce, updateDetachment, modelKey } from '../store/rosterModel';
 import { buildRosXml } from './buildRos';
 import { benefitLimitReached, getPrimeOptions } from '../rules/primeBenefits';
@@ -85,5 +86,29 @@ describe("BSData's detachment errors", () => {
     }));
     const warnings = validateRoster({ forces, allegiance: 'Traitor', pointsLimit: 3000 });
     expect(warnings.some((w) => /Multiple Mechanicum Traits/.test(w.message))).toBe(true);
+  });
+});
+
+describe('Mechanicum Traits follow the detachment', () => {
+  test("units choosing a Trait take the one the detachment's fixed-Trait units have", () => {
+    const priest = unit('mechanicum', 'Tech-Priest');
+    const thralls = unit('mechanicum', 'Tech-Thrall Covenant');
+    const base = createForce('mechanicum', 'primary');
+    const tactical = getDetachmentsForFaction('auxiliary', 'mechanicum').find((d) => d.name === 'Auxiliary - Tactical Support')!;
+    const added = addDetachment([base], tactical, { forceId: base.id });
+    const det = added[0].detachments[1];
+    const forces = updateDetachment(added, det.id, (d) => ({
+      ...d,
+      slots: { ...d.slots, 'Troops-0': { unit: priest }, 'Troops-1': { unit: thralls } },
+    }));
+    const choices = defaultArmyChoices('mechanicum');
+    const picked = detachmentChoices(forces[0].detachments[1], choices);
+    const group = Object.keys(choices)[0];
+    expect(rulesData.armyChoices[group].options.find((o) => o.id === picked[group])?.name).toBe('Lacrymaerta');
+    // …so the export is one Trait and the app sees no conflict
+    const xml = buildRosXml(forces, 3000, 0, { allegiance: 'Traitor', armyChoices: choices });
+    expect(xml).not.toContain('name="Archimandrite"');
+    const warnings = validateRoster({ forces, allegiance: 'Traitor', pointsLimit: 3000, armyChoices: choices });
+    expect(warnings.some((w) => /Multiple Mechanicum Traits/.test(w.message))).toBe(false);
   });
 });

@@ -19,7 +19,7 @@ import { effectivePrimaryCategory, withEffectiveSlots } from '../rules/slots';
 import { rosterCounts, unitContext } from '../rules/context';
 import { effectiveHidden, type RuleContext } from '../rules/evaluate';
 import { cardSlots } from '../components/canvas/slotLayout';
-import { applyArmyChoice, type ArmyChoices } from '../rules/armyChoices';
+import { applyArmyChoice, detachmentChoices, type ArmyChoices } from '../rules/armyChoices';
 import { modelCount } from '../rules/unitSize';
 
 // Points cost type — consistent across all HH3 BSData files
@@ -233,6 +233,7 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
   const detachments = forces.flatMap((f) => f.detachments);
   const counts = rosterCounts(forces, {
     allegiance: opts.allegiance,
+    armyChoices: opts.armyChoices,
     pointsLimit,
     cohortDoctrine: opts.cohortDoctrine,
     configChoices: opts.configChoices,
@@ -290,6 +291,8 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
     /** A detachment's units as selections. */
     const unitSelections = (det: (typeof force.detachments)[number]): Sel[] => {
       const sels: Sel[] = [];
+      // The army's picks as they apply here (a detachment's fixed Mechanicum Trait wins)
+      const detachmentPicks = detachmentChoices(det, opts.armyChoices);
       // All regular + prime slots — iterate directly to capture Apex prime-only slots
       for (const [key, filled] of Object.entries(det.slots)) {
         if (!filled) continue;
@@ -365,7 +368,7 @@ export function buildRosXml(forces: Force[], pointsLimit: number, totalPoints: n
           }
         }
 
-        sels.push(unitSel(filled, primaryCategory(unitRole, unitCategoryId), filled.extraPoints ?? 0, extras, opts.armyChoices));
+        sels.push(unitSel(filled, primaryCategory(unitRole, unitCategoryId), filled.extraPoints ?? 0, extras, detachmentPicks));
       }
 
       return sels;

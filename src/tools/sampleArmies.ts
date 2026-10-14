@@ -89,9 +89,9 @@ function hasFillableSlot(forces: Force[], force: Force, def: PlacedDetachment['d
 }
 
 /** How many of a detachment's BSData errors hold. */
-function detachmentErrors(forces: Force[], detId: string): number {
+function detachmentErrors(forces: Force[], detId: string, armyChoices: Record<string, string>): number {
   const { force, det } = findDet(forces, detId);
-  const ctx = detachmentContext(forces, force, det, rosterCounts(forces));
+  const ctx = detachmentContext(forces, force, det, rosterCounts(forces, { armyChoices }));
   return (det.def.errors ?? []).filter((e) => conditionsHold(e, ctx)).length;
 }
 
@@ -128,9 +128,12 @@ function fillDetachment(
     const budget = ceiling - computeTotalPoints(forces);
     const n = filledOfRole.get(role) ?? 0;
     // Skip units that would break one of the detachment's BSData rules (one Mechanicum Trait per detachment)
-    const errorsBefore = detachmentErrors(forces, detId);
+    const picks = defaultArmyChoices(spec.faction);
+    const errorsBefore = detachmentErrors(forces, detId, picks);
     const options = candidates(forces, force, det, slotDef, spec.allegiance).filter(
-      (u) => detachmentErrors(updateDetachment(forces, detId, (d) => ({ ...d, slots: { ...d.slots, [key]: { unit: u } } })), detId) <= errorsBefore
+      (u) =>
+        detachmentErrors(updateDetachment(forces, detId, (d) => ({ ...d, slots: { ...d.slots, [key]: { unit: u } } })), detId, picks) <=
+        errorsBefore
     );
     const unit = pickUnit(options, n, budget);
     if (!unit) continue;

@@ -106,7 +106,8 @@ export interface ArmyChoiceGroup {
   name: string;
   /** Catalogue key the group belongs to (an army is offered its own catalogues' choices) */
   catalogue?: string;
-  options: Array<{ id: string; name: string; path: string; hidden?: boolean; modifiers?: RuleModifier[] }>;
+  /** `counts`: what choosing it puts in the roster besides its id (a Mechanicum Trait's category) */
+  options: Array<{ id: string; name: string; path: string; counts?: string[]; hidden?: boolean; modifiers?: RuleModifier[] }>;
 }
 export const cataloguesData = cataloguesJson as Record<string, CatalogueInfo>;
 
