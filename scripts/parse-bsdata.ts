@@ -329,6 +329,8 @@ export interface PrimeNode {
   /** Modifiers that can change visibility (field "hidden") */
   modifiers?: RuleModifier[];
   description?: string;
+  /** Options: how many the roster / one detachment may hold (Seneschal: 1 per roster) */
+  max?: { roster?: number; force?: number };
   children?: PrimeNode[];
 }
 
@@ -351,13 +353,28 @@ export interface RulesData {
    * wargear entries' groupPath. Option paths are relative to that group's prefix.
    */
   armyChoices: Record<string, ArmyChoiceGroup>;
+  /**
+   * Default wargear of shared Legiones Astartes units where a Legion's army
+   * differs (Iron Warriors' and Thousand Sons' Legionaries take their Legion's
+   * pistols and bolters): faction key → unit path → model path → wargear, and
+   * the unit's own wargear under "".
+   */
+  legionWargear: Record<string, Record<string, Record<string, WargearEntry[]>>>;
 }
 
 export interface ArmyChoiceGroup {
   name: string;
   /** Catalogue key the group belongs to (an army is offered its own catalogues' choices) */
   catalogue?: string;
-  options: Array<{ id: string; name: string; path: string; hidden?: boolean; modifiers?: RuleModifier[] }>;
+  options: Array<{
+    id: string;
+    name: string;
+    path: string;
+    /** What choosing it puts in the roster besides its id: its target and categories (a Mechanicum Trait's category) */
+    counts?: string[];
+    hidden?: boolean;
+    modifiers?: RuleModifier[];
+  }>;
 }
 
 export interface DetachmentSlot {
@@ -551,10 +568,14 @@ function allModifiers(holder: { modifiers?: BsModifier[]; modifierGroups?: BsMod
  * settle `primary-catalogue` conditions on wargear constraints.
  */
 let knownPrimaryCatalogue: string | undefined;
+/** Every catalogue id (a `force` scope instanceOf one of these asks which army fields the entry) */
+let catalogueIds = new Set<string>();
 
 /** A condition's value at parse time, or undefined if it depends on the roster. */
 function conditionAtParse(c: BsCondition): boolean | undefined {
-  if (c.scope !== 'primary-catalogue' || !knownPrimaryCatalogue) return undefined;
+  if (!knownPrimaryCatalogue) return undefined;
+  const asksArmy = c.scope === 'primary-catalogue' || (c.scope === 'force' && !!c.childId && catalogueIds.has(c.childId));
+  if (!asksArmy) return undefined;
   const is = c.childId === knownPrimaryCatalogue;
   if (c.type === 'instanceOf') return is;
   if (c.type === 'notInstanceOf') return !is;
@@ -585,6 +606,20 @@ function constraintValue(holder: BsEntry, c: BsConstraint): number {
     if (conditionsAtParse(mod) === true) value = Number(mod.value);
   }
   return value;
+}
+
+/** Hidden after modifiers settled at parse time (a Legion's own weapons replace the standard ones). */
+function hiddenAtParse(base: boolean | undefined, mods: BsModifier[]): boolean {
+  let hidden = !!base;
+  for (const m of mods) {
+    if (m.field === 'hidden' && m.type === 'set' && conditionsAtParse(m) === true) hidden = m.value === true || m.value === 'true';
+  }
+  return hidden;
+}
+
+/** Whether a modifier on `field` might still apply in some roster (not settled at parse time). */
+function unsettled(mods: BsModifier[], field: string): boolean {
+  return mods.some((m) => m.field === field && conditionsAtParse(m) === undefined);
 }
 
 function hasMinAtLeastOne(entry: BsEntry): boolean {
@@ -759,6 +794,18 @@ function isGroupDisabled(g: GroupView): boolean {
   return maxZero && g.modifiers.length === 0;
 }
 
+/** A group's constraint value after its modifiers settled at parse time. */
+function groupConstraintValue(g: GroupView, c: BsConstraint): number {
+  let value = c.value;
+  for (const m of g.modifiers) if (m.field === c.id && m.type === 'set' && conditionsAtParse(m) === true) value = Number(m.value);
+  return value;
+}
+
+/** Hidden in the army being parsed for: base flag plus settled modifiers. */
+function groupHiddenAtParse(g: GroupView): boolean {
+  return hiddenAtParse(g.hidden, g.modifiers);
+}
+
 /**
  * Wargear a unit or model always carries when first added, i.e. what BattleScribe
  * / New Recruit pre-select:
@@ -781,6 +828,15 @@ function mandatoryIn(
   depth: number
 ): WargearEntry[] {
   const wargear: WargearEntry[] = [];
+  // An option's modifiers (its target's, then the link's) and whether it's hidden in this army
+  const memberModifiers = (m: Member) => {
+    const target = m.entry.targetId ? index.get(m.entry.targetId) : undefined;
+    return [...(target ? allModifiers(target) : []), ...allModifiers(m.entry)];
+  };
+  const memberHidden = (m: Member) => {
+    const target = m.entry.targetId ? index.get(m.entry.targetId) : undefined;
+    return hiddenAtParse(m.entry.hidden || target?.hidden, memberModifiers(m));
+  };
   const add = (m: Member) => {
     // The same entry reached through two links is two selections (a Mastodon's two sponsons)
     if (wargear.some((w) => w.path === join(memberPath(m)))) return;
@@ -800,19 +856,23 @@ function mandatoryIn(
     });
   };
 
-  const visit = (c: { options: Member[]; groups: GroupView[] }) => {
+  // `single`: inside a group that took its default — its sub-groups take one pick each
+  const visit = (c: { options: Member[]; groups: GroupView[] }, single = false) => {
     for (const m of c.options) {
       const e = m.entry;
-      if (e.hidden || e.type === 'model' || e.type === 'unit') continue;
+      if (memberHidden(m) || e.type === 'model' || e.type === 'unit') continue;
       // A link's target may carry the minimum (Zone Mortalis' Special Rules, Terrain…)
       const target = e.targetId ? index.get(e.targetId) : undefined;
       if ((hasMinAtLeastOne(e) || (target && hasMinAtLeastOne(target))) && !isDisabled(e)) add(m);
     }
     for (const g of c.groups) {
-      if (g.hidden || isGroupDisabled(g) || FORCE_ORG_CHOICE_GROUP_IDS.has(g.source.id)) continue;
+      if (groupHiddenAtParse(g) || isGroupDisabled(g) || FORCE_ORG_CHOICE_GROUP_IDS.has(g.source.id)) continue;
       // A group's default is pre-selected only when the group requires a choice
-      // (min ≥ 1) — matches New Recruit (e.g. no default chainsword on a sergeant)
-      const requiresChoice = g.constraints?.some((c) => c.type === 'min' && c.field === 'selections' && c.value >= 1);
+      // (min ≥ 1) — matches New Recruit (e.g. no default chainsword on a sergeant).
+      // Modifiers settled for the army count (an Iron Warriors Legionary must exchange his bolt pistol)
+      const requiresChoice = g.constraints?.some(
+        (c) => c.type === 'min' && c.field === 'selections' && groupConstraintValue(g, c) >= 1
+      );
       if (requiresChoice) {
         // The default; with no usable default, the first visible free option (the
         // sole one for a Despoiler's Pistol group; a Skitarii unit's sub-faction
@@ -823,10 +883,10 @@ function mandatoryIn(
         const cost = (o: Member) => pointsOf(o.entry) + (o.entry.targetId ? pointsOf(index.get(o.entry.targetId) ?? {}) : 0);
         const pick = (grp: GroupView): Member | undefined => {
           const visible = grp.options
-            .filter((o) => !o.entry.hidden && !isDisabled(o.entry))
+            .filter((o) => !memberHidden(o) && !isDisabled(o.entry))
             .sort((a, b) => Number(cost(a) > 0) - Number(cost(b) > 0) || byListOrder(a, b));
-          const steady = visible.filter((o) => !allModifiers(o.entry).some((m) => m.field === 'hidden'));
-          const subgroups = grp.groups.filter((sg) => !sg.hidden && !isGroupDisabled(sg));
+          const steady = visible.filter((o) => !unsettled(memberModifiers(o), 'hidden'));
+          const subgroups = grp.groups.filter((sg) => !groupHiddenAtParse(sg) && !isGroupDisabled(sg));
           // A group of sub-groups (an Assault Squad's "Pistol") takes a sub-group's default
           const fromSubgroups = () => {
             for (const sg of subgroups) {
@@ -843,8 +903,23 @@ function mandatoryIn(
         };
         const choice = pick(g);
         if (choice) add(choice);
+        // A group requiring several picks with no default ("Must select two of the
+        // following:", a Saturnine Praetor's two Melee Weapons) takes the next
+        // options in list order too. A group with a default keeps just it — its
+        // count can include its sub-groups' picks (a Leviathan's Weapon Options)
+        const hasDefault = !!g.defaultId && g.defaultId !== 'none';
+        const need = hasDefault || single ? 1 : Math.max(
+          0,
+          ...(g.constraints ?? []).filter((c) => c.type === 'min' && c.field === 'selections').map((c) => groupConstraintValue(g, c))
+        );
+        if (choice && need > 1) {
+          const more = g.options
+            .filter((o) => o !== choice && !memberHidden(o) && !isDisabled(o.entry))
+            .sort((a, b) => Number(cost(a) > 0) - Number(cost(b) > 0) || byListOrder(a, b));
+          for (const o of more.slice(0, need - 1)) add(o);
+        }
       }
-      visit(g);
+      visit(g, single || (requiresChoice && !!g.defaultId && g.defaultId !== 'none'));
     }
   };
 
@@ -1065,6 +1140,15 @@ function buildPrimeTree(
     // What choosing it puts in the roster besides its own id: the link's target
     // and categories (conditions often name the target, e.g. Clade Operative)
     const also = [...(target ? [target.id] : []), ...[...(e.categoryLinks ?? []), ...(target?.categoryLinks ?? [])].map((c) => c.targetId)];
+    // Limits beyond its own unit: per roster, per detachment (force)
+    const max: { roster?: number; force?: number } = {};
+    for (const holder of [e, ...(target ? [target] : [])]) {
+      for (const c of holder.constraints ?? []) {
+        if (c.type !== 'max' || c.field !== 'selections' || (c.scope !== 'roster' && c.scope !== 'force')) continue;
+        const value = constraintValue(holder, c);
+        max[c.scope] = Math.min(max[c.scope] ?? value, value);
+      }
+    }
     return {
       id: e.id,
       name: e.name.trim(),
@@ -1075,6 +1159,7 @@ function buildPrimeTree(
       ...(e.hidden || target?.hidden ? { hidden: true } : {}),
       ...(mods.length > 0 ? { modifiers: mods } : {}),
       ...(description ? { description } : {}),
+      ...(Object.keys(max).length > 0 ? { max } : {}),
       ...(children.length > 0 ? { children } : {}),
     };
   };
@@ -1375,9 +1460,13 @@ function usedGroupIds(units: UnitEntry[]): Set<string> {
 function extractArmyChoices(
   units: UnitEntry[],
   index: SharedIndex,
-  catalogueOf: Map<string, string>
+  catalogueOf: Map<string, string>,
+  categoryNames: Map<string, string>
 ): Record<string, ArmyChoiceGroup> {
   const out: Record<string, ArmyChoiceGroup> = {};
+  // A unit taking a Mechanicum Trait gains the category of the same name (its
+  // modifiers add it when the upgrade is selected) — BSData's Trait rules count those
+  const categoryByName = new Map([...categoryNames].map(([id, name]) => [name.trim(), id]));
   for (const id of usedGroupIds(units)) {
     const group = index.get(id);
     if (!group || !ARMY_CHOICE_GROUP_NAME.test(group.name)) continue;
@@ -1387,10 +1476,18 @@ function extractArmyChoices(
       ...(catalogueOf.has(id) ? { catalogue: catalogueOf.get(id) } : {}),
       options: members.map((m) => {
         const mods = hiddenModifiers(allModifiers(m.entry));
+        const target = m.entry.targetId ? index.get(m.entry.targetId) : undefined;
+        const sameName = categoryByName.get(m.entry.name.trim());
+        const counts = [
+          ...(target ? [target.id] : []),
+          ...[...(m.entry.categoryLinks ?? []), ...(target?.categoryLinks ?? [])].map((c) => c.targetId),
+          ...(sameName ? [sameName] : []),
+        ];
         return {
           id: m.entry.id,
           name: m.entry.name,
           path: join(memberPath(m)),
+          ...(counts.length > 0 ? { counts } : {}),
           ...(m.entry.hidden ? { hidden: true } : {}),
           ...(mods.length > 0 ? { modifiers: mods } : {}),
         };
@@ -1630,6 +1727,23 @@ export interface ParseInput {
   unitFactions: string[];
 }
 
+/** Model path ("" for the unit itself) → default wargear, where `fielded` differs from `base`. */
+function wargearDiff(base: UnitEntry, fielded: UnitEntry): Record<string, WargearEntry[]> {
+  const out: Record<string, WargearEntry[]> = {};
+  const same = (a: WargearEntry[] | undefined, b: WargearEntry[] | undefined) => JSON.stringify(a ?? []) === JSON.stringify(b ?? []);
+  if (!same(base.unitWargear, fielded.unitWargear)) out[''] = fielded.unitWargear ?? [];
+  const walk = (a: ModelEntry[], b: ModelEntry[]) => {
+    for (const m of b) {
+      const before = a.find((x) => (x.path ?? x.entryId) === (m.path ?? m.entryId));
+      if (!before) continue;
+      if (!same(before.defaultWargear, m.defaultWargear)) out[m.path ?? m.entryId ?? m.name] = m.defaultWargear;
+      walk(before.models ?? [], m.models ?? []);
+    }
+  };
+  walk(base.models, fielded.models);
+  return out;
+}
+
 export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): ParseResult {
   const warnings: string[] = [];
   const gst = gameSystem.gameSystem;
@@ -1668,6 +1782,7 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
   const catalogueInfo: Record<string, CatalogueInfo> = {};
   const primeGroupIds = new Set<string>();
 
+  catalogueIds = new Set([...catalogueByKey.values()].map((c) => c.id));
   for (const key of unitFactions) {
     const cat = catalogueByKey.get(key);
     if (!cat) {
@@ -1683,6 +1798,29 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
       catalogueName: normalizeCatalogueName(cat.name),
       revision: cat.revision,
     };
+  }
+
+  // Shared Legiones Astartes units again for each Legion that fields them,
+  // keeping the default wargear that differs there
+  const legionWargear: RulesData['legionWargear'] = {};
+  const astartes = catalogueByKey.get('legiones-astartes');
+  if (astartes && units['legiones-astartes']) {
+    const generic = new Map(units['legiones-astartes'].map((u) => [u.path ?? u.entryId ?? u.name, u]));
+    for (const key of unitFactions) {
+      const cat = catalogueByKey.get(key);
+      const links = (cat as { catalogueLinks?: Array<{ targetId: string }> } | undefined)?.catalogueLinks ?? [];
+      if (!cat || key === 'legiones-astartes' || !links.some((l) => l.targetId === astartes.id)) continue;
+      knownPrimaryCatalogue = cat.id;
+      const fielded = extractUnitsFromCatalogue(astartes, 'legiones-astartes', [], ootlMap, slotRoles, index, categoryNames, new Set());
+      knownPrimaryCatalogue = undefined;
+      for (const unit of fielded) {
+        const unitKey = unit.path ?? unit.entryId ?? unit.name;
+        const base = generic.get(unitKey);
+        if (!base) continue;
+        const diff = wargearDiff(base, unit);
+        if (Object.keys(diff).length > 0) (legionWargear[key] ??= {})[unitKey] = diff;
+      }
+    }
   }
 
   // Drop slots no unit can be filed under — BSData markers such as the Lord of
@@ -1736,6 +1874,7 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
     rules: {
       primeGroups,
       detachmentChoice: detachmentChoiceIds(index),
+      legionWargear,
       armyChoices: extractArmyChoices(
         Object.values(units).flat(),
         index,
@@ -1743,7 +1882,8 @@ export function parseAll({ gameSystem, catalogues, unitFactions }: ParseInput): 
           catalogues.flatMap((c) =>
             (c.catalogue.sharedSelectionEntryGroups ?? []).map((g) => [g.id, factionKeyForCatalogue(c.catalogue.name)] as const)
           )
-        )
+        ),
+        categoryNames
       ),
       armyConfig: {
         'game-system': extractArmyConfig(gst, index, categoryNames),

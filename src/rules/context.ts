@@ -9,6 +9,7 @@ import { configCounts } from './armyConfig';
 import { findPrimeNode, logisticalBenefitChoice } from './primeBenefits';
 import type { RuleContext } from './evaluate';
 import { slotPoints } from './unitSize';
+import { detachmentChoices, unitChoiceIds, type ArmyChoices } from './armyChoices';
 
 type Counts = Record<string, number>;
 
@@ -46,11 +47,18 @@ function detachmentChoicesBySlot(forces: Force[]): Map<string, Array<'apex' | 'a
   return out;
 }
 
-function detachmentCounts(det: PlacedDetachment, choices: Map<string, Array<'apex' | 'auxiliary'>>): Counts {
+function detachmentCounts(
+  det: PlacedDetachment,
+  choices: Map<string, Array<'apex' | 'auxiliary'>>,
+  armyChoices: ArmyChoices | undefined
+): Counts {
   const counts: Counts = {};
+  // The army-wide picks as they apply in this detachment (its Mechanicum Trait)
+  const picks = armyChoices ? detachmentChoices(det, armyChoices) : undefined;
   for (const [key, fs] of Object.entries(det.slots)) {
     if (!fs) continue;
     addCounts(counts, slotCounts(fs.unit, fs.primeBenefit));
+    if (picks) for (const id of unitChoiceIds(fs.unit, picks)) counts[id] = (counts[id] ?? 0) + 1;
     // A Logistical Benefit's chosen role ("LB - Armour"), which BSData counts to add that slot
     if (fs.lbRole && fs.primeBenefit) {
       const choice = logisticalBenefitChoice(fs.unit, fs.primeBenefit, fs.lbRole);
@@ -81,6 +89,8 @@ export interface RosterCounts {
 /** Army-level choices that BSData conditions count in the roster. */
 export interface RosterOptions {
   allegiance?: Allegiance;
+  /** Army-wide picks (sub-faction / Mechanicum Trait), counted on the units that take them */
+  armyChoices?: ArmyChoices;
   pointsLimit?: number;
   /** BSData choice name, e.g. "Cohort Doctrine: Mechanised Pattern Cohort" */
   cohortDoctrine?: string;
@@ -99,7 +109,7 @@ export function rosterCounts(forces: Force[], opts: RosterOptions = {}): RosterC
     rosterForces[chartId] = (rosterForces[chartId] ?? 0) + 1;
     for (const det of force.detachments) {
       if (det.def.entryId) rosterForces[det.def.entryId] = (rosterForces[det.def.entryId] ?? 0) + 1;
-      const counts = detachmentCounts(det, choices);
+      const counts = detachmentCounts(det, choices, opts.armyChoices);
       byDetachment.set(det.id, counts);
       addCounts(roster, counts);
       const units = Object.values(det.slots).flatMap((fs) => (fs ? [{ unit: fs.unit, points: slotPoints(fs) }] : []));

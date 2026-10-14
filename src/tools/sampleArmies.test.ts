@@ -26,6 +26,7 @@ describe.each(SAMPLE_SPECS)('$file', (spec) => {
       pointsLimit: spec.pointsLimit,
       cohortDoctrine: army.cohortDoctrine,
       configChoices: army.configChoices,
+      armyChoices: army.armyChoices,
     });
     expect(warnings.map((w) => w.message)).toEqual([]);
   });

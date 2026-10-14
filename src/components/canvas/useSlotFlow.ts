@@ -10,7 +10,7 @@ import type { FilledSlot, ModalState, PrimeBenefit, SlotDef, UnitEntry, Detachme
 import { useRosterStore } from '../../store/rosterStore';
 import { getBaseRole, stripPrimePrefix } from '../../data/loader';
 import { unitContext } from '../../rules/context';
-import { getPrimeOptions, isLogisticalBenefit, logisticalBenefitRoles, type PrimeOption } from '../../rules/primeBenefits';
+import { benefitLimitReached, getPrimeOptions, isLogisticalBenefit, logisticalBenefitRoles, type PrimeOption } from '../../rules/primeBenefits';
 import { unitsForSlot } from '../../rules/slots';
 import { auxiliaryUnlocks } from '../../rules/detachmentLimits';
 import { allegianceCounts, chartBan, ignoresAllegiance, isAllegianceLocked } from '../../rules/availability';
@@ -61,7 +61,10 @@ export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, 
   function primeOptionsFor(detachmentId: string, slotKey: string, unit: UnitEntry): PrimeOption[] {
     const { force, det } = placed(detachmentId);
     if (!force || !det) return [];
-    return getPrimeOptions(unit, unitContext(forces, force, det, unit, findSlotDef(detachmentId, slotKey)?.categoryId, counts));
+    // Less those whose BSData limit is used up elsewhere (Seneschal once per roster, Master Sergeant once per detachment)
+    return getPrimeOptions(unit, unitContext(forces, force, det, unit, findSlotDef(detachmentId, slotKey)?.categoryId, counts)).filter(
+      (o) => !benefitLimitReached(forces, o, detachmentId, slotKey)
+    );
   }
 
   /**

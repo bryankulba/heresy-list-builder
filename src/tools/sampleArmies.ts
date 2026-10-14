@@ -13,12 +13,13 @@ import type { Allegiance, FilledSlot, Force, PlacedDetachment, UnitEntry } from 
 import { ZONE_MORTALIS_CHART } from '../data/factions';
 import { getDetachmentsForFaction } from '../data/loader';
 import { addDetachment, computeTotalPoints, createForce, removeDetachmentCascade, updateDetachment } from '../store/rosterModel';
-import { rosterCounts, unitContext } from '../rules/context';
+import { detachmentContext, rosterCounts, unitContext } from '../rules/context';
+import { conditionsHold } from '../rules/evaluate';
 import { withEffectiveSlots, unitsForSlot } from '../rules/slots';
 import { detachmentAvailability, fillableSlots } from '../rules/options';
 import { auxiliaryUnlocks } from '../rules/detachmentLimits';
 import { allegianceCounts, chartBan, isAllegianceLocked } from '../rules/availability';
-import { getPrimeOptions } from '../rules/primeBenefits';
+import { benefitLimitReached, getPrimeOptions } from '../rules/primeBenefits';
 import { defaultConfigChoices, doctrineOptions } from '../rules/armyConfig';
 import { defaultArmyChoices } from '../rules/armyChoices';
 import { isSizeAdjustable, modelKey, slotPoints } from '../rules/unitSize';
@@ -87,6 +88,13 @@ function hasFillableSlot(forces: Force[], force: Force, def: PlacedDetachment['d
   );
 }
 
+/** How many of a detachment's BSData errors hold. */
+function detachmentErrors(forces: Force[], detId: string, armyChoices: Record<string, string>): number {
+  const { force, det } = findDet(forces, detId);
+  const ctx = detachmentContext(forces, force, det, rosterCounts(forces, { armyChoices }));
+  return (det.def.errors ?? []).filter((e) => conditionsHold(e, ctx)).length;
+}
+
 interface Unlock {
   detId: string;
   key: string;
@@ -119,13 +127,23 @@ function fillDetachment(
     if (det.slots[key]) continue;
     const budget = ceiling - computeTotalPoints(forces);
     const n = filledOfRole.get(role) ?? 0;
-    const unit = pickUnit(candidates(forces, force, det, slotDef, spec.allegiance), n, budget);
+    // Skip units that would break one of the detachment's BSData rules (one Mechanicum Trait per detachment)
+    const picks = defaultArmyChoices(spec.faction);
+    const errorsBefore = detachmentErrors(forces, detId, picks);
+    const options = candidates(forces, force, det, slotDef, spec.allegiance).filter(
+      (u) =>
+        detachmentErrors(updateDetachment(forces, detId, (d) => ({ ...d, slots: { ...d.slots, [key]: { unit: u } } })), detId, picks) <=
+        errorsBefore
+    );
+    const unit = pickUnit(options, n, budget);
     if (!unit) continue;
     filledOfRole.set(role, n + 1);
 
     // Prime benefit: the first that needs no further choice
     const benefit = slotDef.prime
-      ? getPrimeOptions(unit, unitContext(forces, force, det, unit, slotDef.categoryId, counts)).find((o) => !SKIP_BENEFITS.test(o.name))
+      ? getPrimeOptions(unit, unitContext(forces, force, det, unit, slotDef.categoryId, counts)).find(
+          (o) => !SKIP_BENEFITS.test(o.name) && !benefitLimitReached(forces, o, detId, key)
+        )
       : undefined;
     // A squad at a middling size, if the points allow
     const sized = unit.models.find(isSizeAdjustable);

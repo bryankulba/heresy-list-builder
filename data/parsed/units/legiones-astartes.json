@@ -349,6 +349,13 @@
             "targetId": "2c38-5c75-ae96-1391",
             "path": "723a-caa1-9f03-13f9::348d-05b8-1b3b-a99a::2c38-5c75-ae96-1391",
             "groupPath": "723a-caa1-9f03-13f9::3204-79db-bbc4-2000"
+          },
+          {
+            "name": "Saturnine disruption fist",
+            "entryId": "7ba6-70ba-7af4-493a",
+            "targetId": "487c-7be9-48db-e02a",
+            "path": "723a-caa1-9f03-13f9::7ba6-70ba-7af4-493a::487c-7be9-48db-e02a",
+            "groupPath": "723a-caa1-9f03-13f9::3204-79db-bbc4-2000"
           }
         ]
       }
@@ -365,7 +372,9 @@
       "3a50-2adf-1972-4538": 1,
       "ae43-8418-ecb1-ef6e": 1,
       "348d-05b8-1b3b-a99a": 1,
-      "2c38-5c75-ae96-1391": 1
+      "2c38-5c75-ae96-1391": 1,
+      "7ba6-70ba-7af4-493a": 1,
+      "487c-7be9-48db-e02a": 1
     },
     "prime": {
       "linkId": "943f-e958-461a-bb23",
@@ -6495,10 +6504,24 @@
         "groupPath": "8edf-e3e1-0a1b-20a9::d832-5f66-f189-5c6a"
       },
       {
+        "name": "Hull (Left) Mounted Gravis heavy bolter battery",
+        "entryId": "601f-00fb-1d0f-ebfd",
+        "targetId": "5c0e-33c5-afb1-fed5",
+        "path": "8edf-e3e1-0a1b-20a9::601f-00fb-1d0f-ebfd::5c0e-33c5-afb1-fed5",
+        "groupPath": "8edf-e3e1-0a1b-20a9::d832-5f66-f189-5c6a"
+      },
+      {
         "name": "Hull (Right) Mounted Twin lascannon",
         "entryId": "7c56-2250-7a45-0082",
         "targetId": "8e62-3fda-37e1-5f0a",
         "path": "8edf-e3e1-0a1b-20a9::7c56-2250-7a45-0082::8e62-3fda-37e1-5f0a",
+        "groupPath": "8edf-e3e1-0a1b-20a9::f6eb-b419-7033-f945"
+      },
+      {
+        "name": "Hull (Right) Mounted Gravis heavy bolter battery",
+        "entryId": "4c85-ea75-7a83-5f1b",
+        "targetId": "5c0e-33c5-afb1-fed5",
+        "path": "8edf-e3e1-0a1b-20a9::4c85-ea75-7a83-5f1b::5c0e-33c5-afb1-fed5",
         "groupPath": "8edf-e3e1-0a1b-20a9::f6eb-b419-7033-f945"
       }
     ],
@@ -6938,6 +6961,13 @@
             "groupPath": "1ebd-e929-e5f8-2797::8158-5bac-4c7b-9050"
           },
           {
+            "name": "Bolt pistol",
+            "entryId": "525d-8074-4aed-9c7f",
+            "targetId": "2942-f783-d627-33c5",
+            "path": "1ebd-e929-e5f8-2797::525d-8074-4aed-9c7f::2942-f783-d627-33c5",
+            "groupPath": "1ebd-e929-e5f8-2797::8158-5bac-4c7b-9050"
+          },
+          {
             "name": "Twin bolter",
             "entryId": "229b-3b78-402a-842c",
             "targetId": "222f-82cb-05a2-f8f1",
@@ -6971,6 +7001,8 @@
       "4f20-9a87-8334-9f26": 1,
       "5b22-10c4-4058-86d7": 1,
       "78f4-4967-2896-c3a5": 1,
+      "525d-8074-4aed-9c7f": 1,
+      "2942-f783-d627-33c5": 1,
       "229b-3b78-402a-842c": 1,
       "222f-82cb-05a2-f8f1": 1,
       "7ce5-c698-4051-bd96": 1,
@@ -9182,6 +9214,13 @@
             "groupPath": "f95b-5fb5-3745-8d83::8ae9-9c51-423d-84c5"
           },
           {
+            "name": "Chainsword",
+            "entryId": "f805-0cd0-c457-681c",
+            "targetId": "78f4-4967-2896-c3a5",
+            "path": "f95b-5fb5-3745-8d83::f805-0cd0-c457-681c::78f4-4967-2896-c3a5",
+            "groupPath": "f95b-5fb5-3745-8d83::8ae9-9c51-423d-84c5"
+          },
+          {
             "name": "Twin bolter",
             "entryId": "6cd3-9433-7b49-f26f",
             "targetId": "222f-82cb-05a2-f8f1",
@@ -9209,6 +9248,8 @@
       "4f20-9a87-8334-9f26": 1,
       "3d7d-d945-cd9d-cb54": 1,
       "2942-f783-d627-33c5": 1,
+      "f805-0cd0-c457-681c": 1,
+      "78f4-4967-2896-c3a5": 1,
       "6cd3-9433-7b49-f26f": 1,
       "222f-82cb-05a2-f8f1": 1,
       "b30e-0e27-4d22-a511": 1,

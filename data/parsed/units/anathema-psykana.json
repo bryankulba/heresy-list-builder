@@ -380,14 +380,6 @@
       }
     ],
     "source": "anathema-psykana",
-    "unitWargear": [
-      {
-        "name": "Cybernetica",
-        "entryId": "2b49-5e7b-9f4b-2f4f",
-        "targetId": "403d-7806-215e-7676",
-        "path": "01c9-68cf-adb6-ace6::2b49-5e7b-9f4b-2f4f::403d-7806-215e-7676"
-      }
-    ],
     "facts": {
       "e8d6-2ba5-d10d-d617": 1,
       "01c9-68cf-adb6-ace6": 1,
@@ -477,14 +469,6 @@
       }
     ],
     "source": "anathema-psykana",
-    "unitWargear": [
-      {
-        "name": "Cybernetica",
-        "entryId": "a92a-c17d-f444-9e5b",
-        "targetId": "403d-7806-215e-7676",
-        "path": "7cc7-11aa-59ab-1013::a92a-c17d-f444-9e5b::403d-7806-215e-7676"
-      }
-    ],
     "facts": {
       "112f-1168-d07c-7f8f": 1,
       "7cc7-11aa-59ab-1013": 1,
@@ -584,12 +568,6 @@
         "entryId": "998d-5c50-fafa-b052",
         "targetId": "39bd-daf2-8118-1611",
         "path": "eef7-2b2e-23d4-fb4d::998d-5c50-fafa-b052::39bd-daf2-8118-1611"
-      },
-      {
-        "name": "Cybernetica",
-        "entryId": "c4a3-8ded-261d-6c7d",
-        "targetId": "403d-7806-215e-7676",
-        "path": "eef7-2b2e-23d4-fb4d::c4a3-8ded-261d-6c7d::403d-7806-215e-7676"
       }
     ],
     "facts": {
@@ -664,12 +642,6 @@
         "entryId": "aba3-6a80-765a-2dfe",
         "targetId": "f55e-5279-ca20-3a9b",
         "path": "6d30-40cf-952f-98e1::aba3-6a80-765a-2dfe::f55e-5279-ca20-3a9b"
-      },
-      {
-        "name": "Cybernetica",
-        "entryId": "60d6-3379-8896-86d8",
-        "targetId": "403d-7806-215e-7676",
-        "path": "6d30-40cf-952f-98e1::60d6-3379-8896-86d8::403d-7806-215e-7676"
       },
       {
         "name": "Arcana Benefice:",
@@ -773,12 +745,6 @@
         "entryId": "61f2-d958-8936-310e",
         "targetId": "8346-d5be-e159-326d",
         "path": "fbf5-69f2-f7c5-8b8c::61f2-d958-8936-310e::8346-d5be-e159-326d"
-      },
-      {
-        "name": "Cybernetica",
-        "entryId": "9a26-ef5e-552f-8248",
-        "targetId": "403d-7806-215e-7676",
-        "path": "fbf5-69f2-f7c5-8b8c::9a26-ef5e-552f-8248::403d-7806-215e-7676"
       }
     ],
     "facts": {
