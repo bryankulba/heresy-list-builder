@@ -84,28 +84,46 @@ body {
   padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
 }
 
-// Phones and tablets: modals are drawers that slide in from the right, full
-// height and phone-width everywhere (min(90vw, 420px)) so the UI is the same on
-// both; a tablet keeps the canvas visible beside it. Matches DRAWER_QUERY in
+// Phones and tablets: modals are drawers that slide in from the right and push
+// the page aside, full height and phone-width everywhere (--drawer-width) so
+// the UI is the same on both. Matches DRAWER_QUERY in
 // components/ui/useDrawerSwipe.ts (swipe right to close).
+// The page (header, canvas, points bar): slides aside as one sheet when a drawer opens
+:root {
+  --drawer-width: min(90vw, 420px);
+}
+
+.app-stage {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  // Carbon's modal entrance timing, so page and drawer move together
+  transition: transform 240ms cubic-bezier(0, 0, 0.3, 1);
+}
+
 @media (max-width: 1055px), (pointer: coarse) {
+  .app-stage--pushed {
+    transform: translate3d(calc(-1 * var(--drawer-width)), 0, 0);
+  }
+
+  // The pushed page stays visible beside the drawer: a light scrim, tap it to close
   body .cds--modal {
     align-items: stretch;
     justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
   body .cds--modal .cds--modal-container {
     position: fixed;
     inset-block: 0;
     inset-inline: auto 0;
-    inline-size: min(90vw, 420px);
+    inline-size: var(--drawer-width);
     max-inline-size: none;
     block-size: 100dvh;
     max-block-size: 100dvh;
     border-radius: 0;
     border-block: none;
     border-inline-end: none;
-    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5);
     // Clear of the notch / status bar and a landscape notch
     padding-block-start: env(safe-area-inset-top);
     padding-inline-end: env(safe-area-inset-right);
