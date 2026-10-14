@@ -1,5 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 -136 1200 1200">
-  <!-- Favicon: the gold eye on a transparent background -->
+  <!-- Favicon: the gold eye on black -->
+  <rect x="0" y="-136" width="1200" height="1200" fill="#000"/>
   <g fill="#d2a106">
     <path d="M522 22 Q602 34 683 22 L676 88 Q602 78 528 88 Z"/>
     <path fill-rule="evenodd" d="M35 355 C 250 236, 420 108, 602 108 C 784 108, 954 236, 1170 355 L 897 508 L 942 432 C 842 494, 722 528, 602 528 C 482 528, 362 494, 262 432 L 307 508 Z M235 345 C 330 248, 462 165, 602 165 C 742 165, 874 248, 968 345 C 862 428, 742 470, 602 470 C 462 470, 342 428, 235 345 Z"/>

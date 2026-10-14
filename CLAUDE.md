@@ -128,7 +128,7 @@ Carbon Design System header is `position: fixed` (48px tall). Any scrollable con
 
 ### Offline (PWA)
 
-`vite-plugin-pwa` (in `vite.config.ts`) makes the app installable (manifest, icons in `public/`: `icon.svg` (favicon: the gold eye on transparent), `pwa-192/512.png` and `apple-touch-icon.png` (the eye on the app's dark background, inside the maskable safe zone)) and precaches the whole build — every army's unit file included — so it works without a connection; Google Fonts are cached at runtime. The main bundle is ~2.5MB, so `maximumFileSizeToCacheInBytes` is raised. Caching happens silently; `UpdatePrompt` (in `App`) only offers a reload when a new version is downloaded (`registerType: 'prompt'`). To check offline behaviour, run the `heresy-preview` launch config (`npm run preview`, served at `/heresy-list-builder/`), let the service worker install, stop the server and reload.
+`vite-plugin-pwa` (in `vite.config.ts`) makes the app installable (manifest, icons in `public/`: `icon.svg` (favicon) and `pwa-192/512.png`, `apple-touch-icon.png` (install icons, the eye inside the maskable safe zone) — the gold eye on black) and precaches the whole build — every army's unit file included — so it works without a connection; Google Fonts are cached at runtime. The main bundle is ~2.5MB, so `maximumFileSizeToCacheInBytes` is raised. Caching happens silently; `UpdatePrompt` (in `App`) only offers a reload when a new version is downloaded (`registerType: 'prompt'`). To check offline behaviour, run the `heresy-preview` launch config (`npm run preview`, served at `/heresy-list-builder/`), let the service worker install, stop the server and reload.
 
 ### Canvas Layout
 
