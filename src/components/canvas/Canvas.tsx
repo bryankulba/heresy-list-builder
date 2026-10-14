@@ -126,11 +126,15 @@ export default function Canvas() {
     />
   );
   const instanceNumbers = computeInstanceNumbers(detachments);
+  // Phones and tablets: an open modal is a drawer that pushes the page aside
+  // (index.scss .app-stage--pushed); the modals sit outside the stage so they don't move with it
+  const stageClass = `app-stage${flow.modal.type !== 'none' ? ' app-stage--pushed' : ''}`;
 
   // Phones: the same cards in one scrolling column
   if (isPhone) {
     return (
-      <div className="flex flex-col" style={{ height: '100dvh', overflow: 'hidden' }}>
+      <div style={{ height: '100dvh', overflow: 'hidden' }}>
+        <div className={stageClass}>
         {header}
         <StackedView
           view={view}
@@ -142,6 +146,7 @@ export default function Canvas() {
           bottomInset={warnings.length > 0 ? 96 : 68}
         />
         {pointsCard}
+        </div>
         {modals}
       </div>
     );
@@ -152,7 +157,8 @@ export default function Canvas() {
   const getCardPos = (detId: string): CardPosition => positionOverrides[detId] ?? cardPositions.get(detId) ?? { x: 0, y: 0 };
 
   return (
-    <div className="flex flex-col" style={{ height: '100vh', overflow: 'hidden' }}>
+    <div style={{ height: '100vh', overflow: 'hidden' }}>
+      <div className={stageClass}>
       {header}
 
       {/* Canvas area */}
@@ -273,6 +279,7 @@ export default function Canvas() {
       </div>
 
       {pointsCard}
+      </div>
       {modals}
     </div>
   );

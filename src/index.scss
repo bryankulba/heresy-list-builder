@@ -84,27 +84,78 @@ body {
   padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
 }
 
-// Phones: modals are bottom sheets that slide up, sized to their content
-@media (max-width: 671px), (max-height: 500px) and (pointer: coarse) {
+// Phones and tablets: modals are drawers that slide in from the right and push
+// the page aside, full height and phone-width everywhere (--drawer-width) so
+// the UI is the same on both. Matches DRAWER_QUERY in
+// components/ui/useDrawerSwipe.ts (swipe right to close).
+// The page (header, canvas, points bar): slides aside as one sheet when a drawer opens
+:root {
+  --drawer-width: min(90vw, 420px);
+}
+
+.app-stage {
+  display: flex;
+  flex-direction: column;
+  block-size: 100%;
+  // The drawer's timing (drawer-in below), so page and drawer move together
+  transition: transform 240ms cubic-bezier(0, 0, 0.3, 1);
+}
+
+// The drawer slides in on the same frame the page starts moving. (Carbon mounts
+// an open modal already in place, so its own transition never runs.)
+@keyframes drawer-in {
+  from {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  to {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 1055px), (pointer: coarse) {
+  // Its own compositor layer, so sliding the whole page doesn't repaint it every frame
+  .app-stage {
+    will-change: transform;
+  }
+
+  .app-stage--pushed {
+    transform: translate3d(calc(-1 * var(--drawer-width)), 0, 0);
+  }
+
+  body .cds--modal.is-visible .cds--modal-container {
+    animation: drawer-in 240ms cubic-bezier(0, 0, 0.3, 1);
+  }
+
+  // The pushed page stays visible beside the drawer: a light scrim, tap it to close
   body .cds--modal {
-    align-items: flex-end;
+    align-items: stretch;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.3);
   }
 
   body .cds--modal .cds--modal-container {
     position: fixed;
-    inset-block: auto 0;
-    inline-size: 100%;
-    max-block-size: 92dvh;
-    border-radius: 12px 12px 0 0;
-    border-block-end: none;
+    inset-block: 0;
+    inset-inline: auto 0;
+    inline-size: var(--drawer-width);
+    max-inline-size: none;
+    block-size: 100dvh;
+    max-block-size: 100dvh;
+    border-radius: 0;
+    border-block: none;
+    border-inline-end: none;
+    // Clear of the notch / status bar and a landscape notch
+    padding-block-start: env(safe-area-inset-top);
+    padding-inline-end: env(safe-area-inset-right);
     overflow: hidden;
   }
 
   body .cds--modal:not(.is-visible) .cds--modal-container {
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(100%, 0, 0);
   }
 
-  // Footer buttons span the sheet, above the home indicator
+  // Footer buttons span the drawer, above the home indicator
   body .cds--modal-footer {
     block-size: auto;
     padding-block-end: env(safe-area-inset-bottom);
