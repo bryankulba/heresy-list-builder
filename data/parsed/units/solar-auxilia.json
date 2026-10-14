@@ -4340,29 +4340,6 @@
       }
     ],
     "source": "solar-auxilia",
-    "unitWargear": [
-      {
-        "name": "Discipline Master",
-        "entryId": "c3fe-89e1-4b5f-a120",
-        "path": "4a21-4cd9-454f-ff5e::c3fe-89e1-4b5f-a120",
-        "groupPath": "4a21-4cd9-454f-ff5e::a544-bd85-4407-d410",
-        "children": [
-          {
-            "name": "Frag grenades",
-            "entryId": "807c-bc8e-4216-bd16",
-            "targetId": "60e4-ca33-2e68-9afc",
-            "path": "4a21-4cd9-454f-ff5e::807c-bc8e-4216-bd16::60e4-ca33-2e68-9afc"
-          },
-          {
-            "name": "Militia pistol",
-            "entryId": "68b3-b54b-439b-8696",
-            "targetId": "7702-e5d6-4f99-96b4",
-            "path": "4a21-4cd9-454f-ff5e::68b3-b54b-439b-8696::7702-e5d6-4f99-96b4",
-            "groupPath": "4a21-4cd9-454f-ff5e::b016-1bf0-4a3d-b5cc"
-          }
-        ]
-      }
-    ],
     "facts": {
       "2e95-2117-4d59-acbd": 1,
       "4a21-4cd9-454f-ff5e": 1,
@@ -4616,7 +4593,7 @@
     "path": "db27-8397-7836-b615::517b-3d1a-4292-85da",
     "role": "Support",
     "primaryCategory": "Support - Militia Medicae or Fire Support Troop only",
-    "points": 50,
+    "points": 80,
     "baseCost": 5,
     "models": [
       {
@@ -4629,6 +4606,7 @@
         "defaultWargear": [
           {
             "name": "Twin heavy stubber",
+            "cost": 10,
             "entryId": "57a0-2331-4a62-b0ba",
             "targetId": "9027-63f4-4780-b5b1",
             "path": "db27-8397-7836-b615::98e4-33be-bb39-e56a::57a0-2331-4a62-b0ba::9027-63f4-4780-b5b1",

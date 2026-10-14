@@ -76,7 +76,7 @@
     "path": "6ab4-9770-dcb2-8b0b::c660-c7ad-70b0-5318",
     "role": "Heavy Assault",
     "primaryCategory": "Heavy Assault",
-    "points": 135,
+    "points": 245,
     "baseCost": 47,
     "models": [
       {
@@ -89,6 +89,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 10,
             "entryId": "3107-dce7-8751-c598",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "6ab4-9770-dcb2-8b0b::3107-dce7-8751-c598::6754-24dd-5be0-26ff",
@@ -96,6 +97,7 @@
           },
           {
             "name": "Meteor hammer",
+            "cost": 20,
             "entryId": "5d93-8523-229e-32df",
             "path": "6ab4-9770-dcb2-8b0b::2bc2-d4d8-3c17-1546::5d93-8523-229e-32df",
             "groupPath": "6ab4-9770-dcb2-8b0b::2bc2-d4d8-3c17-1546::f18f-e86f-e13e-4a48"
@@ -112,6 +114,7 @@
         "defaultWargear": [
           {
             "name": "Meteor hammer",
+            "cost": 20,
             "entryId": "5d93-8523-229e-32df",
             "path": "6ab4-9770-dcb2-8b0b::3ee1-dc34-0734-d740::5d93-8523-229e-32df",
             "groupPath": "6ab4-9770-dcb2-8b0b::3ee1-dc34-0734-d740::f18f-e86f-e13e-4a48"

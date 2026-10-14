@@ -180,6 +180,8 @@ export interface WargearEntry {
   entryId: string;
   /** How many come per parent selection, when more than one (a pair of sponson weapons) */
   count?: number;
+  /** Points each, when it isn't free (a Cataphractii's pair of lightning claws: 10) */
+  cost?: number;
   /** Linked shared entry, when entryId is a link */
   targetId?: string;
   /** Selection entryId path for .ros export */
@@ -833,6 +835,10 @@ function mandatoryIn(
     const target = m.entry.targetId ? index.get(m.entry.targetId) : undefined;
     return [...(target ? allModifiers(target) : []), ...allModifiers(m.entry)];
   };
+  const isModelLike = (m: Member) => {
+    const target = m.entry.targetId ? index.get(m.entry.targetId) : undefined;
+    return [m.entry.type, target?.type].some((t) => t === 'model' || t === 'unit');
+  };
   const memberHidden = (m: Member) => {
     const target = m.entry.targetId ? index.get(m.entry.targetId) : undefined;
     return hiddenAtParse(m.entry.hidden || target?.hidden, memberModifiers(m));
@@ -844,10 +850,13 @@ function mandatoryIn(
     // How many come with it (e.g. "Two Sponson Mounted" heavy bolters: min 2)
     const min = Math.max(0, ...(m.entry.constraints ?? []).filter((c) => c.type === 'min' && c.field === 'selections').map((c) => constraintValue(m.entry, c)));
     const target = m.entry.targetId ? index.get(m.entry.targetId) : undefined;
+    // Default options can cost points (New Recruit counts them): the link's and its target's
+    const cost = pointsOf(m.entry) + (target ? pointsOf(target) : 0);
     wargear.push({
       // The name New Recruit shows ("Hull (Front) Mounted heavy bolter")
       name: displayName(m.entry.name, ...(target ? [target] : []), m.entry) ?? m.entry.name,
       ...(min > 1 ? { count: min } : {}),
+      ...(cost > 0 ? { cost } : {}),
       entryId: m.entry.id,
       ...(m.entry.targetId ? { targetId: m.entry.targetId } : {}),
       path: join(memberPath(m)),
@@ -883,7 +892,8 @@ function mandatoryIn(
         const cost = (o: Member) => pointsOf(o.entry) + (o.entry.targetId ? pointsOf(index.get(o.entry.targetId) ?? {}) : 0);
         const pick = (grp: GroupView): Member | undefined => {
           const visible = grp.options
-            .filter((o) => !memberHidden(o) && !isDisabled(o.entry))
+            // Models and sub-units chosen in a group are the unit's models (a Caladius' variant), not its wargear
+            .filter((o) => !isModelLike(o) && !memberHidden(o) && !isDisabled(o.entry))
             .sort((a, b) => Number(cost(a) > 0) - Number(cost(b) > 0) || byListOrder(a, b));
           const steady = visible.filter((o) => !unsettled(memberModifiers(o), 'hidden'));
           const subgroups = grp.groups.filter((sg) => !groupHiddenAtParse(sg) && !isGroupDisabled(sg));
@@ -899,7 +909,7 @@ function mandatoryIn(
             }
             return undefined;
           };
-          return grp.options.find((o) => o.entry.id === grp.defaultId) ?? steady[0] ?? visible[0] ?? fromSubgroups();
+          return grp.options.find((o) => o.entry.id === grp.defaultId && !isModelLike(o)) ?? steady[0] ?? visible[0] ?? fromSubgroups();
         };
         const choice = pick(g);
         if (choice) add(choice);
@@ -914,7 +924,7 @@ function mandatoryIn(
         );
         if (choice && need > 1) {
           const more = g.options
-            .filter((o) => o !== choice && !memberHidden(o) && !isDisabled(o.entry))
+            .filter((o) => o !== choice && !isModelLike(o) && !memberHidden(o) && !isDisabled(o.entry))
             .sort((a, b) => Number(cost(a) > 0) - Number(cost(b) > 0) || byListOrder(a, b));
           for (const o of more.slice(0, need - 1)) add(o);
         }
@@ -1181,6 +1191,16 @@ function buildPrimeTree(
 // Units
 // ---------------------------------------------------------------------------
 
+/** Points of default wargear: each entry's cost × how many come, with its own sub-selections. Mirrors src/rules/unitSize.ts. */
+function wargearPoints(ws: WargearEntry[] | undefined): number {
+  return (ws ?? []).reduce((n, w) => n + (w.count ?? 1) * ((w.cost ?? 0) + wargearPoints(w.children)), 0);
+}
+
+/** One model's default wargear points (a sub-unit's: its models' too). */
+function modelWargearPoints(m: ModelEntry): number {
+  return wargearPoints(m.defaultWargear) + (m.models ?? []).reduce((n, inner) => n + modelWargearPoints(inner) * inner.min, 0);
+}
+
 interface PointsBreakdown {
   points: number;
   baseCost: number;
@@ -1393,6 +1413,9 @@ function extractUnitsFromCatalogue(
       ...collectMandatoryWargear(entry, [link.linkId], index),
       ...collectMandatoryWargear(link.link, [], index),
     ];
+    // Default wargear that costs points counts towards the unit (as in New Recruit)
+    const defaultsPoints =
+      (breakdown?.models ?? []).reduce((n, m) => n + modelWargearPoints(m) * m.min, 0) + wargearPoints(unitWargear);
     const prime = primeLinkage(entry, link.linkId);
     const categoryRules = primaryCategoryRules(link.link, entry, categoryNames);
     const alternateLinks = (allRootLinks.get(entry.id) ?? []).filter((l) => l.entryId !== link.linkId);
@@ -1413,7 +1436,7 @@ function extractUnitsFromCatalogue(
       path: join([link.linkId, entry.id]),
       role: normalizeRole(link.role),
       primaryCategory: link.role,
-      points: breakdown?.points ?? 0,
+      points: Math.round((breakdown?.points ?? 0) + defaultsPoints),
       baseCost: breakdown?.baseCost ?? 0,
       models: breakdown?.models ?? [],
       source,

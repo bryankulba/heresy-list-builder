@@ -879,7 +879,7 @@
     "path": "ec4e-16b6-8313-4ab3::d002-d1d6-c784-1f15",
     "role": "Heavy Assault",
     "primaryCategory": "Heavy Assault",
-    "points": 125,
+    "points": 135,
     "baseCost": 45,
     "models": [
       {
@@ -916,6 +916,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 10,
             "entryId": "949c-ae23-394e-4e2c",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "ec4e-16b6-8313-4ab3::949c-ae23-394e-4e2c::6754-24dd-5be0-26ff",

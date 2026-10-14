@@ -5,6 +5,7 @@ import rulesJson from '../../data/parsed/rules.json';
 import type { UnitEntry, DetachmentDef, ModelEntry, WargearEntry } from '../types';
 import type { PrimeNode } from '../rules/primeBenefits';
 import type { RuleModifier } from '../rules/evaluate';
+import { modelWargearPoints, wargearPoints } from '../rules/unitSize';
 import { ALLIED_CHART, ALLIED_DETACHMENT, CRUSADE_CHART, FACTIONS, FACTION_BY_ID, LORD_OF_WAR_CHART, ZONE_MORTALIS_CHART } from './factions';
 
 // ---------------------------------------------------------------------------
@@ -170,7 +171,11 @@ function withLegionWargear(unit: UnitEntry, overrides: Record<string, WargearEnt
     defaultWargear: overrides[m.path ?? m.entryId ?? m.name] ?? m.defaultWargear,
     ...(m.models ? { models: m.models.map(model) } : {}),
   });
-  return { ...unit, models: unit.models.map(model), ...('' in overrides ? { unitWargear: overrides[''] } : {}) };
+  const fielded = { ...unit, models: unit.models.map(model), ...('' in overrides ? { unitWargear: overrides[''] } : {}) };
+  // The Legion's defaults may cost differently: points follow the change
+  const defaults = (u: UnitEntry) =>
+    u.models.reduce((n, m) => n + modelWargearPoints(m) * m.min, 0) + wargearPoints(u.unitWargear);
+  return { ...fielded, points: Math.round(unit.points - defaults(unit) + defaults(fielded)) };
 }
 
 const factionUnitsCache = new Map<string, { sources: UnitEntry[][]; units: UnitEntry[] }>();

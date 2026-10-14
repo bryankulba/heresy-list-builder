@@ -112,6 +112,8 @@ function wargearSel(entry: WargearEntry, number: number, choices?: ArmyChoices):
     ...(w.groupPath ? { entryGroupId: w.groupPath } : {}),
     type: 'upgrade',
     number: number * (w.count ?? 1),
+    // Default options with a points cost carry it (New Recruit totals them)
+    ...(w.cost ? { cost: w.cost * number * (w.count ?? 1) } : {}),
     children: (w.children ?? []).map((c) => wargearSel(c, number * (w.count ?? 1), choices)),
   };
 }

@@ -10,6 +10,8 @@ export interface WargearEntry {
   entryId: string;
   /** How many come per parent selection, when more than one (a pair of sponson weapons) */
   count?: number;
+  /** Points each, when it isn't free (a Cataphractii's pair of lightning claws: 10) */
+  cost?: number;
   targetId?: string;
   path?: string;
   groupPath?: string;

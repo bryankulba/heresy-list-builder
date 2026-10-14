@@ -761,7 +761,7 @@
     "path": "46c8-cc57-8194-4203::03d6-e650-4864-9a0e",
     "role": "Retinue",
     "primaryCategory": "Retinue",
-    "points": 275,
+    "points": 325,
     "baseCost": 75,
     "models": [
       {
@@ -780,6 +780,7 @@
           },
           {
             "name": "Solarite Power Gauntlet",
+            "cost": 10,
             "entryId": "e2ea-09a6-46c5-82db",
             "targetId": "ddcb-01e9-18af-c8f6",
             "path": "46c8-cc57-8194-4203::e2ea-09a6-46c5-82db::ddcb-01e9-18af-c8f6",
@@ -803,6 +804,7 @@
           },
           {
             "name": "Solarite Power Gauntlet",
+            "cost": 10,
             "entryId": "32a8-a8b2-4ce0-944b",
             "targetId": "ddcb-01e9-18af-c8f6",
             "path": "46c8-cc57-8194-4203::32a8-a8b2-4ce0-944b::ddcb-01e9-18af-c8f6",

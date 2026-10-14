@@ -1573,7 +1573,7 @@
     "path": "e468-70ee-8012-9b20::9d6f-298d-743c-da5d",
     "role": "War-engine",
     "primaryCategory": "War-engine",
-    "points": 220,
+    "points": 225,
     "baseCost": 220,
     "models": [
       {
@@ -1590,6 +1590,7 @@
     "unitWargear": [
       {
         "name": "Paired Leviathan siege claws and two meltaguns",
+        "cost": 5,
         "entryId": "d949-5b9f-f2dd-a0e4",
         "path": "e468-70ee-8012-9b20::d949-5b9f-f2dd-a0e4",
         "groupPath": "e468-70ee-8012-9b20::9471-b387-8e1b-4b5a",
@@ -1760,7 +1761,7 @@
     "path": "e5b5-5476-3c88-141b::23ee-bc64-aea6-5272",
     "role": "High Command",
     "primaryCategory": "High Command",
-    "points": 145,
+    "points": 160,
     "baseCost": 145,
     "models": [
       {
@@ -1779,6 +1780,7 @@
           },
           {
             "name": "Paragon blade",
+            "cost": 15,
             "entryId": "de2e-168d-fb17-f498",
             "targetId": "1881-a2b5-fc58-4270",
             "path": "e5b5-5476-3c88-141b::de2e-168d-fb17-f498::1881-a2b5-fc58-4270",
@@ -1902,7 +1904,7 @@
     "path": "5dd5-d00c-b150-34b9::976b-2d8a-7e70-e6a7",
     "role": "Command",
     "primaryCategory": "Command",
-    "points": 100,
+    "points": 105,
     "baseCost": 100,
     "models": [
       {
@@ -1921,6 +1923,7 @@
           },
           {
             "name": "Lightning claw",
+            "cost": 5,
             "entryId": "1b85-899f-5499-4534",
             "targetId": "cbf0-9b29-9a16-28b2",
             "path": "5dd5-d00c-b150-34b9::e493-cec5-db91-30a6::1b85-899f-5499-4534::cbf0-9b29-9a16-28b2",
@@ -3103,7 +3106,7 @@
     "path": "f8c9-8c04-ae18-e7ea::50fb-f90a-70ec-7649",
     "role": "Retinue",
     "primaryCategory": "Retinue",
-    "points": 140,
+    "points": 170,
     "baseCost": 60,
     "models": [
       {
@@ -3116,6 +3119,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 10,
             "entryId": "a9d4-70db-5a89-ebf5",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "f8c9-8c04-ae18-e7ea::a9d4-70db-5a89-ebf5::6754-24dd-5be0-26ff",
@@ -3133,6 +3137,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 10,
             "entryId": "4e78-e01e-3068-c930",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "f8c9-8c04-ae18-e7ea::4e78-e01e-3068-c930::6754-24dd-5be0-26ff",
@@ -3200,7 +3205,7 @@
     "path": "bcb4-ccd6-7eb6-0afb::e9a1-490f-8679-fc4e",
     "role": "Heavy Assault",
     "primaryCategory": "Heavy Assault",
-    "points": 150,
+    "points": 200,
     "baseCost": 30,
     "models": [
       {
@@ -3213,6 +3218,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 10,
             "entryId": "46ff-7c3c-4404-a056",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "bcb4-ccd6-7eb6-0afb::46ff-7c3c-4404-a056::6754-24dd-5be0-26ff",
@@ -3230,6 +3236,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 10,
             "entryId": "616b-d3f5-6dd5-8bc1",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "bcb4-ccd6-7eb6-0afb::616b-d3f5-6dd5-8bc1::6754-24dd-5be0-26ff",
@@ -3438,7 +3445,7 @@
     "path": "8105-97e4-8327-c826::3139-1aa9-4b77-da26",
     "role": "Heavy Assault",
     "primaryCategory": "Heavy Assault",
-    "points": 150,
+    "points": 190,
     "baseCost": 30,
     "models": [
       {
@@ -3451,6 +3458,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 10,
             "entryId": "dc6d-7fb1-c3cb-252e",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "8105-97e4-8327-c826::dc6d-7fb1-c3cb-252e::6754-24dd-5be0-26ff",
@@ -3541,7 +3549,7 @@
     "path": "c795-6de9-030e-e480::b703-f7ab-dac5-0ae4",
     "role": "Retinue",
     "primaryCategory": "Retinue",
-    "points": 140,
+    "points": 170,
     "baseCost": 60,
     "models": [
       {
@@ -3554,6 +3562,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 10,
             "entryId": "af0b-ab84-12ec-6f97",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "c795-6de9-030e-e480::af0b-ab84-12ec-6f97::6754-24dd-5be0-26ff",
@@ -3571,6 +3580,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 10,
             "entryId": "333b-8d64-2373-6aa3",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "c795-6de9-030e-e480::333b-8d64-2373-6aa3::6754-24dd-5be0-26ff",
@@ -6821,7 +6831,7 @@
     "path": "b486-4dce-c2a3-2e24::26d7-23ba-4059-8079",
     "role": "High Command",
     "primaryCategory": "High Command",
-    "points": 160,
+    "points": 175,
     "baseCost": 160,
     "models": [
       {
@@ -6859,6 +6869,7 @@
           },
           {
             "name": "Twin plasma gun",
+            "cost": 15,
             "entryId": "5b12-c7bb-4d35-b92c",
             "targetId": "1603-43c6-8860-d57e",
             "path": "b486-4dce-c2a3-2e24::5b12-c7bb-4d35-b92c::1603-43c6-8860-d57e",
@@ -8008,7 +8019,7 @@
     "path": "43f5-e215-ebac-3b92::7c0e-025f-41b5-b7d0",
     "role": "Command",
     "primaryCategory": "Command",
-    "points": 130,
+    "points": 140,
     "baseCost": 130,
     "models": [
       {
@@ -8045,6 +8056,7 @@
           },
           {
             "name": "Power fist",
+            "cost": 10,
             "entryId": "7b20-cb91-4de8-870a",
             "targetId": "2fcc-92a6-d03a-4b55",
             "path": "43f5-e215-ebac-3b92::7b20-cb91-4de8-870a::2fcc-92a6-d03a-4b55",
@@ -8091,7 +8103,7 @@
     "path": "7c3d-16f8-a6ae-2c73::eb91-e184-4e8a-a0e0",
     "role": "Command",
     "primaryCategory": "Command",
-    "points": 140,
+    "points": 150,
     "baseCost": 140,
     "models": [
       {
@@ -8134,6 +8146,7 @@
           },
           {
             "name": "Power fist",
+            "cost": 10,
             "entryId": "b99d-0ccb-416e-936c",
             "targetId": "2fcc-92a6-d03a-4b55",
             "path": "7c3d-16f8-a6ae-2c73::b99d-0ccb-416e-936c::2fcc-92a6-d03a-4b55",
@@ -8198,7 +8211,7 @@
     "path": "6058-6f09-9050-f72a::f0ed-1a89-45ad-8530",
     "role": "Command",
     "primaryCategory": "Command",
-    "points": 130,
+    "points": 135,
     "baseCost": 130,
     "models": [
       {
@@ -8223,6 +8236,7 @@
           },
           {
             "name": "Lightning claw",
+            "cost": 5,
             "entryId": "1b85-899f-5499-4534",
             "targetId": "cbf0-9b29-9a16-28b2",
             "path": "6058-6f09-9050-f72a::1c5f-a8f7-4efb-bf3f::1b85-899f-5499-4534::cbf0-9b29-9a16-28b2",
@@ -9272,7 +9286,7 @@
     "path": "4e69-d5f6-81ff-f6fb::25fa-16d8-4770-9f89",
     "role": "Command",
     "primaryCategory": "Command",
-    "points": 120,
+    "points": 125,
     "baseCost": 120,
     "models": [
       {
@@ -9304,6 +9318,7 @@
           },
           {
             "name": "Lightning claw",
+            "cost": 5,
             "entryId": "1b85-899f-5499-4534",
             "targetId": "cbf0-9b29-9a16-28b2",
             "path": "4e69-d5f6-81ff-f6fb::6d25-4fde-49ea-9b60::1b85-899f-5499-4534::cbf0-9b29-9a16-28b2",
@@ -9522,7 +9537,7 @@
     "path": "847a-f9d1-0e66-4394::60f6-7316-4e0a-874b",
     "role": "Command",
     "primaryCategory": "Command",
-    "points": 120,
+    "points": 125,
     "baseCost": 120,
     "models": [
       {
@@ -9548,6 +9563,7 @@
           },
           {
             "name": "Lightning claw",
+            "cost": 5,
             "entryId": "1b85-899f-5499-4534",
             "targetId": "cbf0-9b29-9a16-28b2",
             "path": "847a-f9d1-0e66-4394::cd3e-950c-45e7-bbf1::1b85-899f-5499-4534::cbf0-9b29-9a16-28b2",
@@ -9834,7 +9850,7 @@
     "path": "d4d5-8d88-5f93-c317::f849-279f-4f2b-abca",
     "role": "Command",
     "primaryCategory": "Command",
-    "points": 150,
+    "points": 155,
     "baseCost": 150,
     "models": [
       {
@@ -9866,6 +9882,7 @@
           },
           {
             "name": "Lightning claw",
+            "cost": 5,
             "entryId": "1b85-899f-5499-4534",
             "targetId": "cbf0-9b29-9a16-28b2",
             "path": "d4d5-8d88-5f93-c317::6969-6b3e-41a7-b331::1b85-899f-5499-4534::cbf0-9b29-9a16-28b2",
@@ -9986,7 +10003,7 @@
     "path": "6e02-fdff-abe5-cd30::5d97-c745-4b49-b2f2",
     "role": "Command",
     "primaryCategory": "Command",
-    "points": 70,
+    "points": 80,
     "baseCost": 70,
     "models": [
       {
@@ -10023,6 +10040,7 @@
           },
           {
             "name": "Heavy bolter",
+            "cost": 10,
             "entryId": "755d-985b-1f83-800c",
             "targetId": "bc40-b14a-978e-0232",
             "path": "6e02-fdff-abe5-cd30::7c53-43a8-63fa-b092::755d-985b-1f83-800c::bc40-b14a-978e-0232",
@@ -10406,7 +10424,7 @@
     "path": "9319-86bf-c0ed-12d3::1900-f550-46e0-bc78",
     "role": "Elites",
     "primaryCategory": "Elites",
-    "points": 115,
+    "points": 190,
     "baseCost": 35,
     "models": [
       {
@@ -10425,6 +10443,7 @@
           },
           {
             "name": "Heavy disintegrator",
+            "cost": 15,
             "entryId": "d540-f9de-d50f-c3f9",
             "targetId": "5359-13c1-29ff-9d3c",
             "path": "9319-86bf-c0ed-12d3::d540-f9de-d50f-c3f9::5359-13c1-29ff-9d3c",
@@ -10448,6 +10467,7 @@
           },
           {
             "name": "Heavy disintegrator",
+            "cost": 15,
             "entryId": "e038-28a7-ae9f-a2de",
             "targetId": "5359-13c1-29ff-9d3c",
             "path": "9319-86bf-c0ed-12d3::e038-28a7-ae9f-a2de::5359-13c1-29ff-9d3c",
@@ -10503,7 +10523,7 @@
     "path": "e861-5ef7-7be7-f250::dace-6eff-4491-b991",
     "role": "Heavy Assault",
     "primaryCategory": "Heavy Assault",
-    "points": 150,
+    "points": 200,
     "baseCost": 30,
     "models": [
       {
@@ -10523,6 +10543,7 @@
           },
           {
             "name": "Chainfist",
+            "cost": 10,
             "entryId": "614b-bbcf-4063-973e",
             "targetId": "8322-1eca-e855-2683",
             "path": "e861-5ef7-7be7-f250::614b-bbcf-4063-973e::8322-1eca-e855-2683",
@@ -10547,6 +10568,7 @@
           },
           {
             "name": "Chainfist",
+            "cost": 10,
             "entryId": "99f8-9046-a817-b540",
             "targetId": "8322-1eca-e855-2683",
             "path": "e861-5ef7-7be7-f250::99f8-9046-a817-b540::8322-1eca-e855-2683",

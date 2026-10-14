@@ -546,7 +546,7 @@
     "path": "e720-ffae-db69-0009::6132-aa94-be29-dedb",
     "role": "War-engine",
     "primaryCategory": "War-engine",
-    "points": 360,
+    "points": 385,
     "baseCost": 360,
     "models": [
       {
@@ -571,6 +571,7 @@
           },
           {
             "name": "Telemon caestus and one twin netronium cascade projector",
+            "cost": 5,
             "entryId": "62c3-404e-3011-1441",
             "path": "e720-ffae-db69-0009::62c3-404e-3011-1441",
             "groupPath": "e720-ffae-db69-0009::0980-35ef-20c3-dcbc",
@@ -591,6 +592,7 @@
           },
           {
             "name": "Arachnus storm cannon",
+            "cost": 20,
             "entryId": "2deb-9a2a-48be-4f3d",
             "targetId": "45de-bc45-6cd8-fd54",
             "path": "e720-ffae-db69-0009::2deb-9a2a-48be-4f3d::45de-bc45-6cd8-fd54",
@@ -904,29 +906,6 @@
       }
     ],
     "source": "legio-custodes",
-    "unitWargear": [
-      {
-        "name": "Caladius Grav-Tank",
-        "entryId": "56b7-fa66-4add-af69",
-        "path": "2a34-6b03-52f0-4452::56b7-fa66-4add-af69",
-        "groupPath": "2a34-6b03-52f0-4452::2ad9-4de8-e42d-3b71",
-        "children": [
-          {
-            "name": "Turret Mounted Twin Iliastus accelerator cannon",
-            "entryId": "55de-f215-7864-9d6a",
-            "targetId": "5e1d-d2cf-aa7d-77da",
-            "path": "2a34-6b03-52f0-4452::55de-f215-7864-9d6a::5e1d-d2cf-aa7d-77da"
-          },
-          {
-            "name": "Hull (Front) Mounted Twin Lastrum bolt cannon",
-            "entryId": "9ae5-3bc8-f0d6-6eb0",
-            "targetId": "41e7-8ad3-5676-e8fc",
-            "path": "2a34-6b03-52f0-4452::9ae5-3bc8-f0d6-6eb0::41e7-8ad3-5676-e8fc",
-            "groupPath": "2a34-6b03-52f0-4452::4977-b536-84a4-9e1d"
-          }
-        ]
-      }
-    ],
     "facts": {
       "3cc2-9a68-9bc0-b695": 1,
       "2a34-6b03-52f0-4452": 1,

@@ -9019,6 +9019,7 @@
           },
           {
             "name": "Power fist",
+            "cost": 10,
             "entryId": "7b20-cb91-4de8-870a",
             "targetId": "2fcc-92a6-d03a-4b55",
             "path": "43f5-e215-ebac-3b92::7b20-cb91-4de8-870a::2fcc-92a6-d03a-4b55",
@@ -9061,6 +9062,7 @@
           },
           {
             "name": "Power fist",
+            "cost": 10,
             "entryId": "b99d-0ccb-416e-936c",
             "targetId": "2fcc-92a6-d03a-4b55",
             "path": "7c3d-16f8-a6ae-2c73::b99d-0ccb-416e-936c::2fcc-92a6-d03a-4b55",
@@ -9111,6 +9113,7 @@
           },
           {
             "name": "Heavy bolter",
+            "cost": 10,
             "entryId": "755d-985b-1f83-800c",
             "targetId": "bc40-b14a-978e-0232",
             "path": "6e02-fdff-abe5-cd30::7c53-43a8-63fa-b092::755d-985b-1f83-800c::bc40-b14a-978e-0232",
@@ -9153,6 +9156,7 @@
           },
           {
             "name": "Heavy disintegrator",
+            "cost": 15,
             "entryId": "d540-f9de-d50f-c3f9",
             "targetId": "5359-13c1-29ff-9d3c",
             "path": "9319-86bf-c0ed-12d3::d540-f9de-d50f-c3f9::5359-13c1-29ff-9d3c",
@@ -9169,6 +9173,7 @@
           },
           {
             "name": "Heavy disintegrator",
+            "cost": 15,
             "entryId": "e038-28a7-ae9f-a2de",
             "targetId": "5359-13c1-29ff-9d3c",
             "path": "9319-86bf-c0ed-12d3::e038-28a7-ae9f-a2de::5359-13c1-29ff-9d3c",
@@ -10639,6 +10644,7 @@
           },
           {
             "name": "Paired Leviathan siege claws and two meltaguns",
+            "cost": 5,
             "entryId": "d949-5b9f-f2dd-a0e4",
             "path": "e468-70ee-8012-9b20::d949-5b9f-f2dd-a0e4",
             "groupPath": "e468-70ee-8012-9b20::9471-b387-8e1b-4b5a",
@@ -10753,6 +10759,7 @@
           },
           {
             "name": "Lightning claw",
+            "cost": 5,
             "entryId": "1b85-899f-5499-4534",
             "targetId": "cbf0-9b29-9a16-28b2",
             "path": "5dd5-d00c-b150-34b9::e493-cec5-db91-30a6::1b85-899f-5499-4534::cbf0-9b29-9a16-28b2",
@@ -11885,6 +11892,7 @@
           },
           {
             "name": "Power fist",
+            "cost": 10,
             "entryId": "7b20-cb91-4de8-870a",
             "targetId": "2fcc-92a6-d03a-4b55",
             "path": "43f5-e215-ebac-3b92::7b20-cb91-4de8-870a::2fcc-92a6-d03a-4b55",
@@ -11935,6 +11943,7 @@
           },
           {
             "name": "Power fist",
+            "cost": 10,
             "entryId": "b99d-0ccb-416e-936c",
             "targetId": "2fcc-92a6-d03a-4b55",
             "path": "7c3d-16f8-a6ae-2c73::b99d-0ccb-416e-936c::2fcc-92a6-d03a-4b55",
@@ -12196,6 +12205,7 @@
           },
           {
             "name": "Heavy bolter",
+            "cost": 10,
             "entryId": "755d-985b-1f83-800c",
             "targetId": "bc40-b14a-978e-0232",
             "path": "6e02-fdff-abe5-cd30::7c53-43a8-63fa-b092::755d-985b-1f83-800c::bc40-b14a-978e-0232",
@@ -12322,6 +12332,7 @@
           },
           {
             "name": "Heavy disintegrator",
+            "cost": 15,
             "entryId": "d540-f9de-d50f-c3f9",
             "targetId": "5359-13c1-29ff-9d3c",
             "path": "9319-86bf-c0ed-12d3::d540-f9de-d50f-c3f9::5359-13c1-29ff-9d3c",
@@ -12338,6 +12349,7 @@
           },
           {
             "name": "Heavy disintegrator",
+            "cost": 15,
             "entryId": "e038-28a7-ae9f-a2de",
             "targetId": "5359-13c1-29ff-9d3c",
             "path": "9319-86bf-c0ed-12d3::e038-28a7-ae9f-a2de::5359-13c1-29ff-9d3c",

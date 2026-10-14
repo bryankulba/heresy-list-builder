@@ -21,7 +21,7 @@
     "path": "6fec-85db-da98-e18c::6fbb-fa07-52b9-d350",
     "role": "Lord of War",
     "primaryCategory": "Lord of War",
-    "points": 400,
+    "points": 410,
     "baseCost": 400,
     "models": [
       {
@@ -51,6 +51,7 @@
       },
       {
         "name": "Thunderstrike Gauntlet",
+        "cost": 10,
         "entryId": "3864-8729-b37d-3ee4",
         "targetId": "55b3-a91f-05bd-3a30",
         "path": "6fec-85db-da98-e18c::3864-8729-b37d-3ee4::55b3-a91f-05bd-3a30",
