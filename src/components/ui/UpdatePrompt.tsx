@@ -1,13 +1,12 @@
 /**
  * UpdatePrompt.tsx
- * The service worker caches the app for offline use (vite-plugin-pwa). This
- * says so once the app is ready to work offline, and offers a reload when a
- * new version has been downloaded — the open list is kept (it's in local
- * storage), so reloading is safe.
+ * The service worker caches the app for offline use (vite-plugin-pwa) quietly;
+ * this only speaks up when a new version has been downloaded, offering a
+ * reload — the open list is kept (it's in local storage), so reloading is safe.
  */
 
 import React from 'react';
-import { ToastNotification, ActionableNotification } from '@carbon/react';
+import { ActionableNotification } from '@carbon/react';
 import { useRegisterSW } from 'virtual:pwa-register/react';
 
 const POSITION: React.CSSProperties = {
@@ -21,40 +20,23 @@ const POSITION: React.CSSProperties = {
 
 export default function UpdatePrompt() {
   const {
-    offlineReady: [offlineReady, setOfflineReady],
     needRefresh: [needRefresh, setNeedRefresh],
     updateServiceWorker,
   } = useRegisterSW();
 
-  if (needRefresh) {
-    return (
-      <div style={POSITION}>
-        <ActionableNotification
-          kind="info"
-          title="Update available"
-          subtitle="A new version of the builder is ready."
-          actionButtonLabel="Reload"
-          onActionButtonClick={() => updateServiceWorker(true)}
-          onClose={() => setNeedRefresh(false)}
-          lowContrast
-          inline
-        />
-      </div>
-    );
-  }
-  if (offlineReady) {
-    return (
-      <div style={POSITION}>
-        <ToastNotification
-          kind="success"
-          title="Ready to work offline"
-          subtitle="You can build lists without a connection."
-          timeout={5000}
-          onClose={() => setOfflineReady(false)}
-          lowContrast
-        />
-      </div>
-    );
-  }
-  return null;
+  if (!needRefresh) return null;
+  return (
+    <div style={POSITION}>
+      <ActionableNotification
+        kind="info"
+        title="Update available"
+        subtitle="A new version of the builder is ready."
+        actionButtonLabel="Reload"
+        onActionButtonClick={() => updateServiceWorker(true)}
+        onClose={() => setNeedRefresh(false)}
+        lowContrast
+        inline
+      />
+    </div>
+  );
 }

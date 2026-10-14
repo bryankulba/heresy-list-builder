@@ -27,7 +27,7 @@ export default function App() {
       ) : (
         <div style={{ minHeight: '100vh', background: 'var(--cds-background)' }} aria-busy="true" />
       )}
-      {/* Offline-ready notice and update prompt (service worker) */}
+      {/* Update prompt when a new version is downloaded (service worker) */}
       <UpdatePrompt />
     </Theme>
   );
