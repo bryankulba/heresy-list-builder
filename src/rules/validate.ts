@@ -9,10 +9,11 @@ import type { Allegiance, Force, PlacedDetachment } from '../types';
 import { getDetachmentDisplayName } from '../data/loader';
 import { computeTotalPoints } from '../store/rosterModel';
 import { cardSlots, expandSlots } from '../components/canvas/slotLayout';
-import { rosterCounts, type RosterCounts } from './context';
+import { detachmentContext, rosterCounts, type RosterCounts } from './context';
+import { conditionsHold } from './evaluate';
 import { allegianceCounts, chartBan, isAllegianceLocked } from './availability';
 import { detachmentAllowances, detachmentCaps } from './detachmentLimits';
-import { isLogisticalBenefit } from './primeBenefits';
+import { benefitLimitBreaches, isLogisticalBenefit } from './primeBenefits';
 import { withEffectiveSlots } from './slots';
 
 export interface RosterWarning {
@@ -205,6 +206,18 @@ function chartBanWarnings(forces: Force[]): RosterWarning[] {
   });
 }
 
+/** BSData's own errors on placed detachments ("Multiple Mechanicum Traits in Detachment", "… requires a Siege Breaker"). */
+function detachmentErrorWarnings(forces: Force[], counts: RosterCounts): RosterWarning[] {
+  return forces.flatMap((force) =>
+    force.detachments.flatMap((det) => {
+      const ctx = detachmentContext(forces, force, det, counts);
+      return (det.def.errors ?? [])
+        .filter((e) => conditionsHold(e, ctx))
+        .map((e, i) => ({ id: `det-error:${det.id}:${i}`, message: `${detName(det)}: ${e.message}`, detachmentId: det.id }));
+    })
+  );
+}
+
 export function validateRoster(input: ValidationInput): RosterWarning[] {
   const { forces, allegiance, pointsLimit, cohortDoctrine, configChoices } = input;
   const counts = rosterCounts(forces, { allegiance, pointsLimit, cohortDoctrine, configChoices });
@@ -219,5 +232,12 @@ export function validateRoster(input: ValidationInput): RosterWarning[] {
     ...uniqueWarnings(forces),
     ...availabilityWarnings(forces, allegiance),
     ...chartBanWarnings(forces),
+    ...detachmentErrorWarnings(forces, counts),
+    ...benefitLimitBreaches(forces).map((b) => ({
+      id: `benefit-limit:${b.detachmentId}:${b.slotKey}`,
+      message: `${b.name} may only be taken ${b.max === 1 ? 'once' : `${b.max} times`} per ${b.scope === 'roster' ? 'army' : 'detachment'}`,
+      detachmentId: b.detachmentId,
+      slotKey: b.slotKey,
+    })),
   ];
 }

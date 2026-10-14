@@ -3593,12 +3593,6 @@
         "entryId": "68f5-a35d-51e6-3b32",
         "targetId": "f7b9-dc9c-2c8b-0c92",
         "path": "2961-1167-7a69-c00b::68f5-a35d-51e6-3b32::f7b9-dc9c-2c8b-0c92"
-      },
-      {
-        "name": "Archimandrite",
-        "entryId": "6a01-072d-5f2a-deed",
-        "path": "2961-1167-7a69-c00b::884b-f6af-9a40-7ff1::6a01-072d-5f2a-deed",
-        "groupPath": "2961-1167-7a69-c00b::884b-f6af-9a40-7ff1::ce61-2d74-5519-70bf"
       }
     ],
     "facts": {
@@ -3777,14 +3771,6 @@
       }
     ],
     "source": "solar-auxilia",
-    "unitWargear": [
-      {
-        "name": "Cybernetica",
-        "entryId": "2b49-5e7b-9f4b-2f4f",
-        "targetId": "403d-7806-215e-7676",
-        "path": "be59-2c52-e384-dfcd::2b49-5e7b-9f4b-2f4f::403d-7806-215e-7676"
-      }
-    ],
     "facts": {
       "e8d6-2ba5-d10d-d617": 1,
       "be59-2c52-e384-dfcd": 1,
@@ -3891,14 +3877,6 @@
       }
     ],
     "source": "solar-auxilia",
-    "unitWargear": [
-      {
-        "name": "Cybernetica",
-        "entryId": "a92a-c17d-f444-9e5b",
-        "targetId": "403d-7806-215e-7676",
-        "path": "5917-83c4-b80a-4b45::a92a-c17d-f444-9e5b::403d-7806-215e-7676"
-      }
-    ],
     "facts": {
       "112f-1168-d07c-7f8f": 1,
       "5917-83c4-b80a-4b45": 1,
@@ -4015,12 +3993,6 @@
         "entryId": "998d-5c50-fafa-b052",
         "targetId": "39bd-daf2-8118-1611",
         "path": "8ce7-1b0b-6922-3f44::998d-5c50-fafa-b052::39bd-daf2-8118-1611"
-      },
-      {
-        "name": "Cybernetica",
-        "entryId": "c4a3-8ded-261d-6c7d",
-        "targetId": "403d-7806-215e-7676",
-        "path": "8ce7-1b0b-6922-3f44::c4a3-8ded-261d-6c7d::403d-7806-215e-7676"
       }
     ],
     "facts": {
@@ -4095,12 +4067,6 @@
         "entryId": "aba3-6a80-765a-2dfe",
         "targetId": "f55e-5279-ca20-3a9b",
         "path": "6fec-3fa7-8264-c54c::aba3-6a80-765a-2dfe::f55e-5279-ca20-3a9b"
-      },
-      {
-        "name": "Cybernetica",
-        "entryId": "60d6-3379-8896-86d8",
-        "targetId": "403d-7806-215e-7676",
-        "path": "6fec-3fa7-8264-c54c::60d6-3379-8896-86d8::403d-7806-215e-7676"
       },
       {
         "name": "Arcana Benefice:",
@@ -4204,12 +4170,6 @@
         "entryId": "61f2-d958-8936-310e",
         "targetId": "8346-d5be-e159-326d",
         "path": "782c-0b7e-40ca-80d6::61f2-d958-8936-310e::8346-d5be-e159-326d"
-      },
-      {
-        "name": "Cybernetica",
-        "entryId": "9a26-ef5e-552f-8248",
-        "targetId": "403d-7806-215e-7676",
-        "path": "782c-0b7e-40ca-80d6::9a26-ef5e-552f-8248::403d-7806-215e-7676"
       }
     ],
     "facts": {

@@ -97,6 +97,8 @@ export const rulesData = rulesJson as unknown as {
   armyConfig: Record<string, ArmyConfigEntry[]>;
   /** Per-unit choices made once for the army (sub-factions), by shared group id */
   armyChoices: Record<string, ArmyChoiceGroup>;
+  /** Shared Legiones Astartes units' default wargear where a Legion differs: faction → unit path → model path ("" = unit) → wargear */
+  legionWargear?: Record<string, Record<string, Record<string, WargearEntry[]>>>;
 };
 
 /** A per-unit BSData choice the builder makes once for the whole army — see scripts/parse-bsdata.ts */
@@ -159,10 +161,29 @@ export function getChartDetachment(chartName: string, detachmentName: string): D
   return def;
 }
 
+/** A shared unit with the default wargear its Legion's army takes (Iron Warriors' own pistols and bolters). */
+function withLegionWargear(unit: UnitEntry, overrides: Record<string, WargearEntry[]> | undefined): UnitEntry {
+  if (!overrides) return unit;
+  const model = (m: ModelEntry): ModelEntry => ({
+    ...m,
+    defaultWargear: overrides[m.path ?? m.entryId ?? m.name] ?? m.defaultWargear,
+    ...(m.models ? { models: m.models.map(model) } : {}),
+  });
+  return { ...unit, models: unit.models.map(model), ...('' in overrides ? { unitWargear: overrides[''] } : {}) };
+}
+
+const factionUnitsCache = new Map<string, { sources: UnitEntry[][]; units: UnitEntry[] }>();
+
 /** Returns all units available to a faction, merging its unit sources (e.g. Legiones Astartes base + legion). */
 export function getUnitsForFaction(faction: string): UnitEntry[] {
-  const sources = FACTION_BY_ID[faction]?.unitSources ?? [faction];
-  return sources.flatMap((key) => unitsData[key] ?? []);
+  const sources = (FACTION_BY_ID[faction]?.unitSources ?? [faction]).map((key) => unitsData[key] ?? []);
+  // Cached until a source finishes loading (the same arrays mean the same result)
+  const cached = factionUnitsCache.get(faction);
+  if (cached && cached.sources.length === sources.length && cached.sources.every((s, i) => s === sources[i])) return cached.units;
+  const legion = rulesData.legionWargear?.[faction];
+  const units = sources.flat().map((u) => (legion && u.source === 'legiones-astartes' ? withLegionWargear(u, legion[u.path ?? u.entryId ?? u.name]) : u));
+  factionUnitsCache.set(faction, { sources, units });
+  return units;
 }
 
 /** Factions that may join `primaryFaction`'s army as an Allied Detachment. */

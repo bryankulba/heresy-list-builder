@@ -50,6 +50,13 @@
         "groupPath": "6fec-85db-da98-e18c::eaa5-8127-a44e-aea2"
       },
       {
+        "name": "Thunderstrike Gauntlet",
+        "entryId": "3864-8729-b37d-3ee4",
+        "targetId": "55b3-a91f-05bd-3a30",
+        "path": "6fec-85db-da98-e18c::3864-8729-b37d-3ee4::55b3-a91f-05bd-3a30",
+        "groupPath": "6fec-85db-da98-e18c::eaa5-8127-a44e-aea2"
+      },
+      {
         "name": "Hull (Front) Mounted heavy stubber",
         "entryId": "87fe-2c32-9a72-dbd6",
         "targetId": "f0b3-29e2-c35f-0109",
@@ -213,6 +220,13 @@
                 "path": "6cc7-d325-35e3-fc44::1511-9141-9c29-e585::8026-777a-5e74-7952"
               }
             ]
+          },
+          {
+            "name": "Volkite veuglaire",
+            "entryId": "dede-2169-7ff2-e3d4",
+            "targetId": "fd48-6c5b-4ac5-2a8f",
+            "path": "6cc7-d325-35e3-fc44::dede-2169-7ff2-e3d4::fd48-6c5b-4ac5-2a8f",
+            "groupPath": "6cc7-d325-35e3-fc44::2370-be56-af4d-6bf8"
           }
         ]
       }
@@ -226,7 +240,9 @@
       "38d4-d720-8009-acd3": 1,
       "d061-688b-72e5-619d": 1,
       "e269-7996-f41f-b892": 1,
-      "61d7-d253-fb9e-dd2d": 1
+      "61d7-d253-fb9e-dd2d": 1,
+      "dede-2169-7ff2-e3d4": 1,
+      "fd48-6c5b-4ac5-2a8f": 1
     }
   },
   {

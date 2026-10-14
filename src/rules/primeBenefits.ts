@@ -5,7 +5,7 @@
  * visibility is a BSData condition evaluated against the unit's context.
  */
 
-import type { PrimeBenefit, UnitEntry } from '../types';
+import type { Force, PrimeBenefit, UnitEntry } from '../types';
 import { rulesData } from '../data/loader';
 import { effectiveHidden, type RuleContext, type RuleModifier } from './evaluate';
 
@@ -21,12 +21,16 @@ export interface PrimeNode {
   hidden?: boolean;
   modifiers?: RuleModifier[];
   description?: string;
+  /** Options: how many the roster / one detachment may hold (Seneschal: 1 per roster) */
+  max?: { roster?: number; force?: number };
   children?: PrimeNode[];
 }
 
 export interface PrimeOption extends PrimeBenefit {
   /** Further choices made after picking this benefit (e.g. Logistical Benefit's slot role) */
   subChoices: PrimeOption[];
+  /** How many the roster / one detachment may hold */
+  max?: PrimeNode['max'];
 }
 
 /** Visible options under a node (descending through visible groups). */
@@ -42,6 +46,7 @@ function visibleOptions(nodes: PrimeNode[] | undefined, ctx: RuleContext): Prime
         name: node.name,
         description: node.description ?? '',
         subChoices: visibleOptions(node.children, ctx),
+        ...(node.max ? { max: node.max } : {}),
       });
     }
   }
@@ -116,4 +121,54 @@ export function logisticalBenefitChoice(unit: UnitEntry, benefit: PrimeBenefit, 
     return undefined;
   };
   return search(node?.children);
+}
+
+/** How many slots hold this benefit, in the roster and in one detachment (leaving out one slot, e.g. the one being edited). */
+function benefitCounts(forces: Force[], benefitId: string, detachmentId: string, except?: string) {
+  let roster = 0;
+  let force = 0;
+  for (const det of forces.flatMap((f) => f.detachments)) {
+    for (const [key, fs] of Object.entries(det.slots)) {
+      if (fs?.primeBenefit?.id !== benefitId || (det.id === detachmentId && key === except)) continue;
+      roster += 1;
+      if (det.id === detachmentId) force += 1;
+    }
+  }
+  return { roster, force };
+}
+
+/**
+ * Whether the benefit's BSData limit is already used up elsewhere — Seneschal
+ * once per roster, Master Sergeant once per detachment — so a slot can't take it.
+ */
+export function benefitLimitReached(
+  forces: Force[],
+  option: Pick<PrimeOption, 'id' | 'max'>,
+  detachmentId: string,
+  slotKey: string
+): boolean {
+  if (!option.max) return false;
+  const n = benefitCounts(forces, option.id, detachmentId, slotKey);
+  return (option.max.roster !== undefined && n.roster >= option.max.roster) || (option.max.force !== undefined && n.force >= option.max.force);
+}
+
+/** Benefits held more often than BSData allows: the slots past the limit, with the limit. */
+export function benefitLimitBreaches(forces: Force[]): Array<{ detachmentId: string; slotKey: string; name: string; scope: 'roster' | 'force'; max: number }> {
+  const out: Array<{ detachmentId: string; slotKey: string; name: string; scope: 'roster' | 'force'; max: number }> = [];
+  const rosterSeen = new Map<string, number>();
+  for (const det of forces.flatMap((f) => f.detachments)) {
+    const forceSeen = new Map<string, number>();
+    for (const [slotKey, fs] of Object.entries(det.slots)) {
+      const benefit = fs?.primeBenefit;
+      const max = benefit && fs ? findPrimeNode(fs.unit, benefit)?.max : undefined;
+      if (!benefit || !max) continue;
+      const r = (rosterSeen.get(benefit.id) ?? 0) + 1;
+      const f = (forceSeen.get(benefit.id) ?? 0) + 1;
+      rosterSeen.set(benefit.id, r);
+      forceSeen.set(benefit.id, f);
+      if (max.roster !== undefined && r > max.roster) out.push({ detachmentId: det.id, slotKey, name: benefit.name, scope: 'roster', max: max.roster });
+      else if (max.force !== undefined && f > max.force) out.push({ detachmentId: det.id, slotKey, name: benefit.name, scope: 'force', max: max.force });
+    }
+  }
+  return out;
 }

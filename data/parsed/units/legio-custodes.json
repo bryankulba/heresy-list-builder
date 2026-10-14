@@ -588,6 +588,13 @@
                 "path": "e720-ffae-db69-0009::a6f2-6815-dd0a-1f36::f4de-682d-a00c-3b30"
               }
             ]
+          },
+          {
+            "name": "Arachnus storm cannon",
+            "entryId": "2deb-9a2a-48be-4f3d",
+            "targetId": "45de-bc45-6cd8-fd54",
+            "path": "e720-ffae-db69-0009::2deb-9a2a-48be-4f3d::45de-bc45-6cd8-fd54",
+            "groupPath": "e720-ffae-db69-0009::0980-35ef-20c3-dcbc"
           }
         ]
       }
@@ -604,7 +611,9 @@
       "e0ca-34e6-eb83-1845": 1,
       "1e6b-c153-22cb-02eb": 1,
       "b94f-e829-064a-9d60": 1,
-      "62c3-404e-3011-1441": 1
+      "62c3-404e-3011-1441": 1,
+      "2deb-9a2a-48be-4f3d": 1,
+      "45de-bc45-6cd8-fd54": 1
     },
     "prime": {
       "linkId": "6acc-329e-4256-8aa6",
@@ -1438,14 +1447,6 @@
       }
     ],
     "source": "legio-custodes",
-    "unitWargear": [
-      {
-        "name": "Cybernetica",
-        "entryId": "2b49-5e7b-9f4b-2f4f",
-        "targetId": "403d-7806-215e-7676",
-        "path": "eedc-c9be-7a66-50f6::2b49-5e7b-9f4b-2f4f::403d-7806-215e-7676"
-      }
-    ],
     "facts": {
       "e8d6-2ba5-d10d-d617": 1,
       "eedc-c9be-7a66-50f6": 1,
@@ -1535,14 +1536,6 @@
       }
     ],
     "source": "legio-custodes",
-    "unitWargear": [
-      {
-        "name": "Cybernetica",
-        "entryId": "a92a-c17d-f444-9e5b",
-        "targetId": "403d-7806-215e-7676",
-        "path": "3b72-ccd0-67bb-7805::a92a-c17d-f444-9e5b::403d-7806-215e-7676"
-      }
-    ],
     "facts": {
       "112f-1168-d07c-7f8f": 1,
       "3b72-ccd0-67bb-7805": 1,
@@ -1642,12 +1635,6 @@
         "entryId": "998d-5c50-fafa-b052",
         "targetId": "39bd-daf2-8118-1611",
         "path": "4743-afcc-1761-4ff9::998d-5c50-fafa-b052::39bd-daf2-8118-1611"
-      },
-      {
-        "name": "Cybernetica",
-        "entryId": "c4a3-8ded-261d-6c7d",
-        "targetId": "403d-7806-215e-7676",
-        "path": "4743-afcc-1761-4ff9::c4a3-8ded-261d-6c7d::403d-7806-215e-7676"
       }
     ],
     "facts": {
@@ -1722,12 +1709,6 @@
         "entryId": "aba3-6a80-765a-2dfe",
         "targetId": "f55e-5279-ca20-3a9b",
         "path": "84ca-e530-4214-bcf8::aba3-6a80-765a-2dfe::f55e-5279-ca20-3a9b"
-      },
-      {
-        "name": "Cybernetica",
-        "entryId": "60d6-3379-8896-86d8",
-        "targetId": "403d-7806-215e-7676",
-        "path": "84ca-e530-4214-bcf8::60d6-3379-8896-86d8::403d-7806-215e-7676"
       },
       {
         "name": "Arcana Benefice:",
@@ -1831,12 +1812,6 @@
         "entryId": "61f2-d958-8936-310e",
         "targetId": "8346-d5be-e159-326d",
         "path": "d610-c7a0-2f93-94d7::61f2-d958-8936-310e::8346-d5be-e159-326d"
-      },
-      {
-        "name": "Cybernetica",
-        "entryId": "9a26-ef5e-552f-8248",
-        "targetId": "403d-7806-215e-7676",
-        "path": "d610-c7a0-2f93-94d7::9a26-ef5e-552f-8248::403d-7806-215e-7676"
       }
     ],
     "facts": {

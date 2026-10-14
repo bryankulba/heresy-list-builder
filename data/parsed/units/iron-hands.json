@@ -798,14 +798,6 @@
       }
     ],
     "source": "iron-hands",
-    "unitWargear": [
-      {
-        "name": "Cybernetica",
-        "entryId": "2b49-5e7b-9f4b-2f4f",
-        "targetId": "403d-7806-215e-7676",
-        "path": "3c19-634b-5bc1-cd24::2b49-5e7b-9f4b-2f4f::403d-7806-215e-7676"
-      }
-    ],
     "facts": {
       "e8d6-2ba5-d10d-d617": 1,
       "3c19-634b-5bc1-cd24": 1,
@@ -894,14 +886,6 @@
       }
     ],
     "source": "iron-hands",
-    "unitWargear": [
-      {
-        "name": "Cybernetica",
-        "entryId": "a92a-c17d-f444-9e5b",
-        "targetId": "403d-7806-215e-7676",
-        "path": "9b65-cb9d-c0ac-33f9::a92a-c17d-f444-9e5b::403d-7806-215e-7676"
-      }
-    ],
     "facts": {
       "112f-1168-d07c-7f8f": 1,
       "9b65-cb9d-c0ac-33f9": 1,

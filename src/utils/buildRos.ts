@@ -125,7 +125,8 @@ function modelSel(m: ModelEntry, number: number, choices?: ArmyChoices): Sel {
     number,
     cost: Math.round(m.cost * number),
     children: [
-      ...(m.models ?? []).filter((sub) => sub.min > 0).map((sub) => modelSel(sub, sub.min, choices)),
+      // A sub-unit's models are totals across all of them (2 Rapier crews: 4 Legionaries, 2 Carriers)
+      ...(m.models ?? []).filter((sub) => sub.min > 0).map((sub) => modelSel(sub, sub.min * number, choices)),
       ...m.defaultWargear.map((w) => wargearSel(w, number, choices)),
     ],
   };
