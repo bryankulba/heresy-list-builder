@@ -3,9 +3,13 @@
  * (sample_exports/export_errors.md).
  */
 import { describe, test, expect } from 'vitest';
+import { readFileSync } from 'fs';
+import { join } from 'path';
+import { importRos } from './importRos';
+import { slotPoints } from '../rules/unitSize';
 import { getDetachmentsForFaction, getUnitsForFaction, rulesData } from '../data/loader';
 import { defaultArmyChoices, detachmentChoices } from '../rules/armyChoices';
-import { addDetachment, createForce, updateDetachment, modelKey } from '../store/rosterModel';
+import { addDetachment, computeTotalPoints, createForce, updateDetachment, modelKey } from '../store/rosterModel';
 import { buildRosXml } from './buildRos';
 import { benefitLimitReached, getPrimeOptions } from '../rules/primeBenefits';
 import { unitContext } from '../rules/context';
@@ -110,5 +114,23 @@ describe('Mechanicum Traits follow the detachment', () => {
     expect(xml).not.toContain('name="Archimandrite"');
     const warnings = validateRoster({ forces, allegiance: 'Traitor', pointsLimit: 3000, armyChoices: choices });
     expect(warnings.some((w) => /Multiple Mechanicum Traits/.test(w.message))).toBe(false);
+  });
+});
+
+describe('points match New Recruit', () => {
+  test('default wargear that costs points counts (a list using only defaults totals as in New Recruit)', () => {
+    // Built in the app, opened and saved in New Recruit: 2865 there (Paragon blade +15, lightning claws…)
+    const xml = readFileSync(join(__dirname, '../../reference_armies/death-guard_v8_fixed.ros'), 'utf-8');
+    const newRecruitTotal = Number(xml.match(/<costs>\s*<cost name="Point\(s\)"[^>]*value="(\d+)"/)?.[1]);
+    const { snapshot } = importRos(xml);
+    expect(newRecruitTotal).toBe(2865);
+    expect(computeTotalPoints(snapshot.forces)).toBe(newRecruitTotal);
+  });
+
+  test('extra models bring their default wargear cost (Cataphractii: 30 + 10 for claws)', () => {
+    const squad = unit('death-guard', 'Cataphractii Terminator Squad');
+    const terminator = squad.models.find((m) => m.name === 'Cataphractii Terminator')!;
+    expect(squad.points).toBe(200);
+    expect(slotPoints({ unit: squad, modelCounts: { [modelKey(terminator)]: terminator.min + 1 } })).toBe(240);
   });
 });

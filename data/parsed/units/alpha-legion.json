@@ -382,7 +382,7 @@
     "path": "1956-ecc4-3d33-e1c5::e730-6b3b-7f60-fea0",
     "role": "Elites",
     "primaryCategory": "Elites",
-    "points": 250,
+    "points": 300,
     "baseCost": 70,
     "models": [
       {
@@ -395,6 +395,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 10,
             "entryId": "32de-abeb-37a2-fa4d",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "1956-ecc4-3d33-e1c5::32de-abeb-37a2-fa4d::6754-24dd-5be0-26ff",
@@ -412,6 +413,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 10,
             "entryId": "550c-3b95-3385-1a50",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "1956-ecc4-3d33-e1c5::550c-3b95-3385-1a50::6754-24dd-5be0-26ff",
@@ -3085,7 +3087,7 @@
     "path": "eb40-7916-1b27-b491::c660-c7ad-70b0-5318",
     "role": "Rewards of Treachery",
     "primaryCategory": "Rewards of Treachery",
-    "points": 135,
+    "points": 245,
     "baseCost": 47,
     "models": [
       {
@@ -3098,6 +3100,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 10,
             "entryId": "3107-dce7-8751-c598",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "eb40-7916-1b27-b491::3107-dce7-8751-c598::6754-24dd-5be0-26ff",
@@ -3105,6 +3108,7 @@
           },
           {
             "name": "Meteor hammer",
+            "cost": 20,
             "entryId": "5d93-8523-229e-32df",
             "path": "eb40-7916-1b27-b491::2bc2-d4d8-3c17-1546::5d93-8523-229e-32df",
             "groupPath": "eb40-7916-1b27-b491::2bc2-d4d8-3c17-1546::f18f-e86f-e13e-4a48"
@@ -3121,6 +3125,7 @@
         "defaultWargear": [
           {
             "name": "Meteor hammer",
+            "cost": 20,
             "entryId": "5d93-8523-229e-32df",
             "path": "eb40-7916-1b27-b491::3ee1-dc34-0734-d740::5d93-8523-229e-32df",
             "groupPath": "eb40-7916-1b27-b491::3ee1-dc34-0734-d740::f18f-e86f-e13e-4a48"
@@ -4543,7 +4548,7 @@
     "path": "6e97-aeae-c4cc-4521::3f9d-5f2f-a47a-bd1f",
     "role": "Rewards of Treachery",
     "primaryCategory": "Rewards of Treachery",
-    "points": 240,
+    "points": 265,
     "baseCost": 240,
     "models": [
       {
@@ -4556,6 +4561,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 5,
             "entryId": "2ee9-b60f-6b4d-ea0f",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "6e97-aeae-c4cc-4521::2ee9-b60f-6b4d-ea0f::6754-24dd-5be0-26ff",
@@ -4573,6 +4579,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 5,
             "entryId": "79d9-2348-ee88-7df3",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "6e97-aeae-c4cc-4521::79d9-2348-ee88-7df3::6754-24dd-5be0-26ff",
@@ -5204,7 +5211,7 @@
     "path": "cbc6-c7ef-4c1f-d49b::d002-d1d6-c784-1f15",
     "role": "Rewards of Treachery",
     "primaryCategory": "Rewards of Treachery",
-    "points": 125,
+    "points": 135,
     "baseCost": 45,
     "models": [
       {
@@ -5241,6 +5248,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 10,
             "entryId": "949c-ae23-394e-4e2c",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "cbc6-c7ef-4c1f-d49b::949c-ae23-394e-4e2c::6754-24dd-5be0-26ff",
@@ -5475,7 +5483,7 @@
     "path": "3d9b-a822-5152-c9ac::03d6-e650-4864-9a0e",
     "role": "Rewards of Treachery",
     "primaryCategory": "Rewards of Treachery",
-    "points": 275,
+    "points": 325,
     "baseCost": 75,
     "models": [
       {
@@ -5494,6 +5502,7 @@
           },
           {
             "name": "Solarite Power Gauntlet",
+            "cost": 10,
             "entryId": "e2ea-09a6-46c5-82db",
             "targetId": "ddcb-01e9-18af-c8f6",
             "path": "3d9b-a822-5152-c9ac::e2ea-09a6-46c5-82db::ddcb-01e9-18af-c8f6",
@@ -5517,6 +5526,7 @@
           },
           {
             "name": "Solarite Power Gauntlet",
+            "cost": 10,
             "entryId": "32a8-a8b2-4ce0-944b",
             "targetId": "ddcb-01e9-18af-c8f6",
             "path": "3d9b-a822-5152-c9ac::32a8-a8b2-4ce0-944b::ddcb-01e9-18af-c8f6",
@@ -7520,7 +7530,7 @@
     "path": "8740-9bf1-0eb9-1e46::eef8-a49d-4568-a714",
     "role": "Rewards of Treachery",
     "primaryCategory": "Rewards of Treachery",
-    "points": 215,
+    "points": 265,
     "baseCost": 55,
     "models": [
       {
@@ -7533,6 +7543,7 @@
         "defaultWargear": [
           {
             "name": "Power fist",
+            "cost": 10,
             "entryId": "2031-bace-42f1-800b",
             "targetId": "2fcc-92a6-d03a-4b55",
             "path": "8740-9bf1-0eb9-1e46::2031-bace-42f1-800b::2fcc-92a6-d03a-4b55",
@@ -7557,6 +7568,7 @@
         "defaultWargear": [
           {
             "name": "Power fist",
+            "cost": 10,
             "entryId": "5839-54eb-4398-9a40",
             "targetId": "2fcc-92a6-d03a-4b55",
             "path": "8740-9bf1-0eb9-1e46::5839-54eb-4398-9a40::2fcc-92a6-d03a-4b55",
@@ -8769,7 +8781,7 @@
     "path": "c750-90e4-7643-084c::cb0f-4537-6a7e-4ed7",
     "role": "Rewards of Treachery",
     "primaryCategory": "Rewards of Treachery",
-    "points": 240,
+    "points": 265,
     "baseCost": 240,
     "models": [
       {
@@ -8782,6 +8794,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 5,
             "entryId": "a782-6dbf-bd6e-573b",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "c750-90e4-7643-084c::a782-6dbf-bd6e-573b::6754-24dd-5be0-26ff",
@@ -8799,6 +8812,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 5,
             "entryId": "b993-7047-3933-ea5b",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "c750-90e4-7643-084c::b993-7047-3933-ea5b::6754-24dd-5be0-26ff",

@@ -22,7 +22,7 @@
     "path": "2d3f-a65d-edd7-847b::cf2e-fa27-23ce-7502",
     "role": "Warlord",
     "primaryCategory": "Warlord",
-    "points": 470,
+    "points": 520,
     "baseCost": 470,
     "models": [
       {
@@ -45,30 +45,35 @@
           },
           {
             "name": "Athanaean",
+            "cost": 10,
             "entryId": "e354-0333-bece-8322",
             "targetId": "fc42-7d7b-e1ba-8946",
             "path": "2d3f-a65d-edd7-847b::e354-0333-bece-8322::fc42-7d7b-e1ba-8946"
           },
           {
             "name": "Corvidae",
+            "cost": 10,
             "entryId": "7e59-6ca4-3aa7-02cc",
             "targetId": "cff7-56bc-7e47-1c7d",
             "path": "2d3f-a65d-edd7-847b::7e59-6ca4-3aa7-02cc::cff7-56bc-7e47-1c7d"
           },
           {
             "name": "Pavoni",
+            "cost": 10,
             "entryId": "b75c-c354-8ed4-729d",
             "targetId": "ef46-38e5-0b94-41c1",
             "path": "2d3f-a65d-edd7-847b::b75c-c354-8ed4-729d::ef46-38e5-0b94-41c1"
           },
           {
             "name": "Pyrae",
+            "cost": 10,
             "entryId": "effe-06e8-f496-77b7",
             "targetId": "6c08-592d-ebee-6003",
             "path": "2d3f-a65d-edd7-847b::effe-06e8-f496-77b7::6c08-592d-ebee-6003"
           },
           {
             "name": "Raptora",
+            "cost": 10,
             "entryId": "0a6b-bc63-0415-262c",
             "targetId": "ba0e-77b7-36be-8a4e",
             "path": "2d3f-a65d-edd7-847b::0a6b-bc63-0415-262c::ba0e-77b7-36be-8a4e"
@@ -126,7 +131,7 @@
     "path": "6585-dd01-4a66-3422::1b93-d5ce-f6d7-8ad2",
     "role": "High Command",
     "primaryCategory": "High Command",
-    "points": 185,
+    "points": 195,
     "baseCost": 185,
     "models": [
       {
@@ -174,6 +179,7 @@
           },
           {
             "name": "Corvidae",
+            "cost": 10,
             "entryId": "d44d-d15c-337a-2f64",
             "targetId": "cff7-56bc-7e47-1c7d",
             "path": "6585-dd01-4a66-3422::d44d-d15c-337a-2f64::cff7-56bc-7e47-1c7d"

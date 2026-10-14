@@ -423,7 +423,7 @@
     "path": "30c4-e580-a2b6-11da::eef8-a49d-4568-a714",
     "role": "Elites",
     "primaryCategory": "Elites",
-    "points": 215,
+    "points": 265,
     "baseCost": 55,
     "models": [
       {
@@ -436,6 +436,7 @@
         "defaultWargear": [
           {
             "name": "Power fist",
+            "cost": 10,
             "entryId": "2031-bace-42f1-800b",
             "targetId": "2fcc-92a6-d03a-4b55",
             "path": "30c4-e580-a2b6-11da::2031-bace-42f1-800b::2fcc-92a6-d03a-4b55",
@@ -460,6 +461,7 @@
         "defaultWargear": [
           {
             "name": "Power fist",
+            "cost": 10,
             "entryId": "5839-54eb-4398-9a40",
             "targetId": "2fcc-92a6-d03a-4b55",
             "path": "30c4-e580-a2b6-11da::5839-54eb-4398-9a40::2fcc-92a6-d03a-4b55",

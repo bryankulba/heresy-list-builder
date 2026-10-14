@@ -584,7 +584,7 @@
     "path": "291e-d41c-92b7-9863::cb0f-4537-6a7e-4ed7",
     "role": "Retinue",
     "primaryCategory": "Retinue",
-    "points": 240,
+    "points": 265,
     "baseCost": 240,
     "models": [
       {
@@ -597,6 +597,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 5,
             "entryId": "a782-6dbf-bd6e-573b",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "291e-d41c-92b7-9863::a782-6dbf-bd6e-573b::6754-24dd-5be0-26ff",
@@ -614,6 +615,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 5,
             "entryId": "b993-7047-3933-ea5b",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "291e-d41c-92b7-9863::b993-7047-3933-ea5b::6754-24dd-5be0-26ff",
@@ -667,7 +669,7 @@
     "path": "c16e-901e-d295-3c02::3f9d-5f2f-a47a-bd1f",
     "role": "Retinue",
     "primaryCategory": "Retinue",
-    "points": 240,
+    "points": 265,
     "baseCost": 240,
     "models": [
       {
@@ -680,6 +682,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 5,
             "entryId": "2ee9-b60f-6b4d-ea0f",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "c16e-901e-d295-3c02::2ee9-b60f-6b4d-ea0f::6754-24dd-5be0-26ff",
@@ -697,6 +700,7 @@
         "defaultWargear": [
           {
             "name": "Pair of lightning claws",
+            "cost": 5,
             "entryId": "79d9-2348-ee88-7df3",
             "targetId": "6754-24dd-5be0-26ff",
             "path": "c16e-901e-d295-3c02::79d9-2348-ee88-7df3::6754-24dd-5be0-26ff",
