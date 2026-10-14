@@ -13,6 +13,7 @@ import { unitContext } from '../../rules/context';
 import { benefitLimitReached, getPrimeOptions, isLogisticalBenefit, logisticalBenefitRoles, type PrimeOption } from '../../rules/primeBenefits';
 import { unitsForSlot } from '../../rules/slots';
 import { auxiliaryUnlocks } from '../../rules/detachmentLimits';
+import { benefitUsable } from '../../rules/options';
 import { allegianceCounts, chartBan, ignoresAllegiance, isAllegianceLocked } from '../../rules/availability';
 import { cardSlots } from './slotLayout';
 import { isSizeAdjustable } from '../../rules/unitSize';
@@ -61,9 +62,10 @@ export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, 
   function primeOptionsFor(detachmentId: string, slotKey: string, unit: UnitEntry): PrimeOption[] {
     const { force, det } = placed(detachmentId);
     if (!force || !det) return [];
-    // Less those whose BSData limit is used up elsewhere (Seneschal once per roster, Master Sergeant once per detachment)
+    // Less those whose BSData limit is used up elsewhere (Seneschal once per roster, Master Sergeant
+    // once per detachment), and slot-adding ones with no slot to add here (Armoured Command Squadron)
     return getPrimeOptions(unit, unitContext(forces, force, det, unit, findSlotDef(detachmentId, slotKey)?.categoryId, counts)).filter(
-      (o) => !benefitLimitReached(forces, o, detachmentId, slotKey)
+      (o) => !benefitLimitReached(forces, o, detachmentId, slotKey) && benefitUsable(forces, detachmentId, slotKey, unit, o, { allegiance })
     );
   }
 
@@ -208,9 +210,11 @@ export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, 
         slotKey,
         role,
         unit,
-        // Only roles the army has units for
+        // Only roles the army has units for, that BSData opens in this detachment
         roles: logisticalBenefitRoles(option).filter(
-          (r) => slotUnits(detachmentId, { role: r, min: 0, max: 1, prime: false }).length > 0
+          (r) =>
+            slotUnits(detachmentId, { role: r, min: 0, max: 1, prime: false }).length > 0 &&
+            benefitUsable(forces, detachmentId, slotKey, unit, option, { allegiance }, r)
         ),
       });
     } else if (isEditingSlot.current) {

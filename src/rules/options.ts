@@ -6,14 +6,15 @@
  * unlock is offered with BSData's reason ("requires a Siege Breaker").
  */
 
-import type { DetachmentDef, Force, PlacedDetachment, SlotDef } from '../types';
-import { cataloguesData, factionUnitsLoaded, getChart, getUnitsForFaction, rulesData } from '../data/loader';
+import type { DetachmentDef, Force, PlacedDetachment, SlotDef, UnitEntry } from '../types';
+import { cataloguesData, detachmentsData, factionUnitsLoaded, getChart, getUnitsForFaction, rulesData } from '../data/loader';
 import { conditionsHold, type RuleCondition, type RuleConditionGroup, type RuleContext } from './evaluate';
-import { rosterCounts, type RosterCounts } from './context';
+import { rosterCounts, type RosterCounts, type RosterOptions } from './context';
 import { allowanceFor, isDetachmentLocked } from './detachmentLimits';
 import { allegianceCounts, chartBan, ignoresAllegiance, isAllegianceLocked } from './availability';
-import { unitsForSlot } from './slots';
-import type { PrimeNode } from './primeBenefits';
+import { effectiveSlots, unitsForSlot } from './slots';
+import { updateDetachment } from '../store/rosterModel';
+import { findPrimeNode, isLogisticalBenefit, logisticalBenefitRoles, type PrimeNode, type PrimeOption } from './primeBenefits';
 
 export type DetachmentAvailability = { status: 'ok' } | { status: 'locked'; reason?: string } | { status: 'hidden' };
 
@@ -169,3 +170,53 @@ export function fillableSlots(forces: Force[], force: Force, det: PlacedDetachme
   return det.def.slots.filter((s) => keep.get(base(s.role)));
 }
 
+
+let slotRuleIds: Set<string> | undefined;
+
+/** Ids BSData's slot rules react to ("LB - Armour", Clade Operative…): choosing one of these adds slots. */
+function slotRuleIdSet(): Set<string> {
+  slotRuleIds ??= new Set(
+    detachmentsData.charts.flatMap((chart) =>
+      chart.detachments.flatMap((d) => d.slots.flatMap((s) => referencedIds([...(s.maxModifiers ?? []), ...(s.visibility ?? [])])))
+    )
+  );
+  return slotRuleIds;
+}
+
+/** The detachment's shown slots, counted. */
+function slotTotal(forces: Force[], detachmentId: string, opts: RosterOptions): number {
+  const force = forces.find((f) => f.detachments.some((d) => d.id === detachmentId));
+  const det = force?.detachments.find((d) => d.id === detachmentId);
+  if (!force || !det) return 0;
+  return effectiveSlots(forces, force, det, rosterCounts(forces, opts)).reduce((n, s) => n + s.max, 0);
+}
+
+/**
+ * Whether a Prime benefit (and, for Logistical Benefit, a role) does anything
+ * for this slot's detachment. Benefits that only add slots — Logistical
+ * Benefit, Clade / Cult Operative — are pointless where BSData gives the
+ * detachment no such slot (an Armoured Command Squadron has only Armour), so
+ * they aren't offered there. Other benefits always are.
+ */
+export function benefitUsable(
+  forces: Force[],
+  detachmentId: string,
+  slotKey: string,
+  unit: UnitEntry,
+  option: PrimeOption,
+  opts: RosterOptions = {},
+  lbRole?: string
+): boolean {
+  const ids = [option.id, ...option.subChoices.map((c) => c.id), ...(findPrimeNode(unit, option)?.counts ?? [])];
+  if (!ids.some((id) => slotRuleIdSet().has(id))) return true;
+  const benefit = { id: option.id, name: option.name, description: option.description };
+  const withBenefit = (role?: string) =>
+    updateDetachment(forces, detachmentId, (d) => ({
+      ...d,
+      slots: { ...d.slots, [slotKey]: { unit, primeBenefit: benefit, ...(role ? { lbRole: role } : {}) } },
+    }));
+  const without = updateDetachment(forces, detachmentId, (d) => ({ ...d, slots: { ...d.slots, [slotKey]: { unit } } }));
+  const before = slotTotal(without, detachmentId, opts);
+  const roles = lbRole ? [lbRole] : isLogisticalBenefit(benefit) ? logisticalBenefitRoles(option) : [undefined];
+  return roles.some((role) => slotTotal(withBenefit(role), detachmentId, opts) > before);
+}

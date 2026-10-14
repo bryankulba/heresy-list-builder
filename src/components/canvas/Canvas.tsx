@@ -11,7 +11,7 @@ import type { Force, PlacedDetachment } from '../../types';
 import { useRosterStore, computeTotalPoints } from '../../store/rosterStore';
 import { primaryForce } from '../../store/rosterModel';
 import { getAdditionalDetachments, getAllyFactions, getChart, lordOfWarChartFor } from '../../data/loader';
-import { CRUSADE_CHART, factionLabel } from '../../data/factions';
+import { CRUSADE_CHART, ZONE_MORTALIS_CHART, factionLabel } from '../../data/factions';
 import { detachmentAllowances } from '../../rules/detachmentLimits';
 import { compulsorySlotsFillable } from '../../rules/options';
 import DetachmentCard from './DetachmentCard';
@@ -58,8 +58,12 @@ export default function Canvas() {
       : undefined;
   const additionalDetachments = primary ? getAdditionalDetachments(primary.chart, primary.faction) : [];
   const allyFactions = primary ? getAllyFactions(primary.faction) : [];
-  // One Lord of War Detachment per army (Knights use their own "Knight Lord of War" chart)
-  const canAddLordOfWar = !!primary && !forces.some((f) => f.kind === 'lordOfWar') && !!lordOfWarChartFor(primary.faction);
+  // One Lord of War Detachment per army (Knights use their own "Knight Lord of War" chart); none in Zone Mortalis
+  const canAddLordOfWar =
+    !!primary &&
+    primary.chart !== ZONE_MORTALIS_CHART &&
+    !forces.some((f) => f.kind === 'lordOfWar') &&
+    !!lordOfWarChartFor(primary.faction);
 
   /**
    * Remove action for a card, if it can be removed on its own: an allied army
