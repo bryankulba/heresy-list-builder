@@ -15,7 +15,6 @@ function useMediaQuery(query: string): boolean {
 /**
  * The phone layout (stacked cards, points bar): below Carbon's md breakpoint
  * (672px), or a touch screen too short for the canvas (a phone held sideways).
- * Matches the bottom-sheet modal styles in index.scss.
  */
 export const PHONE_QUERY = '(max-width: 671px), (max-height: 500px) and (pointer: coarse)';
 export const useIsPhone = () => useMediaQuery(PHONE_QUERY);

@@ -84,27 +84,39 @@ body {
   padding-inline: env(safe-area-inset-left) env(safe-area-inset-right);
 }
 
-// Phones: modals are bottom sheets that slide up, sized to their content
-@media (max-width: 671px), (max-height: 500px) and (pointer: coarse) {
+// Phones and tablets: modals are drawers that slide in from the right, full
+// height and phone-width everywhere (min(90vw, 420px)) so the UI is the same on
+// both; a tablet keeps the canvas visible beside it. Matches DRAWER_QUERY in
+// components/ui/useDrawerSwipe.ts (swipe right to close).
+@media (max-width: 1055px), (pointer: coarse) {
   body .cds--modal {
-    align-items: flex-end;
+    align-items: stretch;
+    justify-content: flex-end;
   }
 
   body .cds--modal .cds--modal-container {
     position: fixed;
-    inset-block: auto 0;
-    inline-size: 100%;
-    max-block-size: 92dvh;
-    border-radius: 12px 12px 0 0;
-    border-block-end: none;
+    inset-block: 0;
+    inset-inline: auto 0;
+    inline-size: min(90vw, 420px);
+    max-inline-size: none;
+    block-size: 100dvh;
+    max-block-size: 100dvh;
+    border-radius: 0;
+    border-block: none;
+    border-inline-end: none;
+    box-shadow: -8px 0 32px rgba(0, 0, 0, 0.5);
+    // Clear of the notch / status bar and a landscape notch
+    padding-block-start: env(safe-area-inset-top);
+    padding-inline-end: env(safe-area-inset-right);
     overflow: hidden;
   }
 
   body .cds--modal:not(.is-visible) .cds--modal-container {
-    transform: translate3d(0, 100%, 0);
+    transform: translate3d(100%, 0, 0);
   }
 
-  // Footer buttons span the sheet, above the home indicator
+  // Footer buttons span the drawer, above the home indicator
   body .cds--modal-footer {
     block-size: auto;
     padding-block-end: env(safe-area-inset-bottom);

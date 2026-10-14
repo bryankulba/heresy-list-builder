@@ -3,9 +3,12 @@ import { Theme } from '@carbon/react';
 import { useRosterStore } from './store/rosterStore';
 import StartScreen from './components/StartScreen';
 import Canvas from './components/canvas/Canvas';
+import { useDrawerSwipe } from './components/ui/useDrawerSwipe';
 
 export default function App() {
   const phase = useRosterStore((s) => s.phase);
+  // Phones and tablets: swipe a modal drawer right to close it
+  useDrawerSwipe();
   const ensureUnitsLoaded = useRosterStore((s) => s.ensureUnitsLoaded);
   // A restored session's armies are loaded before the canvas shows them
   const [ready, setReady] = useState(phase === 'start');
