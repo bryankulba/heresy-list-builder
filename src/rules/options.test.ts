@@ -1,8 +1,8 @@
 import { describe, test, expect } from 'vitest';
-import { createForce } from '../store/rosterModel';
+import { addDetachment, createForce } from '../store/rosterModel';
 import { getChart, getDetachmentsForFaction, getAdditionalDetachments, getUnitsForFaction } from '../data/loader';
 import { rosterCounts, unitContext } from './context';
-import { compulsorySlotsFillable, detachmentAvailability, fillableSlots } from './options';
+import { benefitUsable, compulsorySlotsFillable, detachmentAvailability, fillableSlots } from './options';
 import { getPrimeOptions } from './primeBenefits';
 import { doctrineOptions, normalizeDoctrine } from './armyConfig';
 
@@ -115,5 +115,33 @@ describe('army settings', () => {
     const xml = buildRosXml([knights], 3000, 0, { allegiance: 'Loyalist', configChoices: { 'Household Paradigms': 'Questoris Mechanicum' } });
     for (const reaction of ['Stomp', 'Joust!', 'Rotate Ion Shields']) expect(xml).toContain(`name="${reaction}"`);
     expect(importRos(xml).snapshot.configChoices).toEqual({ 'Household Paradigms': 'Questoris Mechanicum' });
+  });
+});
+
+describe('slot-adding Prime benefits', () => {
+  const optionsIn = (faction: string, detachmentName: string, slotRole: string, unitName: string) => {
+    const base = createForce(faction, 'primary');
+    const def = getChart(base.chart).detachments.find((d) => d.name === detachmentName)!;
+    const forces = def.name === base.detachments[0].def.name ? [base] : addDetachment([base], def, { forceId: base.id });
+    const det = forces[0].detachments.find((d) => d.def.name === detachmentName)!;
+    const unit = getUnitsForFaction(faction).find((u) => u.name === unitName)!;
+    const slotKey = `${slotRole}-0`;
+    const categoryId = det.def.slots.find((s) => s.role === slotRole)?.categoryId;
+    return getPrimeOptions(unit, unitContext(forces, forces[0], det, unit, categoryId, rosterCounts(forces, { allegiance: 'Loyalist' })))
+      .filter((o) => benefitUsable(forces, det.id, slotKey, unit, o, { allegiance: 'Loyalist' }))
+      .map((o) => o.name);
+  };
+
+  test("aren't offered where BSData gives the detachment no slot for them (Armoured Command Squadron)", () => {
+    const names = optionsIn('dark-angels', 'Apex - Armoured Command Squadron Detachment', 'Prime Armour', 'Predator');
+    expect(names).not.toContain('Logistical Benefit');
+    expect(names).not.toContain('Clade Operative');
+    expect(names.length).toBeGreaterThan(0);
+  });
+
+  test('are offered where they add a slot (Crusade Primary Detachment)', () => {
+    const names = optionsIn('dark-angels', 'Crusade Primary Detachment', 'Prime Troops', 'Tactical Squad');
+    expect(names).toContain('Logistical Benefit');
+    expect(names).toContain('Clade Operative');
   });
 });
