@@ -147,6 +147,7 @@ export default function Canvas() {
           removeActionFor={removeActionFor}
           onSlotClick={flow.handleSlotClick}
           onSlotClear={flow.handleSlotClear}
+          pendingUnlocks={roster.pendingUnlocks}
           bottomInset={warnings.length > 0 ? 96 : 68}
         />
         {pointsCard}
@@ -250,6 +251,7 @@ export default function Canvas() {
                   onRemove={removeActionFor(force, det)}
                   onSlotClick={(slotKey, slotDef) => flow.handleSlotClick(det.id, slotKey, slotDef)}
                   onSlotClear={(slotKey) => flow.handleSlotClear(det.id, slotKey)}
+                  pendingUnlocks={(slotKey) => roster.pendingUnlocks.get(`${det.id}::${slotKey}`) ?? 0}
                   cardRef={cardRefCallback(det.id)}
                   slotRefCallback={(slotKey) => slotRefCallback(det.id)(slotKey)}
                 />

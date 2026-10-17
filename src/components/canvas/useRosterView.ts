@@ -12,6 +12,9 @@ import { rosterCounts } from '../../rules/context';
 import { withEffectiveSlots } from '../../rules/slots';
 import { fillableSlots } from '../../rules/options';
 import { validateRoster, type RosterWarning } from '../../rules/validate';
+import { auxiliaryUnlocks } from '../../rules/detachmentLimits';
+import { getBaseRole, stripPrimePrefix } from '../../data/loader';
+import { cardSlots } from './slotLayout';
 
 export function useRosterView() {
   const forces = useRosterStore((s) => s.forces);
@@ -43,6 +46,23 @@ export function useRosterView() {
     [forces, counts]
   );
   const viewDetachments = useMemo(() => allDetachments(view), [view]);
+  // Detachments a filled Command / High Command slot may still unlock ("detId::slotKey" → how many),
+  // for a marker on the slot — left for later with "Decide later"
+  const pendingUnlocks = useMemo(() => {
+    const out = new Map<string, number>();
+    for (const det of viewDetachments) {
+      for (const { key, slotDef } of cardSlots(det)) {
+        if (!det.slots[key]) continue;
+        const role = getBaseRole(stripPrimePrefix(slotDef.role));
+        const owed = role === 'High Command' ? 1 : auxiliaryUnlocks(forces, det.id, key);
+        if (owed === 0) continue;
+        const ref = `${det.id}::${key}`;
+        const taken = detachments.filter((d) => d.unlockedBy === ref).length;
+        if (owed > taken) out.set(ref, owed - taken);
+      }
+    }
+    return out;
+  }, [forces, detachments, viewDetachments]);
   // Roster warnings (never blocking), by detachment for the cards' badges
   const warnings = useMemo(() => validateRoster({ forces, ...rosterOpts }), [forces, rosterOpts]);
   const warningsByDetachment = useMemo(() => {
@@ -51,7 +71,7 @@ export function useRosterView() {
     return map;
   }, [warnings]);
 
-  return { forces, allegiance, pointsLimit, detachments, counts, view, viewDetachments, warnings, warningsByDetachment };
+  return { forces, allegiance, pointsLimit, detachments, counts, view, viewDetachments, warnings, warningsByDetachment, pendingUnlocks };
 }
 
 export type RosterView = ReturnType<typeof useRosterView>;

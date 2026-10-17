@@ -14,9 +14,11 @@ interface SlotProps {
   isDashed?: boolean;
   /** Warnings about this slot's unit (shown as a red outline with a tooltip) */
   warnings?: string[];
+  /** Detachments its unit may still unlock — a "+N" marker until they're chosen */
+  pendingUnlocks?: number;
 }
 
-export default function Slot({ slotDef, filled, onClick, onClear, slotRef, isDashed, warnings = [] }: SlotProps) {
+export default function Slot({ slotDef, filled, onClick, onClear, slotRef, isDashed, warnings = [], pendingUnlocks = 0 }: SlotProps) {
   const isPrime = slotDef.prime;
   const displayRole = getBaseRole(stripPrimePrefix(slotDef.role));
   const isFilled = !!filled;
@@ -75,6 +77,35 @@ export default function Slot({ slotDef, filled, onClick, onClear, slotRef, isDas
         >
           <Close size={12} />
         </button>
+      )}
+
+      {/* Detachments still to choose for this unit (tap the slot to pick them) */}
+      {isFilled && pendingUnlocks > 0 && (
+        <span
+          className="absolute"
+          title={`${pendingUnlocks} detachment${pendingUnlocks > 1 ? 's' : ''} still to choose`}
+          aria-label={`${pendingUnlocks} detachment${pendingUnlocks > 1 ? 's' : ''} still to choose`}
+          // A pill on the tile's top edge, clear of the icon
+          style={{
+            top: -8,
+            left: '50%',
+            transform: 'translateX(-50%)',
+            minWidth: 22,
+            height: 16,
+            padding: '0 5px',
+            borderRadius: 8,
+            border: '1px dashed var(--cds-support-info)',
+            background: 'var(--cds-layer-01)',
+            color: 'var(--cds-support-info)',
+            fontSize: 10,
+            fontWeight: 600,
+            lineHeight: '14px',
+            textAlign: 'center',
+            whiteSpace: 'nowrap',
+          }}
+        >
+          +{pendingUnlocks}
+        </span>
       )}
 
       {/* Icon in circle — yellow border for prime */}

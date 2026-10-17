@@ -61,8 +61,9 @@ export default function BonusSlotRoleSelectorModal({
         </div>
       </ModalBody>
       <ModalFooter>
+        {/* The unit is already placed: this skips the choice, to make from the slot editor later */}
         <Button kind="secondary" onClick={onClose}>
-          Cancel
+          Decide later
         </Button>
       </ModalFooter>
     </ComposedModal>
