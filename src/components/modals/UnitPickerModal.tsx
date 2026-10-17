@@ -11,6 +11,7 @@ import {
 import type { UnitEntry } from '../../types';
 import { SM_LEGION_KEYS } from '../../data/factions';
 import { noFocusScroll } from './noFocusScroll';
+import { STICKY_TOP } from './stickyTop';
 
 interface UnitPickerModalProps {
   /** Display role, e.g. "Troops" */
@@ -45,7 +46,7 @@ export default function UnitPickerModal({
       <ModalHeader title={`Select ${role} Unit`} />
       <ModalBody hasForm>
         {/* Stays in view while the list scrolls */}
-        <div style={{ position: 'sticky', top: 0, zIndex: 1, background: 'var(--cds-layer)', paddingBottom: 16 }}>
+        <div style={{ ...STICKY_TOP, paddingBottom: 16 }}>
           <Search
             id="unit-search"
             labelText="Search units"

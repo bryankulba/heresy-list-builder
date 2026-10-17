@@ -207,4 +207,5 @@ export type ModalState =
   | { type: 'confirmClear'; detachmentId: string; slotKey: string; affectedIds: string[] }
   | { type: 'export' }
   | { type: 'saveLoad' }
+  | { type: 'unitReference' }
   | { type: 'confirmReset' };

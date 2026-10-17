@@ -21,6 +21,7 @@ import AllySelectorModal from '../modals/AllySelectorModal';
 import ConfirmModal from '../modals/ConfirmModal';
 import ExportModal from '../modals/ExportModal';
 import SavedListsModal from '../modals/SavedListsModal';
+import UnitReferenceModal from '../modals/UnitReferenceModal';
 import type { RosterView } from './useRosterView';
 import type { SlotFlow } from './useSlotFlow';
 
@@ -172,6 +173,8 @@ export default function CanvasModals({ roster, flow, primary, additionalDetachme
       )}
 
       {modal.type === 'saveLoad' && <SavedListsModal onClose={close} />}
+
+      {modal.type === 'unitReference' && <UnitReferenceModal forces={forces} allegiance={allegiance} onClose={close} />}
 
       {modal.type === 'confirmReset' && (
         <ConfirmModal

@@ -8,13 +8,15 @@ import {
   OverflowMenu,
   OverflowMenuItem,
 } from '@carbon/react';
-import { Export, Reset, Add, Save, Menu } from '@carbon/icons-react';
+import { Export, Reset, Add, Save, Menu, Catalog } from '@carbon/icons-react';
 import ArmySummary from './ArmySummary';
 
 interface AppHeaderProps {
   onExport: () => void;
   onSaveLoad: () => void;
   onNewList: () => void;
+  /** The army's units by battlefield role (cheat sheet) */
+  onUnitReference: () => void;
   /** Shown when the army can add a Warlord Detachment and hasn't yet */
   onAddWarlord?: () => void;
   /** Shown when the army may take Allied Detachments */
@@ -33,6 +35,7 @@ export default function AppHeader({
   onExport,
   onSaveLoad,
   onNewList,
+  onUnitReference,
   onAddWarlord,
   onAddAllies,
   onAddLordOfWar,
@@ -67,7 +70,8 @@ export default function AppHeader({
             {addActions.map((a) => (
               <OverflowMenuItem key={a.label} itemText={a.label} onClick={a.onClick} />
             ))}
-            <OverflowMenuItem itemText="Save / load lists" onClick={onSaveLoad} hasDivider={addActions.length > 0} />
+            <OverflowMenuItem itemText="Unit reference" onClick={onUnitReference} hasDivider={addActions.length > 0} />
+            <OverflowMenuItem itemText="Save / load lists" onClick={onSaveLoad} />
             <OverflowMenuItem itemText="Export list" onClick={onExport} />
             <OverflowMenuItem itemText="New list" onClick={onNewList} isDelete />
           </OverflowMenu>
@@ -95,6 +99,9 @@ export default function AppHeader({
       </div>
 
       <HeaderGlobalBar>
+        <HeaderGlobalAction aria-label="Unit reference" tooltipAlignment="end" onClick={onUnitReference}>
+          <Catalog size={20} />
+        </HeaderGlobalAction>
         <HeaderGlobalAction aria-label="Save / load lists" tooltipAlignment="end" onClick={onSaveLoad}>
           <Save size={20} />
         </HeaderGlobalAction>
