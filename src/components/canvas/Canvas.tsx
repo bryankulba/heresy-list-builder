@@ -110,6 +110,7 @@ export default function Canvas() {
       showSummary={!isPhone}
       onExport={() => setModal({ type: 'export' })}
       onSaveLoad={() => setModal({ type: 'saveLoad' })}
+      onUnitReference={() => setModal({ type: 'unitReference' })}
       onNewList={() => setModal({ type: 'confirmReset' })}
       onAddWarlord={warlordDef && primary ? () => addDetachment(warlordDef, { forceId: primary.id }) : undefined}
       onAddAllies={allyFactions.length > 0 ? () => setModal({ type: 'allySelector' }) : undefined}

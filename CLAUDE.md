@@ -90,6 +90,8 @@ Persistence: session state is persisted with `version: 2` (v1 `{ faction, detach
 
 `Canvas.tsx` composes: `useRosterView` (counts, the shown detachments, warnings), `useSlotFlow` (the modal state machine and its handlers), `useCanvasViewport` (pan / zoom / long-press drag), `useConnections` (unlock lines), `canvasLayout.ts` (pure card positions) and `CanvasModals.tsx` (renders the open modal, keyed per step).
 
+Header → **Unit reference** (`UnitReferenceModal`, `rules/unitReference.ts`): the army's units by battlefield role in force-org order, with size, points and tags (Legion, Assassin / Cult, Unique, "Traitor / Loyalist only" via `isAllegianceLocked`, "Not in Zone Mortalis" via `chartBan`); a tab per army when there are allies, search, and role chips that jump to each section.
+
 ### Modal State Machine (`useSlotFlow.ts`)
 
 All modals are coordinated by a `ModalState` discriminated union (defined in `src/types/index.ts`). `useSlotFlow` owns it and the transitions; `CanvasModals` renders the open one.
