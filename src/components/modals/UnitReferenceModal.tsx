@@ -11,6 +11,7 @@ import { ComposedModal, ModalHeader, ModalBody, ModalFooter, Button, Search, Tag
 import type { Allegiance, Force } from '../../types';
 import { factionLabel } from '../../data/factions';
 import { unitReference, type ReferenceUnit } from '../../rules/unitReference';
+import { STICKY_TOP } from './stickyTop';
 
 interface UnitReferenceModalProps {
   forces: Force[];
@@ -66,10 +67,7 @@ export default function UnitReferenceModal({ forces, allegiance, onClose }: Unit
         <div
           ref={stickyRef}
           style={{
-            position: 'sticky',
-            top: 0,
-            zIndex: 1,
-            background: 'var(--cds-layer)',
+            ...STICKY_TOP,
             paddingBottom: 12,
             display: 'flex',
             flexDirection: 'column',
