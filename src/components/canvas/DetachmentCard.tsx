@@ -48,6 +48,8 @@ interface DetachmentCardProps {
   slotRefCallback?: (slotKey: string) => (el: HTMLDivElement | null) => void;
   /** Fill the available width (phone layout) instead of the canvas card width */
   fluid?: boolean;
+  /** Detachments a slot's unit may still unlock (chosen later from its editor) */
+  pendingUnlocks?: (slotKey: string) => number;
 }
 
 export default function DetachmentCard({
@@ -61,6 +63,7 @@ export default function DetachmentCard({
   cardRef,
   slotRefCallback,
   fluid = false,
+  pendingUnlocks,
 }: DetachmentCardProps) {
   const displayName = getDetachmentDisplayName(detachment.def.name);
   const title = instanceNumber != null ? `${displayName} #${instanceNumber}` : displayName;
@@ -175,6 +178,7 @@ export default function DetachmentCard({
                   onClear={() => onSlotClear(key)}
                   slotRef={slotRefCallback ? slotRefCallback(key) : undefined}
                   warnings={warnings.filter((w) => w.slotKey === key).map((w) => w.message)}
+                  pendingUnlocks={pendingUnlocks?.(key)}
                 />
               ))}
             </div>

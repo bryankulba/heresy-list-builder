@@ -192,8 +192,11 @@ export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, 
     }
     // A squad (a model type with a range) gets its size set when the chain ends
     sizeAfter.current = unit.models.some(isSizeAdjustable) ? { detachmentId, slotKey } : null;
-    if (isPrime) setModal({ type: 'primeBenefit', detachmentId, slotKey, role, unit });
-    else fillAndUnlock(detachmentId, slotKey, role, unit);
+    if (isPrime) {
+      // Placed now, so "Decide later" on its benefit keeps it (a Prime unit without one is a warning)
+      fillSlot(detachmentId, slotKey, unit);
+      setModal({ type: 'primeBenefit', detachmentId, slotKey, role, unit });
+    } else fillAndUnlock(detachmentId, slotKey, role, unit);
   }
 
   function handlePrimeBenefitChosen(option: PrimeOption) {
@@ -234,6 +237,25 @@ export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, 
     setLogisticalRole(detachmentId, slotKey, bonusRole);
     if (isEditingSlot.current) finishEdit();
     else startUnlocks(detachmentId, slotKey, role);
+  }
+
+  /**
+   * "Decide later" (or ✕ / swipe) on a choice made after the unit was placed:
+   * the unit stays and the choice can be made from the slot editor. Skipping
+   * its Prime benefit or Logistical Benefit role moves on to what the unit
+   * unlocks; skipping a detachment ends the chain. While editing a slot, back
+   * to its editor.
+   */
+  function handleDecideLater() {
+    if (isEditingSlot.current) {
+      finishEdit();
+      return;
+    }
+    if (modal.type === 'primeBenefit' || modal.type === 'bonusSlotRoleSelector') {
+      startUnlocks(modal.detachmentId, modal.slotKey, modal.role);
+      return;
+    }
+    close();
   }
 
   function handleDetachmentSelected(def: DetachmentDef) {
@@ -299,6 +321,7 @@ export function useSlotFlow({ forces, allegiance, detachments, viewDetachments, 
     handlePrimeBenefitChosen,
     handleBonusSlotRoleSelected,
     handleDetachmentSelected,
+    handleDecideLater,
     slotEditActions,
   };
 }

@@ -27,6 +27,8 @@ interface DetachmentSelectorModalProps {
   availability?: (def: DetachmentDef) => DetachmentAvailability;
   onConfirm: (def: DetachmentDef) => void;
   onClose: () => void;
+  /** The dismiss button: "Decide later" when a unit's unlock is being chosen (the unit stays), else "Cancel" */
+  dismissLabel?: string;
 }
 
 export default function DetachmentSelectorModal({
@@ -38,6 +40,7 @@ export default function DetachmentSelectorModal({
   availability = () => ({ status: 'ok' }),
   onConfirm,
   onClose,
+  dismissLabel = 'Cancel',
 }: DetachmentSelectorModalProps) {
 
   const allOptions =
@@ -121,7 +124,7 @@ export default function DetachmentSelectorModal({
       </ModalBody>
       <ModalFooter>
         <Button kind="secondary" onClick={onClose}>
-          Cancel
+          {dismissLabel}
         </Button>
       </ModalFooter>
     </ComposedModal>

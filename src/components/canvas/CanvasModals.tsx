@@ -79,12 +79,12 @@ export default function CanvasModals({ roster, flow, primary, additionalDetachme
         <PrimeBenefitModal
           options={flow.primeOptionsFor(modal.detachmentId, modal.slotKey, modal.unit)}
           onConfirm={flow.handlePrimeBenefitChosen}
-          onClose={close}
+          onClose={flow.handleDecideLater}
         />
       )}
 
       {modal.type === 'bonusSlotRoleSelector' && (
-        <BonusSlotRoleSelectorModal roles={modal.roles} onConfirm={flow.handleBonusSlotRoleSelected} onClose={close} />
+        <BonusSlotRoleSelectorModal roles={modal.roles} onConfirm={flow.handleBonusSlotRoleSelected} onClose={flow.handleDecideLater} />
       )}
 
       {modal.type === 'detachmentSelector' && (
@@ -98,7 +98,8 @@ export default function CanvasModals({ roster, flow, primary, additionalDetachme
             return force ? detachmentAvailability(forces, force, def, counts) : { status: 'ok' };
           }}
           onConfirm={flow.handleDetachmentSelected}
-          onClose={close}
+          onClose={flow.handleDecideLater}
+          dismissLabel="Decide later"
         />
       )}
 

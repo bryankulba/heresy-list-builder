@@ -25,6 +25,8 @@ interface StackedViewProps {
   onSlotClear: (detachmentId: string, slotKey: string) => void;
   /** Space kept clear at the bottom for the points bar */
   bottomInset: number;
+  /** Detachments a slot's unit may still unlock ("detId::slotKey" → how many) */
+  pendingUnlocks?: Map<string, number>;
 }
 
 /** A force's detachments in reading order, with the unit that unlocked each (if any). */
@@ -145,6 +147,7 @@ export default function StackedView({
   onSlotClick,
   onSlotClear,
   bottomInset,
+  pendingUnlocks,
 }: StackedViewProps) {
   const scrollRef = useRef<HTMLDivElement>(null);
   const ordered = view.map((force) => ({ force, rows: stackedOrder(force) }));
@@ -236,6 +239,7 @@ export default function StackedView({
                 onRemove={removeActionFor(force, det)}
                 onSlotClick={(slotKey, slotDef) => onSlotClick(det.id, slotKey, slotDef)}
                 onSlotClear={(slotKey) => onSlotClear(det.id, slotKey)}
+                pendingUnlocks={(slotKey) => pendingUnlocks?.get(`${det.id}::${slotKey}`) ?? 0}
                 fluid
               />
             </div>
